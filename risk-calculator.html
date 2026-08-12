@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Forex Risk Calculator — Calculate Trading Risk | EZTradingHub</title>
+
+<meta name="description"
+      content="Free Forex Risk Calculator to calculate your trading risk, risk amount and position requirements. Plan trades and manage your capital with EZTradingHub.">
+
+<meta name="keywords"
+      content="forex risk calculator, trading risk calculator, risk percentage calculator, forex trading risk, risk management calculator">
+
+<meta name="robots"
+      content="index, follow">
+
+<link rel="canonical"
+      href="https://eztradinghub.com/risk-calculator.html">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <img src="logo.jpg" class="logo" alt="FOREX TOOLS Logo">
+    <h1>Risk Calculator</h1>
+    <p>Manage your trading risk professionally.</p>
+</header>
+
+<section class="hero">
+
+<input type="number" id="balance" placeholder="Account Balance ($)">
+<br><br>
+
+<input type="number" id="risk" placeholder="Risk %">
+<br><br>
+    
+<button class="btn" onclick="calculateRisk()">
+Calculate Risk
+</button>
+    
+<br><br>
+
+<button class="btn" onclick="resetForm()">
+🔄 Reset
+</button>
+    
+<button class="btn" onclick="copyResult('riskResult')">
+📋 Copy Result
+</button>
+    
+<div id="riskResult" class="result-card"></div>
+
+<h3>📜 Recent Calculations</h3>
+
+<div id="history" class="result-card">
+No calculations yet.
+</div>
+    
+<br><br>
+
+<a href="index.html" class="btn">
+🏠 Back to Home
+</a>
+    
+</section>
+<script src="script.js"></script>
+
+<footer>
+
+
+
+<p class="copyright">
+© 2026 EZ TRADING HUB
+</p>
+
+<p>Developed with ❤️ by STEPHEN EZENWA</p>
+
+</footer>
+
+<button id="topBtn" onclick="topFunction()">
+
+⬆️
+
+</button>
+
+</body>
+
+</html>
+
