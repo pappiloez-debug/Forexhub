@@ -1,0 +1,617 @@
+/* =====================================================
+   EZTRADINGHUB — PREMIUM TRADING WEBSITE
+   ===================================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f7fb;
+    color: #172033;
+    line-height: 1.6;
+}
+
+/* =====================================================
+   HEADER
+   ===================================================== */
+
+.site-header {
+    background: #062f5f;
+    color: white;
+    min-height: 78px;
+    padding: 14px 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1000;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-icon {
+    width: 48px;
+    height: 48px;
+    background: #12b886;
+    color: white;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    font-size: 17px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+}
+
+.logo-area h1 {
+    font-size: 22px;
+    margin: 0;
+}
+
+.logo-area span {
+    font-size: 12px;
+    color: #b9d5f2;
+}
+
+#mainNav {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+#mainNav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+#mainNav a:hover {
+    color: #12d9a0;
+}
+
+.menu-btn {
+    display: none;
+    background: transparent;
+    border: 0;
+    color: white;
+    font-size: 27px;
+    cursor: pointer;
+}
+
+
+/* =====================================================
+   HERO
+   ===================================================== */
+
+.hero {
+    background: linear-gradient(
+        135deg,
+        #062f5f 0%,
+        #07528e 55%,
+        #087f83 100%
+    );
+
+    color: white;
+    padding: 85px 6% 100px;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 850px;
+    margin: auto;
+}
+
+.hero-badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.25);
+    padding: 8px 18px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 22px;
+}
+
+.hero h2 {
+    font-size: clamp(42px, 8vw, 72px);
+    line-height: 1.05;
+    margin-bottom: 25px;
+}
+
+.hero h2 span {
+    color: #20e0a0;
+}
+
+.hero p {
+    max-width: 700px;
+    margin: auto;
+    color: #e1edf9;
+    font-size: 18px;
+}
+
+.hero-buttons {
+    margin-top: 35px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+
+/* =====================================================
+   BUTTONS
+   ===================================================== */
+
+.primary-btn,
+.secondary-btn {
+    display: inline-block;
+    padding: 14px 25px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.25s;
+}
+
+.primary-btn {
+    background: #12c995;
+    color: white;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.2);
+}
+
+.primary-btn:hover {
+    transform: translateY(-3px);
+}
+
+.secondary-btn {
+    border: 1px solid rgba(255,255,255,0.45);
+    color: white;
+    background: rgba(255,255,255,0.08);
+}
+
+
+/* =====================================================
+   STATS
+   ===================================================== */
+
+.stats {
+    max-width: 1050px;
+    margin: -45px auto 55px;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    position: relative;
+}
+
+.stat-card {
+    background: white;
+    padding: 27px 20px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(20,40,70,0.12);
+}
+
+.stat-card strong {
+    display: block;
+    color: #062f5f;
+    font-size: 28px;
+}
+
+.stat-card span {
+    color: #68758a;
+    font-size: 14px;
+}
+
+
+/* =====================================================
+   SEARCH
+   ===================================================== */
+
+.search-section {
+    max-width: 850px;
+    margin: 0 auto 65px;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.search-section h2 {
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+.search-section p {
+    color: #718096;
+    margin-bottom: 22px;
+}
+
+.search-box {
+    background: white;
+    border: 1px solid #dbe3ee;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    padding: 0 18px;
+    box-shadow: 0 8px 25px rgba(20,40,70,0.08);
+}
+
+.search-box input {
+    width: 100%;
+    border: 0;
+    outline: none;
+    padding: 17px 5px;
+    font-size: 16px;
+    background: transparent;
+}
+
+.search-box span {
+    font-size: 21px;
+}
+
+
+/* =====================================================
+   GENERAL SECTION
+   ===================================================== */
+
+.section {
+    max-width: 1150px;
+    margin: auto;
+    padding: 50px 25px 80px;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-heading > span {
+    color: #07966f;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.section-heading h2 {
+    font-size: 38px;
+    color: #10223d;
+    margin: 8px 0;
+}
+
+.section-heading p {
+    color: #718096;
+}
+
+
+/* =====================================================
+   CALCULATOR GRID
+   ===================================================== */
+
+.calculator-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+.calculator-card {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 18px;
+    padding: 25px;
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 8px 25px rgba(20,40,70,0.06);
+    transition: 0.25s;
+}
+
+.calculator-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 35px rgba(20,40,70,0.13);
+    border-color: #12b886;
+}
+
+.card-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    background: #e9faf5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    margin-bottom: 18px;
+}
+
+.calculator-card h3 {
+    font-size: 20px;
+    color: #13233b;
+    margin-bottom: 9px;
+}
+
+.calculator-card p {
+    color: #718096;
+    font-size: 14px;
+}
+
+.calculator-card a {
+    margin-top: auto;
+    padding-top: 20px;
+    color: #078866;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.calculator-card a:hover {
+    color: #045d49;
+}
+
+
+/* =====================================================
+   CATEGORIES
+   ===================================================== */
+
+.categories {
+    background: #eaf1f8;
+    padding: 80px 6%;
+}
+
+.category-grid {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.category-card {
+    background: white;
+    border-radius: 16px;
+    padding: 28px;
+    text-align: center;
+    transition: 0.25s;
+    border: 1px solid #e1e8f0;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+}
+
+.category-card span {
+    font-size: 35px;
+}
+
+.category-card h3 {
+    margin: 12px 0 5px;
+}
+
+.category-card p {
+    color: #718096;
+    font-size: 14px;
+}
+
+
+/* =====================================================
+   ABOUT
+   ===================================================== */
+
+.about {
+    max-width: 950px;
+    margin: auto;
+    padding: 90px 25px;
+    text-align: center;
+}
+
+.about > div > span {
+    color: #07966f;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.about h2 {
+    font-size: 38px;
+    margin: 10px 0 20px;
+}
+
+.about p {
+    color: #65748a;
+    max-width: 750px;
+    margin: 12px auto;
+}
+
+
+/* =====================================================
+   CTA
+   ===================================================== */
+
+.cta {
+    background: linear-gradient(
+        135deg,
+        #062f5f,
+        #07528e
+    );
+
+    color: white;
+    text-align: center;
+    padding: 75px 25px;
+}
+
+.cta h2 {
+    font-size: 38px;
+    margin-bottom: 10px;
+}
+
+.cta p {
+    color: #dce8f4;
+    margin-bottom: 28px;
+}
+
+
+/* =====================================================
+   FOOTER
+   ===================================================== */
+
+footer {
+    background: #041d3b;
+    color: white;
+    text-align: center;
+    padding: 45px 20px;
+}
+
+.footer-logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+footer p {
+    color: #a9bdd2;
+    margin: 8px 0;
+}
+
+.footer-links {
+    margin: 20px 0;
+}
+
+.footer-links a {
+    color: #d9e7f5;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.footer-links a:hover {
+    color: #20e0a0;
+}
+
+.copyright {
+    font-size: 12px;
+}
+
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media (max-width: 900px) {
+
+    .calculator-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 650px) {
+
+    .site-header {
+        padding: 13px 18px;
+    }
+
+    .logo-area h1 {
+        font-size: 19px;
+    }
+
+    .logo-icon {
+        width: 42px;
+        height: 42px;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    #mainNav {
+        display: none;
+        position: absolute;
+        top: 72px;
+        left: 0;
+        right: 0;
+        background: #052b55;
+        padding: 15px 20px;
+        flex-direction: column;
+        gap: 0;
+        box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+    }
+
+    #mainNav.show {
+        display: flex;
+    }
+
+    #mainNav a {
+        width: 100%;
+        padding: 14px;
+        text-align: center;
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .hero {
+        padding: 65px 20px 80px;
+    }
+
+    .hero h2 {
+        font-size: 43px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+        margin-top: -30px;
+        padding: 0 20px;
+    }
+
+    .calculator-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .category-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-heading h2 {
+        font-size: 30px;
+    }
+
+    .about h2 {
+        font-size: 30px;
+    }
+
+    .cta h2 {
+        font-size: 30px;
+    }
+
+}
+
+
+/* =====================================================
+   SMALL PHONES
+   ===================================================== */
+
+@media (max-width: 380px) {
+
+    .hero h2 {
+        font-size: 36px;
+    }
+
+    .calculator-card {
+        padding: 20px;
+    }
+
+}
