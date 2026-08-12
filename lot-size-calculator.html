@@ -1,0 +1,95 @@
+
+<title>Forex Lot Size Calculator — Calculate Position Size | EZTradingHub</title>
+
+<meta name="description"
+      content="Free Forex Lot Size Calculator to calculate the appropriate lot size for your trade based on account balance, risk percentage and stop loss.">
+
+<meta name="keywords"
+      content="forex lot size calculator, lot size calculator, position size calculator, forex position sizing, trading risk calculator">
+
+<meta name="robots"
+      content="index, follow">
+
+<link rel="canonical"
+      href="https://eztradinghub.com/lot-size-calculator.html">
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <img src="logo.jpg" class="logo" alt="FOREX TOOLS Logo">
+
+    <h1>Lot Size Calculator</h1>
+
+    <p>Find the correct lot size for every trade.</p>
+</header>
+
+<section class="hero">
+
+<input type="number" id="balance" placeholder="Account Balance ($)">
+
+<br><br>
+
+<input type="number" id="risk" placeholder="Risk (%)">
+
+<br><br>
+
+<input type="number" id="stoploss" placeholder="Stop Loss (Pips)">
+
+<br><br>
+
+<button class="btn" onclick="calculateLotSize()">
+Calculate Lot Size
+</button>
+    
+<br><br>
+
+<button class="btn" onclick="resetForm()">
+🔄 Reset
+</button>
+    
+<button class="btn" onclick="copyResult('lotResult')">
+📋 Copy Result
+</button>
+
+<div id="lotResult" class="result-card"></div>
+
+<h3>📜 Recent Calculations</h3>
+
+<div id="history" class="result-card">
+No calculations yet.
+</div>
+    
+<br><br>
+
+<a href="index.html" class="btn">
+🏠 Back to Home
+</a>
+    
+</section>
+<script src="script.js"></script>
+
+<footer>
+
+
+
+<p class="copyright">
+© 2026 EZ TRADING HUB
+</p>
+
+<p>Developed with ❤️ by STEPHEN EZENWA</p>
+
+</footer>
+
+<button id="topBtn" onclick="topFunction()">
+
+⬆️
+
+</button>
+
+</body>
+
+</html>
+
