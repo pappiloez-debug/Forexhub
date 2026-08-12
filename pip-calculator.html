@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <title>Forex Pip Calculator — Calculate Pip Value | EZTradingHub</title>
+
+<meta name="description"
+      content="Free Forex Pip Calculator to calculate pip value quickly and accurately. Calculate pip values for your trades and improve your risk management with EZTradingHub.">
+
+<meta name="keywords"
+      content="forex pip calculator, pip value calculator, forex calculator, pip calculator, trading calculator">
+
+<meta name="robots"
+      content="index, follow">
+
+<link rel="canonical"
+      href="https://eztradinghub.com/pip-calculator.html">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pip Calculator</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+<img src="logo.jpg" class="logo">
+<h1>Pip Calculator</h1>
+</header>
+
+<section class="hero">
+
+<p>Enter your trade details below.</p>
+
+<input type="number" id="lots" placeholder="Lot Size">
+
+<br><br>
+
+<input type="number" id="pips" placeholder="Pips">
+
+<br><br>
+
+<button class="btn" onclick="calculatePips()">
+Calculate
+</button>
+  
+<br><br>
+
+<button class="btn" onclick="resetForm()">
+🔄 Reset
+</button>
+  
+<button class="btn" onclick="copyResult('pipResult')">
+📋 Copy Result
+</button>
+  
+<div id="pipResult" class="result-card"></div>
+
+<h3>📜 Recent Calculations</h3>
+
+<div id="history" class="result-card">
+No calculations yet.
+</div>
+  
+<br><br>
+
+<a href="index.html" class="btn">
+🏠 Back to Home
+</a>
+    
+</section>
+<script src="script.js"></script>
+
+<footer>
+
+
+
+<p class="copyright">
+© 2026 EZ TRADING HUB
+</p>
+
+<p>Developed with ❤️ by STEPHEN EZENWA</p>
+
+</footer>
+
+<button id="topBtn" onclick="topFunction()">
+
+⬆️
+
+</button>
+
+</body>
+
+</html>
+
