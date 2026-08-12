@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EZTradingHub — Free Trading Calculators & Tools</title>
+
+    <meta name="description"
+        content="EZTradingHub provides free Forex, trading, risk management, crypto and stock calculators for smarter trading decisions.">
+
+    <meta name="keywords"
+        content="forex calculator, trading calculator, risk calculator, lot size calculator, pip calculator, crypto calculator, trading tools">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header class="site-header">
+
+    <div class="logo-area">
+        <div class="logo-icon">EZ</div>
+
+        <div>
+            <h1>EZTradingHub</h1>
+            <span>Smart Trading Tools</span>
+        </div>
+    </div>
+
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+    <nav id="mainNav">
+        <a href="index.html">Home</a>
+        <a href="#calculators">Calculators</a>
+        <a href="#tools">Tools</a>
+        <a href="#about">About</a>
+    </nav>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <span class="hero-badge">⚡ FREE TRADING TOOLS</span>
+
+        <h2>
+            Trade Smarter.<br>
+            <span>Calculate Better.</span>
+        </h2>
+
+        <p>
+            Powerful and easy-to-use trading calculators designed
+            to help you manage risk, calculate positions and make
+            better trading decisions.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#calculators" class="primary-btn">
+                🚀 Start Calculating
+            </a>
+
+            <a href="#tools" class="secondary-btn">
+                Explore Tools
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= STATS ================= -->
+
+<section class="stats">
+
+    <div class="stat-card">
+        <strong>60+</strong>
+        <span>Trading Tools</span>
+    </div>
+
+    <div class="stat-card">
+        <strong>100%</strong>
+        <span>Free to Use</span>
+    </div>
+
+    <div class="stat-card">
+        <strong>24/7</strong>
+        <span>Available Online</span>
+    </div>
+
+</section>
+
+
+<!-- ================= SEARCH ================= -->
+
+<section class="search-section">
+
+    <h2>Find a Trading Calculator</h2>
+
+    <p>Search our collection of trading tools.</p>
+
+    <div class="search-box">
+
+        <input
+            type="text"
+            id="calculatorSearch"
+            placeholder="Search calculator..."
+            onkeyup="searchCalculators()"
+        >
+
+        <span>🔍</span>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CALCULATORS ================= -->
+
+<section id="calculators" class="section">
+
+    <div class="section-heading">
+
+        <span>TRADING TOOLS</span>
+
+        <h2>Popular Calculators</h2>
+
+        <p>
+            Quickly calculate important trading values before entering a trade.
+        </p>
+
+    </div>
+
+
+    <div class="calculator-grid" id="calculatorGrid">
+
+
+        <!-- PIP -->
+
+        <div class="calculator-card"
+             data-name="pip calculator forex">
+
+            <div class="card-icon">📊</div>
+
+            <h3>Pip Calculator</h3>
+
+            <p>
+                Calculate pip values for your Forex trades.
+            </p>
+
+            <a href="pip-calculator.html">
+                Calculate →
+            </a>
+
+        </div>
+
+
+        <!-- RISK -->
+
+        <div class="calculator-card"
+             data-name="risk calculator trading">
+
+            <div class="card-icon">🛡️</div>
+
+            <h3>Risk Calculator</h3>
+
+            <p>
+                Calculate how much money to risk on each trade.
+            </p>
+
+            <a href="risk-calculator.html">
+                Calculate →
+            </a>
+
+        </div>
+
+
+        <!-- RISK REWARD -->
+
+        <div class="calculator-card"
+             data-name="risk reward calculator">
+
+            <div class="card-icon">⚖️</div>
+
+            <h3>Risk-to-Reward</h3>
+
+            <p>
+                Determine your potential reward compared with your risk.
+            </p>
+
+            <a href="risk-reward-calculator.html">
+                Calculate →
+            </a>
+
+        </div>
+
+
+        <!-- RISK OF RUIN -->
+
+        <div class="calculator-card"
+             data-name="risk of ruin calculator">
+
+            <div class="card-icon">📉</div>
+
+            <h3>Risk of Ruin</h3>
+
+            <p>
+                Estimate the probability of losing your trading capital.
+            </p>
+
+            <a href="risk-of-ruin.html">
+                Calculate →
+            </a>
+
+        </div>
+
+
+        <!-- SPREAD -->
+
+        <div class="calculator-card"
+             data-name="spread cost calculator">
+
+            <div class="card-icon">💰</div>
+
+            <h3>Spread Cost</h3>
+
+            <p>
+                Calculate the cost of the spread on your trades.
+            </p>
+
+            <a href="spread-cost-calculator.html">
+                Calculate →
+            </a>
+
+        </div>
+
+
+        <!-- STOCK PROFIT -->
+
+        <div class="calculator-card"
+             data-name="stock profit calculator">
+
+            <div class="card-icon">📈</div>
+
+            <h3>Stock Profit</h3>
+
+            <p>
+                Calculate potential profit or loss on stock trades.
+            </p>
+
+            <a href="stock-profit-calculator.html">
+                Calculate →
+            </a>
+
+        </div>
+
+
+        <!-- DIVIDEND -->
+
+        <div class="calculator-card"
+             data-name="stock dividend calculator">
+
+            <div class="card-icon">💵</div>
+
+            <h3>Dividend Calculator</h3>
+
+            <p>
+                Estimate your potential stock dividend income.
+            </p>
+
+            <a href="stock-dividend-calculator.html">
+                Calculate →
+            </a>
+
+        </div>
+
+
+        <!-- TRADE JOURNAL -->
+
+        <div class="calculator-card"
+             data-name="trade journal trading">
+
+            <div class="card-icon">📒</div>
+
+            <h3>Trade Journal</h3>
+
+            <p>
+                Record and review your trading performance.
+            </p>
+
+            <a href="trade-journal.html">
+                Open Tool →
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CATEGORIES ================= -->
+
+<section id="tools" class="categories">
+
+    <div class="section-heading">
+
+        <span>EXPLORE</span>
+
+        <h2>Trading Categories</h2>
+
+    </div>
+
+
+    <div class="category-grid">
+
+        <div class="category-card">
+            <span>💱</span>
+            <h3>Forex</h3>
+            <p>Tools for currency traders.</p>
+        </div>
+
+        <div class="category-card">
+            <span>🛡️</span>
+            <h3>Risk Management</h3>
+            <p>Protect your trading capital.</p>
+        </div>
+
+        <div class="category-card">
+            <span>₿</span>
+            <h3>Crypto</h3>
+            <p>Useful tools for crypto traders.</p>
+        </div>
+
+        <div class="category-card">
+            <span>📈</span>
+            <h3>Stocks</h3>
+            <p>Calculate stock trading values.</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section id="about" class="about">
+
+    <div>
+
+        <span>ABOUT EZTRADINGHUB</span>
+
+        <h2>Tools Built For Smarter Trading</h2>
+
+        <p>
+            EZTradingHub is a trading tools platform designed to make
+            complex trading calculations simple, fast and accessible.
+        </p>
+
+        <p>
+            Whether you trade Forex, gold, stocks or crypto,
+            our tools help you understand risk and plan your trades
+            before entering the market.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CTA ================= -->
+
+<section class="cta">
+
+    <h2>Ready to Trade Smarter?</h2>
+
+    <p>
+        Use our free calculators to plan your next trade.
+    </p>
+
+    <a href="#calculators" class="primary-btn">
+        Start Calculating 🚀
+    </a>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-logo">
+        EZTradingHub
+    </div>
+
+    <p>
+        Free Trading Calculators & Tools
+    </p>
+
+    <div class="footer-links">
+
+        <a href="index.html">Home</a>
+        <a href="#calculators">Calculators</a>
+        <a href="#about">About</a>
+
+    </div>
+
+    <p class="copyright">
+        © 2026 EZTradingHub. All rights reserved.
+    </p>
+
+</footer>
+
+
+<script>
+
+function toggleMenu() {
+
+    const nav = document.getElementById("mainNav");
+
+    nav.classList.toggle("show");
+
+}
+
+
+function searchCalculators() {
+
+    const search =
+        document.getElementById("calculatorSearch")
+        .value
+        .toLowerCase();
+
+    const cards =
+        document.querySelectorAll(".calculator-card");
+
+    cards.forEach(function(card) {
+
+        const name =
+            card.getAttribute("data-name");
+
+        if (name.includes(search)) {
+
+            card.style.display = "block";
+
+        } else {
+
+            card.style.display = "none";
+
+        }
+
+    });
+
+}
+
+</script>
+
+</body>
+</html>
