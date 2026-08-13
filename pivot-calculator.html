@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Forex Pivot Point Calculator — Calculate Pivot Levels | EZTradingHub</title>
+
+<meta name="description"
+      content="Free Forex Pivot Point Calculator to calculate pivot points, support and resistance levels for Forex trading and market analysis.">
+
+<meta name="keywords"
+      content="pivot point calculator, forex pivot point calculator, pivot points calculator, support resistance calculator, forex trading calculator">
+
+<meta name="robots"
+      content="index, follow">
+
+<link rel="canonical"
+      href="https://eztradinghub.com/pivot-calculator.html">
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header>
+
+<img src="logo.jpg" class="logo" alt="Logo">
+
+<h1>Pivot Point Calculator</h1>
+
+<p>Calculate Pivot Points, Support and Resistance.</p>
+
+</header>
+
+<section class="card">
+
+<input type="number" id="high" placeholder="High Price">
+
+<br><br>
+
+<input type="number" id="low" placeholder="Low Price">
+
+<br><br>
+
+<input type="number" id="close" placeholder="Close Price">
+
+<br><br>
+
+<button class="btn" onclick="calculatePivot()">
+
+Calculate
+
+</button>
+  
+<br><br>
+
+<button class="btn" onclick="resetForm()">
+🔄 Reset
+</button>
+  
+<button class="btn" onclick="copyResult('pivotResult')">
+📋 Copy Result
+</button>
+
+<div id="pivotResult" class="result-card"></div>
+
+<h3>📜 Recent Calculations</h3>
+
+<div id="history" class="result-card">
+No calculations yet.
+</div>
+  
+<br><br>
+
+<a href="index.html" class="btn">
+🏠 Back to Home
+</a>
+    
+</section>
+<script src="script.js"></script>
+
+<footer>
+
+
+
+<p class="copyright">
+© 2026 EZ TRADING HUB
+</p>
+
+<p>Developed with ❤️ by STEPHEN EZENWA</p>
+
+</footer>
+
+<button id="topBtn" onclick="topFunction()">
+
+⬆️
+
+</button>
+
+</body>
+
+</html>
+
