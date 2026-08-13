@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Forex Risk-to-Reward Calculator — Calculate R:R Ratio | EZTradingHub</title>
+
+<meta name="description"
+      content="Free Forex Risk-to-Reward Calculator to calculate your risk-to-reward ratio and compare potential profit with potential loss before entering a trade.">
+
+<meta name="keywords"
+      content="risk reward calculator, forex risk reward calculator, R:R calculator, trading risk reward, risk to reward ratio calculator">
+
+<meta name="robots"
+      content="index, follow">
+
+<link rel="canonical"
+      href="https://eztradinghub.com/risk-reward-calculator.html">
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <img src="logo.jpg" class="logo" alt="FOREX TOOLS Logo">
+
+    <h1>Risk-to-Reward Calculator</h1>
+
+    <p>Measure the potential reward compared to your risk.</p>
+</header>
+
+<section class="hero">
+
+<input type="number" id="riskAmount" placeholder="Risk Amount ($)">
+
+<br><br>
+
+<input type="number" id="rewardAmount" placeholder="Reward Amount ($)">
+
+<br><br>
+
+<button class="btn" onclick="calculateRiskReward()">
+Calculate Ratio
+</button>
+    
+<br><br>
+
+<button class="btn" onclick="resetForm()">
+🔄 Reset
+</button>
+    
+<button class="btn" onclick="copyResult('riskResult')">
+📋 Copy Result
+</button>
+
+<div id="riskResult" class="result-card"></div>
+
+<h3>📜 Recent Calculations</h3>
+
+<div id="history" class="result-card">
+No calculations yet.
+</div>
+    
+<br><br>
+
+<a href="index.html" class="btn">
+🏠 Back to Home
+</a>
+    
+</section>
+<script src="script.js"></script>
+
+<footer>
+
+
+
+<p class="copyright">
+© 2026 EZ TRADING HUB
+</p>
+
+<p>Developed with ❤️ by STEPHEN EZENWA</p>
+
+</footer>
+
+<button id="topBtn" onclick="topFunction()">
+
+⬆️
+
+</button>
+
+</body>
+
+</html>
+
