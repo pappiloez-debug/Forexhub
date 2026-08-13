@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gold Trading Calculators — XAUUSD Profit, Lot Size & Margin | EZTradingHub</title>
+
+<meta name="description"
+      content="Free Gold Trading Calculators for XAUUSD traders. Calculate gold profit, pip value, lot size, margin and position size to plan your trades more effectively.">
+
+<meta name="keywords"
+      content="gold calculator, XAUUSD calculator, gold profit calculator, gold lot size calculator, gold margin calculator, gold pip value calculator, gold trading calculator">
+
+<meta name="robots"
+      content="index, follow">
+
+<link rel="canonical"
+      href="https://eztradinghub.com/gold-calculators.html">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+
+<img src="logo.jpg" class="logo" alt="Logo">
+
+<h1>Gold Profit Calculator</h1>
+
+<p>Calculate your XAUUSD trade profit or loss.</p>
+
+</header>
+
+<section class="card">
+
+<select id="tradeType">
+
+<option value="buy">BUY</option>
+
+<option value="sell">SELL</option>
+
+</select>
+
+<br><br>
+
+<input type="number" id="entry" placeholder="Entry Price">
+
+<br><br>
+
+<input type="number" id="exit" placeholder="Exit Price">
+
+<br><br>
+
+<input type="number" id="lots" placeholder="Lot Size">
+
+<br><br>
+
+<button class="btn" onclick="calculateGoldProfit()">
+
+Calculate
+
+</button>
+  
+<br><br>
+
+<button class="btn" onclick="resetForm()">
+🔄 Reset
+</button>
+  
+<button class="btn" onclick="copyResult('goldResult')">
+📋 Copy Result
+</button>
+  
+<div id="goldResult" class="result-card"></div>
+
+<h3>📜 Recent Calculations</h3>
+
+<div id="history" class="result-card">
+No calculations yet.
+</div>
+  
+<br><br>
+
+<a href="index.html" class="btn">
+🏠 Back to Home
+</a>
+    
+</section>
+<script src="script.js"></script>
+
+<footer>
+
+
+
+<p class="copyright">
+© 2026 EZ TRADING HUB
+</p>
+
+<p>Developed with ❤️ by STEPHEN EZENWA</p>
+
+</footer>
+
+<button id="topBtn" onclick="topFunction()">
+
+⬆️
+
+</button>
+
+</body>
+
+</html>
+
