@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Forex Profit Calculator — Calculate Trading Profit | EZTradingHub</title>
+
+<meta name="description"
+      content="Free Forex Profit Calculator to estimate potential profit or loss from your trades using entry price, exit price, lot size and trade direction.">
+
+<meta name="keywords"
+      content="forex profit calculator, trading profit calculator, forex profit and loss calculator, forex calculator, trading calculator">
+
+<meta name="robots"
+      content="index, follow">
+
+<link rel="canonical"
+      href="https://eztradinghub.com/profit-calculator.html">
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <img src="logo.jpg" class="logo" alt="EZTradingHub Logo">
+
+    <h1>Profit Calculator</h1>
+
+    <p>Estimate the profit or loss of your trade.</p>
+</header>
+
+<section class="hero">
+    
+<label><strong>Trade Type</strong></label>
+
+<br><br>
+
+<select id="tradeType">
+
+<option value="buy">🟢 Buy</option>
+
+<option value="sell">🔴 Sell</option>
+
+</select>
+
+<br><br>
+
+<input type="number" id="entry" placeholder="Entry Price">
+
+<br><br>
+
+<input type="number" id="exit" placeholder="Exit Price">
+
+<br><br>
+
+<input type="number" id="lot" placeholder="Lot Size">
+
+<br><br>
+
+<button class="btn" onclick="calculateProfit()">
+Calculate Profit
+</button>
+    
+<br><br>
+
+<button class="btn" onclick="resetForm()">
+🔄 Reset
+</button>
+    
+<button class="btn" onclick="copyResult('profitResult')">
+📋 Copy Result
+</button>
+    
+<div id="profitResult" class="result-card"></div>
+    
+<h3>📜 Recent Calculations</h3>
+
+<div id="history" class="result-card">
+No calculations yet.
+</div>
+    
+<br><br>
+
+<a href="index.html" class="btn">
+🏠 Back to Home
+</a>
+    
+</section>
+<script src="script.js"></script>
+
+<footer>
+
+
+
+<p class="copyright">
+© 2026 EZ TRADING HUB
+</p>
+
+<p>Developed with ❤️ by STEPHEN EZENWA</p>
+
+</footer>
+
+<button id="topBtn" onclick="topFunction()">
+
+⬆️
+
+</button>
+
+</body>
+
+</html>
+
