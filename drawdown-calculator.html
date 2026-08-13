@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Forex Drawdown Calculator — Calculate Trading Drawdown | EZTradingHub</title>
+
+<meta name="description"
+      content="Free Forex Drawdown Calculator to calculate trading drawdown, account losses and recovery requirements. Understand your trading risk with EZTradingHub.">
+
+<meta name="keywords"
+      content="forex drawdown calculator, trading drawdown calculator, drawdown calculator, account drawdown, trading risk calculator">
+
+<meta name="robots"
+      content="index, follow">
+
+<link rel="canonical"
+      href="https://eztradinghub.com/drawdown-calculator.html">
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <img src="logo.jpg" class="logo" alt="FOREX TOOLS Logo">
+
+    <h1>Drawdown Calculator</h1>
+
+    <p>Know how much recovery is needed after a loss.</p>
+</header>
+
+<section class="hero">
+
+<input type="number" id="drawdown" placeholder="Drawdown (%)">
+
+<br><br>
+
+<button class="btn" onclick="calculateDrawdown()">
+Calculate Recovery
+</button>
+    
+<br><br>
+
+<button class="btn" onclick="resetForm()">
+🔄 Reset
+</button>
+    
+<button class="btn" onclick="copyResult('drawdownResult')">
+📋 Copy Result
+</button>
+    
+<div id="drawdownResult" class="result-card"></div>
+
+<h3>📜 Recent Calculations</h3>
+
+<div id="history" class="result-card">
+No calculations yet.
+</div>
+    
+<br><br>
+
+<a href="index.html" class="btn">
+🏠 Back to Home
+</a>
+    
+</section>
+<script src="script.js"></script>
+
+<footer>
+
+
+
+<p class="copyright">
+© 2026 EZ TRADING HUB
+</p>
+
+<p>Developed with ❤️ by STEPHEN EZENWA</p>
+
+</footer>
+
+<button id="topBtn" onclick="topFunction()">
+
+⬆️
+
+</button>
+
+</body>
+
+</html>
+
