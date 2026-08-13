@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stock Dividend Calculator — Calculate Dividend Income | EZTradingHub</title>
+
+<meta name="description"
+      content="Free Stock Dividend Calculator to estimate dividend income, annual dividend payments and potential dividend returns based on your investment and dividend yield.">
+
+<meta name="keywords"
+      content="stock dividend calculator, dividend calculator, dividend income calculator, dividend yield calculator, stock investment calculator">
+
+<meta name="robots"
+      content="index, follow">
+
+<link rel="canonical"
+      href="https://eztradinghub.com/stock-dividend-calculator.html">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<nav class="navbar">
+<div class="logo">📈 FOREX TOOLS PRO</div>
+
+<div class="nav-links">
+<a href="index.html">Home</a>
+<a href="stock-dividend-calculator.html">Dividend</a>
+</div>
+</nav>
+
+<div class="hero">
+<h1>💰 Stock Dividend Calculator</h1>
+<p>Estimate the dividend income from your shares.</p>
+</div>
+
+<div class="calculator-card">
+
+<label>Stock Name</label>
+<input type="text" id="stockName" placeholder="e.g. Apple">
+
+<br><br>
+
+<label>Number of Shares</label>
+<input type="number" id="shares">
+
+<br><br>
+
+<label>Dividend Per Share ($)</label>
+<input type="number" id="dividend" step="0.01">
+
+<br><br>
+
+<button onclick="calculateDividend()">
+Calculate
+</button>
+
+<button onclick="resetDividend()">
+Reset
+</button>
+
+<br><br>
+
+<h2 id="dividendResult"></h2>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
