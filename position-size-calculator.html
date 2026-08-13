@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forex Position Size Calculator — Calculate Position Size | EZTradingHub</title>
+
+<meta name="description"
+      content="Free Forex Position Size Calculator to calculate the appropriate position size for your trade based on account balance, risk percentage and stop loss.">
+
+<meta name="keywords"
+      content="forex position size calculator, position size calculator, forex risk calculator, trading position sizing, position sizing calculator">
+
+<meta name="robots"
+      content="index, follow">
+
+<link rel="canonical"
+      href="https://eztradinghub.com/position-size-calculator.html">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <img src="logo.jpg" class="logo" alt="FOREX TOOLS Logo">
+
+    <h1>Position Size Calculator</h1>
+
+    <p>Calculate the correct position size for your trade.</p>
+</header>
+
+<section class="hero">
+
+<input type="number" id="balance" placeholder="Account Balance ($)">
+
+<br><br>
+
+<input type="number" id="riskPercent" placeholder="Risk (%)">
+
+<br><br>
+
+<input type="number" id="stopLoss" placeholder="Stop Loss (Pips)">
+
+<br><br>
+
+<button class="btn" onclick="calculatePositionSize()">
+Calculate Position Size
+</button>
+    
+<br><br>
+
+<button class="btn" onclick="resetForm()">
+🔄 Reset
+</button>
+    
+<button class="btn" onclick="copyResult('positionResult')">
+📋 Copy Result
+</button>
+
+<div id="positionResult" class="result-card"></div>
+
+<h3>📜 Recent Calculations</h3>
+
+<div id="history" class="result-card">
+No calculations yet.
+</div>
+    
+<br><br>
+
+<a href="index.html" class="btn">
+🏠 Back to Home
+</a>
+    
+</section>
+<script src="script.js"></script>
+
+<footer>
+
+
+
+<p class="copyright">
+© 2026 EZ TRADING HUB
+</p>
+
+<p>Developed with ❤️ by STEPHEN EZENWA</p>
+
+</footer>
+
+<button id="topBtn" onclick="topFunction()">
+
+⬆️
+
+</button>
+
+</body>
+
+</html>
+
