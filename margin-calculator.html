@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Forex Margin Calculator — Calculate Trading Margin | EZTradingHub</title>
+
+<meta name="description"
+      content="Free Forex Margin Calculator to estimate the margin required for your trade based on lot size, leverage and currency pair.">
+
+<meta name="keywords"
+      content="forex margin calculator, margin calculator, trading margin calculator, forex leverage calculator, required margin calculator">
+
+<meta name="robots"
+      content="index, follow">
+
+<link rel="canonical"
+      href="https://eztradinghub.com/margin-calculator.html">
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <img src="logo.jpg" class="logo" alt="FOREX TOOLS Logo">
+
+    <h1>Margin Calculator</h1>
+
+    <p>Estimate the margin required for your trade.</p>
+</header>
+
+<section class="hero">
+
+<input type="number" id="lotSize" placeholder="Lot Size">
+
+<br><br>
+
+<input type="number" id="price" placeholder="Market Price">
+
+<br><br>
+
+<input type="number" id="leverage" placeholder="Leverage (e.g. 100)">
+
+<br><br>
+
+<button class="btn" onclick="calculateMargin()">
+Calculate Margin
+</button>
+    
+<br><br>
+
+<button class="btn" onclick="resetForm()">
+🔄 Reset
+</button>
+    
+<button class="btn" onclick="copyResult('marginResult')">
+📋 Copy Result
+</button>
+
+<div id="marginResult" class="result-card"></div>
+
+<h3>📜 Recent Calculations</h3>
+
+<div id="history" class="result-card">
+No calculations yet.
+</div>
+    
+<br><br>
+
+<a href="index.html" class="btn">
+🏠 Back to Home
+</a>
+    
+</section>
+<script src="script.js"></script>
+
+<footer>
+
+
+
+<p class="copyright">
+© 2026 EZ TRADING HUB
+</p>
+
+<p>Developed with ❤️ by STEPHEN EZENWA</p>
+
+</footer>
+
+<button id="topBtn" onclick="topFunction()">
+
+⬆️
+
+</button>
+
+</body>
+
+</html>
+
