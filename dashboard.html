@@ -1,0 +1,222 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Trading Dashboard — Forex Performance & Statistics | EZTradingHub</title>
+
+<meta name="description"
+      content="Free Forex Trading Dashboard to analyze trading performance, win rate, profit and loss, trading streaks, best pairs and monthly results.">
+
+<meta name="keywords"
+      content="forex trading dashboard, trading dashboard, trading performance dashboard, forex statistics, trading performance tracker, trading analytics">
+
+<meta name="robots"
+      content="index, follow">
+
+<link rel="canonical"
+      href="https://eztradinghub.com/dashboard.html">
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<header>
+    <img src="logo.jpg" alt="FOREX TOOLS Logo" class="logo">
+    
+    <button id="darkModeBtn" class="btn" onclick="toggleDarkMode()">
+🌙 Dark Mode
+</button>
+
+    
+
+    <h1>Dashboard</h1>
+
+    <p>
+        Analyze your trading performance like a professional.
+    </p>
+    <nav class="navbar">
+<div class="nav-links">
+<a href="index.html">Home</a>
+</div>
+</nav>
+
+</header>
+
+<section class="hero">
+    
+<div class="dashboard-grid">
+
+<div class="dashboard-card">
+    <h3>💼 Total Trades</h3>
+    <p id="totalTrades">0</p>
+</div>
+
+<div class="dashboard-card">
+    <h3>✅ Winning Trades</h3>
+    <p id="winningTrades">0</p>
+</div>
+
+<div class="dashboard-card">
+    <h3>❌ Losing Trades</h3>
+    <p id="losingTrades">0</p>
+</div>
+
+<div class="dashboard-card">
+<h3>🏆 Win Rate</h3>
+<p id="winRate">0%</p>
+</div>
+  
+<div class="dashboard-card">
+    <h3>💰 Total Profit</h3>
+    <p id="totalProfit">$0.00</p>
+</div>
+
+<div class="dashboard-card">
+    <h3>📉 Total Loss</h3>
+    <p id="totalLoss">$0.00</p>
+</div>
+
+<div class="dashboard-card">
+    <h3>💹 Net Profit</h3>
+    <p id="netProfit">$0.00</p>
+</div>
+    
+<div class="dashboard-card">
+    <h3>🥇 Largest Winning Trade</h3>
+    <p id="largestWin">$0.00</p>
+</div>
+
+<div class="dashboard-card">
+    <h3>📉 Largest Losing Trade</h3>
+    <p id="largestLoss">$0.00</p>
+</div>
+    
+<div class="dashboard-card">
+    <h3>💱 Best Performing Pair</h3>
+    <p id="bestPair">None</p>
+</div>
+    
+<div class="dashboard-card">
+    <h3>📈 Profit Trend</h3>
+
+    <canvas id="profitChart" width="350" height="200"></canvas>
+</div>
+    
+<div class="dashboard-card">
+    <h3>🏆 Best Trading Day</h3>
+    <p id="bestDay">None</p>
+</div>
+    
+<div class="dashboard-card">
+    <h3>📉 Worst Trading Day</h3>
+    <p id="worstDay">None</p>
+</div>
+    
+<div class="dashboard-card">
+    <h3>📈 Average Winning Trade</h3>
+    <p id="avgWin">$0.00</p>
+</div>
+
+<div class="dashboard-card">
+    <h3>📉 Average Losing Trade</h3>
+    <p id="avgLoss">$0.00</p>
+</div>
+  
+<div class="dashboard-card">
+    <h3>🔥 Longest Winning Streak</h3>
+    <p id="winStreak">0</p>
+</div>
+
+<div class="dashboard-card">
+    <h3>❄️ Longest Losing Streak</h3>
+    <p id="lossStreak">0</p>
+</div>
+    
+<div class="dashboard-card">
+    <h3>🎯 Daily Trading Goal</h3>
+    <p id="dailyGoal">$0.00 / $500.00</p>
+
+    <progress id="goalProgress" value="0" max="500"></progress>
+</div>
+    
+<div class="dashboard-card">
+    <h3>📅 Monthly Performance</h3>
+
+    <p><strong>Profit:</strong> <span id="monthlyProfit">$0.00</span></p>
+
+    <p><strong>Trades:</strong> <span id="monthlyTrades">0</span></p>
+
+    <p><strong>Win Rate:</strong> <span id="monthlyWinRate">0%</span></p>
+</div>
+ 
+</div>
+    
+<button class="btn" onclick="window.location.href='trade-journal.html'">
+📓 Back to Trade Journal
+</button>
+    
+<br><br>
+      
+<section class="related-tools">
+
+    <h2>Related Trading Tools</h2>
+
+    <p>Improve your trading analysis with these calculators and tools.</p>
+
+    <div class="related-tools-grid">
+
+        <a href="trade-journal.html">
+            📓 Trade Journal
+        </a>
+
+        <a href="risk-calculator.html">
+            🛡️ Risk Calculator
+        </a>
+
+        <a href="position-size-calculator.html">
+            📊 Position Size Calculator
+        </a>
+
+        <a href="profit-calculator.html">
+            💰 Profit Calculator
+        </a>
+
+        <a href="drawdown-calculator.html">
+            📉 Drawdown Calculator
+        </a>
+
+        <a href="account-growth-calculator.html">
+            📈 Account Growth Calculator
+        </a>
+
+    </div>
+
+</section>
+
+<a href="index.html" class="btn">
+🏠 Back to Home
+</a>
+
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="script.js"></script>
+    
+<footer class="footer">
+    <p>© 2026 FOREX TOOLS | Built by Patrick Ezekiel</p>
+</footer>
+    
+<button id="topBtn" onclick="topFunction()">
+
+⬆️
+
+</button>
+
+</body>
+</html>
