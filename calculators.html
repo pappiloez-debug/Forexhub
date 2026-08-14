@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CALCULATORS</title>
+    
+    <link rel="manifest" href="manifest.json">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <img src="logo.jpg" alt="FOREX TOOLS Logo" class="logo">
+    
+    <button id="darkModeBtn" class="btn" onclick="toggleDarkMode()">
+🌙 Dark Mode
+</button>
+
+    <h1>Free Forex Trading Calculators & Tools</h1>
+
+    <p> ...plan to trade, trade to plan.</p>
+    <nav class="navbar">
+<div class="nav-links">
+<a href="index.html">Home</a>
+</div>
+</nav>
+
+</header>
+    
+ <div class="search-box">
+    <input
+        type="text"
+        id="searchInput"
+        placeholder="🔍 Search calculators..."
+        onkeyup="searchCalculators()">
+</div>
+
+<section class="cards">
+    
+    <strong>risk management</strong>
+    
+
+<div class="card calculator-card">
+
+    <button class="favorite-btn" onclick="toggleFavorite(this)">
+        ☆
+    </button>
+
+    <a href="pip-calculator.html">
+        <h3>📈 Pip Calculator</h3>
+    </a>
+
+</div>
+    
+<div class="card calculator-card">
+
+    <button class="favorite-btn" onclick="toggleFavorite(this)">
+        ☆
+    </button>
+
+    <a href="risk-calculator.html">
+    <h3>⚖️ Risk Calculator</h3>
+    <p>Protect your trading account.</p>
+</a>
+
+</div>
+
+<div class="card calculator-card">
+
+    <button class="favorite-btn" onclick="toggleFavorite(this)">
+        ☆
+    </button>
+
+    <a href="lot-size-calculator.html">
+    <h3>📏 Lot Size Calculator</h3>
+    <p>Calculate the right lot size for your trade.</p>
+</a>
+
+</div>
+
+<div class="card calculator-card">
+
+<button class="favorite-btn" onclick="toggleFavorite(this)">
+    ☆
+</button>
+
+<a href="profit-calculator.html">
+    <h3>💰 Profit Calculator</h3>
+</a>
+
+</div>
+    
+<div class="card calculator-card">
+
+    <button class="favorite-btn" onclick="toggleFavorite(this)">
+        ☆
+    </button>
+
+    <a href="margin-calculator.html">
+    <h3>📉 Margin Calculator</h3>
+    <p>Estimate the margin required for your trade.</p>
+</a>
+
+</div>
+    
+<div class="card calculator-card">
+
+    <button class="favorite-btn" onclick="toggleFavorite(this)">
+        ☆
+    </button>
+
+    <a href="position-size-calculator.html">
+    <h3>📈 Position Size Calculator</h3>
+    <p>Calculate the ideal position size for your trade.</p>
+</a>
+
+</div>
+    
+<div class="card calculator-card">
+
+    <button class="favorite-btn" onclick="toggleFavorite(this)">
+        ☆
+    </button>
+
+    <a href="drawdown-calculator.html">
+    <h3>📉 Drawdown Calculator</h3>
+    <p>Calculate the recovery needed after a trading loss.</p>
+</a>
+
+</div>
+    
+<div class="card calculator-card">
+
+    <button class="favorite-btn" onclick="toggleFavorite(this)">
+        ☆
+    </button>
+
+    <a href="risk-reward-calculator.html">
+    <h3>🎯 Risk-to-Reward Calculator</h3>
+    <p>Calculate your trading risk-to-reward ratio.</p>
+</a>
+
+</div>
+    
+<div class="card calculator-card">
+
+    <button class="favorite-btn" onclick="toggleFavorite(this)">
+        ☆
+    </button>
+
+    <a href="pivot-calculator.html">
+📈 Pivot Point Calculator
+</a>
+
+</div>
+    
+
+
+<div class="card calculator-card">
+
+    <button class="favorite-btn" onclick="toggleFavorite(this)">
+        ☆
+    </button>
+
+    <a href="account-growth-calculator.html">
+        <h3>📈Account Growth Calculator</h3>
+    </a>
+
+</div>
+
+<div class="card calculator-card">
+
+    <button class="favorite-btn" onclick="toggleFavorite(this)">
+        ☆
+    </button>
+
+    <a href="fibonacci-calculator.html">
+        <h3>📈 Fibonacci Calculator</h3>
+    </a>
+
+</div>
+    
+<div class="card calculator-card">
+
+    <button class="favorite-btn" onclick="toggleFavorite(this)">
+        ☆
+    </button>
+
+    <a href="compounding-calculator.html">
+    <h3>📈 Compounding Calculator</h3>
+<p>Calculate how your trading account could grow through compounding.</p>
+</a>
+
+</div>
+
+<div class="card calculator-card">
+
+    <button class="favorite-btn" onclick="toggleFavorite(this)">
+        ☆
+    </button>
+
+    <a href="currency-strength-dashboard.html">
+    <h3>💱 Currency Strength Calculator</h3>
+<p>Analyze relative currency strength to identify stronger and weaker currencies.</p>
+</a>
+
+</div>
+    
+<div class="card calculator-card">
+
+<button class="favorite-btn" onclick="toggleFavorite(this)">
+    ☆
+</button>
+
+<a href="leverage-calculator.html">
+    <h3>⚖️ Leverage Calculator</h3>
+</a>
+
+</div>
+    
+<div class="card calculator-card">
+
+    <button class="favorite-btn" onclick="toggleFavorite(this)">
+        ☆
+    </button>
+
+    <a href="market-scanner.html">
+    <h3>🔍 Smart Market Scanner</h3>
+    <p>Scan market conditions and identify potential trading opportunities.</p>
+</a>
+
+</div>
+    
+<div class="card calculator-card">
+
+    <button class="favorite-btn" onclick="toggleFavorite(this)">
+        ☆
+    </button>
+
+    <a href="pip-difference-calculator.html">
+    <h3>📏 Pip Difference Calculator</h3>
+    <p>Calculate the number of pips between two Forex prices.</p>
+</a>
+
+</div>
+    
+<div class="card calculator-card">
+
+    <button class="favorite-btn" onclick="toggleFavorite(this)">
+        ☆
+    </button>
+
+    <a href="risk-of-ruin.html">
+    <h3>📉 Risk of Ruin Calculator</h3>
+    <p>Estimate the probability of losing a significant portion of your trading account.</p>
+</a>
+
+</div>
+    
+<div class="card calculator-card">
+
+    <button class="favorite-btn" onclick="toggleFavorite(this)">
+        ☆
+    </button>
+
+    <a href="spread-cost-calculator.html">
+    <h3>Spread Cost Calculator</h3>
+    
+</a>
+
+</div>
+    
+<div class="card calculator-card">
+
+    <button class="favorite-btn" onclick="toggleFavorite(this)">
+        ☆
+    </button>
+
+    <a href="trading-plan-generator.html">
+📈 Trading Plan Generator
+</a>
+
+</div>
+    
+<div class="card calculator-card">
+
+    <button class="favorite-btn" onclick="toggleFavorite(this)">
+        ☆
+    </button>
+
+    <a href="trading-session.html">
+        <h3>Trading Session Calculator</h3>
+    </a>
+
+</div>
+    
+    <h3>🥇 Gold Trading Calculators</h3>
+    
+<div class="card calculator-card">
+
+    <button class="favorite-btn" onclick="toggleFavorite(this)">
+        ☆
+    </button>
+
+    <a href="gold-calculators.html">
+        <h3>🥇Gold Profit Calculator</h3>
+    </a>
+
+</div>
+    
+<strong>Basic Crypto Calculators</strong>
+    
+<div class="card calculator-card">
+
+    <button class="favorite-btn" onclick="toggleFavorite(this)">
+        ☆
+    </button>
+
+    <a href="crypto-dca-calculator.html">
+        <h3>🥇Crypto DCA Calculator</h3>
+    </a>
+
+</div>
+    
+<div class="card calculator-card">
+
+    <button class="favorite-btn" onclick="toggleFavorite(this)">
+        ☆
+    </button>
+
+    <a href="crypto-portfolio-tracker.html">
+        <h3>Crypto Portfolio Tracker</h3>
+    </a>
+
+</div>
+
+<div class="card calculator-card">
+
+    <button class="favorite-btn" onclick="toggleFavorite(this)">
+        ☆
+    </button>
+
+    <a href="crypto-position-size.html">
+        <h3>Crypto Position Size</h3>
+    </a>
+
+</div>
+    
+<div class="card calculator-card">
+
+    <button class="favorite-btn" onclick="toggleFavorite(this)">
+        ☆
+    </button>
+
+    <a href="crypto-profit-calculator.html">
+        <h3>Crypto Profit Calculator</h3>
+    </a>
+
+</div>
+
+<div class="card calculator-card">
+
+    <button class="favorite-btn" onclick="toggleFavorite(this)">
+        ☆
+    </button>
+
+    <a href="crypto-roi-calculator.html">
+        <h3>Crypto ROI Calculator</h3>
+    </a>
+
+</div>
+
+<div class="card calculator-card">
+
+    <button class="favorite-btn" onclick="toggleFavorite(this)">
+        ☆
+    </button>
+
+    <a href="crypto-staking-calculator.html">
+        <h3>Crypto Staking Calculator</h3>
+    </a>
+</div>
+    
+<div class="card calculator-card">
+
+    <button class="favorite-btn" onclick="toggleFavorite(this)">
+        ☆
+    </button>
+
+    <a href="crypto-liquidation-calculators.html">
+        <h3>Crypto liquidation Calculator</h3>
+    </a>
+
+</div>
+    
+    <div class="card calculator-card">
+
+    <button class="favorite-btn" onclick="toggleFavorite(this)">
+        ☆
+    </button>
+
+    <a href="stock-profit-calculators.html">
+        <h3>Stock Profit Calculator</h3>
+    </a>
+
+</div>
+    
+    <div class="card calculator-card">
+
+    <button class="favorite-btn" onclick="toggleFavorite(this)">
+        ☆
+    </button>
+
+    <a href="stock-dividend-calculators.html">
+        <h3>Stock Dividend Calculator</h3>
+    </a>
+
+</div>
+<a href="index.html" class="btn">
+🏠 Back to Home
+</a>
+    
+</section>
+<script src="script.js"></script>
+
+<footer>
+
+
+
+<p class="copyright">
+© 2026 EZ TRADING HUB
+</p>
+
+<p>Developed with ❤️ by STEPHEN EZENWA</p>
+
+</footer>
+
+<button id="topBtn" onclick="topFunction()">
+
+⬆️
+
+</button>
+
+</body>
+
+</html>
+
