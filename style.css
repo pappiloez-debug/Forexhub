@@ -615,3 +615,55 @@ footer p {
     }
 
 }
+
+/* =====================================================
+   RELATED CALCULATORS
+   ===================================================== */
+
+.related-tools {
+    max-width: 1100px;
+    margin: 50px auto;
+    padding: 35px 25px;
+    text-align: center;
+}
+
+.related-tools h2 {
+    font-size: 30px;
+    margin-bottom: 8px;
+    color: #10223d;
+}
+
+.related-tools > p {
+    color: #718096;
+    margin-bottom: 25px;
+}
+
+.related-tools-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.related-tools-grid a {
+    display: block;
+    padding: 18px;
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    color: #078866;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.25s;
+}
+
+.related-tools-grid a:hover {
+    transform: translateY(-3px);
+    border-color: #12b886;
+    box-shadow: 0 8px 20px rgba(20,40,70,0.10);
+}
+
+@media (max-width: 650px) {
+    .related-tools-grid {
+        grid-template-columns: 1fr;
+    }
+}
