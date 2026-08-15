@@ -1,0 +1,60 @@
+
+
+<section class="welcome-banner">
+
+<h2>✅ Trading Checklist</h2>
+
+<p>Complete this checklist before placing any trade.</p>
+
+<label><input type="checkbox"> Trend confirmed</label><br><br>
+
+<label><input type="checkbox"> Support / Resistance checked</label><br><br>
+
+<label><input type="checkbox"> Risk is within my plan</label><br><br>
+
+<label><input type="checkbox"> Risk/Reward is at least 1:2</label><br><br>
+
+<label><input type="checkbox"> No major news is approaching</label><br><br>
+
+<label><input type="checkbox"> Trade setup is fully confirmed</label><br><br>
+
+<button onclick="checkReady()" class="btn">
+Check Status
+</button>
+
+<h3 id="status"></h3>
+
+</section>
+
+<script>
+function checkReady(){
+
+let checks=document.querySelectorAll("input[type='checkbox']");
+let ready=true;
+
+checks.forEach(function(box){
+    if(!box.checked){
+        ready=false;
+    }
+});
+
+document.getElementById("status").textContent =
+ready ? "🎉 Ready to Trade!" : "⚠️ Complete all checklist items first.";
+
+}
+</script>
+
+<footer class="footer">
+© 2026 FOREX TOOLS
+</footer>
+
+</body>
+</html>!DOCTYPE html>
+
+<html>
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <title>Hello, World!</title>
+</head>
+<body>
+ 
