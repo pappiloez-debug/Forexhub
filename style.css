@@ -730,3 +730,110 @@ footer p {
         grid-template-columns: 1fr;
     }
 }
+
+/* =========================================
+   ACCESSIBILITY / CONTRAST IMPROVEMENTS
+   EZTradingHub
+   ========================================= */
+
+/* Main page text */
+body {
+    color: #172033;
+}
+
+/* Secondary/descriptive text */
+p,
+.description,
+.subtitle,
+.hero-text,
+.card-description {
+    color: #334155;
+}
+
+/* Logo text */
+.logo-text,
+.logo-title,
+.logo-name {
+    color: #ffffff;
+}
+
+/* Small labels and section headings */
+.section-title,
+.section-heading,
+.category-title,
+.tools-title {
+    color: #0f172a;
+}
+
+/* Primary CTA button */
+.primary-btn,
+.btn-primary {
+    background-color: #006b52;
+    color: #ffffff;
+    border-color: #006b52;
+}
+
+/* Primary button hover */
+.primary-btn:hover,
+.btn-primary:hover {
+    background-color: #005640;
+    color: #ffffff;
+}
+
+/* Search input */
+input,
+select,
+textarea {
+    color: #172033;
+    background-color: #ffffff;
+}
+
+/* Placeholder text */
+input::placeholder,
+textarea::placeholder {
+    color: #475569;
+    opacity: 1;
+}
+
+/* Calculator links */
+.calculator-card a,
+.category-card a {
+    color: #006b52;
+}
+
+/* Calculator/action links */
+.calculator-card a:hover,
+.category-card a:hover {
+    color: #004d3b;
+}
+
+/* "Calculate" / "Open Tool" links */
+.calculator-card .btn,
+.category-card .btn {
+    color: #ffffff;
+    background-color: #006b52;
+}
+
+/* Trading Tools / Explore labels */
+.trading-tools,
+.explore,
+.section-label {
+    color: #0f172a;
+}
+
+/* Footer text */
+footer,
+footer p,
+footer a {
+    color: #334155;
+}
+
+footer a:hover {
+    color: #006b52;
+}
+
+/* Make important text easier to read */
+strong,
+b {
+    color: #0f172a;
+}
