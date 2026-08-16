@@ -871,3 +871,76 @@ section p,
 .primary-btn:hover {
     background-color: #047857;
 }
+
+/* ================================
+   ACCESSIBILITY CONTRAST FIX
+   ================================ */
+
+/* Main page text */
+body {
+    color: #111827;
+}
+
+/* Paragraph text */
+p {
+    color: #1f2937;
+}
+
+/* Section headings and labels */
+span {
+    color: #111827;
+}
+
+/* Logo text */
+.logo-icon {
+    color: #ffffff;
+}
+
+/* Primary buttons */
+.primary-btn {
+    color: #ffffff;
+    background-color: #047857;
+}
+
+/* Button hover */
+.primary-btn:hover {
+    color: #ffffff;
+    background-color: #065f46;
+}
+
+/* Section titles */
+.section-title,
+.categories-title,
+h1,
+h2,
+h3 {
+    color: #111827;
+}
+
+/* Calculator/category descriptions */
+.calculator-card p,
+.category-card p {
+    color: #1f2937;
+}
+
+/* Footer */
+footer {
+    background-color: #111827;
+    color: #ffffff;
+}
+
+footer p,
+footer span,
+footer a,
+.footer-logo {
+    color: #ffffff;
+}
+
+/* Footer links */
+footer a {
+    text-decoration: underline;
+}
+
+footer a:hover {
+    color: #d1d5db;
+}
