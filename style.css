@@ -837,3 +837,37 @@ strong,
 b {
     color: #0f172a;
 }
+
+/* Accessibility: improve text contrast */
+
+.logo-icon {
+    color: #ffffff;
+}
+
+.hero p,
+section p,
+.calculator-card p,
+.category-card p {
+    color: #1f2937;
+}
+
+.section-title,
+.categories-title,
+#calculators h2,
+#tools h2 {
+    color: #111827;
+}
+
+.calculator-card a,
+.category-card a {
+    color: #0f766e;
+}
+
+.primary-btn {
+    color: #ffffff;
+    background-color: #059669;
+}
+
+.primary-btn:hover {
+    background-color: #047857;
+}
