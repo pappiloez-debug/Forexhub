@@ -1013,3 +1013,72 @@ footer a,
 .footer-logo {
     color: #ffffff;
 }
+
+/* =================================
+   ACCESSIBILITY CONTRAST FIX
+   ================================= */
+
+/* Main headings */
+h1,
+h2,
+h3 {
+    color: #111827;
+}
+
+/* Normal page text */
+body {
+    color: #111827;
+}
+
+main p {
+    color: #1f2937;
+}
+
+/* Section labels */
+.categories > .section-title,
+.categories > span {
+    color: #111827;
+}
+
+/* About section */
+#about p {
+    color: #1f2937;
+}
+
+#about span {
+    color: #111827;
+}
+
+/* Calculator/category descriptions */
+.calculator-card p,
+.category-card p {
+    color: #1f2937;
+}
+
+/* Header */
+.site-header h1 {
+    color: #ffffff;
+}
+
+.site-header .logo-icon {
+    color: #ffffff;
+}
+
+/* Primary buttons */
+.primary-btn {
+    color: #ffffff;
+    background-color: #047857;
+}
+
+/* Footer */
+footer {
+    background-color: #111827;
+    color: #ffffff;
+}
+
+footer p,
+footer span,
+footer a,
+.footer-logo {
+    color: #ffffff;
+}
