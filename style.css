@@ -1082,3 +1082,75 @@ footer a,
 .footer-logo {
     color: #ffffff;
 }
+
+/* =========================================
+   ACCESSIBILITY CONTRAST FIX
+   EZTradingHub
+   ========================================= */
+
+/* Main body text */
+body {
+    color: #1f2937;
+}
+
+/* Section headings */
+section span,
+.categories span,
+.section-title,
+.section-heading {
+    color: #0f766e;
+}
+
+/* Normal descriptive text */
+p {
+    color: #1f2937;
+}
+
+/* Logo */
+.logo-icon {
+    background: #047857;
+    color: #ffffff;
+}
+
+/* Make logo text clearly readable */
+.logo-icon,
+.logo-icon * {
+    color: #ffffff;
+}
+
+/* Trading Tools / Explore headings */
+.categories > span,
+#tools > span {
+    color: #0f766e;
+    font-weight: 700;
+}
+
+/* Buttons */
+.primary-btn {
+    background: #047857;
+    color: #ffffff;
+}
+
+/* Category cards */
+.category-card p,
+.calculator-card p {
+    color: #1f2937;
+}
+
+/* Category/card headings */
+.category-card h3,
+.calculator-card h3 {
+    color: #111827;
+}
+
+/* Footer text */
+footer,
+footer p,
+footer a {
+    color: #1f2937;
+}
+
+/* Footer links */
+footer a {
+    color: #0f766e;
+}
