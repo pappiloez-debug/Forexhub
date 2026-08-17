@@ -1154,3 +1154,112 @@ footer a {
 footer a {
     color: #0f766e;
 }
+
+/* =====================================================
+   FINAL ACCESSIBILITY CONTRAST FIX
+   EZTradingHub
+   ===================================================== */
+
+/* Header */
+.site-header {
+    background: #062f5f;
+}
+
+.site-header h1,
+.site-header .logo-area span,
+.site-header .menu-btn,
+.site-header #mainNav a {
+    color: #ffffff;
+}
+
+/* EZ logo */
+.site-header .logo-icon {
+    background: #047857;
+    color: #ffffff;
+}
+
+/* Search description */
+.search-section p {
+    color: #334155;
+}
+
+/* Trading Tools heading */
+.section-heading > span {
+    color: #075985;
+}
+
+/* Trading Tools description */
+.section-heading p {
+    color: #334155;
+}
+
+/* Explore section */
+.categories > span,
+.categories .section-title,
+#tools > span {
+    color: #075985;
+}
+
+/* Category descriptions */
+.category-card p {
+    color: #334155;
+}
+
+/* Calculator descriptions */
+.calculator-card p {
+    color: #334155;
+}
+
+/* About section */
+.about > div > span {
+    color: #075985;
+}
+
+.about p {
+    color: #334155;
+}
+
+/* Main headings */
+h1,
+h2,
+h3 {
+    color: #111827;
+}
+
+/* Primary buttons */
+.primary-btn {
+    background: #047857;
+    color: #ffffff;
+}
+
+.primary-btn:hover {
+    background: #065f46;
+    color: #ffffff;
+}
+
+/* Search input */
+.search-box input {
+    color: #111827;
+}
+
+.search-box input::placeholder {
+    color: #475569;
+    opacity: 1;
+}
+
+/* Footer */
+footer {
+    background: #111827;
+    color: #ffffff;
+}
+
+footer p,
+footer span,
+footer .footer-logo,
+footer a {
+    color: #ffffff;
+}
+
+footer a:hover {
+    color: #d1d5db;
+}
