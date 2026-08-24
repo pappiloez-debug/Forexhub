@@ -1,0 +1,1251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FAQ | Frequently Asked Questions | EZTradingHub</title>
+
+    <meta name="description" content="Find answers to frequently asked questions about EZTradingHub, trading calculators, forex tools, risk management, gold trading tools and financial calculators.">
+
+    <meta name="keywords" content="EZTradingHub FAQ, trading calculator FAQ, forex tools FAQ, forex calculator questions, trading tools questions, risk management calculator">
+
+    <meta name="author" content="EZTradingHub">
+
+    <meta name="robots" content="index, follow">
+
+    <link rel="canonical" href="https://eztradinghub.com/FAQ.html">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f7fb;
+            color: #172033;
+            line-height: 1.7;
+        }
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            background: #0b1220;
+            color: white;
+            padding: 18px 6%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+        }
+
+        .nav {
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: #19c37d;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            margin-left: 22px;
+            font-size: 14px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #19c37d;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            background: linear-gradient(135deg, #0b1220, #15233c);
+            color: white;
+            text-align: center;
+            padding: 90px 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(38px, 6vw, 64px);
+            margin-bottom: 15px;
+        }
+
+        .hero h1 span {
+            color: #19c37d;
+        }
+
+        .hero p {
+            max-width: 760px;
+            margin: auto;
+            color: #d8e2ef;
+            font-size: 18px;
+        }
+
+        /* =========================
+           SEARCH
+        ========================= */
+
+        .search-section {
+            margin-top: -35px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .search-box {
+            max-width: 750px;
+            width: 90%;
+            margin: auto;
+            background: white;
+            padding: 10px;
+            border-radius: 15px;
+            box-shadow: 0 15px 40px rgba(20,35,60,0.14);
+            display: flex;
+            align-items: center;
+        }
+
+        .search-box input {
+            width: 100%;
+            border: none;
+            outline: none;
+            padding: 15px;
+            font-size: 16px;
+            font-family: inherit;
+        }
+
+        .search-icon {
+            font-size: 22px;
+            padding: 0 10px;
+        }
+
+        /* =========================
+           MAIN
+        ========================= */
+
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .section {
+            padding: 75px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            font-size: 34px;
+            margin-bottom: 10px;
+            color: #101828;
+        }
+
+        .section-title p {
+            color: #667085;
+        }
+
+        /* =========================
+           CATEGORY BUTTONS
+        ========================= */
+
+        .categories {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 40px;
+        }
+
+        .category-btn {
+            border: 1px solid #dce3ec;
+            background: white;
+            color: #344054;
+            padding: 10px 18px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 700;
+            transition: 0.3s;
+        }
+
+        .category-btn:hover,
+        .category-btn.active {
+            background: #19c37d;
+            color: #06150e;
+            border-color: #19c37d;
+        }
+
+        /* =========================
+           FAQ
+        ========================= */
+
+        .faq-list {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .faq-item {
+            background: white;
+            border: 1px solid #e2e7ef;
+            border-radius: 16px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .faq-item:hover {
+            box-shadow: 0 8px 25px rgba(20,35,60,0.07);
+        }
+
+        .faq-question {
+            padding: 21px 24px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            font-size: 16px;
+            font-weight: 800;
+            color: #172033;
+        }
+
+        .faq-question span {
+            width: 32px;
+            height: 32px;
+            min-width: 32px;
+            border-radius: 50%;
+            background: #e8fff5;
+            color: #0b9f67;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            transition: 0.3s;
+        }
+
+        .faq-item.active .faq-question span {
+            background: #19c37d;
+            color: #06150e;
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            display: none;
+            padding: 0 24px 22px;
+            color: #667085;
+            border-top: 1px solid #edf0f5;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-answer p {
+            margin-top: 18px;
+        }
+
+        .faq-answer strong {
+            color: #344054;
+        }
+
+        /* =========================
+           NO RESULTS
+        ========================= */
+
+        #noResults {
+            display: none;
+            text-align: center;
+            padding: 35px;
+            background: white;
+            border-radius: 15px;
+            color: #667085;
+        }
+
+        /* =========================
+           CTA
+        ========================= */
+
+        .cta {
+            background: #0b1220;
+            color: white;
+            text-align: center;
+            padding: 75px 20px;
+        }
+
+        .cta h2 {
+            font-size: 34px;
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+            max-width: 700px;
+            margin: auto auto 25px;
+            color: #cbd5e1;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 28px;
+            background: #19c37d;
+            color: #06150e;
+            text-decoration: none;
+            font-weight: 800;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #25e395;
+            transform: translateY(-2px);
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: #070c16;
+            color: #aeb8c7;
+            padding: 35px 20px;
+            text-align: center;
+        }
+
+        footer a {
+            color: #19c37d;
+            text-decoration: none;
+        }
+
+        .footer-links {
+            margin-bottom: 15px;
+        }
+
+        .footer-links a {
+            margin: 0 10px;
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 800px) {
+
+            .nav {
+                flex-direction: column;
+            }
+
+            nav a {
+                margin: 0 7px;
+            }
+
+            .hero {
+                padding: 70px 20px;
+            }
+
+        }
+
+        @media (max-width: 500px) {
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .section {
+                padding: 55px 0;
+            }
+
+            .section-title h2 {
+                font-size: 28px;
+            }
+
+            .faq-question {
+                padding: 18px;
+                font-size: 15px;
+            }
+
+            .faq-answer {
+                padding: 0 18px 18px;
+            }
+
+            .category-btn {
+                font-size: 13px;
+                padding: 9px 14px;
+            }
+
+            nav a {
+                font-size: 12px;
+                margin: 0 4px;
+            }
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+
+    <div class="nav">
+
+        <div class="logo">
+            EZ<span>TradingHub</span>
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="calculators.html">Tools</a>
+            <a href="about.html">About</a>
+            <a href="faq.html">FAQ</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+    </div>
+
+</header>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+    <h1>Frequently Asked <span>Questions</span></h1>
+
+    <p>
+        Find answers to common questions about EZTradingHub,
+        our trading calculators, financial tools, and resources.
+    </p>
+
+</section>
+
+
+<!-- =========================
+     SEARCH
+========================= -->
+
+<div class="search-section">
+
+    <div class="search-box">
+
+        <div class="search-icon">
+            🔎
+        </div>
+
+        <input
+            type="search"
+            id="faqSearch"
+            placeholder="Search frequently asked questions..."
+            autocomplete="off"
+        >
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     FAQ SECTION
+========================= -->
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>How Can We Help?</h2>
+
+            <p>
+                Browse our frequently asked questions or search for a specific topic.
+            </p>
+
+        </div>
+
+
+        <!-- CATEGORY FILTERS -->
+
+        <div class="categories">
+
+            <button
+                class="category-btn active"
+                data-category="all"
+            >
+                All
+            </button>
+
+            <button
+                class="category-btn"
+                data-category="tools"
+            >
+                Trading Tools
+            </button>
+
+            <button
+                class="category-btn"
+                data-category="risk"
+            >
+                Risk Management
+            </button>
+
+            <button
+                class="category-btn"
+                data-category="account"
+            >
+                Website
+            </button>
+
+            <button
+                class="category-btn"
+                data-category="general"
+            >
+                General
+            </button>
+
+        </div>
+
+
+        <div class="faq-list" id="faqList">
+
+
+            <!-- FAQ 1 -->
+
+            <div class="faq-item" data-category="general">
+
+                <div class="faq-question">
+
+                    What is EZTradingHub?
+
+                    <span>+</span>
+
+                </div>
+
+                <div class="faq-answer">
+
+                    <p>
+                        EZTradingHub is a trading tools and financial education
+                        platform designed to provide practical calculators,
+                        resources, and information for traders and market
+                        participants.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- FAQ 2 -->
+
+            <div class="faq-item" data-category="tools">
+
+                <div class="faq-question">
+
+                    What trading calculators are available?
+
+                    <span>+</span>
+
+                </div>
+
+                <div class="faq-answer">
+
+                    <p>
+                        EZTradingHub provides a growing collection of trading
+                        calculators. These may include <strong>pip calculators,
+                        position size calculators, lot size calculators,
+                        profit calculators, margin calculators, drawdown
+                        calculators, risk-to-reward calculators</strong> and
+                        other financial tools.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- FAQ 3 -->
+
+            <div class="faq-item" data-category="tools">
+
+                <div class="faq-question">
+
+                    Are EZTradingHub calculators free?
+
+                    <span>+</span>
+
+                </div>
+
+                <div class="faq-answer">
+
+                    <p>
+                        Many EZTradingHub calculators are designed to be
+                        available directly through the website. Availability
+                        and features may vary between individual tools.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- FAQ 4 -->
+
+            <div class="faq-item" data-category="tools">
+
+                <div class="faq-question">
+
+                    How does a pip calculator work?
+
+                    <span>+</span>
+
+                </div>
+
+                <div class="faq-answer">
+
+                    <p>
+                        A pip calculator estimates the monetary value of a
+                        pip based on information such as the currency pair,
+                        trade size, and account currency. The result can help
+                        traders understand potential gains or losses from
+                        price movements.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- FAQ 5 -->
+
+            <div class="faq-item" data-category="risk">
+
+                <div class="faq-question">
+
+                    What is a position size calculator?
+
+                    <span>+</span>
+
+                </div>
+
+                <div class="faq-answer">
+
+                    <p>
+                        A position size calculator can help traders estimate
+                        an appropriate trade size based on factors such as
+                        account balance, risk percentage, entry price, and
+                        stop-loss distance.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- FAQ 6 -->
+
+            <div class="faq-item" data-category="risk">
+
+                <div class="faq-question">
+
+                    Why is risk management important?
+
+                    <span>+</span>
+
+                </div>
+
+                <div class="faq-answer">
+
+                    <p>
+                        Risk management is an important part of trading because
+                        financial markets can move against a position. Managing
+                        position size, stop-loss levels, and potential exposure
+                        can help traders control the amount they are willing
+                        to risk.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- FAQ 7 -->
+
+            <div class="faq-item" data-category="risk">
+
+                <div class="faq-question">
+
+                    Can I rely completely on a calculator's result?
+
+                    <span>+</span>
+
+                </div>
+
+                <div class="faq-answer">
+
+                    <p>
+                        No. Calculators are tools intended to assist with
+                        calculations. Results should be checked against your
+                        broker's contract specifications, account currency,
+                        trading conditions, fees, spreads, and other applicable
+                        factors.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- FAQ 8 -->
+
+            <div class="faq-item" data-category="tools">
+
+                <div class="faq-question">
+
+                    Do the calculators guarantee trading profits?
+
+                    <span>+</span>
+
+                </div>
+
+                <div class="faq-answer">
+
+                    <p>
+                        No. A calculator only performs a mathematical
+                        calculation. It cannot predict market movements or
+                        guarantee profits.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- FAQ 9 -->
+
+            <div class="faq-item" data-category="general">
+
+                <div class="faq-question">
+
+                    Does EZTradingHub provide investment advice?
+
+                    <span>+</span>
+
+                </div>
+
+                <div class="faq-answer">
+
+                    <p>
+                        No. EZTradingHub provides educational information,
+                        calculators, and general financial-market resources.
+                        Nothing on the website should be interpreted as
+                        personalized financial, investment, or trading advice.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- FAQ 10 -->
+
+            <div class="faq-item" data-category="tools">
+
+                <div class="faq-question">
+
+                    Does EZTradingHub support forex and gold trading?
+
+                    <span>+</span>
+
+                </div>
+
+                <div class="faq-answer">
+
+                    <p>
+                        EZTradingHub includes tools intended for different
+                        areas of financial markets, including forex and
+                        gold-related trading calculations. Additional tools
+                        may be added as the platform develops.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- FAQ 11 -->
+
+            <div class="faq-item" data-category="account">
+
+                <div class="faq-question">
+
+                    Do I need an account to use the website?
+
+                    <span>+</span>
+
+                </div>
+
+                <div class="faq-answer">
+
+                    <p>
+                        Some tools may be available without creating an
+                        account. Access requirements can vary depending on
+                        the specific feature or service.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- FAQ 12 -->
+
+            <div class="faq-item" data-category="account">
+
+                <div class="faq-question">
+
+                    Can I use EZTradingHub on my phone?
+
+                    <span>+</span>
+
+                </div>
+
+                <div class="faq-answer">
+
+                    <p>
+                        Yes. EZTradingHub is designed to provide a responsive
+                        experience across smartphones, tablets, laptops, and
+                        desktop computers.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- FAQ 13 -->
+
+            <div class="faq-item" data-category="tools">
+
+                <div class="faq-question">
+
+                    Can I suggest a new calculator?
+
+                    <span>+</span>
+
+                </div>
+
+                <div class="faq-answer">
+
+                    <p>
+                        Yes. We welcome suggestions for new trading calculators
+                        and financial tools. Visit our
+                        <a href="contact.html">
+                            Contact page
+                        </a>
+                        to send us your suggestion.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- FAQ 14 -->
+
+            <div class="faq-item" data-category="general">
+
+                <div class="faq-question">
+
+                    How can I report a calculator problem?
+
+                    <span>+</span>
+
+                </div>
+
+                <div class="faq-answer">
+
+                    <p>
+                        If you notice an unexpected result or technical issue,
+                        please contact us and provide the name of the
+                        calculator, the values entered, and a description of
+                        the problem.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- FAQ 15 -->
+
+            <div class="faq-item" data-category="general">
+
+                <div class="faq-question">
+
+                    How can I contact EZTradingHub?
+
+                    <span>+</span>
+
+                </div>
+
+                <div class="faq-answer">
+
+                    <p>
+                        You can contact us through our
+                        <a href="contact.html">
+                            Contact page
+                        </a>
+                        for questions, feedback, suggestions, and technical
+                        issues.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <div id="noResults">
+
+            <h3>No matching questions found.</h3>
+
+            <p>
+                Try another search term or select the "All" category.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CTA
+========================= -->
+
+<section class="cta">
+
+    <h2>Still Have Questions?</h2>
+
+    <p>
+        If you couldn't find the answer you're looking for,
+        send us a message and we'll be happy to hear from you.
+    </p>
+
+    <a
+        href="contact.html"
+        class="btn"
+    >
+        Contact EZTradingHub
+    </a>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+<footer>
+
+        <div>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="faq.html">FAQ</a>
+            <a href="terms.html">Terms & Conditions</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="cookie-policy.html">Cookie Policy</a>
+            <a href="disclaimer.html">Disclaimer</a>
+            <a href="contact.html">Contact</a>
+        </div>
+
+        <p class="copyright">
+            © 2026 EZTradingHub. All rights reserved.
+        </p>
+
+        <p class="copyright">
+            EZTradingHub provides educational and informational tools.
+            Trading involves risk.
+        </p>
+
+    </footer>
+    <script src="cookie-consent.js"></script>
+
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script>
+
+    const faqItems =
+        document.querySelectorAll(".faq-item");
+
+    const faqSearch =
+        document.getElementById("faqSearch");
+
+    const categoryButtons =
+        document.querySelectorAll(".category-btn");
+
+    const noResults =
+        document.getElementById("noResults");
+
+
+    let currentCategory = "all";
+
+
+    /* =========================
+       FAQ ACCORDION
+    ========================= */
+
+    faqItems.forEach(function(item) {
+
+        const question =
+            item.querySelector(".faq-question");
+
+        question.addEventListener("click", function() {
+
+            const isActive =
+                item.classList.contains("active");
+
+
+            /* Close all other FAQ items */
+
+            faqItems.forEach(function(otherItem) {
+
+                if (otherItem !== item) {
+
+                    otherItem.classList.remove("active");
+
+                    const otherIcon =
+                        otherItem.querySelector(".faq-question span");
+
+                    otherIcon.textContent = "+";
+
+                }
+
+            });
+
+
+            if (!isActive) {
+
+                item.classList.add("active");
+
+                question.querySelector("span").textContent = "−";
+
+            } else {
+
+                item.classList.remove("active");
+
+                question.querySelector("span").textContent = "+";
+
+            }
+
+        });
+
+    });
+
+
+    /* =========================
+       CATEGORY FILTER
+    ========================= */
+
+    categoryButtons.forEach(function(button) {
+
+        button.addEventListener("click", function() {
+
+            categoryButtons.forEach(function(btn) {
+                btn.classList.remove("active");
+            });
+
+            button.classList.add("active");
+
+            currentCategory =
+                button.getAttribute("data-category");
+
+            filterFAQs();
+
+        });
+
+    });
+
+
+    /* =========================
+       SEARCH
+    ========================= */
+
+    faqSearch.addEventListener("input", function() {
+
+        filterFAQs();
+
+    });
+
+
+    /* =========================
+       FILTER FUNCTION
+    ========================= */
+
+    function filterFAQs() {
+
+        const searchTerm =
+            faqSearch.value.toLowerCase().trim();
+
+        let visibleCount = 0;
+
+
+        faqItems.forEach(function(item) {
+
+            const category =
+                item.getAttribute("data-category");
+
+            const text =
+                item.textContent.toLowerCase();
+
+
+            const categoryMatch =
+                currentCategory === "all" ||
+                category === currentCategory;
+
+
+            const searchMatch =
+                searchTerm === "" ||
+                text.includes(searchTerm);
+
+
+            if (categoryMatch && searchMatch) {
+
+                item.style.display = "block";
+
+                visibleCount++;
+
+            } else {
+
+                item.style.display = "none";
+
+                item.classList.remove("active");
+
+                item.querySelector(".faq-question span").textContent = "+";
+
+            }
+
+        });
+
+
+        if (visibleCount === 0) {
+
+            noResults.style.display = "block";
+
+        } else {
+
+            noResults.style.display = "none";
+
+        }
+
+    }
+
+</script>
+
+
+<!--
+=====================================================
+OPTIONAL SEO FAQ STRUCTURED DATA
+=====================================================
+
+This JSON-LD describes the FAQ page to search engines.
+It does NOT display on the page.
+
+=====================================================
+-->
+
+<script type="application/ld+json">
+
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "What is EZTradingHub?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "EZTradingHub is a trading tools and financial education platform designed to provide practical calculators, resources, and information for traders and market participants."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What trading calculators are available?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "EZTradingHub provides a growing collection of trading calculators, which may include pip calculators, position size calculators, lot size calculators, profit calculators, margin calculators, drawdown calculators, risk-to-reward calculators and other financial tools."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Are EZTradingHub calculators free?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Many EZTradingHub calculators are designed to be available directly through the website. Availability and features may vary between individual tools."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Does EZTradingHub provide investment advice?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. EZTradingHub provides educational information, calculators, and general financial-market resources. Nothing on the website should be interpreted as personalized financial, investment, or trading advice."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can I use EZTradingHub on my phone?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. EZTradingHub is designed to provide a responsive experience across smartphones, tablets, laptops, and desktop computers."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can I suggest a new calculator?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. EZTradingHub welcomes suggestions for new trading calculators and financial tools."
+            }
+        }
+    ]
+}
+
+</script>
+
+</body>
+</html>
