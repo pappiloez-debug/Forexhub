@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Stock Average Cost Calculator</title>
+
+<link rel="stylesheet" href="style.css">
+<style>
+:root{--navy:#062f5f;--green:#047857;--dark:#111827;--text:#1f2937;--muted:#475569;--bg:#f8fafc;--card:#fff;--border:#e2e8f0}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;line-height:1.7;color:var(--text);background:var(--bg)}
+header{background:var(--navy);color:#fff;padding:18px 20px}.header-inner{max-width:1000px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand,.back-link{color:#fff;text-decoration:none;font-weight:800}.brand{font-size:1.35rem}.back-link{font-weight:700}
+main{max-width:1000px;margin:40px auto;padding:0 20px}.hero,section{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:28px;margin-bottom:18px}
+.hero{padding:32px}.hero h1{margin-top:0;color:var(--dark);font-size:clamp(2rem,5vw,3rem)}h2{color:var(--dark);margin-top:0}.updated{color:var(--muted);font-size:.95rem}
+p,li{color:var(--text)}a{color:#065f46;font-weight:600}.notice{border-left:5px solid var(--green);background:#f0fdf4;padding:16px 18px;border-radius:8px}
+footer{background:var(--dark);color:#fff;text-align:center;padding:28px 20px;margin-top:45px}footer p{color:#fff}footer a{color:#fff;margin:0 8px}
+@media(max-width:650px){.header-inner{align-items:flex-start;flex-direction:column}main{margin-top:24px;padding:0 14px}.hero,section{padding:22px}}
+</style>
+</head>
+<body>
+<header><div class="header-inner">
+<a class="brand" href="index.html">EZTradingHub</a>
+<a class="back-link" href="index.html">← Back to Home</a>
+</div></header>
+
+<div class="hero">
+
+<h1>📊 Stock Average Cost Calculator</h1>
+
+<p>
+Calculate your weighted average cost when buying the same stock at different prices.
+</p>
+
+</div>
+
+
+<div class="calculator-card">
+
+<h2>Purchase 1</h2>
+
+<label>Buy Price ($)</label>
+<input
+type="number"
+id="price1"
+placeholder="e.g. 100"
+step="0.01"
+>
+
+<label>Number of Shares</label>
+<input
+type="number"
+id="shares1"
+placeholder="e.g. 10"
+step="0.0001"
+>
+
+
+<h2>Purchase 2</h2>
+
+<label>Buy Price ($)</label>
+<input
+type="number"
+id="price2"
+placeholder="e.g. 80"
+step="0.01"
+>
+
+<label>Number of Shares</label>
+<input
+type="number"
+id="shares2"
+placeholder="e.g. 20"
+step="0.0001"
+>
+
+
+<h2>Purchase 3</h2>
+
+<label>Buy Price ($)</label>
+<input
+type="number"
+id="price3"
+placeholder="e.g. 90"
+step="0.01"
+>
+
+<label>Number of Shares</label>
+<input
+type="number"
+id="shares3"
+placeholder="e.g. 15"
+step="0.0001"
+>
+
+
+<br>
+
+<button onclick="calculateAverageCost()">
+🧮 Calculate Average Cost
+</button>
+
+<button onclick="resetAverageCost()">
+🔄 Reset
+</button>
+
+
+<div id="averageCostResult"></div>
+
+</div>
+
+
+<script>
+  function calculateAverageCost() {
+
+    let price1 = parseFloat(document.getElementById("price1").value);
+    let shares1 = parseFloat(document.getElementById("shares1").value);
+
+    let price2 = parseFloat(document.getElementById("price2").value);
+    let shares2 = parseFloat(document.getElementById("shares2").value);
+
+    let price3 = parseFloat(document.getElementById("price3").value);
+    let shares3 = parseFloat(document.getElementById("shares3").value);
+
+
+    if (
+        isNaN(price1) || isNaN(shares1) ||
+        isNaN(price2) || isNaN(shares2) ||
+        isNaN(price3) || isNaN(shares3) ||
+        price1 <= 0 || price2 <= 0 || price3 <= 0 ||
+        shares1 <= 0 || shares2 <= 0 || shares3 <= 0
+    ) {
+
+        document.getElementById("averageCostResult").innerHTML =
+        "⚠️ Please enter valid values for all purchases.";
+
+        return;
+    }
+
+
+    let investment1 = price1 * shares1;
+    let investment2 = price2 * shares2;
+    let investment3 = price3 * shares3;
+
+
+    let totalInvestment =
+        investment1 + investment2 + investment3;
+
+
+    let totalShares =
+        shares1 + shares2 + shares3;
+
+
+    let averageCost =
+        totalInvestment / totalShares;
+
+
+    document.getElementById("averageCostResult").innerHTML =
+
+        "<h2>📊 Results</h2>" +
+
+        "<p>Total Investment: <strong>$" +
+        totalInvestment.toLocaleString(undefined, {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        }) +
+        "</strong></p>" +
+
+        "<p>Total Shares: <strong>" +
+        totalShares.toFixed(4) +
+        "</strong></p>" +
+
+        "<p>🎯 Average Cost Per Share: " +
+
+        "<strong>$" +
+        averageCost.toFixed(2) +
+        "</strong></p>";
+
+}
+
+
+function resetAverageCost() {
+
+    document.getElementById("price1").value = "";
+    document.getElementById("shares1").value = "";
+
+    document.getElementById("price2").value = "";
+    document.getElementById("shares2").value = "";
+
+    document.getElementById("price3").value = "";
+    document.getElementById("shares3").value = "";
+
+    document.getElementById("averageCostResult").innerHTML = "";
+
+}
+  
+  </script>
+<footer>
+
+        <div>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="faq.html">FAQ</a>
+            <a href="terms.html">Terms & Conditions</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="cookie-policy.html">Cookie Policy</a>
+            <a href="disclaimer.html">Disclaimer</a>
+            <a href="contact.html">Contact</a>
+        </div>
+
+        <p class="copyright">
+            © 2026 EZTradingHub. All rights reserved.
+        </p>
+
+        <p class="copyright">
+            EZTradingHub provides educational and informational tools.
+            Trading involves risk.
+        </p>
+
+    </footer>
+    <script src="cookie-consent.js"></script>
+
+</body>
+</html>
