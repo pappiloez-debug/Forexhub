@@ -23,14 +23,23 @@
 
 <link rel="stylesheet" href="style.css">
 
+<style>
+:root{--navy:#062f5f;--green:#047857;--dark:#111827;--text:#1f2937;--muted:#475569;--bg:#f8fafc;--card:#fff;--border:#e2e8f0}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;line-height:1.7;color:var(--text);background:var(--bg)}
+header{background:var(--navy);color:#fff;padding:18px 20px}.header-inner{max-width:1000px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand,.back-link{color:#fff;text-decoration:none;font-weight:800}.brand{font-size:1.35rem}.back-link{font-weight:700}
+main{max-width:1000px;margin:40px auto;padding:0 20px}.hero,section{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:28px;margin-bottom:18px}
+.hero{padding:32px}.hero h1{margin-top:0;color:var(--dark);font-size:clamp(2rem,5vw,3rem)}h2{color:var(--dark);margin-top:0}.updated{color:var(--muted);font-size:.95rem}
+p,li{color:var(--text)}a{color:#065f46;font-weight:600}.notice{border-left:5px solid var(--green);background:#f0fdf4;padding:16px 18px;border-radius:8px}
+footer{background:var(--dark);color:#fff;text-align:center;padding:28px 20px;margin-top:45px}footer p{color:#fff}footer a{color:#fff;margin:0 8px}
+@media(max-width:650px){.header-inner{align-items:flex-start;flex-direction:column}main{margin-top:24px;padding:0 14px}.hero,section{padding:22px}}
+</style>
 </head>
-
 <body>
-
-<header>
-
-<img src="logo.jpg" class="logo" alt="Logo">
-
+<header><div class="header-inner">
+<a class="brand" href="index.html">EZTradingHub</a>
+<a class="back-link" href="index.html">← Back to Home</a>
+</div></header>
 <h1>Pivot Point Calculator</h1>
 
 <p>Calculate Pivot Points, Support and Resistance.</p>
@@ -86,15 +95,28 @@ No calculations yet.
 
 <footer>
 
+        <div>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="faq.html">FAQ</a>
+            <a href="terms.html">Terms & Conditions</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="cookie-policy.html">Cookie Policy</a>
+            <a href="disclaimer.html">Disclaimer</a>
+            <a href="contact.html">Contact</a>
+        </div>
 
+        <p class="copyright">
+            © 2026 EZTradingHub. All rights reserved.
+        </p>
 
-<p class="copyright">
-© 2026 EZ TRADING HUB
-</p>
+        <p class="copyright">
+            EZTradingHub provides educational and informational tools.
+            Trading involves risk.
+        </p>
 
-<p>Developed with ❤️ by STEPHEN EZENWA</p>
-
-</footer>
+    </footer>
+    <script src="cookie-consent.js"></script>
 
 <button id="topBtn" onclick="topFunction()">
 
