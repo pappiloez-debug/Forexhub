@@ -11,23 +11,179 @@
 </head>
 <body>
 
+<style>
+:root{--navy:#062f5f;--green:#047857;--dark:#111827;--text:#1f2937;--muted:#475569;--bg:#f8fafc;--card:#fff;--border:#e2e8f0}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;line-height:1.7;color:var(--text);background:var(--bg)}
+header{background:var(--navy);color:#fff;padding:18px 20px}.header-inner{max-width:1000px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand,.back-link{color:#fff;text-decoration:none;font-weight:800}.brand{font-size:1.35rem}.back-link{font-weight:700}
+main{max-width:1000px;margin:40px auto;padding:0 20px}.hero,section{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:28px;margin-bottom:18px}
+.hero{padding:32px}.hero h1{margin-top:0;color:var(--dark);font-size:clamp(2rem,5vw,3rem)}h2{color:var(--dark);margin-top:0}.updated{color:var(--muted);font-size:.95rem}
+p,li{color:var(--text)}a{color:#065f46;font-weight:600}.notice{border-left:5px solid var(--green);background:#f0fdf4;padding:16px 18px;border-radius:8px}
+footer{background:var(--dark);color:#fff;text-align:center;padding:28px 20px;margin-top:45px}footer p{color:#fff}footer a{color:#fff;margin:0 8px}
+@media(max-width:650px){.header-inner{align-items:flex-start;flex-direction:column}main{margin-top:24px;padding:0 14px}.hero,section{padding:22px}}
+</style>
+</head>
+<body>
+
 <header>
-    <img src="logo.jpg" alt="FOREX TOOLS Logo" class="logo">
+    <div class="header-inner">
+<a class="brand" href="index.html">EZTradingHub</a>
+<a class="back-link" href="index.html">← Back to Home</a>
+</div></header>
     
-    <button id="darkModeBtn" class="btn" onclick="toggleDarkMode()">
-🌙 Dark Mode
-</button>
+    <!-- =========================================
+     EZTRADINGHUB LIVE MARKETS
+========================================= -->
 
-    <h1>Free Forex Trading Calculators & Tools</h1>
+<section class="ez-live-markets" id="live-markets">
 
-    <p> ...plan to trade, trade to plan.</p>
-    <nav class="navbar">
-<div class="nav-links">
-<a href="index.html">Home</a>
-</div>
-</nav>
+    <div class="live-markets-header">
 
-</header>
+        <div>
+            <span class="section-badge">
+                ● LIVE MARKETS
+            </span>
+
+            <h2>
+                Forex Markets & Economic Calendar
+            </h2>
+
+            <p>
+                Monitor major currency markets and upcoming economic events
+                before making your next trading decision.
+            </p>
+        </div>
+
+        <div class="market-status">
+            <span class="status-dot"></span>
+            Market Data
+        </div>
+
+    </div>
+
+
+    <!-- FOREX RATES -->
+    <div class="market-panel">
+
+        <div class="panel-header">
+
+            <div>
+                <h3>💱 Live Forex Rates</h3>
+
+                <p>
+                    Major currency pairs and cross rates
+                </p>
+            </div>
+
+            <a
+                href="#calculators"
+                class="panel-link"
+            >
+                Trading Tools →
+            </a>
+
+        </div>
+
+
+        <div class="forex-widget-wrapper">
+
+            <script
+                type="module"
+                src="https://widgets.tradingview-widget.com/w/en/tv-forex-table.js">
+            </script>
+
+            <tv-forex-table
+                currencies="EUR,USD,JPY,GBP,CHF,AUD,CAD"
+                display-mode="rate"
+                theme="dark"
+                transparent-background>
+            </tv-forex-table>
+
+        </div>
+
+    </div>
+
+
+    <!-- ECONOMIC CALENDAR -->
+    <div class="market-panel calendar-panel">
+
+        <div class="panel-header">
+
+            <div>
+                <h3>📅 Economic Calendar</h3>
+
+                <p>
+                    Track major economic events that can move the markets
+                </p>
+            </div>
+
+            <span class="impact-label">
+                HIGH IMPACT EVENTS
+            </span>
+
+        </div>
+
+
+        <div class="calendar-widget-wrapper">
+
+            <!-- TradingView Economic Calendar -->
+
+            <div class="tradingview-widget-container">
+
+                <div class="tradingview-widget-container__widget"></div>
+
+                <div class="tradingview-widget-copyright">
+
+                    <a
+                        href="https://www.tradingview.com/economic-calendar/"
+                        rel="noopener nofollow"
+                        target="_blank">
+                        Economic Calendar
+                    </a>
+
+                    <span> by TradingView</span>
+
+                </div>
+
+                <script
+                    type="text/javascript"
+                    src="https://s3.tradingview.com/external-embedding/embed-widget-events.js"
+                    async>
+
+                {
+                    "colorTheme": "dark",
+                    "isTransparent": true,
+                    "locale": "en",
+                    "countryFilter": "au,ca,cn,de,fr,gb,jp,kr,us,eu",
+                    "importanceFilter": "1",
+                    "width": "100%",
+                    "height": 600
+                }
+
+                </script>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- TRADING WARNING -->
+    <div class="market-disclaimer">
+
+        <span>⚠️</span>
+
+        <p>
+            <strong>Trading Risk Notice:</strong>
+            Economic events and market prices can change rapidly.
+            Always perform your own analysis and use appropriate risk management
+            before entering a trade.
+        </p>
+
+    </div>
+
+</section>
     
  <div class="search-box">
     <input
@@ -39,6 +195,20 @@
 
 <section class="cards">
     
+    <div class="card calculator-card">
+
+    <button class="favorite-btn" onclick="toggleFavorite(this)">
+        ☆
+    </button>
+
+    <a href="ai-assistant.html">
+   <h3>🤖 Ai Assistant</h3>
+        <p>Ask questions about trading concepts, risk management, forex calculations, technical analysis and financial markets..</p>
+</a>
+  </a>
+
+</div>
+    
     <strong>risk management</strong>
     
 
@@ -48,8 +218,38 @@
         ☆
     </button>
 
+    <a href="trade-journal.html">
+        <h3>📓 trade journal</h3>
+        <p>Record and review your trading performance.</p>
+</a>
+    </a>
+
+</div>
+    
+<div class="card calculator-card">
+
+    <button class="favorite-btn" onclick="toggleFavorite(this)">
+        ☆
+    </button>
+
+    <a href="dashboard.html">
+        <h3>📊 Dashboard</h3>
+        <p>monitor your trade and overall performance.</p>
+</a>
+    </a>
+
+</div>
+    
+<div class="card calculator-card">
+
+    <button class="favorite-btn" onclick="toggleFavorite(this)">
+        ☆
+    </button>
+
     <a href="pip-calculator.html">
         <h3>📈 Pip Calculator</h3>
+        <p>Protect your trading account.</p>
+</a>
     </a>
 
 </div>
@@ -427,15 +627,29 @@
 
 <footer>
 
+        <div>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="faq.html">FAQ</a>
+            <a href="terms.html">Terms & Conditions</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="cookie-policy.html">Cookie Policy</a>
+            <a href="disclaimer.html">Disclaimer</a>
+            <a href="contact.html">Contact</a>
+        </div>
 
+        <p class="copyright">
+            © 2026 EZTradingHub. All rights reserved.
+        </p>
 
-<p class="copyright">
-© 2026 EZ TRADING HUB
-</p>
+        <p class="copyright">
+            EZTradingHub provides educational and informational tools.
+            Trading involves risk.
+        </p>
 
-<p>Developed with ❤️ by STEPHEN EZENWA</p>
+    </footer>
+    <script src="cookie-consent.js"></script>
 
-</footer>
 
 <button id="topBtn" onclick="topFunction()">
 
