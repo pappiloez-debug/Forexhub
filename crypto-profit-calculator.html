@@ -1,223 +1,1637 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crypto Profit Calculator — Calculate Cryptocurrency Profit | EZTradingHub</title>
+  <meta charset="UTF-8">
 
-<meta name="description"
-      content="Free Crypto Profit Calculator to calculate potential cryptocurrency profit or loss using your buy price, sell price and investment or position size.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="keywords"
-      content="crypto profit calculator, cryptocurrency profit calculator, Bitcoin profit calculator, crypto P&L calculator, crypto trading calculator">
+  <title>Crypto Profit Calculator | Cryptocurrency Profit & ROI Calculator | EZTradingHub</title>
 
-<meta name="robots"
-      content="index, follow">
+  <meta name="description" content="Use the free EZTradingHub Crypto Profit Calculator to calculate cryptocurrency profit or loss, ROI, trading fees, break-even price and potential portfolio value.">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="EZTradingHub">
+  <meta name="theme-color" content="#075985">
 
-<link rel="canonical"
-      href="https://eztradinghub.com/crypto-profit-calculator.html">
-    
-    <link rel="manifest" href="manifest.json">
+  <link rel="canonical" href="https://eztradinghub.com/crypto-profit-calculator.html">
 
-    <link rel="stylesheet" href="style.css">
-<style>
-:root{--navy:#062f5f;--green:#047857;--dark:#111827;--text:#1f2937;--muted:#475569;--bg:#f8fafc;--card:#fff;--border:#e2e8f0}
-*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;line-height:1.7;color:var(--text);background:var(--bg)}
-header{background:var(--navy);color:#fff;padding:18px 20px}.header-inner{max-width:1000px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:20px}
-.brand,.back-link{color:#fff;text-decoration:none;font-weight:800}.brand{font-size:1.35rem}.back-link{font-weight:700}
-main{max-width:1000px;margin:40px auto;padding:0 20px}.hero,section{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:28px;margin-bottom:18px}
-.hero{padding:32px}.hero h1{margin-top:0;color:var(--dark);font-size:clamp(2rem,5vw,3rem)}h2{color:var(--dark);margin-top:0}.updated{color:var(--muted);font-size:.95rem}
-p,li{color:var(--text)}a{color:#065f46;font-weight:600}.notice{border-left:5px solid var(--green);background:#f0fdf4;padding:16px 18px;border-radius:8px}
-footer{background:var(--dark);color:#fff;text-align:center;padding:28px 20px;margin-top:45px}footer p{color:#fff}footer a{color:#fff;margin:0 8px}
-@media(max-width:650px){.header-inner{align-items:flex-start;flex-direction:column}main{margin-top:24px;padding:0 14px}.hero,section{padding:22px}}
-</style>
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Crypto Profit Calculator | EZTradingHub">
+  <meta property="og:description" content="Calculate crypto profit, loss, ROI, fees and portfolio value with the free EZTradingHub Crypto Profit Calculator.">
+  <meta property="og:url" content="https://eztradinghub.com/crypto-profit-calculator.html">
+  <meta property="og:site_name" content="EZTradingHub">
+  <meta property="og:image" content="https://eztradinghub.com/assets/images/og-image.png">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Crypto Profit Calculator | EZTradingHub">
+  <meta name="twitter:description" content="Calculate cryptocurrency profit, loss, ROI, trading fees and potential portfolio value.">
+  <meta name="twitter:image" content="https://eztradinghub.com/assets/images/og-image.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/assets/images/favicon.png">
+
+  <!-- Performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- WebApplication Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "EZTradingHub Crypto Profit Calculator",
+    "url": "https://eztradinghub.com/crypto-profit-calculator.html",
+    "description": "Free cryptocurrency profit, loss and ROI calculator.",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Web",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "EZTradingHub",
+      "url": "https://eztradinghub.com/"
+    }
+  }
+  </script>
+
+  <!-- Breadcrumb Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://eztradinghub.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Calculators",
+        "item": "https://eztradinghub.com/calculators.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Crypto Profit Calculator",
+        "item": "https://eztradinghub.com/crypto-profit-calculator.html"
+      }
+    ]
+  }
+  </script>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a crypto profit calculator?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A crypto profit calculator estimates the potential profit or loss from buying cryptocurrency at one price and selling it at another price."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How is cryptocurrency profit calculated?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Crypto profit is generally calculated by subtracting the total cost of the purchase from the value received at the selling price, while accounting for applicable trading fees."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is crypto ROI?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Crypto ROI, or return on investment, measures the percentage gain or loss relative to the amount originally invested."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does this calculator guarantee cryptocurrency profits?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. The calculator provides mathematical estimates based on the numbers entered. Cryptocurrency prices can change rapidly and actual trading results may differ."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg: #f4f7fb;
+      --surface: #ffffff;
+      --surface2: #f8fafc;
+      --text: #172033;
+      --muted: #667085;
+      --border: #e2e8f0;
+
+      --primary: #075985;
+      --primary2: #0ea5e9;
+
+      --success: #16a34a;
+      --warning: #d97706;
+      --danger: #dc2626;
+
+      --shadow: 0 12px 35px rgba(15,23,42,.08);
+      --radius: 18px;
+    }
+
+    body.dark {
+      --bg: #07111f;
+      --surface: #0e1b2d;
+      --surface2: #111f33;
+      --text: #f1f5f9;
+      --muted: #aab7c9;
+      --border: #24364d;
+
+      --primary: #38bdf8;
+      --primary2: #0ea5e9;
+
+      --success: #4ade80;
+      --warning: #fbbf24;
+      --danger: #fb7185;
+
+      --shadow: 0 12px 35px rgba(0,0,0,.25);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      transition: background .25s ease, color .25s ease;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    button,
+    input,
+    select {
+      font: inherit;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 4px 18px rgba(0,0,0,.05);
+    }
+
+    .nav {
+      max-width: 1180px;
+      margin: auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      color: var(--text);
+      white-space: nowrap;
+    }
+
+    .logo {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      font-weight: 900;
+      background: linear-gradient(135deg, var(--primary), var(--primary2));
+      box-shadow: 0 8px 18px rgba(14,165,233,.25);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .nav-links a {
+      color: var(--text);
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .theme-btn {
+      border: 1px solid var(--border);
+      background: var(--surface2);
+      color: var(--text);
+      border-radius: 10px;
+      padding: 9px 12px;
+      font-weight: 700;
+    }
+
+    .container {
+      max-width: 1180px;
+      margin: auto;
+      padding: 0 20px;
+    }
+
+    .breadcrumbs {
+      max-width: 1180px;
+      margin: 22px auto 0;
+      padding: 0 20px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .hero {
+      max-width: 900px;
+      margin: 30px auto;
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      padding: 7px 13px;
+      border-radius: 999px;
+      background: rgba(14,165,233,.10);
+      color: var(--primary);
+      font-weight: 800;
+      font-size: 13px;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      font-size: clamp(32px, 5vw, 52px);
+      line-height: 1.1;
+      margin: 0 0 16px;
+      letter-spacing: -1.5px;
+    }
+
+    .hero p {
+      max-width: 760px;
+      margin: auto;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .calculator {
+      max-width: 900px;
+      margin: 0 auto 45px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 26px;
+    }
+
+    .calculator h2 {
+      margin-top: 0;
+      font-size: 25px;
+    }
+
+    .input-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .field label {
+      display: block;
+      font-weight: 700;
+      margin-bottom: 7px;
+      font-size: 14px;
+    }
+
+    .field small {
+      display: block;
+      color: var(--muted);
+      margin-top: 5px;
+      font-size: 12px;
+    }
+
+    input,
+    select {
+      width: 100%;
+      padding: 13px 14px;
+      border: 1px solid var(--border);
+      border-radius: 11px;
+      background: var(--surface2);
+      color: var(--text);
+      outline: none;
+    }
+
+    input:focus,
+    select:focus {
+      border-color: var(--primary2);
+      box-shadow: 0 0 0 3px rgba(14,165,233,.12);
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .btn {
+      border: 0;
+      border-radius: 11px;
+      padding: 12px 18px;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--primary), var(--primary2));
+      color: #fff;
+    }
+
+    .btn.secondary {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
+
+    .results {
+      margin-top: 28px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .result-card {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      padding: 18px;
+    }
+
+    .result-card span {
+      display: block;
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 6px;
+    }
+
+    .result-card strong {
+      font-size: 22px;
+      line-height: 1.2;
+    }
+
+    .profit {
+      color: var(--success);
+    }
+
+    .loss {
+      color: var(--danger);
+    }
+
+    .status {
+      margin-top: 18px;
+      padding: 14px 16px;
+      border-radius: 12px;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      font-weight: 700;
+    }
+
+    .section {
+      max-width: 900px;
+      margin: 0 auto 45px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 28px;
+    }
+
+    .section h2 {
+      margin-top: 0;
+      font-size: 27px;
+    }
+
+    .section h3 {
+      font-size: 20px;
+      margin-top: 26px;
+    }
+
+    .formula {
+      padding: 18px;
+      background: var(--surface2);
+      border-left: 4px solid var(--primary2);
+      border-radius: 10px;
+      overflow-x: auto;
+      font-weight: 700;
+    }
+
+    .example-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 18px;
+    }
+
+    .example-table th,
+    .example-table td {
+      border: 1px solid var(--border);
+      padding: 12px;
+      text-align: left;
+    }
+
+    .example-table th {
+      background: var(--surface2);
+    }
+
+    .faq-item {
+      padding: 18px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .faq-item:last-child {
+      border-bottom: 0;
+    }
+
+    .faq-item h3 {
+      margin: 0 0 7px;
+      font-size: 18px;
+    }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .related-link {
+      display: block;
+      padding: 15px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--surface2);
+      font-weight: 700;
+    }
+
+    .disclaimer {
+      background: rgba(217,119,6,.08);
+      border: 1px solid rgba(217,119,6,.25);
+    }
+
+    footer {
+      margin-top: 50px;
+      border-top: 1px solid var(--border);
+      background: var(--surface);
+    }
+
+    .footer-inner {
+      max-width: 1180px;
+      margin: auto;
+      padding: 35px 20px;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 30px;
+    }
+
+    footer h3 {
+      margin-top: 0;
+    }
+
+    footer p,
+    footer li {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    footer ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    footer li {
+      margin-bottom: 8px;
+    }
+
+    .copyright {
+      max-width: 1180px;
+      margin: auto;
+      padding: 16px 20px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+
+    .mini-note {
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 15px;
+    }
+
+    @media (max-width: 800px) {
+      .nav {
+        padding: 12px 15px;
+      }
+
+      .nav-links {
+        gap: 9px;
+      }
+
+      .nav-links a {
+        display: none;
+      }
+
+      .container,
+      .breadcrumbs {
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+
+      .input-grid,
+      .results,
+      .footer-inner,
+      .related-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .calculator,
+      .section {
+        padding: 20px;
+        border-radius: 14px;
+      }
+
+      .hero {
+        padding: 20px 10px;
+      }
+
+      h1 {
+        font-size: 35px;
+      }
+
+      .hero p {
+        font-size: 15px;
+      }
+    }
+
+    @media print {
+      .site-header,
+      .breadcrumbs,
+      .buttons,
+      footer {
+        display: none !important;
+      }
+
+      body {
+        background: #fff;
+        color: #000;
+      }
+
+      .calculator,
+      .section {
+        box-shadow: none;
+        border: 1px solid #ccc;
+      }
+    }
+  </style>
 </head>
+
 <body>
-<header><div class="header-inner">
-<a class="brand" href="index.html">EZTradingHub</a>
-<a class="back-link" href="index.html">← Back to Home</a>
-</div></header>
 
-<div class="hero">
-<h1>🪙 Crypto Profit Calculator</h1>
-<p>Estimate your profit or loss from cryptocurrency trades.</p>
+<header class="site-header">
+  <nav class="nav" aria-label="Main navigation">
+
+    <a class="brand" href="/">
+      <span class="logo" aria-hidden="true">EZ</span>
+      <span>EZTradingHub</span>
+    </a>
+
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="calculators.html">Calculators</a>
+      <a href="trade-journal.html">Trade Journal</a>
+      <a href="about.html">About</a>
+
+      <button
+        class="theme-btn"
+        id="themeToggle"
+        type="button"
+        aria-label="Toggle dark mode"
+        title="Toggle light and dark mode">
+        🌙
+      </button>
+    </div>
+
+  </nav>
+</header>
+
+<div class="breadcrumbs">
+  <a href="index.html">Home</a>
+  <span aria-hidden="true"> › </span>
+  <a href="calculators.html">Calculators</a>
+  <span aria-hidden="true"> › </span>
+  <span>Crypto Profit Calculator</span>
 </div>
 
-<div class="calculator-card">
+<main>
 
-<label>Select Coin</label>
+  <section class="hero">
+    <span class="hero-badge">FREE CRYPTO TRADING TOOL</span>
 
-<select id="coin">
+    <h1>Crypto Profit Calculator</h1>
 
-<option>₿ Bitcoin (BTC)</option>
-<option>Ξ Ethereum (ETH)</option>
-<option>◎ Solana (SOL)</option>
-<option>🟡 BNB (BNB)</option>
-<option>✕ XRP (XRP)</option>
-<option>₳ Cardano (ADA)</option>
-<option>🐕 Dogecoin (DOGE)</option>
-<option>🔺 Avalanche (AVAX)</option>
-<option>⛓️ Chainlink (LINK)</option>
-<option>🔷 Polygon (POL)</option>
-<option>⚪ Litecoin (LTC)</option>
-<option>⚫ Polkadot (DOT)</option>
-<option>💎 TRON (TRX)</option>
-<option>🌕 Stellar (XLM)</option>
-<option>🔥 Toncoin (TON)</option>
-<option>🌊 Sui (SUI)</option>
-<option>💠 Aptos (APT)</option>
-<option>🌐 Internet Computer (ICP)</option>
-<option>⚡ NEAR Protocol (NEAR)</option>
-<option>🧊 Cosmos (ATOM)</option>
-<option>🔵 Algorand (ALGO)</option>
-<option>⚙️ VeChain (VET)</option>
-<option>🏦 Hedera (HBAR)</option>
-<option>🌈 Arbitrum (ARB)</option>
-<option>⚡ Optimism (OP)</option>
-<option>💚 Render (RENDER)</option>
-<option>💠 Injective (INJ)</option>
-<option>🎮 Immutable (IMX)</option>
-<option>🐸 Pepe (PEPE)</option>
-<option>🐶 Shiba Inu (SHIB)</option>
-<option>🪙 Kaspa (KAS)</option>
-<option>🌌 Celestia (TIA)</option>
-<option>🔗 Stacks (STX)</option>
-<option>📡 Filecoin (FIL)</option>
-<option>🧬 The Graph (GRT)</option>
-<option>💵 Maker (MKR)</option>
-<option>💳 Aave (AAVE)</option>
-<option>🏛️ Uniswap (UNI)</option>
-<option>🟢 Sei (SEI)</option>
-<option>⚪ EOS (EOS)</option>
-<option>💹 Cronos (CRO)</option>
-<option>🔶 Mantle (MNT)</option>
-<option>💠 Fantom (FTM)</option>
-<option>⚙️ Tezos (XTZ)</option>
-<option>🌿 THORChain (RUNE)</option>
-<option>🛡️ Monero (XMR)</option>
-<option>💰 Bitcoin Cash (BCH)</option>
-<option>🚀 Jupiter (JUP)</option>
-<option>💎 Ondo (ONDO)</option>
-<option>🎯 Ethena (ENA)</option>
+    <p>
+      Calculate cryptocurrency profit or loss, ROI, trading fees,
+      break-even price and estimated portfolio value before entering
+      or closing a crypto trade.
+    </p>
+  </section>
 
-</select>
 
-<br><br>
+  <!-- CALCULATOR -->
+  <section class="calculator" aria-labelledby="calculator-heading">
 
-<h3>Current Market Price</h3>
+    <h2 id="calculator-heading">Calculate Your Crypto Trade</h2>
 
-<div class="stat-card">
+    <div class="input-grid">
 
-<h2 id="liveCryptoPrice">$1.00</h2>
+      <div class="field">
+        <label for="crypto">Cryptocurrency</label>
+        <input
+          type="text"
+          id="crypto"
+          value="Bitcoin (BTC)"
+          placeholder="e.g. Bitcoin (BTC)">
+        <small>Enter the coin or token you are calculating.</small>
+      </div>
 
-<p id="selectedCoin">Select a coin</p>
+      <div class="field">
+        <label for="currency">Currency</label>
+        <select id="currency">
+          <option value="$">USD ($)</option>
+          <option value="₦">NGN (₦)</option>
+          <option value="€">EUR (€)</option>
+          <option value="£">GBP (£)</option>
+        </select>
+      </div>
 
-</div>
-  
-<label>Buy Price ($)</label>
-<input type="number" id="buyPrice"
-<br><br>
+      <div class="field">
+        <label for="investment">Investment Amount</label>
+        <input
+          type="number"
+          id="investment"
+          min="0"
+          step="any"
+          value="1000"
+          inputmode="decimal">
+        <small>Amount used to purchase the cryptocurrency.</small>
+      </div>
 
-<label>Sell Price ($)</label>
-<input type="number" id="sellPrice">
+      <div class="field">
+        <label for="buyPrice">Buy Price</label>
+        <input
+          type="number"
+          id="buyPrice"
+          min="0"
+          step="any"
+          value="50000"
+          inputmode="decimal">
+        <small>Price paid per coin/token.</small>
+      </div>
 
-<br><br>
+      <div class="field">
+        <label for="sellPrice">Sell Price / Target Price</label>
+        <input
+          type="number"
+          id="sellPrice"
+          min="0"
+          step="any"
+          value="60000"
+          inputmode="decimal">
+        <small>Expected or actual selling price.</small>
+      </div>
 
-<label>Quantity</label>
-<input type="number" id="quantity" step="0.00000001">
+      <div class="field">
+        <label for="buyFee">Buy Fee (%)</label>
+        <input
+          type="number"
+          id="buyFee"
+          min="0"
+          step="any"
+          value="0.1"
+          inputmode="decimal">
+        <small>Exchange or transaction fee on the purchase.</small>
+      </div>
 
-<br><br>
-
-<button onclick="calculateCryptoProfit()">
-Calculate
-</button>
-
-<button onclick="resetCryptoProfit()">
-Reset
-</button>
-
-<br><br>
-
-<h2 id="cryptoResult"></h2>
-
-</div>
-      
-<section class="related-tools">
-
-    <h2>Related Crypto Calculators</h2>
-
-    <p>Calculate cryptocurrency profit, returns, position size and investment performance.</p>
-
-    <div class="related-tools-grid">
-
-        <a href="crypto-position-size.html">
-            📏 Crypto Position Size Calculator
-        </a>
-
-        <a href="crypto-roi-calculator.html">
-            📈 Crypto ROI Calculator
-        </a>
-
-        <a href="crypto-dca-calculator.html">
-            💵 Crypto DCA Calculator
-        </a>
-
-        <a href="crypto-portfolio-tracker.html">
-            📊 Crypto Portfolio Tracker
-        </a>
-
-        <a href="crypto-staking-calculator.html">
-            🪙 Crypto Staking Calculator
-        </a>
-
-        <a href="crypto-liquidation-calculators.html">
-            ⚠️ Crypto Liquidation Calculator
-        </a>
+      <div class="field">
+        <label for="sellFee">Sell Fee (%)</label>
+        <input
+          type="number"
+          id="sellFee"
+          min="0"
+          step="any"
+          value="0.1"
+          inputmode="decimal">
+        <small>Exchange or transaction fee on the sale.</small>
+      </div>
 
     </div>
 
-</section>
+    <div class="buttons">
+      <button class="btn" type="button" onclick="calculateProfit()">
+        Calculate Profit
+      </button>
 
-<a href="index.html" class="btn">
-🏠 Back to Home
-</a>
-    
-</section>
-<script src="script.js"></script>
+      <button class="btn secondary" type="button" onclick="resetCalculator()">
+        Reset
+      </button>
+
+      <button class="btn secondary" type="button" onclick="window.print()">
+        Print Results
+      </button>
+    </div>
+
+    <div class="results" aria-live="polite">
+
+      <div class="result-card">
+        <span>Crypto Quantity</span>
+        <strong id="quantity">—</strong>
+      </div>
+
+      <div class="result-card">
+        <span>Total Buy Cost</span>
+        <strong id="buyCost">—</strong>
+      </div>
+
+      <div class="result-card">
+        <span>Estimated Sale Value</span>
+        <strong id="saleValue">—</strong>
+      </div>
+
+      <div class="result-card">
+        <span>Total Fees</span>
+        <strong id="totalFees">—</strong>
+      </div>
+
+      <div class="result-card">
+        <span>Net Profit / Loss</span>
+        <strong id="profitLoss">—</strong>
+      </div>
+
+      <div class="result-card">
+        <span>ROI</span>
+        <strong id="roi">—</strong>
+      </div>
+
+      <div class="result-card">
+        <span>Net Portfolio Value</span>
+        <strong id="netValue">—</strong>
+      </div>
+
+      <div class="result-card">
+        <span>Break-Even Sell Price</span>
+        <strong id="breakEven">—</strong>
+      </div>
+
+      <div class="result-card">
+        <span>Price Change</span>
+        <strong id="priceChange">—</strong>
+      </div>
+
+    </div>
+
+    <div class="status" id="status">
+      Enter your trade details and select Calculate Profit.
+    </div>
+
+    <p class="mini-note">
+      Results are estimates based on the values you enter. Actual results can
+      differ because of spreads, slippage, network fees, taxes, exchange rules,
+      liquidity and other transaction costs.
+    </p>
+
+  </section>
+
+
+  <!-- HOW IT WORKS -->
+  <section class="section">
+
+    <h2>How the Crypto Profit Calculator Works</h2>
+
+    <p>
+      The EZTradingHub Crypto Profit Calculator helps traders and investors
+      estimate the outcome of a cryptocurrency transaction. Enter the amount
+      invested, your crypto purchase price, your expected selling price and
+      applicable trading fees.
+    </p>
+
+    <p>
+      The calculator then estimates how much cryptocurrency your investment
+      buys, the value of the position at the selling price, transaction costs,
+      net profit or loss and return on investment.
+    </p>
+
+    <h3>Basic Crypto Profit Formula</h3>
+
+    <div class="formula">
+      Crypto Quantity = Investment Amount ÷ Buy Price
+      <br><br>
+      Gross Sale Value = Crypto Quantity × Sell Price
+      <br><br>
+      Net Profit = Net Sale Value − Total Buy Cost
+      <br><br>
+      ROI = (Net Profit ÷ Total Buy Cost) × 100
+    </div>
+
+    <p>
+      Fees can have a meaningful effect on short-term trades, particularly
+      when the expected price movement is small. That is why this calculator
+      allows you to include separate buy and sell fee percentages.
+    </p>
+
+  </section>
+
+
+  <!-- EXAMPLE -->
+  <section class="section">
+
+    <h2>Crypto Profit Example</h2>
+
+    <p>
+      Suppose you invest $1,000 in Bitcoin when Bitcoin is trading at $50,000.
+      If the price later reaches $60,000, the position has increased in value.
+      However, the final result should also consider trading fees and other
+      applicable costs.
+    </p>
+
+    <table class="example-table">
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Example</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>Investment</td>
+          <td>$1,000</td>
+        </tr>
+
+        <tr>
+          <td>Buy Price</td>
+          <td>$50,000</td>
+        </tr>
+
+        <tr>
+          <td>Target Sell Price</td>
+          <td>$60,000</td>
+        </tr>
+
+        <tr>
+          <td>Price Increase</td>
+          <td>20%</td>
+        </tr>
+
+        <tr>
+          <td>Trading Fees</td>
+          <td>Excluded in this simple example</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>
+      The calculator above provides a more useful estimate because it allows
+      you to include buy and sell fees rather than relying only on the change
+      in market price.
+    </p>
+
+  </section>
+
+
+  <!-- ROI -->
+  <section class="section">
+
+    <h2>Understanding Crypto ROI</h2>
+
+    <p>
+      ROI means Return on Investment. It expresses the gain or loss from a
+      trade as a percentage of the amount invested.
+    </p>
+
+    <p>
+      For example, a 20% ROI means the investment gained an amount equivalent
+      to 20% of the original investment, before considering any costs that
+      have not been included in the calculation.
+    </p>
+
+    <p>
+      ROI is useful for comparing different investments, but it should not be
+      viewed in isolation. Holding period, volatility, liquidity, risk and
+      maximum potential loss are also important when evaluating a trade.
+    </p>
+
+  </section>
+
+
+  <!-- FEES -->
+  <section class="section">
+
+    <h2>Why Crypto Trading Fees Matter</h2>
+
+    <p>
+      Cryptocurrency exchanges may charge trading fees when you buy or sell.
+      Depending on the platform, additional costs may include withdrawal fees,
+      network fees, spreads and other charges.
+    </p>
+
+    <p>
+      For a long-term investment with a large price movement, a small trading
+      fee may have a relatively limited effect. For frequent trading or
+      scalping, however, repeated fees can reduce net returns considerably.
+    </p>
+
+    <h3>Costs to Consider</h3>
+
+    <ul>
+      <li>Exchange trading fees</li>
+      <li>Bid-ask spread</li>
+      <li>Network or blockchain fees</li>
+      <li>Withdrawal fees</li>
+      <li>Slippage</li>
+      <li>Applicable taxes or regulatory costs</li>
+    </ul>
+
+  </section>
+
+
+  <!-- RISK MANAGEMENT -->
+  <section class="section">
+
+    <h2>Crypto Risk Management</h2>
+
+    <p>
+      A profitable calculation does not mean that a trade is low risk.
+      Cryptocurrency markets can experience significant price movements,
+      sometimes within a short period.
+    </p>
+
+    <p>
+      Before entering a trade, consider how much capital you are willing to
+      risk, where the trade becomes invalid, how much volatility the asset
+      normally experiences and whether the position is appropriate for your
+      overall portfolio.
+    </p>
+
+    <h3>Practical Risk Management Ideas</h3>
+
+    <ul>
+      <li>Define your maximum acceptable loss before entering a trade.</li>
+      <li>Avoid risking money you cannot afford to lose.</li>
+      <li>Consider position size instead of focusing only on potential profit.</li>
+      <li>Account for trading fees and slippage.</li>
+      <li>Do not assume that a target price will definitely be reached.</li>
+      <li>Review your trading plan regularly.</li>
+    </ul>
+
+  </section>
+
+
+  <!-- FAQ -->
+  <section class="section">
+
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+      <h3>What is a crypto profit calculator?</h3>
+
+      <p>
+        A crypto profit calculator estimates the potential profit or loss from
+        buying cryptocurrency at one price and selling it at another price.
+      </p>
+    </div>
+
+    <div class="faq-item">
+      <h3>How do I calculate cryptocurrency profit?</h3>
+
+      <p>
+        First determine the amount of cryptocurrency purchased. Then calculate
+        its value at the selling price and subtract the original cost and
+        applicable transaction fees.
+      </p>
+    </div>
+
+    <div class="faq-item">
+      <h3>What is crypto ROI?</h3>
+
+      <p>
+        Crypto ROI is the percentage return generated by an investment relative
+        to the amount originally invested.
+      </p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Does the calculator include fees?</h3>
+
+      <p>
+        Yes. You can enter separate buy and sell fee percentages. The result is
+        therefore more useful than a simple buy-price versus sell-price
+        calculation.
+      </p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Does this calculator guarantee crypto profits?</h3>
+
+      <p>
+        No. It is a mathematical planning tool. Cryptocurrency prices are
+        unpredictable, and actual results may differ because of market
+        conditions, execution price, liquidity, fees and slippage.
+      </p>
+    </div>
+
+  </section>
+
+
+  <!-- RELATED TOOLS -->
+  <section class="section">
+
+    <h2>Related EZTradingHub Crypto Tools</h2>
+
+    <p>
+      Use these additional tools to build a more complete cryptocurrency
+      research and risk-management workflow.
+    </p>
+
+    <div class="related-grid">
+
+      <a class="related-link" href="crypto-dca-calculator.html">
+        Crypto DCA Calculator
+      </a>
+
+      <a class="related-link" href="crypto-roi-calculator.html">
+        Crypto ROI Calculator
+      </a>
+
+      <a class="related-link" href="crypto-position-size.html">
+        Crypto Position Size Calculator
+      </a>
+
+      <a class="related-link" href="crypto-portfolio-tracker.html">
+        Crypto Portfolio Tracker
+      </a>
+
+      <a class="related-link" href="crypto-staking-calculator.html">
+        Crypto Staking Calculator
+      </a>
+
+      <a class="related-link" href="crypto-liquidation-calculators.html">
+        Crypto Liquidation Calculator
+      </a>
+
+      <a class="related-link" href="risk-calculator.html">
+        Trading Risk Calculator
+      </a>
+
+      <a class="related-link" href="risk-reward-calculator.html">
+        Risk-to-Reward Calculator
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- DISCLAIMER -->
+  <section class="section disclaimer">
+
+    <h2>Financial Disclaimer</h2>
+
+    <p>
+      EZTradingHub provides calculators and educational information for
+      informational and educational purposes only. Nothing on this page should
+      be considered financial, investment, trading, tax or legal advice.
+    </p>
+
+    <p>
+      Cryptocurrency trading involves substantial risk and you may lose some
+      or all of your invested capital. Calculator results are estimates based
+      on the information entered and do not guarantee future performance.
+    </p>
+
+    <p>
+      Always verify prices, fees and trading conditions with your exchange or
+      financial service provider before making financial decisions.
+    </p>
+
+  </section>
+
+</main>
+
 
 <footer>
 
-        <div>
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="faq.html">FAQ</a>
-            <a href="terms.html">Terms & Conditions</a>
-            <a href="privacy.html">Privacy Policy</a>
-            <a href="cookie-policy.html">Cookie Policy</a>
-            <a href="disclaimer.html">Disclaimer</a>
-            <a href="contact.html">Contact</a>
-        </div>
+  <div class="footer-inner">
 
-        <p class="copyright">
-            © 2026 EZTradingHub. All rights reserved.
-        </p>
+    <div>
+      <h3>EZTradingHub</h3>
 
-        <p class="copyright">
-            EZTradingHub provides educational and informational tools.
-            Trading involves risk.
-        </p>
+      <p>
+        Smart trading tools, calculators and educational resources designed
+        to help traders make better-informed decisions.
+      </p>
 
-    </footer>
-    <script src="cookie-consent.js"></script>
+      <p>
+        We focus on practical tools for Forex, crypto and financial markets.
+      </p>
+    </div>
+
+    <div>
+      <h3>Tools</h3>
+
+      <ul>
+        <li><a href="calculators.html">All Calculators</a></li>
+        <li><a href="crypto-profit-calculator.html">Crypto Profit</a></li>
+        <li><a href="crypto-dca-calculator.html">Crypto DCA</a></li>
+        <li><a href="crypto-roi-calculator.html">Crypto ROI</a></li>
+        <li><a href="risk-calculator.html">Risk Calculator</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3>Information</h3>
+
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms</a></li>
+        <li><a href="cookie-policy.html">Cookie Policy</a></li>
+        <li><a href="disclaimer.html">Disclaimer</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="copyright">
+    © <span id="year"></span> EZTradingHub. All rights reserved.
+  </div>
+
+</footer>
 
 
-<button id="topBtn" onclick="topFunction()">
+<script>
+  /* ============================
+     THEME
+  ============================ */
 
-⬆️
+  const savedTheme = localStorage.getItem("ezth-theme");
 
-</button>
+  if (savedTheme === "dark") {
+    document.body.classList.add("dark");
+  }
+
+  const themeToggle = document.getElementById("themeToggle");
+
+  function updateThemeIcon() {
+    themeToggle.textContent =
+      document.body.classList.contains("dark") ? "☀️" : "🌙";
+  }
+
+  updateThemeIcon();
+
+  themeToggle.addEventListener("click", function () {
+    const dark = document.body.classList.toggle("dark");
+
+    localStorage.setItem(
+      "ezth-theme",
+      dark ? "dark" : "light"
+    );
+
+    updateThemeIcon();
+  });
+
+
+  /* ============================
+     NUMBER FORMATTING
+  ============================ */
+
+  function numberValue(id) {
+    const value = parseFloat(document.getElementById(id).value);
+
+    return Number.isFinite(value) ? value : 0;
+  }
+
+
+  function formatMoney(value, symbol) {
+
+    if (!Number.isFinite(value)) {
+      return symbol + "0.00";
+    }
+
+    return symbol + value.toLocaleString(
+      undefined,
+      {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+      }
+    );
+  }
+
+
+  function formatCrypto(value) {
+
+    if (!Number.isFinite(value)) {
+      return "0";
+    }
+
+    return value.toLocaleString(
+      undefined,
+      {
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 10
+      }
+    );
+  }
+
+
+  function formatPercent(value) {
+
+    if (!Number.isFinite(value)) {
+      return "0.00%";
+    }
+
+    return value.toLocaleString(
+      undefined,
+      {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+      }
+    ) + "%";
+  }
+
+
+  /* ============================
+     CALCULATOR
+  ============================ */
+
+  function calculateProfit() {
+
+    const currency =
+      document.getElementById("currency").value;
+
+    const investment =
+      numberValue("investment");
+
+    const buyPrice =
+      numberValue("buyPrice");
+
+    const sellPrice =
+      numberValue("sellPrice");
+
+    const buyFeePercent =
+      numberValue("buyFee");
+
+    const sellFeePercent =
+      numberValue("sellFee");
+
+
+    const status =
+      document.getElementById("status");
+
+
+    if (investment <= 0 || buyPrice <= 0 || sellPrice <= 0) {
+
+      status.textContent =
+        "Please enter an investment amount, buy price and sell price greater than zero.";
+
+      status.className = "status loss";
+
+      return;
+    }
+
+
+    if (
+      buyFeePercent < 0 ||
+      sellFeePercent < 0
+    ) {
+
+      status.textContent =
+        "Trading fees cannot be negative.";
+
+      status.className = "status loss";
+
+      return;
+    }
+
+
+    /*
+      Investment is treated as the amount available
+      for the purchase.
+
+      Buy fee is calculated on the investment amount.
+      The amount actually converted into crypto is
+      reduced by the buy fee.
+    */
+
+    const buyFee =
+      investment * (buyFeePercent / 100);
+
+    const amountAfterBuyFee =
+      investment - buyFee;
+
+
+    if (amountAfterBuyFee <= 0) {
+
+      status.textContent =
+        "The buy fee is too high relative to the investment.";
+
+      status.className = "status loss";
+
+      return;
+    }
+
+
+    const quantity =
+      amountAfterBuyFee / buyPrice;
+
+
+    const grossSaleValue =
+      quantity * sellPrice;
+
+
+    const sellFee =
+      grossSaleValue * (sellFeePercent / 100);
+
+
+    const netSaleValue =
+      grossSaleValue - sellFee;
+
+
+    /*
+      Total economic cost includes the original
+      investment plus the buy fee.
+
+      This treats the entered investment as the
+      amount used for the trade before fees.
+    */
+
+    const totalCost =
+      investment;
+
+
+    const totalFees =
+      buyFee + sellFee;
+
+
+    const profitLoss =
+      netSaleValue - totalCost;
+
+
+    const roi =
+      (profitLoss / totalCost) * 100;
+
+
+    /*
+      Break-even price is the sell price required
+      for net sale value to equal total investment.
+
+      net sale = quantity * price * (1 - sellFee)
+
+      price =
+      investment /
+      (quantity * (1 - sellFeeRate))
+    */
+
+    const sellFeeRate =
+      sellFeePercent / 100;
+
+
+    let breakEven = 0;
+
+    if (sellFeeRate < 1 && quantity > 0) {
+
+      breakEven =
+        totalCost /
+        (quantity * (1 - sellFeeRate));
+    }
+
+
+    const priceChange =
+      ((sellPrice - buyPrice) / buyPrice) * 100;
+
+
+    /* RESULTS */
+
+    document.getElementById("quantity").textContent =
+      formatCrypto(quantity);
+
+
+    document.getElementById("buyCost").textContent =
+      formatMoney(totalCost, currency);
+
+
+    document.getElementById("saleValue").textContent =
+      formatMoney(grossSaleValue, currency);
+
+
+    document.getElementById("totalFees").textContent =
+      formatMoney(totalFees, currency);
+
+
+    const profitElement =
+      document.getElementById("profitLoss");
+
+
+    profitElement.textContent =
+      (profitLoss >= 0 ? "+" : "") +
+      formatMoney(profitLoss, currency);
+
+
+    profitElement.className =
+      profitLoss >= 0 ? "profit" : "loss";
+
+
+    const roiElement =
+      document.getElementById("roi");
+
+
+    roiElement.textContent =
+      (roi >= 0 ? "+" : "") +
+      formatPercent(roi);
+
+
+    roiElement.className =
+      roi >= 0 ? "profit" : "loss";
+
+
+    document.getElementById("netValue").textContent =
+      formatMoney(netSaleValue, currency);
+
+
+    document.getElementById("breakEven").textContent =
+      formatMoney(breakEven, currency);
+
+
+    const priceChangeElement =
+      document.getElementById("priceChange");
+
+
+    priceChangeElement.textContent =
+      (priceChange >= 0 ? "+" : "") +
+      formatPercent(priceChange);
+
+
+    priceChangeElement.className =
+      priceChange >= 0 ? "profit" : "loss";
+
+
+    const crypto =
+      document.getElementById("crypto").value.trim() ||
+      "your cryptocurrency";
+
+
+    if (profitLoss > 0) {
+
+      status.textContent =
+        crypto +
+        " trade estimate: potential net profit of " +
+        formatMoney(profitLoss, currency) +
+        " (" +
+        formatPercent(roi) +
+        " ROI) after the entered fees.";
+
+      status.className = "status profit";
+
+    } else if (profitLoss < 0) {
+
+      status.textContent =
+        crypto +
+        " trade estimate: potential net loss of " +
+        formatMoney(Math.abs(profitLoss), currency) +
+        " (" +
+        formatPercent(Math.abs(roi)) +
+        " loss) after the entered fees.";
+
+      status.className = "status loss";
+
+    } else {
+
+      status.textContent =
+        "The estimated trade is approximately at break-even after the entered fees.";
+
+      status.className = "status";
+
+    }
+
+  }
+
+
+  /* ============================
+     RESET
+  ============================ */
+
+  function resetCalculator() {
+
+    document.getElementById("crypto").value =
+      "Bitcoin (BTC)";
+
+    document.getElementById("currency").value =
+      "$";
+
+    document.getElementById("investment").value =
+      "1000";
+
+    document.getElementById("buyPrice").value =
+      "50000";
+
+    document.getElementById("sellPrice").value =
+      "60000";
+
+    document.getElementById("buyFee").value =
+      "0.1";
+
+    document.getElementById("sellFee").value =
+      "0.1";
+
+
+    const ids = [
+      "quantity",
+      "buyCost",
+      "saleValue",
+      "totalFees",
+      "profitLoss",
+      "roi",
+      "netValue",
+      "breakEven",
+      "priceChange"
+    ];
+
+
+    ids.forEach(function(id) {
+
+      document.getElementById(id).textContent =
+        "—";
+
+      document.getElementById(id).className =
+        "";
+
+    });
+
+
+    document.getElementById("status").textContent =
+      "Enter your trade details and select Calculate Profit.";
+
+    document.getElementById("status").className =
+      "status";
+  }
+
+
+  /* ============================
+     YEAR
+  ============================ */
+
+  document.getElementById("year").textContent =
+    new Date().getFullYear();
+
+
+  /* ============================
+     INITIAL CALCULATION
+  ============================ */
+
+  calculateProfit();
+</script>
 
 </body>
-
 </html>
-
