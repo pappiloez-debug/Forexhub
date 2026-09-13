@@ -1,155 +1,2379 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crypto Position Size Calculator — Calculate Crypto Trade Size | EZTradingHub</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="description"
-      content="Free Crypto Position Size Calculator to determine an appropriate cryptocurrency trade size based on account balance, risk percentage and stop-loss distance.">
+  <title>Crypto Position Size Calculator | Crypto Risk Calculator | EZTradingHub</title>
 
-<meta name="keywords"
-      content="crypto position size calculator, cryptocurrency position size calculator, crypto risk calculator, crypto trading calculator, crypto trade size calculator">
+  <meta name="description" content="Use the free EZTradingHub Crypto Position Size Calculator to calculate crypto position size, risk per trade, stop-loss amount, potential profit and risk-to-reward ratio.">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="EZTradingHub">
+  <meta name="theme-color" content="#075985">
 
-<meta name="robots"
-      content="index, follow">
+  <link rel="canonical" href="https://eztradinghub.com/crypto-position-size.html">
 
-<link rel="canonical"
-      href="https://eztradinghub.com/crypto-position-size.html">
-    
-    <link rel="manifest" href="manifest.json">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Crypto Position Size Calculator | EZTradingHub">
+  <meta property="og:description" content="Calculate cryptocurrency position size, trading risk, stop-loss amount, potential profit and risk-to-reward with EZTradingHub.">
+  <meta property="og:url" content="https://eztradinghub.com/crypto-position-size.html">
+  <meta property="og:site_name" content="EZTradingHub">
+  <meta property="og:image" content="https://eztradinghub.com/assets/images/og-image.png">
 
-    <link rel="stylesheet" href="style.css">
-<style>
-:root{--navy:#062f5f;--green:#047857;--dark:#111827;--text:#1f2937;--muted:#475569;--bg:#f8fafc;--card:#fff;--border:#e2e8f0}
-*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;line-height:1.7;color:var(--text);background:var(--bg)}
-header{background:var(--navy);color:#fff;padding:18px 20px}.header-inner{max-width:1000px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:20px}
-.brand,.back-link{color:#fff;text-decoration:none;font-weight:800}.brand{font-size:1.35rem}.back-link{font-weight:700}
-main{max-width:1000px;margin:40px auto;padding:0 20px}.hero,section{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:28px;margin-bottom:18px}
-.hero{padding:32px}.hero h1{margin-top:0;color:var(--dark);font-size:clamp(2rem,5vw,3rem)}h2{color:var(--dark);margin-top:0}.updated{color:var(--muted);font-size:.95rem}
-p,li{color:var(--text)}a{color:#065f46;font-weight:600}.notice{border-left:5px solid var(--green);background:#f0fdf4;padding:16px 18px;border-radius:8px}
-footer{background:var(--dark);color:#fff;text-align:center;padding:28px 20px;margin-top:45px}footer p{color:#fff}footer a{color:#fff;margin:0 8px}
-@media(max-width:650px){.header-inner{align-items:flex-start;flex-direction:column}main{margin-top:24px;padding:0 14px}.hero,section{padding:22px}}
-</style>
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Crypto Position Size Calculator | EZTradingHub">
+  <meta name="twitter:description" content="Calculate crypto position size, risk per trade and potential reward before entering a trade.">
+  <meta name="twitter:image" content="https://eztradinghub.com/assets/images/og-image.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/assets/images/favicon.png">
+
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- WebApplication Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "EZTradingHub Crypto Position Size Calculator",
+    "url": "https://eztradinghub.com/crypto-position-size.html",
+    "description": "Free cryptocurrency position sizing and risk management calculator.",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Web",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "EZTradingHub",
+      "url": "https://eztradinghub.com/"
+    }
+  }
+  </script>
+
+  <!-- Breadcrumb Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://eztradinghub.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Calculators",
+        "item": "https://eztradinghub.com/calculators.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Crypto Position Size Calculator",
+        "item": "https://eztradinghub.com/crypto-position-size.html"
+      }
+    ]
+  }
+  </script>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is crypto position sizing?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Crypto position sizing is the process of determining how much cryptocurrency to buy or sell based on account size, acceptable risk and the distance between the entry price and stop-loss price."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How is crypto position size calculated?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A basic position size calculation divides the amount of money you are willing to risk by the price difference between the entry and stop-loss."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What percentage should I risk on a crypto trade?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "There is no universal percentage that is appropriate for every trader. A trader should choose a risk level based on their strategy, financial situation, experience and tolerance for losses."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does this calculator guarantee that I will lose only the calculated amount?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. The calculation is an estimate. Slippage, gaps, liquidation, fees, market volatility and execution conditions can cause actual losses to differ from the planned amount."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg: #f4f7fb;
+      --surface: #ffffff;
+      --surface2: #f8fafc;
+      --text: #172033;
+      --muted: #667085;
+      --border: #e2e8f0;
+
+      --primary: #075985;
+      --primary2: #0ea5e9;
+
+      --success: #16a34a;
+      --warning: #d97706;
+      --danger: #dc2626;
+
+      --shadow: 0 12px 35px rgba(15,23,42,.08);
+      --radius: 18px;
+    }
+
+    body.dark {
+      --bg: #07111f;
+      --surface: #0e1b2d;
+      --surface2: #111f33;
+      --text: #f1f5f9;
+      --muted: #aab7c9;
+      --border: #24364d;
+
+      --primary: #38bdf8;
+      --primary2: #0ea5e9;
+
+      --success: #4ade80;
+      --warning: #fbbf24;
+      --danger: #fb7185;
+
+      --shadow: 0 12px 35px rgba(0,0,0,.25);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      transition: background .25s ease, color .25s ease;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    button,
+    input,
+    select {
+      font: inherit;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 4px 18px rgba(0,0,0,.05);
+    }
+
+    .nav {
+      max-width: 1180px;
+      margin: auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--text);
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .brand:hover {
+      text-decoration: none;
+    }
+
+    .logo {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      font-weight: 900;
+      background: linear-gradient(135deg, var(--primary), var(--primary2));
+      box-shadow: 0 8px 18px rgba(14,165,233,.25);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .nav-links a {
+      color: var(--text);
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .theme-btn {
+      border: 1px solid var(--border);
+      background: var(--surface2);
+      color: var(--text);
+      border-radius: 10px;
+      padding: 9px 12px;
+      font-weight: 700;
+    }
+
+    .breadcrumbs {
+      max-width: 1180px;
+      margin: 22px auto 0;
+      padding: 0 20px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .hero {
+      max-width: 900px;
+      margin: 30px auto;
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      padding: 7px 13px;
+      border-radius: 999px;
+      background: rgba(14,165,233,.10);
+      color: var(--primary);
+      font-weight: 800;
+      font-size: 13px;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      font-size: clamp(32px, 5vw, 52px);
+      line-height: 1.1;
+      margin: 0 0 16px;
+      letter-spacing: -1.5px;
+    }
+
+    .hero p {
+      max-width: 760px;
+      margin: auto;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .calculator {
+      max-width: 900px;
+      margin: 0 auto 45px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 26px;
+    }
+
+    .calculator h2 {
+      margin-top: 0;
+      font-size: 25px;
+    }
+
+    .input-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .field label {
+      display: block;
+      font-weight: 700;
+      margin-bottom: 7px;
+      font-size: 14px;
+    }
+
+    .field small {
+      display: block;
+      color: var(--muted);
+      margin-top: 5px;
+      font-size: 12px;
+    }
+
+    input,
+    select {
+      width: 100%;
+      padding: 13px 14px;
+      border: 1px solid var(--border);
+      border-radius: 11px;
+      background: var(--surface2);
+      color: var(--text);
+      outline: none;
+    }
+
+    input:focus,
+    select:focus {
+      border-color: var(--primary2);
+      box-shadow: 0 0 0 3px rgba(14,165,233,.12);
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .btn {
+      border: 0;
+      border-radius: 11px;
+      padding: 12px 18px;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--primary), var(--primary2));
+      color: #fff;
+    }
+
+    .btn.secondary {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
+
+    .results {
+      margin-top: 28px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .result-card {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      padding: 18px;
+    }
+
+    .result-card span {
+      display: block;
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 6px;
+    }
+
+    .result-card strong {
+      font-size: 21px;
+      line-height: 1.2;
+    }
+
+    .profit {
+      color: var(--success);
+    }
+
+    .loss {
+      color: var(--danger);
+    }
+
+    .warning {
+      color: var(--warning);
+    }
+
+    .status {
+      margin-top: 18px;
+      padding: 14px 16px;
+      border-radius: 12px;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      font-weight: 700;
+    }
+
+    .section {
+      max-width: 900px;
+      margin: 0 auto 45px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 28px;
+    }
+
+    .section h2 {
+      margin-top: 0;
+      font-size: 27px;
+    }
+
+    .section h3 {
+      font-size: 20px;
+      margin-top: 26px;
+    }
+
+    .formula {
+      padding: 18px;
+      background: var(--surface2);
+      border-left: 4px solid var(--primary2);
+      border-radius: 10px;
+      overflow-x: auto;
+      font-weight: 700;
+    }
+
+    .example-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 18px;
+    }
+
+    .example-table th,
+    .example-table td {
+      border: 1px solid var(--border);
+      padding: 12px;
+      text-align: left;
+    }
+
+    .example-table th {
+      background: var(--surface2);
+    }
+
+    .faq-item {
+      padding: 18px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .faq-item:last-child {
+      border-bottom: 0;
+    }
+
+    .faq-item h3 {
+      margin: 0 0 7px;
+      font-size: 18px;
+    }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .related-link {
+      display: block;
+      padding: 15px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--surface2);
+      font-weight: 700;
+    }
+
+    .disclaimer {
+      background: rgba(217,119,6,.08);
+      border: 1px solid rgba(217,119,6,.25);
+    }
+
+    footer {
+      margin-top: 50px;
+      border-top: 1px solid var(--border);
+      background: var(--surface);
+    }
+
+    .footer-inner {
+      max-width: 1180px;
+      margin: auto;
+      padding: 35px 20px;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 30px;
+    }
+
+    footer h3 {
+      margin-top: 0;
+    }
+
+    footer p,
+    footer li {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    footer ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    footer li {
+      margin-bottom: 8px;
+    }
+
+    .copyright {
+      max-width: 1180px;
+      margin: auto;
+      padding: 16px 20px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+
+    .mini-note {
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 15px;
+    }
+
+    @media (max-width: 800px) {
+
+      .nav {
+        padding: 12px 15px;
+      }
+
+      .nav-links {
+        gap: 9px;
+      }
+
+      .nav-links a {
+        display: none;
+      }
+
+      .container,
+      .breadcrumbs {
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+
+      .input-grid,
+      .results,
+      .footer-inner,
+      .related-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .calculator,
+      .section {
+        padding: 20px;
+        border-radius: 14px;
+      }
+
+      .hero {
+        padding: 20px 10px;
+      }
+
+      h1 {
+        font-size: 35px;
+      }
+
+      .hero p {
+        font-size: 15px;
+      }
+    }
+
+    @media print {
+
+      .site-header,
+      .breadcrumbs,
+      .buttons,
+      footer {
+        display: none !important;
+      }
+
+      body {
+        background: #fff;
+        color: #000;
+      }
+
+      .calculator,
+      .section {
+        box-shadow: none;
+        border: 1px solid #ccc;
+      }
+    }
+  </style>
 </head>
+
 <body>
-<header><div class="header-inner">
-<a class="brand" href="index.html">EZTradingHub</a>
-<a class="back-link" href="index.html">← Back to Home</a>
-</div></header>
 
-<div class="hero">
-<h1>🪙 Crypto Position Size Calculator</h1>
-<p>Calculate the correct crypto position size based on your risk.</p>
-</div>
+<header class="site-header">
 
-<div class="calculator-card">
+  <nav class="nav" aria-label="Main navigation">
 
-<label>Account Balance ($)</label>
-<input type="number" id="balance">
+    <a class="brand" href="/">
+      <span class="logo" aria-hidden="true">EZ</span>
+      <span>EZTradingHub</span>
+    </a>
 
-<br><br>
+    <div class="nav-links">
 
-<label>Risk (%)</label>
-<input type="number" id="risk">
+      <a href="index.html">Home</a>
 
-<br><br>
+      <a href="calculators.html">
+        Calculators
+      </a>
 
-<label>Stop Loss ($)</label>
-<input type="number" id="stopLoss">
+      <a href="trade-journal.html">
+        Trade Journal
+      </a>
 
-<br><br>
+      <a href="about.html">
+        About
+      </a>
 
-<button onclick="calculateCryptoPosition()">
-Calculate
-</button>
-
-<button onclick="resetCryptoPosition()">
-Reset
-</button>
-
-<br><br>
-
-<h2 id="positionResult"></h2>
-
-</div>
-      
-<section class="related-tools">
-
-    <h2>Related Crypto Calculators</h2>
-
-    <p>Calculate crypto position size, risk and potential trading results.</p>
-
-    <div class="related-tools-grid">
-
-        <a href="crypto-dca-calculator.html">
-            💵 Crypto DCA Calculator
-        </a>
-
-        <a href="crypto-profit-calculator.html">
-            💰 Crypto Profit Calculator
-        </a>
-
-        <a href="crypto-roi-calculator.html">
-            📈 Crypto ROI Calculator
-        </a>
-
-        <a href="crypto-liquidation-calculators.html">
-            ⚠️ Crypto Liquidation Calculator
-        </a>
-
-        <a href="crypto-portfolio-tracker.html">
-            📊 Crypto Portfolio Tracker
-        </a>
-
-        <a href="crypto-staking-calculator.html">
-            🪙 Crypto Staking Calculator
-        </a>
+      <button
+        class="theme-btn"
+        id="themeToggle"
+        type="button"
+        aria-label="Toggle dark mode"
+        title="Toggle light and dark mode">
+        🌙
+      </button>
 
     </div>
 
-</section>
+  </nav>
 
-<a href="index.html" class="btn">
-🏠 Back to Home
-</a>
-    
-</section>
-<script src="script.js"></script>
+</header>
+
+
+<div class="breadcrumbs">
+
+  <a href="index.html">Home</a>
+
+  <span aria-hidden="true"> › </span>
+
+  <a href="calculators.html">
+    Calculators
+  </a>
+
+  <span aria-hidden="true"> › </span>
+
+  <span>
+    Crypto Position Size Calculator
+  </span>
+
+</div>
+
+
+<main>
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <span class="hero-badge">
+      CRYPTO RISK MANAGEMENT TOOL
+    </span>
+
+    <h1>
+      Crypto Position Size Calculator
+    </h1>
+
+    <p>
+      Calculate a cryptocurrency position size based on account balance,
+      risk percentage, entry price and stop-loss. Estimate potential
+      loss, potential profit and risk-to-reward before entering a trade.
+    </p>
+
+  </section>
+
+
+  <!-- CALCULATOR -->
+
+  <section
+    class="calculator"
+    aria-labelledby="calculator-heading">
+
+    <h2 id="calculator-heading">
+      Calculate Your Crypto Position Size
+    </h2>
+
+    <div class="input-grid">
+
+      <div class="field">
+
+        <label for="crypto">
+          Cryptocurrency
+        </label>
+
+        <input
+          type="text"
+          id="crypto"
+          value="Bitcoin (BTC)"
+          placeholder="e.g. Bitcoin (BTC)"
+          autocomplete="off">
+
+        <small>
+          Enter the cryptocurrency you are trading.
+        </small>
+
+      </div>
+
+
+      <div class="field">
+
+        <label for="currency">
+          Currency
+        </label>
+
+        <select id="currency">
+
+          <option value="$">
+            USD ($)
+          </option>
+
+          <option value="₦">
+            NGN (₦)
+          </option>
+
+          <option value="€">
+            EUR (€)
+          </option>
+
+          <option value="£">
+            GBP (£)
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <div class="field">
+
+        <label for="account">
+          Account Balance
+        </label>
+
+        <input
+          type="number"
+          id="account"
+          min="0"
+          step="any"
+          value="10000"
+          inputmode="decimal">
+
+        <small>
+          Current trading or investment account balance.
+        </small>
+
+      </div>
+
+
+      <div class="field">
+
+        <label for="riskPercent">
+          Risk Per Trade (%)
+        </label>
+
+        <input
+          type="number"
+          id="riskPercent"
+          min="0"
+          step="any"
+          value="1"
+          inputmode="decimal">
+
+        <small>
+          Percentage of your account you are willing to risk.
+        </small>
+
+      </div>
+
+
+      <div class="field">
+
+        <label for="entryPrice">
+          Entry Price
+        </label>
+
+        <input
+          type="number"
+          id="entryPrice"
+          min="0"
+          step="any"
+          value="50000"
+          inputmode="decimal">
+
+        <small>
+          Planned entry price per coin.
+        </small>
+
+      </div>
+
+
+      <div class="field">
+
+        <label for="stopPrice">
+          Stop-Loss Price
+        </label>
+
+        <input
+          type="number"
+          id="stopPrice"
+          min="0"
+          step="any"
+          value="49000"
+          inputmode="decimal">
+
+        <small>
+          Price where the trade idea becomes invalid.
+        </small>
+
+      </div>
+
+
+      <div class="field">
+
+        <label for="takeProfit">
+          Take-Profit Price
+        </label>
+
+        <input
+          type="number"
+          id="takeProfit"
+          min="0"
+          step="any"
+          value="53000"
+          inputmode="decimal">
+
+        <small>
+          Optional target price for estimating potential reward.
+        </small>
+
+      </div>
+
+
+      <div class="field">
+
+        <label for="fees">
+          Estimated Trading Fees (%)
+        </label>
+
+        <input
+          type="number"
+          id="fees"
+          min="0"
+          step="any"
+          value="0.2"
+          inputmode="decimal">
+
+        <small>
+          Optional combined estimate for transaction fees.
+        </small>
+
+      </div>
+
+    </div>
+
+
+    <div class="buttons">
+
+      <button
+        class="btn"
+        type="button"
+        onclick="calculatePosition()">
+
+        Calculate Position
+
+      </button>
+
+
+      <button
+        class="btn secondary"
+        type="button"
+        onclick="resetCalculator()">
+
+        Reset
+
+      </button>
+
+
+      <button
+        class="btn secondary"
+        type="button"
+        onclick="window.print()">
+
+        Print Results
+
+      </button>
+
+    </div>
+
+
+    <!-- RESULTS -->
+
+    <div
+      class="results"
+      aria-live="polite">
+
+      <div class="result-card">
+
+        <span>
+          Maximum Risk
+        </span>
+
+        <strong id="riskAmount">
+          —
+        </strong>
+
+      </div>
+
+
+      <div class="result-card">
+
+        <span>
+          Price Risk Per Coin
+        </span>
+
+        <strong id="priceRisk">
+          —
+        </strong>
+
+      </div>
+
+
+      <div class="result-card">
+
+        <span>
+          Position Size
+        </span>
+
+        <strong id="positionSize">
+          —
+        </strong>
+
+      </div>
+
+
+      <div class="result-card">
+
+        <span>
+          Position Value
+        </span>
+
+        <strong id="positionValue">
+          —
+        </strong>
+
+      </div>
+
+
+      <div class="result-card">
+
+        <span>
+          Stop-Loss Loss Estimate
+        </span>
+
+        <strong id="lossEstimate">
+          —
+        </strong>
+
+      </div>
+
+
+      <div class="result-card">
+
+        <span>
+          Potential Gross Profit
+        </span>
+
+        <strong id="profitEstimate">
+          —
+        </strong>
+
+      </div>
+
+
+      <div class="result-card">
+
+        <span>
+          Risk-to-Reward
+        </span>
+
+        <strong id="riskReward">
+          —
+        </strong>
+
+      </div>
+
+
+      <div class="result-card">
+
+        <span>
+          Position Size as % of Account
+        </span>
+
+        <strong id="positionPercent">
+          —
+        </strong>
+
+      </div>
+
+
+      <div class="result-card">
+
+        <span>
+          Estimated Fees
+        </span>
+
+        <strong id="feeEstimate">
+          —
+        </strong>
+
+      </div>
+
+    </div>
+
+
+    <div
+      class="status"
+      id="status">
+
+      Enter your trade details and select Calculate Position.
+
+    </div>
+
+
+    <p class="mini-note">
+
+      This calculator assumes a simple spot-style position where the
+      loss per coin is based on the distance between entry and stop-loss.
+      Futures, margin, leverage, liquidation and exchange-specific
+      contract specifications can produce different results.
+
+    </p>
+
+  </section>
+
+
+  <!-- WHAT IS POSITION SIZING -->
+
+  <section class="section">
+
+    <h2>
+      What Is Crypto Position Sizing?
+    </h2>
+
+    <p>
+      Position sizing is the process of determining how much of an asset
+      to trade based on the amount of capital you are willing to risk.
+      Instead of deciding position size only by how much profit you want
+      to make, risk-based position sizing starts with the amount you can
+      reasonably afford to lose if the trade reaches its stop-loss.
+    </p>
+
+    <p>
+      In cryptocurrency markets, position sizing can be especially
+      important because digital assets can experience substantial price
+      movements. A position that looks small relative to an account can
+      still produce a large loss if the market moves sharply against it.
+    </p>
+
+  </section>
+
+
+  <!-- FORMULA -->
+
+  <section class="section">
+
+    <h2>
+      Crypto Position Size Formula
+    </h2>
+
+    <p>
+      A basic risk-based position size calculation can be expressed as:
+    </p>
+
+    <div class="formula">
+
+      Maximum Risk =
+      Account Balance × Risk Percentage
+
+      <br><br>
+
+      Risk Per Coin =
+      |Entry Price − Stop-Loss Price|
+
+      <br><br>
+
+      Position Size =
+      Maximum Risk ÷ Risk Per Coin
+
+      <br><br>
+
+      Position Value =
+      Position Size × Entry Price
+
+    </div>
+
+    <p>
+      The formula assumes the position is sized using the difference
+      between the entry price and stop-loss price. Fees and execution
+      conditions can affect the actual result.
+    </p>
+
+  </section>
+
+
+  <!-- EXAMPLE -->
+
+  <section class="section">
+
+    <h2>
+      Crypto Position Size Example
+    </h2>
+
+    <p>
+      Suppose a trader has a $10,000 account and decides to risk 1% on
+      a Bitcoin trade. The maximum planned risk would be $100.
+    </p>
+
+    <p>
+      If Bitcoin is purchased at $50,000 and the stop-loss is placed at
+      $49,000, the price risk is $1,000 per BTC.
+    </p>
+
+    <table class="example-table">
+
+      <thead>
+
+        <tr>
+          <th>Item</th>
+          <th>Example</th>
+        </tr>
+
+      </thead>
+
+      <tbody>
+
+        <tr>
+          <td>
+            Account Balance
+          </td>
+
+          <td>
+            $10,000
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            Risk
+          </td>
+
+          <td>
+            1%
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            Maximum Risk
+          </td>
+
+          <td>
+            $100
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            Entry Price
+          </td>
+
+          <td>
+            $50,000
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            Stop-Loss
+          </td>
+
+          <td>
+            $49,000
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            Price Risk
+          </td>
+
+          <td>
+            $1,000 per BTC
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            Position Size
+          </td>
+
+          <td>
+            0.10 BTC
+          </td>
+        </tr>
+
+      </tbody>
+
+    </table>
+
+    <p>
+      The example is simplified and does not account for every possible
+      trading cost or execution condition.
+    </p>
+
+  </section>
+
+
+  <!-- RISK REWARD -->
+
+  <section class="section">
+
+    <h2>
+      Crypto Risk-to-Reward Ratio
+    </h2>
+
+    <p>
+      Risk-to-reward compares the amount you could potentially lose with
+      the amount you are targeting as a potential gain.
+    </p>
+
+    <div class="formula">
+
+      Risk-to-Reward =
+      Potential Reward ÷ Potential Risk
+
+    </div>
+
+    <p>
+      For example, if your planned loss is $100 and your potential gross
+      profit is $200, the trade has a 2:1 reward-to-risk relationship.
+    </p>
+
+    <p>
+      A favorable risk-to-reward ratio does not guarantee a profitable
+      strategy. The probability of reaching the target and the quality
+      of the trading setup also matter.
+    </p>
+
+  </section>
+
+
+  <!-- FEES -->
+
+  <section class="section">
+
+    <h2>
+      Why Crypto Trading Fees Matter
+    </h2>
+
+    <p>
+      Trading fees can reduce the amount you receive from a successful
+      trade and increase the effective cost of entering or exiting a
+      position.
+    </p>
+
+    <p>
+      Depending on the exchange and transaction, traders may also
+      encounter spreads, network fees, withdrawal fees or slippage.
+      These costs can be particularly important for frequent traders
+      and strategies that target relatively small price movements.
+    </p>
+
+    <h3>
+      Costs to Consider
+    </h3>
+
+    <ul>
+
+      <li>
+        Exchange trading fees
+      </li>
+
+      <li>
+        Bid-ask spread
+      </li>
+
+      <li>
+        Blockchain or network fees
+      </li>
+
+      <li>
+        Withdrawal costs
+      </li>
+
+      <li>
+        Slippage
+      </li>
+
+      <li>
+        Applicable taxes or regulatory costs
+      </li>
+
+    </ul>
+
+  </section>
+
+
+  <!-- LONG SHORT -->
+
+  <section class="section">
+
+    <h2>
+      Long and Short Crypto Positions
+    </h2>
+
+    <p>
+      The calculator is primarily designed around a straightforward
+      position where the stop-loss represents the maximum planned price
+      movement against the trade.
+    </p>
+
+    <p>
+      For a long position, the stop-loss is normally below the entry
+      price. For a short position, the stop-loss is normally above the
+      entry price.
+    </p>
+
+    <p>
+      Derivatives and leveraged cryptocurrency products require
+      additional considerations such as contract size, leverage,
+      maintenance margin, funding rates and liquidation price. Do not
+      assume that a spot position-sizing formula accurately represents
+      every futures contract.
+    </p>
+
+  </section>
+
+
+  <!-- RISK MANAGEMENT -->
+
+  <section class="section">
+
+    <h2>
+      Practical Crypto Risk Management
+    </h2>
+
+    <p>
+      Position sizing is only one part of risk management. A complete
+      trading plan should also consider the quality of the setup, market
+      volatility, liquidity, trading costs and the maximum amount of
+      capital that could be exposed.
+    </p>
+
+    <h3>
+      Useful Risk Management Practices
+    </h3>
+
+    <ul>
+
+      <li>
+        Define your maximum acceptable loss before entering a trade.
+      </li>
+
+      <li>
+        Avoid increasing position size simply because a trade is losing.
+      </li>
+
+      <li>
+        Account for fees and possible slippage.
+      </li>
+
+      <li>
+        Avoid concentrating excessive capital in one cryptocurrency.
+      </li>
+
+      <li>
+        Review your risk after a significant change in account balance.
+      </li>
+
+      <li>
+        Keep a trading journal so you can evaluate your decisions over
+        a meaningful sample of trades.
+      </li>
+
+    </ul>
+
+  </section>
+
+
+  <!-- FAQ -->
+
+  <section class="section">
+
+    <h2>
+      Frequently Asked Questions
+    </h2>
+
+
+    <div class="faq-item">
+
+      <h3>
+        What is crypto position sizing?
+      </h3>
+
+      <p>
+        Crypto position sizing is the process of determining how much
+        cryptocurrency to trade based on account size, acceptable risk
+        and the distance between the entry and stop-loss prices.
+      </p>
+
+    </div>
+
+
+    <div class="faq-item">
+
+      <h3>
+        How is crypto position size calculated?
+      </h3>
+
+      <p>
+        A basic method divides the amount you are willing to risk by
+        the price difference between your entry and stop-loss.
+      </p>
+
+    </div>
+
+
+    <div class="faq-item">
+
+      <h3>
+        What percentage should I risk on a crypto trade?
+      </h3>
+
+      <p>
+        There is no single percentage suitable for every trader.
+        Your risk level should reflect your financial circumstances,
+        experience, strategy and ability to tolerate losses.
+      </p>
+
+    </div>
+
+
+    <div class="faq-item">
+
+      <h3>
+        Does this calculator work for Bitcoin?
+      </h3>
+
+      <p>
+        Yes. You can use it for Bitcoin, Ethereum and other
+        cryptocurrencies by entering the relevant prices and account
+        information.
+      </p>
+
+    </div>
+
+
+    <div class="faq-item">
+
+      <h3>
+        Does the calculator work for crypto futures?
+      </h3>
+
+      <p>
+        The basic calculation can help illustrate price-based risk,
+        but futures contracts have additional factors such as leverage,
+        contract specifications, funding rates, margin and liquidation.
+        Always check your exchange's contract specifications.
+      </p>
+
+    </div>
+
+
+    <div class="faq-item">
+
+      <h3>
+        Does this calculator guarantee my maximum loss?
+      </h3>
+
+      <p>
+        No. The calculated risk is a planning estimate. Slippage,
+        market gaps, liquidation, fees and execution conditions can
+        cause actual losses to differ.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- RELATED TOOLS -->
+
+  <section class="section">
+
+    <h2>
+      Related EZTradingHub Tools
+    </h2>
+
+    <p>
+      Use these tools together to build a more complete trading and
+      investment workflow.
+    </p>
+
+    <div class="related-grid">
+
+      <a
+        class="related-link"
+        href="crypto-profit-calculator.html">
+
+        Crypto Profit Calculator
+
+      </a>
+
+
+      <a
+        class="related-link"
+        href="crypto-roi-calculator.html">
+
+        Crypto ROI Calculator
+
+      </a>
+
+
+      <a
+        class="related-link"
+        href="crypto-dca-calculator.html">
+
+        Crypto DCA Calculator
+
+      </a>
+
+
+      <a
+        class="related-link"
+        href="crypto-portfolio-tracker.html">
+
+        Crypto Portfolio Tracker
+
+      </a>
+
+
+      <a
+        class="related-link"
+        href="crypto-staking-calculator.html">
+
+        Crypto Staking Calculator
+
+      </a>
+
+
+      <a
+        class="related-link"
+        href="crypto-liquidation-calculators.html">
+
+        Crypto Liquidation Calculator
+
+      </a>
+
+
+      <a
+        class="related-link"
+        href="risk-calculator.html">
+
+        Trading Risk Calculator
+
+      </a>
+
+
+      <a
+        class="related-link"
+        href="risk-reward-calculator.html">
+
+        Risk-to-Reward Calculator
+
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- DISCLAIMER -->
+
+  <section class="section disclaimer">
+
+    <h2>
+      Financial Disclaimer
+    </h2>
+
+    <p>
+      EZTradingHub provides calculators and educational information
+      for informational and educational purposes only. Nothing on this
+      page should be considered financial, investment, trading, tax or
+      legal advice.
+    </p>
+
+    <p>
+      Cryptocurrency trading involves substantial risk. You may lose
+      some or all of your invested capital. The results produced by
+      this calculator are estimates based on the information entered
+      and do not guarantee future performance or limit actual losses.
+    </p>
+
+    <p>
+      Always verify prices, contract specifications, fees, margin
+      requirements and trading conditions with your exchange or
+      financial service provider before trading.
+    </p>
+
+  </section>
+
+</main>
+
+
+<!-- FOOTER -->
 
 <footer>
 
-        <div>
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="faq.html">FAQ</a>
-            <a href="terms.html">Terms & Conditions</a>
-            <a href="privacy.html">Privacy Policy</a>
-            <a href="cookie-policy.html">Cookie Policy</a>
-            <a href="disclaimer.html">Disclaimer</a>
-            <a href="contact.html">Contact</a>
-        </div>
+  <div class="footer-inner">
 
-        <p class="copyright">
-            © 2026 EZTradingHub. All rights reserved.
-        </p>
+    <div>
 
-        <p class="copyright">
-            EZTradingHub provides educational and informational tools.
-            Trading involves risk.
-        </p>
+      <h3>
+        EZTradingHub
+      </h3>
 
-    </footer>
-    <script src="cookie-consent.js"></script>
+      <p>
+        Smart trading tools, calculators and educational resources
+        designed to help traders and investors make better-informed
+        decisions.
+      </p>
+
+      <p>
+        Explore practical tools for Forex, cryptocurrency and
+        financial markets.
+      </p>
+
+    </div>
 
 
-<button id="topBtn" onclick="topFunction()">
+    <div>
 
-⬆️
+      <h3>
+        Crypto Tools
+      </h3>
 
-</button>
+      <ul>
+
+        <li>
+          <a href="crypto-profit-calculator.html">
+            Crypto Profit
+          </a>
+        </li>
+
+        <li>
+          <a href="crypto-roi-calculator.html">
+            Crypto ROI
+          </a>
+        </li>
+
+        <li>
+          <a href="crypto-dca-calculator.html">
+            Crypto DCA
+          </a>
+        </li>
+
+        <li>
+          <a href="crypto-position-size.html">
+            Crypto Position Size
+          </a>
+        </li>
+
+        <li>
+          <a href="crypto-portfolio-tracker.html">
+            Portfolio Tracker
+          </a>
+        </li>
+
+      </ul>
+
+    </div>
+
+
+    <div>
+
+      <h3>
+        Information
+      </h3>
+
+      <ul>
+
+        <li>
+          <a href="about.html">
+            About
+          </a>
+        </li>
+
+        <li>
+          <a href="contact.html">
+            Contact
+          </a>
+        </li>
+
+        <li>
+          <a href="faq.html">
+            FAQ
+          </a>
+        </li>
+
+        <li>
+          <a href="privacy.html">
+            Privacy Policy
+          </a>
+        </li>
+
+        <li>
+          <a href="terms.html">
+            Terms
+          </a>
+        </li>
+
+        <li>
+          <a href="cookie-policy.html">
+            Cookie Policy
+          </a>
+        </li>
+
+        <li>
+          <a href="disclaimer.html">
+            Disclaimer
+          </a>
+        </li>
+
+      </ul>
+
+    </div>
+
+  </div>
+
+
+  <div class="copyright">
+
+    © <span id="year"></span>
+    EZTradingHub. All rights reserved.
+
+  </div>
+
+</footer>
+
+
+<script>
+
+  /* ============================
+     THEME
+  ============================ */
+
+  const savedTheme =
+    localStorage.getItem("ezth-theme");
+
+  if (savedTheme === "dark") {
+    document.body.classList.add("dark");
+  }
+
+
+  const themeToggle =
+    document.getElementById("themeToggle");
+
+
+  function updateThemeIcon() {
+
+    themeToggle.textContent =
+      document.body.classList.contains("dark")
+        ? "☀️"
+        : "🌙";
+
+  }
+
+
+  updateThemeIcon();
+
+
+  themeToggle.addEventListener(
+    "click",
+    function () {
+
+      const dark =
+        document.body.classList.toggle("dark");
+
+      localStorage.setItem(
+        "ezth-theme",
+        dark ? "dark" : "light"
+      );
+
+      updateThemeIcon();
+
+    }
+  );
+
+
+  /* ============================
+     INPUT HELPER
+  ============================ */
+
+  function numberValue(id) {
+
+    const value =
+      parseFloat(
+        document.getElementById(id).value
+      );
+
+    return Number.isFinite(value)
+      ? value
+      : 0;
+
+  }
+
+
+  /* ============================
+     MONEY FORMAT
+  ============================ */
+
+  function formatMoney(value, symbol) {
+
+    if (!Number.isFinite(value)) {
+      return symbol + "0.00";
+    }
+
+    return symbol +
+      value.toLocaleString(
+        undefined,
+        {
+          minimumFractionDigits: 2,
+          maximumFractionDigits: 2
+        }
+      );
+
+  }
+
+
+  /* ============================
+     CRYPTO FORMAT
+  ============================ */
+
+  function formatCrypto(value) {
+
+    if (!Number.isFinite(value)) {
+      return "0";
+    }
+
+    return value.toLocaleString(
+      undefined,
+      {
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 10
+      }
+    );
+
+  }
+
+
+  /* ============================
+     PERCENT FORMAT
+  ============================ */
+
+  function formatPercent(value) {
+
+    if (!Number.isFinite(value)) {
+      return "0.00%";
+    }
+
+    return value.toLocaleString(
+      undefined,
+      {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+      }
+    ) + "%";
+
+  }
+
+
+  /* ============================
+     CALCULATOR
+  ============================ */
+
+  function calculatePosition() {
+
+    const currency =
+      document.getElementById("currency").value;
+
+    const account =
+      numberValue("account");
+
+    const riskPercent =
+      numberValue("riskPercent");
+
+    const entryPrice =
+      numberValue("entryPrice");
+
+    const stopPrice =
+      numberValue("stopPrice");
+
+    const takeProfit =
+      numberValue("takeProfit");
+
+    const feesPercent =
+      numberValue("fees");
+
+
+    const status =
+      document.getElementById("status");
+
+
+    if (
+      account <= 0 ||
+      riskPercent <= 0 ||
+      entryPrice <= 0 ||
+      stopPrice <= 0
+    ) {
+
+      status.textContent =
+        "Please enter valid values greater than zero for account balance, risk percentage, entry price and stop-loss.";
+
+      status.className =
+        "status loss";
+
+      return;
+
+    }
+
+
+    if (
+      riskPercent >= 100
+    ) {
+
+      status.textContent =
+        "Risk percentage must be below 100%.";
+
+      status.className =
+        "status loss";
+
+      return;
+
+    }
+
+
+    if (
+      feesPercent < 0
+    ) {
+
+      status.textContent =
+        "Trading fees cannot be negative.";
+
+      status.className =
+        "status loss";
+
+      return;
+
+    }
+
+
+    /*
+      Maximum amount the trader plans
+      to risk.
+    */
+
+    const riskAmount =
+      account *
+      (riskPercent / 100);
+
+
+    /*
+      Price distance between entry
+      and stop-loss.
+    */
+
+    const priceRisk =
+      Math.abs(
+        entryPrice - stopPrice
+      );
+
+
+    if (priceRisk <= 0) {
+
+      status.textContent =
+        "Entry price and stop-loss price must be different.";
+
+      status.className =
+        "status loss";
+
+      return;
+
+    }
+
+
+    /*
+      Position size in units of the
+      cryptocurrency.
+    */
+
+    const positionSize =
+      riskAmount /
+      priceRisk;
+
+
+    /*
+      Notional position value.
+    */
+
+    const positionValue =
+      positionSize *
+      entryPrice;
+
+
+    /*
+      Planned loss based on the
+      stop distance.
+    */
+
+    const lossEstimate =
+      positionSize *
+      priceRisk;
+
+
+    /*
+      Potential gross reward.
+
+      For a long position:
+      TP > Entry
+
+      For a short position:
+      TP < Entry
+
+      If the target is on the same
+      side as the entry, calculate
+      the absolute distance.
+    */
+
+    let rewardDistance = 0;
+
+    if (takeProfit > 0) {
+
+      rewardDistance =
+        Math.abs(
+          takeProfit - entryPrice
+        );
+
+    }
+
+
+    const profitEstimate =
+      positionSize *
+      rewardDistance;
+
+
+    /*
+      Risk-to-reward ratio.
+    */
+
+    let riskReward = 0;
+
+    if (lossEstimate > 0) {
+
+      riskReward =
+        profitEstimate /
+        lossEstimate;
+
+    }
+
+
+    /*
+      Position size as a percentage
+      of the total account.
+    */
+
+    const positionPercent =
+      (positionValue / account) *
+      100;
+
+
+    /*
+      Simple estimated fee.
+
+      Applied to the position value
+      once as a combined estimate.
+    */
+
+    const feeEstimate =
+      positionValue *
+      (feesPercent / 100);
+
+
+    /* RESULTS */
+
+    document.getElementById(
+      "riskAmount"
+    ).textContent =
+      formatMoney(
+        riskAmount,
+        currency
+      );
+
+
+    document.getElementById(
+      "priceRisk"
+    ).textContent =
+      formatMoney(
+        priceRisk,
+        currency
+      );
+
+
+    document.getElementById(
+      "positionSize"
+    ).textContent =
+      formatCrypto(positionSize);
+
+
+    document.getElementById(
+      "positionValue"
+    ).textContent =
+      formatMoney(
+        positionValue,
+        currency
+      );
+
+
+    document.getElementById(
+      "lossEstimate"
+    ).textContent =
+      formatMoney(
+        lossEstimate,
+        currency
+      );
+
+
+    document.getElementById(
+      "profitEstimate"
+    ).textContent =
+      formatMoney(
+        profitEstimate,
+        currency
+      );
+
+
+    document.getElementById(
+      "riskReward"
+    ).textContent =
+      riskReward > 0
+        ? "1 : " + riskReward.toFixed(2)
+        : "—";
+
+
+    document.getElementById(
+      "positionPercent"
+    ).textContent =
+      formatPercent(positionPercent);
+
+
+    document.getElementById(
+      "feeEstimate"
+    ).textContent =
+      formatMoney(
+        feeEstimate,
+        currency
+      );
+
+
+    const crypto =
+      document.getElementById(
+        "crypto"
+      ).value.trim() ||
+      "your cryptocurrency";
+
+
+    if (
+      takeProfit > 0 &&
+      riskReward > 0
+    ) {
+
+      status.textContent =
+        crypto +
+        " position estimate: " +
+        formatCrypto(positionSize) +
+        " units, with approximately " +
+        formatMoney(riskAmount, currency) +
+        " planned risk and a " +
+        "1:" +
+        riskReward.toFixed(2) +
+        " reward-to-risk relationship based on the entered prices.";
+
+      status.className =
+        "status profit";
+
+    }
+    else {
+
+      status.textContent =
+        crypto +
+        " position estimate: " +
+        formatCrypto(positionSize) +
+        " units based on your selected account risk and stop-loss distance.";
+
+      status.className =
+        "status";
+
+    }
+
+  }
+
+
+  /* ============================
+     RESET
+  ============================ */
+
+  function resetCalculator() {
+
+    document.getElementById(
+      "crypto"
+    ).value =
+      "Bitcoin (BTC)";
+
+
+    document.getElementById(
+      "currency"
+    ).value =
+      "$";
+
+
+    document.getElementById(
+      "account"
+    ).value =
+      "10000";
+
+
+    document.getElementById(
+      "riskPercent"
+    ).value =
+      "1";
+
+
+    document.getElementById(
+      "entryPrice"
+    ).value =
+      "50000";
+
+
+    document.getElementById(
+      "stopPrice"
+    ).value =
+      "49000";
+
+
+    document.getElementById(
+      "takeProfit"
+    ).value =
+      "53000";
+
+
+    document.getElementById(
+      "fees"
+    ).value =
+      "0.2";
+
+
+    const ids = [
+
+      "riskAmount",
+      "priceRisk",
+      "positionSize",
+      "positionValue",
+      "lossEstimate",
+      "profitEstimate",
+      "riskReward",
+      "positionPercent",
+      "feeEstimate"
+
+    ];
+
+
+    ids.forEach(
+      function(id) {
+
+        document.getElementById(
+          id
+        ).textContent =
+          "—";
+
+        document.getElementById(
+          id
+        ).className =
+          "";
+
+      }
+    );
+
+
+    document.getElementById(
+      "status"
+    ).textContent =
+      "Enter your trade details and select Calculate Position.";
+
+    document.getElementById(
+      "status"
+    ).className =
+      "status";
+
+  }
+
+
+  /* ============================
+     YEAR
+  ============================ */
+
+  document.getElementById(
+    "year"
+  ).textContent =
+    new Date().getFullYear();
+
+
+  /* ============================
+     INITIAL CALCULATION
+  ============================ */
+
+  calculatePosition();
+
+</script>
 
 </body>
-
 </html>
-
