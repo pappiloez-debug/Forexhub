@@ -1,164 +1,2186 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crypto ROI Calculator — Calculate Cryptocurrency Return on Investment | EZTradingHub</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="description"
-      content="Free Crypto ROI Calculator to calculate cryptocurrency return on investment based on your initial investment, current value and gains or losses.">
+  <title>Crypto ROI Calculator | Cryptocurrency Return on Investment Calculator | EZTradingHub</title>
 
-<meta name="keywords"
-      content="crypto ROI calculator, cryptocurrency ROI calculator, crypto return calculator, crypto investment calculator, Bitcoin ROI calculator">
+  <meta name="description" content="Use the free EZTradingHub Crypto ROI Calculator to calculate cryptocurrency return on investment, profit or loss, percentage gain, final value and break-even price.">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="EZTradingHub">
+  <meta name="theme-color" content="#075985">
 
-<meta name="robots"
-      content="index, follow">
+  <link rel="canonical" href="https://eztradinghub.com/crypto-roi-calculator.html">
 
-<link rel="canonical"
-      href="https://eztradinghub.com/crypto-roi-calculator.html">
-    
-    <link rel="manifest" href="manifest.json">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Crypto ROI Calculator | EZTradingHub">
+  <meta property="og:description" content="Calculate cryptocurrency ROI, profit or loss, final investment value and break-even price with the free EZTradingHub Crypto ROI Calculator.">
+  <meta property="og:url" content="https://eztradinghub.com/crypto-roi-calculator.html">
+  <meta property="og:site_name" content="EZTradingHub">
+  <meta property="og:image" content="https://eztradinghub.com/assets/images/og-image.png">
 
-    <link rel="stylesheet" href="style.css">
-<style>
-:root{--navy:#062f5f;--green:#047857;--dark:#111827;--text:#1f2937;--muted:#475569;--bg:#f8fafc;--card:#fff;--border:#e2e8f0}
-*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;line-height:1.7;color:var(--text);background:var(--bg)}
-header{background:var(--navy);color:#fff;padding:18px 20px}.header-inner{max-width:1000px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:20px}
-.brand,.back-link{color:#fff;text-decoration:none;font-weight:800}.brand{font-size:1.35rem}.back-link{font-weight:700}
-main{max-width:1000px;margin:40px auto;padding:0 20px}.hero,section{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:28px;margin-bottom:18px}
-.hero{padding:32px}.hero h1{margin-top:0;color:var(--dark);font-size:clamp(2rem,5vw,3rem)}h2{color:var(--dark);margin-top:0}.updated{color:var(--muted);font-size:.95rem}
-p,li{color:var(--text)}a{color:#065f46;font-weight:600}.notice{border-left:5px solid var(--green);background:#f0fdf4;padding:16px 18px;border-radius:8px}
-footer{background:var(--dark);color:#fff;text-align:center;padding:28px 20px;margin-top:45px}footer p{color:#fff}footer a{color:#fff;margin:0 8px}
-@media(max-width:650px){.header-inner{align-items:flex-start;flex-direction:column}main{margin-top:24px;padding:0 14px}.hero,section{padding:22px}}
-</style>
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Crypto ROI Calculator | EZTradingHub">
+  <meta name="twitter:description" content="Calculate cryptocurrency return on investment, profit or loss and potential final value.">
+  <meta name="twitter:image" content="https://eztradinghub.com/assets/images/og-image.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/assets/images/favicon.png">
+
+  <!-- Font Performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- WebApplication Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "EZTradingHub Crypto ROI Calculator",
+    "url": "https://eztradinghub.com/crypto-roi-calculator.html",
+    "description": "Free cryptocurrency return on investment calculator for estimating crypto gains, losses and investment value.",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Web",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "EZTradingHub",
+      "url": "https://eztradinghub.com/"
+    }
+  }
+  </script>
+
+  <!-- Breadcrumb Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://eztradinghub.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Calculators",
+        "item": "https://eztradinghub.com/calculators.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Crypto ROI Calculator",
+        "item": "https://eztradinghub.com/crypto-roi-calculator.html"
+      }
+    ]
+  }
+  </script>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is crypto ROI?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Crypto ROI, or return on investment, measures the percentage gain or loss of a cryptocurrency investment compared with the original amount invested."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How is crypto ROI calculated?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Crypto ROI is generally calculated by subtracting the initial investment from the final value, dividing the result by the initial investment, and multiplying by 100."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can ROI be negative?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. A negative ROI means the investment has decreased in value relative to the original investment."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does a high ROI mean an investment is safe?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. ROI measures return and does not by itself measure risk, volatility, liquidity or the possibility of losing capital."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg: #f4f7fb;
+      --surface: #ffffff;
+      --surface2: #f8fafc;
+      --text: #172033;
+      --muted: #667085;
+      --border: #e2e8f0;
+
+      --primary: #075985;
+      --primary2: #0ea5e9;
+
+      --success: #16a34a;
+      --warning: #d97706;
+      --danger: #dc2626;
+
+      --shadow: 0 12px 35px rgba(15,23,42,.08);
+      --radius: 18px;
+    }
+
+    body.dark {
+      --bg: #07111f;
+      --surface: #0e1b2d;
+      --surface2: #111f33;
+      --text: #f1f5f9;
+      --muted: #aab7c9;
+      --border: #24364d;
+
+      --primary: #38bdf8;
+      --primary2: #0ea5e9;
+
+      --success: #4ade80;
+      --warning: #fbbf24;
+      --danger: #fb7185;
+
+      --shadow: 0 12px 35px rgba(0,0,0,.25);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      transition: background .25s ease, color .25s ease;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    button,
+    input,
+    select {
+      font: inherit;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 4px 18px rgba(0,0,0,.05);
+    }
+
+    .nav {
+      max-width: 1180px;
+      margin: auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--text);
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .brand:hover {
+      text-decoration: none;
+    }
+
+    .logo {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      font-weight: 900;
+      background: linear-gradient(135deg, var(--primary), var(--primary2));
+      box-shadow: 0 8px 18px rgba(14,165,233,.25);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .nav-links a {
+      color: var(--text);
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .theme-btn {
+      border: 1px solid var(--border);
+      background: var(--surface2);
+      color: var(--text);
+      border-radius: 10px;
+      padding: 9px 12px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .container {
+      max-width: 1180px;
+      margin: auto;
+      padding: 0 20px;
+    }
+
+    .breadcrumbs {
+      max-width: 1180px;
+      margin: 22px auto 0;
+      padding: 0 20px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .hero {
+      max-width: 900px;
+      margin: 30px auto;
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      padding: 7px 13px;
+      border-radius: 999px;
+      background: rgba(14,165,233,.10);
+      color: var(--primary);
+      font-weight: 800;
+      font-size: 13px;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      font-size: clamp(32px, 5vw, 52px);
+      line-height: 1.1;
+      margin: 0 0 16px;
+      letter-spacing: -1.5px;
+    }
+
+    .hero p {
+      max-width: 760px;
+      margin: auto;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .calculator {
+      max-width: 900px;
+      margin: 0 auto 45px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 26px;
+    }
+
+    .calculator h2 {
+      margin-top: 0;
+      font-size: 25px;
+    }
+
+    .input-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .field label {
+      display: block;
+      font-weight: 700;
+      margin-bottom: 7px;
+      font-size: 14px;
+    }
+
+    .field small {
+      display: block;
+      color: var(--muted);
+      margin-top: 5px;
+      font-size: 12px;
+    }
+
+    input,
+    select {
+      width: 100%;
+      padding: 13px 14px;
+      border: 1px solid var(--border);
+      border-radius: 11px;
+      background: var(--surface2);
+      color: var(--text);
+      outline: none;
+    }
+
+    input:focus,
+    select:focus {
+      border-color: var(--primary2);
+      box-shadow: 0 0 0 3px rgba(14,165,233,.12);
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .btn {
+      border: 0;
+      border-radius: 11px;
+      padding: 12px 18px;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--primary), var(--primary2));
+      color: #fff;
+    }
+
+    .btn.secondary {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
+
+    .results {
+      margin-top: 28px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .result-card {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      padding: 18px;
+    }
+
+    .result-card span {
+      display: block;
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 6px;
+    }
+
+    .result-card strong {
+      font-size: 21px;
+      line-height: 1.2;
+    }
+
+    .profit {
+      color: var(--success);
+    }
+
+    .loss {
+      color: var(--danger);
+    }
+
+    .status {
+      margin-top: 18px;
+      padding: 14px 16px;
+      border-radius: 12px;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      font-weight: 700;
+    }
+
+    .section {
+      max-width: 900px;
+      margin: 0 auto 45px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 28px;
+    }
+
+    .section h2 {
+      margin-top: 0;
+      font-size: 27px;
+    }
+
+    .section h3 {
+      font-size: 20px;
+      margin-top: 26px;
+    }
+
+    .formula {
+      padding: 18px;
+      background: var(--surface2);
+      border-left: 4px solid var(--primary2);
+      border-radius: 10px;
+      overflow-x: auto;
+      font-weight: 700;
+    }
+
+    .example-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 18px;
+    }
+
+    .example-table th,
+    .example-table td {
+      border: 1px solid var(--border);
+      padding: 12px;
+      text-align: left;
+    }
+
+    .example-table th {
+      background: var(--surface2);
+    }
+
+    .faq-item {
+      padding: 18px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .faq-item:last-child {
+      border-bottom: 0;
+    }
+
+    .faq-item h3 {
+      margin: 0 0 7px;
+      font-size: 18px;
+    }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .related-link {
+      display: block;
+      padding: 15px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--surface2);
+      font-weight: 700;
+    }
+
+    .disclaimer {
+      background: rgba(217,119,6,.08);
+      border: 1px solid rgba(217,119,6,.25);
+    }
+
+    footer {
+      margin-top: 50px;
+      border-top: 1px solid var(--border);
+      background: var(--surface);
+    }
+
+    .footer-inner {
+      max-width: 1180px;
+      margin: auto;
+      padding: 35px 20px;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 30px;
+    }
+
+    footer h3 {
+      margin-top: 0;
+    }
+
+    footer p,
+    footer li {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    footer ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    footer li {
+      margin-bottom: 8px;
+    }
+
+    .copyright {
+      max-width: 1180px;
+      margin: auto;
+      padding: 16px 20px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+
+    .mini-note {
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 15px;
+    }
+
+    @media (max-width: 800px) {
+
+      .nav {
+        padding: 12px 15px;
+      }
+
+      .nav-links {
+        gap: 9px;
+      }
+
+      .nav-links a {
+        display: none;
+      }
+
+      .container,
+      .breadcrumbs {
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+
+      .input-grid,
+      .results,
+      .footer-inner,
+      .related-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .calculator,
+      .section {
+        padding: 20px;
+        border-radius: 14px;
+      }
+
+      .hero {
+        padding: 20px 10px;
+      }
+
+      h1 {
+        font-size: 35px;
+      }
+
+      .hero p {
+        font-size: 15px;
+      }
+    }
+
+    @media print {
+
+      .site-header,
+      .breadcrumbs,
+      .buttons,
+      footer {
+        display: none !important;
+      }
+
+      body {
+        background: #fff;
+        color: #000;
+      }
+
+      .calculator,
+      .section {
+        box-shadow: none;
+        border: 1px solid #ccc;
+      }
+    }
+  </style>
 </head>
+
 <body>
-<header><div class="header-inner">
-<a class="brand" href="index.html">EZTradingHub</a>
-<a class="back-link" href="index.html">← Back to Home</a>
-</div></header>
 
-<div class="hero">
-<h1>📈 Crypto ROI Calculator</h1>
-<p>Calculate your Return on Investment.</p>
-</div>
+<header class="site-header">
 
-<div class="calculator-card">
+  <nav class="nav" aria-label="Main navigation">
 
-<label>Coin</label>
+    <a class="brand" href="/">
+      <span class="logo" aria-hidden="true">EZ</span>
+      <span>EZTradingHub</span>
+    </a>
 
-<select id="roiCoin">
+    <div class="nav-links">
 
-<option>₿ Bitcoin (BTC)</option>
-<option>Ξ Ethereum (ETH)</option>
-<option>◎ Solana (SOL)</option>
-<option>🟡 BNB (BNB)</option>
-<option>✕ XRP (XRP)</option>
+      <a href="index.html">Home</a>
 
-</select>
+      <a href="calculators.html">
+        Calculators
+      </a>
 
-<br><br>
+      <a href="trade-journal.html">
+        Trade Journal
+      </a>
 
-<label>Investment Amount ($)</label>
-<input type="number" id="investment">
+      <a href="about.html">
+        About
+      </a>
 
-<br><br>
-
-<label>Current Value ($)</label>
-<input type="number" id="currentValue">
-
-<br><br>
-
-<button onclick="calculateROI()">
-Calculate ROI
-</button>
-
-<button onclick="resetROI()">
-Reset
-</button>
-
-<br><br>
-
-<h2 id="roiResult"></h2>
-
-</div>
-      
-<section class="related-tools">
-
-    <h2>Related Crypto Calculators</h2>
-
-    <p>Measure crypto returns and compare your investment performance.</p>
-
-    <div class="related-tools-grid">
-
-        <a href="crypto-profit-calculator.html">
-            💰 Crypto Profit Calculator
-        </a>
-
-        <a href="crypto-dca-calculator.html">
-            💵 Crypto DCA Calculator
-        </a>
-
-        <a href="crypto-portfolio-tracker.html">
-            📊 Crypto Portfolio Tracker
-        </a>
-
-        <a href="crypto-position-size.html">
-            📏 Crypto Position Size Calculator
-        </a>
-
-        <a href="crypto-staking-calculator.html">
-            🪙 Crypto Staking Calculator
-        </a>
-
-        <a href="crypto-liquidation-calculators.html">
-            ⚠️ Crypto Liquidation Calculator
-        </a>
+      <button
+        class="theme-btn"
+        id="themeToggle"
+        type="button"
+        aria-label="Toggle dark mode"
+        title="Toggle light and dark mode">
+        🌙
+      </button>
 
     </div>
 
-</section>
+  </nav>
 
-<a href="index.html" class="btn">
-🏠 Back to Home
-</a>
-    
-</section>
-<script src="script.js"></script>
+</header>
+
+
+<div class="breadcrumbs">
+
+  <a href="index.html">Home</a>
+
+  <span aria-hidden="true"> › </span>
+
+  <a href="calculators.html">
+    Calculators
+  </a>
+
+  <span aria-hidden="true"> › </span>
+
+  <span>Crypto ROI Calculator</span>
+
+</div>
+
+
+<main>
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <span class="hero-badge">
+      FREE CRYPTO INVESTMENT TOOL
+    </span>
+
+    <h1>
+      Crypto ROI Calculator
+    </h1>
+
+    <p>
+      Calculate cryptocurrency return on investment, profit or loss,
+      percentage gain, final investment value and break-even price
+      before making a crypto investment decision.
+    </p>
+
+  </section>
+
+
+  <!-- CALCULATOR -->
+
+  <section
+    class="calculator"
+    aria-labelledby="calculator-heading">
+
+    <h2 id="calculator-heading">
+      Calculate Cryptocurrency ROI
+    </h2>
+
+    <div class="input-grid">
+
+      <div class="field">
+
+        <label for="crypto">
+          Cryptocurrency
+        </label>
+
+        <input
+          type="text"
+          id="crypto"
+          value="Bitcoin (BTC)"
+          placeholder="e.g. Bitcoin (BTC)"
+          autocomplete="off">
+
+        <small>
+          Enter the cryptocurrency you are evaluating.
+        </small>
+
+      </div>
+
+
+      <div class="field">
+
+        <label for="currency">
+          Currency
+        </label>
+
+        <select id="currency">
+
+          <option value="$">
+            USD ($)
+          </option>
+
+          <option value="₦">
+            NGN (₦)
+          </option>
+
+          <option value="€">
+            EUR (€)
+          </option>
+
+          <option value="£">
+            GBP (£)
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <div class="field">
+
+        <label for="investment">
+          Initial Investment
+        </label>
+
+        <input
+          type="number"
+          id="investment"
+          min="0"
+          step="any"
+          value="1000"
+          inputmode="decimal">
+
+        <small>
+          Amount originally invested.
+        </small>
+
+      </div>
+
+
+      <div class="field">
+
+        <label for="buyPrice">
+          Purchase Price
+        </label>
+
+        <input
+          type="number"
+          id="buyPrice"
+          min="0"
+          step="any"
+          value="50000"
+          inputmode="decimal">
+
+        <small>
+          Cryptocurrency price when you purchased.
+        </small>
+
+      </div>
+
+
+      <div class="field">
+
+        <label for="currentPrice">
+          Current / Target Price
+        </label>
+
+        <input
+          type="number"
+          id="currentPrice"
+          min="0"
+          step="any"
+          value="60000"
+          inputmode="decimal">
+
+        <small>
+          Current market price or your target price.
+        </small>
+
+      </div>
+
+
+      <div class="field">
+
+        <label for="fees">
+          Total Fees (%)
+        </label>
+
+        <input
+          type="number"
+          id="fees"
+          min="0"
+          step="any"
+          value="0.2"
+          inputmode="decimal">
+
+        <small>
+          Optional estimated combined trading fees.
+        </small>
+
+      </div>
+
+    </div>
+
+
+    <div class="buttons">
+
+      <button
+        class="btn"
+        type="button"
+        onclick="calculateROI()">
+        Calculate ROI
+      </button>
+
+      <button
+        class="btn secondary"
+        type="button"
+        onclick="resetCalculator()">
+        Reset
+      </button>
+
+      <button
+        class="btn secondary"
+        type="button"
+        onclick="window.print()">
+        Print Results
+      </button>
+
+    </div>
+
+
+    <!-- RESULTS -->
+
+    <div
+      class="results"
+      aria-live="polite">
+
+      <div class="result-card">
+
+        <span>
+          Crypto Quantity
+        </span>
+
+        <strong id="quantity">
+          —
+        </strong>
+
+      </div>
+
+
+      <div class="result-card">
+
+        <span>
+          Initial Investment
+        </span>
+
+        <strong id="initialValue">
+          —
+        </strong>
+
+      </div>
+
+
+      <div class="result-card">
+
+        <span>
+          Gross Final Value
+        </span>
+
+        <strong id="grossValue">
+          —
+        </strong>
+
+      </div>
+
+
+      <div class="result-card">
+
+        <span>
+          Estimated Fees
+        </span>
+
+        <strong id="feeValue">
+          —
+        </strong>
+
+      </div>
+
+
+      <div class="result-card">
+
+        <span>
+          Net Final Value
+        </span>
+
+        <strong id="netValue">
+          —
+        </strong>
+
+      </div>
+
+
+      <div class="result-card">
+
+        <span>
+          Profit / Loss
+        </span>
+
+        <strong id="profitLoss">
+          —
+        </strong>
+
+      </div>
+
+
+      <div class="result-card">
+
+        <span>
+          ROI
+        </span>
+
+        <strong id="roi">
+          —
+        </strong>
+
+      </div>
+
+
+      <div class="result-card">
+
+        <span>
+          Price Change
+        </span>
+
+        <strong id="priceChange">
+          —
+        </strong>
+
+      </div>
+
+
+      <div class="result-card">
+
+        <span>
+          Break-Even Price
+        </span>
+
+        <strong id="breakEven">
+          —
+        </strong>
+
+      </div>
+
+    </div>
+
+
+    <div
+      class="status"
+      id="status">
+
+      Enter your investment details and select Calculate ROI.
+
+    </div>
+
+
+    <p class="mini-note">
+
+      Results are estimates based on the information entered.
+      Actual returns can differ because of spreads, slippage,
+      exchange fees, network fees, taxes, liquidity and market
+      conditions.
+
+    </p>
+
+  </section>
+
+
+  <!-- WHAT IS ROI -->
+
+  <section class="section">
+
+    <h2>
+      What Is Crypto ROI?
+    </h2>
+
+    <p>
+      ROI stands for Return on Investment. It is a simple way of
+      expressing how much an investment has gained or lost relative
+      to the amount originally invested.
+    </p>
+
+    <p>
+      In cryptocurrency investing, ROI can help you understand how
+      a coin or token has performed from your original purchase price
+      to a current or target price.
+    </p>
+
+    <p>
+      A positive ROI represents a gain, while a negative ROI represents
+      a loss. However, ROI should not be used as the only measure of
+      whether an investment is attractive because it does not fully
+      describe risk, volatility or the time required to achieve the
+      return.
+    </p>
+
+  </section>
+
+
+  <!-- FORMULA -->
+
+  <section class="section">
+
+    <h2>
+      Crypto ROI Formula
+    </h2>
+
+    <p>
+      A basic ROI calculation can be expressed as:
+    </p>
+
+    <div class="formula">
+
+      ROI (%) =
+      ((Final Value − Initial Investment)
+      ÷ Initial Investment) × 100
+
+      <br><br>
+
+      Profit / Loss =
+      Final Value − Initial Investment
+
+    </div>
+
+    <p>
+      If trading fees are included, the final value should be adjusted
+      for the estimated costs associated with the transaction.
+    </p>
+
+    <h3>
+      Example
+    </h3>
+
+    <p>
+      Imagine that you invest $1,000 in Bitcoin at $50,000 per coin.
+      If Bitcoin later reaches $60,000, the price has increased by 20%.
+      Before fees and other costs, the investment would therefore have
+      an estimated 20% price-based return.
+    </p>
+
+  </section>
+
+
+  <!-- EXAMPLE TABLE -->
+
+  <section class="section">
+
+    <h2>
+      Crypto ROI Example
+    </h2>
+
+    <table class="example-table">
+
+      <thead>
+
+        <tr>
+          <th>Item</th>
+          <th>Example Value</th>
+        </tr>
+
+      </thead>
+
+      <tbody>
+
+        <tr>
+          <td>
+            Initial Investment
+          </td>
+
+          <td>
+            $1,000
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            Purchase Price
+          </td>
+
+          <td>
+            $50,000
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            Target Price
+          </td>
+
+          <td>
+            $60,000
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            Price Change
+          </td>
+
+          <td>
+            +20%
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            Estimated ROI
+          </td>
+
+          <td>
+            Approximately +20% before fees
+          </td>
+        </tr>
+
+      </tbody>
+
+    </table>
+
+    <p>
+      The actual result can be lower after exchange fees, spreads,
+      slippage, taxes and other applicable costs.
+    </p>
+
+  </section>
+
+
+  <!-- ROI VS PROFIT -->
+
+  <section class="section">
+
+    <h2>
+      Crypto ROI vs Crypto Profit
+    </h2>
+
+    <p>
+      Profit and ROI are related, but they are not the same measurement.
+    </p>
+
+    <p>
+      <strong>Profit</strong> tells you the monetary amount gained or
+      lost. For example, an investment could generate a $200 profit.
+    </p>
+
+    <p>
+      <strong>ROI</strong> expresses that result as a percentage of the
+      original investment. A $200 gain on a $1,000 investment represents
+      a 20% ROI.
+    </p>
+
+    <p>
+      Looking at both measurements together gives you a clearer picture
+      of the investment result.
+    </p>
+
+  </section>
+
+
+  <!-- TIME AND ROI -->
+
+  <section class="section">
+
+    <h2>
+      Why the Time Period Matters
+    </h2>
+
+    <p>
+      ROI does not automatically tell you how quickly a return was
+      achieved. A 30% return over several years is very different from
+      a 30% return achieved during a short period.
+    </p>
+
+    <p>
+      When comparing cryptocurrency investments, consider the holding
+      period alongside ROI. For more advanced analysis, investors may
+      also consider annualized returns, volatility and risk-adjusted
+      performance.
+    </p>
+
+  </section>
+
+
+  <!-- RISK -->
+
+  <section class="section">
+
+    <h2>
+      Crypto Investment Risk Management
+    </h2>
+
+    <p>
+      A high potential ROI does not automatically mean that an asset
+      is a good or safe investment. Cryptocurrency markets can be
+      highly volatile, and prices can move sharply in either direction.
+    </p>
+
+    <h3>
+      Practical Risk Considerations
+    </h3>
+
+    <ul>
+
+      <li>
+        Only use capital that you can afford to lose.
+      </li>
+
+      <li>
+        Consider position size before focusing on potential returns.
+      </li>
+
+      <li>
+        Account for exchange fees, spreads and slippage.
+      </li>
+
+      <li>
+        Avoid assuming that a target price will definitely be reached.
+      </li>
+
+      <li>
+        Consider liquidity before entering or exiting a position.
+      </li>
+
+      <li>
+        Diversification can help manage concentration risk, although
+        it does not eliminate investment losses.
+      </li>
+
+    </ul>
+
+  </section>
+
+
+  <!-- FAQ -->
+
+  <section class="section">
+
+    <h2>
+      Frequently Asked Questions
+    </h2>
+
+
+    <div class="faq-item">
+
+      <h3>
+        What is crypto ROI?
+      </h3>
+
+      <p>
+        Crypto ROI is the percentage gain or loss of a cryptocurrency
+        investment relative to the original amount invested.
+      </p>
+
+    </div>
+
+
+    <div class="faq-item">
+
+      <h3>
+        How do I calculate crypto ROI?
+      </h3>
+
+      <p>
+        Subtract the initial investment from the final value, divide
+        the result by the initial investment and multiply by 100.
+      </p>
+
+    </div>
+
+
+    <div class="faq-item">
+
+      <h3>
+        Can crypto ROI be negative?
+      </h3>
+
+      <p>
+        Yes. A negative ROI means the investment has decreased in value
+        relative to the original investment.
+      </p>
+
+    </div>
+
+
+    <div class="faq-item">
+
+      <h3>
+        Does this calculator include fees?
+      </h3>
+
+      <p>
+        Yes. You can enter an estimated total fee percentage. This
+        allows the calculator to estimate a net result after those
+        fees.
+      </p>
+
+    </div>
+
+
+    <div class="faq-item">
+
+      <h3>
+        Does a high ROI mean crypto is safe?
+      </h3>
+
+      <p>
+        No. ROI measures return but does not measure the full level of
+        risk. Cryptocurrency investments can experience substantial
+        volatility and losses.
+      </p>
+
+    </div>
+
+
+    <div class="faq-item">
+
+      <h3>
+        Can I use the calculator for Bitcoin and other cryptocurrencies?
+      </h3>
+
+      <p>
+        Yes. The calculator can be used for Bitcoin, Ethereum,
+        stablecoins, altcoins and other cryptocurrencies by entering
+        the relevant investment and price information.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- RELATED TOOLS -->
+
+  <section class="section">
+
+    <h2>
+      Related EZTradingHub Crypto Tools
+    </h2>
+
+    <p>
+      Combine the ROI calculator with other EZTradingHub tools to
+      evaluate different aspects of your cryptocurrency strategy.
+    </p>
+
+    <div class="related-grid">
+
+      <a
+        class="related-link"
+        href="crypto-profit-calculator.html">
+
+        Crypto Profit Calculator
+
+      </a>
+
+
+      <a
+        class="related-link"
+        href="crypto-dca-calculator.html">
+
+        Crypto DCA Calculator
+
+      </a>
+
+
+      <a
+        class="related-link"
+        href="crypto-position-size.html">
+
+        Crypto Position Size Calculator
+
+      </a>
+
+
+      <a
+        class="related-link"
+        href="crypto-portfolio-tracker.html">
+
+        Crypto Portfolio Tracker
+
+      </a>
+
+
+      <a
+        class="related-link"
+        href="crypto-staking-calculator.html">
+
+        Crypto Staking Calculator
+
+      </a>
+
+
+      <a
+        class="related-link"
+        href="crypto-liquidation-calculators.html">
+
+        Crypto Liquidation Calculator
+
+      </a>
+
+
+      <a
+        class="related-link"
+        href="risk-calculator.html">
+
+        Trading Risk Calculator
+
+      </a>
+
+
+      <a
+        class="related-link"
+        href="account-growth-calculator.html">
+
+        Account Growth Calculator
+
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- DISCLAIMER -->
+
+  <section class="section disclaimer">
+
+    <h2>
+      Financial Disclaimer
+    </h2>
+
+    <p>
+      EZTradingHub provides calculators and educational information
+      for informational and educational purposes only. Nothing on this
+      page should be considered financial, investment, trading, tax or
+      legal advice.
+    </p>
+
+    <p>
+      Cryptocurrency markets are volatile and involve significant risk.
+      You may lose some or all of your invested capital. Calculator
+      results are mathematical estimates and do not guarantee future
+      performance.
+    </p>
+
+    <p>
+      Always verify prices, fees, trading conditions and applicable
+      regulations with your exchange or financial service provider
+      before making financial decisions.
+    </p>
+
+  </section>
+
+</main>
+
+
+<!-- FOOTER -->
 
 <footer>
 
-        <div>
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="faq.html">FAQ</a>
-            <a href="terms.html">Terms & Conditions</a>
-            <a href="privacy.html">Privacy Policy</a>
-            <a href="cookie-policy.html">Cookie Policy</a>
-            <a href="disclaimer.html">Disclaimer</a>
-            <a href="contact.html">Contact</a>
-        </div>
+  <div class="footer-inner">
 
-        <p class="copyright">
-            © 2026 EZTradingHub. All rights reserved.
-        </p>
+    <div>
 
-        <p class="copyright">
-            EZTradingHub provides educational and informational tools.
-            Trading involves risk.
-        </p>
+      <h3>
+        EZTradingHub
+      </h3>
 
-    </footer>
-    <script src="cookie-consent.js"></script>
+      <p>
+        Smart trading tools, calculators and educational resources
+        designed to help traders and investors make better-informed
+        decisions.
+      </p>
+
+      <p>
+        Explore practical tools for Forex, cryptocurrency and
+        financial markets.
+      </p>
+
+    </div>
 
 
-<button id="topBtn" onclick="topFunction()">
+    <div>
 
-⬆️
+      <h3>
+        Crypto Tools
+      </h3>
 
-</button>
+      <ul>
+
+        <li>
+          <a href="crypto-profit-calculator.html">
+            Crypto Profit
+          </a>
+        </li>
+
+        <li>
+          <a href="crypto-roi-calculator.html">
+            Crypto ROI
+          </a>
+        </li>
+
+        <li>
+          <a href="crypto-dca-calculator.html">
+            Crypto DCA
+          </a>
+        </li>
+
+        <li>
+          <a href="crypto-position-size.html">
+            Crypto Position Size
+          </a>
+        </li>
+
+        <li>
+          <a href="crypto-portfolio-tracker.html">
+            Portfolio Tracker
+          </a>
+        </li>
+
+      </ul>
+
+    </div>
+
+
+    <div>
+
+      <h3>
+        Information
+      </h3>
+
+      <ul>
+
+        <li>
+          <a href="about.html">
+            About
+          </a>
+        </li>
+
+        <li>
+          <a href="contact.html">
+            Contact
+          </a>
+        </li>
+
+        <li>
+          <a href="faq.html">
+            FAQ
+          </a>
+        </li>
+
+        <li>
+          <a href="privacy.html">
+            Privacy Policy
+          </a>
+        </li>
+
+        <li>
+          <a href="terms.html">
+            Terms
+          </a>
+        </li>
+
+        <li>
+          <a href="cookie-policy.html">
+            Cookie Policy
+          </a>
+        </li>
+
+        <li>
+          <a href="disclaimer.html">
+            Disclaimer
+          </a>
+        </li>
+
+      </ul>
+
+    </div>
+
+  </div>
+
+
+  <div class="copyright">
+
+    © <span id="year"></span>
+    EZTradingHub. All rights reserved.
+
+  </div>
+
+</footer>
+
+
+<script>
+
+  /* ============================
+     DARK / LIGHT MODE
+  ============================ */
+
+  const savedTheme =
+    localStorage.getItem("ezth-theme");
+
+  if (savedTheme === "dark") {
+    document.body.classList.add("dark");
+  }
+
+
+  const themeToggle =
+    document.getElementById("themeToggle");
+
+
+  function updateThemeIcon() {
+
+    themeToggle.textContent =
+      document.body.classList.contains("dark")
+        ? "☀️"
+        : "🌙";
+
+  }
+
+
+  updateThemeIcon();
+
+
+  themeToggle.addEventListener(
+    "click",
+    function () {
+
+      const dark =
+        document.body.classList.toggle("dark");
+
+      localStorage.setItem(
+        "ezth-theme",
+        dark ? "dark" : "light"
+      );
+
+      updateThemeIcon();
+
+    }
+  );
+
+
+  /* ============================
+     INPUT HELPER
+  ============================ */
+
+  function numberValue(id) {
+
+    const value =
+      parseFloat(
+        document.getElementById(id).value
+      );
+
+    return Number.isFinite(value)
+      ? value
+      : 0;
+
+  }
+
+
+  /* ============================
+     MONEY FORMAT
+  ============================ */
+
+  function formatMoney(value, symbol) {
+
+    if (!Number.isFinite(value)) {
+      return symbol + "0.00";
+    }
+
+    return symbol +
+      value.toLocaleString(
+        undefined,
+        {
+          minimumFractionDigits: 2,
+          maximumFractionDigits: 2
+        }
+      );
+
+  }
+
+
+  /* ============================
+     CRYPTO FORMAT
+  ============================ */
+
+  function formatCrypto(value) {
+
+    if (!Number.isFinite(value)) {
+      return "0";
+    }
+
+    return value.toLocaleString(
+      undefined,
+      {
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 10
+      }
+    );
+
+  }
+
+
+  /* ============================
+     PERCENT FORMAT
+  ============================ */
+
+  function formatPercent(value) {
+
+    if (!Number.isFinite(value)) {
+      return "0.00%";
+    }
+
+    return value.toLocaleString(
+      undefined,
+      {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+      }
+    ) + "%";
+
+  }
+
+
+  /* ============================
+     CALCULATE ROI
+  ============================ */
+
+  function calculateROI() {
+
+    const currency =
+      document.getElementById("currency").value;
+
+    const investment =
+      numberValue("investment");
+
+    const buyPrice =
+      numberValue("buyPrice");
+
+    const currentPrice =
+      numberValue("currentPrice");
+
+    const feesPercent =
+      numberValue("fees");
+
+
+    const status =
+      document.getElementById("status");
+
+
+    if (
+      investment <= 0 ||
+      buyPrice <= 0 ||
+      currentPrice <= 0
+    ) {
+
+      status.textContent =
+        "Please enter values greater than zero for the investment, purchase price and current/target price.";
+
+      status.className =
+        "status loss";
+
+      return;
+
+    }
+
+
+    if (feesPercent < 0) {
+
+      status.textContent =
+        "Fees cannot be negative.";
+
+      status.className =
+        "status loss";
+
+      return;
+
+    }
+
+
+    /*
+      Quantity purchased.
+    */
+
+    const quantity =
+      investment / buyPrice;
+
+
+    /*
+      Gross value before fees.
+    */
+
+    const grossValue =
+      quantity * currentPrice;
+
+
+    /*
+      Estimated transaction fees.
+
+      The entered percentage is treated as
+      an estimated total cost applied to
+      the final position value.
+    */
+
+    const feeValue =
+      grossValue *
+      (feesPercent / 100);
+
+
+    const netValue =
+      grossValue - feeValue;
+
+
+    const profitLoss =
+      netValue - investment;
+
+
+    const roi =
+      (profitLoss / investment) * 100;
+
+
+    const priceChange =
+      ((currentPrice - buyPrice) / buyPrice) * 100;
+
+
+    /*
+      Break-even price after the estimated
+      fee percentage.
+
+      net value = quantity × price ×
+      (1 - fee rate)
+
+      investment =
+      quantity × break-even ×
+      (1 - fee rate)
+    */
+
+    const feeRate =
+      feesPercent / 100;
+
+
+    let breakEven = 0;
+
+
+    if (feeRate < 1) {
+
+      breakEven =
+        investment /
+        (
+          quantity *
+          (1 - feeRate)
+        );
+
+    }
+
+
+    /* RESULTS */
+
+    document.getElementById(
+      "quantity"
+    ).textContent =
+      formatCrypto(quantity);
+
+
+    document.getElementById(
+      "initialValue"
+    ).textContent =
+      formatMoney(
+        investment,
+        currency
+      );
+
+
+    document.getElementById(
+      "grossValue"
+    ).textContent =
+      formatMoney(
+        grossValue,
+        currency
+      );
+
+
+    document.getElementById(
+      "feeValue"
+    ).textContent =
+      formatMoney(
+        feeValue,
+        currency
+      );
+
+
+    document.getElementById(
+      "netValue"
+    ).textContent =
+      formatMoney(
+        netValue,
+        currency
+      );
+
+
+    const profitElement =
+      document.getElementById(
+        "profitLoss"
+      );
+
+
+    profitElement.textContent =
+      (profitLoss >= 0 ? "+" : "") +
+      formatMoney(
+        profitLoss,
+        currency
+      );
+
+
+    profitElement.className =
+      profitLoss >= 0
+        ? "profit"
+        : "loss";
+
+
+    const roiElement =
+      document.getElementById("roi");
+
+
+    roiElement.textContent =
+      (roi >= 0 ? "+" : "") +
+      formatPercent(roi);
+
+
+    roiElement.className =
+      roi >= 0
+        ? "profit"
+        : "loss";
+
+
+    const priceElement =
+      document.getElementById(
+        "priceChange"
+      );
+
+
+    priceElement.textContent =
+      (priceChange >= 0 ? "+" : "") +
+      formatPercent(priceChange);
+
+
+    priceElement.className =
+      priceChange >= 0
+        ? "profit"
+        : "loss";
+
+
+    document.getElementById(
+      "breakEven"
+    ).textContent =
+      formatMoney(
+        breakEven,
+        currency
+      );
+
+
+    const crypto =
+      document.getElementById(
+        "crypto"
+      ).value.trim() ||
+      "your cryptocurrency";
+
+
+    if (profitLoss > 0) {
+
+      status.textContent =
+        crypto +
+        " estimate: potential net profit of " +
+        formatMoney(
+          profitLoss,
+          currency
+        ) +
+        " with an estimated ROI of " +
+        formatPercent(roi) +
+        " after the entered fees.";
+
+      status.className =
+        "status profit";
+
+    }
+    else if (profitLoss < 0) {
+
+      status.textContent =
+        crypto +
+        " estimate: potential net loss of " +
+        formatMoney(
+          Math.abs(profitLoss),
+          currency
+        ) +
+        " with an estimated ROI of " +
+        formatPercent(roi) +
+        ".";
+
+      status.className =
+        "status loss";
+
+    }
+    else {
+
+      status.textContent =
+        "The estimated investment is approximately at break-even after the entered fees.";
+
+      status.className =
+        "status";
+
+    }
+
+  }
+
+
+  /* ============================
+     RESET
+  ============================ */
+
+  function resetCalculator() {
+
+    document.getElementById(
+      "crypto"
+    ).value =
+      "Bitcoin (BTC)";
+
+
+    document.getElementById(
+      "currency"
+    ).value =
+      "$";
+
+
+    document.getElementById(
+      "investment"
+    ).value =
+      "1000";
+
+
+    document.getElementById(
+      "buyPrice"
+    ).value =
+      "50000";
+
+
+    document.getElementById(
+      "currentPrice"
+    ).value =
+      "60000";
+
+
+    document.getElementById(
+      "fees"
+    ).value =
+      "0.2";
+
+
+    const ids = [
+
+      "quantity",
+      "initialValue",
+      "grossValue",
+      "feeValue",
+      "netValue",
+      "profitLoss",
+      "roi",
+      "priceChange",
+      "breakEven"
+
+    ];
+
+
+    ids.forEach(
+      function(id) {
+
+        document.getElementById(
+          id
+        ).textContent =
+          "—";
+
+        document.getElementById(
+          id
+        ).className =
+          "";
+
+      }
+    );
+
+
+    document.getElementById(
+      "status"
+    ).textContent =
+      "Enter your investment details and select Calculate ROI.";
+
+    document.getElementById(
+      "status"
+    ).className =
+      "status";
+
+  }
+
+
+  /* ============================
+     CURRENT YEAR
+  ============================ */
+
+  document.getElementById(
+    "year"
+  ).textContent =
+    new Date().getFullYear();
+
+
+  /* ============================
+     INITIAL CALCULATION
+  ============================ */
+
+  calculateROI();
+
+</script>
 
 </body>
-
 </html>
-
