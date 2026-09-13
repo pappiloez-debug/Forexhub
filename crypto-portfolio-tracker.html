@@ -1,184 +1,2344 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crypto Portfolio Tracker — Track Your Crypto Investments | EZTradingHub</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="description"
-      content="Free Crypto Portfolio Tracker to monitor cryptocurrency holdings, investment value, portfolio performance and potential gains or losses.">
+  <title>Crypto Portfolio Tracker | Cryptocurrency Portfolio Calculator | EZTradingHub</title>
 
-<meta name="keywords"
-      content="crypto portfolio tracker, cryptocurrency portfolio tracker, crypto investment tracker, crypto portfolio calculator, crypto profit tracker">
+  <meta name="description" content="Track your cryptocurrency portfolio with the free EZTradingHub Crypto Portfolio Tracker. Calculate portfolio value, investment, profit or loss, ROI and asset allocation.">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="EZTradingHub">
+  <meta name="theme-color" content="#075985">
 
-<meta name="robots"
-      content="index, follow">
+  <link rel="canonical" href="https://eztradinghub.com/crypto-portfolio-tracker.html">
 
-<link rel="canonical"
-      href="https://eztradinghub.com/crypto-portfolio-tracker.html">
-    
-    <link rel="manifest" href="manifest.json">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Crypto Portfolio Tracker | EZTradingHub">
+  <meta property="og:description" content="Track cryptocurrency holdings, portfolio value, profit or loss, ROI and asset allocation with EZTradingHub.">
+  <meta property="og:url" content="https://eztradinghub.com/crypto-portfolio-tracker.html">
+  <meta property="og:site_name" content="EZTradingHub">
+  <meta property="og:image" content="https://eztradinghub.com/assets/images/og-image.png">
 
-    <link rel="stylesheet" href="style.css">
-<style>
-:root{--navy:#062f5f;--green:#047857;--dark:#111827;--text:#1f2937;--muted:#475569;--bg:#f8fafc;--card:#fff;--border:#e2e8f0}
-*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;line-height:1.7;color:var(--text);background:var(--bg)}
-header{background:var(--navy);color:#fff;padding:18px 20px}.header-inner{max-width:1000px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:20px}
-.brand,.back-link{color:#fff;text-decoration:none;font-weight:800}.brand{font-size:1.35rem}.back-link{font-weight:700}
-main{max-width:1000px;margin:40px auto;padding:0 20px}.hero,section{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:28px;margin-bottom:18px}
-.hero{padding:32px}.hero h1{margin-top:0;color:var(--dark);font-size:clamp(2rem,5vw,3rem)}h2{color:var(--dark);margin-top:0}.updated{color:var(--muted);font-size:.95rem}
-p,li{color:var(--text)}a{color:#065f46;font-weight:600}.notice{border-left:5px solid var(--green);background:#f0fdf4;padding:16px 18px;border-radius:8px}
-footer{background:var(--dark);color:#fff;text-align:center;padding:28px 20px;margin-top:45px}footer p{color:#fff}footer a{color:#fff;margin:0 8px}
-@media(max-width:650px){.header-inner{align-items:flex-start;flex-direction:column}main{margin-top:24px;padding:0 14px}.hero,section{padding:22px}}
-</style>
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Crypto Portfolio Tracker | EZTradingHub">
+  <meta name="twitter:description" content="Track cryptocurrency holdings, portfolio value, profit or loss, ROI and asset allocation.">
+  <meta name="twitter:image" content="https://eztradinghub.com/assets/images/og-image.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/assets/images/favicon.png">
+
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- WebApplication Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "EZTradingHub Crypto Portfolio Tracker",
+    "url": "https://eztradinghub.com/crypto-portfolio-tracker.html",
+    "description": "Free cryptocurrency portfolio tracker and profit calculator.",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Web",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "EZTradingHub",
+      "url": "https://eztradinghub.com/"
+    }
+  }
+  </script>
+
+  <!-- Breadcrumb Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://eztradinghub.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Calculators",
+        "item": "https://eztradinghub.com/calculators.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Crypto Portfolio Tracker",
+        "item": "https://eztradinghub.com/crypto-portfolio-tracker.html"
+      }
+    ]
+  }
+  </script>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a crypto portfolio tracker?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A crypto portfolio tracker helps you record cryptocurrency holdings and estimate total invested capital, current value, profit or loss, return on investment and asset allocation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How is crypto portfolio profit calculated?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Estimated portfolio profit or loss is calculated by subtracting total invested cost from the current value of the holdings."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I track multiple cryptocurrencies?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. The EZTradingHub tracker allows you to add multiple cryptocurrency holdings and combines them into one portfolio summary."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does the tracker provide live cryptocurrency prices?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "This version uses the current prices you enter for each asset. Always verify market prices with your exchange or preferred market-data provider."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg: #f4f7fb;
+      --surface: #ffffff;
+      --surface2: #f8fafc;
+      --text: #172033;
+      --muted: #667085;
+      --border: #e2e8f0;
+
+      --primary: #075985;
+      --primary2: #0ea5e9;
+
+      --success: #16a34a;
+      --warning: #d97706;
+      --danger: #dc2626;
+
+      --shadow: 0 12px 35px rgba(15,23,42,.08);
+      --radius: 18px;
+    }
+
+    body.dark {
+      --bg: #07111f;
+      --surface: #0e1b2d;
+      --surface2: #111f33;
+      --text: #f1f5f9;
+      --muted: #aab7c9;
+      --border: #24364d;
+
+      --primary: #38bdf8;
+      --primary2: #0ea5e9;
+
+      --success: #4ade80;
+      --warning: #fbbf24;
+      --danger: #fb7185;
+
+      --shadow: 0 12px 35px rgba(0,0,0,.25);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      transition: background .25s ease, color .25s ease;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    button,
+    input,
+    select {
+      font: inherit;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 4px 18px rgba(0,0,0,.05);
+    }
+
+    .nav {
+      max-width: 1180px;
+      margin: auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--text);
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .brand:hover {
+      text-decoration: none;
+    }
+
+    .logo {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      font-weight: 900;
+      background: linear-gradient(135deg, var(--primary), var(--primary2));
+      box-shadow: 0 8px 18px rgba(14,165,233,.25);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .nav-links a {
+      color: var(--text);
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .theme-btn {
+      border: 1px solid var(--border);
+      background: var(--surface2);
+      color: var(--text);
+      border-radius: 10px;
+      padding: 9px 12px;
+      font-weight: 700;
+    }
+
+    .breadcrumbs {
+      max-width: 1180px;
+      margin: 22px auto 0;
+      padding: 0 20px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .hero {
+      max-width: 900px;
+      margin: 30px auto;
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      padding: 7px 13px;
+      border-radius: 999px;
+      background: rgba(14,165,233,.10);
+      color: var(--primary);
+      font-weight: 800;
+      font-size: 13px;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      font-size: clamp(32px, 5vw, 50px);
+      line-height: 1.1;
+      margin: 0 0 16px;
+      letter-spacing: -1.5px;
+    }
+
+    .hero p {
+      max-width: 760px;
+      margin: auto;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .tracker {
+      max-width: 1100px;
+      margin: 0 auto 45px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 26px;
+    }
+
+    .tracker h2 {
+      margin-top: 0;
+      font-size: 25px;
+    }
+
+    .top-controls {
+      display: grid;
+      grid-template-columns: 1fr 220px;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    .field label {
+      display: block;
+      font-weight: 700;
+      font-size: 14px;
+      margin-bottom: 7px;
+    }
+
+    input,
+    select {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid var(--border);
+      border-radius: 11px;
+      background: var(--surface2);
+      color: var(--text);
+      outline: none;
+    }
+
+    input:focus,
+    select:focus {
+      border-color: var(--primary2);
+      box-shadow: 0 0 0 3px rgba(14,165,233,.12);
+    }
+
+    .holdings {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .holding {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr 1fr auto;
+      gap: 10px;
+      align-items: end;
+      padding: 18px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: var(--surface2);
+    }
+
+    .holding-actions {
+      display: flex;
+      align-items: center;
+    }
+
+    .remove-btn {
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--danger);
+      border-radius: 10px;
+      padding: 11px 13px;
+      font-weight: 800;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .btn {
+      border: 0;
+      border-radius: 11px;
+      padding: 12px 18px;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--primary), var(--primary2));
+      color: #fff;
+    }
+
+    .btn.secondary {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
+
+    .summary {
+      margin-top: 30px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .summary-card {
+      padding: 18px;
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      background: var(--surface2);
+    }
+
+    .summary-card span {
+      display: block;
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 6px;
+    }
+
+    .summary-card strong {
+      font-size: 22px;
+    }
+
+    .profit {
+      color: var(--success);
+    }
+
+    .loss {
+      color: var(--danger);
+    }
+
+    .allocation {
+      margin-top: 30px;
+    }
+
+    .allocation h3 {
+      margin-bottom: 14px;
+    }
+
+    .allocation-row {
+      display: grid;
+      grid-template-columns: 130px 1fr 100px;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .allocation-name {
+      font-weight: 700;
+    }
+
+    .bar {
+      height: 12px;
+      border-radius: 999px;
+      background: var(--border);
+      overflow: hidden;
+    }
+
+    .bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--primary), var(--primary2));
+      border-radius: inherit;
+    }
+
+    .allocation-percent {
+      text-align: right;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .table-wrap {
+      margin-top: 30px;
+      overflow-x: auto;
+    }
+
+    .portfolio-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 760px;
+    }
+
+    .portfolio-table th,
+    .portfolio-table td {
+      padding: 12px;
+      border: 1px solid var(--border);
+      text-align: left;
+    }
+
+    .portfolio-table th {
+      background: var(--surface2);
+    }
+
+    .section {
+      max-width: 900px;
+      margin: 0 auto 45px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 28px;
+    }
+
+    .section h2 {
+      margin-top: 0;
+      font-size: 27px;
+    }
+
+    .section h3 {
+      font-size: 20px;
+      margin-top: 26px;
+    }
+
+    .formula {
+      padding: 18px;
+      background: var(--surface2);
+      border-left: 4px solid var(--primary2);
+      border-radius: 10px;
+      overflow-x: auto;
+      font-weight: 700;
+    }
+
+    .faq-item {
+      padding: 18px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .faq-item:last-child {
+      border-bottom: 0;
+    }
+
+    .faq-item h3 {
+      margin: 0 0 7px;
+      font-size: 18px;
+    }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .related-link {
+      display: block;
+      padding: 15px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--surface2);
+      font-weight: 700;
+    }
+
+    .disclaimer {
+      background: rgba(217,119,6,.08);
+      border: 1px solid rgba(217,119,6,.25);
+    }
+
+    footer {
+      margin-top: 50px;
+      border-top: 1px solid var(--border);
+      background: var(--surface);
+    }
+
+    .footer-inner {
+      max-width: 1180px;
+      margin: auto;
+      padding: 35px 20px;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 30px;
+    }
+
+    footer h3 {
+      margin-top: 0;
+    }
+
+    footer p,
+    footer li {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    footer ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    footer li {
+      margin-bottom: 8px;
+    }
+
+    .copyright {
+      max-width: 1180px;
+      margin: auto;
+      padding: 16px 20px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+
+    .mini-note {
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 15px;
+    }
+
+    @media (max-width: 900px) {
+
+      .holding {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .summary {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+    }
+
+    @media (max-width: 700px) {
+
+      .nav {
+        padding: 12px 15px;
+      }
+
+      .nav-links {
+        gap: 8px;
+      }
+
+      .nav-links a {
+        display: none;
+      }
+
+      .breadcrumbs {
+        padding: 0 15px;
+      }
+
+      .hero {
+        padding: 20px 15px;
+      }
+
+      h1 {
+        font-size: 35px;
+      }
+
+      .top-controls {
+        grid-template-columns: 1fr;
+      }
+
+      .holding {
+        grid-template-columns: 1fr;
+      }
+
+      .summary {
+        grid-template-columns: 1fr;
+      }
+
+      .allocation-row {
+        grid-template-columns: 90px 1fr 65px;
+      }
+
+      .tracker,
+      .section {
+        margin-left: 15px;
+        margin-right: 15px;
+        padding: 20px;
+        border-radius: 14px;
+      }
+
+      .related-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-inner {
+        grid-template-columns: 1fr;
+        padding: 30px 20px;
+      }
+
+    }
+
+    @media print {
+
+      .site-header,
+      .breadcrumbs,
+      .buttons,
+      footer {
+        display: none !important;
+      }
+
+      body {
+        background: #fff;
+        color: #000;
+      }
+
+      .tracker,
+      .section {
+        box-shadow: none;
+        border: 1px solid #ccc;
+      }
+
+    }
+  </style>
 </head>
+
 <body>
-<header><div class="header-inner">
-<a class="brand" href="index.html">EZTradingHub</a>
-<a class="back-link" href="index.html">← Back to Home</a>
-</div></header>
 
-<div class="hero">
-<h1>💼 Crypto Portfolio Tracker</h1>
-<p>Track the value of your cryptocurrency holdings.</p>
-</div>
+<header class="site-header">
 
-<div class="calculator-card">
+  <nav class="nav" aria-label="Main navigation">
 
-<label>Coin</label>
+    <a class="brand" href="/">
+      <span class="logo" aria-hidden="true">EZ</span>
+      <span>EZTradingHub</span>
+    </a>
 
-<select id="portfolioCoin">
+    <div class="nav-links">
 
-<option>₿ Bitcoin (BTC)</option>
-<option>Ξ Ethereum (ETH)</option>
-<option>◎ Solana (SOL)</option>
-<option>🟡 BNB (BNB)</option>
-<option>✕ XRP (XRP)</option>
-<option>₳ Cardano (ADA)</option>
-<option>⚫ Polkadot (DOT)</option>
-<option>🧊 Cosmos (ATOM)</option>
-<option>🐕 Dogecoin (DOGE)</option>
-<option>🔺 Avalanche (AVAX)</option>
-<option>⛓️ Chainlink (LINK)</option>
-<option>🔷 Polygon (POL)</option>
-<option>⚡ NEAR Protocol (NEAR)</option>
-<option>🌊 Sui (SUI)</option>
-<option>💠 Aptos (APT)</option>
-<option>🏦 Hedera (HBAR)</option>
-<option>🔥 Toncoin (TON)</option>
-<option>📡 Filecoin (FIL)</option>
-<option>🛡️ Monero (XMR)</option>
-<option>💰 Bitcoin Cash (BCH)</option>
-<option>🏛️ Uniswap (UNI)</option>
-<option>💳 Aave (AAVE)</option>
-<option>💚 Render (RENDER)</option>
-<option>🐸 Pepe (PEPE)</option>
-<option>🐶 Shiba Inu (SHIB)</option>
+      <a href="index.html">Home</a>
 
-</select>
+      <a href="calculators.html">
+        Calculators
+      </a>
 
-<br><br>
+      <a href="trade-journal.html">
+        Trade Journal
+      </a>
 
-<label>Quantity Owned</label>
-<input type="number" id="portfolioQty" step="0.000001">
+      <a href="about.html">
+        About
+      </a>
 
-<br><br>
-
-<label>Current Price ($)</label>
-<input type="number" id="portfolioPrice">
-
-<br><br>
-
-<button onclick="calculatePortfolio()">
-Calculate Portfolio Value
-</button>
-
-<button onclick="resetPortfolio()">
-Reset
-</button>
-
-<br><br>
-
-<h2 id="portfolioResult"></h2>
-
-</div>
-      
-<section class="related-tools">
-
-    <h2>Related Crypto Calculators</h2>
-
-    <p>Track your crypto investments and analyze potential returns, risk and position size.</p>
-
-    <div class="related-tools-grid">
-
-        <a href="crypto-dca-calculator.html">
-            💵 Crypto DCA Calculator
-        </a>
-
-        <a href="crypto-profit-calculator.html">
-            💰 Crypto Profit Calculator
-        </a>
-
-        <a href="crypto-roi-calculator.html">
-            📈 Crypto ROI Calculator
-        </a>
-
-        <a href="crypto-position-size.html">
-            📏 Crypto Position Size Calculator
-        </a>
-
-        <a href="crypto-staking-calculator.html">
-            🪙 Crypto Staking Calculator
-        </a>
-
-        <a href="crypto-liquidation-calculators.html">
-            ⚠️ Crypto Liquidation Calculator
-        </a>
+      <button
+        class="theme-btn"
+        id="themeToggle"
+        type="button"
+        aria-label="Toggle dark mode"
+        title="Toggle light and dark mode">
+        🌙
+      </button>
 
     </div>
 
-</section>
+  </nav>
 
-<a href="index.html" class="btn">
-🏠 Back to Home
-</a>
-    
-</section>
-<script src="script.js"></script>
+</header>
+
+
+<div class="breadcrumbs">
+
+  <a href="index.html">Home</a>
+
+  <span aria-hidden="true"> › </span>
+
+  <a href="calculators.html">
+    Calculators
+  </a>
+
+  <span aria-hidden="true"> › </span>
+
+  <span>
+    Crypto Portfolio Tracker
+  </span>
+
+</div>
+
+
+<main>
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <span class="hero-badge">
+      CRYPTO PORTFOLIO MANAGEMENT TOOL
+    </span>
+
+    <h1>
+      Crypto Portfolio Tracker
+    </h1>
+
+    <p>
+      Track multiple cryptocurrency holdings, estimate your portfolio
+      value, calculate profit or loss and monitor asset allocation from
+      one simple dashboard.
+    </p>
+
+  </section>
+
+
+  <!-- TRACKER -->
+
+  <section class="tracker">
+
+    <h2>
+      Build Your Crypto Portfolio
+    </h2>
+
+    <div class="top-controls">
+
+      <div class="field">
+
+        <label for="portfolioName">
+          Portfolio Name
+        </label>
+
+        <input
+          id="portfolioName"
+          type="text"
+          value="My Crypto Portfolio"
+          placeholder="e.g. Long-Term Crypto Portfolio">
+
+      </div>
+
+
+      <div class="field">
+
+        <label for="currency">
+          Currency
+        </label>
+
+        <select id="currency">
+
+          <option value="$">
+            USD ($)
+          </option>
+
+          <option value="₦">
+            NGN (₦)
+          </option>
+
+          <option value="€">
+            EUR (€)
+          </option>
+
+          <option value="£">
+            GBP (£)
+          </option>
+
+        </select>
+
+      </div>
+
+    </div>
+
+
+    <div
+      id="holdings"
+      class="holdings">
+
+    </div>
+
+
+    <div class="buttons">
+
+      <button
+        class="btn"
+        type="button"
+        onclick="addHolding()">
+
+        + Add Cryptocurrency
+
+      </button>
+
+
+      <button
+        class="btn"
+        type="button"
+        onclick="calculatePortfolio()">
+
+        Update Portfolio
+
+      </button>
+
+
+      <button
+        class="btn secondary"
+        type="button"
+        onclick="resetPortfolio()">
+
+        Reset
+
+      </button>
+
+
+      <button
+        class="btn secondary"
+        type="button"
+        onclick="window.print()">
+
+        Print
+
+      </button>
+
+    </div>
+
+
+    <!-- SUMMARY -->
+
+    <div class="summary">
+
+      <div class="summary-card">
+
+        <span>
+          Total Invested
+        </span>
+
+        <strong id="totalInvested">
+          —
+        </strong>
+
+      </div>
+
+
+      <div class="summary-card">
+
+        <span>
+          Current Portfolio Value
+        </span>
+
+        <strong id="totalValue">
+          —
+        </strong>
+
+      </div>
+
+
+      <div class="summary-card">
+
+        <span>
+          Total Profit / Loss
+        </span>
+
+        <strong id="totalPL">
+          —
+        </strong>
+
+      </div>
+
+
+      <div class="summary-card">
+
+        <span>
+          Portfolio ROI
+        </span>
+
+        <strong id="totalROI">
+          —
+        </strong>
+
+      </div>
+
+    </div>
+
+
+    <!-- ALLOCATION -->
+
+    <div class="allocation">
+
+      <h3>
+        Portfolio Allocation
+      </h3>
+
+      <div id="allocationContainer">
+        Enter holdings and update your portfolio.
+      </div>
+
+    </div>
+
+
+    <!-- TABLE -->
+
+    <div class="table-wrap">
+
+      <table class="portfolio-table">
+
+        <thead>
+
+          <tr>
+
+            <th>
+              Asset
+            </th>
+
+            <th>
+              Quantity
+            </th>
+
+            <th>
+              Invested
+            </th>
+
+            <th>
+              Current Value
+            </th>
+
+            <th>
+              Profit / Loss
+            </th>
+
+            <th>
+              ROI
+            </th>
+
+            <th>
+              Allocation
+            </th>
+
+          </tr>
+
+        </thead>
+
+        <tbody id="portfolioTableBody">
+
+          <tr>
+
+            <td colspan="7">
+              Enter your holdings and click Update Portfolio.
+            </td>
+
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+
+    <p class="mini-note">
+
+      This tracker uses the prices and quantities you enter. It does not
+      automatically execute trades or connect to an exchange.
+
+    </p>
+
+  </section>
+
+
+  <!-- WHAT IS A PORTFOLIO TRACKER -->
+
+  <section class="section">
+
+    <h2>
+      What Is a Crypto Portfolio Tracker?
+    </h2>
+
+    <p>
+      A cryptocurrency portfolio tracker is a tool that helps traders
+      and investors monitor their digital asset holdings in one place.
+      Instead of looking at each cryptocurrency separately, you can
+      record the amount owned, purchase cost and current market value
+      to estimate the performance of the entire portfolio.
+    </p>
+
+    <p>
+      Portfolio tracking can make it easier to understand how much
+      capital is invested, which assets contribute most to your
+      portfolio and whether your holdings are currently above or below
+      their recorded purchase cost.
+    </p>
+
+  </section>
+
+
+  <!-- FORMULAS -->
+
+  <section class="section">
+
+    <h2>
+      How Crypto Portfolio Calculations Work
+    </h2>
+
+    <p>
+      The tracker uses straightforward calculations for each holding.
+    </p>
+
+    <div class="formula">
+
+      Current Value =
+      Quantity × Current Price
+
+      <br><br>
+
+      Profit / Loss =
+      Current Value − Invested Amount
+
+      <br><br>
+
+      ROI =
+      (Profit / Loss ÷ Invested Amount) × 100
+
+      <br><br>
+
+      Portfolio Allocation =
+      Asset Current Value ÷ Total Portfolio Value × 100
+
+    </div>
+
+    <p>
+      These calculations provide an estimate of portfolio performance
+      based on the values you enter.
+    </p>
+
+  </section>
+
+
+  <!-- EXAMPLE -->
+
+  <section class="section">
+
+    <h2>
+      Example of Crypto Portfolio Tracking
+    </h2>
+
+    <p>
+      Imagine a portfolio containing Bitcoin and Ethereum. You record
+      how much you invested in each asset, the quantity purchased and
+      the current price. The tracker can then estimate the current
+      value of each holding and combine them into a portfolio total.
+    </p>
+
+    <p>
+      If the total amount invested is $5,000 and the current value is
+      $5,750, the estimated portfolio profit is $750 and the simple
+      portfolio ROI is 15%, before considering additional costs that
+      may not have been entered.
+    </p>
+
+    <div class="formula">
+
+      $5,750 − $5,000 = $750 Profit
+
+      <br><br>
+
+      $750 ÷ $5,000 × 100 = 15% ROI
+
+    </div>
+
+  </section>
+
+
+  <!-- DIVERSIFICATION -->
+
+  <section class="section">
+
+    <h2>
+      Understanding Crypto Portfolio Allocation
+    </h2>
+
+    <p>
+      Portfolio allocation shows how much of your portfolio's current
+      value is represented by each asset. For example, if Bitcoin
+      represents 60% of your portfolio and Ethereum represents 25%,
+      the remaining assets represent the other 15%.
+    </p>
+
+    <p>
+      Allocation can change significantly when cryptocurrency prices
+      move. An asset that rises faster than the rest of the portfolio
+      can become a larger percentage of the overall portfolio even if
+      you do not buy more of it.
+    </p>
+
+    <p>
+      Diversification can reduce concentration in a single asset, but
+      owning several cryptocurrencies does not eliminate market risk.
+      Many digital assets can decline at the same time during broad
+      market sell-offs.
+    </p>
+
+  </section>
+
+
+  <!-- PORTFOLIO MANAGEMENT -->
+
+  <section class="section">
+
+    <h2>
+      Practical Crypto Portfolio Management
+    </h2>
+
+    <h3>
+      1. Record Your Actual Cost
+    </h3>
+
+    <p>
+      Keep accurate records of how much you paid for each asset.
+      Include relevant transaction costs where appropriate so your
+      performance estimate is more realistic.
+    </p>
+
+
+    <h3>
+      2. Monitor Concentration
+    </h3>
+
+    <p>
+      Review how much of your portfolio is concentrated in individual
+      cryptocurrencies. A portfolio dominated by one asset can be
+      strongly affected by that asset's price movement.
+    </p>
+
+
+    <h3>
+      3. Consider Fees
+    </h3>
+
+    <p>
+      Trading fees, spreads, network fees and other costs can reduce
+      investment returns. Your actual net performance may therefore
+      differ from a simple price-based calculation.
+    </p>
+
+
+    <h3>
+      4. Review Regularly
+    </h3>
+
+    <p>
+      Portfolio tracking is most useful when the information is kept
+      reasonably up to date. Consider reviewing your holdings after
+      major purchases, sales or portfolio changes.
+    </p>
+
+
+    <h3>
+      5. Keep a Trading or Investment Journal
+    </h3>
+
+    <p>
+      Recording why you bought or sold an asset can help you evaluate
+      your decisions over time rather than focusing only on short-term
+      price movements.
+    </p>
+
+  </section>
+
+
+  <!-- LIVE DATA NOTE -->
+
+  <section class="section">
+
+    <h2>
+      About Cryptocurrency Prices
+    </h2>
+
+    <p>
+      Cryptocurrency prices can change continuously. This version of
+      the EZTradingHub portfolio tracker uses the current prices that
+      you enter manually, which gives you control over the price
+      source used for your calculation.
+    </p>
+
+    <p>
+      Before making an investment decision, verify the latest price,
+      trading fees, spreads and available liquidity using your exchange
+      or another reliable market-data source.
+    </p>
+
+  </section>
+
+
+  <!-- FAQ -->
+
+  <section class="section">
+
+    <h2>
+      Frequently Asked Questions
+    </h2>
+
+
+    <div class="faq-item">
+
+      <h3>
+        What is a crypto portfolio tracker?
+      </h3>
+
+      <p>
+        A crypto portfolio tracker helps you record cryptocurrency
+        holdings and estimate total investment, current value,
+        profit or loss, ROI and asset allocation.
+      </p>
+
+    </div>
+
+
+    <div class="faq-item">
+
+      <h3>
+        How is crypto portfolio profit calculated?
+      </h3>
+
+      <p>
+        Estimated profit or loss is calculated by subtracting the
+        recorded invested amount from the current value of the holding.
+      </p>
+
+    </div>
+
+
+    <div class="faq-item">
+
+      <h3>
+        Can I track multiple cryptocurrencies?
+      </h3>
+
+      <p>
+        Yes. You can add multiple cryptocurrency holdings and the
+        tracker combines them into one portfolio summary.
+      </p>
+
+    </div>
+
+
+    <div class="faq-item">
+
+      <h3>
+        Does the tracker use live prices?
+      </h3>
+
+      <p>
+        This version uses the current prices you enter manually.
+        Always verify current market prices using your preferred
+        exchange or market-data provider.
+      </p>
+
+    </div>
+
+
+    <div class="faq-item">
+
+      <h3>
+        Does a positive ROI mean my investment is guaranteed to grow?
+      </h3>
+
+      <p>
+        No. ROI describes performance based on the values entered into
+        the calculator. Cryptocurrency prices can rise or fall
+        significantly, and past performance does not guarantee future
+        results.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- RELATED -->
+
+  <section class="section">
+
+    <h2>
+      Related EZTradingHub Crypto Tools
+    </h2>
+
+    <p>
+      Use these tools alongside the portfolio tracker to plan and
+      evaluate cryptocurrency trades and investments.
+    </p>
+
+    <div class="related-grid">
+
+      <a
+        class="related-link"
+        href="crypto-profit-calculator.html">
+
+        Crypto Profit Calculator
+
+      </a>
+
+
+      <a
+        class="related-link"
+        href="crypto-roi-calculator.html">
+
+        Crypto ROI Calculator
+
+      </a>
+
+
+      <a
+        class="related-link"
+        href="crypto-dca-calculator.html">
+
+        Crypto DCA Calculator
+
+      </a>
+
+
+      <a
+        class="related-link"
+        href="crypto-position-size.html">
+
+        Crypto Position Size Calculator
+
+      </a>
+
+
+      <a
+        class="related-link"
+        href="crypto-staking-calculator.html">
+
+        Crypto Staking Calculator
+
+      </a>
+
+
+      <a
+        class="related-link"
+        href="crypto-liquidation-calculators.html">
+
+        Crypto Liquidation Calculator
+
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- DISCLAIMER -->
+
+  <section class="section disclaimer">
+
+    <h2>
+      Financial Disclaimer
+    </h2>
+
+    <p>
+      EZTradingHub provides calculators and educational resources for
+      informational and educational purposes only. Nothing on this page
+      constitutes financial, investment, trading, tax or legal advice.
+    </p>
+
+    <p>
+      Cryptocurrency investments involve substantial risk. Prices can
+      be highly volatile and you may lose some or all of your invested
+      capital.
+    </p>
+
+    <p>
+      Calculator results are estimates based on information entered by
+      the user. Actual portfolio performance can differ because of
+      fees, spreads, taxes, slippage, exchange rates, market conditions
+      and other factors.
+    </p>
+
+    <p>
+      Always verify important information before making financial
+      decisions.
+    </p>
+
+  </section>
+
+</main>
+
+
+<!-- FOOTER -->
 
 <footer>
 
-        <div>
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="faq.html">FAQ</a>
-            <a href="terms.html">Terms & Conditions</a>
-            <a href="privacy.html">Privacy Policy</a>
-            <a href="cookie-policy.html">Cookie Policy</a>
-            <a href="disclaimer.html">Disclaimer</a>
-            <a href="contact.html">Contact</a>
-        </div>
+  <div class="footer-inner">
 
-        <p class="copyright">
-            © 2026 EZTradingHub. All rights reserved.
-        </p>
+    <div>
 
-        <p class="copyright">
-            EZTradingHub provides educational and informational tools.
-            Trading involves risk.
-        </p>
+      <h3>
+        EZTradingHub
+      </h3>
 
-    </footer>
-    <script src="cookie-consent.js"></script>
+      <p>
+        Smart trading tools, calculators and educational resources
+        designed to help traders and investors make better-informed
+        decisions.
+      </p>
+
+    </div>
 
 
-<button id="topBtn" onclick="topFunction()">
+    <div>
 
-⬆️
+      <h3>
+        Crypto Tools
+      </h3>
 
-</button>
+      <ul>
+
+        <li>
+          <a href="crypto-profit-calculator.html">
+            Crypto Profit
+          </a>
+        </li>
+
+        <li>
+          <a href="crypto-roi-calculator.html">
+            Crypto ROI
+          </a>
+        </li>
+
+        <li>
+          <a href="crypto-dca-calculator.html">
+            Crypto DCA
+          </a>
+        </li>
+
+        <li>
+          <a href="crypto-position-size.html">
+            Position Size
+          </a>
+        </li>
+
+        <li>
+          <a href="crypto-portfolio-tracker.html">
+            Portfolio Tracker
+          </a>
+        </li>
+
+      </ul>
+
+    </div>
+
+
+    <div>
+
+      <h3>
+        Information
+      </h3>
+
+      <ul>
+
+        <li>
+          <a href="about.html">
+            About
+          </a>
+        </li>
+
+        <li>
+          <a href="contact.html">
+            Contact
+          </a>
+        </li>
+
+        <li>
+          <a href="/faq.html">
+            FAQ
+          </a>
+        </li>
+
+        <li>
+          <a href="privacy.html">
+            Privacy Policy
+          </a>
+        </li>
+
+        <li>
+          <a href="terms.html">
+            Terms
+          </a>
+        </li>
+
+        <li>
+          <a href="cookie-policy.html">
+            Cookie Policy
+          </a>
+        </li>
+
+        <li>
+          <a href="disclaimer.html">
+            Disclaimer
+          </a>
+        </li>
+
+      </ul>
+
+    </div>
+
+  </div>
+
+
+  <div class="copyright">
+
+    © <span id="year"></span>
+    EZTradingHub. All rights reserved.
+
+  </div>
+
+</footer>
+
+
+<script>
+
+  /* =========================
+     THEME
+  ========================= */
+
+  const savedTheme =
+    localStorage.getItem("ezth-theme");
+
+  if (savedTheme === "dark") {
+    document.body.classList.add("dark");
+  }
+
+  const themeToggle =
+    document.getElementById("themeToggle");
+
+  function updateThemeIcon() {
+
+    themeToggle.textContent =
+      document.body.classList.contains("dark")
+        ? "☀️"
+        : "🌙";
+
+  }
+
+  updateThemeIcon();
+
+  themeToggle.addEventListener(
+    "click",
+    function () {
+
+      const dark =
+        document.body.classList.toggle("dark");
+
+      localStorage.setItem(
+        "ezth-theme",
+        dark ? "dark" : "light"
+      );
+
+      updateThemeIcon();
+
+    }
+  );
+
+
+  /* =========================
+     PORTFOLIO DATA
+  ========================= */
+
+  let holdingCounter = 0;
+
+
+  function createHolding(
+    asset = "Bitcoin (BTC)",
+    quantity = "0.10",
+    buyPrice = "50000",
+    currentPrice = "55000"
+  ) {
+
+    holdingCounter++;
+
+    const id =
+      holdingCounter;
+
+    const div =
+      document.createElement("div");
+
+    div.className =
+      "holding";
+
+    div.dataset.id =
+      id;
+
+    div.innerHTML = `
+
+      <div class="field">
+
+        <label for="asset-${id}">
+          Cryptocurrency
+        </label>
+
+        <input
+          id="asset-${id}"
+          type="text"
+          value="${asset}"
+          placeholder="e.g. Bitcoin (BTC)"
+          autocomplete="off">
+
+      </div>
+
+
+      <div class="field">
+
+        <label for="quantity-${id}">
+          Quantity
+        </label>
+
+        <input
+          id="quantity-${id}"
+          type="number"
+          min="0"
+          step="any"
+          value="${quantity}"
+          inputmode="decimal">
+
+      </div>
+
+
+      <div class="field">
+
+        <label for="buy-${id}">
+          Average Buy Price
+        </label>
+
+        <input
+          id="buy-${id}"
+          type="number"
+          min="0"
+          step="any"
+          value="${buyPrice}"
+          inputmode="decimal">
+
+      </div>
+
+
+      <div class="field">
+
+        <label for="current-${id}">
+          Current Price
+        </label>
+
+        <input
+          id="current-${id}"
+          type="number"
+          min="0"
+          step="any"
+          value="${currentPrice}"
+          inputmode="decimal">
+
+      </div>
+
+
+      <div class="holding-actions">
+
+        <button
+          class="remove-btn"
+          type="button"
+          onclick="removeHolding(${id})"
+          aria-label="Remove cryptocurrency holding">
+
+          Remove
+
+        </button>
+
+      </div>
+
+    `;
+
+    document
+      .getElementById("holdings")
+      .appendChild(div);
+
+  }
+
+
+  function addHolding() {
+
+    createHolding(
+      "Ethereum (ETH)",
+      "1",
+      "2500",
+      "2800"
+    );
+
+  }
+
+
+  function removeHolding(id) {
+
+    const row =
+      document.querySelector(
+        `.holding[data-id="${id}"]`
+      );
+
+    if (row) {
+
+      row.remove();
+
+    }
+
+    calculatePortfolio();
+
+  }
+
+
+  /* =========================
+     FORMATTERS
+  ========================= */
+
+  function formatMoney(
+    value,
+    currency
+  ) {
+
+    return currency +
+      Number(value || 0).toLocaleString(
+        undefined,
+        {
+          minimumFractionDigits: 2,
+          maximumFractionDigits: 2
+        }
+      );
+
+  }
+
+
+  function formatCrypto(value) {
+
+    return Number(value || 0).toLocaleString(
+      undefined,
+      {
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 10
+      }
+    );
+
+  }
+
+
+  function formatPercent(value) {
+
+    return Number(value || 0).toLocaleString(
+      undefined,
+      {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+      }
+    ) + "%";
+
+  }
+
+
+  /* =========================
+     CALCULATE PORTFOLIO
+  ========================= */
+
+  function calculatePortfolio() {
+
+    const currency =
+      document.getElementById(
+        "currency"
+      ).value;
+
+    const rows =
+      document.querySelectorAll(
+        ".holding"
+      );
+
+    let totalInvested = 0;
+    let totalValue = 0;
+
+    const assets = [];
+
+
+    rows.forEach(
+      function(row) {
+
+        const id =
+          row.dataset.id;
+
+        const asset =
+          document.getElementById(
+            `asset-${id}`
+          ).value.trim() ||
+          "Unnamed Asset";
+
+        const quantity =
+          parseFloat(
+            document.getElementById(
+              `quantity-${id}`
+            ).value
+          ) || 0;
+
+        const buyPrice =
+          parseFloat(
+            document.getElementById(
+              `buy-${id}`
+            ).value
+          ) || 0;
+
+        const currentPrice =
+          parseFloat(
+            document.getElementById(
+              `current-${id}`
+            ).value
+          ) || 0;
+
+
+        const invested =
+          quantity *
+          buyPrice;
+
+        const currentValue =
+          quantity *
+          currentPrice;
+
+        const profitLoss =
+          currentValue -
+          invested;
+
+        const roi =
+          invested > 0
+            ? (profitLoss / invested) * 100
+            : 0;
+
+
+        totalInvested +=
+          invested;
+
+        totalValue +=
+          currentValue;
+
+
+        assets.push({
+
+          asset,
+          quantity,
+          buyPrice,
+          currentPrice,
+          invested,
+          currentValue,
+          profitLoss,
+          roi
+
+        });
+
+      }
+    );
+
+
+    const totalPL =
+      totalValue -
+      totalInvested;
+
+
+    const totalROI =
+      totalInvested > 0
+        ? (totalPL / totalInvested) * 100
+        : 0;
+
+
+    document.getElementById(
+      "totalInvested"
+    ).textContent =
+      formatMoney(
+        totalInvested,
+        currency
+      );
+
+
+    document.getElementById(
+      "totalValue"
+    ).textContent =
+      formatMoney(
+        totalValue,
+        currency
+      );
+
+
+    const plElement =
+      document.getElementById(
+        "totalPL"
+      );
+
+    plElement.textContent =
+      (totalPL >= 0 ? "+" : "") +
+      formatMoney(
+        Math.abs(totalPL),
+        currency
+      );
+
+    plElement.className =
+      totalPL >= 0
+        ? "profit"
+        : "loss";
+
+
+    const roiElement =
+      document.getElementById(
+        "totalROI"
+      );
+
+    roiElement.textContent =
+      (totalROI >= 0 ? "+" : "") +
+      formatPercent(
+        totalROI
+      );
+
+    roiElement.className =
+      totalROI >= 0
+        ? "profit"
+        : "loss";
+
+
+    renderTable(
+      assets,
+      totalValue,
+      currency
+    );
+
+
+    renderAllocation(
+      assets,
+      totalValue,
+      currency
+    );
+
+  }
+
+
+  /* =========================
+     TABLE
+  ========================= */
+
+  function renderTable(
+    assets,
+    totalValue,
+    currency
+  ) {
+
+    const tbody =
+      document.getElementById(
+        "portfolioTableBody"
+      );
+
+
+    if (!assets.length) {
+
+      tbody.innerHTML = `
+
+        <tr>
+
+          <td colspan="7">
+
+            Add at least one cryptocurrency holding.
+
+          </td>
+
+        </tr>
+
+      `;
+
+      return;
+
+    }
+
+
+    tbody.innerHTML =
+      assets.map(
+        function(item) {
+
+          const allocation =
+            totalValue > 0
+              ? (
+                  item.currentValue /
+                  totalValue
+                ) * 100
+              : 0;
+
+
+          const plClass =
+            item.profitLoss >= 0
+              ? "profit"
+              : "loss";
+
+
+          return `
+
+            <tr>
+
+              <td>
+                <strong>
+                  ${escapeHTML(item.asset)}
+                </strong>
+              </td>
+
+              <td>
+                ${formatCrypto(item.quantity)}
+              </td>
+
+              <td>
+                ${formatMoney(
+                  item.invested,
+                  currency
+                )}
+              </td>
+
+              <td>
+                ${formatMoney(
+                  item.currentValue,
+                  currency
+                )}
+              </td>
+
+              <td class="${plClass}">
+
+                ${
+                  item.profitLoss >= 0
+                    ? "+"
+                    : "-"
+                }
+
+                ${formatMoney(
+                  Math.abs(
+                    item.profitLoss
+                  ),
+                  currency
+                )}
+
+              </td>
+
+              <td class="${plClass}">
+
+                ${
+                  item.roi >= 0
+                    ? "+"
+                    : ""
+                }
+
+                ${formatPercent(
+                  item.roi
+                )}
+
+              </td>
+
+              <td>
+                ${formatPercent(
+                  allocation
+                )}
+              </td>
+
+            </tr>
+
+          `;
+
+        }
+      ).join("");
+
+  }
+
+
+  /* =========================
+     ALLOCATION
+  ========================= */
+
+  function renderAllocation(
+    assets,
+    totalValue,
+    currency
+  ) {
+
+    const container =
+      document.getElementById(
+        "allocationContainer"
+      );
+
+
+    if (!assets.length) {
+
+      container.textContent =
+        "Add holdings to view portfolio allocation.";
+
+      return;
+
+    }
+
+
+    if (totalValue <= 0) {
+
+      container.textContent =
+        "Enter valid current prices and quantities to view allocation.";
+
+      return;
+
+    }
+
+
+    container.innerHTML =
+      assets.map(
+        function(item) {
+
+          const percentage =
+            (
+              item.currentValue /
+              totalValue
+            ) * 100;
+
+
+          return `
+
+            <div class="allocation-row">
+
+              <div class="allocation-name">
+
+                ${escapeHTML(
+                  item.asset
+                )}
+
+              </div>
+
+              <div
+                class="bar"
+                aria-label="${formatPercent(
+                  percentage
+                )} allocation">
+
+                <div
+                  class="bar-fill"
+                  style="width:${Math.min(
+                    percentage,
+                    100
+                  )}%">
+
+                </div>
+
+              </div>
+
+              <div class="allocation-percent">
+
+                ${formatPercent(
+                  percentage
+                )}
+
+              </div>
+
+            </div>
+
+          `;
+
+        }
+      ).join("");
+
+  }
+
+
+  /* =========================
+     HTML ESCAPE
+  ========================= */
+
+  function escapeHTML(
+    value
+  ) {
+
+    return String(value)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#039;");
+
+  }
+
+
+  /* =========================
+     RESET
+  ========================= */
+
+  function resetPortfolio() {
+
+    document.getElementById(
+      "portfolioName"
+    ).value =
+      "My Crypto Portfolio";
+
+
+    document.getElementById(
+      "currency"
+    ).value =
+      "$";
+
+
+    document.getElementById(
+      "holdings"
+    ).innerHTML =
+      "";
+
+
+    holdingCounter = 0;
+
+
+    createHolding(
+      "Bitcoin (BTC)",
+      "0.10",
+      "50000",
+      "55000"
+    );
+
+
+    createHolding(
+      "Ethereum (ETH)",
+      "1",
+      "2500",
+      "2800"
+    );
+
+
+    calculatePortfolio();
+
+  }
+
+
+  /* =========================
+     YEAR
+  ========================= */
+
+  document.getElementById(
+    "year"
+  ).textContent =
+    new Date().getFullYear();
+
+
+  /* =========================
+     INITIAL DATA
+  ========================= */
+
+  createHolding(
+    "Bitcoin (BTC)",
+    "0.10",
+    "50000",
+    "55000"
+  );
+
+
+  createHolding(
+    "Ethereum (ETH)",
+    "1",
+    "2500",
+    "2800"
+  );
+
+
+  calculatePortfolio();
+
+</script>
 
 </body>
-
 </html>
-
