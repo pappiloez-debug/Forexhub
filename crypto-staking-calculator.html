@@ -1,155 +1,1665 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crypto Staking Calculator — Calculate Staking Rewards | EZTradingHub</title>
+  <meta charset="UTF-8">
 
-<meta name="description"
-      content="Free Crypto Staking Calculator to estimate potential staking rewards and returns based on your crypto amount, staking rate and staking period.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="keywords"
-      content="crypto staking calculator, staking rewards calculator, cryptocurrency staking calculator, crypto APY calculator, staking return calculator">
+  <title>Crypto Staking Calculator | Staking Rewards & APY Calculator | EZTradingHub</title>
 
-<meta name="robots"
-      content="index, follow">
+  <meta name="description" content="Use the free EZTradingHub Crypto Staking Calculator to estimate staking rewards, compound growth, final crypto balance, earnings, fees and annualized returns.">
 
-<link rel="canonical"
-      href="https://eztradinghub.com/crypto-staking-calculator.html">
-    
-    <link rel="manifest" href="manifest.json">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="EZTradingHub">
+  <meta name="theme-color" content="#075985">
 
-    <link rel="stylesheet" href="style.css">
-<style>
-:root{--navy:#062f5f;--green:#047857;--dark:#111827;--text:#1f2937;--muted:#475569;--bg:#f8fafc;--card:#fff;--border:#e2e8f0}
-*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;line-height:1.7;color:var(--text);background:var(--bg)}
-header{background:var(--navy);color:#fff;padding:18px 20px}.header-inner{max-width:1000px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:20px}
-.brand,.back-link{color:#fff;text-decoration:none;font-weight:800}.brand{font-size:1.35rem}.back-link{font-weight:700}
-main{max-width:1000px;margin:40px auto;padding:0 20px}.hero,section{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:28px;margin-bottom:18px}
-.hero{padding:32px}.hero h1{margin-top:0;color:var(--dark);font-size:clamp(2rem,5vw,3rem)}h2{color:var(--dark);margin-top:0}.updated{color:var(--muted);font-size:.95rem}
-p,li{color:var(--text)}a{color:#065f46;font-weight:600}.notice{border-left:5px solid var(--green);background:#f0fdf4;padding:16px 18px;border-radius:8px}
-footer{background:var(--dark);color:#fff;text-align:center;padding:28px 20px;margin-top:45px}footer p{color:#fff}footer a{color:#fff;margin:0 8px}
-@media(max-width:650px){.header-inner{align-items:flex-start;flex-direction:column}main{margin-top:24px;padding:0 14px}.hero,section{padding:22px}}
-</style>
+  <link rel="canonical" href="https://eztradinghub.com/crypto-staking-calculator.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Crypto Staking Calculator | EZTradingHub">
+  <meta property="og:description" content="Estimate cryptocurrency staking rewards, compound growth, fees and final crypto balance with the free EZTradingHub Crypto Staking Calculator.">
+  <meta property="og:url" content="https://eztradinghub.com/crypto-staking-calculator.html">
+  <meta property="og:site_name" content="EZTradingHub">
+  <meta property="og:image" content="https://eztradinghub.com/assets/images/og-image.jpg">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Crypto Staking Calculator | EZTradingHub">
+  <meta name="twitter:description" content="Calculate estimated crypto staking rewards, compounding, fees and final balance.">
+  <meta name="twitter:image" content="https://eztradinghub.com/assets/images/og-image.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="favicon.ico">
+
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "EZTradingHub Crypto Staking Calculator",
+    "url": "https://eztradinghub.com/crypto-staking-calculator.html",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Web",
+    "description": "A free cryptocurrency staking calculator for estimating staking rewards, compound growth, fees and final crypto balance.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "EZTradingHub",
+      "url": "https://eztradinghub.com/"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://eztradinghub.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Calculators",
+        "item": "https://eztradinghub.com/calculators.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Crypto Staking Calculator",
+        "item": "https://eztradinghub.com/crypto-staking-calculator.html"
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is crypto staking?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Crypto staking generally involves committing eligible cryptocurrency to a blockchain or staking service to support network operations in exchange for potential rewards."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is staking APY?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "APY means Annual Percentage Yield and generally represents an annualized return that accounts for compounding under the assumptions used by the calculation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does crypto staking guarantee profit?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Staking rewards are not guaranteed profits. Cryptocurrency prices can fall, staking rates can change, and investors may face validator, platform, liquidity, smart-contract or slashing risks."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between APR and APY?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "APR normally describes an annualized rate without assuming reinvestment of rewards, while APY generally incorporates the effect of compounding."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg: #f4f7fb;
+      --surface: #ffffff;
+      --surface2: #f8fafc;
+      --text: #172033;
+      --muted: #667085;
+      --border: #e2e8f0;
+      --primary: #075985;
+      --primary2: #0ea5e9;
+      --success: #16a34a;
+      --warning: #d97706;
+      --danger: #dc2626;
+      --shadow: 0 12px 35px rgba(15,23,42,.08);
+      --radius: 18px;
+    }
+
+    body.dark {
+      --bg: #07111f;
+      --surface: #0e1b2d;
+      --surface2: #111f33;
+      --text: #f1f5f9;
+      --muted: #aab7c9;
+      --border: #24364d;
+      --primary: #38bdf8;
+      --primary2: #0ea5e9;
+      --success: #4ade80;
+      --warning: #fbbf24;
+      --danger: #fb7185;
+      --shadow: 0 12px 35px rgba(0,0,0,.25);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      transition: background .2s ease, color .2s ease;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    button,
+    input,
+    select {
+      font: inherit;
+    }
+
+    .site-header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-container {
+      max-width: 1180px;
+      margin: auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .brand:hover {
+      text-decoration: none;
+    }
+
+    .logo {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--primary), var(--primary2));
+      color: white;
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      font-size: 18px;
+    }
+
+    .brand-text {
+      font-size: 18px;
+      font-weight: 800;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: var(--text);
+      font-size: 14px;
+    }
+
+    .theme-btn {
+      border: 1px solid var(--border);
+      background: var(--surface2);
+      color: var(--text);
+      border-radius: 10px;
+      padding: 9px 12px;
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    .hero {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 58px 20px 35px;
+      text-align: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      background: rgba(14,165,233,.10);
+      color: var(--primary);
+      padding: 7px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+
+    h1 {
+      font-size: clamp(32px, 5vw, 52px);
+      line-height: 1.1;
+      margin: 18px auto 15px;
+      max-width: 850px;
+      letter-spacing: -.04em;
+    }
+
+    .hero p {
+      max-width: 760px;
+      margin: auto;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .container {
+      max-width: 1180px;
+      margin: auto;
+      padding: 0 20px 60px;
+    }
+
+    .calculator {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      border-radius: var(--radius);
+      padding: 25px;
+    }
+
+    .calculator-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+    }
+
+    .panel {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 20px;
+    }
+
+    .panel h2 {
+      font-size: 20px;
+      margin-top: 0;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+
+    .field {
+      margin-bottom: 5px;
+    }
+
+    .field.full {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      display: block;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 7px;
+    }
+
+    input,
+    select {
+      width: 100%;
+      padding: 12px 13px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: var(--surface);
+      color: var(--text);
+      outline: none;
+    }
+
+    input:focus,
+    select:focus {
+      border-color: var(--primary2);
+      box-shadow: 0 0 0 3px rgba(14,165,233,.12);
+    }
+
+    .help {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 5px;
+    }
+
+    .actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .btn {
+      border: 0;
+      border-radius: 10px;
+      padding: 12px 18px;
+      cursor: pointer;
+      font-weight: 800;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), var(--primary2));
+      color: white;
+    }
+
+    .btn-secondary {
+      background: var(--surface);
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+
+    .results {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .result-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 13px;
+      padding: 15px;
+    }
+
+    .result-label {
+      font-size: 12px;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .result-value {
+      margin-top: 5px;
+      font-size: 21px;
+      font-weight: 800;
+      word-break: break-word;
+    }
+
+    .result-card.highlight {
+      border-color: rgba(14,165,233,.45);
+      background: rgba(14,165,233,.07);
+    }
+
+    .result-card.success .result-value {
+      color: var(--success);
+    }
+
+    .summary {
+      margin-top: 15px;
+      padding: 15px;
+      border-left: 4px solid var(--primary2);
+      background: rgba(14,165,233,.08);
+      border-radius: 8px;
+      color: var(--text);
+      font-size: 14px;
+    }
+
+    .section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      border-radius: var(--radius);
+      padding: 30px;
+      margin-top: 25px;
+    }
+
+    .section h2 {
+      margin-top: 0;
+      font-size: 27px;
+      letter-spacing: -.02em;
+    }
+
+    .section h3 {
+      margin-top: 25px;
+      font-size: 19px;
+    }
+
+    .section p,
+    .section li {
+      color: var(--muted);
+    }
+
+    .formula {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      padding: 18px;
+      border-radius: 12px;
+      overflow-x: auto;
+      font-family: monospace;
+      color: var(--text);
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+    }
+
+    .info-card {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px;
+    }
+
+    .info-card h3 {
+      margin-top: 0;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      margin-top: 15px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 600px;
+    }
+
+    th,
+    td {
+      text-align: left;
+      padding: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    th {
+      background: var(--surface2);
+      font-size: 13px;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+      padding: 15px 0;
+    }
+
+    .faq-item:last-child {
+      border-bottom: 0;
+    }
+
+    .faq-item h3 {
+      margin: 0 0 7px;
+      font-size: 17px;
+    }
+
+    .related {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .related a {
+      display: block;
+      padding: 15px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--surface2);
+    }
+
+    .disclaimer {
+      font-size: 13px;
+      background: rgba(217,119,6,.08);
+      border-left: 4px solid var(--warning);
+      padding: 15px;
+      border-radius: 8px;
+    }
+
+    footer {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      padding: 30px 20px;
+      margin-top: 20px;
+    }
+
+    .footer-inner {
+      max-width: 1180px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .copyright {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .error {
+      color: var(--danger);
+      font-size: 13px;
+      margin-top: 10px;
+      min-height: 18px;
+    }
+
+    @media (max-width: 850px) {
+      .calculator-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .related {
+        grid-template-columns: 1fr;
+      }
+
+      nav {
+        display: none;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero {
+        padding-top: 40px;
+      }
+
+      .calculator,
+      .section {
+        padding: 18px;
+      }
+
+      .form-grid,
+      .results {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 34px;
+      }
+
+      .hero p {
+        font-size: 15px;
+      }
+
+      .actions .btn {
+        width: 100%;
+      }
+    }
+
+    @media print {
+      .site-header,
+      .actions,
+      footer {
+        display: none !important;
+      }
+
+      body {
+        background: white;
+        color: black;
+      }
+
+      .calculator,
+      .section {
+        box-shadow: none;
+        border: 1px solid #ddd;
+      }
+    }
+  </style>
 </head>
+
 <body>
-<header><div class="header-inner">
-<a class="brand" href="index.html">EZTradingHub</a>
-<a class="back-link" href="index.html">← Back to Home</a>
-</div></header>
 
-<div class="hero">
-<h1>🏦 Crypto Staking Rewards Calculator</h1>
-<p>Estimate your staking rewards.</p>
-</div>
+<header class="site-header">
+  <div class="nav-container">
 
-<div class="calculator-card">
+    <a class="brand" href="/">
+      <span class="logo" aria-hidden="true">EZ</span>
+      <span class="brand-text">EZTradingHub</span>
+    </a>
 
-<label>Amount Staked</label>
-<input type="number" id="stakeAmount">
+    <nav aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="calculators.html">Calculators</a>
+      <a href="trade-journal.html">Trade Journal</a>
+      <a href="Dashboard.html">Dashboard</a>
+      <a href="about.html">About</a>
+    </nav>
 
-<br><br>
+    <button
+      type="button"
+      class="theme-btn"
+      id="themeToggle"
+      aria-label="Toggle light and dark mode">
+      🌙
+    </button>
 
-<label>Annual Reward (%)</label>
-<input type="number" id="apy">
+  </div>
+</header>
 
-<br><br>
+<main>
 
-<label>Duration (Years)</label>
-<input type="number" id="years" step="0.1">
+  <section class="hero">
+    <span class="eyebrow">Free Crypto Tool</span>
 
-<br><br>
+    <h1>Crypto Staking Calculator</h1>
 
-<button onclick="calculateStaking()">
-Calculate
-</button>
+    <p>
+      Estimate cryptocurrency staking rewards, compound growth, platform
+      fees and your potential final crypto balance using a simple,
+      transparent calculation.
+    </p>
+  </section>
 
-<button onclick="resetStaking()">
-Reset
-</button>
+  <div class="container">
 
-<br><br>
+    <section class="calculator" aria-label="Crypto staking calculator">
 
-<h2 id="stakingResult"></h2>
+      <div class="calculator-grid">
 
-</div>
-      
-<section class="related-tools">
+        <!-- INPUTS -->
+        <div class="panel">
 
-    <h2>Related Crypto Calculators</h2>
+          <h2>Staking Inputs</h2>
 
-    <p>Estimate crypto staking rewards and compare your investment performance.</p>
+          <div class="form-grid">
 
-    <div class="related-tools-grid">
+            <div class="field">
+              <label for="crypto">Cryptocurrency</label>
+              <input
+                id="crypto"
+                type="text"
+                value="Ethereum (ETH)"
+                placeholder="e.g. Ethereum (ETH)">
+            </div>
+
+            <div class="field">
+              <label for="currency">Currency</label>
+              <select id="currency">
+                <option value="USD">$ USD</option>
+                <option value="NGN">₦ NGN</option>
+                <option value="EUR">€ EUR</option>
+                <option value="GBP">£ GBP</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="principal">Initial Staked Amount</label>
+              <input
+                id="principal"
+                type="number"
+                min="0"
+                step="any"
+                value="10"
+                placeholder="e.g. 10">
+              <div class="help">Amount of cryptocurrency being staked.</div>
+            </div>
+
+            <div class="field">
+              <label for="apy">Annual APY (%)</label>
+              <input
+                id="apy"
+                type="number"
+                min="0"
+                step="0.01"
+                value="6"
+                placeholder="e.g. 6">
+              <div class="help">Use the staking rate shown by your provider.</div>
+            </div>
+
+            <div class="field">
+              <label for="period">Staking Period</label>
+              <input
+                id="period"
+                type="number"
+                min="0"
+                step="0.1"
+                value="12"
+                placeholder="e.g. 12">
+            </div>
+
+            <div class="field">
+              <label for="periodUnit">Period Unit</label>
+              <select id="periodUnit">
+                <option value="months">Months</option>
+                <option value="years">Years</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="compound">Compounding Frequency</label>
+              <select id="compound">
+                <option value="0">No compounding</option>
+                <option value="12" selected>Monthly</option>
+                <option value="4">Quarterly</option>
+                <option value="365">Daily</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="fee">Platform Fee on Rewards (%)</label>
+              <input
+                id="fee"
+                type="number"
+                min="0"
+                max="100"
+                step="0.01"
+                value="0"
+                placeholder="e.g. 5">
+            </div>
+
+            <div class="field full">
+              <label for="price">Crypto Price (Optional)</label>
+              <input
+                id="price"
+                type="number"
+                min="0"
+                step="any"
+                placeholder="e.g. 3000">
+              <div class="help">
+                Optional. Used only to illustrate the crypto balance in your selected currency.
+              </div>
+            </div>
+
+          </div>
+
+          <div class="actions">
+
+            <button
+              type="button"
+              class="btn btn-primary"
+              id="calculateBtn">
+              Calculate Rewards
+            </button>
+
+            <button
+              type="button"
+              class="btn btn-secondary"
+              id="resetBtn">
+              Reset
+            </button>
+
+            <button
+              type="button"
+              class="btn btn-secondary"
+              onclick="window.print()">
+              Print
+            </button>
+
+          </div>
+
+          <div
+            class="error"
+            id="errorMessage"
+            role="alert"
+            aria-live="polite">
+          </div>
+
+        </div>
+
+        <!-- RESULTS -->
+        <div class="panel">
+
+          <h2>Estimated Results</h2>
+
+          <div
+            class="results"
+            id="results"
+            aria-live="polite">
+
+            <div class="result-card">
+              <div class="result-label">Initial Staked Amount</div>
+              <div class="result-value" id="initialResult">10</div>
+            </div>
+
+            <div class="result-card success">
+              <div class="result-label">Gross Staking Rewards</div>
+              <div class="result-value" id="grossReward">0 ETH</div>
+            </div>
+
+            <div class="result-card">
+              <div class="result-label">Estimated Platform Fee</div>
+              <div class="result-value" id="feeResult">0 ETH</div>
+            </div>
+
+            <div class="result-card success highlight">
+              <div class="result-label">Net Staking Rewards</div>
+              <div class="result-value" id="netReward">0 ETH</div>
+            </div>
+
+            <div class="result-card highlight">
+              <div class="result-label">Final Crypto Balance</div>
+              <div class="result-value" id="finalBalance">10 ETH</div>
+            </div>
+
+            <div class="result-card">
+              <div class="result-label">Estimated Annualized Return</div>
+              <div class="result-value" id="annualReturn">6%</div>
+            </div>
+
+            <div class="result-card">
+              <div class="result-label">Illustrative Initial Value</div>
+              <div class="result-value" id="initialFiat">—</div>
+            </div>
+
+            <div class="result-card">
+              <div class="result-label">Illustrative Final Value</div>
+              <div class="result-value" id="finalFiat">—</div>
+            </div>
+
+          </div>
+
+          <div class="summary" id="summary">
+            Enter your staking assumptions and select
+            <strong>Calculate Rewards</strong> to estimate your results.
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section">
+
+      <h2>What Is Crypto Staking?</h2>
+
+      <p>
+        Crypto staking generally involves committing eligible cryptocurrency
+        to a blockchain network or staking service. Depending on the network,
+        stakers may help support network security and operations and may
+        receive cryptocurrency rewards in return.
+      </p>
+
+      <p>
+        The actual staking process varies considerably between blockchain
+        networks, exchanges, wallets and decentralized protocols. Some
+        products may also impose lock-up periods, withdrawal restrictions,
+        validator requirements or service fees.
+      </p>
+
+      <p>
+        This calculator provides an estimate based on the assumptions you
+        enter. It does not connect to a blockchain, exchange or staking
+        provider and does not guarantee a particular reward.
+      </p>
+
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="section">
+
+      <h2>How the Crypto Staking Calculator Works</h2>
+
+      <div class="info-grid">
+
+        <div class="info-card">
+          <h3>1. Enter Your Stake</h3>
+          <p>
+            Enter the amount of cryptocurrency you intend to stake.
+          </p>
+        </div>
+
+        <div class="info-card">
+          <h3>2. Add the APY</h3>
+          <p>
+            Enter the annual staking yield shown by the staking provider or
+            network you are evaluating.
+          </p>
+        </div>
+
+        <div class="info-card">
+          <h3>3. Select the Period</h3>
+          <p>
+            Choose how long you expect to keep the cryptocurrency staked.
+          </p>
+        </div>
+
+        <div class="info-card">
+          <h3>4. Choose Compounding</h3>
+          <p>
+            Select no compounding, monthly, quarterly or daily compounding.
+          </p>
+        </div>
+
+        <div class="info-card">
+          <h3>5. Add Fees</h3>
+          <p>
+            If your provider charges a percentage of staking rewards, enter
+            the estimated fee.
+          </p>
+        </div>
+
+        <div class="info-card">
+          <h3>6. Review Results</h3>
+          <p>
+            Compare gross rewards, fees, net rewards and your estimated final
+            cryptocurrency balance.
+          </p>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- FORMULAS -->
+    <section class="section">
+
+      <h2>Crypto Staking Formulas</h2>
+
+      <h3>Simple Staking</h3>
+
+      <div class="formula">
+        Reward = Principal × APY × Time
+      </div>
+
+      <p>
+        For example, if 10 ETH is staked at a 6% annual rate for one year,
+        a simple estimate would be 0.60 ETH in gross rewards before fees.
+      </p>
+
+      <h3>Compound Staking</h3>
+
+      <div class="formula">
+        Final Balance = Principal × (1 + APY ÷ n)^(n × t)
+      </div>
+
+      <p>
+        In this formula, <strong>n</strong> represents the number of
+        compounding periods per year and <strong>t</strong> represents time
+        in years.
+      </p>
+
+      <p>
+        The calculator applies the platform fee to the estimated gross
+        rewards. Actual staking services may calculate fees differently,
+        especially when rewards are automatically reinvested.
+      </p>
+
+    </section>
+
+    <!-- EXAMPLE -->
+    <section class="section">
+
+      <h2>Crypto Staking Example</h2>
+
+      <p>
+        Suppose you stake <strong>10 ETH</strong> for one year at an assumed
+        APY of <strong>6%</strong>.
+      </p>
+
+      <div class="table-wrap">
+
+        <table>
+          <thead>
+            <tr>
+              <th>Assumption</th>
+              <th>Example</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>Initial stake</td>
+              <td>10 ETH</td>
+            </tr>
+
+            <tr>
+              <td>Annual APY</td>
+              <td>6%</td>
+            </tr>
+
+            <tr>
+              <td>Staking period</td>
+              <td>12 months</td>
+            </tr>
+
+            <tr>
+              <td>Compounding</td>
+              <td>Monthly</td>
+            </tr>
+
+            <tr>
+              <td>Platform fee</td>
+              <td>0%</td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+
+      <p>
+        The exact reward will depend on the staking mechanism and how the
+        provider calculates and distributes rewards. The calculator is
+        therefore best used as a planning tool rather than a guarantee.
+      </p>
+
+    </section>
+
+    <!-- APY APR -->
+    <section class="section">
+
+      <h2>APY vs APR for Crypto Staking</h2>
+
+      <h3>APR</h3>
+
+      <p>
+        APR, or Annual Percentage Rate, generally expresses an annualized
+        return without including the effect of reinvesting rewards.
+      </p>
+
+      <h3>APY</h3>
+
+      <p>
+        APY, or Annual Percentage Yield, generally incorporates compounding.
+        However, crypto platforms may use these terms differently, so always
+        check how a particular staking product defines its displayed rate.
+      </p>
+
+      <p>
+        A quoted APY should not automatically be treated as a guaranteed
+        return. Rates can change and the value of the underlying cryptocurrency
+        can move significantly.
+      </p>
+
+    </section>
+
+    <!-- RISKS -->
+    <section class="section">
+
+      <h2>Important Crypto Staking Risks</h2>
+
+      <div class="info-grid">
+
+        <div class="info-card">
+          <h3>Price Volatility</h3>
+          <p>
+            Staking can increase the number of tokens you hold while the fiat
+            value of those tokens may still decline.
+          </p>
+        </div>
+
+        <div class="info-card">
+          <h3>Rate Changes</h3>
+          <p>
+            Staking yields may change as network conditions, validator
+            participation and platform policies change.
+          </p>
+        </div>
+
+        <div class="info-card">
+          <h3>Lock-Ups</h3>
+          <p>
+            Some staking products can restrict withdrawals for a period of
+            time.
+          </p>
+        </div>
+
+        <div class="info-card">
+          <h3>Slashing</h3>
+          <p>
+            Some proof-of-stake networks can penalize validators for certain
+            types of behavior or network violations.
+          </p>
+        </div>
+
+        <div class="info-card">
+          <h3>Platform Risk</h3>
+          <p>
+            Using a centralized staking provider introduces additional
+            counterparty and custody considerations.
+          </p>
+        </div>
+
+        <div class="info-card">
+          <h3>Smart-Contract Risk</h3>
+          <p>
+            DeFi staking products may expose users to vulnerabilities or
+            unexpected behavior in smart contracts.
+          </p>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- PRICE VALUE -->
+    <section class="section">
+
+      <h2>Why Staking Rewards Can Still Lose Money</h2>
+
+      <p>
+        Staking rewards increase your cryptocurrency balance, but that does
+        not automatically mean your investment has increased in fiat value.
+      </p>
+
+      <p>
+        For example, imagine an asset increases from 10 tokens to 10.6 tokens
+        through staking while the token's market price falls substantially.
+        Your token balance increased, but your portfolio value could still
+        decline.
+      </p>
+
+      <p>
+        This is why it is useful to evaluate both the expected token rewards
+        and the potential volatility of the underlying cryptocurrency.
+      </p>
+
+    </section>
+
+    <!-- FAQ -->
+    <section class="section">
+
+      <h2>Crypto Staking Calculator FAQ</h2>
+
+      <div class="faq-item">
+        <h3>What is crypto staking?</h3>
+        <p>
+          Crypto staking generally involves committing eligible
+          cryptocurrency to a blockchain or staking service to support network
+          operations in exchange for potential rewards.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>What is staking APY?</h3>
+        <p>
+          APY means Annual Percentage Yield and generally represents an
+          annualized return that accounts for compounding under the assumptions
+          used by the calculation.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Does crypto staking guarantee profit?</h3>
+        <p>
+          No. Staking rewards are not guaranteed profits. Cryptocurrency prices
+          can fall, staking rates can change and investors can face validator,
+          platform, liquidity, smart-contract or slashing risks.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>What is the difference between APR and APY?</h3>
+        <p>
+          APR normally describes an annualized rate without assuming
+          reinvestment of rewards, while APY generally incorporates the effect
+          of compounding.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Does this calculator use live staking rates?</h3>
+        <p>
+          No. You enter the APY yourself. Staking rates can change frequently,
+          so use the current rate published by the relevant network or
+          provider when making an estimate.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Can staking rewards be paid in another cryptocurrency?</h3>
+        <p>
+          Yes. Depending on the network or platform, rewards may be distributed
+          in the staked asset or another asset. Always check the specific
+          staking terms before relying on an estimate.
+        </p>
+      </div>
+
+    </section>
+
+    <!-- RELATED -->
+    <section class="section">
+
+      <h2>Related EZTradingHub Crypto Tools</h2>
+
+      <div class="related">
 
         <a href="crypto-profit-calculator.html">
-            💰 Crypto Profit Calculator
+          Crypto Profit Calculator
         </a>
 
         <a href="crypto-roi-calculator.html">
-            📈 Crypto ROI Calculator
+          Crypto ROI Calculator
         </a>
 
         <a href="crypto-dca-calculator.html">
-            💵 Crypto DCA Calculator
-        </a>
-
-        <a href="crypto-portfolio-tracker.html">
-            📊 Crypto Portfolio Tracker
+          Crypto DCA Calculator
         </a>
 
         <a href="crypto-position-size.html">
-            📏 Crypto Position Size Calculator
+          Crypto Position Size Calculator
+        </a>
+
+        <a href="crypto-portfolio-tracker.html">
+          Crypto Portfolio Tracker
         </a>
 
         <a href="crypto-liquidation-calculators.html">
-            ⚠️ Crypto Liquidation Calculator
+          Crypto Liquidation Calculator
         </a>
 
-    </div>
+      </div>
 
-</section>
+    </section>
 
-<a href="index.html" class="btn">
-🏠 Back to Home
-</a>
-    
-</section>
-<script src="script.js"></script>
+    <!-- DISCLAIMER -->
+    <section class="section">
+
+      <h2>Financial Disclaimer</h2>
+
+      <div class="disclaimer">
+
+        <strong>Important:</strong>
+        EZTradingHub calculators are educational and informational tools only.
+        They do not provide financial, investment, tax or legal advice.
+
+        Cryptocurrency staking involves risk. Staking yields can change,
+        withdrawals may be restricted, validators or platforms may experience
+        problems, and cryptocurrency prices can be highly volatile.
+
+        Results from this calculator are estimates based on the information
+        entered by the user. Actual rewards, fees, taxes, token prices and
+        returns may differ substantially.
+
+        Always conduct your own research and understand the terms and risks of
+        the staking service or blockchain you are using.
+
+      </div>
+
+    </section>
+
+  </div>
+
+</main>
 
 <footer>
 
-        <div>
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="faq.html">FAQ</a>
-            <a href="terms.html">Terms & Conditions</a>
-            <a href="privacy.html">Privacy Policy</a>
-            <a href="cookie-policy.html">Cookie Policy</a>
-            <a href="disclaimer.html">Disclaimer</a>
-            <a href="contact.html">Contact</a>
-        </div>
+  <div class="footer-inner">
 
-        <p class="copyright">
-            © 2026 EZTradingHub. All rights reserved.
-        </p>
+    <div class="copyright">
+      © <span id="year"></span> EZTradingHub. All rights reserved.
+    </div>
 
-        <p class="copyright">
-            EZTradingHub provides educational and informational tools.
-            Trading involves risk.
-        </p>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="calculators.html">AllCalculators</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="disclaimer.html">Disclaimer</a>
+      <a href="cookie-policy.html">Cookies</a>
+    </div>
 
-    </footer>
-    <script src="cookie-consent.js"></script>
+  </div>
 
+</footer>
 
-<button id="topBtn" onclick="topFunction()">
+<script>
+(function () {
 
-⬆️
+  const themeToggle = document.getElementById("themeToggle");
+  const savedTheme = localStorage.getItem("ezth-theme");
 
-</button>
+  if (savedTheme === "dark") {
+    document.body.classList.add("dark");
+    themeToggle.textContent = "☀️";
+  }
+
+  themeToggle.addEventListener("click", function () {
+    const dark = document.body.classList.toggle("dark");
+
+    localStorage.setItem(
+      "ezth-theme",
+      dark ? "dark" : "light"
+    );
+
+    themeToggle.textContent = dark ? "☀️" : "🌙";
+  });
+
+  const cryptoInput = document.getElementById("crypto");
+  const currencyInput = document.getElementById("currency");
+  const principalInput = document.getElementById("principal");
+  const apyInput = document.getElementById("apy");
+  const periodInput = document.getElementById("period");
+  const periodUnitInput = document.getElementById("periodUnit");
+  const compoundInput = document.getElementById("compound");
+  const feeInput = document.getElementById("fee");
+  const priceInput = document.getElementById("price");
+
+  const errorMessage = document.getElementById("errorMessage");
+
+  function getCurrencySymbol(currency) {
+
+    const symbols = {
+      USD: "$",
+      NGN: "₦",
+      EUR: "€",
+      GBP: "£"
+    };
+
+    return symbols[currency] || "";
+  }
+
+  function formatNumber(value, decimals) {
+
+    if (!Number.isFinite(value)) {
+      return "0";
+    }
+
+    return value.toLocaleString(undefined, {
+      minimumFractionDigits: 0,
+      maximumFractionDigits: decimals
+    });
+  }
+
+  function formatCrypto(value) {
+
+    if (!Number.isFinite(value)) {
+      return "0";
+    }
+
+    return formatNumber(value, 8);
+  }
+
+  function calculate() {
+
+    errorMessage.textContent = "";
+
+    const cryptoName =
+      cryptoInput.value.trim() || "Crypto";
+
+    const currency =
+      currencyInput.value;
+
+    const principal =
+      parseFloat(principalInput.value);
+
+    const apy =
+      parseFloat(apyInput.value);
+
+    const period =
+      parseFloat(periodInput.value);
+
+    const periodUnit =
+      periodUnitInput.value;
+
+    const compound =
+      parseInt(compoundInput.value, 10);
+
+    const fee =
+      parseFloat(feeInput.value);
+
+    const price =
+      parseFloat(priceInput.value);
+
+    if (!Number.isFinite(principal) || principal <= 0) {
+      errorMessage.textContent =
+        "Please enter a valid initial staked amount.";
+
+      return;
+    }
+
+    if (!Number.isFinite(apy) || apy < 0) {
+      errorMessage.textContent =
+        "Please enter a valid APY.";
+
+      return;
+    }
+
+    if (!Number.isFinite(period) || period <= 0) {
+      errorMessage.textContent =
+        "Please enter a valid staking period.";
+
+      return;
+    }
+
+    if (!Number.isFinite(fee) || fee < 0 || fee > 100) {
+      errorMessage.textContent =
+        "Platform fee must be between 0% and 100%.";
+
+      return;
+    }
+
+    if (Number.isFinite(price) && price < 0) {
+      errorMessage.textContent =
+        "Crypto price cannot be negative.";
+
+      return;
+    }
+
+    const years =
+      periodUnit === "months"
+        ? period / 12
+        : period;
+
+    const rate =
+      apy / 100;
+
+    let grossFinal;
+
+    if (compound === 0) {
+
+      grossFinal =
+        principal * (1 + rate * years);
+
+    } else {
+
+      grossFinal =
+        principal *
+        Math.pow(
+          1 + rate / compound,
+          compound * years
+        );
+
+    }
+
+    const grossReward =
+      Math.max(0, grossFinal - principal);
+
+    const feeAmount =
+      grossReward * (fee / 100);
+
+    const netReward =
+      Math.max(0, grossReward - feeAmount);
+
+    const finalBalance =
+      principal + netReward;
+
+    const effectiveReturn =
+      principal > 0
+        ? (netReward / principal) * 100
+        : 0;
+
+    const symbol =
+      getCurrencySymbol(currency);
+
+    document.getElementById("initialResult").textContent =
+      formatCrypto(principal) + " " + cryptoName;
+
+    document.getElementById("grossReward").textContent =
+      formatCrypto(grossReward) + " " + cryptoName;
+
+    document.getElementById("feeResult").textContent =
+      formatCrypto(feeAmount) + " " + cryptoName;
+
+    document.getElementById("netReward").textContent =
+      formatCrypto(netReward) + " " + cryptoName;
+
+    document.getElementById("finalBalance").textContent =
+      formatCrypto(finalBalance) + " " + cryptoName;
+
+    document.getElementById("annualReturn").textContent =
+      formatNumber(apy, 2) + "% APY";
+
+    if (Number.isFinite(price) && price > 0) {
+
+      const initialValue =
+        principal * price;
+
+      const finalValue =
+        finalBalance * price;
+
+      document.getElementById("initialFiat").textContent =
+        symbol + formatNumber(initialValue, 2);
+
+      document.getElementById("finalFiat").textContent =
+        symbol + formatNumber(finalValue, 2);
+
+    } else {
+
+      document.getElementById("initialFiat").textContent =
+        "—";
+
+      document.getElementById("finalFiat").textContent =
+        "—";
+    }
+
+    const compoundingText =
+      compound === 0
+        ? "without compounding"
+        : compound === 12
+          ? "with monthly compounding"
+          : compound === 4
+            ? "with quarterly compounding"
+            : "with daily compounding";
+
+    document.getElementById("summary").innerHTML =
+      "Based on <strong>" +
+      formatCrypto(principal) +
+      " " +
+      cryptoName +
+      "</strong> staked for <strong>" +
+      formatNumber(period, 2) +
+      " " +
+      periodUnit +
+      "</strong> at an assumed <strong>" +
+      formatNumber(apy, 2) +
+      "% APY</strong> " +
+      compoundingText +
+      ", the estimated gross reward is " +
+      "<strong>" +
+      formatCrypto(grossReward) +
+      " " +
+      cryptoName +
+      "</strong>. " +
+      "After the estimated platform fee, the net reward is " +
+      "<strong>" +
+      formatCrypto(netReward) +
+      " " +
+      cryptoName +
+      "</strong>.";
+
+    void effectiveReturn;
+  }
+
+  function resetCalculator() {
+
+    cryptoInput.value = "Ethereum (ETH)";
+    currencyInput.value = "USD";
+    principalInput.value = "10";
+    apyInput.value = "6";
+    periodInput.value = "12";
+    periodUnitInput.value = "months";
+    compoundInput.value = "12";
+    feeInput.value = "0";
+    priceInput.value = "";
+
+    calculate();
+  }
+
+  document
+    .getElementById("calculateBtn")
+    .addEventListener("click", calculate);
+
+  document
+    .getElementById("resetBtn")
+    .addEventListener("click", resetCalculator);
+
+  [
+    principalInput,
+    apyInput,
+    periodInput,
+    feeInput,
+    priceInput
+  ].forEach(function (input) {
+
+    input.addEventListener("input", function () {
+      calculate();
+    });
+
+  });
+
+  [
+    cryptoInput,
+    currencyInput,
+    periodUnitInput,
+    compoundInput
+  ].forEach(function (input) {
+
+    input.addEventListener("change", function () {
+      calculate();
+    });
+
+  });
+
+  document.getElementById("year").textContent =
+    new Date().getFullYear();
+
+  calculate();
+
+})();
+</script>
 
 </body>
-
 </html>
-
