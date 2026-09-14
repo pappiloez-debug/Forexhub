@@ -1,225 +1,1724 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
 
-<title>Stock Average Cost Calculator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="stylesheet" href="style.css">
-<style>
-:root{--navy:#062f5f;--green:#047857;--dark:#111827;--text:#1f2937;--muted:#475569;--bg:#f8fafc;--card:#fff;--border:#e2e8f0}
-*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;line-height:1.7;color:var(--text);background:var(--bg)}
-header{background:var(--navy);color:#fff;padding:18px 20px}.header-inner{max-width:1000px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:20px}
-.brand,.back-link{color:#fff;text-decoration:none;font-weight:800}.brand{font-size:1.35rem}.back-link{font-weight:700}
-main{max-width:1000px;margin:40px auto;padding:0 20px}.hero,section{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:28px;margin-bottom:18px}
-.hero{padding:32px}.hero h1{margin-top:0;color:var(--dark);font-size:clamp(2rem,5vw,3rem)}h2{color:var(--dark);margin-top:0}.updated{color:var(--muted);font-size:.95rem}
-p,li{color:var(--text)}a{color:#065f46;font-weight:600}.notice{border-left:5px solid var(--green);background:#f0fdf4;padding:16px 18px;border-radius:8px}
-footer{background:var(--dark);color:#fff;text-align:center;padding:28px 20px;margin-top:45px}footer p{color:#fff}footer a{color:#fff;margin:0 8px}
-@media(max-width:650px){.header-inner{align-items:flex-start;flex-direction:column}main{margin-top:24px;padding:0 14px}.hero,section{padding:22px}}
-</style>
-</head>
-<body>
-<header><div class="header-inner">
-<a class="brand" href="index.html">EZTradingHub</a>
-<a class="back-link" href="index.html">← Back to Home</a>
-</div></header>
+  <title>Stock Average Cost Calculator | Average Share Price Calculator | EZTradingHub</title>
 
-<div class="hero">
+  <meta name="description"
+        content="Use the free EZTradingHub Stock Average Cost Calculator to calculate your average stock purchase price, total shares, total investment, market value, profit or loss and ROI.">
 
-<h1>📊 Stock Average Cost Calculator</h1>
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="EZTradingHub">
 
-<p>
-Calculate your weighted average cost when buying the same stock at different prices.
-</p>
+  <link rel="canonical"
+        href="https://eztradinghub.com/stock-average-cost-calculator.html">
 
-</div>
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title"
+        content="Stock Average Cost Calculator | EZTradingHub">
+  <meta property="og:description"
+        content="Calculate your average stock cost, total shares, investment, market value, profit or loss and ROI with the free EZTradingHub Stock Average Cost Calculator.">
+  <meta property="og:url"
+        content="https://eztradinghub.com/stock-average-cost-calculator.html">
+  <meta property="og:site_name" content="EZTradingHub">
+  <meta property="og:image"
+        content="https://eztradinghub.com/assets/images/og-image.png">
 
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title"
+        content="Stock Average Cost Calculator | EZTradingHub">
+  <meta name="twitter:description"
+        content="Calculate average stock cost, total investment, market value, profit or loss and ROI.">
+  <meta name="twitter:image"
+        content="https://eztradinghub.com/assets/images/og-image.png">
 
-<div class="calculator-card">
+  <meta name="theme-color" content="#075985">
 
-<h2>Purchase 1</h2>
+  <!-- Favicon -->
+  <link rel="icon"
+        type="image/png"
+        href="/assets/images/favicon.png">
 
-<label>Buy Price ($)</label>
-<input
-type="number"
-id="price1"
-placeholder="e.g. 100"
-step="0.01"
->
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
 
-<label>Number of Shares</label>
-<input
-type="number"
-id="shares1"
-placeholder="e.g. 10"
-step="0.0001"
->
+  <!-- WebApplication Schema -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebApplication",
+    "name":"Stock Average Cost Calculator",
+    "url":"https://eztradinghub.com/stock-average-cost-calculator.html",
+    "applicationCategory":"FinanceApplication",
+    "operatingSystem":"Any",
+    "description":"A free online stock average cost calculator for calculating average purchase price, total investment, shares, market value, profit or loss and ROI.",
+    "offers":{
+      "@type":"Offer",
+      "price":"0",
+      "priceCurrency":"USD"
+    },
+    "publisher":{
+      "@type":"Organization",
+      "name":"EZTradingHub",
+      "url":"https://eztradinghub.com/"
+    }
+  }
+  </script>
 
+  <!-- Breadcrumb Schema -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BreadcrumbList",
+    "itemListElement":[
+      {
+        "@type":"ListItem",
+        "position":1,
+        "name":"Home",
+        "item":"https://eztradinghub.com/"
+      },
+      {
+        "@type":"ListItem",
+        "position":2,
+        "name":"Calculators",
+        "item":"https://eztradinghub.com/calculators.html"
+      },
+      {
+        "@type":"ListItem",
+        "position":3,
+        "name":"Stock Average Cost Calculator",
+        "item":"https://eztradinghub.com/stock-average-cost-calculator.html"
+      }
+    ]
+  }
+  </script>
 
-<h2>Purchase 2</h2>
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {
+        "@type":"Question",
+        "name":"What is average stock cost?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Average stock cost is the total amount invested in shares divided by the total number of shares owned. It represents the weighted average purchase price of your shares."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"How do I calculate my average stock price?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Add the total amount invested across all purchases and divide it by the total number of shares purchased."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Does buying more shares at a lower price reduce my average cost?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Usually, yes. Buying additional shares below your existing average cost generally lowers your weighted average purchase price."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Does this calculator use live stock prices?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"No. This calculator uses the prices you enter manually. It does not provide live stock-market data."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Does average cost include trading fees?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"The basic calculation uses purchase price and shares. If you want fees included, add applicable transaction costs to the investment amount for each purchase."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Is average cost the same as the current stock price?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"No. Average cost represents your weighted purchase price, while the current stock price is the market price at a particular time."
+        }
+      }
+    ]
+  }
+  </script>
 
-<label>Buy Price ($)</label>
-<input
-type="number"
-id="price2"
-placeholder="e.g. 80"
-step="0.01"
->
-
-<label>Number of Shares</label>
-<input
-type="number"
-id="shares2"
-placeholder="e.g. 20"
-step="0.0001"
->
-
-
-<h2>Purchase 3</h2>
-
-<label>Buy Price ($)</label>
-<input
-type="number"
-id="price3"
-placeholder="e.g. 90"
-step="0.01"
->
-
-<label>Number of Shares</label>
-<input
-type="number"
-id="shares3"
-placeholder="e.g. 15"
-step="0.0001"
->
-
-
-<br>
-
-<button onclick="calculateAverageCost()">
-🧮 Calculate Average Cost
-</button>
-
-<button onclick="resetAverageCost()">
-🔄 Reset
-</button>
-
-
-<div id="averageCostResult"></div>
-
-</div>
-
-
-<script>
-  function calculateAverageCost() {
-
-    let price1 = parseFloat(document.getElementById("price1").value);
-    let shares1 = parseFloat(document.getElementById("shares1").value);
-
-    let price2 = parseFloat(document.getElementById("price2").value);
-    let shares2 = parseFloat(document.getElementById("shares2").value);
-
-    let price3 = parseFloat(document.getElementById("price3").value);
-    let shares3 = parseFloat(document.getElementById("shares3").value);
-
-
-    if (
-        isNaN(price1) || isNaN(shares1) ||
-        isNaN(price2) || isNaN(shares2) ||
-        isNaN(price3) || isNaN(shares3) ||
-        price1 <= 0 || price2 <= 0 || price3 <= 0 ||
-        shares1 <= 0 || shares2 <= 0 || shares3 <= 0
-    ) {
-
-        document.getElementById("averageCostResult").innerHTML =
-        "⚠️ Please enter valid values for all purchases.";
-
-        return;
+  <style>
+    :root {
+      --bg:#f4f7fb;
+      --surface:#ffffff;
+      --surface2:#f8fafc;
+      --text:#172033;
+      --muted:#667085;
+      --border:#e2e8f0;
+      --primary:#075985;
+      --primary2:#0ea5e9;
+      --success:#16a34a;
+      --warning:#d97706;
+      --danger:#dc2626;
+      --shadow:0 12px 35px rgba(15,23,42,.08);
+      --radius:18px;
     }
 
+    body.dark {
+      --bg:#07111f;
+      --surface:#0e1b2d;
+      --surface2:#111f33;
+      --text:#f1f5f9;
+      --muted:#aab7c9;
+      --border:#24364d;
+      --primary:#38bdf8;
+      --primary2:#0ea5e9;
+      --success:#4ade80;
+      --warning:#fbbf24;
+      --danger:#fb7185;
+      --shadow:0 12px 35px rgba(0,0,0,.28);
+    }
 
-    let investment1 = price1 * shares1;
-    let investment2 = price2 * shares2;
-    let investment3 = price3 * shares3;
+    * {
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+    }
 
+    html {
+      scroll-behavior:smooth;
+    }
 
-    let totalInvestment =
-        investment1 + investment2 + investment3;
+    body {
+      font-family:Inter,Arial,sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.65;
+      transition:.25s ease;
+    }
 
+    a {
+      color:var(--primary);
+      text-decoration:none;
+    }
 
-    let totalShares =
-        shares1 + shares2 + shares3;
+    a:hover {
+      text-decoration:underline;
+    }
 
+    .site-header {
+      background:var(--surface);
+      border-bottom:1px solid var(--border);
+      position:sticky;
+      top:0;
+      z-index:1000;
+    }
 
-    let averageCost =
-        totalInvestment / totalShares;
+    .nav {
+      max-width:1180px;
+      margin:auto;
+      padding:14px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+    }
 
+    .logo {
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-weight:800;
+      color:var(--text);
+    }
 
-    document.getElementById("averageCostResult").innerHTML =
+    .logo-box {
+      width:42px;
+      height:42px;
+      border-radius:12px;
+      display:grid;
+      place-items:center;
+      background:linear-gradient(135deg,var(--primary),var(--primary2));
+      color:#fff;
+      font-weight:800;
+    }
 
-        "<h2>📊 Results</h2>" +
+    .nav-links {
+      display:flex;
+      align-items:center;
+      gap:18px;
+      flex-wrap:wrap;
+    }
 
-        "<p>Total Investment: <strong>$" +
-        totalInvestment.toLocaleString(undefined, {
-            minimumFractionDigits: 2,
-            maximumFractionDigits: 2
-        }) +
-        "</strong></p>" +
+    .nav-links a {
+      color:var(--text);
+      font-size:14px;
+      font-weight:600;
+    }
 
-        "<p>Total Shares: <strong>" +
-        totalShares.toFixed(4) +
-        "</strong></p>" +
+    .theme-btn {
+      border:1px solid var(--border);
+      background:var(--surface2);
+      color:var(--text);
+      padding:9px 12px;
+      border-radius:10px;
+      cursor:pointer;
+      font-weight:700;
+    }
 
-        "<p>🎯 Average Cost Per Share: " +
+    .container {
+      max-width:1180px;
+      margin:auto;
+      padding:30px 18px 60px;
+    }
 
-        "<strong>$" +
-        averageCost.toFixed(2) +
-        "</strong></p>";
+    .breadcrumb {
+      font-size:13px;
+      color:var(--muted);
+      margin-bottom:18px;
+    }
 
-}
+    .hero {
+      background:linear-gradient(135deg,#075985,#0ea5e9);
+      color:#fff;
+      padding:36px;
+      border-radius:24px;
+      margin-bottom:25px;
+      box-shadow:var(--shadow);
+    }
 
+    .hero h1 {
+      font-size:clamp(28px,5vw,44px);
+      line-height:1.15;
+      margin-bottom:12px;
+    }
 
-function resetAverageCost() {
+    .hero p {
+      max-width:800px;
+      opacity:.95;
+      font-size:16px;
+    }
 
-    document.getElementById("price1").value = "";
-    document.getElementById("shares1").value = "";
+    .calculator {
+      background:var(--surface);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:25px;
+      margin-bottom:28px;
+    }
 
-    document.getElementById("price2").value = "";
-    document.getElementById("shares2").value = "";
+    .calculator h2 {
+      margin-bottom:6px;
+      font-size:24px;
+    }
 
-    document.getElementById("price3").value = "";
-    document.getElementById("shares3").value = "";
+    .intro {
+      color:var(--muted);
+      margin-bottom:20px;
+    }
 
-    document.getElementById("averageCostResult").innerHTML = "";
+    .purchase-list {
+      display:grid;
+      gap:15px;
+    }
 
-}
-  
-  </script>
-<footer>
+    .purchase-row {
+      background:var(--surface2);
+      border:1px solid var(--border);
+      border-radius:14px;
+      padding:17px;
+    }
 
-        <div>
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="faq.html">FAQ</a>
-            <a href="terms.html">Terms & Conditions</a>
-            <a href="privacy.html">Privacy Policy</a>
-            <a href="cookie-policy.html">Cookie Policy</a>
-            <a href="disclaimer.html">Disclaimer</a>
-            <a href="contact.html">Contact</a>
+    .purchase-header {
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      margin-bottom:14px;
+      gap:10px;
+    }
+
+    .purchase-number {
+      font-weight:800;
+    }
+
+    .remove-btn {
+      border:0;
+      background:transparent;
+      color:var(--danger);
+      cursor:pointer;
+      font-weight:700;
+    }
+
+    .grid {
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:16px;
+    }
+
+    .field label {
+      display:block;
+      font-weight:700;
+      font-size:14px;
+      margin-bottom:7px;
+    }
+
+    .field input,
+    .field select {
+      width:100%;
+      padding:13px 14px;
+      border:1px solid var(--border);
+      border-radius:11px;
+      background:var(--surface);
+      color:var(--text);
+      font:inherit;
+      outline:none;
+    }
+
+    .field input:focus,
+    .field select:focus {
+      border-color:var(--primary2);
+      box-shadow:0 0 0 3px rgba(14,165,233,.15);
+    }
+
+    .actions {
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:20px;
+    }
+
+    button {
+      font:inherit;
+    }
+
+    .primary-btn,
+    .secondary-btn,
+    .danger-btn {
+      border:0;
+      border-radius:11px;
+      padding:12px 17px;
+      cursor:pointer;
+      font-weight:800;
+    }
+
+    .primary-btn {
+      background:var(--primary);
+      color:#fff;
+    }
+
+    .primary-btn:hover {
+      background:var(--primary2);
+    }
+
+    .secondary-btn {
+      background:var(--surface2);
+      color:var(--text);
+      border:1px solid var(--border);
+    }
+
+    .danger-btn {
+      background:var(--danger);
+      color:#fff;
+    }
+
+    .results {
+      margin-top:25px;
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:14px;
+    }
+
+    .result-card {
+      background:var(--surface2);
+      border:1px solid var(--border);
+      border-radius:14px;
+      padding:17px;
+    }
+
+    .result-card span {
+      display:block;
+      color:var(--muted);
+      font-size:13px;
+      margin-bottom:6px;
+    }
+
+    .result-card strong {
+      font-size:20px;
+      display:block;
+      overflow-wrap:anywhere;
+    }
+
+    .positive {
+      color:var(--success);
+    }
+
+    .negative {
+      color:var(--danger);
+    }
+
+    .summary {
+      margin-top:20px;
+      padding:16px;
+      border-radius:13px;
+      background:rgba(14,165,233,.08);
+      border:1px solid rgba(14,165,233,.2);
+    }
+
+    .content-section {
+      background:var(--surface);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      padding:28px;
+      margin-bottom:25px;
+      box-shadow:var(--shadow);
+    }
+
+    .content-section h2 {
+      font-size:25px;
+      margin-bottom:12px;
+    }
+
+    .content-section h3 {
+      font-size:19px;
+      margin:22px 0 8px;
+    }
+
+    .content-section p {
+      margin-bottom:13px;
+      color:var(--text);
+    }
+
+    .content-section ul {
+      padding-left:22px;
+      margin-bottom:15px;
+    }
+
+    .content-section li {
+      margin-bottom:7px;
+    }
+
+    .formula {
+      background:var(--surface2);
+      border-left:4px solid var(--primary2);
+      padding:16px;
+      border-radius:10px;
+      margin:14px 0;
+      font-weight:700;
+    }
+
+    .example-table {
+      width:100%;
+      border-collapse:collapse;
+      margin:15px 0;
+    }
+
+    .example-table th,
+    .example-table td {
+      border:1px solid var(--border);
+      padding:11px;
+      text-align:left;
+    }
+
+    .example-table th {
+      background:var(--surface2);
+    }
+
+    .faq-item {
+      border-bottom:1px solid var(--border);
+      padding:15px 0;
+    }
+
+    .faq-item:last-child {
+      border-bottom:0;
+    }
+
+    .faq-item h3 {
+      margin:0 0 6px;
+    }
+
+    .related-links {
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:12px;
+      margin-top:15px;
+    }
+
+    .related-links a {
+      background:var(--surface2);
+      border:1px solid var(--border);
+      border-radius:12px;
+      padding:14px;
+      font-weight:700;
+    }
+
+    .disclaimer {
+      font-size:13px;
+      color:var(--muted);
+      background:var(--surface2);
+      border:1px solid var(--border);
+      border-radius:12px;
+      padding:15px;
+      margin-top:20px;
+    }
+
+    footer {
+      border-top:1px solid var(--border);
+      background:var(--surface);
+      padding:28px 18px;
+      text-align:center;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    .footer-links {
+      display:flex;
+      justify-content:center;
+      flex-wrap:wrap;
+      gap:15px;
+      margin-bottom:10px;
+    }
+
+    @media(max-width:900px) {
+      .results {
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .related-links {
+        grid-template-columns:repeat(2,1fr);
+      }
+    }
+
+    @media(max-width:700px) {
+      .nav {
+        align-items:flex-start;
+      }
+
+      .nav-links {
+        gap:10px;
+      }
+
+      .hero {
+        padding:26px 20px;
+      }
+
+      .calculator,
+      .content-section {
+        padding:20px;
+      }
+
+      .grid {
+        grid-template-columns:1fr;
+      }
+
+      .results {
+        grid-template-columns:1fr;
+      }
+
+      .related-links {
+        grid-template-columns:1fr;
+      }
+    }
+
+    @media print {
+      .site-header,
+      .actions,
+      footer,
+      .related-links {
+        display:none !important;
+      }
+
+      body {
+        background:#fff;
+        color:#000;
+      }
+
+      .calculator,
+      .content-section {
+        box-shadow:none;
+        border:1px solid #ddd;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="site-header">
+  <nav class="nav" aria-label="Main navigation">
+
+    <a class="logo" href="/">
+      <span class="logo-box" aria-hidden="true">EZ</span>
+      <span>EZTradingHub</span>
+    </a>
+
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="calculators.html">Calculators</a>
+      <a href="trade-journal.html">Trade Journal</a>
+      <a href="Dashboard.html">Dashboard</a>
+      <a href="about.html">About</a>
+
+      <button
+        class="theme-btn"
+        id="themeToggle"
+        type="button"
+        aria-label="Toggle light and dark mode">
+        🌙
+      </button>
+    </div>
+
+  </nav>
+</header>
+
+<main class="container">
+
+  <div class="breadcrumb">
+    <a href="index.html">Home</a> /
+    <a href="calculators.html">Calculators</a> /
+    Stock Average Cost Calculator
+  </div>
+
+  <section class="hero">
+    <h1>Stock Average Cost Calculator</h1>
+    <p>
+      Calculate your weighted average stock purchase price, total shares,
+      total investment, current market value, unrealized profit or loss,
+      return on investment and break-even price.
+    </p>
+  </section>
+
+  <section class="calculator" aria-labelledby="calculator-heading">
+
+    <h2 id="calculator-heading">Calculate Your Average Stock Cost</h2>
+
+    <p class="intro">
+      Add each stock purchase below. The calculator uses your shares and
+      purchase prices to determine your weighted average cost.
+    </p>
+
+    <div class="purchase-list" id="purchaseList">
+
+      <div class="purchase-row">
+        <div class="purchase-header">
+          <span class="purchase-number">Purchase 1</span>
         </div>
 
-        <p class="copyright">
-            © 2026 EZTradingHub. All rights reserved.
-        </p>
+        <div class="grid">
 
-        <p class="copyright">
-            EZTradingHub provides educational and informational tools.
-            Trading involves risk.
-        </p>
+          <div class="field">
+            <label for="shares1">Number of Shares</label>
+            <input
+              id="shares1"
+              class="shares"
+              type="number"
+              min="0"
+              step="any"
+              value="100"
+              inputmode="decimal">
+          </div>
 
-    </footer>
-    <script src="cookie-consent.js"></script>
+          <div class="field">
+            <label for="price1">Purchase Price Per Share</label>
+            <input
+              id="price1"
+              class="purchase-price"
+              type="number"
+              min="0"
+              step="any"
+              value="100"
+              inputmode="decimal">
+          </div>
+
+        </div>
+      </div>
+
+      <div class="purchase-row">
+        <div class="purchase-header">
+          <span class="purchase-number">Purchase 2</span>
+          <button
+            type="button"
+            class="remove-btn"
+            onclick="removePurchase(this)">
+            Remove
+          </button>
+        </div>
+
+        <div class="grid">
+
+          <div class="field">
+            <label for="shares2">Number of Shares</label>
+            <input
+              id="shares2"
+              class="shares"
+              type="number"
+              min="0"
+              step="any"
+              value="100"
+              inputmode="decimal">
+          </div>
+
+          <div class="field">
+            <label for="price2">Purchase Price Per Share</label>
+            <input
+              id="price2"
+              class="purchase-price"
+              type="number"
+              min="0"
+              step="any"
+              value="80"
+              inputmode="decimal">
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <div class="actions">
+
+      <button
+        type="button"
+        class="secondary-btn"
+        onclick="addPurchase()">
+        + Add Purchase
+      </button>
+
+    </div>
+
+    <div class="grid" style="margin-top:18px;">
+
+      <div class="field">
+        <label for="currency">Currency</label>
+        <select id="currency">
+          <option value="$">USD ($)</option>
+          <option value="₦">NGN (₦)</option>
+          <option value="€">EUR (€)</option>
+          <option value="£">GBP (£)</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="currentPrice">Current Stock Price Per Share</label>
+        <input
+          id="currentPrice"
+          type="number"
+          min="0"
+          step="any"
+          value="95"
+          inputmode="decimal">
+      </div>
+
+    </div>
+
+    <div class="actions">
+
+      <button
+        type="button"
+        class="primary-btn"
+        onclick="calculateAverageCost()">
+        Calculate Average Cost
+      </button>
+
+      <button
+        type="button"
+        class="secondary-btn"
+        onclick="window.print()">
+        Print Results
+      </button>
+
+      <button
+        type="button"
+        class="danger-btn"
+        onclick="resetCalculator()">
+        Reset
+      </button>
+
+    </div>
+
+    <div
+      class="results"
+      id="results"
+      aria-live="polite">
+
+      <div class="result-card">
+        <span>Total Shares</span>
+        <strong id="totalShares">200</strong>
+      </div>
+
+      <div class="result-card">
+        <span>Total Investment</span>
+        <strong id="totalInvestment">$18,000.00</strong>
+      </div>
+
+      <div class="result-card">
+        <span>Average Cost Per Share</span>
+        <strong id="averageCost">$90.00</strong>
+      </div>
+
+      <div class="result-card">
+        <span>Current Market Value</span>
+        <strong id="marketValue">$19,000.00</strong>
+      </div>
+
+      <div class="result-card">
+        <span>Unrealized Profit / Loss</span>
+        <strong id="profitLoss" class="positive">$1,000.00</strong>
+      </div>
+
+      <div class="result-card">
+        <span>ROI</span>
+        <strong id="roi" class="positive">5.56%</strong>
+      </div>
+
+      <div class="result-card">
+        <span>Break-Even Price</span>
+        <strong id="breakEven">$90.00</strong>
+      </div>
+
+      <div class="result-card">
+        <span>Price Difference</span>
+        <strong id="priceDifference" class="positive">$5.00</strong>
+      </div>
+
+    </div>
+
+    <div class="summary" id="summary">
+      Your average stock cost is calculated by dividing your total investment
+      by your total number of shares.
+    </div>
+
+  </section>
+
+  <section class="content-section">
+
+    <h2>What Is a Stock Average Cost Calculator?</h2>
+
+    <p>
+      A stock average cost calculator helps investors determine the weighted
+      average price they paid for shares purchased at different prices.
+      This can be particularly useful when you buy the same stock multiple
+      times over a period of time.
+    </p>
+
+    <p>
+      Instead of looking at each transaction separately, the calculator
+      combines your purchases and gives you one average cost per share.
+      You can then compare that average cost with the current market price
+      to estimate your unrealized profit or loss.
+    </p>
+
+    <h3>Average Cost Formula</h3>
+
+    <div class="formula">
+      Average Cost Per Share =
+      Total Investment ÷ Total Shares
+    </div>
+
+    <p>
+      The calculation is weighted by the number of shares purchased.
+      Therefore, a purchase of 500 shares has a greater effect on your
+      average cost than a purchase of 50 shares.
+    </p>
+
+  </section>
+
+  <section class="content-section">
+
+    <h2>How to Use This Calculator</h2>
+
+    <ol>
+      <li>Enter the number of shares purchased.</li>
+      <li>Enter the purchase price for each transaction.</li>
+      <li>Use <strong>Add Purchase</strong> for additional transactions.</li>
+      <li>Select your preferred currency.</li>
+      <li>Enter the current stock price.</li>
+      <li>Select <strong>Calculate Average Cost</strong>.</li>
+    </ol>
+
+    <p>
+      The calculator will show your total shares, total investment,
+      weighted average cost, current market value, estimated profit or loss,
+      ROI, break-even price and price difference.
+    </p>
+
+  </section>
+
+  <section class="content-section">
+
+    <h2>Example of Averaging Stock Purchases</h2>
+
+    <p>
+      Suppose an investor buys the same stock at two different prices:
+    </p>
+
+    <table class="example-table">
+      <thead>
+        <tr>
+          <th>Purchase</th>
+          <th>Shares</th>
+          <th>Price</th>
+          <th>Investment</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>Purchase 1</td>
+          <td>100</td>
+          <td>$100</td>
+          <td>$10,000</td>
+        </tr>
+
+        <tr>
+          <td>Purchase 2</td>
+          <td>100</td>
+          <td>$80</td>
+          <td>$8,000</td>
+        </tr>
+
+        <tr>
+          <td><strong>Total</strong></td>
+          <td><strong>200</strong></td>
+          <td>—</td>
+          <td><strong>$18,000</strong></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>
+      The average cost is:
+    </p>
+
+    <div class="formula">
+      $18,000 ÷ 200 shares = $90 average cost per share
+    </div>
+
+    <p>
+      If the stock is currently trading at $95, the investor has an
+      estimated unrealized gain of $5 per share, or $1,000 across 200 shares,
+      before applicable taxes and transaction costs.
+    </p>
+
+  </section>
+
+  <section class="content-section">
+
+    <h2>Why Investors Track Average Stock Cost</h2>
+
+    <h3>1. Understand Your True Entry Price</h3>
+
+    <p>
+      When you make several purchases at different prices, your average cost
+      provides a clearer view of your overall position than looking at only
+      the most recent transaction.
+    </p>
+
+    <h3>2. Measure Unrealized Profit or Loss</h3>
+
+    <p>
+      Comparing your average cost with the current market price can help you
+      estimate whether your overall position is currently above or below
+      your weighted purchase price.
+    </p>
+
+    <h3>3. Evaluate Additional Purchases</h3>
+
+    <p>
+      Investors sometimes use average-cost calculations when considering
+      whether an additional purchase would increase or decrease their
+      overall average price.
+    </p>
+
+    <h3>4. Track Portfolio Records</h3>
+
+    <p>
+      Keeping accurate records of shares and purchase prices can make it
+      easier to monitor your investment performance over time.
+    </p>
+
+  </section>
+
+  <section class="content-section">
+
+    <h2>Averaging Down vs. Averaging Up</h2>
+
+    <p>
+      <strong>Averaging down</strong> means buying additional shares at a
+      price below your existing average cost. If the additional purchase is
+      large enough, your new average cost will decrease.
+    </p>
+
+    <p>
+      <strong>Averaging up</strong> means buying additional shares at a price
+      above your existing average cost. This generally increases your
+      weighted average cost.
+    </p>
+
+    <p>
+      A lower average cost does not automatically make an investment safer.
+      The underlying stock can continue falling, so investors should consider
+      company fundamentals, valuation, diversification and their overall
+      risk tolerance.
+    </p>
+
+  </section>
+
+  <section class="content-section">
+
+    <h2>Average Cost and Break-Even Price</h2>
+
+    <p>
+      In this basic calculator, the break-even price is the same as your
+      calculated average cost because transaction fees and taxes are not
+      automatically included.
+    </p>
+
+    <div class="formula">
+      Break-Even Price ≈ Average Cost Per Share
+    </div>
+
+    <p>
+      If brokerage fees, commissions, taxes or other trading costs apply,
+      your actual break-even price may be different.
+    </p>
+
+  </section>
+
+  <section class="content-section">
+
+    <h2>Important Things to Consider</h2>
+
+    <ul>
+      <li>Stock prices can rise or fall significantly.</li>
+      <li>Past performance does not guarantee future results.</li>
+      <li>Transaction costs can affect actual investment returns.</li>
+      <li>Taxes may affect your final investment outcome.</li>
+      <li>A lower average cost does not eliminate investment risk.</li>
+      <li>Company-specific events can cause substantial price movements.</li>
+      <li>Diversification can help reduce concentration risk.</li>
+    </ul>
+
+    <p>
+      This calculator is designed for educational and planning purposes.
+      It should not be treated as personalized investment advice.
+    </p>
+
+  </section>
+
+  <section class="content-section">
+
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+      <h3>What is average stock cost?</h3>
+      <p>
+        Average stock cost is the total amount invested in shares divided
+        by the total number of shares owned. It represents your weighted
+        average purchase price.
+      </p>
+    </div>
+
+    <div class="faq-item">
+      <h3>How do I calculate my average stock price?</h3>
+      <p>
+        Add the investment amount from all purchases and divide it by the
+        total number of shares purchased.
+      </p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Does buying more shares at a lower price reduce my average cost?</h3>
+      <p>
+        Usually, yes. Buying additional shares below your existing average
+        cost generally lowers the weighted average purchase price.
+      </p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Does this calculator use live stock prices?</h3>
+      <p>
+        No. You enter the stock price manually. This calculator does not
+        provide live market data.
+      </p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Does average cost include trading fees?</h3>
+      <p>
+        The basic calculation uses your entered purchase prices and shares.
+        If you want fees included, incorporate applicable transaction costs
+        into the investment amount for each purchase.
+      </p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Is average cost the same as the current stock price?</h3>
+      <p>
+        No. Average cost represents your weighted purchase price. Current
+        stock price represents the market price at a particular time.
+      </p>
+    </div>
+
+  </section>
+
+  <section class="content-section">
+
+    <h2>More EZTradingHub Trading & Investment Tools</h2>
+
+    <div class="related-links">
+
+      <a href="stock-profit-calculator.html">
+        Stock Profit Calculator
+      </a>
+
+      <a href="stock-dividend-calculator.html">
+        Stock Dividend Calculator
+      </a>
+
+      <a href="crypto-portfolio-tracker.html">
+        Crypto Portfolio Tracker
+      </a>
+
+      <a href="position-size-calculator.html">
+        Position Size Calculator
+      </a>
+
+      <a href="risk-calculator.html">
+        Risk Calculator
+      </a>
+
+      <a href="drawdown-calculator.html">
+        Drawdown Calculator
+      </a>
+
+    </div>
+
+  </section>
+
+  <div class="disclaimer">
+    <strong>Financial Disclaimer:</strong>
+    EZTradingHub calculators are provided for educational and informational
+    purposes only. The results are estimates based on the information you
+    enter and may not reflect actual brokerage statements, taxes, fees,
+    market conditions or execution prices. This tool does not constitute
+    financial, investment, tax or legal advice. Always perform your own
+    research and consider consulting a qualified financial professional
+    before making investment decisions.
+  </div>
+
+</main>
+
+<footer>
+
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="calculators.html">Calculators</a>
+    <a href="about.html">About</a>
+    <a href="faq.html">FAQ</a>
+    <a href="contact.html">Contact</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms</a>
+    <a href="disclaimer.html">Disclaimer</a>
+    <a href="cookie-policy.html">Cookie Policy</a>
+  </div>
+
+  <p>
+    © <span id="year"></span> EZTradingHub. All rights reserved.
+  </p>
+
+</footer>
+
+<script>
+  /* ==========================
+     THEME
+  ========================== */
+
+  const savedTheme = localStorage.getItem("ezth-theme");
+
+  if (savedTheme === "dark") {
+    document.body.classList.add("dark");
+  }
+
+  const themeToggle = document.getElementById("themeToggle");
+
+  function updateThemeIcon() {
+    themeToggle.textContent =
+      document.body.classList.contains("dark") ? "☀️" : "🌙";
+  }
+
+  themeToggle.addEventListener("click", function() {
+
+    document.body.classList.toggle("dark");
+
+    localStorage.setItem(
+      "ezth-theme",
+      document.body.classList.contains("dark") ? "dark" : "light"
+    );
+
+    updateThemeIcon();
+  });
+
+  updateThemeIcon();
+
+
+  /* ==========================
+     PURCHASE MANAGEMENT
+  ========================== */
+
+  let purchaseCount = 2;
+
+  function addPurchase() {
+
+    purchaseCount++;
+
+    const list = document.getElementById("purchaseList");
+
+    const row = document.createElement("div");
+
+    row.className = "purchase-row";
+
+    row.innerHTML = `
+      <div class="purchase-header">
+        <span class="purchase-number">
+          Purchase ${purchaseCount}
+        </span>
+
+        <button
+          type="button"
+          class="remove-btn"
+          onclick="removePurchase(this)">
+          Remove
+        </button>
+      </div>
+
+      <div class="grid">
+
+        <div class="field">
+          <label for="shares${purchaseCount}">
+            Number of Shares
+          </label>
+
+          <input
+            id="shares${purchaseCount}"
+            class="shares"
+            type="number"
+            min="0"
+            step="any"
+            value="0"
+            inputmode="decimal">
+        </div>
+
+        <div class="field">
+          <label for="price${purchaseCount}">
+            Purchase Price Per Share
+          </label>
+
+          <input
+            id="price${purchaseCount}"
+            class="purchase-price"
+            type="number"
+            min="0"
+            step="any"
+            value="0"
+            inputmode="decimal">
+        </div>
+
+      </div>
+    `;
+
+    list.appendChild(row);
+
+    renumberPurchases();
+  }
+
+
+  function removePurchase(button) {
+
+    const rows =
+      document.querySelectorAll(".purchase-row");
+
+    if (rows.length <= 1) {
+      alert("At least one purchase is required.");
+      return;
+    }
+
+    button.closest(".purchase-row").remove();
+
+    renumberPurchases();
+    calculateAverageCost();
+  }
+
+
+  function renumberPurchases() {
+
+    const rows =
+      document.querySelectorAll(".purchase-row");
+
+    rows.forEach(function(row, index) {
+
+      const number =
+        row.querySelector(".purchase-number");
+
+      number.textContent =
+        "Purchase " + (index + 1);
+
+    });
+  }
+
+
+  /* ==========================
+     CALCULATOR
+  ========================== */
+
+  function calculateAverageCost() {
+
+    const shareInputs =
+      document.querySelectorAll(".shares");
+
+    const priceInputs =
+      document.querySelectorAll(".purchase-price");
+
+    let totalShares = 0;
+    let totalInvestment = 0;
+
+    for (let i = 0; i < shareInputs.length; i++) {
+
+      const shares =
+        parseFloat(shareInputs[i].value) || 0;
+
+      const price =
+        parseFloat(priceInputs[i].value) || 0;
+
+      if (shares < 0 || price < 0) {
+        continue;
+      }
+
+      totalShares += shares;
+
+      totalInvestment += shares * price;
+    }
+
+    const currentPrice =
+      parseFloat(
+        document.getElementById("currentPrice").value
+      ) || 0;
+
+    const currency =
+      document.getElementById("currency").value;
+
+    const averageCost =
+      totalShares > 0
+        ? totalInvestment / totalShares
+        : 0;
+
+    const marketValue =
+      totalShares * currentPrice;
+
+    const profitLoss =
+      marketValue - totalInvestment;
+
+    const roi =
+      totalInvestment > 0
+        ? (profitLoss / totalInvestment) * 100
+        : 0;
+
+    const breakEven =
+      averageCost;
+
+    const priceDifference =
+      currentPrice - averageCost;
+
+
+    document.getElementById("totalShares").textContent =
+      formatNumber(totalShares);
+
+    document.getElementById("totalInvestment").textContent =
+      formatMoney(totalInvestment, currency);
+
+    document.getElementById("averageCost").textContent =
+      formatMoney(averageCost, currency);
+
+    document.getElementById("marketValue").textContent =
+      formatMoney(marketValue, currency);
+
+    const profitElement =
+      document.getElementById("profitLoss");
+
+    profitElement.textContent =
+      formatMoney(profitLoss, currency);
+
+    profitElement.className =
+      profitLoss >= 0 ? "positive" : "negative";
+
+
+    const roiElement =
+      document.getElementById("roi");
+
+    roiElement.textContent =
+      formatPercent(roi);
+
+    roiElement.className =
+      roi >= 0 ? "positive" : "negative";
+
+
+    document.getElementById("breakEven").textContent =
+      formatMoney(breakEven, currency);
+
+
+    const differenceElement =
+      document.getElementById("priceDifference");
+
+    differenceElement.textContent =
+      formatMoney(priceDifference, currency);
+
+    differenceElement.className =
+      priceDifference >= 0 ? "positive" : "negative";
+
+
+    let message = "";
+
+    if (totalShares <= 0) {
+
+      message =
+        "Enter at least one stock purchase to calculate your average cost.";
+
+    } else if (profitLoss > 0) {
+
+      message =
+        "Your current stock price is above your average cost, producing an estimated unrealized gain of "
+        + formatMoney(profitLoss, currency)
+        + ".";
+
+    } else if (profitLoss < 0) {
+
+      message =
+        "Your current stock price is below your average cost, producing an estimated unrealized loss of "
+        + formatMoney(Math.abs(profitLoss), currency)
+        + ".";
+
+    } else {
+
+      message =
+        "Your current stock price is equal to your calculated average cost.";
+
+    }
+
+    document.getElementById("summary").textContent =
+      message;
+  }
+
+
+  /* ==========================
+     FORMATTING
+  ========================== */
+
+  function formatNumber(value) {
+
+    return new Intl.NumberFormat(
+      undefined,
+      {
+        maximumFractionDigits:6
+      }
+    ).format(value);
+  }
+
+
+  function formatMoney(value, currency) {
+
+    const sign =
+      value < 0 ? "-" : "";
+
+    const absolute =
+      Math.abs(value);
+
+    return sign +
+      currency +
+      new Intl.NumberFormat(
+        undefined,
+        {
+          minimumFractionDigits:2,
+          maximumFractionDigits:2
+        }
+      ).format(absolute);
+  }
+
+
+  function formatPercent(value) {
+
+    return (
+      value >= 0 ? "" : "-"
+    ) +
+    Math.abs(value).toFixed(2) +
+    "%";
+  }
+
+
+  /* ==========================
+     RESET
+  ========================== */
+
+  function resetCalculator() {
+
+    const list =
+      document.getElementById("purchaseList");
+
+    list.innerHTML = `
+
+      <div class="purchase-row">
+
+        <div class="purchase-header">
+          <span class="purchase-number">
+            Purchase 1
+          </span>
+        </div>
+
+        <div class="grid">
+
+          <div class="field">
+            <label for="shares1">
+              Number of Shares
+            </label>
+
+            <input
+              id="shares1"
+              class="shares"
+              type="number"
+              min="0"
+              step="any"
+              value="100"
+              inputmode="decimal">
+          </div>
+
+          <div class="field">
+            <label for="price1">
+              Purchase Price Per Share
+            </label>
+
+            <input
+              id="price1"
+              class="purchase-price"
+              type="number"
+              min="0"
+              step="any"
+              value="100"
+              inputmode="decimal">
+          </div>
+
+        </div>
+      </div>
+
+      <div class="purchase-row">
+
+        <div class="purchase-header">
+          <span class="purchase-number">
+            Purchase 2
+          </span>
+
+          <button
+            type="button"
+            class="remove-btn"
+            onclick="removePurchase(this)">
+            Remove
+          </button>
+        </div>
+
+        <div class="grid">
+
+          <div class="field">
+            <label for="shares2">
+              Number of Shares
+            </label>
+
+            <input
+              id="shares2"
+              class="shares"
+              type="number"
+              min="0"
+              step="any"
+              value="100"
+              inputmode="decimal">
+          </div>
+
+          <div class="field">
+            <label for="price2">
+              Purchase Price Per Share
+            </label>
+
+            <input
+              id="price2"
+              class="purchase-price"
+              type="number"
+              min="0"
+              step="any"
+              value="80"
+              inputmode="decimal">
+          </div>
+
+        </div>
+      </div>
+    `;
+
+    purchaseCount = 2;
+
+    document.getElementById("currency").value = "$";
+
+    document.getElementById("currentPrice").value = "95";
+
+    calculateAverageCost();
+  }
+
+
+  /* ==========================
+     AUTO CALCULATION
+  ========================== */
+
+  document.addEventListener(
+    "input",
+    function(event) {
+
+      if (
+        event.target.matches(
+          ".shares, .purchase-price, #currentPrice"
+        )
+      ) {
+        calculateAverageCost();
+      }
+    }
+  );
+
+
+  document.getElementById("currency")
+    .addEventListener(
+      "change",
+      calculateAverageCost
+    );
+
+
+  /* ==========================
+     YEAR
+  ========================== */
+
+  document.getElementById("year").textContent =
+    new Date().getFullYear();
+
+
+  /* Initial calculation */
+  calculateAverageCost();
+
+</script>
 
 </body>
 </html>
