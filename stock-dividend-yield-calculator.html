@@ -1,0 +1,2628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Stock Dividend Yield Calculator | Dividend Yield Calculator | EZTradingHub</title>
+
+  <meta name="description"
+        content="Use the free EZTradingHub Stock Dividend Yield Calculator to calculate dividend yield, annual dividend income, dividend per share, share price and estimated monthly income.">
+
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="EZTradingHub">
+
+  <link rel="canonical"
+        href="https://eztradinghub.com/stock-dividend-yield-calculator.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title"
+        content="Stock Dividend Yield Calculator | EZTradingHub">
+  <meta property="og:description"
+        content="Calculate stock dividend yield, annual dividend income, monthly equivalent income and dividend per share with the free EZTradingHub calculator.">
+  <meta property="og:url"
+        content="https://eztradinghub.com/stock-dividend-yield-calculator.html">
+  <meta property="og:site_name" content="EZTradingHub">
+  <meta property="og:image"
+        content="https://eztradinghub.com/assets/images/og-image.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title"
+        content="Stock Dividend Yield Calculator | EZTradingHub">
+  <meta name="twitter:description"
+        content="Calculate dividend yield and estimated dividend income from a stock investment.">
+  <meta name="twitter:image"
+        content="https://eztradinghub.com/assets/images/og-image.png">
+
+  <meta name="theme-color" content="#075985">
+
+  <!-- Favicon -->
+  <link rel="icon"
+        type="image/png"
+        href="/assets/images/favicon.png">
+
+  <!-- Font -->
+  <link rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+  <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+
+  <!-- WebApplication Schema -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebApplication",
+    "name":"Stock Dividend Yield Calculator",
+    "url":"https://eztradinghub.com/stock-dividend-yield-calculator.html",
+    "applicationCategory":"FinanceApplication",
+    "operatingSystem":"Any",
+    "description":"A free online stock dividend yield calculator for estimating dividend yield, annual dividend income, monthly equivalent income and dividend payments.",
+    "offers":{
+      "@type":"Offer",
+      "price":"0",
+      "priceCurrency":"USD"
+    },
+    "publisher":{
+      "@type":"Organization",
+      "name":"EZTradingHub",
+      "url":"https://eztradinghub.com/"
+    }
+  }
+  </script>
+
+
+  <!-- Breadcrumb Schema -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BreadcrumbList",
+    "itemListElement":[
+      {
+        "@type":"ListItem",
+        "position":1,
+        "name":"Home",
+        "item":"https://eztradinghub.com/"
+      },
+      {
+        "@type":"ListItem",
+        "position":2,
+        "name":"Calculators",
+        "item":"https://eztradinghub.com/calculators.html"
+      },
+      {
+        "@type":"ListItem",
+        "position":3,
+        "name":"Stock Dividend Yield Calculator",
+        "item":"https://eztradinghub.com/stock-dividend-yield-calculator.html"
+      }
+    ]
+  }
+  </script>
+
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+
+      {
+        "@type":"Question",
+        "name":"What is dividend yield?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Dividend yield is the annual dividend paid per share divided by the current share price, expressed as a percentage."
+        }
+      },
+
+      {
+        "@type":"Question",
+        "name":"How is dividend yield calculated?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Dividend yield is calculated by dividing the annual dividend per share by the current stock price per share and multiplying the result by 100."
+        }
+      },
+
+      {
+        "@type":"Question",
+        "name":"Is a higher dividend yield always better?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"No. A high dividend yield may result from a falling share price or an unsustainably high dividend. Investors should also examine earnings, cash flow, payout ratios and dividend history."
+        }
+      },
+
+      {
+        "@type":"Question",
+        "name":"Does dividend yield change when the stock price changes?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Yes. If the annual dividend remains unchanged, dividend yield generally rises when the share price falls and falls when the share price rises."
+        }
+      },
+
+      {
+        "@type":"Question",
+        "name":"Does this calculator use live dividend data?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"No. This calculator uses the dividend and stock price information entered by the user. It does not provide live market or dividend data."
+        }
+      },
+
+      {
+        "@type":"Question",
+        "name":"Can dividend yield be used to estimate dividend income?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Dividend yield can help estimate dividend income when combined with the amount invested or number of shares, but actual payments may change and dividends are not guaranteed."
+        }
+      }
+
+    ]
+  }
+  </script>
+
+
+  <style>
+
+    :root {
+      --bg:#f4f7fb;
+      --surface:#ffffff;
+      --surface2:#f8fafc;
+      --text:#172033;
+      --muted:#667085;
+      --border:#e2e8f0;
+
+      --primary:#075985;
+      --primary2:#0ea5e9;
+
+      --success:#16a34a;
+      --warning:#d97706;
+      --danger:#dc2626;
+
+      --shadow:0 12px 35px rgba(15,23,42,.08);
+
+      --radius:18px;
+    }
+
+
+    body.dark {
+
+      --bg:#07111f;
+      --surface:#0e1b2d;
+      --surface2:#111f33;
+
+      --text:#f1f5f9;
+      --muted:#aab7c9;
+
+      --border:#24364d;
+
+      --primary:#38bdf8;
+      --primary2:#0ea5e9;
+
+      --success:#4ade80;
+      --warning:#fbbf24;
+      --danger:#fb7185;
+
+      --shadow:0 12px 35px rgba(0,0,0,.28);
+    }
+
+
+    * {
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+    }
+
+
+    html {
+      scroll-behavior:smooth;
+    }
+
+
+    body {
+
+      font-family:Inter,Arial,sans-serif;
+
+      background:var(--bg);
+
+      color:var(--text);
+
+      line-height:1.65;
+
+      transition:.25s ease;
+    }
+
+
+    a {
+
+      color:var(--primary);
+
+      text-decoration:none;
+    }
+
+
+    a:hover {
+      text-decoration:underline;
+    }
+
+
+    /* HEADER */
+
+    .site-header {
+
+      background:var(--surface);
+
+      border-bottom:1px solid var(--border);
+
+      position:sticky;
+
+      top:0;
+
+      z-index:1000;
+    }
+
+
+    .nav {
+
+      max-width:1180px;
+
+      margin:auto;
+
+      padding:14px 18px;
+
+      display:flex;
+
+      align-items:center;
+
+      justify-content:space-between;
+
+      gap:20px;
+    }
+
+
+    .logo {
+
+      display:flex;
+
+      align-items:center;
+
+      gap:10px;
+
+      font-weight:800;
+
+      color:var(--text);
+    }
+
+
+    .logo-box {
+
+      width:42px;
+
+      height:42px;
+
+      border-radius:12px;
+
+      display:grid;
+
+      place-items:center;
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--primary),
+          var(--primary2)
+        );
+
+      color:#fff;
+
+      font-weight:800;
+    }
+
+
+    .nav-links {
+
+      display:flex;
+
+      align-items:center;
+
+      gap:18px;
+
+      flex-wrap:wrap;
+    }
+
+
+    .nav-links a {
+
+      color:var(--text);
+
+      font-size:14px;
+
+      font-weight:600;
+    }
+
+
+    .theme-btn {
+
+      border:1px solid var(--border);
+
+      background:var(--surface2);
+
+      color:var(--text);
+
+      padding:9px 12px;
+
+      border-radius:10px;
+
+      cursor:pointer;
+
+      font-weight:700;
+    }
+
+
+    /* MAIN */
+
+    .container {
+
+      max-width:1180px;
+
+      margin:auto;
+
+      padding:30px 18px 60px;
+    }
+
+
+    .breadcrumb {
+
+      font-size:13px;
+
+      color:var(--muted);
+
+      margin-bottom:18px;
+    }
+
+
+    /* HERO */
+
+    .hero {
+
+      background:
+        linear-gradient(
+          135deg,
+          #075985,
+          #0ea5e9
+        );
+
+      color:#fff;
+
+      padding:38px;
+
+      border-radius:24px;
+
+      margin-bottom:25px;
+
+      box-shadow:var(--shadow);
+    }
+
+
+    .hero h1 {
+
+      font-size:clamp(
+        28px,
+        5vw,
+        44px
+      );
+
+      line-height:1.15;
+
+      margin-bottom:12px;
+    }
+
+
+    .hero p {
+
+      max-width:820px;
+
+      opacity:.96;
+
+      font-size:16px;
+    }
+
+
+    /* CALCULATOR */
+
+    .calculator {
+
+      background:var(--surface);
+
+      border:1px solid var(--border);
+
+      border-radius:var(--radius);
+
+      box-shadow:var(--shadow);
+
+      padding:26px;
+
+      margin-bottom:28px;
+    }
+
+
+    .calculator h2 {
+
+      margin-bottom:6px;
+
+      font-size:25px;
+    }
+
+
+    .intro {
+
+      color:var(--muted);
+
+      margin-bottom:22px;
+    }
+
+
+    .grid {
+
+      display:grid;
+
+      grid-template-columns:
+        repeat(2,1fr);
+
+      gap:17px;
+    }
+
+
+    .field label {
+
+      display:block;
+
+      font-weight:700;
+
+      font-size:14px;
+
+      margin-bottom:7px;
+    }
+
+
+    .field input,
+    .field select {
+
+      width:100%;
+
+      padding:13px 14px;
+
+      border:1px solid var(--border);
+
+      border-radius:11px;
+
+      background:var(--surface);
+
+      color:var(--text);
+
+      font:inherit;
+
+      outline:none;
+    }
+
+
+    .field input:focus,
+    .field select:focus {
+
+      border-color:var(--primary2);
+
+      box-shadow:
+        0 0 0 3px
+        rgba(14,165,233,.15);
+    }
+
+
+    .help-text {
+
+      font-size:12px;
+
+      color:var(--muted);
+
+      margin-top:5px;
+    }
+
+
+    .actions {
+
+      display:flex;
+
+      flex-wrap:wrap;
+
+      gap:10px;
+
+      margin-top:20px;
+    }
+
+
+    button {
+
+      font:inherit;
+    }
+
+
+    .primary-btn,
+    .secondary-btn,
+    .danger-btn {
+
+      border:0;
+
+      border-radius:11px;
+
+      padding:12px 17px;
+
+      cursor:pointer;
+
+      font-weight:800;
+    }
+
+
+    .primary-btn {
+
+      background:var(--primary);
+
+      color:#fff;
+    }
+
+
+    .primary-btn:hover {
+
+      background:var(--primary2);
+    }
+
+
+    .secondary-btn {
+
+      background:var(--surface2);
+
+      color:var(--text);
+
+      border:1px solid var(--border);
+    }
+
+
+    .danger-btn {
+
+      background:var(--danger);
+
+      color:#fff;
+    }
+
+
+    /* RESULTS */
+
+    .results {
+
+      margin-top:25px;
+
+      display:grid;
+
+      grid-template-columns:
+        repeat(4,1fr);
+
+      gap:14px;
+    }
+
+
+    .result-card {
+
+      background:var(--surface2);
+
+      border:1px solid var(--border);
+
+      border-radius:14px;
+
+      padding:17px;
+    }
+
+
+    .result-card span {
+
+      display:block;
+
+      color:var(--muted);
+
+      font-size:13px;
+
+      margin-bottom:6px;
+    }
+
+
+    .result-card strong {
+
+      font-size:20px;
+
+      display:block;
+
+      overflow-wrap:anywhere;
+    }
+
+
+    .highlight {
+
+      border-color:
+        rgba(14,165,233,.45);
+
+      background:
+        rgba(14,165,233,.08);
+    }
+
+
+    .positive {
+      color:var(--success);
+    }
+
+
+    .negative {
+      color:var(--danger);
+    }
+
+
+    .summary {
+
+      margin-top:20px;
+
+      padding:16px;
+
+      border-radius:13px;
+
+      background:
+        rgba(14,165,233,.08);
+
+      border:
+        1px solid
+        rgba(14,165,233,.2);
+    }
+
+
+    /* CONTENT */
+
+    .content-section {
+
+      background:var(--surface);
+
+      border:1px solid var(--border);
+
+      border-radius:var(--radius);
+
+      padding:28px;
+
+      margin-bottom:25px;
+
+      box-shadow:var(--shadow);
+    }
+
+
+    .content-section h2 {
+
+      font-size:25px;
+
+      margin-bottom:12px;
+    }
+
+
+    .content-section h3 {
+
+      font-size:19px;
+
+      margin:22px 0 8px;
+    }
+
+
+    .content-section p {
+
+      margin-bottom:13px;
+    }
+
+
+    .content-section ul {
+
+      padding-left:22px;
+
+      margin-bottom:15px;
+    }
+
+
+    .content-section li {
+
+      margin-bottom:7px;
+    }
+
+
+    .formula {
+
+      background:var(--surface2);
+
+      border-left:
+        4px solid
+        var(--primary2);
+
+      padding:17px;
+
+      border-radius:10px;
+
+      margin:15px 0;
+
+      font-weight:700;
+    }
+
+
+    .example-table {
+
+      width:100%;
+
+      border-collapse:collapse;
+
+      margin:17px 0;
+    }
+
+
+    .example-table th,
+    .example-table td {
+
+      border:1px solid var(--border);
+
+      padding:11px;
+
+      text-align:left;
+    }
+
+
+    .example-table th {
+
+      background:var(--surface2);
+    }
+
+
+    /* INFO BOX */
+
+    .info-box {
+
+      background:
+        rgba(22,163,74,.08);
+
+      border:
+        1px solid
+        rgba(22,163,74,.25);
+
+      padding:17px;
+
+      border-radius:12px;
+
+      margin:15px 0;
+    }
+
+
+    /* FAQ */
+
+    .faq-item {
+
+      border-bottom:
+        1px solid
+        var(--border);
+
+      padding:15px 0;
+    }
+
+
+    .faq-item:last-child {
+
+      border-bottom:0;
+    }
+
+
+    .faq-item h3 {
+
+      margin:0 0 6px;
+    }
+
+
+    /* RELATED */
+
+    .related-links {
+
+      display:grid;
+
+      grid-template-columns:
+        repeat(3,1fr);
+
+      gap:12px;
+
+      margin-top:15px;
+    }
+
+
+    .related-links a {
+
+      background:var(--surface2);
+
+      border:1px solid var(--border);
+
+      border-radius:12px;
+
+      padding:14px;
+
+      font-weight:700;
+    }
+
+
+    /* DISCLAIMER */
+
+    .disclaimer {
+
+      font-size:13px;
+
+      color:var(--muted);
+
+      background:var(--surface2);
+
+      border:1px solid var(--border);
+
+      border-radius:12px;
+
+      padding:15px;
+
+      margin-top:20px;
+    }
+
+
+    /* FOOTER */
+
+    footer {
+
+      border-top:1px solid var(--border);
+
+      background:var(--surface);
+
+      padding:28px 18px;
+
+      text-align:center;
+
+      color:var(--muted);
+
+      font-size:13px;
+    }
+
+
+    .footer-links {
+
+      display:flex;
+
+      justify-content:center;
+
+      flex-wrap:wrap;
+
+      gap:15px;
+
+      margin-bottom:10px;
+    }
+
+
+    /* RESPONSIVE */
+
+    @media(max-width:900px) {
+
+      .results {
+
+        grid-template-columns:
+          repeat(2,1fr);
+      }
+
+      .related-links {
+
+        grid-template-columns:
+          repeat(2,1fr);
+      }
+    }
+
+
+    @media(max-width:700px) {
+
+      .nav {
+
+        align-items:flex-start;
+      }
+
+
+      .nav-links {
+
+        gap:10px;
+      }
+
+
+      .hero {
+
+        padding:27px 20px;
+      }
+
+
+      .calculator,
+      .content-section {
+
+        padding:20px;
+      }
+
+
+      .grid {
+
+        grid-template-columns:1fr;
+      }
+
+
+      .results {
+
+        grid-template-columns:1fr;
+      }
+
+
+      .related-links {
+
+        grid-template-columns:1fr;
+      }
+
+
+      .example-table {
+
+        font-size:13px;
+      }
+    }
+
+
+    @media print {
+
+      .site-header,
+      .actions,
+      footer,
+      .related-links {
+
+        display:none !important;
+      }
+
+
+      body {
+
+        background:#fff;
+
+        color:#000;
+      }
+
+
+      .calculator,
+      .content-section {
+
+        box-shadow:none;
+
+        border:1px solid #ddd;
+      }
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+
+<!-- HEADER -->
+
+<header class="site-header">
+
+  <nav class="nav"
+       aria-label="Main navigation">
+
+    <a class="logo" href="/">
+
+      <span class="logo-box"
+            aria-hidden="true">
+        EZ
+      </span>
+
+      <span>EZTradingHub</span>
+
+    </a>
+
+
+    <div class="nav-links">
+
+      <a href="index.html">Home</a>
+
+      <a href="calculators.html">
+        Calculators
+      </a>
+
+      <a href="trade-journal.html">
+        Trade Journal
+      </a>
+
+      <a href="Dashboard.html">
+        Dashboard
+      </a>
+
+      <a href="about.html">
+        About
+      </a>
+
+
+      <button
+        class="theme-btn"
+        id="themeToggle"
+        type="button"
+        aria-label="Toggle light and dark mode">
+
+        🌙
+
+      </button>
+
+    </div>
+
+  </nav>
+
+</header>
+
+
+
+<main class="container">
+
+
+  <!-- BREADCRUMB -->
+
+  <div class="breadcrumb">
+
+    <a href="index.html">Home</a>
+    /
+    <a href="calculators.html">
+      Calculators
+    </a>
+    /
+    Stock Dividend Yield Calculator
+
+  </div>
+
+
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <h1>
+      Stock Dividend Yield Calculator
+    </h1>
+
+    <p>
+      Calculate dividend yield, annual dividend income,
+      monthly equivalent income, dividend per payment and
+      estimated income from a stock investment.
+    </p>
+
+  </section>
+
+
+
+  <!-- CALCULATOR -->
+
+  <section class="calculator"
+           aria-labelledby="calculator-heading">
+
+    <h2 id="calculator-heading">
+      Calculate Stock Dividend Yield
+    </h2>
+
+    <p class="intro">
+      Enter the stock price and annual dividend per share.
+      You can also enter the number of shares or investment
+      amount to estimate potential dividend income.
+    </p>
+
+
+    <div class="grid">
+
+
+      <!-- STOCK -->
+
+      <div class="field">
+
+        <label for="stock">
+          Stock / Ticker
+        </label>
+
+        <input
+          id="stock"
+          type="text"
+          value="AAPL"
+          maxlength="20"
+          autocomplete="off"
+          placeholder="Example: AAPL">
+
+        <div class="help-text">
+          Enter a ticker symbol or stock name for your own reference.
+        </div>
+
+      </div>
+
+
+      <!-- CURRENCY -->
+
+      <div class="field">
+
+        <label for="currency">
+          Currency
+        </label>
+
+        <select id="currency">
+
+          <option value="$">
+            USD ($)
+          </option>
+
+          <option value="₦">
+            NGN (₦)
+          </option>
+
+          <option value="€">
+            EUR (€)
+          </option>
+
+          <option value="£">
+            GBP (£)
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <!-- SHARE PRICE -->
+
+      <div class="field">
+
+        <label for="sharePrice">
+          Current Share Price
+        </label>
+
+        <input
+          id="sharePrice"
+          type="number"
+          min="0"
+          step="any"
+          value="200"
+          inputmode="decimal">
+
+        <div class="help-text">
+          Enter the current market price per share.
+        </div>
+
+      </div>
+
+
+      <!-- DIVIDEND -->
+
+      <div class="field">
+
+        <label for="dividendPerShare">
+          Annual Dividend Per Share
+        </label>
+
+        <input
+          id="dividendPerShare"
+          type="number"
+          min="0"
+          step="any"
+          value="4"
+          inputmode="decimal">
+
+        <div class="help-text">
+          Enter the total dividend paid per share over one year.
+        </div>
+
+      </div>
+
+
+      <!-- SHARES -->
+
+      <div class="field">
+
+        <label for="shares">
+          Number of Shares
+        </label>
+
+        <input
+          id="shares"
+          type="number"
+          min="0"
+          step="any"
+          value="100"
+          inputmode="decimal">
+
+        <div class="help-text">
+          Optional for yield calculation, useful for income estimation.
+        </div>
+
+      </div>
+
+
+      <!-- INVESTMENT -->
+
+      <div class="field">
+
+        <label for="investment">
+          Investment Amount
+        </label>
+
+        <input
+          id="investment"
+          type="number"
+          min="0"
+          step="any"
+          value="20000"
+          inputmode="decimal">
+
+        <div class="help-text">
+          Optional. Used to estimate income based on invested capital.
+        </div>
+
+      </div>
+
+
+      <!-- PAYMENTS -->
+
+      <div class="field">
+
+        <label for="payments">
+          Dividend Payments Per Year
+        </label>
+
+        <select id="payments">
+
+          <option value="1">
+            1 — Annual
+          </option>
+
+          <option value="2">
+            2 — Semi-Annual
+          </option>
+
+          <option value="4" selected>
+            4 — Quarterly
+          </option>
+
+          <option value="12">
+            12 — Monthly
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <!-- GROWTH -->
+
+      <div class="field">
+
+        <label for="growth">
+          Expected Annual Dividend Growth %
+        </label>
+
+        <input
+          id="growth"
+          type="number"
+          min="-100"
+          step="any"
+          value="0"
+          inputmode="decimal">
+
+        <div class="help-text">
+          Optional assumption for a simple future-income estimate.
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- ACTIONS -->
+
+    <div class="actions">
+
+      <button
+        type="button"
+        class="primary-btn"
+        onclick="calculateDividendYield()">
+
+        Calculate Dividend Yield
+
+      </button>
+
+
+      <button
+        type="button"
+        class="secondary-btn"
+        onclick="window.print()">
+
+        Print Results
+
+      </button>
+
+
+      <button
+        type="button"
+        class="danger-btn"
+        onclick="resetCalculator()">
+
+        Reset
+
+      </button>
+
+    </div>
+
+
+
+    <!-- RESULTS -->
+
+    <div
+      class="results"
+      id="results"
+      aria-live="polite">
+
+
+      <div class="result-card highlight">
+
+        <span>
+          Dividend Yield
+        </span>
+
+        <strong
+          id="dividendYield">
+
+          2.00%
+
+        </strong>
+
+      </div>
+
+
+      <div class="result-card">
+
+        <span>
+          Annual Dividend Per Share
+        </span>
+
+        <strong id="annualDividend">
+
+          $4.00
+
+        </strong>
+
+      </div>
+
+
+      <div class="result-card">
+
+        <span>
+          Estimated Annual Income
+        </span>
+
+        <strong id="annualIncome">
+
+          $400.00
+
+        </strong>
+
+      </div>
+
+
+      <div class="result-card">
+
+        <span>
+          Monthly Equivalent Income
+        </span>
+
+        <strong id="monthlyIncome">
+
+          $33.33
+
+        </strong>
+
+      </div>
+
+
+      <div class="result-card">
+
+        <span>
+          Dividend Per Payment
+        </span>
+
+        <strong id="paymentIncome">
+
+          $100.00
+
+        </strong>
+
+      </div>
+
+
+      <div class="result-card">
+
+        <span>
+          Investment Value
+        </span>
+
+        <strong id="investmentValue">
+
+          $20,000.00
+
+        </strong>
+
+      </div>
+
+
+      <div class="result-card">
+
+        <span>
+          Income Yield on Investment
+        </span>
+
+        <strong id="investmentYield">
+
+          2.00%
+
+        </strong>
+
+      </div>
+
+
+      <div class="result-card">
+
+        <span>
+          Projected Annual Income
+        </span>
+
+        <strong id="projectedIncome">
+
+          $400.00
+
+        </strong>
+
+      </div>
+
+    </div>
+
+
+    <div
+      class="summary"
+      id="summary">
+
+      Enter your stock information to calculate dividend yield and estimated income.
+
+    </div>
+
+  </section>
+
+
+
+  <!-- WHAT IS DIVIDEND YIELD -->
+
+  <section class="content-section">
+
+    <h2>
+      What Is Dividend Yield?
+    </h2>
+
+    <p>
+      Dividend yield is a financial ratio that shows how much
+      annual dividend income a stock pays relative to its current
+      share price. It is commonly expressed as a percentage.
+    </p>
+
+    <p>
+      Investors can use dividend yield as one of several metrics
+      when evaluating income-producing stocks. However, dividend
+      yield should not be considered in isolation because a high
+      yield does not necessarily mean a stock is a better investment.
+    </p>
+
+
+    <div class="formula">
+
+      Dividend Yield =
+      (Annual Dividend Per Share ÷ Share Price)
+      × 100
+
+    </div>
+
+  </section>
+
+
+
+  <!-- HOW TO USE -->
+
+  <section class="content-section">
+
+    <h2>
+      How to Use the Stock Dividend Yield Calculator
+    </h2>
+
+    <ol>
+
+      <li>
+        Enter the stock ticker or name.
+      </li>
+
+      <li>
+        Enter the current share price.
+      </li>
+
+      <li>
+        Enter the annual dividend paid per share.
+      </li>
+
+      <li>
+        Enter the number of shares if you want to estimate
+        your dividend income.
+      </li>
+
+      <li>
+        Enter your investment amount if you want to compare
+        income with invested capital.
+      </li>
+
+      <li>
+        Select the number of dividend payments made each year.
+      </li>
+
+      <li>
+        Click <strong>Calculate Dividend Yield</strong>.
+      </li>
+
+    </ol>
+
+  </section>
+
+
+
+  <!-- EXAMPLE -->
+
+  <section class="content-section">
+
+    <h2>
+      Dividend Yield Calculation Example
+    </h2>
+
+    <p>
+      Suppose a company has a current share price of
+      <strong>$100</strong> and pays an annual dividend of
+      <strong>$4 per share</strong>.
+    </p>
+
+
+    <div class="formula">
+
+      ($4 ÷ $100) × 100 = 4% dividend yield
+
+    </div>
+
+
+    <p>
+      If an investor owns 100 shares, their estimated annual
+      dividend income would be:
+    </p>
+
+
+    <div class="formula">
+
+      100 shares × $4 annual dividend
+      = $400 per year
+
+    </div>
+
+
+    <table class="example-table">
+
+      <thead>
+
+        <tr>
+
+          <th>
+            Metric
+          </th>
+
+          <th>
+            Example
+          </th>
+
+        </tr>
+
+      </thead>
+
+      <tbody>
+
+        <tr>
+
+          <td>
+            Share Price
+          </td>
+
+          <td>
+            $100
+          </td>
+
+        </tr>
+
+        <tr>
+
+          <td>
+            Annual Dividend
+          </td>
+
+          <td>
+            $4
+          </td>
+
+        </tr>
+
+        <tr>
+
+          <td>
+            Dividend Yield
+          </td>
+
+          <td>
+            4%
+          </td>
+
+        </tr>
+
+        <tr>
+
+          <td>
+            Shares Owned
+          </td>
+
+          <td>
+            100
+          </td>
+
+        </tr>
+
+        <tr>
+
+          <td>
+            Estimated Annual Income
+          </td>
+
+          <td>
+            $400
+          </td>
+
+        </tr>
+
+      </tbody>
+
+    </table>
+
+  </section>
+
+
+
+  <!-- YIELD VS INCOME -->
+
+  <section class="content-section">
+
+    <h2>
+      Dividend Yield vs. Dividend Income
+    </h2>
+
+    <p>
+      Dividend yield and dividend income are related but they are
+      not the same thing.
+    </p>
+
+
+    <h3>
+      Dividend Yield
+    </h3>
+
+    <p>
+      Dividend yield is a percentage that compares annual dividend
+      payments with the stock's current price.
+    </p>
+
+
+    <h3>
+      Dividend Income
+    </h3>
+
+    <p>
+      Dividend income is the actual amount of dividend money an
+      investor receives based on the number of shares owned.
+    </p>
+
+
+    <div class="formula">
+
+      Annual Dividend Income =
+      Number of Shares × Annual Dividend Per Share
+
+    </div>
+
+
+    <p>
+      For example, two investors can own the same stock and receive
+      the same dividend yield, but the investor with more shares
+      will generally receive more dividend income.
+    </p>
+
+  </section>
+
+
+
+  <!-- HIGH YIELD -->
+
+  <section class="content-section">
+
+    <h2>
+      Is a Higher Dividend Yield Better?
+    </h2>
+
+    <p>
+      Not necessarily. A higher dividend yield can sometimes be
+      attractive to income-focused investors, but it can also be
+      a warning sign.
+    </p>
+
+
+    <p>
+      For example, if a stock price falls sharply while the dividend
+      remains unchanged, the mathematical dividend yield increases.
+      This does not necessarily mean the company's financial
+      condition has improved.
+    </p>
+
+
+    <h3>
+      Factors to Consider
+    </h3>
+
+    <ul>
+
+      <li>
+        Dividend history
+      </li>
+
+      <li>
+        Earnings and cash flow
+      </li>
+
+      <li>
+        Dividend payout ratio
+      </li>
+
+      <li>
+        Company debt
+      </li>
+
+      <li>
+        Business growth
+      </li>
+
+      <li>
+        Industry conditions
+      </li>
+
+      <li>
+        Dividend sustainability
+      </li>
+
+      <li>
+        Share-price valuation
+      </li>
+
+    </ul>
+
+  </section>
+
+
+
+  <!-- DIVIDEND GROWTH -->
+
+  <section class="content-section">
+
+    <h2>
+      Dividend Growth and Future Income
+    </h2>
+
+    <p>
+      Some companies increase their dividends over time. Dividend
+      growth can potentially increase future income even if the
+      number of shares remains unchanged.
+    </p>
+
+    <p>
+      This calculator includes an optional annual dividend growth
+      assumption to provide a simple projection of future annual
+      income.
+    </p>
+
+
+    <div class="info-box">
+
+      <strong>Important:</strong>
+      Future dividend growth is an assumption, not a guarantee.
+      Companies can maintain, reduce, suspend or eliminate dividends.
+
+    </div>
+
+  </section>
+
+
+
+  <!-- DIVIDEND RISKS -->
+
+  <section class="content-section">
+
+    <h2>
+      Important Dividend Investment Risks
+    </h2>
+
+    <p>
+      Dividend investing still involves investment risk. A stock
+      that pays dividends can lose value, and dividend payments
+      can change.
+    </p>
+
+
+    <ul>
+
+      <li>
+        Dividends are not guaranteed.
+      </li>
+
+      <li>
+        Companies can reduce or eliminate dividends.
+      </li>
+
+      <li>
+        Share prices can decline.
+      </li>
+
+      <li>
+        High dividend yields can sometimes indicate financial stress.
+      </li>
+
+      <li>
+        Taxes can reduce your actual income.
+      </li>
+
+      <li>
+        Brokerage and transaction costs can affect returns.
+      </li>
+
+      <li>
+        Currency movements can affect international investments.
+      </li>
+
+    </ul>
+
+  </section>
+
+
+
+  <!-- LIVE DATA -->
+
+  <section class="content-section">
+
+    <h2>
+      Does This Calculator Use Live Stock Data?
+    </h2>
+
+    <p>
+      No. This calculator is intentionally designed to work using
+      the stock information you enter manually. It does not connect
+      to a stock exchange or brokerage account.
+    </p>
+
+    <p>
+      This means you should verify the current share price and
+      latest dividend information from a reliable market-data
+      provider before making an investment decision.
+    </p>
+
+  </section>
+
+
+
+  <!-- FAQ -->
+
+  <section class="content-section">
+
+    <h2>
+      Frequently Asked Questions
+    </h2>
+
+
+    <div class="faq-item">
+
+      <h3>
+        What is dividend yield?
+      </h3>
+
+      <p>
+        Dividend yield is the annual dividend paid per share
+        divided by the current share price, expressed as a percentage.
+      </p>
+
+    </div>
+
+
+    <div class="faq-item">
+
+      <h3>
+        How is dividend yield calculated?
+      </h3>
+
+      <p>
+        Divide the annual dividend per share by the current
+        stock price per share and multiply the result by 100.
+      </p>
+
+    </div>
+
+
+    <div class="faq-item">
+
+      <h3>
+        Is a higher dividend yield always better?
+      </h3>
+
+      <p>
+        No. A high dividend yield may result from a falling
+        share price or an unsustainably high dividend. Investors
+        should examine the company's financial position and
+        dividend sustainability.
+      </p>
+
+    </div>
+
+
+    <div class="faq-item">
+
+      <h3>
+        Does dividend yield change when the stock price changes?
+      </h3>
+
+      <p>
+        Yes. If the annual dividend remains unchanged, yield
+        generally increases when the share price falls and
+        decreases when the share price rises.
+      </p>
+
+    </div>
+
+
+    <div class="faq-item">
+
+      <h3>
+        Does this calculator use live dividend data?
+      </h3>
+
+      <p>
+        No. The calculator uses the dividend and stock price
+        values you enter manually.
+      </p>
+
+    </div>
+
+
+    <div class="faq-item">
+
+      <h3>
+        Can dividend yield be used to estimate dividend income?
+      </h3>
+
+      <p>
+        Yes, dividend yield can help estimate potential income
+        when combined with the amount invested or number of shares.
+        However, actual dividend payments can change.
+      </p>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- RELATED TOOLS -->
+
+  <section class="content-section">
+
+    <h2>
+      More EZTradingHub Investment Calculators
+    </h2>
+
+
+    <div class="related-links">
+
+      <a href="stock-dividend-calculator.html">
+        Stock Dividend Calculator
+      </a>
+
+      <a href="stock-profit-calculator.html">
+        Stock Profit Calculator
+      </a>
+
+      <a href="stock-average-cost-calculator.html">
+        Stock Average Cost Calculator
+      </a>
+
+      <a href="crypto-profit-calculator.html">
+        Crypto Profit Calculator
+      </a>
+
+      <a href="crypto-roi-calculator.html">
+        Crypto ROI Calculator
+      </a>
+
+      <a href="calculators.html">
+        All Trading Calculators
+      </a>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- DISCLAIMER -->
+
+  <div class="disclaimer">
+
+    <strong>Financial Disclaimer:</strong>
+
+    EZTradingHub calculators are provided for educational and
+    informational purposes only. Results are estimates based on
+    the information entered by the user and may not reflect actual
+    market prices, dividend payments, taxes, brokerage fees or
+    other costs.
+
+    This calculator does not constitute financial, investment,
+    tax or legal advice. Dividends are not guaranteed and may be
+    reduced, suspended or eliminated.
+
+    Always conduct your own research and consider consulting a
+    qualified financial professional before making investment
+    decisions.
+
+  </div>
+
+</main>
+
+
+
+<!-- FOOTER -->
+
+<footer>
+
+  <div class="footer-links">
+
+    <a href="index.html">
+      Home
+    </a>
+
+    <a href="calculators.html">
+      Calculators
+    </a>
+
+    <a href="about.html">
+      About
+    </a>
+        
+    <a href="faq.html">
+      FAQ
+    </a>
+
+    <a href="contact.html">
+      Contact
+    </a>
+
+    <a href="privacy.html">
+      Privacy Policy
+    </a>
+
+    <a href="terms.html">
+      Terms
+    </a>
+
+    <a href="disclaimer.html">
+      Disclaimer
+    </a>
+
+    <a href="cookie-policy.html">
+      Cookie Policy
+    </a>
+
+  </div>
+
+
+  <p>
+    © <span id="year"></span>
+    EZTradingHub. All rights reserved.
+  </p>
+
+</footer>
+
+
+
+<script>
+
+  /* =========================
+     THEME
+  ========================= */
+
+  const savedTheme =
+    localStorage.getItem("ezth-theme");
+
+
+  if (savedTheme === "dark") {
+
+    document.body.classList.add("dark");
+
+  }
+
+
+  const themeToggle =
+    document.getElementById("themeToggle");
+
+
+  function updateThemeIcon() {
+
+    themeToggle.textContent =
+      document.body.classList.contains("dark")
+        ? "☀️"
+        : "🌙";
+
+  }
+
+
+  themeToggle.addEventListener(
+    "click",
+    function() {
+
+      document.body.classList.toggle("dark");
+
+
+      localStorage.setItem(
+        "ezth-theme",
+
+        document.body.classList.contains("dark")
+          ? "dark"
+          : "light"
+      );
+
+
+      updateThemeIcon();
+
+    }
+  );
+
+
+  updateThemeIcon();
+
+
+
+  /* =========================
+     CALCULATOR
+  ========================= */
+
+  function calculateDividendYield() {
+
+    const sharePrice =
+      parseFloat(
+        document.getElementById("sharePrice").value
+      ) || 0;
+
+
+    const dividendPerShare =
+      parseFloat(
+        document.getElementById("dividendPerShare").value
+      ) || 0;
+
+
+    const shares =
+      parseFloat(
+        document.getElementById("shares").value
+      ) || 0;
+
+
+    const investment =
+      parseFloat(
+        document.getElementById("investment").value
+      ) || 0;
+
+
+    const payments =
+      parseInt(
+        document.getElementById("payments").value
+      ) || 1;
+
+
+    const growth =
+      parseFloat(
+        document.getElementById("growth").value
+      ) || 0;
+
+
+    const currency =
+      document.getElementById("currency").value;
+
+
+    /* Dividend Yield */
+
+    let dividendYield = 0;
+
+
+    if (sharePrice > 0) {
+
+      dividendYield =
+        (dividendPerShare / sharePrice) * 100;
+
+    }
+
+
+    /* Annual Income */
+
+    const annualIncome =
+      shares * dividendPerShare;
+
+
+    /* Monthly Income */
+
+    const monthlyIncome =
+      annualIncome / 12;
+
+
+    /* Payment Income */
+
+    const paymentIncome =
+      annualIncome / payments;
+
+
+    /* Investment Value */
+
+    let investmentValue =
+      investment;
+
+
+    if (
+      investmentValue <= 0 &&
+      shares > 0 &&
+      sharePrice > 0
+    ) {
+
+      investmentValue =
+        shares * sharePrice;
+
+    }
+
+
+    /* Yield On Investment */
+
+    let investmentYield = 0;
+
+
+    if (investmentValue > 0) {
+
+      investmentYield =
+        (annualIncome / investmentValue) * 100;
+
+    }
+
+
+    /*
+      Future income projection.
+      Uses a simple annual dividend-growth assumption.
+    */
+
+    const projectedIncome =
+      annualIncome *
+      Math.pow(
+        1 + (growth / 100),
+        1
+      );
+
+
+    /* Update results */
+
+    document.getElementById(
+      "dividendYield"
+    ).textContent =
+      formatPercent(dividendYield);
+
+
+    document.getElementById(
+      "annualDividend"
+    ).textContent =
+      formatMoney(
+        dividendPerShare,
+        currency
+      );
+
+
+    document.getElementById(
+      "annualIncome"
+    ).textContent =
+      formatMoney(
+        annualIncome,
+        currency
+      );
+
+
+    document.getElementById(
+      "monthlyIncome"
+    ).textContent =
+      formatMoney(
+        monthlyIncome,
+        currency
+      );
+
+
+    document.getElementById(
+      "paymentIncome"
+    ).textContent =
+      formatMoney(
+        paymentIncome,
+        currency
+      );
+
+
+    document.getElementById(
+      "investmentValue"
+    ).textContent =
+      formatMoney(
+        investmentValue,
+        currency
+      );
+
+
+    document.getElementById(
+      "investmentYield"
+    ).textContent =
+      formatPercent(investmentYield);
+
+
+    document.getElementById(
+      "projectedIncome"
+    ).textContent =
+      formatMoney(
+        projectedIncome,
+        currency
+      );
+
+
+    /* Summary */
+
+    let summary = "";
+
+
+    if (
+      sharePrice <= 0 ||
+      dividendPerShare < 0
+    ) {
+
+      summary =
+        "Enter a valid share price and annual dividend per share.";
+
+    } else {
+
+      summary =
+        "The estimated dividend yield is "
+        + formatPercent(dividendYield)
+        + ". Based on "
+        + formatNumber(shares)
+        + " shares, the estimated annual dividend income is "
+        + formatMoney(
+            annualIncome,
+            currency
+          )
+        + ".";
+
+    }
+
+
+    document.getElementById(
+      "summary"
+    ).textContent =
+      summary;
+
+  }
+
+
+
+  /* =========================
+     FORMATTING
+  ========================= */
+
+  function formatNumber(value) {
+
+    return new Intl.NumberFormat(
+      undefined,
+      {
+        maximumFractionDigits:6
+      }
+    ).format(value);
+
+  }
+
+
+  function formatMoney(
+    value,
+    currency
+  ) {
+
+    const sign =
+      value < 0 ? "-" : "";
+
+
+    const absolute =
+      Math.abs(value);
+
+
+    return (
+      sign +
+      currency +
+      new Intl.NumberFormat(
+        undefined,
+        {
+          minimumFractionDigits:2,
+          maximumFractionDigits:2
+        }
+      ).format(absolute)
+    );
+
+  }
+
+
+  function formatPercent(value) {
+
+    return (
+      value >= 0 ? "" : "-"
+    )
+    +
+    Math.abs(value).toFixed(2)
+    +
+    "%";
+
+  }
+
+
+
+  /* =========================
+     RESET
+  ========================= */
+
+  function resetCalculator() {
+
+    document.getElementById(
+      "stock"
+    ).value = "AAPL";
+
+
+    document.getElementById(
+      "currency"
+    ).value = "$";
+
+
+    document.getElementById(
+      "sharePrice"
+    ).value = "200";
+
+
+    document.getElementById(
+      "dividendPerShare"
+    ).value = "4";
+
+
+    document.getElementById(
+      "shares"
+    ).value = "100";
+
+
+    document.getElementById(
+      "investment"
+    ).value = "20000";
+
+
+    document.getElementById(
+      "payments"
+    ).value = "4";
+
+
+    document.getElementById(
+      "growth"
+    ).value = "0";
+
+
+    calculateDividendYield();
+
+  }
+
+
+
+  /* =========================
+     AUTO CALCULATION
+  ========================= */
+
+  document.addEventListener(
+    "input",
+    function(event) {
+
+      if (
+        event.target.matches(
+          "#sharePrice, " +
+          "#dividendPerShare, " +
+          "#shares, " +
+          "#investment, " +
+          "#growth"
+        )
+      ) {
+
+        calculateDividendYield();
+
+      }
+
+    }
+  );
+
+
+  document.getElementById(
+    "currency"
+  ).addEventListener(
+    "change",
+    calculateDividendYield
+  );
+
+
+  document.getElementById(
+    "payments"
+  ).addEventListener(
+    "change",
+    calculateDividendYield
+  );
+
+
+
+  /* =========================
+     YEAR
+  ========================= */
+
+  document.getElementById(
+    "year"
+  ).textContent =
+    new Date().getFullYear();
+
+
+
+  /* INITIAL CALCULATION */
+
+  calculateDividendYield();
+
+</script>
+
+
+</body>
+</html>
