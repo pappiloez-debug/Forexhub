@@ -1,152 +1,2246 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Stock Dividend Calculator — Calculate Dividend Income | EZTradingHub</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="description"
-      content="Free Stock Dividend Calculator to estimate dividend income, annual dividend payments and potential dividend returns based on your investment and dividend yield.">
+  <title>Stock Dividend Calculator | Dividend Yield & Income Calculator | EZTradingHub</title>
 
-<meta name="keywords"
-      content="stock dividend calculator, dividend calculator, dividend income calculator, dividend yield calculator, stock investment calculator">
+  <meta name="description" content="Use the free EZTradingHub Stock Dividend Calculator to estimate dividend income, dividend yield, annual and monthly income, reinvestment growth and potential portfolio value.">
 
-<meta name="robots"
-      content="index, follow">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="EZTradingHub">
+  <meta name="theme-color" content="#075985">
 
-<link rel="canonical"
-      href="https://eztradinghub.com/stock-dividend-calculator.html">
-<link rel="stylesheet" href="style.css">
-<style>
-:root{--navy:#062f5f;--green:#047857;--dark:#111827;--text:#1f2937;--muted:#475569;--bg:#f8fafc;--card:#fff;--border:#e2e8f0}
-*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;line-height:1.7;color:var(--text);background:var(--bg)}
-header{background:var(--navy);color:#fff;padding:18px 20px}.header-inner{max-width:1000px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:20px}
-.brand,.back-link{color:#fff;text-decoration:none;font-weight:800}.brand{font-size:1.35rem}.back-link{font-weight:700}
-main{max-width:1000px;margin:40px auto;padding:0 20px}.hero,section{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:28px;margin-bottom:18px}
-.hero{padding:32px}.hero h1{margin-top:0;color:var(--dark);font-size:clamp(2rem,5vw,3rem)}h2{color:var(--dark);margin-top:0}.updated{color:var(--muted);font-size:.95rem}
-p,li{color:var(--text)}a{color:#065f46;font-weight:600}.notice{border-left:5px solid var(--green);background:#f0fdf4;padding:16px 18px;border-radius:8px}
-footer{background:var(--dark);color:#fff;text-align:center;padding:28px 20px;margin-top:45px}footer p{color:#fff}footer a{color:#fff;margin:0 8px}
-@media(max-width:650px){.header-inner{align-items:flex-start;flex-direction:column}main{margin-top:24px;padding:0 14px}.hero,section{padding:22px}}
-</style>
+  <link rel="canonical" href="https://eztradinghub.com/stock-dividend-calculator.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Stock Dividend Calculator | EZTradingHub">
+  <meta property="og:description" content="Calculate estimated stock dividend income, dividend yield, monthly income and long-term dividend reinvestment growth.">
+  <meta property="og:url" content="https://eztradinghub.com/stock-dividend-calculator.html">
+  <meta property="og:site_name" content="EZTradingHub">
+  <meta property="og:image" content="https://eztradinghub.com/assets/images/og-image.jpg">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Stock Dividend Calculator | EZTradingHub">
+  <meta name="twitter:description" content="Calculate stock dividend income, dividend yield and reinvestment growth.">
+  <meta name="twitter:image" content="https://eztradinghub.com/assets/images/og-image.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="favicon.ico">
+
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- WebApplication Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "EZTradingHub Stock Dividend Calculator",
+    "url": "https://eztradinghub.com/stock-dividend-calculator.html",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Web",
+    "description": "Free stock dividend calculator for estimating dividend income, dividend yield, monthly income and dividend reinvestment growth.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "EZTradingHub",
+      "url": "https://eztradinghub.com/"
+    }
+  }
+  </script>
+
+  <!-- Breadcrumb Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://eztradinghub.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Calculators",
+        "item": "https://eztradinghub.com/calculators.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Stock Dividend Calculator",
+        "item": "https://eztradinghub.com/stock-dividend-calculator.html"
+      }
+    ]
+  }
+  </script>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a stock dividend?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A stock dividend is a distribution made by a company to eligible shareholders, usually in cash, based on the number of shares they own."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How is dividend income calculated?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Estimated dividend income can be calculated by multiplying the number of shares by the dividend paid per share."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is dividend yield?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Dividend yield measures annual dividend income relative to the current or purchase price of a share. It is commonly calculated by dividing annual dividend per share by share price and multiplying by 100."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can dividends be reinvested?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Some investors use dividend reinvestment plans, or DRIPs, to use dividends to purchase additional shares. This calculator provides an illustrative reinvestment projection based on the assumptions entered."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are stock dividends guaranteed?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Companies can increase, reduce, suspend or eliminate dividend payments. Historical dividends do not guarantee future payments."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does this calculator use live dividend data?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. The calculator uses dividend and share-price information entered by the user and does not connect automatically to a brokerage or stock exchange."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg: #f4f7fb;
+      --surface: #ffffff;
+      --surface2: #f8fafc;
+      --text: #172033;
+      --muted: #667085;
+      --border: #e2e8f0;
+      --primary: #075985;
+      --primary2: #0ea5e9;
+      --success: #16a34a;
+      --warning: #d97706;
+      --danger: #dc2626;
+      --shadow: 0 12px 35px rgba(15,23,42,.08);
+      --radius: 18px;
+    }
+
+    body.dark {
+      --bg: #07111f;
+      --surface: #0e1b2d;
+      --surface2: #111f33;
+      --text: #f1f5f9;
+      --muted: #aab7c9;
+      --border: #24364d;
+      --primary: #38bdf8;
+      --primary2: #0ea5e9;
+      --success: #4ade80;
+      --warning: #fbbf24;
+      --danger: #fb7185;
+      --shadow: 0 12px 35px rgba(0,0,0,.25);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      transition: background .2s ease, color .2s ease;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    button,
+    input,
+    select {
+      font: inherit;
+    }
+
+    .site-header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-container {
+      max-width: 1180px;
+      margin: auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .brand:hover {
+      text-decoration: none;
+    }
+
+    .logo {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--primary), var(--primary2));
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      font-size: 18px;
+    }
+
+    .brand-text {
+      font-size: 18px;
+      font-weight: 800;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: var(--text);
+      font-size: 14px;
+    }
+
+    .theme-btn {
+      border: 1px solid var(--border);
+      background: var(--surface2);
+      color: var(--text);
+      border-radius: 10px;
+      padding: 9px 12px;
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    .hero {
+      max-width: 1180px;
+      margin: auto;
+      padding: 58px 20px 35px;
+      text-align: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      background: rgba(14,165,233,.10);
+      color: var(--primary);
+      padding: 7px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+
+    h1 {
+      font-size: clamp(32px, 5vw, 52px);
+      line-height: 1.1;
+      margin: 18px auto 15px;
+      max-width: 850px;
+      letter-spacing: -.04em;
+    }
+
+    .hero p {
+      max-width: 800px;
+      margin: auto;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .container {
+      max-width: 1180px;
+      margin: auto;
+      padding: 0 20px 60px;
+    }
+
+    .calculator {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      border-radius: var(--radius);
+      padding: 25px;
+    }
+
+    .calculator-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+    }
+
+    .panel {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 20px;
+    }
+
+    .panel h2 {
+      font-size: 20px;
+      margin-top: 0;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+
+    .field.full {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      display: block;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 7px;
+    }
+
+    input,
+    select {
+      width: 100%;
+      padding: 12px 13px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: var(--surface);
+      color: var(--text);
+      outline: none;
+    }
+
+    input:focus,
+    select:focus {
+      border-color: var(--primary2);
+      box-shadow: 0 0 0 3px rgba(14,165,233,.12);
+    }
+
+    .help {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 5px;
+    }
+
+    .actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .btn {
+      border: 0;
+      border-radius: 10px;
+      padding: 12px 18px;
+      cursor: pointer;
+      font-weight: 800;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), var(--primary2));
+      color: #fff;
+    }
+
+    .btn-secondary {
+      background: var(--surface);
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+
+    .results {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .result-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 13px;
+      padding: 15px;
+    }
+
+    .result-card.highlight {
+      background: rgba(14,165,233,.07);
+      border-color: rgba(14,165,233,.4);
+    }
+
+    .result-card.success .result-value {
+      color: var(--success);
+    }
+
+    .result-label {
+      font-size: 12px;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .result-value {
+      margin-top: 5px;
+      font-size: 21px;
+      font-weight: 800;
+      word-break: break-word;
+    }
+
+    .summary {
+      margin-top: 15px;
+      padding: 15px;
+      border-left: 4px solid var(--primary2);
+      background: rgba(14,165,233,.08);
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    .section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      border-radius: var(--radius);
+      padding: 30px;
+      margin-top: 25px;
+    }
+
+    .section h2 {
+      margin-top: 0;
+      font-size: 27px;
+      letter-spacing: -.02em;
+    }
+
+    .section h3 {
+      margin-top: 25px;
+      font-size: 19px;
+    }
+
+    .section p,
+    .section li {
+      color: var(--muted);
+    }
+
+    .formula {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      padding: 18px;
+      border-radius: 12px;
+      overflow-x: auto;
+      font-family: monospace;
+      color: var(--text);
+      margin: 12px 0;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+    }
+
+    .info-card {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px;
+    }
+
+    .info-card h3 {
+      margin-top: 0;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 650px;
+    }
+
+    th,
+    td {
+      text-align: left;
+      padding: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    th {
+      background: var(--surface2);
+      font-size: 13px;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+      padding: 15px 0;
+    }
+
+    .faq-item:last-child {
+      border-bottom: 0;
+    }
+
+    .faq-item h3 {
+      margin: 0 0 7px;
+      font-size: 17px;
+    }
+
+    .related {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .related a {
+      display: block;
+      padding: 15px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--surface2);
+    }
+
+    .disclaimer {
+      font-size: 13px;
+      background: rgba(217,119,6,.08);
+      border-left: 4px solid var(--warning);
+      padding: 15px;
+      border-radius: 8px;
+    }
+
+    .error {
+      color: var(--danger);
+      font-size: 13px;
+      margin-top: 10px;
+      min-height: 18px;
+    }
+
+    footer {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      padding: 30px 20px;
+      margin-top: 20px;
+    }
+
+    .footer-inner {
+      max-width: 1180px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .copyright {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 850px) {
+      .calculator-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .related {
+        grid-template-columns: 1fr;
+      }
+
+      nav {
+        display: none;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero {
+        padding-top: 40px;
+      }
+
+      .calculator,
+      .section {
+        padding: 18px;
+      }
+
+      .form-grid,
+      .results {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 34px;
+      }
+
+      .hero p {
+        font-size: 15px;
+      }
+
+      .actions .btn {
+        width: 100%;
+      }
+    }
+
+    @media print {
+      .site-header,
+      .actions,
+      footer {
+        display: none !important;
+      }
+
+      body {
+        background: #fff;
+        color: #000;
+      }
+
+      .calculator,
+      .section {
+        box-shadow: none;
+        border: 1px solid #ddd;
+      }
+    }
+  </style>
 </head>
+
 <body>
-<header><div class="header-inner">
-<a class="brand" href="index.html">EZTradingHub</a>
-<a class="back-link" href="index.html">← Back to Home</a>
-</div></header>
 
-<div class="hero">
-<h1>💰 Stock Dividend Calculator</h1>
-<p>Estimate the dividend income from your shares.</p>
-</div>
+<header class="site-header">
 
-<div class="calculator-card">
+  <div class="nav-container">
 
-<label>Stock Name</label>
-<input type="text" id="stockName" placeholder="e.g. Apple">
+    <a class="brand" href="/">
+      <span class="logo" aria-hidden="true">EZ</span>
+      <span class="brand-text">EZTradingHub</span>
+    </a>
 
-<br><br>
+    <nav aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="calculators.html">Calculators</a>
+      <a href="trade-journal.html">Trade Journal</a>
+      <a href="Dashboard.html">Dashboard</a>
+      <a href="about.html">About</a>
+    </nav>
 
-<label>Number of Shares</label>
-<input type="number" id="shares">
+    <button
+      type="button"
+      class="theme-btn"
+      id="themeToggle"
+      aria-label="Toggle light and dark mode">
+      🌙
+    </button>
 
-<br><br>
+  </div>
 
-<label>Dividend Per Share ($)</label>
-<input type="number" id="dividend" step="0.01">
+</header>
 
-<br><br>
+<main>
 
-<button onclick="calculateDividend()">
-Calculate
-</button>
+  <!-- HERO -->
 
-<button onclick="resetDividend()">
-Reset
-</button>
+  <section class="hero">
 
-<br><br>
+    <span class="eyebrow">Free Investment Tool</span>
 
-<h2 id="dividendResult"></h2>
+    <h1>Stock Dividend Calculator</h1>
 
-</div>
-      
-<section class="related-tools">
+    <p>
+      Calculate estimated dividend income, dividend yield, annual and monthly
+      income, and potential long-term growth from reinvesting dividends.
+    </p>
 
-    <h2>Related Stock Calculators</h2>
+  </section>
 
-    <p>Analyze stock investments, dividend income and potential returns.</p>
+  <div class="container">
 
-    <div class="related-tools-grid">
+    <!-- CALCULATOR -->
+
+    <section
+      class="calculator"
+      aria-label="Stock dividend calculator">
+
+      <div class="calculator-grid">
+
+        <!-- INPUTS -->
+
+        <div class="panel">
+
+          <h2>Dividend Investment Inputs</h2>
+
+          <div class="form-grid">
+
+            <div class="field">
+
+              <label for="stockName">
+                Stock / Ticker
+              </label>
+
+              <input
+                type="text"
+                id="stockName"
+                value="AAPL"
+                placeholder="e.g. AAPL">
+
+            </div>
+
+            <div class="field">
+
+              <label for="currency">
+                Currency
+              </label>
+
+              <select id="currency">
+
+                <option value="USD">
+                  $ USD
+                </option>
+
+                <option value="NGN">
+                  ₦ NGN
+                </option>
+
+                <option value="EUR">
+                  € EUR
+                </option>
+
+                <option value="GBP">
+                  £ GBP
+                </option>
+
+              </select>
+
+            </div>
+
+            <div class="field">
+
+              <label for="shares">
+                Number of Shares
+              </label>
+
+              <input
+                type="number"
+                id="shares"
+                min="0"
+                step="any"
+                value="100"
+                placeholder="e.g. 100">
+
+            </div>
+
+            <div class="field">
+
+              <label for="sharePrice">
+                Current / Purchase Price
+              </label>
+
+              <input
+                type="number"
+                id="sharePrice"
+                min="0"
+                step="any"
+                value="200"
+                placeholder="e.g. 200">
+
+            </div>
+
+            <div class="field">
+
+              <label for="dividendPerShare">
+                Dividend Per Share
+              </label>
+
+              <input
+                type="number"
+                id="dividendPerShare"
+                min="0"
+                step="any"
+                value="1"
+                placeholder="e.g. 1">
+
+              <div class="help">
+                Enter the dividend paid per share for your chosen period.
+              </div>
+
+            </div>
+
+            <div class="field">
+
+              <label for="payments">
+                Dividend Payments Per Year
+              </label>
+
+              <select id="payments">
+
+                <option value="1">
+                  1 — Annual
+                </option>
+
+                <option value="2">
+                  2 — Semi-Annual
+                </option>
+
+                <option value="4" selected>
+                  4 — Quarterly
+                </option>
+
+                <option value="12">
+                  12 — Monthly
+                </option>
+
+              </select>
+
+              <div class="help">
+                Used for the payment schedule illustration.
+              </div>
+
+            </div>
+
+            <div class="field">
+
+              <label for="growthRate">
+                Annual Dividend Growth (%)
+              </label>
+
+              <input
+                type="number"
+                id="growthRate"
+                min="-100"
+                step="0.1"
+                value="5"
+                placeholder="e.g. 5">
+
+              <div class="help">
+                Optional assumption for future dividend growth.
+              </div>
+
+            </div>
+
+            <div class="field">
+
+              <label for="years">
+                Projection Period (Years)
+              </label>
+
+              <input
+                type="number"
+                id="years"
+                min="1"
+                max="100"
+                step="1"
+                value="10"
+                placeholder="e.g. 10">
+
+            </div>
+
+            <div class="field">
+
+              <label for="reinvest">
+                Dividend Reinvestment
+              </label>
+
+              <select id="reinvest">
+
+                <option value="no">
+                  No — Take dividends as cash
+                </option>
+
+                <option value="yes">
+                  Yes — Reinvest dividends
+                </option>
+
+              </select>
+
+            </div>
+
+            <div class="field full">
+
+              <label for="shareGrowth">
+                Annual Share Price Growth (%)
+              </label>
+
+              <input
+                type="number"
+                id="shareGrowth"
+                min="-100"
+                step="0.1"
+                value="0"
+                placeholder="e.g. 5">
+
+              <div class="help">
+                Optional scenario assumption used only for the illustrative
+                reinvestment projection.
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="actions">
+
+            <button
+              type="button"
+              class="btn btn-primary"
+              id="calculateBtn">
+              Calculate Dividends
+            </button>
+
+            <button
+              type="button"
+              class="btn btn-secondary"
+              id="resetBtn">
+              Reset
+            </button>
+
+            <button
+              type="button"
+              class="btn btn-secondary"
+              onclick="window.print()">
+              Print
+            </button>
+
+          </div>
+
+          <div
+            class="error"
+            id="errorMessage"
+            role="alert"
+            aria-live="polite">
+          </div>
+
+        </div>
+
+        <!-- RESULTS -->
+
+        <div class="panel">
+
+          <h2>Estimated Dividend Results</h2>
+
+          <div
+            class="results"
+            aria-live="polite">
+
+            <div class="result-card">
+
+              <div class="result-label">
+                Investment Value
+              </div>
+
+              <div
+                class="result-value"
+                id="investmentResult">
+                $20,000.00
+              </div>
+
+            </div>
+
+            <div class="result-card highlight">
+
+              <div class="result-label">
+                Annual Dividend Income
+              </div>
+
+              <div
+                class="result-value"
+                id="annualDividendResult">
+                $400.00
+              </div>
+
+            </div>
+
+            <div class="result-card success">
+
+              <div class="result-label">
+                Monthly Equivalent Income
+              </div>
+
+              <div
+                class="result-value"
+                id="monthlyDividendResult">
+                $33.33
+              </div>
+
+            </div>
+
+            <div class="result-card">
+
+              <div class="result-label">
+                Dividend Yield
+              </div>
+
+              <div
+                class="result-value"
+                id="yieldResult">
+                2.00%
+              </div>
+
+            </div>
+
+            <div class="result-card">
+
+              <div class="result-label">
+                Dividend Per Payment
+              </div>
+
+              <div
+                class="result-value"
+                id="paymentResult">
+                $100.00
+              </div>
+
+            </div>
+
+            <div class="result-card highlight">
+
+              <div class="result-label">
+                Total Dividends Over Projection
+              </div>
+
+              <div
+                class="result-value"
+                id="projectionDividendResult">
+                $5,031.06
+              </div>
+
+            </div>
+
+            <div class="result-card">
+
+              <div class="result-label">
+                Projected Shares
+              </div>
+
+              <div
+                class="result-value"
+                id="projectedSharesResult">
+                100
+              </div>
+
+            </div>
+
+            <div class="result-card">
+
+              <div class="result-label">
+                Projected Portfolio Value
+              </div>
+
+              <div
+                class="result-value"
+                id="projectedValueResult">
+                $20,000.00
+              </div>
+
+            </div>
+
+          </div>
+
+          <div
+            class="summary"
+            id="summary">
+            Enter your dividend investment details and select
+            <strong>Calculate Dividends</strong>.
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- WHAT IS A DIVIDEND -->
+
+    <section class="section">
+
+      <h2>What Is a Stock Dividend?</h2>
+
+      <p>
+        A stock dividend is a distribution made by a company to eligible
+        shareholders. Cash dividends are commonly expressed as an amount paid
+        per share.
+      </p>
+
+      <p>
+        For example, if an investor owns 500 shares and a company pays $1 per
+        share in dividends for a particular period, the investor would receive
+        $500 before any applicable taxes or deductions.
+      </p>
+
+      <p>
+        Dividend payments can provide an income component to an investment
+        portfolio, although dividends are never guaranteed and companies can
+        change their dividend policies.
+      </p>
+
+    </section>
+
+    <!-- HOW TO USE -->
+
+    <section class="section">
+
+      <h2>How to Use the Stock Dividend Calculator</h2>
+
+      <div class="info-grid">
+
+        <div class="info-card">
+
+          <h3>1. Enter the Stock</h3>
+
+          <p>
+            Enter the stock ticker or company name to identify your investment.
+          </p>
+
+        </div>
+
+        <div class="info-card">
+
+          <h3>2. Enter Shares</h3>
+
+          <p>
+            Enter the number of shares you currently own or plan to purchase.
+          </p>
+
+        </div>
+
+        <div class="info-card">
+
+          <h3>3. Enter Share Price</h3>
+
+          <p>
+            Enter the current or purchase price per share.
+          </p>
+
+        </div>
+
+        <div class="info-card">
+
+          <h3>4. Add Dividend</h3>
+
+          <p>
+            Enter the dividend paid per share for the period you are analyzing.
+          </p>
+
+        </div>
+
+        <div class="info-card">
+
+          <h3>5. Choose Payment Frequency</h3>
+
+          <p>
+            Select annual, semi-annual, quarterly or monthly payments.
+          </p>
+
+        </div>
+
+        <div class="info-card">
+
+          <h3>6. Review Income</h3>
+
+          <p>
+            Review annual income, monthly equivalent income and dividend yield.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- FORMULAS -->
+
+    <section class="section">
+
+      <h2>Stock Dividend Formulas</h2>
+
+      <h3>Annual Dividend Income</h3>
+
+      <div class="formula">
+        Annual Dividend Income =
+        Number of Shares × Annual Dividend Per Share
+      </div>
+
+      <h3>Dividend Yield</h3>
+
+      <div class="formula">
+        Dividend Yield =
+        (Annual Dividend Per Share ÷ Share Price) × 100
+      </div>
+
+      <h3>Dividend Per Payment</h3>
+
+      <div class="formula">
+        Dividend Per Payment =
+        Annual Dividend Income ÷ Payments Per Year
+      </div>
+
+      <h3>Monthly Equivalent</h3>
+
+      <div class="formula">
+        Monthly Equivalent =
+        Annual Dividend Income ÷ 12
+      </div>
+
+      <p>
+        Dividend yield is a percentage measure. A high dividend yield does not
+        automatically mean an investment is better because yield can increase
+        when a stock price falls.
+      </p>
+
+    </section>
+
+    <!-- EXAMPLE -->
+
+    <section class="section">
+
+      <h2>Stock Dividend Calculator Example</h2>
+
+      <p>
+        Suppose an investor owns 100 shares of a stock trading at $200 per
+        share and the stock pays an annual dividend of $4 per share.
+      </p>
+
+      <div class="table-wrap">
+
+        <table>
+
+          <thead>
+
+            <tr>
+              <th>Item</th>
+              <th>Example</th>
+            </tr>
+
+          </thead>
+
+          <tbody>
+
+            <tr>
+              <td>Shares</td>
+              <td>100</td>
+            </tr>
+
+            <tr>
+              <td>Share price</td>
+              <td>$200</td>
+            </tr>
+
+            <tr>
+              <td>Investment value</td>
+              <td>$20,000</td>
+            </tr>
+
+            <tr>
+              <td>Annual dividend per share</td>
+              <td>$4</td>
+            </tr>
+
+            <tr>
+              <td>Annual dividend income</td>
+              <td>$400</td>
+            </tr>
+
+            <tr>
+              <td>Dividend yield</td>
+              <td>2%</td>
+            </tr>
+
+            <tr>
+              <td>Quarterly dividend</td>
+              <td>$100</td>
+            </tr>
+
+          </tbody>
+
+        </table>
+
+      </div>
+
+    </section>
+
+    <!-- DIVIDEND YIELD -->
+
+    <section class="section">
+
+      <h2>Understanding Dividend Yield</h2>
+
+      <p>
+        Dividend yield compares a company's annual dividend per share with its
+        share price.
+      </p>
+
+      <p>
+        For example, a stock priced at $100 that pays $5 in annual dividends
+        has a simple dividend yield of 5%.
+      </p>
+
+      <p>
+        However, investors should investigate why a dividend yield is high.
+        A falling share price can make the historical dividend yield appear
+        higher even when the company's financial position has deteriorated.
+      </p>
+
+    </section>
+
+    <!-- DRIP -->
+
+    <section class="section">
+
+      <h2>Dividend Reinvestment and DRIP</h2>
+
+      <p>
+        Dividend reinvestment means using dividend payments to purchase
+        additional shares instead of taking the dividend as cash.
+      </p>
+
+      <p>
+        Over time, additional shares can generate additional dividends. This
+        creates a compounding effect when dividends are consistently
+        reinvested.
+      </p>
+
+      <p>
+        The reinvestment projection in this calculator is illustrative. It
+        assumes the dividend and share-price growth assumptions entered by
+        the user remain applicable throughout the projection.
+      </p>
+
+      <p>
+        Actual dividend reinvestment may be affected by brokerage rules,
+        fractional shares, taxes, transaction costs, dividend changes and
+        market prices.
+      </p>
+
+    </section>
+
+    <!-- PROJECTION -->
+
+    <section class="section">
+
+      <h2>Long-Term Dividend Projection</h2>
+
+      <p>
+        Long-term dividend projections can help investors understand how
+        changes in dividend growth and reinvestment assumptions may affect
+        future income.
+      </p>
+
+      <div class="table-wrap">
+
+        <table>
+
+          <thead>
+
+            <tr>
+              <th>Scenario</th>
+              <th>Effect</th>
+            </tr>
+
+          </thead>
+
+          <tbody>
+
+            <tr>
+              <td>Dividend growth increases</td>
+              <td>Potential future income increases</td>
+            </tr>
+
+            <tr>
+              <td>Dividend growth falls</td>
+              <td>Potential future income decreases</td>
+            </tr>
+
+            <tr>
+              <td>Dividends reinvested</td>
+              <td>Share count may increase</td>
+            </tr>
+
+            <tr>
+              <td>Share price rises</td>
+              <td>Portfolio value may increase</td>
+            </tr>
+
+            <tr>
+              <td>Share price falls</td>
+              <td>Portfolio value may decrease</td>
+            </tr>
+
+            <tr>
+              <td>Dividend is reduced</td>
+              <td>Future income may decline</td>
+            </tr>
+
+          </tbody>
+
+        </table>
+
+      </div>
+
+    </section>
+
+    <!-- RISKS -->
+
+    <section class="section">
+
+      <h2>Important Dividend Investing Risks</h2>
+
+      <div class="info-grid">
+
+        <div class="info-card">
+
+          <h3>Dividend Cuts</h3>
+
+          <p>
+            Companies can reduce or eliminate dividends when financial
+            conditions change.
+          </p>
+
+        </div>
+
+        <div class="info-card">
+
+          <h3>Share Price Risk</h3>
+
+          <p>
+            A stock can lose market value even while continuing to pay
+            dividends.
+          </p>
+
+        </div>
+
+        <div class="info-card">
+
+          <h3>Yield Trap</h3>
+
+          <p>
+            An unusually high yield can sometimes result from a declining
+            share price or an unsustainable dividend.
+          </p>
+
+        </div>
+
+        <div class="info-card">
+
+          <h3>Taxation</h3>
+
+          <p>
+            Dividend income may be taxable depending on the investor's
+            jurisdiction and circumstances.
+          </p>
+
+        </div>
+
+        <div class="info-card">
+
+          <h3>Inflation</h3>
+
+          <p>
+            The purchasing power of fixed dividend income can decline over
+            time if inflation remains elevated.
+          </p>
+
+        </div>
+
+        <div class="info-card">
+
+          <h3>Company Risk</h3>
+
+          <p>
+            Business performance, debt, competition and economic conditions
+            can affect a company's ability to pay dividends.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- LIVE DATA -->
+
+    <section class="section">
+
+      <h2>Does This Calculator Use Live Dividend Data?</h2>
+
+      <p>
+        No. The EZTradingHub Stock Dividend Calculator uses the information
+        entered by the user.
+      </p>
+
+      <p>
+        This makes the tool useful for planning hypothetical investments,
+        analyzing historical situations and testing different dividend
+        scenarios without requiring a brokerage connection.
+      </p>
+
+      <p>
+        Before making an investment decision, verify the company's current
+        dividend policy, recent financial information, share price and other
+        relevant data using reliable sources.
+      </p>
+
+    </section>
+
+    <!-- FAQ -->
+
+    <section class="section">
+
+      <h2>Stock Dividend Calculator FAQ</h2>
+
+      <div class="faq-item">
+
+        <h3>
+          What is a stock dividend?
+        </h3>
+
+        <p>
+          A stock dividend is a distribution made by a company to eligible
+          shareholders, usually in cash, based on the number of shares they
+          own.
+        </p>
+
+      </div>
+
+      <div class="faq-item">
+
+        <h3>
+          How is dividend income calculated?
+        </h3>
+
+        <p>
+          Estimated dividend income can be calculated by multiplying the number
+          of shares by the dividend paid per share.
+        </p>
+
+      </div>
+
+      <div class="faq-item">
+
+        <h3>
+          What is dividend yield?
+        </h3>
+
+        <p>
+          Dividend yield measures annual dividend income relative to the
+          current or purchase price of a share. It is commonly calculated by
+          dividing annual dividend per share by share price and multiplying by
+          100.
+        </p>
+
+      </div>
+
+      <div class="faq-item">
+
+        <h3>
+          Can dividends be reinvested?
+        </h3>
+
+        <p>
+          Yes. Some investors use dividend reinvestment plans, or DRIPs, to
+          use dividends to purchase additional shares. This calculator provides
+          an illustrative reinvestment projection based on the assumptions
+          entered.
+        </p>
+
+      </div>
+
+      <div class="faq-item">
+
+        <h3>
+          Are stock dividends guaranteed?
+        </h3>
+
+        <p>
+          No. Companies can increase, reduce, suspend or eliminate dividend
+          payments. Historical dividends do not guarantee future payments.
+        </p>
+
+      </div>
+
+      <div class="faq-item">
+
+        <h3>
+          Does this calculator use live dividend data?
+        </h3>
+
+        <p>
+          No. The calculator uses dividend and share-price information entered
+          by the user and does not automatically connect to a brokerage or
+          stock exchange.
+        </p>
+
+      </div>
+
+    </section>
+
+    <!-- RELATED TOOLS -->
+
+    <section class="section">
+
+      <h2>Related EZTradingHub Investment Tools</h2>
+
+      <div class="related">
 
         <a href="stock-profit-calculator.html">
-            💰 Stock Profit Calculator
+          Stock Profit Calculator
         </a>
 
-        <a href="profit-calculator.html">
-            📈 Profit Calculator
+        <a href="crypto-profit-calculator.html">
+          Crypto Profit Calculator
         </a>
 
         <a href="crypto-roi-calculator.html">
-            📊 ROI Calculator
+          Crypto ROI Calculator
         </a>
 
-        <a href="account-growth-calculator.html">
-            📈 Account Growth Calculator
+        <a href="crypto-portfolio-tracker.html">
+          Crypto Portfolio Tracker
         </a>
 
-        <a href="compounding-calculator.html">
-            🔄 Compounding Calculator
+        <a href="profit-calculator.html">
+          Trading Profit Calculator
         </a>
 
         <a href="risk-calculator.html">
-            🛡️ Risk Calculator
+          Risk Calculator
         </a>
+
+      </div>
+
+    </section>
+
+    <!-- DISCLAIMER -->
+
+    <section class="section">
+
+      <h2>Financial Disclaimer</h2>
+
+      <div class="disclaimer">
+
+        <strong>Important:</strong>
+        EZTradingHub calculators are provided for educational and informational
+        purposes only. They do not constitute financial, investment, tax or
+        legal advice.
+
+        Dividend payments are not guaranteed. Companies can change, reduce,
+        suspend or eliminate dividends. Stock prices can also fall and an
+        investor may lose some or all of their invested capital.
+
+        Projection results are estimates based on assumptions entered by the
+        user. Actual dividends, taxes, share prices, reinvestment results and
+        investment returns may differ substantially.
+
+        Always conduct your own research and consider obtaining professional
+        financial advice before making investment decisions.
+
+      </div>
+
+    </section>
+
+  </div>
+
+</main>
+
+<footer>
+
+  <div class="footer-inner">
+
+    <div class="copyright">
+      © <span id="year"></span> EZTradingHub. All rights reserved.
+    </div>
+
+    <div class="footer-links">
+      
+      <a href="index.html">Home</a>
+      
+      <a href="calculators.html">Calculators</a>
+
+      <a href="about.html">About</a>
+
+      <a href="contact.html">Contact</a>
+      
+      <a href="faq.html">FAQ</a>
+
+      <a href="privacy.html">Privacy</a>
+
+      <a href="terms.html">Terms</a>
+
+      <a href="disclaimer.html">Disclaimer</a>
+
+      <a href="cookie-policy.html">Cookies</a>
 
     </div>
 
-</section>
-      
-<ahref="index.html" class="btn">
-🏠 Back to Home
-</a>
-    
-</section>
+  </div>
 
-<script src="script.js"></script>
-<footer>
+</footer>
 
-        <div>
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="faq.html">FAQ</a>
-            <a href="terms.html">Terms & Conditions</a>
-            <a href="privacy.html">Privacy Policy</a>
-            <a href="cookie-policy.html">Cookie Policy</a>
-            <a href="disclaimer.html">Disclaimer</a>
-            <a href="contact.html">Contact</a>
-        </div>
+<script>
+(function () {
 
-        <p class="copyright">
-            © 2026 EZTradingHub. All rights reserved.
-        </p>
+  const themeToggle =
+    document.getElementById("themeToggle");
 
-        <p class="copyright">
-            EZTradingHub provides educational and informational tools.
-            Trading involves risk.
-        </p>
+  const savedTheme =
+    localStorage.getItem("ezth-theme");
 
-    </footer>
-    <script src="cookie-consent.js"></script>
+  if (savedTheme === "dark") {
+
+    document.body.classList.add("dark");
+
+    themeToggle.textContent = "☀️";
+
+  }
 
 
-<button id="topBtn" onclick="topFunction()">
+  themeToggle.addEventListener("click", function () {
 
-⬆️
+    const dark =
+      document.body.classList.toggle("dark");
 
-</button>
+    localStorage.setItem(
+      "ezth-theme",
+      dark ? "dark" : "light"
+    );
+
+    themeToggle.textContent =
+      dark ? "☀️" : "🌙";
+
+  });
+
+
+  const stockName =
+    document.getElementById("stockName");
+
+  const currency =
+    document.getElementById("currency");
+
+  const shares =
+    document.getElementById("shares");
+
+  const sharePrice =
+    document.getElementById("sharePrice");
+
+  const dividendPerShare =
+    document.getElementById("dividendPerShare");
+
+  const payments =
+    document.getElementById("payments");
+
+  const growthRate =
+    document.getElementById("growthRate");
+
+  const years =
+    document.getElementById("years");
+
+  const reinvest =
+    document.getElementById("reinvest");
+
+  const shareGrowth =
+    document.getElementById("shareGrowth");
+
+  const errorMessage =
+    document.getElementById("errorMessage");
+
+
+  function getSymbol(code) {
+
+    const symbols = {
+      USD: "$",
+      NGN: "₦",
+      EUR: "€",
+      GBP: "£"
+    };
+
+    return symbols[code] || "";
+
+  }
+
+
+  function money(value) {
+
+    if (!Number.isFinite(value)) {
+      return "0.00";
+    }
+
+    return value.toLocaleString(undefined, {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    });
+
+  }
+
+
+  function number(value) {
+
+    if (!Number.isFinite(value)) {
+      return "0";
+    }
+
+    return value.toLocaleString(undefined, {
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 4
+    });
+
+  }
+
+
+  function percent(value) {
+
+    if (!Number.isFinite(value)) {
+      return "0.00%";
+    }
+
+    return value.toLocaleString(undefined, {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    }) + "%";
+
+  }
+
+
+  function calculate() {
+
+    errorMessage.textContent = "";
+
+    const sharesValue =
+      parseFloat(shares.value);
+
+    const priceValue =
+      parseFloat(sharePrice.value);
+
+    const dividendValue =
+      parseFloat(dividendPerShare.value);
+
+    const paymentsValue =
+      parseInt(payments.value, 10);
+
+    const growthValue =
+      parseFloat(growthRate.value) || 0;
+
+    const yearsValue =
+      parseInt(years.value, 10);
+
+    const shareGrowthValue =
+      parseFloat(shareGrowth.value) || 0;
+
+
+    if (
+      !Number.isFinite(sharesValue) ||
+      sharesValue <= 0
+    ) {
+
+      errorMessage.textContent =
+        "Please enter a valid number of shares.";
+
+      return;
+
+    }
+
+
+    if (
+      !Number.isFinite(priceValue) ||
+      priceValue <= 0
+    ) {
+
+      errorMessage.textContent =
+        "Please enter a valid share price.";
+
+      return;
+
+    }
+
+
+    if (
+      !Number.isFinite(dividendValue) ||
+      dividendValue < 0
+    ) {
+
+      errorMessage.textContent =
+        "Please enter a valid dividend per share.";
+
+      return;
+
+    }
+
+
+    if (
+      !Number.isFinite(yearsValue) ||
+      yearsValue < 1 ||
+      yearsValue > 100
+    ) {
+
+      errorMessage.textContent =
+        "Projection period must be between 1 and 100 years.";
+
+      return;
+
+    }
+
+
+    if (growthValue <= -100) {
+
+      errorMessage.textContent =
+        "Dividend growth must be greater than -100%.";
+
+      return;
+
+    }
+
+
+    if (shareGrowthValue <= -100) {
+
+      errorMessage.textContent =
+        "Share price growth must be greater than -100%.";
+
+      return;
+
+    }
+
+
+    const symbol =
+      getSymbol(currency.value);
+
+
+    const investment =
+      sharesValue * priceValue;
+
+
+    /*
+      The dividend input is treated as an
+      annual dividend per share.
+    */
+
+    const annualDividend =
+      sharesValue * dividendValue;
+
+
+    const monthlyIncome =
+      annualDividend / 12;
+
+
+    const dividendYield =
+      (dividendValue / priceValue) * 100;
+
+
+    const paymentIncome =
+      annualDividend / paymentsValue;
+
+
+    /*
+      Long-term projection.
+
+      If reinvestment is OFF:
+      - Shares remain constant.
+      - Dividend per share grows according
+        to the assumed dividend growth rate.
+
+      If reinvestment is ON:
+      - Dividends are used to buy additional
+        shares at the projected share price.
+      - Fractional shares are allowed for
+        illustration.
+    */
+
+    let projectedShares =
+      sharesValue;
+
+    let projectedPrice =
+      priceValue;
+
+    let projectedDividendPerShare =
+      dividendValue;
+
+    let totalProjectedDividends = 0;
+
+
+    for (
+      let year = 1;
+      year <= yearsValue;
+      year++
+    ) {
+
+      projectedDividendPerShare =
+        projectedDividendPerShare *
+        (1 + growthValue / 100);
+
+      projectedPrice =
+        projectedPrice *
+        (1 + shareGrowthValue / 100);
+
+
+      if (reinvest.value === "yes") {
+
+        const yearlyDividend =
+          projectedShares *
+          projectedDividendPerShare;
+
+
+        totalProjectedDividends +=
+          yearlyDividend;
+
+
+        if (projectedPrice > 0) {
+
+          projectedShares +=
+            yearlyDividend /
+            projectedPrice;
+
+        }
+
+      } else {
+
+        totalProjectedDividends +=
+          projectedShares *
+          projectedDividendPerShare;
+
+      }
+
+    }
+
+
+    const projectedPortfolioValue =
+      projectedShares *
+      projectedPrice;
+
+
+    document.getElementById(
+      "investmentResult"
+    ).textContent =
+      symbol + money(investment);
+
+
+    document.getElementById(
+      "annualDividendResult"
+    ).textContent =
+      symbol + money(annualDividend);
+
+
+    document.getElementById(
+      "monthlyDividendResult"
+    ).textContent =
+      symbol + money(monthlyIncome);
+
+
+    document.getElementById(
+      "yieldResult"
+    ).textContent =
+      percent(dividendYield);
+
+
+    document.getElementById(
+      "paymentResult"
+    ).textContent =
+      symbol + money(paymentIncome);
+
+
+    document.getElementById(
+      "projectionDividendResult"
+    ).textContent =
+      symbol + money(totalProjectedDividends);
+
+
+    document.getElementById(
+      "projectedSharesResult"
+    ).textContent =
+      number(projectedShares);
+
+
+    document.getElementById(
+      "projectedValueResult"
+    ).textContent =
+      symbol + money(projectedPortfolioValue);
+
+
+    const stock =
+      stockName.value.trim() || "this stock";
+
+
+    const reinvestText =
+      reinvest.value === "yes"
+        ? "with dividend reinvestment"
+        : "with dividends taken as cash";
+
+
+    document.getElementById(
+      "summary"
+    ).innerHTML =
+      "For <strong>" +
+      stock +
+      "</strong>, an estimated annual dividend income of " +
+      "<strong>" +
+      symbol +
+      money(annualDividend) +
+      "</strong> is generated from " +
+      number(sharesValue) +
+      " shares. The estimated dividend yield is " +
+      "<strong>" +
+      percent(dividendYield) +
+      "</strong>. Over the " +
+      yearsValue +
+      "-year scenario, the projection assumes " +
+      percent(growthValue) +
+      " annual dividend growth " +
+      reinvestText +
+      ".";
+
+  }
+
+
+  function resetCalculator() {
+
+    stockName.value =
+      "AAPL";
+
+    currency.value =
+      "USD";
+
+    shares.value =
+      "100";
+
+    sharePrice.value =
+      "200";
+
+    dividendPerShare.value =
+      "1";
+
+    payments.value =
+      "4";
+
+    growthRate.value =
+      "5";
+
+    years.value =
+      "10";
+
+    reinvest.value =
+      "no";
+
+    shareGrowth.value =
+      "0";
+
+    calculate();
+
+  }
+
+
+  document
+    .getElementById("calculateBtn")
+    .addEventListener(
+      "click",
+      calculate
+    );
+
+
+  document
+    .getElementById("resetBtn")
+    .addEventListener(
+      "click",
+      resetCalculator
+    );
+
+
+  [
+    stockName,
+    currency,
+    shares,
+    sharePrice,
+    dividendPerShare,
+    payments,
+    growthRate,
+    years,
+    reinvest,
+    shareGrowth
+  ].forEach(function (element) {
+
+    element.addEventListener(
+      "input",
+      calculate
+    );
+
+    element.addEventListener(
+      "change",
+      calculate
+    );
+
+  });
+
+
+  document.getElementById(
+    "year"
+  ).textContent =
+    new Date().getFullYear();
+
+
+  calculate();
+
+})();
+</script>
 
 </body>
-
 </html>
-
