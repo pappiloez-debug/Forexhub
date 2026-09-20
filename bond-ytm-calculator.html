@@ -1,0 +1,2429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- =========================================
+         BASIC SEO
+    ========================================== -->
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Bond YTM Calculator - Yield to Maturity | EZTradingHub</title>
+
+    <meta name="description"
+          content="Calculate bond Yield to Maturity (YTM) using bond price, face value, coupon rate and years to maturity. Free YTM calculator for fixed income investors.">
+
+    <meta name="keywords"
+          content="YTM calculator, bond YTM calculator, yield to maturity calculator, bond yield calculator, calculate YTM, fixed income calculator, bond return calculator">
+
+    <meta name="author"
+          content="EZTradingHub">
+
+    <meta name="robots"
+          content="index, follow, max-image-preview:large">
+
+    <link rel="canonical"
+          href="https://eztradinghub.com/bond-ytm-calculator.html">
+
+
+    <!-- =========================================
+         OPEN GRAPH
+    ========================================== -->
+
+    <meta property="og:type"
+          content="website">
+
+    <meta property="og:title"
+          content="Bond YTM Calculator | EZTradingHub">
+
+    <meta property="og:description"
+          content="Calculate Yield to Maturity using bond price, face value, coupon rate and years to maturity.">
+
+    <meta property="og:url"
+          content="https://eztradinghub.com/bond-ytm-calculator.html">
+
+    <meta property="og:site_name"
+          content="EZTradingHub">
+
+    <meta property="og:image"
+          content="https://eztradinghub.com/assets/images/og-image.jpg">
+
+
+    <!-- =========================================
+         TWITTER CARD
+    ========================================== -->
+
+    <meta name="twitter:card"
+          content="summary_large_image">
+
+    <meta name="twitter:title"
+          content="Bond YTM Calculator | EZTradingHub">
+
+    <meta name="twitter:description"
+          content="Estimate bond Yield to Maturity from price, coupon, face value and maturity.">
+
+    <meta name="twitter:image"
+          content="https://eztradinghub.com/assets/images/og-image.jpg">
+
+
+    <!-- =========================================
+         THEME / FAVICON
+    ========================================== -->
+
+    <meta name="theme-color"
+          content="#003366">
+
+    <link rel="icon"
+          href="assets/images/favicon.ico"
+          type="image/x-icon">
+
+
+    <!-- =========================================
+         WEB APPLICATION SCHEMA
+    ========================================== -->
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Bond YTM Calculator",
+      "url": "https://eztradinghub.com/bond-ytm-calculator.html",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web",
+      "description": "Free online Yield to Maturity calculator for estimating the annualized return of a coupon-paying bond when held to maturity.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "EZTradingHub",
+        "url": "https://eztradinghub.com"
+      }
+    }
+    </script>
+
+
+    <!-- =========================================
+         FAQ SCHEMA
+    ========================================== -->
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is Yield to Maturity?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yield to Maturity is the annualized rate of return implied by a bond's current price, coupon payments, face value and remaining maturity, assuming the bond is held to maturity and payments are made as expected."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why can YTM be different from the coupon rate?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "YTM accounts for the bond's current market price as well as coupon payments and the repayment of face value at maturity. Therefore it can be higher or lower than the coupon rate."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens to YTM when a bond trades at a discount?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A bond trading below face value will generally have a YTM higher than its coupon rate, assuming the other inputs are comparable."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens to YTM when a bond trades at a premium?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A bond trading above face value will generally have a YTM lower than its coupon rate."
+          }
+        }
+      ]
+    }
+    </script>
+
+
+    <style>
+
+        /* =========================================
+           COLOR VARIABLES
+        ========================================== */
+
+        :root {
+
+            --primary: #003366;
+            --primary-light: #005b96;
+            --accent: #ffb400;
+
+            --background: #f5f7fa;
+            --card: #ffffff;
+
+            --text: #17202a;
+            --muted: #667085;
+
+            --border: #d9dee7;
+
+            --success: #16803c;
+            --danger: #c62828;
+
+            --shadow:
+                0 10px 30px rgba(0,0,0,0.08);
+        }
+
+
+        /* =========================================
+           DARK MODE
+        ========================================== */
+
+        body.dark {
+
+            --primary: #4da3ff;
+            --primary-light: #69b1ff;
+
+            --accent: #ffc107;
+
+            --background: #10151c;
+            --card: #18212b;
+
+            --text: #f2f4f7;
+            --muted: #aab4c0;
+
+            --border: #303b48;
+
+            --success: #4ade80;
+            --danger: #ff7070;
+
+            --shadow:
+                0 10px 30px rgba(0,0,0,0.35);
+        }
+
+
+        /* =========================================
+           RESET
+        ========================================== */
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+
+            margin: 0;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            background: var(--background);
+
+            color: var(--text);
+
+            line-height: 1.65;
+
+            transition:
+                background .25s ease,
+                color .25s ease;
+        }
+
+
+        a {
+            color: inherit;
+        }
+
+
+        /* =========================================
+           HEADER
+        ========================================== */
+
+        .site-header {
+
+            background: var(--primary);
+
+            color: #ffffff;
+
+            position: sticky;
+
+            top: 0;
+
+            z-index: 1000;
+
+            box-shadow:
+                0 3px 15px rgba(0,0,0,.15);
+        }
+
+
+        .nav {
+
+            max-width: 1200px;
+
+            margin: auto;
+
+            padding:
+                14px 20px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 20px;
+        }
+
+
+        .logo {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            text-decoration: none;
+
+            font-size: 20px;
+
+            font-weight: 800;
+
+            white-space: nowrap;
+        }
+
+
+        .logo-icon {
+
+            width: 38px;
+
+            height: 38px;
+
+            display: grid;
+
+            place-items: center;
+
+            border-radius: 9px;
+
+            background: var(--accent);
+
+            color: #111111;
+
+            font-weight: 900;
+        }
+
+
+        .nav-links {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 18px;
+
+            flex-wrap: wrap;
+        }
+
+
+        .nav-links a {
+
+            text-decoration: none;
+
+            font-size: 14px;
+        }
+
+
+        .nav-links a:hover {
+
+            text-decoration: underline;
+        }
+
+
+        .theme-toggle {
+
+            border:
+                1px solid rgba(255,255,255,.4);
+
+            background: transparent;
+
+            color: #ffffff;
+
+            border-radius: 8px;
+
+            padding:
+                9px 13px;
+
+            cursor: pointer;
+
+            font-size: 14px;
+
+            white-space: nowrap;
+        }
+
+
+        /* =========================================
+           HERO
+        ========================================== */
+
+        .hero {
+
+            max-width: 1100px;
+
+            margin: auto;
+
+            padding:
+                55px 20px 35px;
+
+            text-align: center;
+        }
+
+
+        .hero h1 {
+
+            margin:
+                0 0 15px;
+
+            color: var(--primary);
+
+            font-size:
+                clamp(30px, 5vw, 48px);
+
+            line-height: 1.15;
+        }
+
+
+        .hero p {
+
+            max-width: 780px;
+
+            margin: auto;
+
+            color: var(--muted);
+
+            font-size: 17px;
+        }
+
+
+        /* =========================================
+           AD PLACEHOLDER
+        ========================================== */
+
+        .ad-container {
+
+            max-width: 1100px;
+
+            min-height: 90px;
+
+            margin:
+                20px auto;
+
+            padding: 20px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border:
+                1px dashed var(--border);
+
+            border-radius: 10px;
+
+            color: var(--muted);
+
+            font-size: 12px;
+        }
+
+
+        /* =========================================
+           CALCULATOR
+        ========================================== */
+
+        .calculator-section {
+
+            max-width: 1100px;
+
+            margin: auto;
+
+            padding:
+                0 20px;
+        }
+
+
+        .calculator-card {
+
+            background: var(--card);
+
+            border:
+                1px solid var(--border);
+
+            border-radius: 18px;
+
+            padding: 30px;
+
+            box-shadow: var(--shadow);
+        }
+
+
+        .calculator-card h2 {
+
+            margin-top: 0;
+
+            color: var(--primary);
+
+            font-size: 26px;
+        }
+
+
+        .calculator-intro {
+
+            color: var(--muted);
+
+            margin-bottom: 25px;
+        }
+
+
+        .input-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 20px;
+        }
+
+
+        .field {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 7px;
+        }
+
+
+        label {
+
+            font-weight: 700;
+
+            font-size: 14px;
+        }
+
+
+        input,
+        select {
+
+            width: 100%;
+
+            padding:
+                13px 14px;
+
+            border:
+                1px solid var(--border);
+
+            border-radius: 9px;
+
+            background: var(--card);
+
+            color: var(--text);
+
+            font-size: 16px;
+
+            outline: none;
+        }
+
+
+        input:focus,
+        select:focus {
+
+            border-color:
+                var(--primary-light);
+
+            box-shadow:
+                0 0 0 3px
+                rgba(0,91,150,.12);
+        }
+
+
+        .hint {
+
+            color: var(--muted);
+
+            font-size: 12px;
+        }
+
+
+        /* =========================================
+           BUTTONS
+        ========================================== */
+
+        .button-row {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 12px;
+
+            margin-top: 25px;
+        }
+
+
+        .btn {
+
+            border-radius: 9px;
+
+            padding:
+                13px 23px;
+
+            font-size: 16px;
+
+            cursor: pointer;
+        }
+
+
+        .calculate-btn {
+
+            border: 0;
+
+            background: var(--accent);
+
+            color: #111111;
+
+            font-weight: 800;
+        }
+
+
+        .reset-btn {
+
+            background: transparent;
+
+            color: var(--text);
+
+            border:
+                1px solid var(--border);
+        }
+
+
+        /* =========================================
+           RESULTS
+        ========================================== */
+
+        .results {
+
+            margin-top: 30px;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 15px;
+        }
+
+
+        .result-box {
+
+            padding: 18px;
+
+            background: var(--background);
+
+            border:
+                1px solid var(--border);
+
+            border-radius: 12px;
+        }
+
+
+        .result-label {
+
+            color: var(--muted);
+
+            font-size: 13px;
+
+            margin-bottom: 5px;
+        }
+
+
+        .result-value {
+
+            color: var(--primary);
+
+            font-size: 24px;
+
+            font-weight: 800;
+
+            overflow-wrap: anywhere;
+        }
+
+
+        .status-box {
+
+            grid-column:
+                1 / -1;
+
+            padding: 16px;
+
+            text-align: center;
+
+            border:
+                1px solid var(--border);
+
+            border-radius: 10px;
+
+            font-weight: 700;
+        }
+
+
+        .premium {
+            color: var(--danger);
+        }
+
+
+        .discount {
+            color: var(--success);
+        }
+
+
+        .par {
+            color: var(--primary);
+        }
+
+
+        /* =========================================
+           EDUCATIONAL CONTENT
+        ========================================== */
+
+        .content-wrapper {
+
+            max-width: 1100px;
+
+            margin:
+                35px auto 0;
+
+            padding:
+                0 20px;
+        }
+
+
+        .content-card {
+
+            background: var(--card);
+
+            border:
+                1px solid var(--border);
+
+            border-radius: 16px;
+
+            padding: 28px;
+
+            margin-bottom: 20px;
+
+            box-shadow: var(--shadow);
+        }
+
+
+        .content-card h2 {
+
+            margin-top: 0;
+
+            color: var(--primary);
+        }
+
+
+        .content-card h3 {
+
+            color: var(--primary);
+
+            margin-top: 25px;
+        }
+
+
+        .formula {
+
+            background: var(--background);
+
+            border-left:
+                4px solid var(--accent);
+
+            padding: 18px;
+
+            border-radius: 8px;
+
+            overflow-x: auto;
+
+            font-family:
+                Georgia,
+                serif;
+
+            font-size: 18px;
+        }
+
+
+        /* =========================================
+           RELATED TOOLS
+        ========================================== */
+
+        .related-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 15px;
+        }
+
+
+        .related-link {
+
+            display: block;
+
+            padding: 16px;
+
+            background: var(--background);
+
+            border:
+                1px solid var(--border);
+
+            border-radius: 10px;
+
+            text-decoration: none;
+
+            font-weight: 700;
+        }
+
+
+        .related-link:hover {
+
+            border-color:
+                var(--primary-light);
+        }
+
+
+        /* =========================================
+           FOOTER
+        ========================================== */
+
+        footer {
+
+            margin-top: 50px;
+
+            padding: 35px 20px;
+
+            background: var(--primary);
+
+            color: #ffffff;
+
+            text-align: center;
+        }
+
+
+        footer a {
+
+            color: #ffffff;
+
+            text-decoration: none;
+
+            margin: 0 7px;
+        }
+
+
+        footer a:hover {
+
+            text-decoration: underline;
+        }
+
+
+        /* =========================================
+           MOBILE
+        ========================================== */
+
+        @media (max-width: 850px) {
+
+            .input-grid,
+            .results,
+            .related-grid {
+
+                grid-template-columns: 1fr;
+            }
+
+
+            .nav {
+
+                flex-wrap: wrap;
+
+                justify-content: center;
+            }
+
+
+            .nav-links {
+
+                justify-content: center;
+
+                width: 100%;
+            }
+        }
+
+
+        @media (max-width: 500px) {
+
+            .hero {
+
+                padding:
+                    35px 15px 25px;
+            }
+
+
+            .calculator-section,
+            .content-wrapper {
+
+                padding:
+                    0 12px;
+            }
+
+
+            .calculator-card,
+            .content-card {
+
+                padding: 20px;
+            }
+
+
+            .button-row {
+
+                flex-direction: column;
+            }
+
+
+            .btn {
+
+                width: 100%;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================
+     HEADER
+========================================== -->
+
+<header class="site-header">
+
+    <nav class="nav"
+         aria-label="Main navigation">
+
+        <a href="index.html"
+           class="logo">
+
+            <span class="logo-icon"
+                  aria-hidden="true">
+                EZ
+            </span>
+
+            <span>
+                EZTradingHub
+            </span>
+
+        </a>
+
+
+        <div class="nav-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="calculators.html">
+                Calculators
+            </a>
+
+            <a href="trade-journal.html">
+                Trade Journal
+            </a>
+
+            <a href="Dashboard.html">
+                Dashboard
+            </a>
+
+        </div>
+
+
+        <button
+            type="button"
+            class="theme-toggle"
+            id="themeToggle"
+            aria-label="Toggle light and dark mode">
+
+            🌙 Dark Mode
+
+        </button>
+
+    </nav>
+
+</header>
+
+
+<main>
+
+
+<!-- =========================================
+     HERO
+========================================== -->
+
+<section class="hero">
+
+    <h1>
+        Bond YTM Calculator
+    </h1>
+
+    <p>
+        Calculate Yield to Maturity (YTM) using a bond's
+        current price, face value, coupon rate, years
+        to maturity and coupon frequency.
+    </p>
+
+</section>
+
+
+<!-- =========================================
+     AD
+========================================== -->
+
+<div class="ad-container"
+     aria-label="Advertisement">
+
+    Advertisement
+
+</div>
+
+
+<!-- =========================================
+     CALCULATOR
+========================================== -->
+
+<section class="calculator-section"
+         aria-labelledby="calculator-title">
+
+    <div class="calculator-card">
+
+        <h2 id="calculator-title">
+            Calculate Yield to Maturity
+        </h2>
+
+        <p class="calculator-intro">
+            Enter the bond information below. The calculator
+            estimates the annualized YTM that makes the present
+            value of the bond's future cash flows equal to its
+            current market price.
+        </p>
+
+
+        <div class="input-grid">
+
+
+            <!-- MARKET PRICE -->
+
+            <div class="field">
+
+                <label for="bondPrice">
+                    Current Bond Price
+                </label>
+
+                <input
+                    id="bondPrice"
+                    type="number"
+                    value="950"
+                    min="0.01"
+                    step="0.01"
+                    inputmode="decimal">
+
+                <span class="hint">
+                    Current market price paid for the bond.
+                </span>
+
+            </div>
+
+
+            <!-- FACE VALUE -->
+
+            <div class="field">
+
+                <label for="faceValue">
+                    Face / Par Value
+                </label>
+
+                <input
+                    id="faceValue"
+                    type="number"
+                    value="1000"
+                    min="0.01"
+                    step="0.01"
+                    inputmode="decimal">
+
+                <span class="hint">
+                    Amount repaid at maturity.
+                </span>
+
+            </div>
+
+
+            <!-- COUPON -->
+
+            <div class="field">
+
+                <label for="couponRate">
+                    Annual Coupon Rate (%)
+                </label>
+
+                <input
+                    id="couponRate"
+                    type="number"
+                    value="5"
+                    min="0"
+                    step="0.01"
+                    inputmode="decimal">
+
+                <span class="hint">
+                    Annual coupon rate of the bond.
+                </span>
+
+            </div>
+
+
+            <!-- YEARS -->
+
+            <div class="field">
+
+                <label for="years">
+                    Years to Maturity
+                </label>
+
+                <input
+                    id="years"
+                    type="number"
+                    value="5"
+                    min="0.01"
+                    step="0.01"
+                    inputmode="decimal">
+
+                <span class="hint">
+                    Remaining time until maturity.
+                </span>
+
+            </div>
+
+
+            <!-- FREQUENCY -->
+
+            <div class="field">
+
+                <label for="frequency">
+                    Coupon Frequency
+                </label>
+
+                <select id="frequency">
+
+                    <option value="1">
+                        Annual
+                    </option>
+
+                    <option value="2"
+                            selected>
+                        Semi-Annual
+                    </option>
+
+                    <option value="4">
+                        Quarterly
+                    </option>
+
+                    <option value="12">
+                        Monthly
+                    </option>
+
+                </select>
+
+                <span class="hint">
+                    Number of coupon payments per year.
+                </span>
+
+            </div>
+
+
+            <!-- CURRENCY -->
+
+            <div class="field">
+
+                <label for="currency">
+                    Display Currency
+                </label>
+
+                <select id="currency">
+
+                    <option value="$"
+                            selected>
+                        USD ($)
+                    </option>
+
+                    <option value="₦">
+                        NGN (₦)
+                    </option>
+
+                    <option value="€">
+                        EUR (€)
+                    </option>
+
+                    <option value="£">
+                        GBP (£)
+                    </option>
+
+                </select>
+
+                <span class="hint">
+                    Changes the displayed currency symbol.
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- BUTTONS -->
+
+        <div class="button-row">
+
+            <button
+                type="button"
+                class="btn calculate-btn"
+                id="calculateButton">
+
+                Calculate YTM
+
+            </button>
+
+
+            <button
+                type="button"
+                class="btn reset-btn"
+                id="resetButton">
+
+                Reset
+
+            </button>
+
+        </div>
+
+
+        <!-- RESULTS -->
+
+        <div class="results"
+             aria-live="polite">
+
+
+            <div class="result-box">
+
+                <div class="result-label">
+                    Yield to Maturity
+                </div>
+
+                <div class="result-value"
+                     id="ytmResult">
+
+                    —
+
+                </div>
+
+            </div>
+
+
+            <div class="result-box">
+
+                <div class="result-label">
+                    Annual Coupon Income
+                </div>
+
+                <div class="result-value"
+                     id="annualCoupon">
+
+                    —
+
+                </div>
+
+            </div>
+
+
+            <div class="result-box">
+
+                <div class="result-label">
+                    Coupon Payment
+                </div>
+
+                <div class="result-value"
+                     id="couponPayment">
+
+                    —
+
+                </div>
+
+            </div>
+
+
+            <div class="result-box">
+
+                <div class="result-label">
+                    Total Coupon Payments
+                </div>
+
+                <div class="result-value"
+                     id="totalCoupons">
+
+                    —
+
+                </div>
+
+            </div>
+
+
+            <div class="result-box">
+
+                <div class="result-label">
+                    Price as % of Par
+                </div>
+
+                <div class="result-value"
+                     id="pricePercent">
+
+                    —
+
+                </div>
+
+            </div>
+
+
+            <div class="result-box">
+
+                <div class="result-label">
+                    Price Difference
+                </div>
+
+                <div class="result-value"
+                     id="priceDifference">
+
+                    —
+
+                </div>
+
+            </div>
+
+
+            <div class="status-box"
+                 id="bondStatus">
+
+                Enter your bond information
+                and calculate YTM.
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     SECOND AD
+========================================== -->
+
+<div class="ad-container"
+     aria-label="Advertisement">
+
+    Advertisement
+
+</div>
+
+
+<!-- =========================================
+     EDUCATIONAL CONTENT
+========================================== -->
+
+<section class="content-wrapper">
+
+
+    <!-- WHAT IS YTM -->
+
+    <article class="content-card">
+
+        <h2>
+            What Is Yield to Maturity?
+        </h2>
+
+        <p>
+            Yield to Maturity (YTM) is an estimate of the
+            annualized rate of return an investor would earn
+            if a bond were purchased at its current market
+            price and held until maturity, assuming the bond
+            makes its scheduled payments.
+        </p>
+
+        <p>
+            Unlike the coupon rate, YTM takes the bond's
+            current market price into account. This makes
+            YTM useful when comparing bonds trading at
+            different prices.
+        </p>
+
+    </article>
+
+
+    <!-- FORMULA -->
+
+    <article class="content-card">
+
+        <h2>
+            YTM Formula
+        </h2>
+
+        <div class="formula">
+
+            Price =
+            Σ [C / (1 + r)<sup>t</sup>]
+            +
+            [F / (1 + r)<sup>n</sup>]
+
+        </div>
+
+        <p>
+            The YTM is the periodic discount rate that makes
+            the present value of the bond's future coupon
+            payments and principal equal to its current price.
+        </p>
+
+        <ul>
+
+            <li>
+                <strong>Price</strong> =
+                current bond market price
+            </li>
+
+            <li>
+                <strong>C</strong> =
+                coupon payment per period
+            </li>
+
+            <li>
+                <strong>F</strong> =
+                face value
+            </li>
+
+            <li>
+                <strong>r</strong> =
+                periodic yield
+            </li>
+
+            <li>
+                <strong>n</strong> =
+                number of remaining periods
+            </li>
+
+        </ul>
+
+        <p>
+            Because YTM cannot always be solved directly with
+            a simple algebraic formula, this calculator uses
+            an iterative numerical approach to find the yield
+            that matches the bond's current price.
+        </p>
+
+    </article>
+
+
+    <!-- COUPON VS YTM -->
+
+    <article class="content-card">
+
+        <h2>
+            Coupon Rate vs YTM
+        </h2>
+
+        <p>
+            The coupon rate tells you the interest payment
+            promised by the bond relative to its face value.
+            YTM considers the bond's current market price,
+            coupon payments and repayment of principal.
+        </p>
+
+        <ul>
+
+            <li>
+                <strong>Bond at a discount:</strong>
+                YTM is generally higher than the coupon rate.
+            </li>
+
+            <li>
+                <strong>Bond at par:</strong>
+                YTM is generally close to the coupon rate.
+            </li>
+
+            <li>
+                <strong>Bond at a premium:</strong>
+                YTM is generally lower than the coupon rate.
+            </li>
+
+        </ul>
+
+    </article>
+
+
+    <!-- HOW TO USE -->
+
+    <article class="content-card">
+
+        <h2>
+            How to Use the YTM Calculator
+        </h2>
+
+        <ol>
+
+            <li>
+                Enter the current market price of the bond.
+            </li>
+
+            <li>
+                Enter its face value.
+            </li>
+
+            <li>
+                Enter the annual coupon rate.
+            </li>
+
+            <li>
+                Enter the remaining years to maturity.
+            </li>
+
+            <li>
+                Select the coupon payment frequency.
+            </li>
+
+            <li>
+                Select your display currency.
+            </li>
+
+            <li>
+                Click <strong>Calculate YTM</strong>.
+            </li>
+
+        </ol>
+
+    </article>
+
+
+    <!-- FAQ -->
+
+    <article class="content-card">
+
+        <h2>
+            Bond YTM Calculator FAQ
+        </h2>
+
+
+        <h3>
+            What does YTM mean?
+        </h3>
+
+        <p>
+            YTM stands for Yield to Maturity. It represents
+            the annualized return implied by a bond's current
+            price, coupon payments and maturity value.
+        </p>
+
+
+        <h3>
+            Is YTM the same as the coupon rate?
+        </h3>
+
+        <p>
+            No. The coupon rate determines the bond's scheduled
+            coupon payment, while YTM incorporates the bond's
+            market price and maturity value as well.
+        </p>
+
+
+        <h3>
+            Why is YTM higher than the coupon rate for a discount bond?
+        </h3>
+
+        <p>
+            An investor purchasing a bond below face value can
+            potentially receive both coupon income and a gain
+            toward face value at maturity. This generally makes
+            YTM higher than the coupon rate.
+        </p>
+
+
+        <h3>
+            Why is YTM lower than the coupon rate for a premium bond?
+        </h3>
+
+        <p>
+            An investor paying more than face value may receive
+            coupon income but also face a reduction toward the
+            bond's lower redemption value at maturity. This
+            generally reduces the YTM relative to the coupon rate.
+        </p>
+
+
+        <h3>
+            Does YTM guarantee my actual investment return?
+        </h3>
+
+        <p>
+            No. YTM is based on assumptions about holding the
+            bond to maturity and receiving scheduled payments.
+            Actual investment returns can be affected by taxes,
+            fees, defaults, reinvestment rates, early redemption
+            and other factors.
+        </p>
+
+    </article>
+
+
+    <!-- RELATED CALCULATORS -->
+
+    <article class="content-card">
+
+        <h2>
+            Related Fixed Income Calculators
+        </h2>
+
+        <div class="related-grid">
+
+            <a class="related-link"
+               href="bond-price-calculator.html">
+                Bond Price Calculator
+            </a>
+
+            <a class="related-link"
+               href="bond-yield-calculator.html">
+                Bond Yield Calculator
+            </a>
+
+            <a class="related-link"
+               href="bond-duration-calculator.html">
+                Bond Duration Calculator
+            </a>
+
+            <a class="related-link"
+               href="bond-convexity-calculator.html">
+                Bond Convexity Calculator
+            </a>
+
+            <a class="related-link"
+               href="bond-coupon-calculator.html">
+                Bond Coupon Calculator
+            </a>
+
+            <a class="related-link"
+               href="present-value-calculator.html">
+                Present Value Calculator
+            </a>
+
+        </div>
+
+    </article>
+
+
+    <!-- DISCLAIMER -->
+
+    <article class="content-card">
+
+        <h2>
+            Important Disclaimer
+        </h2>
+
+        <p>
+            This calculator is provided for educational and
+            informational purposes only. It does not constitute
+            financial, investment, tax or legal advice.
+        </p>
+
+        <p>
+            Actual bond returns may differ from the calculated
+            YTM because of transaction costs, taxes, changes in
+            interest rates, credit events, reinvestment rates,
+            early redemption and other market conditions.
+        </p>
+
+    </article>
+
+</section>
+
+</main>
+
+
+<!-- =========================================
+     FOOTER
+========================================== -->
+
+<footer>
+
+    <p>
+        © <span id="currentYear"></span>
+        EZTradingHub. All rights reserved.
+    </p>
+
+    <p>
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="calculators.html">
+            Calculators
+        </a>
+          
+        <a href="about.html">
+            About
+        </a>
+          
+        <a href="faq.html">
+            FAQ
+        </a>
+
+        <a href="contact.html">
+            Contact
+        </a>
+
+        <a href="privacy.html">
+            Privacy
+        </a>
+
+        <a href="terms.html">
+            Terms
+        </a>
+
+        <a href="disclaimer.html">
+            Disclaimer
+        </a>
+
+        <a href="cookie-policy.html">
+            Cookie Policy
+        </a>
+
+    </p>
+
+</footer>
+
+
+<script>
+
+"use strict";
+
+
+/* =========================================
+   THEME
+========================================== */
+
+const themeToggle =
+    document.getElementById("themeToggle");
+
+
+function updateThemeButton() {
+
+    const dark =
+        document.body.classList.contains("dark");
+
+    themeToggle.textContent =
+        dark
+        ? "☀️ Light Mode"
+        : "🌙 Dark Mode";
+}
+
+
+const savedTheme =
+    localStorage.getItem("ezth-theme");
+
+
+if (savedTheme === "dark") {
+
+    document.body.classList.add("dark");
+
+}
+
+
+updateThemeButton();
+
+
+themeToggle.addEventListener(
+    "click",
+    function () {
+
+        document.body.classList.toggle("dark");
+
+        localStorage.setItem(
+            "ezth-theme",
+            document.body.classList.contains("dark")
+                ? "dark"
+                : "light"
+        );
+
+        updateThemeButton();
+
+    }
+);
+
+
+/* =========================================
+   NUMBER HELPERS
+========================================== */
+
+function getNumber(id) {
+
+    return parseFloat(
+        document.getElementById(id).value
+    );
+}
+
+
+function formatNumber(value) {
+
+    return value.toLocaleString(
+        undefined,
+        {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        }
+    );
+}
+
+
+/* =========================================
+   PRESENT VALUE FUNCTION
+========================================== */
+
+function calculatePriceFromYield(
+    yieldRate,
+    price,
+    faceValue,
+    couponPayment,
+    periods,
+    frequency
+) {
+
+    const periodicYield =
+        yieldRate / frequency;
+
+    let presentValue = 0;
+
+
+    /*
+       Prevent invalid discount factors.
+    */
+
+    if (periodicYield <= -1) {
+
+        return Infinity;
+
+    }
+
+
+    for (
+        let period = 1;
+        period <= periods;
+        period++
+    ) {
+
+        presentValue +=
+            couponPayment /
+            Math.pow(
+                1 + periodicYield,
+                period
+            );
+
+    }
+
+
+    presentValue +=
+        faceValue /
+        Math.pow(
+            1 + periodicYield,
+            periods
+        );
+
+
+    return presentValue - price;
+}
+
+
+/* =========================================
+   YTM SOLVER
+   Bisection Method
+========================================== */
+
+function solveYTM(
+    price,
+    faceValue,
+    couponPayment,
+    periods,
+    frequency
+) {
+
+    /*
+       Search range:
+
+       -99.99% to 1000%
+
+       This provides a broad range while
+       keeping the discount factor valid.
+    */
+
+    let low = -0.9999;
+
+    let high = 10;
+
+
+    let lowValue =
+        calculatePriceFromYield(
+            low,
+            price,
+            faceValue,
+            couponPayment,
+            periods,
+            frequency
+        );
+
+
+    let highValue =
+        calculatePriceFromYield(
+            high,
+            price,
+            faceValue,
+            couponPayment,
+            periods,
+            frequency
+        );
+
+
+    /*
+       Expand upper bound if necessary.
+    */
+
+    let attempts = 0;
+
+    while (
+        lowValue * highValue > 0 &&
+        attempts < 20
+    ) {
+
+        high *= 2;
+
+        highValue =
+            calculatePriceFromYield(
+                high,
+                price,
+                faceValue,
+                couponPayment,
+                periods,
+                frequency
+            );
+
+        attempts++;
+
+    }
+
+
+    /*
+       If there is no valid bracket,
+       return null.
+    */
+
+    if (
+        !Number.isFinite(lowValue) ||
+        !Number.isFinite(highValue) ||
+        lowValue * highValue > 0
+    ) {
+
+        return null;
+
+    }
+
+
+    /*
+       Bisection iterations.
+    */
+
+    for (
+        let i = 0;
+        i < 200;
+        i++
+    ) {
+
+        const middle =
+            (low + high) / 2;
+
+
+        const middleValue =
+            calculatePriceFromYield(
+                middle,
+                price,
+                faceValue,
+                couponPayment,
+                periods,
+                frequency
+            );
+
+
+        if (
+            Math.abs(middleValue) < 0.0000001
+        ) {
+
+            return middle * frequency;
+
+        }
+
+
+        if (
+            lowValue * middleValue <= 0
+        ) {
+
+            high = middle;
+
+            highValue =
+                middleValue;
+
+        } else {
+
+            low = middle;
+
+            lowValue =
+                middleValue;
+
+        }
+
+    }
+
+
+    return (
+        (low + high) /
+        2
+    ) * frequency;
+
+}
+
+
+/* =========================================
+   CALCULATE YTM
+========================================== */
+
+function calculateYTM() {
+
+    const price =
+        getNumber("bondPrice");
+
+    const faceValue =
+        getNumber("faceValue");
+
+    const couponRate =
+        getNumber("couponRate");
+
+    const years =
+        getNumber("years");
+
+    const frequency =
+        parseInt(
+            document.getElementById(
+                "frequency"
+            ).value,
+            10
+        );
+
+    const currency =
+        document.getElementById(
+            "currency"
+        ).value;
+
+
+    /* =====================================
+       VALIDATION
+    ====================================== */
+
+    if (
+        !Number.isFinite(price) ||
+        !Number.isFinite(faceValue) ||
+        !Number.isFinite(couponRate) ||
+        !Number.isFinite(years) ||
+
+        price <= 0 ||
+        faceValue <= 0 ||
+        couponRate < 0 ||
+        years <= 0
+    ) {
+
+        showStatus(
+            "Please enter valid bond information.",
+            ""
+        );
+
+        return;
+
+    }
+
+
+    /*
+       Number of coupon periods.
+    */
+
+    const periods =
+        Math.max(
+            1,
+            Math.round(
+                years * frequency
+            )
+        );
+
+
+    /*
+       Coupon payment per period.
+    */
+
+    const annualCoupon =
+        faceValue *
+        (couponRate / 100);
+
+
+    const couponPayment =
+        annualCoupon /
+        frequency;
+
+
+    /*
+       Solve YTM.
+    */
+
+    const ytm =
+        solveYTM(
+            price,
+            faceValue,
+            couponPayment,
+            periods,
+            frequency
+        );
+
+
+    if (
+        ytm === null ||
+        !Number.isFinite(ytm)
+    ) {
+
+        showStatus(
+            "A YTM could not be calculated from these inputs. Please check the bond price, face value, coupon rate and maturity.",
+            ""
+        );
+
+        return;
+
+    }
+
+
+    /*
+       Total coupon payments.
+    */
+
+    const totalCoupons =
+        couponPayment *
+        periods;
+
+
+    /*
+       Price as percentage of par.
+    */
+
+    const pricePercent =
+        (price / faceValue) * 100;
+
+
+    /*
+       Difference from face value.
+    */
+
+    const priceDifference =
+        price - faceValue;
+
+
+    /* =====================================
+       DISPLAY RESULTS
+    ====================================== */
+
+    document.getElementById(
+        "ytmResult"
+    ).textContent =
+        ytm.toFixed(4) + "%";
+
+
+    document.getElementById(
+        "annualCoupon"
+    ).textContent =
+        currency +
+        formatNumber(
+            annualCoupon
+        );
+
+
+    document.getElementById(
+        "couponPayment"
+    ).textContent =
+        currency +
+        formatNumber(
+            couponPayment
+        );
+
+
+    document.getElementById(
+        "totalCoupons"
+    ).textContent =
+        currency +
+        formatNumber(
+            totalCoupons
+        );
+
+
+    document.getElementById(
+        "pricePercent"
+    ).textContent =
+        pricePercent.toFixed(2) +
+        "%";
+
+
+    document.getElementById(
+        "priceDifference"
+    ).textContent =
+        (priceDifference >= 0 ? "+" : "") +
+        currency +
+        formatNumber(
+            priceDifference
+        );
+
+
+    /* =====================================
+       BOND STATUS
+    ====================================== */
+
+    if (
+        price > faceValue + 0.01
+    ) {
+
+        showStatus(
+            "Premium Bond — the bond is trading above face value. Its YTM is generally below the coupon rate.",
+            "premium"
+        );
+
+    }
+
+    else if (
+        price < faceValue - 0.01
+    ) {
+
+        showStatus(
+            "Discount Bond — the bond is trading below face value. Its YTM is generally above the coupon rate.",
+            "discount"
+        );
+
+    }
+
+    else {
+
+        showStatus(
+            "Bond at Par — the bond price is approximately equal to face value, so YTM is generally close to the coupon rate.",
+            "par"
+        );
+
+    }
+
+}
+
+
+/* =========================================
+   STATUS
+========================================== */
+
+function showStatus(
+    message,
+    className
+) {
+
+    const status =
+        document.getElementById(
+            "bondStatus"
+        );
+
+
+    status.className =
+        "status-box " +
+        className;
+
+
+    status.textContent =
+        message;
+
+}
+
+
+/* =========================================
+   RESET
+========================================== */
+
+function resetCalculator() {
+
+    document.getElementById(
+        "bondPrice"
+    ).value = "950";
+
+
+    document.getElementById(
+        "faceValue"
+    ).value = "1000";
+
+
+    document.getElementById(
+        "couponRate"
+    ).value = "5";
+
+
+    document.getElementById(
+        "years"
+    ).value = "5";
+
+
+    document.getElementById(
+        "frequency"
+    ).value = "2";
+
+
+    document.getElementById(
+        "currency"
+    ).value = "$";
+
+
+    document.getElementById(
+        "ytmResult"
+    ).textContent = "—";
+
+
+    document.getElementById(
+        "annualCoupon"
+    ).textContent = "—";
+
+
+    document.getElementById(
+        "couponPayment"
+    ).textContent = "—";
+
+
+    document.getElementById(
+        "totalCoupons"
+    ).textContent = "—";
+
+
+    document.getElementById(
+        "pricePercent"
+    ).textContent = "—";
+
+
+    document.getElementById(
+        "priceDifference"
+    ).textContent = "—";
+
+
+    showStatus(
+        "Enter your bond information and calculate YTM.",
+        ""
+    );
+
+}
+
+
+/* =========================================
+   EVENTS
+========================================== */
+
+document.getElementById(
+    "calculateButton"
+).addEventListener(
+    "click",
+    calculateYTM
+);
+
+
+document.getElementById(
+    "resetButton"
+).addEventListener(
+    "click",
+    resetCalculator
+);
+
+
+/* =========================================
+   ENTER KEY
+========================================== */
+
+document.querySelectorAll(
+    "#bondPrice, #faceValue, #couponRate, #years"
+).forEach(
+    function(input) {
+
+        input.addEventListener(
+            "keydown",
+            function(event) {
+
+                if (
+                    event.key === "Enter"
+                ) {
+
+                    calculateYTM();
+
+                }
+
+            }
+        );
+
+    }
+);
+
+
+/* =========================================
+   CURRENT YEAR
+========================================== */
+
+document.getElementById(
+    "currentYear"
+).textContent =
+    new Date().getFullYear();
+
+</script>
+
+
+</body>
+</html>
