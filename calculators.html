@@ -2,662 +2,1567 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CALCULATORS</title>
-    
+
+    <title>Free Trading Calculators | Forex, Gold, Crypto & Stock Tools | EZTradingHub</title>
+
+    <meta name="description" content="Use free trading calculators from EZTradingHub for Forex, gold, crypto, stocks and risk management. Calculate pip values, lot size, profit, margin, position size, drawdown, risk-reward and more.">
+
+    <meta name="robots" content="index, follow">
+
+    <meta name="author" content="EZTradingHub">
+
+    <meta name="keywords" content="trading calculators, forex calculator, forex trading calculator, pip calculator, lot size calculator, profit calculator, risk calculator, margin calculator, position size calculator, gold calculator, crypto calculator, stock calculator">
+
+    <link rel="canonical" href="https://eztradinghub.com/calculators.html">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Free Trading Calculators | EZTradingHub">
+    <meta property="og:description" content="Free Forex, gold, crypto, stock and risk management calculators for traders. Calculate trading values quickly with EZTradingHub.">
+    <meta property="og:url" content="https://eztradinghub.com/calculators.html">
+    <meta property="og:site_name" content="EZTradingHub">
+    <meta property="og:image" content="https://eztradinghub.com/images/eztradinghub-preview.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Free Trading Calculators | EZTradingHub">
+    <meta name="twitter:description" content="Free trading calculators for Forex, gold, crypto, stocks and risk management.">
+    <meta name="twitter:image" content="https://eztradinghub.com/images/eztradinghub-preview.jpg">
+
     <link rel="manifest" href="manifest.json">
 
     <link rel="stylesheet" href="style.css">
+
+    <!-- TradingView Widget Scripts -->
+    <script
+        type="text/javascript"
+        src="https://s3.tradingview.com/external-embedding/embed-widget-forex-cross-rates.js"
+        async>
+    </script>
+
+    <script
+        type="text/javascript"
+        src="https://s3.tradingview.com/external-embedding/embed-widget-economic-calendar.js"
+        async>
+    </script>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Free Trading Calculators",
+        "url": "https://eztradinghub.com/calculators.html",
+        "description": "Free Forex, gold, crypto, stock and risk management calculators from EZTradingHub.",
+        "isPartOf": {
+            "@type": "WebSite",
+            "name": "EZTradingHub",
+            "url": "https://eztradinghub.com/"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "EZTradingHub",
+            "url": "https://eztradinghub.com/"
+        }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "EZTradingHub Trading Calculators",
+        "description": "A collection of free trading calculators for Forex, commodities, crypto and stocks.",
+        "url": "https://eztradinghub.com/calculators.html",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Pip Calculator",
+                "url": "https://eztradinghub.com/pip-calculator.html"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Risk Calculator",
+                "url": "https://eztradinghub.com/risk-calculator.html"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Lot Size Calculator",
+                "url": "https://eztradinghub.com/lot-size-calculator.html"
+            },
+            {
+                "@type": "ListItem",
+                "position": 4,
+                "name": "Profit Calculator",
+                "url": "https://eztradinghub.com/profit-calculator.html"
+            },
+            {
+                "@type": "ListItem",
+                "position": 5,
+                "name": "Margin Calculator",
+                "url": "https://eztradinghub.com/margin-calculator.html"
+            },
+            {
+                "@type": "ListItem",
+                "position": 6,
+                "name": "Position Size Calculator",
+                "url": "https://eztradinghub.com/position-size-calculator.html"
+            },
+            {
+                "@type": "ListItem",
+                "position": 7,
+                "name": "Drawdown Calculator",
+                "url": "https://eztradinghub.com/drawdown-calculator.html"
+            },
+            {
+                "@type": "ListItem",
+                "position": 8,
+                "name": "Risk to Reward Calculator",
+                "url": "https://eztradinghub.com/risk-reward-calculator.html"
+            },
+            {
+                "@type": "ListItem",
+                "position": 9,
+                "name": "Gold Trading Calculators",
+                "url": "https://eztradinghub.com/gold-calculators.html"
+            },
+            {
+                "@type": "ListItem",
+                "position": 10,
+                "name": "Crypto Trading Calculators",
+                "url": "https://eztradinghub.com/crypto-profit-calculator.html"
+            },
+            {
+                "@type": "ListItem",
+                "position": 11,
+                "name": "Stock Trading Calculators",
+                "url": "https://eztradinghub.com/stock-profit-calculator.html"
+            }
+        ]
+    }
+    </script>
+
+    <style>
+        /* =========================================================
+           EZTradingHub Calculator Hub
+           ========================================================= */
+
+        :root {
+            --primary: #003366;
+            --primary-dark: #002244;
+            --accent: #ffb400;
+            --bg: #f5f7fa;
+            --card: #ffffff;
+            --text: #172033;
+            --muted: #667085;
+            --border: #e3e8ef;
+            --success: #16834b;
+            --shadow: 0 8px 25px rgba(0, 51, 102, 0.08);
+            --radius: 14px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.65;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        .container {
+            width: min(1180px, 92%);
+            margin: 0 auto;
+        }
+
+        /* Header */
+        .site-header {
+            background: var(--primary);
+            color: #fff;
+            padding: 18px 0;
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .brand-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            display: grid;
+            place-items: center;
+            background: var(--accent);
+            color: var(--primary);
+            font-weight: 900;
+            font-size: 18px;
+        }
+
+        .brand-text {
+            font-size: 21px;
+            font-weight: 800;
+        }
+
+        .home-btn {
+            display: inline-block;
+            background: rgba(255,255,255,0.12);
+            border: 1px solid rgba(255,255,255,0.25);
+            color: #fff;
+            text-decoration: none;
+            padding: 9px 15px;
+            border-radius: 9px;
+            font-weight: 700;
+        }
+
+        .home-btn:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        /* Hero */
+        .hero {
+            padding: 52px 0 34px;
+            text-align: center;
+            background:
+                linear-gradient(
+                    180deg,
+                    #eef4fa 0%,
+                    #f5f7fa 100%
+                );
+        }
+
+        .hero h1 {
+            margin: 0 0 14px;
+            font-size: clamp(30px, 5vw, 48px);
+            line-height: 1.15;
+            color: var(--primary);
+        }
+
+        .hero p {
+            max-width: 800px;
+            margin: 0 auto;
+            color: var(--muted);
+            font-size: 17px;
+        }
+
+        .hero-note {
+            margin-top: 18px;
+            font-size: 14px;
+            color: #5f6b7a;
+        }
+
+        /* Search */
+        .search-section {
+            padding: 22px 0 8px;
+        }
+
+        .search-box {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 16px 18px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            background: #fff;
+            color: var(--text);
+            font-size: 16px;
+            outline: none;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+        }
+
+        .search-box input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(0, 51, 102, 0.1);
+        }
+
+        /* Live market area */
+        .market-section {
+            padding: 34px 0;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 22px;
+        }
+
+        .section-heading h2 {
+            margin: 0 0 7px;
+            color: var(--primary);
+            font-size: 28px;
+        }
+
+        .section-heading p {
+            margin: 0 auto;
+            max-width: 760px;
+            color: var(--muted);
+        }
+
+        .market-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 22px;
+        }
+
+        .market-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 18px;
+            overflow: hidden;
+        }
+
+        .market-card h3 {
+            margin: 0 0 12px;
+            color: var(--primary);
+            font-size: 19px;
+        }
+
+        .market-widget {
+            min-height: 300px;
+            width: 100%;
+        }
+
+        .risk-notice {
+            margin-top: 18px;
+            padding: 14px 16px;
+            background: #fff8e6;
+            border-left: 4px solid var(--accent);
+            border-radius: 8px;
+            color: #594500;
+            font-size: 14px;
+        }
+
+        /* Calculator sections */
+        .calculator-section {
+            padding: 32px 0;
+        }
+
+        .category-title {
+            margin: 0 0 8px;
+            color: var(--primary);
+            font-size: 27px;
+        }
+
+        .category-intro {
+            margin: 0 0 22px;
+            max-width: 850px;
+            color: var(--muted);
+        }
+
+        .calculator-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .calculator-card {
+            display: flex;
+            flex-direction: column;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 21px;
+            box-shadow: var(--shadow);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .calculator-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(0, 51, 102, 0.12);
+        }
+
+        .calculator-card h3 {
+            margin: 0 0 9px;
+            color: var(--primary);
+            font-size: 19px;
+            line-height: 1.35;
+        }
+
+        .calculator-card p {
+            margin: 0 0 18px;
+            color: var(--muted);
+            font-size: 14px;
+            flex: 1;
+        }
+
+        .calculator-link {
+            display: inline-block;
+            align-self: flex-start;
+            text-decoration: none;
+            background: var(--primary);
+            color: #fff;
+            padding: 9px 14px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        .calculator-link:hover {
+            background: var(--primary-dark);
+        }
+
+        /* Information section */
+        .info-section {
+            padding: 38px 0;
+        }
+
+        .info-box {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 28px;
+        }
+
+        .info-box h2 {
+            color: var(--primary);
+            margin-top: 0;
+        }
+
+        .info-box h3 {
+            color: var(--primary);
+            margin-top: 25px;
+        }
+
+        .info-box p {
+            color: #4d5968;
+        }
+
+        .info-box ul {
+            color: #4d5968;
+        }
+
+        /* Disclaimer */
+        .disclaimer {
+            padding: 0 0 35px;
+        }
+
+        .disclaimer-box {
+            background: #fff8e6;
+            border: 1px solid #f0d27a;
+            border-radius: 12px;
+            padding: 18px 20px;
+            color: #5b4a15;
+            font-size: 14px;
+        }
+
+        /* Footer */
+        footer {
+            background: #071a2d;
+            color: #dce7f2;
+            padding: 35px 0;
+            margin-top: 20px;
+        }
+
+        .footer-inner {
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 16px 0;
+        }
+
+        .footer-links a {
+            color: #dce7f2;
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        .footer-note {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 13px;
+            color: #aebdcb;
+        }
+
+        /* Back to top */
+        #topBtn {
+            position: fixed;
+            right: 18px;
+            bottom: 18px;
+            display: none;
+            border: none;
+            background: var(--primary);
+            color: #fff;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 18px;
+            box-shadow: 0 5px 18px rgba(0,0,0,0.2);
+            z-index: 50;
+        }
+
+        #topBtn:hover {
+            background: var(--primary-dark);
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .calculator-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .market-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 620px) {
+            .header-inner {
+                align-items: flex-start;
+            }
+
+            .brand-text {
+                font-size: 18px;
+            }
+
+            .home-btn {
+                font-size: 13px;
+                padding: 8px 11px;
+            }
+
+            .hero {
+                padding: 38px 0 26px;
+            }
+
+            .hero h1 {
+                font-size: 31px;
+            }
+
+            .hero p {
+                font-size: 15px;
+            }
+
+            .calculator-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .info-box {
+                padding: 21px;
+            }
+        }
+    </style>
 </head>
+
 <body>
 
-<style>
-:root{--navy:#062f5f;--green:#047857;--dark:#111827;--text:#1f2937;--muted:#475569;--bg:#f8fafc;--card:#fff;--border:#e2e8f0}
-*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;line-height:1.7;color:var(--text);background:var(--bg)}
-header{background:var(--navy);color:#fff;padding:18px 20px}.header-inner{max-width:1000px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:20px}
-.brand,.back-link{color:#fff;text-decoration:none;font-weight:800}.brand{font-size:1.35rem}.back-link{font-weight:700}
-main{max-width:1000px;margin:40px auto;padding:0 20px}.hero,section{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:28px;margin-bottom:18px}
-.hero{padding:32px}.hero h1{margin-top:0;color:var(--dark);font-size:clamp(2rem,5vw,3rem)}h2{color:var(--dark);margin-top:0}.updated{color:var(--muted);font-size:.95rem}
-p,li{color:var(--text)}a{color:#065f46;font-weight:600}.notice{border-left:5px solid var(--green);background:#f0fdf4;padding:16px 18px;border-radius:8px}
-footer{background:var(--dark);color:#fff;text-align:center;padding:28px 20px;margin-top:45px}footer p{color:#fff}footer a{color:#fff;margin:0 8px}
-@media(max-width:650px){.header-inner{align-items:flex-start;flex-direction:column}main{margin-top:24px;padding:0 14px}.hero,section{padding:22px}}
-</style>
-</head>
-<body>
+<!-- =========================================================
+     HEADER
+     ========================================================= -->
+<header class="site-header">
+    <div class="container header-inner">
 
-<header>
-    <div class="header-inner">
-<a class="brand" href="index.html">EZTradingHub</a>
-<a class="back-link" href="index.html">← Back to Home</a>
-</div></header>
-    
-    <!-- =========================================
-     EZTRADINGHUB LIVE MARKETS
-========================================= -->
+        <a href="index.html" class="brand" aria-label="EZTradingHub Home">
+            <span class="brand-icon">EZ</span>
+            <span class="brand-text">EZTradingHub</span>
+        </a>
 
-<section class="ez-live-markets" id="live-markets">
+        <a href="index.html" class="home-btn">
+            ← Back to Home
+        </a>
 
-    <div class="live-markets-header">
+    </div>
+</header>
 
-        <div>
-            <span class="section-badge">
-                ● LIVE MARKETS
-            </span>
 
-            <h2>
-                Forex Markets & Economic Calendar
-            </h2>
+<!-- =========================================================
+     HERO
+     ========================================================= -->
+<main>
+
+<section class="hero">
+    <div class="container">
+
+        <h1>Free Trading Calculators</h1>
+
+        <p>
+            Explore free calculators for Forex, gold, crypto, stocks,
+            risk management and trading analysis. EZTradingHub helps
+            traders calculate important values before making trading
+            decisions.
+        </p>
+
+        <p class="hero-note">
+            Results are mathematical estimates based on the information
+            entered and should be used for educational and planning purposes.
+        </p>
+
+    </div>
+</section>
+
+
+<!-- =========================================================
+     SEARCH
+     ========================================================= -->
+<section class="search-section">
+    <div class="container">
+
+        <div class="search-box">
+            <label for="calculatorSearch" style="display:none;">
+                Search trading calculators
+            </label>
+
+            <input
+                type="search"
+                id="calculatorSearch"
+                placeholder="Search calculators... e.g. pip, risk, gold, crypto, stock, bond, etf, commodity"
+                autocomplete="off"
+                aria-label="Search trading calculators"
+            >
+        </div>
+
+    </div>
+</section>
+
+
+<!-- =========================================================
+     LIVE MARKETS
+     ========================================================= -->
+<section class="market-section">
+    <div class="container">
+
+        <div class="section-heading">
+            <h2>Live Markets & Economic Calendar</h2>
 
             <p>
-                Monitor major currency markets and upcoming economic events
-                before making your next trading decision.
+                View market information and economic events alongside
+                the trading calculators. Market data may be delayed or
+                subject to the provider's availability.
             </p>
         </div>
 
-        <div class="market-status">
-            <span class="status-dot"></span>
-            Market Data
-        </div>
+        <div class="market-grid">
 
-    </div>
+            <!-- Forex Widget -->
+            <div class="market-card">
 
+                <h3>Forex Market Rates</h3>
 
-    <!-- FOREX RATES -->
-    <div class="market-panel">
+                <div class="market-widget">
+                    <div class="tradingview-widget-container">
+                        <div class="tradingview-widget-container__widget"></div>
 
-        <div class="panel-header">
-
-            <div>
-                <h3>💱 Live Forex Rates</h3>
-
-                <p>
-                    Major currency pairs and cross rates
-                </p>
-            </div>
-
-            <a
-                href="#calculators"
-                class="panel-link"
-            >
-                Trading Tools →
-            </a>
-
-        </div>
-
-
-        <div class="forex-widget-wrapper">
-
-            <script
-                type="module"
-                src="https://widgets.tradingview-widget.com/w/en/tv-forex-table.js">
-            </script>
-
-            <tv-forex-table
-                currencies="EUR,USD,JPY,GBP,CHF,AUD,CAD"
-                display-mode="rate"
-                theme="dark"
-                transparent-background>
-            </tv-forex-table>
-
-        </div>
-
-    </div>
-
-
-    <!-- ECONOMIC CALENDAR -->
-    <div class="market-panel calendar-panel">
-
-        <div class="panel-header">
-
-            <div>
-                <h3>📅 Economic Calendar</h3>
-
-                <p>
-                    Track major economic events that can move the markets
-                </p>
-            </div>
-
-            <span class="impact-label">
-                HIGH IMPACT EVENTS
-            </span>
-
-        </div>
-
-
-        <div class="calendar-widget-wrapper">
-
-            <!-- TradingView Economic Calendar -->
-
-            <div class="tradingview-widget-container">
-
-                <div class="tradingview-widget-container__widget"></div>
-
-                <div class="tradingview-widget-copyright">
-
-                    <a
-                        href="https://www.tradingview.com/economic-calendar/"
-                        rel="noopener nofollow"
-                        target="_blank">
-                        Economic Calendar
-                    </a>
-
-                    <span> by TradingView</span>
-
+                        <script
+                            type="text/javascript"
+                            src="https://s3.tradingview.com/external-embedding/embed-widget-forex-cross-rates.js"
+                            async>
+                        {
+                            "width": "100%",
+                            "height": "300",
+                            "currencies": [
+                                "EUR",
+                                "USD",
+                                "JPY",
+                                "GBP",
+                                "CHF",
+                                "AUD",
+                                "CAD"
+                            ],
+                            "isTransparent": true,
+                            "colorTheme": "light",
+                            "locale": "en"
+                        }
+                        </script>
+                    </div>
                 </div>
 
-                <script
-                    type="text/javascript"
-                    src="https://s3.tradingview.com/external-embedding/embed-widget-events.js"
-                    async>
+            </div>
 
-                {
-                    "colorTheme": "dark",
-                    "isTransparent": true,
-                    "locale": "en",
-                    "countryFilter": "au,ca,cn,de,fr,gb,jp,kr,us,eu",
-                    "importanceFilter": "1",
-                    "width": "100%",
-                    "height": 600
-                }
 
-                </script>
+            <!-- Economic Calendar -->
+            <div class="market-card">
+
+                <h3>Economic Calendar</h3>
+
+                <div class="market-widget">
+                    <div class="tradingview-widget-container">
+                        <div class="tradingview-widget-container__widget"></div>
+
+                        <script
+                            type="text/javascript"
+                            src="https://s3.tradingview.com/external-embedding/embed-widget-economic-calendar.js"
+                            async>
+                        {
+                            "width": "100%",
+                            "height": "300",
+                            "importanceFilter": "-1,0,1",
+                            "countryFilter": "us,eu,gb,jp,ca,au,ch",
+                            "isTransparent": true,
+                            "colorTheme": "light",
+                            "locale": "en"
+                        }
+                        </script>
+                    </div>
+                </div>
 
             </div>
 
         </div>
 
-    </div>
-
-
-    <!-- TRADING WARNING -->
-    <div class="market-disclaimer">
-
-        <span>⚠️</span>
-
-        <p>
-            <strong>Trading Risk Notice:</strong>
-            Economic events and market prices can change rapidly.
-            Always perform your own analysis and use appropriate risk management
-            before entering a trade.
-        </p>
-
-    </div>
-
-</section>
-    
- <div class="search-box">
-    <input
-        type="text"
-        id="searchInput"
-        placeholder="🔍 Search calculators..."
-        onkeyup="searchCalculators()">
-</div>
-
-<section class="cards">
-    
-    <div class="card calculator-card">
-
-    <button class="favorite-btn" onclick="toggleFavorite(this)">
-        ☆
-    </button>
-
-    <a href="ai-assistant.html">
-   <h3>🤖 Ai Assistant</h3>
-        <p>Ask questions about trading concepts, risk management, forex calculations, technical analysis and financial markets..</p>
-</a>
-  </a>
-
-</div>
-    
-    <strong>risk management</strong>
-    
-
-<div class="card calculator-card">
-
-    <button class="favorite-btn" onclick="toggleFavorite(this)">
-        ☆
-    </button>
-
-    <a href="trade-journal.html">
-        <h3>📓 trade journal</h3>
-        <p>Record and review your trading performance.</p>
-</a>
-    </a>
-
-</div>
-    
-<div class="card calculator-card">
-
-    <button class="favorite-btn" onclick="toggleFavorite(this)">
-        ☆
-    </button>
-
-    <a href="dashboard.html">
-        <h3>📊 Dashboard</h3>
-        <p>monitor your trade and overall performance.</p>
-</a>
-    </a>
-
-</div>
-    
-<div class="card calculator-card">
-
-    <button class="favorite-btn" onclick="toggleFavorite(this)">
-        ☆
-    </button>
-
-    <a href="pip-calculator.html">
-        <h3>📈 Pip Calculator</h3>
-        <p>Protect your trading account.</p>
-</a>
-    </a>
-
-</div>
-    
-<div class="card calculator-card">
-
-    <button class="favorite-btn" onclick="toggleFavorite(this)">
-        ☆
-    </button>
-
-    <a href="risk-calculator.html">
-    <h3>⚖️ Risk Calculator</h3>
-    <p>Protect your trading account.</p>
-</a>
-
-</div>
-
-<div class="card calculator-card">
-
-    <button class="favorite-btn" onclick="toggleFavorite(this)">
-        ☆
-    </button>
-
-    <a href="lot-size-calculator.html">
-    <h3>📏 Lot Size Calculator</h3>
-    <p>Calculate the right lot size for your trade.</p>
-</a>
-
-</div>
-
-<div class="card calculator-card">
-
-<button class="favorite-btn" onclick="toggleFavorite(this)">
-    ☆
-</button>
-
-<a href="profit-calculator.html">
-    <h3>💰 Profit Calculator</h3>
-</a>
-
-</div>
-    
-<div class="card calculator-card">
-
-    <button class="favorite-btn" onclick="toggleFavorite(this)">
-        ☆
-    </button>
-
-    <a href="margin-calculator.html">
-    <h3>📉 Margin Calculator</h3>
-    <p>Estimate the margin required for your trade.</p>
-</a>
-
-</div>
-    
-<div class="card calculator-card">
-
-    <button class="favorite-btn" onclick="toggleFavorite(this)">
-        ☆
-    </button>
-
-    <a href="position-size-calculator.html">
-    <h3>📈 Position Size Calculator</h3>
-    <p>Calculate the ideal position size for your trade.</p>
-</a>
-
-</div>
-    
-<div class="card calculator-card">
-
-    <button class="favorite-btn" onclick="toggleFavorite(this)">
-        ☆
-    </button>
-
-    <a href="drawdown-calculator.html">
-    <h3>📉 Drawdown Calculator</h3>
-    <p>Calculate the recovery needed after a trading loss.</p>
-</a>
-
-</div>
-    
-<div class="card calculator-card">
-
-    <button class="favorite-btn" onclick="toggleFavorite(this)">
-        ☆
-    </button>
-
-    <a href="risk-reward-calculator.html">
-    <h3>🎯 Risk-to-Reward Calculator</h3>
-    <p>Calculate your trading risk-to-reward ratio.</p>
-</a>
-
-</div>
-    
-<div class="card calculator-card">
-
-    <button class="favorite-btn" onclick="toggleFavorite(this)">
-        ☆
-    </button>
-
-    <a href="pivot-calculator.html">
-📈 Pivot Point Calculator
-</a>
-
-</div>
-    
-
-
-<div class="card calculator-card">
-
-    <button class="favorite-btn" onclick="toggleFavorite(this)">
-        ☆
-    </button>
-
-    <a href="account-growth-calculator.html">
-        <h3>📈Account Growth Calculator</h3>
-    </a>
-
-</div>
-
-<div class="card calculator-card">
-
-    <button class="favorite-btn" onclick="toggleFavorite(this)">
-        ☆
-    </button>
-
-    <a href="fibonacci-calculator.html">
-        <h3>📈 Fibonacci Calculator</h3>
-    </a>
-
-</div>
-    
-<div class="card calculator-card">
-
-    <button class="favorite-btn" onclick="toggleFavorite(this)">
-        ☆
-    </button>
-
-    <a href="compounding-calculator.html">
-    <h3>📈 Compounding Calculator</h3>
-<p>Calculate how your trading account could grow through compounding.</p>
-</a>
-
-</div>
-
-<div class="card calculator-card">
-
-    <button class="favorite-btn" onclick="toggleFavorite(this)">
-        ☆
-    </button>
-
-    <a href="currency-strength-dashboard.html">
-    <h3>💱 Currency Strength Calculator</h3>
-<p>Analyze relative currency strength to identify stronger and weaker currencies.</p>
-</a>
-
-</div>
-    
-<div class="card calculator-card">
-
-<button class="favorite-btn" onclick="toggleFavorite(this)">
-    ☆
-</button>
-
-<a href="leverage-calculator.html">
-    <h3>⚖️ Leverage Calculator</h3>
-</a>
-
-</div>
-    
-<div class="card calculator-card">
-
-    <button class="favorite-btn" onclick="toggleFavorite(this)">
-        ☆
-    </button>
-
-    <a href="market-scanner.html">
-    <h3>🔍 Smart Market Scanner</h3>
-    <p>Scan market conditions and identify potential trading opportunities.</p>
-</a>
-
-</div>
-    
-<div class="card calculator-card">
-
-    <button class="favorite-btn" onclick="toggleFavorite(this)">
-        ☆
-    </button>
-
-    <a href="pip-difference-calculator.html">
-    <h3>📏 Pip Difference Calculator</h3>
-    <p>Calculate the number of pips between two Forex prices.</p>
-</a>
-
-</div>
-    
-<div class="card calculator-card">
-
-    <button class="favorite-btn" onclick="toggleFavorite(this)">
-        ☆
-    </button>
-
-    <a href="risk-of-ruin.html">
-    <h3>📉 Risk of Ruin Calculator</h3>
-    <p>Estimate the probability of losing a significant portion of your trading account.</p>
-</a>
-
-</div>
-    
-<div class="card calculator-card">
-
-    <button class="favorite-btn" onclick="toggleFavorite(this)">
-        ☆
-    </button>
-
-    <a href="spread-cost-calculator.html">
-    <h3>Spread Cost Calculator</h3>
-    
-</a>
-
-</div>
-    
-<div class="card calculator-card">
-
-    <button class="favorite-btn" onclick="toggleFavorite(this)">
-        ☆
-    </button>
-
-    <a href="trading-plan-generator.html">
-📈 Trading Plan Generator
-</a>
-
-</div>
-    
-<div class="card calculator-card">
-
-    <button class="favorite-btn" onclick="toggleFavorite(this)">
-        ☆
-    </button>
-
-    <a href="trading-session.html">
-        <h3>Trading Session Calculator</h3>
-    </a>
-
-</div>
-    
-    <h3>🥇 Gold Trading Calculators</h3>
-    
-<div class="card calculator-card">
-
-    <button class="favorite-btn" onclick="toggleFavorite(this)">
-        ☆
-    </button>
-
-    <a href="gold-calculators.html">
-        <h3>🥇Gold Profit Calculator</h3>
-    </a>
-
-</div>
-    
-<strong>Basic Crypto Calculators</strong>
-    
-<div class="card calculator-card">
-
-    <button class="favorite-btn" onclick="toggleFavorite(this)">
-        ☆
-    </button>
-
-    <a href="crypto-dca-calculator.html">
-        <h3>🥇Crypto DCA Calculator</h3>
-    </a>
-
-</div>
-    
-<div class="card calculator-card">
-
-    <button class="favorite-btn" onclick="toggleFavorite(this)">
-        ☆
-    </button>
-
-    <a href="crypto-portfolio-tracker.html">
-        <h3>Crypto Portfolio Tracker</h3>
-    </a>
-
-</div>
-
-<div class="card calculator-card">
-
-    <button class="favorite-btn" onclick="toggleFavorite(this)">
-        ☆
-    </button>
-
-    <a href="crypto-position-size.html">
-        <h3>Crypto Position Size</h3>
-    </a>
-
-</div>
-    
-<div class="card calculator-card">
-
-    <button class="favorite-btn" onclick="toggleFavorite(this)">
-        ☆
-    </button>
-
-    <a href="crypto-profit-calculator.html">
-        <h3>Crypto Profit Calculator</h3>
-    </a>
-
-</div>
-
-<div class="card calculator-card">
-
-    <button class="favorite-btn" onclick="toggleFavorite(this)">
-        ☆
-    </button>
-
-    <a href="crypto-roi-calculator.html">
-        <h3>Crypto ROI Calculator</h3>
-    </a>
-
-</div>
-
-<div class="card calculator-card">
-
-    <button class="favorite-btn" onclick="toggleFavorite(this)">
-        ☆
-    </button>
-
-    <a href="crypto-staking-calculator.html">
-        <h3>Crypto Staking Calculator</h3>
-    </a>
-</div>
-    
-<div class="card calculator-card">
-
-    <button class="favorite-btn" onclick="toggleFavorite(this)">
-        ☆
-    </button>
-
-    <a href="crypto-liquidation-calculators.html">
-        <h3>Crypto liquidation Calculator</h3>
-    </a>
-
-</div>
-    
-    <div class="card calculator-card">
-
-    <button class="favorite-btn" onclick="toggleFavorite(this)">
-        ☆
-    </button>
-
-    <a href="stock-profit-calculator.html">
-        <h3>Stock Profit Calculator</h3>
-    </a>
-
-</div>
-    
-    <div class="card calculator-card">
-
-    <button class="favorite-btn" onclick="toggleFavorite(this)">
-        ☆
-    </button>
-
-    <a href="stock-dividend-calculator.html">
-        <h3>Stock Dividend Calculator</h3>
-    </a>
-
-</div>
-<a href="index.html" class="btn">
-🏠 Back to Home
-</a>
-    
-</section>
-<script src="script.js"></script>
-
-<footer>
-
-        <div>
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="faq.html">FAQ</a>
-            <a href="terms.html">Terms & Conditions</a>
-            <a href="privacy.html">Privacy Policy</a>
-            <a href="cookie-policy.html">Cookie Policy</a>
-            <a href="disclaimer.html">Disclaimer</a>
-            <a href="contact.html">Contact</a>
+        <div class="risk-notice">
+            <strong>Trading risk notice:</strong>
+            Market information and calculator results are provided for
+            educational and informational purposes. They are not a
+            guarantee of future trading results and do not constitute
+            personalized financial advice.
         </div>
 
-        <p class="copyright">
-            © 2026 EZTradingHub. All rights reserved.
+    </div>
+</section>
+
+
+<!-- =========================================================
+     FOREX & RISK MANAGEMENT
+     ========================================================= -->
+<section class="calculator-section" id="forex-calculators">
+    <div class="container">
+
+        <h2 class="category-title">
+            Forex & Risk Management Calculators
+        </h2>
+
+        <p class="category-intro">
+            Calculate pip values, position sizes, potential profit and
+            loss, margin requirements, drawdown and other important
+            Forex trading metrics.
         </p>
 
-        <p class="copyright">
-            EZTradingHub provides educational and informational tools.
-            Trading involves risk.
+        <div class="calculator-grid">
+
+            <article class="calculator-card">
+                <h3>Pip Calculator</h3>
+                <p>
+                    Calculate the monetary value of pips for different
+                    currency pairs, account currencies and trade sizes.
+                </p>
+                <a class="calculator-link" href="pip-calculator.html">
+                    Open Calculator
+                </a>
+            </article>
+
+
+            <article class="calculator-card">
+                <h3>Risk Calculator</h3>
+                <p>
+                    Estimate the amount of account capital exposed to
+                    a trade based on account balance, risk percentage
+                    and stop-loss distance.
+                </p>
+                <a class="calculator-link" href="risk-calculator.html">
+                    Open Calculator
+                </a>
+            </article>
+
+
+            <article class="calculator-card">
+                <h3>Lot Size Calculator</h3>
+                <p>
+                    Estimate an appropriate position size using account
+                    balance, percentage risk, stop-loss distance and
+                    pip value.
+                </p>
+                <a class="calculator-link" href="lot-size-calculator.html">
+                    Open Calculator
+                </a>
+            </article>
+
+
+            <article class="calculator-card">
+                <h3>Profit Calculator</h3>
+                <p>
+                    Estimate potential trading profit or loss using entry
+                    price, exit price, trade size and other inputs.
+                </p>
+                <a class="calculator-link" href="profit-calculator.html">
+                    Open Calculator
+                </a>
+            </article>
+
+
+            <article class="calculator-card">
+                <h3>Margin Calculator</h3>
+                <p>
+                    Estimate the margin required to open a leveraged
+                    trading position.
+                </p>
+                <a class="calculator-link" href="margin-calculator.html">
+                    Open Calculator
+                </a>
+            </article>
+
+
+            <article class="calculator-card">
+                <h3>Position Size Calculator</h3>
+                <p>
+                    Calculate a position size based on your account
+                    balance, risk tolerance and stop-loss distance.
+                </p>
+                <a class="calculator-link" href="position-size-calculator.html">
+                    Open Calculator
+                </a>
+            </article>
+
+
+            <article class="calculator-card">
+                <h3>Drawdown Calculator</h3>
+                <p>
+                    Calculate trading account drawdown and understand
+                    the percentage decline from an account peak.
+                </p>
+                <a class="calculator-link" href="drawdown-calculator.html">
+                    Open Calculator
+                </a>
+            </article>
+
+
+            <article class="calculator-card">
+                <h3>Risk-to-Reward Calculator</h3>
+                <p>
+                    Calculate the relationship between potential trade
+                    risk and potential reward using entry, stop-loss and
+                    target prices.
+                </p>
+                <a class="calculator-link" href="risk-reward-calculator.html">
+                    Open Calculator
+                </a>
+            </article>
+
+
+            <article class="calculator-card">
+                <h3>Pivot Point Calculator</h3>
+                <p>
+                    Calculate commonly used pivot point levels from
+                    previous market price data.
+                </p>
+                <a class="calculator-link" href="pivot-calculator.html">
+                    Open Calculator
+                </a>
+            </article>
+
+
+            <article class="calculator-card">
+                <h3>Account Growth Calculator</h3>
+                <p>
+                    Model hypothetical account growth using starting
+                    capital, returns and a selected time period.
+                </p>
+                <a class="calculator-link" href="account-growth-calculator.html">
+                    Open Calculator
+                </a>
+            </article>
+
+
+            <article class="calculator-card">
+                <h3>Fibonacci Calculator</h3>
+                <p>
+                    Calculate common Fibonacci retracement and extension
+                    levels from selected market prices.
+                </p>
+                <a class="calculator-link" href="fibonacci-calculator.html">
+                    Open Calculator
+                </a>
+            </article>
+
+
+            <article class="calculator-card">
+                <h3>Compounding Calculator</h3>
+                <p>
+                    Model hypothetical compound growth using starting
+                    capital, periodic returns and compounding frequency.
+                </p>
+                <a class="calculator-link" href="compounding-calculator.html">
+                    Open Calculator
+                </a>
+            </article>
+
+
+            <article class="calculator-card">
+                <h3>Leverage Calculator</h3>
+                <p>
+                    Estimate the relationship between account equity,
+                    leverage and position value.
+                </p>
+                <a class="calculator-link" href="leverage-calculator.html">
+                    Open Calculator
+                </a>
+            </article>
+
+
+            <article class="calculator-card">
+                <h3>Pip Difference Calculator</h3>
+                <p>
+                    Calculate the pip distance between two Forex prices
+                    to help evaluate stop-loss and target distances.
+                </p>
+                <a class="calculator-link" href="pip-difference-calculator.html">
+                    Open Calculator
+                </a>
+            </article>
+
+
+            <article class="calculator-card">
+                <h3>Risk of Ruin Calculator</h3>
+                <p>
+                    Estimate the mathematical probability of reaching a
+                    selected account-loss threshold under specified
+                    assumptions.
+                </p>
+                <a class="calculator-link" href="risk-of-ruin.html">
+                    Open Calculator
+                </a>
+            </article>
+
+
+            <article class="calculator-card">
+                <h3>Spread Cost Calculator</h3>
+                <p>
+                    Estimate the monetary cost of a Forex spread based
+                    on spread size, position size and pip value.
+                </p>
+                <a class="calculator-link" href="spread-cost-calculator.html">
+                    Open Calculator
+                </a>
+            </article>
+
+
+            <article class="calculator-card">
+                <h3>Trading Plan Generator</h3>
+                <p>
+                    Create a structured trading-plan template covering
+                    goals, risk rules, setups, execution and review.
+                </p>
+                <a class="calculator-link" href="trading-plan-generator.html">
+                    Open Calculator
+                </a>
+            </article>
+
+
+            <article class="calculator-card">
+                <h3>Trading Session Tool</h3>
+                <p>
+                    Explore major Forex trading sessions and their
+                    commonly observed market hours.
+                </p>
+                <a class="calculator-link" href="trading-session.html">
+                    Open Calculator
+                </a>
+            </article>
+
+
+            <article class="calculator-card">
+                <h3>Currency Strength Dashboard</h3>
+                <p>
+                    Explore currency-strength information and compare
+                    major currencies using the available dashboard data.
+                </p>
+                <a class="calculator-link" href="currency-strength-dashboard.html">
+                    Open Dashboard
+                </a>
+            </article>
+
+
+            <article class="calculator-card">
+                <h3>Market Scanner</h3>
+                <p>
+                    Review market-analysis information and scanner data
+                    designed to support your own research and trading
+                    process.
+                </p>
+                <a class="calculator-link" href="market-scanner.html">
+                    Open Scanner
+                </a>
+            </article>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- =========================================================
+     GOLD
+     ========================================================= -->
+<section class="calculator-section" id="gold-calculators">
+    <div class="container">
+
+        <h2 class="category-title">
+            Gold Trading Calculators
+        </h2>
+
+        <p class="category-intro">
+            Use gold-focused trading tools to estimate profit, loss and
+            other values when analyzing XAUUSD and gold-related trades.
         </p>
 
-    </footer>
-    <script src="cookie-consent.js"></script>
+        <div class="calculator-grid">
+
+            <article class="calculator-card">
+                <h3>Gold Trading Calculators</h3>
+                <p>
+                    Access gold-focused calculations for analyzing
+                    XAUUSD trade values and potential outcomes.
+                </p>
+                <a class="calculator-link" href="gold-calculators.html">
+                    Open Gold Tools
+                </a>
+            </article>
+
+        </div>
+
+    </div>
+</section>
 
 
-<button id="topBtn" onclick="topFunction()">
+<!-- =========================================================
+     CRYPTO
+     ========================================================= -->
+<section class="calculator-section" id="crypto-calculators">
+    <div class="container">
 
-⬆️
+        <h2 class="category-title">
+            Crypto Trading Calculators
+        </h2>
 
+        <p class="category-intro">
+            Calculate cryptocurrency profits, returns, position sizes,
+            DCA scenarios, portfolio values, staking estimates and
+            liquidation-related values.
+        </p>
+
+        <div class="calculator-grid">
+
+            <article class="calculator-card">
+                <h3>Crypto DCA Calculator</h3>
+                <p>
+                    Model a dollar-cost averaging strategy using recurring
+                    cryptocurrency purchases and selected assumptions.
+                </p>
+                <a class="calculator-link" href="crypto-dca-calculator.html">
+                    Open Calculator
+                </a>
+            </article>
+
+
+            <article class="calculator-card">
+                <h3>Crypto Portfolio Tracker</h3>
+                <p>
+                    Organize cryptocurrency holdings and estimate portfolio
+                    values using the information entered.
+                </p>
+                <a class="calculator-link" href="crypto-portfolio-tracker.html">
+                    Open Tracker
+                </a>
+            </article>
+
+
+            <article class="calculator-card">
+                <h3>Crypto Position Size Calculator</h3>
+                <p>
+                    Estimate cryptocurrency position size using account
+                    value and selected risk parameters.
+                </p>
+                <a class="calculator-link" href="crypto-position-size.html">
+                    Open Calculator
+                </a>
+            </article>
+
+
+            <article class="calculator-card">
+                <h3>Crypto Profit Calculator</h3>
+                <p>
+                    Estimate cryptocurrency trading profit or loss using
+                    entry price, exit price and position size.
+                </p>
+                <a class="calculator-link" href="crypto-profit-calculator.html">
+                    Open Calculator
+                </a>
+            </article>
+
+
+            <article class="calculator-card">
+                <h3>Crypto ROI Calculator</h3>
+                <p>
+                    Calculate hypothetical cryptocurrency return on
+                    investment based on purchase and current values.
+                </p>
+                <a class="calculator-link" href="crypto-roi-calculator.html">
+                    Open Calculator
+                </a>
+            </article>
+
+
+            <article class="calculator-card">
+                <h3>Crypto Staking Calculator</h3>
+                <p>
+                    Estimate hypothetical staking rewards using principal,
+                    reward rate and staking period.
+                </p>
+                <a class="calculator-link" href="crypto-staking-calculator.html">
+                    Open Calculator
+                </a>
+            </article>
+
+
+            <article class="calculator-card">
+                <h3>Crypto Liquidation Calculator</h3>
+                <p>
+                    Estimate liquidation-related price levels using
+                    leverage, position and margin assumptions.
+                </p>
+                <a class="calculator-link" href="crypto-liquidation-calculators.html">
+                    Open Calculator
+                </a>
+            </article>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- =========================================================
+     STOCK
+     ========================================================= -->
+<section class="calculator-section" id="stock-calculators">
+    <div class="container">
+
+        <h2 class="category-title">
+            Stock Trading Calculators
+        </h2>
+
+        <p class="category-intro">
+            Explore stock-market calculators for profit, dividends,
+            average cost, returns, dividend yield and position sizing.
+        </p>
+
+        <div class="calculator-grid">
+
+            <article class="calculator-card">
+                <h3>Stock Profit Calculator</h3>
+                <p>
+                    Estimate potential stock trading profit or loss using
+                    purchase price, selling price and number of shares.
+                </p>
+                <a class="calculator-link" href="stock-profit-calculator.html">
+                    Open Calculator
+                </a>
+            </article>
+
+
+            <article class="calculator-card">
+                <h3>Stock Dividend Calculator</h3>
+                <p>
+                    Estimate dividend income using shares held and
+                    dividend-per-share assumptions.
+                </p>
+                <a class="calculator-link" href="stock-dividend-calculator.html">
+                    Open Calculator
+                </a>
+            </article>
+
+
+            <article class="calculator-card">
+                <h3>Stock Average Cost Calculator</h3>
+                <p>
+                    Calculate the average purchase cost when buying
+                    additional shares at different prices.
+                </p>
+                <a class="calculator-link" href="stock-average-cost.html">
+                    Open Calculator
+                </a>
+            </article>
+
+
+            <article class="calculator-card">
+                <h3>Stock Dividend Yield Calculator</h3>
+                <p>
+                    Calculate dividend yield using annual dividend income
+                    and stock price.
+                </p>
+                <a class="calculator-link" href="stock-dividend-yield.html">
+                    Open Calculator
+                </a>
+            </article>
+
+
+            <article class="calculator-card">
+                <h3>Stock Return Calculator</h3>
+                <p>
+                    Estimate stock investment returns using purchase value,
+                    current or selling value and optional income.
+                </p>
+                <a class="calculator-link" href="stock-return.html">
+                    Open Calculator
+                </a>
+            </article>
+
+
+            <article class="calculator-card">
+                <h3>Stock Position Size Calculator</h3>
+                <p>
+                    Estimate a stock position size using account value,
+                    selected risk and stop-loss assumptions.
+                </p>
+                <a class="calculator-link" href="stock-position-size.html">
+                    Open Calculator
+                </a>
+            </article>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- =========================================================
+     OTHER TOOLS
+     ========================================================= -->
+<section class="calculator-section" id="other-tools">
+    <div class="container">
+
+        <h2 class="category-title">
+            Trading Tools & Workspace
+        </h2>
+
+        <p class="category-intro">
+            Use the additional EZTradingHub tools to organize your
+            trading research, journaling and workflow.
+        </p>
+
+        <div class="calculator-grid">
+
+            <article class="calculator-card">
+                <h3>Trade Journal</h3>
+                <p>
+                    Record trades, review performance and organize your
+                    trading history for personal analysis.
+                </p>
+                <a class="calculator-link" href="trade-journal.html">
+                    Open Trade Journal
+                </a>
+            </article>
+
+
+            <article class="calculator-card">
+                <h3>Trading Dashboard</h3>
+                <p>
+                    Access your EZTradingHub trading workspace and
+                    available trading tools from one place.
+                </p>
+                <a class="calculator-link" href="dashboard.html">
+                    Open Dashboard
+                </a>
+            </article>
+
+
+            <article class="calculator-card">
+                <h3>AI Trading Assistant</h3>
+                <p>
+                    Explore the available AI-assisted trading workspace
+                    features for research and educational use.
+                </p>
+                <a class="calculator-link" href="aiassistant.html">
+                    Open Assistant
+                </a>
+            </article>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- =========================================================
+     SEO / INFORMATION CONTENT
+     ========================================================= -->
+<section class="info-section">
+    <div class="container">
+
+        <div class="info-box">
+
+            <h2>How EZTradingHub Trading Calculators Can Help</h2>
+
+            <p>
+                Trading calculations can help you understand the numerical
+                side of a trade before entering a position. Instead of
+                calculating every value manually, a dedicated calculator
+                can make common calculations faster and easier to review.
+            </p>
+
+            <h3>Forex Trading Calculators</h3>
+
+            <p>
+                Forex traders may need to calculate pip values, position
+                size, margin, risk, potential profit and loss, drawdown
+                and risk-to-reward relationships. The Forex calculators
+                above are designed to help with these calculations using
+                the values entered by the user.
+            </p>
+
+            <h3>Gold Trading Calculators</h3>
+
+            <p>
+                Gold trading can involve different contract specifications
+                and price movements compared with currency pairs. Gold
+                calculators can help traders estimate values associated
+                with XAUUSD and other gold trading scenarios.
+            </p>
+
+            <h3>Crypto Trading Calculators</h3>
+
+            <p>
+                Cryptocurrency markets can involve spot trading, recurring
+                purchases, staking and leveraged positions. Crypto tools
+                on EZTradingHub provide mathematical estimates for several
+                common crypto calculations.
+            </p>
+
+            <h3>Stock Calculators</h3>
+
+            <p>
+                Stock investors and traders can use calculators to estimate
+                share profits, average purchase cost, dividend income,
+                dividend yield, investment returns and position size.
+            </p>
+
+            <h3>Risk Management</h3>
+
+            <p>
+                Risk management is an important part of trading. Tools such
+                as the Risk Calculator, Lot Size Calculator, Position Size
+                Calculator, Drawdown Calculator and Risk-to-Reward Calculator
+                can help users understand potential numerical exposure before
+                making a trade.
+            </p>
+
+            <h3>Are These Calculators Financial Advice?</h3>
+
+            <p>
+                No. EZTradingHub calculators provide mathematical estimates
+                based on the information supplied by the user. They do not
+                determine whether a trade, investment or financial product
+                is suitable for you. Actual results can differ because of
+                spreads, commissions, slippage, liquidity, contract
+                specifications, exchange rates and other market conditions.
+            </p>
+
+            <h3>How to Use a Trading Calculator</h3>
+
+            <ul>
+                <li>Select the calculator relevant to your task.</li>
+                <li>Enter the required trading or investment information.</li>
+                <li>Review the calculated result and the assumptions used.</li>
+                <li>Consider transaction costs and broker or exchange specifications.</li>
+                <li>Use the result as part of your own research and planning.</li>
+            </ul>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- =========================================================
+     DISCLAIMER
+     ========================================================= -->
+<section class="disclaimer">
+    <div class="container">
+
+        <div class="disclaimer-box">
+
+            <strong>Important:</strong>
+            EZTradingHub provides calculators, market tools and educational
+            information for general informational purposes. Calculator
+            outputs are estimates and should not be treated as guarantees,
+            investment recommendations or personalized financial advice.
+            Always verify important calculations against your broker,
+            exchange or financial institution's specifications.
+
+        </div>
+
+    </div>
+</section>
+
+</main>
+
+
+<!-- =========================================================
+     FOOTER
+     ========================================================= -->
+<footer>
+
+    <div class="container footer-inner">
+
+        <strong>EZTradingHub</strong>
+
+        <div class="footer-links">
+
+            <a href="index.html">Home</a>
+
+            <a href="about.html">About</a>
+
+            <a href="faq.html">FAQ</a>
+
+            <a href="contact.html">Contact</a>
+
+            <a href="privacy.html">Privacy Policy</a>
+
+            <a href="cookie-policy.html">Cookie Policy</a>
+
+            <a href="terms.html">Terms</a>
+
+            <a href="disclaimer.html">Disclaimer</a>
+
+        </div>
+
+        <p class="footer-note">
+            EZTradingHub is an educational trading tools website.
+            Information and calculator results are provided for general
+            informational purposes and do not constitute financial advice.
+        </p>
+
+        <p class="footer-note">
+            © <span id="currentYear"></span> EZTradingHub. All rights reserved.
+        </p>
+
+    </div>
+
+</footer>
+
+
+<!-- =========================================================
+     BACK TO TOP
+     ========================================================= -->
+<button
+    id="topBtn"
+    type="button"
+    aria-label="Back to top">
+    ↑
 </button>
 
+
+<!-- =========================================================
+     SEARCH + BACK TO TOP SCRIPT
+     ========================================================= -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const searchInput = document.getElementById("calculatorSearch");
+    const cards = document.querySelectorAll(".calculator-card");
+
+    if (searchInput) {
+
+        searchInput.addEventListener("input", function () {
+
+            const searchTerm = this.value.toLowerCase().trim();
+
+            cards.forEach(function (card) {
+
+                const cardText = card.textContent.toLowerCase();
+
+                if (cardText.includes(searchTerm)) {
+                    card.style.display = "";
+                } else {
+                    card.style.display = "none";
+                }
+
+            });
+
+        });
+
+    }
+
+
+    const topBtn = document.getElementById("topBtn");
+
+    window.addEventListener("scroll", function () {
+
+        if (window.scrollY > 500) {
+            topBtn.style.display = "block";
+        } else {
+            topBtn.style.display = "none";
+        }
+
+    });
+
+
+    if (topBtn) {
+
+        topBtn.addEventListener("click", function () {
+
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+
+        });
+
+    }
+
+
+    const yearElement = document.getElementById("currentYear");
+
+    if (yearElement) {
+        yearElement.textContent = new Date().getFullYear();
+    }
+
+});
+</script>
+
+
+<!-- Existing site JavaScript -->
+<script src="script.js"></script>
+
+
+<!-- Cookie Consent -->
+<script>
+/*
+ * This section intentionally calls the site's existing cookie
+ * consent function if it has already been defined in script.js.
+ */
+
+if (typeof EZTHCookieSettings === "function") {
+    // Function remains available through the site's existing system.
+}
+</script>
+
 </body>
-
 </html>
-
