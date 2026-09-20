@@ -1,0 +1,2156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- ==============================
+         BASIC SEO
+    =============================== -->
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Bond Price Calculator | Calculate Bond Value & Price - EZTradingHub</title>
+
+    <meta name="description"
+          content="Calculate bond price and value using face value, coupon rate, yield to maturity and years to maturity. Free bond price calculator with premium, discount and par value analysis.">
+
+    <meta name="author" content="EZTradingHub">
+
+    <meta name="robots"
+          content="index, follow, max-image-preview:large">
+
+    <link rel="canonical"
+          href="https://eztradinghub.com/bond-price-calculator.html">
+
+    <!-- ==============================
+         OPEN GRAPH
+    =============================== -->
+
+    <meta property="og:type" content="website">
+
+    <meta property="og:title"
+          content="Bond Price Calculator | EZTradingHub">
+
+    <meta property="og:description"
+          content="Calculate the theoretical price of a bond using face value, coupon rate, yield and maturity.">
+
+    <meta property="og:url"
+          content="https://eztradinghub.com/bond-price-calculator.html">
+
+    <meta property="og:site_name"
+          content="EZTradingHub">
+
+    <meta property="og:image"
+          content="https://eztradinghub.com/assets/images/og-image.jpg">
+
+    <!-- ==============================
+         TWITTER CARD
+    =============================== -->
+
+    <meta name="twitter:card"
+          content="summary_large_image">
+
+    <meta name="twitter:title"
+          content="Bond Price Calculator | EZTradingHub">
+
+    <meta name="twitter:description"
+          content="Calculate bond prices using coupon rate, market yield, face value and maturity.">
+
+    <meta name="twitter:image"
+          content="https://eztradinghub.com/assets/images/og-image.jpg">
+
+    <!-- ==============================
+         THEME / FAVICON
+    =============================== -->
+
+    <meta name="theme-color" content="#003366">
+
+    <link rel="icon"
+          href="assets/images/favicon.ico"
+          type="image/x-icon">
+
+    <!-- ==============================
+         WEB APPLICATION SCHEMA
+    =============================== -->
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Bond Price Calculator",
+      "url": "https://eztradinghub.com/bond-price-calculator.html",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web",
+      "description": "Free online bond price calculator for estimating the theoretical value of coupon-paying bonds.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "EZTradingHub",
+        "url": "https://eztradinghub.com"
+      }
+    }
+    </script>
+
+    <!-- ==============================
+         FAQ SCHEMA
+    =============================== -->
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is a bond price?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A bond price is the present value of the bond's future coupon payments and principal repayment, discounted at the required yield."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why do bond prices fall when yields rise?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "When market yields rise, existing bonds with lower coupon rates become less attractive compared with newly issued bonds, so their market prices generally decline."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is a premium bond?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A premium bond trades above its face value. This commonly occurs when its coupon rate is higher than the market yield for comparable bonds."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is a discount bond?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A discount bond trades below its face value. This commonly occurs when its coupon rate is lower than the market yield for comparable bonds."
+          }
+        }
+      ]
+    }
+    </script>
+
+
+    <style>
+
+        /* =================================
+           DESIGN VARIABLES
+        ================================= */
+
+        :root {
+
+            --primary: #003366;
+            --primary-light: #005b96;
+            --accent: #ffb400;
+
+            --background: #f5f7fa;
+            --card: #ffffff;
+
+            --text: #17202a;
+            --muted: #667085;
+
+            --border: #d9dee7;
+
+            --success: #16803c;
+            --danger: #c62828;
+
+            --shadow:
+                0 10px 30px rgba(0,0,0,0.08);
+        }
+
+
+        /* =================================
+           DARK MODE
+        ================================= */
+
+        body.dark {
+
+            --primary: #4da3ff;
+            --primary-light: #69b1ff;
+
+            --accent: #ffc107;
+
+            --background: #10151c;
+            --card: #18212b;
+
+            --text: #f2f4f7;
+            --muted: #aab4c0;
+
+            --border: #303b48;
+
+            --success: #4ade80;
+            --danger: #ff7070;
+
+            --shadow:
+                0 10px 30px rgba(0,0,0,0.35);
+        }
+
+
+        /* =================================
+           RESET
+        ================================= */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+
+            margin: 0;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            background: var(--background);
+
+            color: var(--text);
+
+            line-height: 1.65;
+
+            transition:
+                background 0.25s ease,
+                color 0.25s ease;
+        }
+
+
+        a {
+            color: inherit;
+        }
+
+
+        /* =================================
+           HEADER
+        ================================= */
+
+        .site-header {
+
+            background: var(--primary);
+
+            color: #ffffff;
+
+            position: sticky;
+
+            top: 0;
+
+            z-index: 1000;
+
+            box-shadow:
+                0 3px 15px rgba(0,0,0,0.15);
+        }
+
+
+        .nav {
+
+            max-width: 1200px;
+
+            margin: auto;
+
+            padding: 14px 20px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 20px;
+        }
+
+
+        .logo {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            text-decoration: none;
+
+            font-size: 20px;
+
+            font-weight: 800;
+
+            white-space: nowrap;
+        }
+
+
+        .logo-icon {
+
+            width: 38px;
+
+            height: 38px;
+
+            display: grid;
+
+            place-items: center;
+
+            border-radius: 9px;
+
+            background: var(--accent);
+
+            color: #111111;
+
+            font-weight: 900;
+        }
+
+
+        .nav-links {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 18px;
+
+            flex-wrap: wrap;
+        }
+
+
+        .nav-links a {
+
+            text-decoration: none;
+
+            font-size: 14px;
+
+            opacity: 0.95;
+        }
+
+
+        .nav-links a:hover {
+
+            text-decoration: underline;
+        }
+
+
+        .theme-toggle {
+
+            border: 1px solid rgba(255,255,255,0.4);
+
+            background: transparent;
+
+            color: #ffffff;
+
+            border-radius: 8px;
+
+            padding: 9px 13px;
+
+            cursor: pointer;
+
+            font-size: 14px;
+
+            white-space: nowrap;
+        }
+
+
+        /* =================================
+           HERO
+        ================================= */
+
+        .hero {
+
+            max-width: 1100px;
+
+            margin: auto;
+
+            padding:
+                55px 20px 35px;
+
+            text-align: center;
+        }
+
+
+        .hero h1 {
+
+            margin:
+                0 0 15px;
+
+            color: var(--primary);
+
+            font-size:
+                clamp(30px, 5vw, 48px);
+
+            line-height: 1.15;
+        }
+
+
+        .hero p {
+
+            max-width: 760px;
+
+            margin: auto;
+
+            color: var(--muted);
+
+            font-size: 17px;
+        }
+
+
+        /* =================================
+           AD PLACEHOLDER
+        ================================= */
+
+        .ad-container {
+
+            max-width: 1100px;
+
+            min-height: 90px;
+
+            margin: 20px auto;
+
+            padding: 20px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border:
+                1px dashed var(--border);
+
+            border-radius: 10px;
+
+            color: var(--muted);
+
+            font-size: 12px;
+        }
+
+
+        /* =================================
+           CALCULATOR
+        ================================= */
+
+        .calculator-section {
+
+            max-width: 1100px;
+
+            margin: auto;
+
+            padding: 0 20px;
+        }
+
+
+        .calculator-card {
+
+            background: var(--card);
+
+            border:
+                1px solid var(--border);
+
+            border-radius: 18px;
+
+            padding: 30px;
+
+            box-shadow: var(--shadow);
+        }
+
+
+        .calculator-card h2 {
+
+            margin-top: 0;
+
+            color: var(--primary);
+
+            font-size: 26px;
+        }
+
+
+        .calculator-intro {
+
+            color: var(--muted);
+
+            margin-bottom: 25px;
+        }
+
+
+        .input-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 20px;
+        }
+
+
+        .field {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 7px;
+        }
+
+
+        label {
+
+            font-weight: 700;
+
+            font-size: 14px;
+        }
+
+
+        input,
+        select {
+
+            width: 100%;
+
+            padding: 13px 14px;
+
+            border:
+                1px solid var(--border);
+
+            border-radius: 9px;
+
+            background: var(--card);
+
+            color: var(--text);
+
+            font-size: 16px;
+
+            outline: none;
+        }
+
+
+        input:focus,
+        select:focus {
+
+            border-color:
+                var(--primary-light);
+
+            box-shadow:
+                0 0 0 3px
+                rgba(0,91,150,0.12);
+        }
+
+
+        .hint {
+
+            color: var(--muted);
+
+            font-size: 12px;
+        }
+
+
+        /* =================================
+           BUTTONS
+        ================================= */
+
+        .button-row {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 12px;
+
+            margin-top: 25px;
+        }
+
+
+        .btn {
+
+            border-radius: 9px;
+
+            padding: 13px 23px;
+
+            font-size: 16px;
+
+            cursor: pointer;
+        }
+
+
+        .calculate-btn {
+
+            border: 0;
+
+            background: var(--accent);
+
+            color: #111111;
+
+            font-weight: 800;
+        }
+
+
+        .reset-btn {
+
+            background: transparent;
+
+            color: var(--text);
+
+            border:
+                1px solid var(--border);
+        }
+
+
+        /* =================================
+           RESULTS
+        ================================= */
+
+        .results {
+
+            margin-top: 30px;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 15px;
+        }
+
+
+        .result-box {
+
+            padding: 18px;
+
+            background: var(--background);
+
+            border:
+                1px solid var(--border);
+
+            border-radius: 12px;
+        }
+
+
+        .result-label {
+
+            color: var(--muted);
+
+            font-size: 13px;
+
+            margin-bottom: 5px;
+        }
+
+
+        .result-value {
+
+            color: var(--primary);
+
+            font-size: 24px;
+
+            font-weight: 800;
+
+            overflow-wrap: anywhere;
+        }
+
+
+        .status-box {
+
+            grid-column:
+                1 / -1;
+
+            padding: 16px;
+
+            text-align: center;
+
+            border:
+                1px solid var(--border);
+
+            border-radius: 10px;
+
+            font-weight: 700;
+        }
+
+
+        .premium {
+            color: var(--success);
+        }
+
+
+        .discount {
+            color: var(--danger);
+        }
+
+
+        .par {
+            color: var(--primary);
+        }
+
+
+        /* =================================
+           CONTENT
+        ================================= */
+
+        .content-wrapper {
+
+            max-width: 1100px;
+
+            margin:
+                35px auto 0;
+
+            padding: 0 20px;
+        }
+
+
+        .content-card {
+
+            background: var(--card);
+
+            border:
+                1px solid var(--border);
+
+            border-radius: 16px;
+
+            padding: 28px;
+
+            margin-bottom: 20px;
+
+            box-shadow: var(--shadow);
+        }
+
+
+        .content-card h2 {
+
+            margin-top: 0;
+
+            color: var(--primary);
+        }
+
+
+        .content-card h3 {
+
+            color: var(--primary);
+        }
+
+
+        .formula {
+
+            background: var(--background);
+
+            border-left:
+                4px solid var(--accent);
+
+            padding: 18px;
+
+            border-radius: 8px;
+
+            overflow-x: auto;
+
+            font-family:
+                Georgia,
+                serif;
+
+            font-size: 18px;
+        }
+
+
+        /* =================================
+           RELATED CALCULATORS
+        ================================= */
+
+        .related-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 15px;
+        }
+
+
+        .related-link {
+
+            display: block;
+
+            padding: 16px;
+
+            background: var(--background);
+
+            border:
+                1px solid var(--border);
+
+            border-radius: 10px;
+
+            text-decoration: none;
+
+            font-weight: 700;
+        }
+
+
+        .related-link:hover {
+
+            border-color:
+                var(--primary-light);
+        }
+
+
+        /* =================================
+           FOOTER
+        ================================= */
+
+        footer {
+
+            margin-top: 50px;
+
+            padding: 35px 20px;
+
+            background: var(--primary);
+
+            color: #ffffff;
+
+            text-align: center;
+        }
+
+
+        footer a {
+
+            color: #ffffff;
+
+            text-decoration: none;
+
+            margin: 0 7px;
+        }
+
+
+        footer a:hover {
+
+            text-decoration: underline;
+        }
+
+
+        /* =================================
+           MOBILE
+        ================================= */
+
+        @media (max-width: 850px) {
+
+            .input-grid,
+            .results,
+            .related-grid {
+
+                grid-template-columns: 1fr;
+            }
+
+
+            .nav {
+
+                flex-wrap: wrap;
+
+                justify-content: center;
+            }
+
+
+            .nav-links {
+
+                justify-content: center;
+
+                width: 100%;
+            }
+        }
+
+
+        @media (max-width: 500px) {
+
+            .hero {
+
+                padding:
+                    35px 15px 25px;
+            }
+
+
+            .calculator-section,
+            .content-wrapper {
+
+                padding:
+                    0 12px;
+            }
+
+
+            .calculator-card,
+            .content-card {
+
+                padding: 20px;
+            }
+
+
+            .button-row {
+
+                flex-direction: column;
+            }
+
+
+            .btn {
+
+                width: 100%;
+            }
+
+
+            .nav-links {
+
+                gap: 10px;
+
+                font-size: 13px;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- ==================================
+     HEADER
+================================== -->
+
+<header class="site-header">
+
+    <nav class="nav"
+         aria-label="Main navigation">
+
+        <a href="index.html"
+           class="logo">
+
+            <span class="logo-icon"
+                  aria-hidden="true">
+                EZ
+            </span>
+
+            <span>EZTradingHub</span>
+
+        </a>
+
+
+        <div class="nav-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="calculators.html">
+                Calculators
+            </a>
+
+            <a href="trade-journal.html">
+                Trade Journal
+            </a>
+
+            <a href="Dashboard.html">
+                Dashboard
+            </a>
+
+        </div>
+
+
+        <button
+            type="button"
+            class="theme-toggle"
+            id="themeToggle"
+            aria-label="Switch between light and dark mode">
+
+            🌙 Dark Mode
+
+        </button>
+
+    </nav>
+
+</header>
+
+
+<main>
+
+
+<!-- ==================================
+     HERO
+================================== -->
+
+<section class="hero">
+
+    <h1>
+        Bond Price Calculator
+    </h1>
+
+    <p>
+        Calculate the estimated price of a coupon-paying bond
+        using face value, coupon rate, yield to maturity,
+        years to maturity and payment frequency.
+    </p>
+
+</section>
+
+
+<!-- ==================================
+     AD PLACEHOLDER
+================================== -->
+
+<div class="ad-container"
+     aria-label="Advertisement">
+
+    Advertisement
+
+</div>
+
+
+<!-- ==================================
+     CALCULATOR
+================================== -->
+
+<section class="calculator-section"
+         aria-labelledby="calculator-title">
+
+    <div class="calculator-card">
+
+        <h2 id="calculator-title">
+            Calculate Bond Price
+        </h2>
+
+        <p class="calculator-intro">
+            Enter the bond details below to estimate its
+            theoretical market price.
+        </p>
+
+
+        <div class="input-grid">
+
+
+            <!-- FACE VALUE -->
+
+            <div class="field">
+
+                <label for="faceValue">
+                    Face Value / Par Value
+                </label>
+
+                <input
+                    id="faceValue"
+                    type="number"
+                    value="1000"
+                    min="0.01"
+                    step="0.01"
+                    inputmode="decimal">
+
+                <span class="hint">
+                    Example: $1,000
+                </span>
+
+            </div>
+
+
+            <!-- COUPON -->
+
+            <div class="field">
+
+                <label for="couponRate">
+                    Annual Coupon Rate (%)
+                </label>
+
+                <input
+                    id="couponRate"
+                    type="number"
+                    value="5"
+                    min="0"
+                    step="0.01"
+                    inputmode="decimal">
+
+                <span class="hint">
+                    Example: 5%
+                </span>
+
+            </div>
+
+
+            <!-- YIELD -->
+
+            <div class="field">
+
+                <label for="yieldRate">
+                    Yield to Maturity (%)
+                </label>
+
+                <input
+                    id="yieldRate"
+                    type="number"
+                    value="6"
+                    min="0"
+                    step="0.01"
+                    inputmode="decimal">
+
+                <span class="hint">
+                    Required annual yield
+                </span>
+
+            </div>
+
+
+            <!-- YEARS -->
+
+            <div class="field">
+
+                <label for="yearsToMaturity">
+                    Years to Maturity
+                </label>
+
+                <input
+                    id="yearsToMaturity"
+                    type="number"
+                    value="5"
+                    min="0.01"
+                    step="0.01"
+                    inputmode="decimal">
+
+                <span class="hint">
+                    Remaining time until maturity
+                </span>
+
+            </div>
+
+
+            <!-- FREQUENCY -->
+
+            <div class="field">
+
+                <label for="frequency">
+                    Coupon Frequency
+                </label>
+
+                <select id="frequency">
+
+                    <option value="1">
+                        Annual
+                    </option>
+
+                    <option value="2"
+                            selected>
+                        Semi-Annual
+                    </option>
+
+                    <option value="4">
+                        Quarterly
+                    </option>
+
+                    <option value="12">
+                        Monthly
+                    </option>
+
+                </select>
+
+                <span class="hint">
+                    Number of coupon payments per year
+                </span>
+
+            </div>
+
+
+            <!-- CURRENCY -->
+
+            <div class="field">
+
+                <label for="currency">
+                    Display Currency
+                </label>
+
+                <select id="currency">
+
+                    <option value="$"
+                            selected>
+                        USD ($)
+                    </option>
+
+                    <option value="₦">
+                        NGN (₦)
+                    </option>
+
+                    <option value="€">
+                        EUR (€)
+                    </option>
+
+                    <option value="£">
+                        GBP (£)
+                    </option>
+
+                </select>
+
+                <span class="hint">
+                    Changes the displayed currency symbol
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- BUTTONS -->
+
+        <div class="button-row">
+
+            <button
+                type="button"
+                class="btn calculate-btn"
+                id="calculateButton">
+
+                Calculate Bond Price
+
+            </button>
+
+
+            <button
+                type="button"
+                class="btn reset-btn"
+                id="resetButton">
+
+                Reset
+
+            </button>
+
+        </div>
+
+
+        <!-- RESULTS -->
+
+        <div class="results"
+             id="results"
+             aria-live="polite">
+
+
+            <div class="result-box">
+
+                <div class="result-label">
+                    Estimated Bond Price
+                </div>
+
+                <div class="result-value"
+                     id="bondPrice">
+
+                    —
+
+                </div>
+
+            </div>
+
+
+            <div class="result-box">
+
+                <div class="result-label">
+                    Coupon Payment
+                </div>
+
+                <div class="result-value"
+                     id="couponPayment">
+
+                    —
+
+                </div>
+
+            </div>
+
+
+            <div class="result-box">
+
+                <div class="result-label">
+                    Price as % of Par
+                </div>
+
+                <div class="result-value"
+                     id="pricePercent">
+
+                    —
+
+                </div>
+
+            </div>
+
+
+            <div class="result-box">
+
+                <div class="result-label">
+                    Annual Coupon Income
+                </div>
+
+                <div class="result-value"
+                     id="annualCoupon">
+
+                    —
+
+                </div>
+
+            </div>
+
+
+            <div class="result-box">
+
+                <div class="result-label">
+                    Total Coupon Payments
+                </div>
+
+                <div class="result-value"
+                     id="totalCoupons">
+
+                    —
+
+                </div>
+
+            </div>
+
+
+            <div class="result-box">
+
+                <div class="result-label">
+                    Principal at Maturity
+                </div>
+
+                <div class="result-value"
+                     id="maturityValue">
+
+                    —
+
+                </div>
+
+            </div>
+
+
+            <div class="status-box"
+                 id="bondStatus">
+
+                Enter your bond information
+                and click Calculate Bond Price.
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================
+     SECOND AD
+================================== -->
+
+<div class="ad-container"
+     aria-label="Advertisement">
+
+    Advertisement
+
+</div>
+
+
+<!-- ==================================
+     EDUCATIONAL CONTENT
+================================== -->
+
+<section class="content-wrapper">
+
+
+    <article class="content-card">
+
+        <h2>
+            What Is a Bond Price?
+        </h2>
+
+        <p>
+            A bond price is the current value of a bond based
+            on the present value of its future coupon payments
+            and the principal amount that will be repaid at maturity.
+        </p>
+
+        <p>
+            The price of a bond can change during its life as
+            interest rates, market yields, credit conditions,
+            inflation expectations and investor demand change.
+        </p>
+
+    </article>
+
+
+    <article class="content-card">
+
+        <h2>
+            Bond Price Formula
+        </h2>
+
+        <div class="formula">
+
+            Bond Price =
+            Σ [C / (1 + r)<sup>t</sup>]
+            +
+            [F / (1 + r)<sup>n</sup>]
+
+        </div>
+
+        <p>
+            Where:
+        </p>
+
+        <ul>
+
+            <li>
+                <strong>C</strong> =
+                coupon payment per period
+            </li>
+
+            <li>
+                <strong>r</strong> =
+                yield per period
+            </li>
+
+            <li>
+                <strong>F</strong> =
+                face value
+            </li>
+
+            <li>
+                <strong>n</strong> =
+                total number of coupon periods
+            </li>
+
+            <li>
+                <strong>t</strong> =
+                individual coupon period
+            </li>
+
+        </ul>
+
+    </article>
+
+
+    <article class="content-card">
+
+        <h2>
+            Premium, Par and Discount Bonds
+        </h2>
+
+        <p>
+            A bond can trade above, close to or below its
+            face value.
+        </p>
+
+        <ul>
+
+            <li>
+                <strong>Premium bond:</strong>
+                Price is above face value.
+            </li>
+
+            <li>
+                <strong>Par bond:</strong>
+                Price is approximately equal to face value.
+            </li>
+
+            <li>
+                <strong>Discount bond:</strong>
+                Price is below face value.
+            </li>
+
+        </ul>
+
+        <p>
+            If the coupon rate is higher than the market yield,
+            the bond will generally trade at a premium.
+            If the coupon rate is lower than the market yield,
+            it will generally trade at a discount.
+        </p>
+
+    </article>
+
+
+    <article class="content-card">
+
+        <h2>
+            How to Use the Bond Price Calculator
+        </h2>
+
+        <ol>
+
+            <li>
+                Enter the bond's face value.
+            </li>
+
+            <li>
+                Enter the annual coupon rate.
+            </li>
+
+            <li>
+                Enter the required yield to maturity.
+            </li>
+
+            <li>
+                Enter the number of years remaining.
+            </li>
+
+            <li>
+                Select the coupon payment frequency.
+            </li>
+
+            <li>
+                Select your preferred display currency.
+            </li>
+
+            <li>
+                Click <strong>Calculate Bond Price</strong>.
+            </li>
+
+        </ol>
+
+    </article>
+
+
+    <!-- ==================================
+         FAQ
+    ================================== -->
+
+    <article class="content-card">
+
+        <h2>
+            Bond Price Calculator FAQ
+        </h2>
+
+
+        <h3>
+            Why do bond prices and yields move in opposite directions?
+        </h3>
+
+        <p>
+            Bond prices generally move in the opposite direction
+            to market yields because the present value of future
+            cash flows changes when the discount rate changes.
+        </p>
+
+
+        <h3>
+            What is a premium bond?
+        </h3>
+
+        <p>
+            A premium bond has a market price above its face value.
+            This commonly happens when its coupon rate is higher
+            than the prevailing yield on comparable bonds.
+        </p>
+
+
+        <h3>
+            What is a discount bond?
+        </h3>
+
+        <p>
+            A discount bond has a market price below its face value.
+            This commonly happens when its coupon rate is lower
+            than the prevailing market yield.
+        </p>
+
+
+        <h3>
+            Does this calculator include taxes and transaction costs?
+        </h3>
+
+        <p>
+            No. The calculator estimates theoretical bond value
+            from the information entered. Taxes, brokerage fees,
+            liquidity and other transaction costs can affect an
+            investor's actual return.
+        </p>
+
+
+        <h3>
+            Can I use this calculator for government and corporate bonds?
+        </h3>
+
+        <p>
+            Yes. The basic pricing formula can be used for many
+            fixed-rate coupon bonds. However, real-world bonds
+            may have additional features that require more advanced
+            calculations.
+        </p>
+
+    </article>
+
+
+    <!-- ==================================
+         RELATED TOOLS
+    ================================== -->
+
+    <article class="content-card">
+
+        <h2>
+            Related Fixed Income Calculators
+        </h2>
+
+        <div class="related-grid">
+
+            <a class="related-link"
+               href="bond-yield-calculator.html">
+                Bond Yield Calculator
+            </a>
+
+            <a class="related-link"
+               href="bond-ytm-calculator.html">
+                Bond YTM Calculator
+            </a>
+
+            <a class="related-link"
+               href="bond-duration-calculator.html">
+                Bond Duration Calculator
+            </a>
+
+            <a class="related-link"
+               href="bond-convexity-calculator.html">
+                Bond Convexity Calculator
+            </a>
+
+            <a class="related-link"
+               href="bond-coupon-calculator.html">
+                Bond Coupon Calculator
+            </a>
+
+            <a class="related-link"
+               href="present-value-calculator.html">
+                Present Value Calculator
+            </a>
+
+        </div>
+
+    </article>
+
+
+    <article class="content-card">
+
+        <h2>
+            Important Disclaimer
+        </h2>
+
+        <p>
+            This calculator is provided for educational and
+            informational purposes only. It does not constitute
+            financial, investment, tax or legal advice. Actual
+            bond prices and returns may differ from the estimates
+            produced by this calculator.
+        </p>
+
+        <p>
+            Always review the specific terms of a bond and consider
+            professional advice where appropriate before making
+            investment decisions.
+        </p>
+
+    </article>
+
+</section>
+
+</main>
+
+
+<!-- ==================================
+     FOOTER
+================================== -->
+
+<footer>
+
+    <p>
+        © <span id="currentYear"></span>
+        EZTradingHub. All rights reserved.
+    </p>
+
+    <p>
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="calculators.html">
+            Calculators
+        </a>
+          
+        <a href="about.html">
+            About
+        </a>
+          
+        <a href="faq.html">
+            FAQ
+        </a>
+
+        <a href="contact.html">
+            Contact
+        </a>
+
+        <a href="privacy.html">
+            Privacy
+        </a>
+
+        <a href="terms.html">
+            Terms
+        </a>
+
+        <a href="disclaimer.html">
+            Disclaimer
+        </a>
+
+        <a href="cookie-policy.html">
+            Cookie Policy
+        </a>
+
+    </p>
+
+</footer>
+
+
+<script>
+
+"use strict";
+
+
+/* ==================================
+   THEME
+================================== */
+
+const themeToggle =
+    document.getElementById("themeToggle");
+
+
+function updateThemeButton() {
+
+    const isDark =
+        document.body.classList.contains("dark");
+
+    themeToggle.textContent =
+        isDark
+        ? "☀️ Light Mode"
+        : "🌙 Dark Mode";
+}
+
+
+const savedTheme =
+    localStorage.getItem("ezth-theme");
+
+
+if (savedTheme === "dark") {
+
+    document.body.classList.add("dark");
+
+}
+
+
+updateThemeButton();
+
+
+themeToggle.addEventListener(
+    "click",
+    function () {
+
+        document.body.classList.toggle("dark");
+
+        localStorage.setItem(
+            "ezth-theme",
+            document.body.classList.contains("dark")
+                ? "dark"
+                : "light"
+        );
+
+        updateThemeButton();
+
+    }
+);
+
+
+/* ==================================
+   NUMBER FORMAT
+================================== */
+
+function formatNumber(value) {
+
+    return value.toLocaleString(
+        undefined,
+        {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        }
+    );
+}
+
+
+/* ==================================
+   GET INPUT
+================================== */
+
+function numberValue(id) {
+
+    return parseFloat(
+        document.getElementById(id).value
+    );
+}
+
+
+/* ==================================
+   CALCULATE BOND
+================================== */
+
+function calculateBondPrice() {
+
+    const faceValue =
+        numberValue("faceValue");
+
+    const couponRate =
+        numberValue("couponRate");
+
+    const yieldRate =
+        numberValue("yieldRate");
+
+    const years =
+        numberValue("yearsToMaturity");
+
+    const frequency =
+        parseInt(
+            document.getElementById("frequency").value,
+            10
+        );
+
+    const currency =
+        document.getElementById("currency").value;
+
+
+    /* -------------------------------
+       VALIDATION
+    ------------------------------- */
+
+    if (
+        !Number.isFinite(faceValue) ||
+        !Number.isFinite(couponRate) ||
+        !Number.isFinite(yieldRate) ||
+        !Number.isFinite(years) ||
+
+        faceValue <= 0 ||
+        couponRate < 0 ||
+        yieldRate < 0 ||
+        years <= 0
+    ) {
+
+        document.getElementById(
+            "bondStatus"
+        ).textContent =
+            "Please enter valid bond information.";
+
+        return;
+    }
+
+
+    /* -------------------------------
+       PERIOD CALCULATIONS
+    ------------------------------- */
+
+    const periods =
+        Math.max(
+            1,
+            Math.round(years * frequency)
+        );
+
+
+    const couponPerPeriod =
+        faceValue *
+        (couponRate / 100) /
+        frequency;
+
+
+    const yieldPerPeriod =
+        (yieldRate / 100) /
+        frequency;
+
+
+    /* -------------------------------
+       PRESENT VALUE OF COUPONS
+    ------------------------------- */
+
+    let bondPrice = 0;
+
+
+    for (
+        let period = 1;
+        period <= periods;
+        period++
+    ) {
+
+        bondPrice +=
+            couponPerPeriod /
+            Math.pow(
+                1 + yieldPerPeriod,
+                period
+            );
+    }
+
+
+    /* -------------------------------
+       PRESENT VALUE OF PRINCIPAL
+    ------------------------------- */
+
+    bondPrice +=
+        faceValue /
+        Math.pow(
+            1 + yieldPerPeriod,
+            periods
+        );
+
+
+    /* -------------------------------
+       OTHER RESULTS
+    ------------------------------- */
+
+    const annualCoupon =
+        faceValue *
+        (couponRate / 100);
+
+
+    const totalCouponPayments =
+        couponPerPeriod * periods;
+
+
+    const pricePercent =
+        (bondPrice / faceValue) * 100;
+
+
+    /* -------------------------------
+       DISPLAY
+    ------------------------------- */
+
+    document.getElementById(
+        "bondPrice"
+    ).textContent =
+        currency +
+        formatNumber(bondPrice);
+
+
+    document.getElementById(
+        "couponPayment"
+    ).textContent =
+        currency +
+        formatNumber(couponPerPeriod);
+
+
+    document.getElementById(
+        "pricePercent"
+    ).textContent =
+        pricePercent.toFixed(2) +
+        "%";
+
+
+    document.getElementById(
+        "annualCoupon"
+    ).textContent =
+        currency +
+        formatNumber(annualCoupon);
+
+
+    document.getElementById(
+        "totalCoupons"
+    ).textContent =
+        currency +
+        formatNumber(totalCouponPayments);
+
+
+    document.getElementById(
+        "maturityValue"
+    ).textContent =
+        currency +
+        formatNumber(faceValue);
+
+
+    /* -------------------------------
+       PREMIUM / DISCOUNT
+    ------------------------------- */
+
+    const status =
+        document.getElementById(
+            "bondStatus"
+        );
+
+
+    if (
+        bondPrice >
+        faceValue + 0.01
+    ) {
+
+        status.className =
+            "status-box premium";
+
+        status.textContent =
+            "Premium Bond — estimated price is above face value.";
+
+    }
+
+    else if (
+        bondPrice <
+        faceValue - 0.01
+    ) {
+
+        status.className =
+            "status-box discount";
+
+        status.textContent =
+            "Discount Bond — estimated price is below face value.";
+
+    }
+
+    else {
+
+        status.className =
+            "status-box par";
+
+        status.textContent =
+            "Approximately At Par — estimated price is close to face value.";
+
+    }
+
+}
+
+
+/* ==================================
+   RESET
+================================== */
+
+function resetCalculator() {
+
+    document.getElementById(
+        "faceValue"
+    ).value = "1000";
+
+
+    document.getElementById(
+        "couponRate"
+    ).value = "5";
+
+
+    document.getElementById(
+        "yieldRate"
+    ).value = "6";
+
+
+    document.getElementById(
+        "yearsToMaturity"
+    ).value = "5";
+
+
+    document.getElementById(
+        "frequency"
+    ).value = "2";
+
+
+    document.getElementById(
+        "currency"
+    ).value = "$";
+
+
+    document.getElementById(
+        "bondPrice"
+    ).textContent = "—";
+
+
+    document.getElementById(
+        "couponPayment"
+    ).textContent = "—";
+
+
+    document.getElementById(
+        "pricePercent"
+    ).textContent = "—";
+
+
+    document.getElementById(
+        "annualCoupon"
+    ).textContent = "—";
+
+
+    document.getElementById(
+        "totalCoupons"
+    ).textContent = "—";
+
+
+    document.getElementById(
+        "maturityValue"
+    ).textContent = "—";
+
+
+    const status =
+        document.getElementById(
+            "bondStatus"
+        );
+
+
+    status.className =
+        "status-box";
+
+
+    status.textContent =
+        "Enter your bond information and click Calculate Bond Price.";
+}
+
+
+/* ==================================
+   EVENTS
+================================== */
+
+document.getElementById(
+    "calculateButton"
+).addEventListener(
+    "click",
+    calculateBondPrice
+);
+
+
+document.getElementById(
+    "resetButton"
+).addEventListener(
+    "click",
+    resetCalculator
+);
+
+
+/* ==================================
+   ENTER KEY
+================================== */
+
+document.querySelectorAll(
+    "#faceValue, #couponRate, #yieldRate, #yearsToMaturity"
+).forEach(function (input) {
+
+    input.addEventListener(
+        "keydown",
+        function (event) {
+
+            if (event.key === "Enter") {
+
+                calculateBondPrice();
+
+            }
+
+        }
+    );
+
+});
+
+
+/* ==================================
+   CURRENT YEAR
+================================== */
+
+document.getElementById(
+    "currentYear"
+).textContent =
+    new Date().getFullYear();
+
+</script>
+
+
+</body>
+</html>
