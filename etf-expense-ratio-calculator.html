@@ -1,0 +1,2219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>ETF Expense Ratio Calculator | Calculate ETF Fees & Costs</title>
+
+  <meta name="description"
+        content="Use the EZTradingHub ETF Expense Ratio Calculator to estimate annual ETF fees, investment costs, expense ratios, and long-term cost differences. Free, simple and mobile-friendly.">
+
+  <meta name="keywords"
+        content="ETF expense ratio calculator, ETF fee calculator, ETF cost calculator, expense ratio calculator, investment fee calculator, ETF fees">
+
+  <meta name="robots" content="index, follow">
+
+  <link rel="canonical"
+        href="https://eztradinghub.com/etf-expense-ratio-calculator.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title"
+        content="ETF Expense Ratio Calculator | EZTradingHub">
+  <meta property="og:description"
+        content="Calculate estimated annual ETF expenses and compare the cost of different expense ratios.">
+  <meta property="og:url"
+        content="https://eztradinghub.com/etf-expense-ratio-calculator.html">
+  <meta property="og:image"
+        content="https://eztradinghub.com/assets/images/og-image.jpg">
+  <meta property="og:site_name"
+        content="EZTradingHub">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title"
+        content="ETF Expense Ratio Calculator | EZTradingHub">
+  <meta name="twitter:description"
+        content="Estimate ETF annual fees and compare investment costs using the EZTradingHub ETF Expense Ratio Calculator.">
+  <meta name="twitter:image"
+        content="https://eztradinghub.com/assets/images/og-image.jpg">
+
+  <meta name="theme-color" content="#003366">
+
+  <!-- WebApplication Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "ETF Expense Ratio Calculator",
+    "url": "https://eztradinghub.com/etf-expense-ratio-calculator.html",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Web",
+    "description": "A free ETF expense ratio calculator for estimating annual fund expenses and comparing ETF investment costs.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "EZTradingHub",
+      "url": "https://eztradinghub.com"
+    }
+  }
+  </script>
+
+  <!-- FAQ Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is an ETF expense ratio?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "An ETF expense ratio is the annual percentage of fund assets used to cover the operating expenses of an exchange-traded fund."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How is ETF expense cost calculated?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A simple estimate of annual expense cost can be calculated by multiplying the investment amount by the ETF expense ratio expressed as a decimal."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does an ETF expense ratio get charged separately?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The expense ratio is generally reflected in the fund's assets and performance rather than being presented as a separate bill to the investor."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why does an ETF expense ratio matter?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Fund expenses reduce the assets available to generate returns, so fees can affect long-term investment results."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does this calculator include trading commissions?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. This calculator estimates the cost represented by the ETF expense ratio and does not include brokerage commissions, bid-ask spreads, taxes or other transaction costs."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --primary: #003366;
+      --primary-light: #075a9c;
+      --accent: #ffb400;
+
+      --bg: #f4f7fb;
+      --card: #ffffff;
+      --text: #17202a;
+      --muted: #667085;
+      --border: #d9e1ea;
+
+      --success: #16803c;
+      --danger: #c62828;
+
+      --shadow: 0 10px 30px rgba(0, 51, 102, 0.10);
+    }
+
+    [data-theme="dark"] {
+      --bg: #0b1220;
+      --card: #111c2e;
+      --text: #f3f6fa;
+      --muted: #aab7c6;
+      --border: #29384c;
+
+      --primary: #0b4f87;
+      --primary-light: #4da3e8;
+
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.32);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+
+      transition:
+        background 0.25s ease,
+        color 0.25s ease;
+    }
+
+    a {
+      color: var(--primary-light);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .site-header {
+      background: var(--primary);
+      color: white;
+
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    .header-inner {
+      max-width: 1150px;
+      margin: auto;
+
+      padding: 12px 18px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 15px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      color: white;
+      font-weight: 800;
+      font-size: 20px;
+    }
+
+    .brand:hover {
+      text-decoration: none;
+    }
+
+    .logo {
+      width: 42px;
+      height: 42px;
+
+      display: grid;
+      place-items: center;
+
+      background: var(--accent);
+      color: #111;
+
+      border-radius: 10px;
+
+      font-size: 17px;
+      font-weight: 900;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: white;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .theme-toggle {
+      border: 1px solid rgba(255,255,255,0.35);
+
+      background: transparent;
+      color: white;
+
+      padding: 8px 12px;
+
+      border-radius: 8px;
+
+      cursor: pointer;
+
+      font-weight: 700;
+    }
+
+    .theme-toggle:hover {
+      background: rgba(255,255,255,0.10);
+    }
+
+    .hero {
+      max-width: 1150px;
+      margin: auto;
+
+      padding: 45px 18px 25px;
+
+      text-align: center;
+    }
+
+    .hero h1 {
+      color: var(--primary);
+
+      margin: 0 0 12px;
+
+      font-size: clamp(30px, 5vw, 46px);
+
+      line-height: 1.15;
+    }
+
+    [data-theme="dark"] .hero h1 {
+      color: #69b7ff;
+    }
+
+    .hero p {
+      max-width: 780px;
+      margin: auto;
+
+      color: var(--muted);
+
+      font-size: 17px;
+    }
+
+    .container {
+      max-width: 1150px;
+      margin: auto;
+
+      padding: 20px 18px 60px;
+    }
+
+    .ad-box {
+      min-height: 90px;
+
+      border: 1px dashed var(--border);
+
+      background: var(--card);
+
+      border-radius: 12px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      color: var(--muted);
+
+      font-size: 12px;
+
+      margin: 20px 0;
+    }
+
+    .calculator-card {
+      max-width: 900px;
+
+      margin: 25px auto;
+
+      background: var(--card);
+
+      border: 1px solid var(--border);
+
+      border-radius: 18px;
+
+      padding: 25px;
+
+      box-shadow: var(--shadow);
+    }
+
+    .calculator-card h2 {
+      margin-top: 0;
+
+      color: var(--primary);
+    }
+
+    [data-theme="dark"] .calculator-card h2 {
+      color: #69b7ff;
+    }
+
+    .form-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+      gap: 18px;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+
+      gap: 7px;
+    }
+
+    .field.full {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    input,
+    select {
+      width: 100%;
+
+      padding: 13px 14px;
+
+      border: 1px solid var(--border);
+
+      border-radius: 10px;
+
+      background: var(--bg);
+      color: var(--text);
+
+      font-size: 16px;
+
+      outline: none;
+    }
+
+    input:focus,
+    select:focus {
+      border-color: var(--primary-light);
+
+      box-shadow:
+        0 0 0 3px rgba(7, 90, 156, 0.12);
+    }
+
+    .hint {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .button-row {
+      display: flex;
+
+      gap: 12px;
+
+      flex-wrap: wrap;
+
+      margin-top: 22px;
+    }
+
+    .btn {
+      border: none;
+
+      padding: 13px 20px;
+
+      border-radius: 10px;
+
+      cursor: pointer;
+
+      font-size: 15px;
+      font-weight: 800;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-light);
+    }
+
+    .btn-secondary {
+      background: var(--accent);
+      color: #111;
+    }
+
+    .results {
+      display: none;
+
+      margin-top: 28px;
+    }
+
+    .results.show {
+      display: block;
+    }
+
+    .results h3 {
+      margin-bottom: 15px;
+    }
+
+    .result-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+      gap: 14px;
+    }
+
+    .result-box {
+      padding: 18px;
+
+      border: 1px solid var(--border);
+
+      background: var(--bg);
+
+      border-radius: 12px;
+    }
+
+    .result-label {
+      color: var(--muted);
+
+      font-size: 13px;
+      font-weight: 700;
+
+      margin-bottom: 5px;
+    }
+
+    .result-value {
+      font-size: 23px;
+
+      font-weight: 900;
+
+      color: var(--primary);
+    }
+
+    [data-theme="dark"] .result-value {
+      color: #69b7ff;
+    }
+
+    .positive {
+      color: var(--success) !important;
+    }
+
+    .negative {
+      color: var(--danger) !important;
+    }
+
+    .comparison {
+      margin-top: 22px;
+
+      overflow-x: auto;
+    }
+
+    .comparison table {
+      width: 100%;
+
+      border-collapse: collapse;
+
+      min-width: 550px;
+    }
+
+    .comparison th,
+    .comparison td {
+      padding: 12px;
+
+      border: 1px solid var(--border);
+
+      text-align: left;
+    }
+
+    .comparison th {
+      background: var(--primary);
+
+      color: white;
+    }
+
+    .section {
+      max-width: 900px;
+
+      margin: 40px auto;
+    }
+
+    .section h2 {
+      color: var(--primary);
+
+      font-size: 28px;
+    }
+
+    [data-theme="dark"] .section h2 {
+      color: #69b7ff;
+    }
+
+    .info-card {
+      background: var(--card);
+
+      border: 1px solid var(--border);
+
+      border-radius: 14px;
+
+      padding: 22px;
+
+      margin: 18px 0;
+
+      box-shadow: var(--shadow);
+    }
+
+    .formula {
+      background: var(--bg);
+
+      border-left: 4px solid var(--accent);
+
+      padding: 15px;
+
+      border-radius: 8px;
+
+      overflow-x: auto;
+
+      font-weight: 700;
+    }
+
+    .related-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+      gap: 14px;
+    }
+
+    .related-link {
+      display: block;
+
+      background: var(--card);
+
+      border: 1px solid var(--border);
+
+      border-radius: 12px;
+
+      padding: 16px;
+
+      font-weight: 700;
+
+      transition: transform 0.2s ease;
+    }
+
+    .related-link:hover {
+      transform: translateY(-2px);
+
+      text-decoration: none;
+    }
+
+    .faq-item {
+      background: var(--card);
+
+      border: 1px solid var(--border);
+
+      border-radius: 12px;
+
+      margin-bottom: 12px;
+
+      padding: 18px;
+    }
+
+    .faq-item h3 {
+      margin-top: 0;
+
+      font-size: 17px;
+    }
+
+    .error {
+      display: none;
+
+      background: rgba(198,40,40,0.10);
+
+      border: 1px solid rgba(198,40,40,0.30);
+
+      color: var(--danger);
+
+      padding: 12px;
+
+      border-radius: 9px;
+
+      margin-top: 15px;
+
+      font-weight: 600;
+    }
+
+    footer {
+      background: #071827;
+
+      color: #d8e1ea;
+
+      padding: 35px 18px;
+    }
+
+    .footer-inner {
+      max-width: 1150px;
+      margin: auto;
+    }
+
+    .footer-links {
+      display: flex;
+
+      gap: 15px;
+
+      flex-wrap: wrap;
+
+      margin-bottom: 20px;
+    }
+
+    .footer-links a {
+      color: #d8e1ea;
+
+      font-size: 14px;
+    }
+
+    .disclaimer {
+      color: #aebbc8;
+
+      font-size: 13px;
+    }
+
+    @media (max-width: 700px) {
+
+      .header-inner {
+        align-items: flex-start;
+      }
+
+      nav {
+        display: none;
+      }
+
+      .form-grid,
+      .result-grid,
+      .related-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .field.full {
+        grid-column: auto;
+      }
+
+      .calculator-card {
+        padding: 18px;
+      }
+
+      .hero {
+        padding-top: 30px;
+      }
+
+      .hero p {
+        font-size: 15px;
+      }
+
+      .result-value {
+        font-size: 21px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="site-header">
+
+  <div class="header-inner">
+
+    <a href="index.html"
+       class="brand"
+       aria-label="EZTradingHub Home">
+
+      <span class="logo" aria-hidden="true">
+        EZ
+      </span>
+
+      <span>
+        EZTradingHub
+      </span>
+
+    </a>
+
+    <nav aria-label="Main navigation">
+
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="calculators.html">
+        Calculators
+      </a>
+
+      <a href="Dashboard.html">
+        Dashboard
+      </a>
+
+      <a href="trade-journal.html">
+        Trade Journal
+      </a>
+
+    </nav>
+
+    <button
+      type="button"
+      class="theme-toggle"
+      id="themeToggle"
+      aria-label="Toggle light and dark mode">
+
+      🌙 Dark
+
+    </button>
+
+  </div>
+
+</header>
+
+
+<main>
+
+  <section class="hero">
+
+    <h1>
+      ETF Expense Ratio Calculator
+    </h1>
+
+    <p>
+      Estimate how much an ETF's expense ratio could cost your
+      investment each year and compare the potential cost of
+      different expense ratios over time.
+    </p>
+
+  </section>
+
+
+  <div class="container">
+
+    <div class="ad-box" aria-label="Advertisement">
+      Advertisement
+    </div>
+
+
+    <!-- CALCULATOR -->
+
+    <section
+      class="calculator-card"
+      aria-labelledby="calculator-heading">
+
+      <h2 id="calculator-heading">
+        Calculate ETF Expense Costs
+      </h2>
+
+      <p class="hint">
+        Enter your investment amount, ETF expense ratio and
+        projection period to estimate fund expenses.
+      </p>
+
+
+      <form id="expenseForm">
+
+        <div class="form-grid">
+
+          <div class="field">
+
+            <label for="etfName">
+              ETF Name or Symbol
+            </label>
+
+            <input
+              type="text"
+              id="etfName"
+              placeholder="e.g. VOO"
+              autocomplete="off">
+
+          </div>
+
+
+          <div class="field">
+
+            <label for="currency">
+              Currency
+            </label>
+
+            <select id="currency">
+
+              <option value="USD">
+                USD ($)
+              </option>
+
+              <option value="NGN">
+                NGN (₦)
+              </option>
+
+              <option value="EUR">
+                EUR (€)
+              </option>
+
+              <option value="GBP">
+                GBP (£)
+              </option>
+
+              <option value="CAD">
+                CAD (C$)
+              </option>
+
+              <option value="AUD">
+                AUD (A$)
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <div class="field">
+
+            <label for="investment">
+              Investment Amount
+            </label>
+
+            <input
+              type="number"
+              id="investment"
+              min="0"
+              step="any"
+              placeholder="10000"
+              required>
+
+            <span class="hint">
+              Current amount invested in the ETF.
+            </span>
+
+          </div>
+
+
+          <div class="field">
+
+            <label for="expenseRatio">
+              ETF Expense Ratio (%)
+            </label>
+
+            <input
+              type="number"
+              id="expenseRatio"
+              min="0"
+              step="any"
+              placeholder="0.03"
+              required>
+
+            <span class="hint">
+              Example: enter 0.03 for a 0.03% expense ratio.
+            </span>
+
+          </div>
+
+
+          <div class="field">
+
+            <label for="years">
+              Projection Period (Years)
+            </label>
+
+            <input
+              type="number"
+              id="years"
+              min="1"
+              step="1"
+              value="10"
+              placeholder="10"
+              required>
+
+          </div>
+
+
+          <div class="field">
+
+            <label for="annualReturn">
+              Estimated Annual Return Before Expenses (%)
+            </label>
+
+            <input
+              type="number"
+              id="annualReturn"
+              step="any"
+              value="7"
+              placeholder="7">
+
+            <span class="hint">
+              Optional. Used to estimate the long-term effect
+              of expenses on portfolio value.
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <div class="button-row">
+
+          <button
+            type="submit"
+            class="btn btn-primary">
+
+            Calculate ETF Costs
+
+          </button>
+
+
+          <button
+            type="button"
+            class="btn btn-secondary"
+            id="resetBtn">
+
+            Reset
+
+          </button>
+
+        </div>
+
+
+        <div
+          id="errorBox"
+          class="error"
+          role="alert">
+        </div>
+
+      </form>
+
+
+      <!-- RESULTS -->
+
+      <div
+        id="results"
+        class="results"
+        aria-live="polite">
+
+        <h3>
+          ETF Expense Results
+        </h3>
+
+
+        <div class="result-grid">
+
+          <div class="result-box">
+
+            <div class="result-label">
+              Annual Expense Cost
+            </div>
+
+            <div
+              id="annualCost"
+              class="result-value negative">
+              —
+            </div>
+
+          </div>
+
+
+          <div class="result-box">
+
+            <div class="result-label">
+              Monthly Equivalent Cost
+            </div>
+
+            <div
+              id="monthlyCost"
+              class="result-value">
+              —
+            </div>
+
+          </div>
+
+
+          <div class="result-box">
+
+            <div class="result-label">
+              Expense Ratio
+            </div>
+
+            <div
+              id="displayRatio"
+              class="result-value">
+              —
+            </div>
+
+          </div>
+
+
+          <div class="result-box">
+
+            <div class="result-label">
+              Investment Amount
+            </div>
+
+            <div
+              id="displayInvestment"
+              class="result-value">
+              —
+            </div>
+
+          </div>
+
+
+          <div class="result-box">
+
+            <div class="result-label">
+              Estimated Total Expenses
+            </div>
+
+            <div
+              id="totalExpenses"
+              class="result-value negative">
+              —
+            </div>
+
+          </div>
+
+
+          <div class="result-box">
+
+            <div class="result-label">
+              Portfolio Value Before Expenses
+            </div>
+
+            <div
+              id="futureBefore"
+              class="result-value">
+              —
+            </div>
+
+          </div>
+
+
+          <div class="result-box">
+
+            <div class="result-label">
+              Portfolio Value After Estimated Expenses
+            </div>
+
+            <div
+              id="futureAfter"
+              class="result-value">
+              —
+            </div>
+
+          </div>
+
+
+          <div class="result-box">
+
+            <div class="result-label">
+              Estimated Long-Term Cost Difference
+            </div>
+
+            <div
+              id="longTermDifference"
+              class="result-value negative">
+              —
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- COMPARISON -->
+
+        <div class="comparison">
+
+          <h3>
+            Expense Ratio Comparison
+          </h3>
+
+          <table>
+
+            <thead>
+
+              <tr>
+
+                <th>
+                  Expense Ratio
+                </th>
+
+                <th>
+                  Annual Cost
+                </th>
+
+                <th>
+                  Estimated Cost Over Period
+                </th>
+
+              </tr>
+
+            </thead>
+
+            <tbody id="comparisonBody">
+
+            </tbody>
+
+          </table>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <div class="ad-box" aria-label="Advertisement">
+      Advertisement
+    </div>
+
+
+    <!-- INFORMATION -->
+
+    <section class="section">
+
+      <h2>
+        What Is an ETF Expense Ratio?
+      </h2>
+
+      <div class="info-card">
+
+        <p>
+          An ETF expense ratio represents the annual operating
+          expenses of a fund as a percentage of its assets.
+        </p>
+
+        <p>
+          These expenses can include costs associated with managing
+          and operating the fund. The expense ratio is normally
+          reflected in the fund's net assets and performance rather
+          than appearing as a separate invoice to each investor.
+        </p>
+
+        <p>
+          A lower expense ratio means less of the fund's assets are
+          allocated toward operating expenses, although fees should
+          always be considered alongside the ETF's investment
+          strategy and other characteristics.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <section class="section">
+
+      <h2>
+        ETF Expense Ratio Formula
+      </h2>
+
+      <div class="info-card">
+
+        <p>
+          A simple estimate of annual expense cost is:
+        </p>
+
+        <div class="formula">
+
+          Annual ETF Expense =
+          Investment Amount ×
+          (Expense Ratio ÷ 100)
+
+        </div>
+
+        <p>
+          For example, if you invest $10,000 in an ETF with a
+          0.20% expense ratio:
+        </p>
+
+        <div class="formula">
+
+          $10,000 × (0.20 ÷ 100)
+          = $20 estimated annual expense
+
+        </div>
+
+        <p>
+          This is a simplified estimate. Actual fund expenses
+          can vary because fund assets and expenses change over time.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <section class="section">
+
+      <h2>
+        How to Use the ETF Expense Ratio Calculator
+      </h2>
+
+      <div class="info-card">
+
+        <ol>
+
+          <li>
+            Enter the ETF name or ticker symbol.
+          </li>
+
+          <li>
+            Enter the amount invested.
+          </li>
+
+          <li>
+            Enter the ETF expense ratio as a percentage.
+          </li>
+
+          <li>
+            Enter the number of years for your projection.
+          </li>
+
+          <li>
+            Optionally enter an estimated annual investment return.
+          </li>
+
+          <li>
+            Click <strong>Calculate ETF Costs</strong>.
+          </li>
+
+        </ol>
+
+      </div>
+
+    </section>
+
+
+    <section class="section">
+
+      <h2>
+        Why ETF Expense Ratios Matter
+      </h2>
+
+      <div class="info-card">
+
+        <p>
+          Even a small annual expense ratio can have a larger
+          effect over a long investment period because the money
+          used to cover expenses is no longer available to
+          participate in future growth.
+        </p>
+
+        <p>
+          The impact can be particularly noticeable when comparing
+          investments with similar strategies but different ongoing
+          costs.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <section class="section">
+
+      <h2>
+        Example: Comparing ETF Expense Ratios
+      </h2>
+
+      <div class="info-card">
+
+        <p>
+          Imagine an investor has $50,000 invested and compares
+          two ETFs:
+        </p>
+
+        <div class="formula">
+
+          ETF A: 0.10% expense ratio
+
+          <br><br>
+
+          ETF B: 0.50% expense ratio
+
+        </div>
+
+        <p>
+          The simplified annual expense estimates would be:
+        </p>
+
+        <div class="formula">
+
+          ETF A:
+          $50,000 × 0.10% = $50
+
+          <br><br>
+
+          ETF B:
+          $50,000 × 0.50% = $250
+
+        </div>
+
+        <p>
+          The difference is $200 per year based on the starting
+          investment amount. Over longer periods, differences in
+          expenses can also affect the amount available for
+          compounding.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <section class="section">
+
+      <h2>
+        Expense Ratio vs Other ETF Costs
+      </h2>
+
+      <div class="info-card">
+
+        <p>
+          The expense ratio is only one component of the overall
+          cost of owning an ETF.
+        </p>
+
+        <ul>
+
+          <li>
+            <strong>Expense ratio:</strong>
+            ongoing fund operating expenses.
+          </li>
+
+          <li>
+            <strong>Bid-ask spread:</strong>
+            the difference between buying and selling prices.
+          </li>
+
+          <li>
+            <strong>Trading commissions:</strong>
+            fees that may be charged by a broker.
+          </li>
+
+          <li>
+            <strong>Taxes:</strong>
+            applicable taxes on dividends, capital gains or
+            other transactions.
+          </li>
+
+          <li>
+            <strong>Tracking difference:</strong>
+            the difference between an ETF's actual performance
+            and its underlying benchmark.
+          </li>
+
+        </ul>
+
+      </div>
+
+    </section>
+
+
+    <section class="section">
+
+      <h2>
+        How Expense Ratios Affect Compounding
+      </h2>
+
+      <div class="info-card">
+
+        <p>
+          The calculator provides a simplified long-term projection
+          using the entered return assumption.
+        </p>
+
+        <div class="formula">
+
+          Return After Expenses ≈
+          Annual Return Before Expenses −
+          Expense Ratio
+
+        </div>
+
+        <p>
+          For example, if a hypothetical investment earns 7% before
+          expenses and the ETF expense ratio is 0.20%, a simplified
+          estimate would use approximately 6.80% as the return after
+          expenses.
+        </p>
+
+        <p>
+          Actual investment performance does not necessarily follow
+          this simple relationship because fund returns, expenses and
+          portfolio values change over time.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <div class="ad-box" aria-label="Advertisement">
+      Advertisement
+    </div>
+
+
+    <!-- FAQ -->
+
+    <section class="section">
+
+      <h2>
+        Frequently Asked Questions
+      </h2>
+
+
+      <div class="faq-item">
+
+        <h3>
+          What is an ETF expense ratio?
+        </h3>
+
+        <p>
+          It is the annual percentage of fund assets used for the
+          operating expenses of an ETF.
+        </p>
+
+      </div>
+
+
+      <div class="faq-item">
+
+        <h3>
+          How do I calculate ETF fees?
+        </h3>
+
+        <p>
+          A simple estimate is the investment amount multiplied by
+          the expense ratio expressed as a decimal.
+        </p>
+
+      </div>
+
+
+      <div class="faq-item">
+
+        <h3>
+          Is a lower ETF expense ratio always better?
+        </h3>
+
+        <p>
+          Expense ratio is an important cost consideration, but it
+          should not be evaluated in isolation. Investors may also
+          consider the ETF's strategy, holdings, tracking performance,
+          liquidity, risk and other costs.
+        </p>
+
+      </div>
+
+
+      <div class="faq-item">
+
+        <h3>
+          Are ETF expense ratios charged monthly?
+        </h3>
+
+        <p>
+          The expense ratio is an annualized percentage. Fund
+          operating expenses are generally reflected over time in
+          the fund's assets and net asset value rather than being
+          presented as a separate monthly charge.
+        </p>
+
+      </div>
+
+
+      <div class="faq-item">
+
+        <h3>
+          Does this calculator include taxes?
+        </h3>
+
+        <p>
+          No. Taxes, brokerage commissions, bid-ask spreads and
+          other transaction costs are excluded.
+        </p>
+
+      </div>
+
+
+      <div class="faq-item">
+
+        <h3>
+          Can ETF expense ratios change?
+        </h3>
+
+        <p>
+          Yes. Fund expenses and expense ratios can change over time.
+          Always check the ETF's current official fund documentation
+          for the latest information.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- RELATED CALCULATORS -->
+
+    <section class="section">
+
+      <h2>
+        Related EZTradingHub Calculators
+      </h2>
+
+      <div class="related-grid">
+
+        <a
+          href="etf-return-calculator.html"
+          class="related-link">
+
+          ETF Return Calculator
+
+        </a>
+
+        <a
+          href="etf-profit-calculator.html"
+          class="related-link">
+
+          ETF Profit Calculator
+
+        </a>
+
+        <a
+          href="etf-dividend-calculator.html"
+          class="related-link">
+
+          ETF Dividend Calculator
+
+        </a>
+
+        <a
+          href="stock-profit-calculator.html"
+          class="related-link">
+
+          Stock Profit Calculator
+
+        </a>
+
+        <a
+          href="stock-dividend-calculator.html"
+          class="related-link">
+
+          Stock Dividend Calculator
+
+        </a>
+
+        <a
+          href="calculators.html"
+          class="related-link">
+
+          All Trading Calculators
+
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- DISCLAIMER -->
+
+    <section class="section">
+
+      <h2>
+        Disclaimer
+      </h2>
+
+      <div class="info-card">
+
+        <p>
+          This ETF Expense Ratio Calculator is provided for
+          educational and informational purposes only.
+        </p>
+
+        <p>
+          Results are estimates based on the assumptions and
+          information entered by the user. Actual fund expenses,
+          investment returns and portfolio values may differ.
+        </p>
+
+        <p>
+          This calculator does not constitute financial, investment,
+          tax or legal advice. Consider your individual circumstances
+          and consult a qualified professional where appropriate.
+        </p>
+
+      </div>
+
+    </section>
+
+  </div>
+
+</main>
+
+
+<footer>
+
+  <div class="footer-inner">
+
+    <div class="footer-links">
+          
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="calculators.html">
+        Calculators
+      </a>
+
+
+      <a href="about.html">
+        About
+      </a>
+          
+      <a href="faq.html">
+        FAQ
+      </a>
+
+      <a href="contact.html">
+        Contact
+      </a>
+
+      <a href="privacy.html">
+        Privacy Policy
+      </a>
+
+      <a href="terms.html">
+        Terms
+      </a>
+
+      <a href="disclaimer.html">
+        Disclaimer
+      </a>
+
+      <a href="cookie-policy.html">
+        Cookie Policy
+      </a>
+
+    </div>
+
+    <p class="disclaimer">
+
+      © <span id="year"></span>
+      EZTradingHub. Educational financial tools and calculators.
+
+    </p>
+
+  </div>
+
+</footer>
+
+
+<script>
+
+  /* =====================================
+     LIGHT / DARK MODE
+  ===================================== */
+
+  const themeToggle =
+    document.getElementById("themeToggle");
+
+  const savedTheme =
+    localStorage.getItem("EZTH-theme");
+
+  if (savedTheme === "dark") {
+
+    document.documentElement.setAttribute(
+      "data-theme",
+      "dark"
+    );
+
+    themeToggle.textContent = "☀️ Light";
+
+  }
+
+
+  themeToggle.addEventListener(
+    "click",
+    function () {
+
+      const currentTheme =
+        document.documentElement.getAttribute(
+          "data-theme"
+        );
+
+      if (currentTheme === "dark") {
+
+        document.documentElement.removeAttribute(
+          "data-theme"
+        );
+
+        localStorage.setItem(
+          "EZTH-theme",
+          "light"
+        );
+
+        themeToggle.textContent =
+          "🌙 Dark";
+
+      } else {
+
+        document.documentElement.setAttribute(
+          "data-theme",
+          "dark"
+        );
+
+        localStorage.setItem(
+          "EZTH-theme",
+          "dark"
+        );
+
+        themeToggle.textContent =
+          "☀️ Light";
+
+      }
+
+    }
+  );
+
+
+  /* =====================================
+     MONEY FORMATTER
+  ===================================== */
+
+  function formatMoney(
+    value,
+    currency
+  ) {
+
+    try {
+
+      return new Intl.NumberFormat(
+        undefined,
+        {
+          style: "currency",
+          currency: currency,
+          maximumFractionDigits: 2
+        }
+      ).format(value);
+
+    } catch (error) {
+
+      return currency +
+        " " +
+        Number(value).toFixed(2);
+
+    }
+
+  }
+
+
+  /* =====================================
+     ELEMENTS
+  ===================================== */
+
+  const form =
+    document.getElementById(
+      "expenseForm"
+    );
+
+  const results =
+    document.getElementById(
+      "results"
+    );
+
+  const errorBox =
+    document.getElementById(
+      "errorBox"
+    );
+
+
+  /* =====================================
+     CALCULATOR
+  ===================================== */
+
+  form.addEventListener(
+    "submit",
+    function (event) {
+
+      event.preventDefault();
+
+      errorBox.style.display = "none";
+      errorBox.textContent = "";
+
+
+      const investment =
+        parseFloat(
+          document.getElementById(
+            "investment"
+          ).value
+        );
+
+
+      const expenseRatio =
+        parseFloat(
+          document.getElementById(
+            "expenseRatio"
+          ).value
+        );
+
+
+      const years =
+        parseInt(
+          document.getElementById(
+            "years"
+          ).value,
+          10
+        );
+
+
+      const annualReturn =
+        parseFloat(
+          document.getElementById(
+            "annualReturn"
+          ).value
+        ) || 0;
+
+
+      const currency =
+        document.getElementById(
+          "currency"
+        ).value;
+
+
+      /* Validation */
+
+      if (
+        !Number.isFinite(investment) ||
+        !Number.isFinite(expenseRatio) ||
+        !Number.isFinite(years)
+      ) {
+
+        showError(
+          "Please enter valid numbers in the required fields."
+        );
+
+        return;
+
+      }
+
+
+      if (
+        investment <= 0 ||
+        expenseRatio < 0 ||
+        years <= 0
+      ) {
+
+        showError(
+          "Investment and projection period must be greater than zero. Expense ratio cannot be negative."
+        );
+
+        return;
+
+      }
+
+
+      /*
+        Simple annual expense estimate
+      */
+
+      const annualCost =
+        investment *
+        (expenseRatio / 100);
+
+
+      /*
+        Monthly equivalent
+      */
+
+      const monthlyCost =
+        annualCost / 12;
+
+
+      /*
+        Simple total expense estimate
+        based on the initial investment.
+      */
+
+      const totalSimpleExpenses =
+        annualCost * years;
+
+
+      /*
+        Long-term compound projection.
+
+        Before expenses:
+        investment × (1 + return)^years
+
+        After expenses:
+        investment ×
+        (1 + return - expense ratio)^years
+
+        This is a simplified model.
+      */
+
+      const grossRate =
+        annualReturn / 100;
+
+      const expenseRate =
+        expenseRatio / 100;
+
+
+      const netRate =
+        grossRate - expenseRate;
+
+
+      const futureBefore =
+        investment *
+        Math.pow(
+          1 + grossRate,
+          years
+        );
+
+
+      const futureAfter =
+        investment *
+        Math.pow(
+          1 + netRate,
+          years
+        );
+
+
+      const longTermDifference =
+        Math.max(
+          0,
+          futureBefore - futureAfter
+        );
+
+
+      /*
+        Display results
+      */
+
+      document.getElementById(
+        "annualCost"
+      ).textContent =
+        formatMoney(
+          annualCost,
+          currency
+        );
+
+
+      document.getElementById(
+        "monthlyCost"
+      ).textContent =
+        formatMoney(
+          monthlyCost,
+          currency
+        );
+
+
+      document.getElementById(
+        "displayRatio"
+      ).textContent =
+        expenseRatio.toFixed(3) + "%";
+
+
+      document.getElementById(
+        "displayInvestment"
+      ).textContent =
+        formatMoney(
+          investment,
+          currency
+        );
+
+
+      document.getElementById(
+        "totalExpenses"
+      ).textContent =
+        formatMoney(
+          totalSimpleExpenses,
+          currency
+        );
+
+
+      document.getElementById(
+        "futureBefore"
+      ).textContent =
+        formatMoney(
+          futureBefore,
+          currency
+        );
+
+
+      document.getElementById(
+        "futureAfter"
+      ).textContent =
+        formatMoney(
+          futureAfter,
+          currency
+        );
+
+
+      document.getElementById(
+        "longTermDifference"
+      ).textContent =
+        formatMoney(
+          longTermDifference,
+          currency
+        );
+
+
+      /*
+        Comparison table
+      */
+
+      const comparisonRatios = [
+        expenseRatio / 2,
+        expenseRatio,
+        expenseRatio * 2
+      ];
+
+
+      const comparisonBody =
+        document.getElementById(
+          "comparisonBody"
+        );
+
+
+      comparisonBody.innerHTML = "";
+
+
+      comparisonRatios.forEach(
+        function (ratio) {
+
+          const annual =
+            investment *
+            (ratio / 100);
+
+
+          const rate =
+            grossRate -
+            (ratio / 100);
+
+
+          const future =
+            investment *
+            Math.pow(
+              1 + rate,
+              years
+            );
+
+
+          const costDifference =
+            Math.max(
+              0,
+              futureBefore - future
+            );
+
+
+          const row =
+            document.createElement(
+              "tr"
+            );
+
+
+          row.innerHTML = `
+
+            <td>
+              ${ratio.toFixed(3)}%
+            </td>
+
+            <td>
+              ${formatMoney(
+                annual,
+                currency
+              )}
+            </td>
+
+            <td>
+              ${formatMoney(
+                costDifference,
+                currency
+              )}
+            </td>
+
+          `;
+
+
+          comparisonBody.appendChild(row);
+
+        }
+      );
+
+
+      results.classList.add(
+        "show"
+      );
+
+
+      results.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+
+    }
+  );
+
+
+  /* =====================================
+     ERROR FUNCTION
+  ===================================== */
+
+  function showError(message) {
+
+    errorBox.textContent =
+      message;
+
+    errorBox.style.display =
+      "block";
+
+  }
+
+
+  /* =====================================
+     RESET
+  ===================================== */
+
+  document
+    .getElementById("resetBtn")
+    .addEventListener(
+      "click",
+      function () {
+
+        form.reset();
+
+        document.getElementById(
+          "years"
+        ).value = "10";
+
+        document.getElementById(
+          "annualReturn"
+        ).value = "7";
+
+        results.classList.remove(
+          "show"
+        );
+
+        errorBox.style.display =
+          "none";
+
+        errorBox.textContent =
+          "";
+
+      }
+    );
+
+
+  /* =====================================
+     CURRENT YEAR
+  ===================================== */
+
+  document.getElementById(
+    "year"
+  ).textContent =
+    new Date().getFullYear();
+
+</script>
+
+</body>
+</html>
