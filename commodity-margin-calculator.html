@@ -1,0 +1,3069 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Commodity Margin Calculator | Gold & Oil Margin Calculator | EZTradingHub</title>
+
+  <meta name="description" content="Use the free EZTradingHub Commodity Margin Calculator to estimate required margin, position value, leverage, margin usage and available margin for gold, oil, silver and other commodities.">
+
+  <meta name="keywords" content="commodity margin calculator, commodity margin requirement calculator, gold margin calculator, oil margin calculator, commodity leverage calculator, trading margin calculator, commodity trading calculator">
+
+  <meta name="author" content="EZTradingHub">
+
+  <meta name="robots" content="index, follow">
+
+  <link rel="canonical" href="https://eztradinghub.com/commodity-margin-calculator.html">
+
+  <meta name="theme-color" content="#075985">
+
+  <link rel="icon" type="image/png" href="/assets/images/favicon.png">
+
+
+  <!-- OPEN GRAPH -->
+
+  <meta property="og:type" content="website">
+
+  <meta property="og:title" content="Commodity Margin Calculator | EZTradingHub">
+
+  <meta property="og:description" content="Calculate estimated commodity margin requirements, position value, leverage, margin usage and available margin for gold, oil and other commodities.">
+
+  <meta property="og:url" content="https://eztradinghub.com/commodity-margin-calculator.html">
+
+  <meta property="og:site_name" content="EZTradingHub">
+
+  <meta property="og:image" content="https://eztradinghub.com/assets/images/og-image.png">
+
+
+  <!-- TWITTER -->
+
+  <meta name="twitter:card" content="summary_large_image">
+
+  <meta name="twitter:title" content="Commodity Margin Calculator | EZTradingHub">
+
+  <meta name="twitter:description" content="Estimate commodity margin requirements, position value, leverage and available margin before trading.">
+
+  <meta name="twitter:image" content="https://eztradinghub.com/assets/images/og-image.png">
+
+
+  <!-- FONT -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+
+  <!-- WEB APPLICATION SCHEMA -->
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Commodity Margin Calculator",
+    "url": "https://eztradinghub.com/commodity-margin-calculator.html",
+    "description": "Free commodity margin calculator for estimating required margin, position value, leverage, margin usage and available margin.",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Web",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "EZTradingHub",
+      "url": "https://eztradinghub.com/"
+    }
+  }
+  </script>
+
+
+  <!-- BREADCRUMB SCHEMA -->
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "EZTradingHub",
+        "item": "https://eztradinghub.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Calculators",
+        "item": "https://eztradinghub.com/calculators.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Commodity Margin Calculator",
+        "item": "https://eztradinghub.com/commodity-margin-calculator.html"
+      }
+    ]
+  }
+  </script>
+
+
+  <!-- FAQ SCHEMA -->
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a commodity margin calculator?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A commodity margin calculator estimates the amount of account capital that may be required to open a commodity position based on position value and margin requirements."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How is commodity margin calculated?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A simplified margin calculation multiplies the position value by the margin percentage. When leverage is used, required margin can also be estimated by dividing position value by leverage."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I calculate gold and oil margin?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. The calculator can be used for gold, silver, crude oil, Brent oil, natural gas, copper and other commodities. Actual requirements depend on the broker, exchange and trading product."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does margin mean the maximum amount I can lose?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Margin is capital required to support a position and is not the same as maximum trading loss. A leveraged commodity position can lose more than the margin initially required."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does leverage reduce commodity trading risk?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Leverage can reduce the capital required to control a position, but it does not reduce the underlying market exposure or eliminate the possibility of substantial losses."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does this calculator use live commodity prices?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Commodity prices are entered manually, so the calculator does not require a live market data connection."
+        }
+      }
+    ]
+  }
+  </script>
+
+
+  <style>
+
+    :root {
+
+      --bg: #f4f7fb;
+
+      --surface: #ffffff;
+
+      --surface2: #f8fafc;
+
+      --text: #172033;
+
+      --muted: #667085;
+
+      --border: #e2e8f0;
+
+      --primary: #075985;
+
+      --primary2: #0ea5e9;
+
+      --success: #16a34a;
+
+      --warning: #d97706;
+
+      --danger: #dc2626;
+
+      --shadow:
+        0 12px 35px rgba(15,23,42,.08);
+
+      --radius: 18px;
+
+    }
+
+
+    body.dark {
+
+      --bg: #07111f;
+
+      --surface: #0e1b2d;
+
+      --surface2: #111f33;
+
+      --text: #f1f5f9;
+
+      --muted: #aab7c9;
+
+      --border: #24364d;
+
+      --primary: #38bdf8;
+
+      --primary2: #0ea5e9;
+
+      --success: #4ade80;
+
+      --warning: #fbbf24;
+
+      --danger: #fb7185;
+
+      --shadow:
+        0 12px 35px rgba(0,0,0,.25);
+
+    }
+
+
+    * {
+      box-sizing: border-box;
+    }
+
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+
+    body {
+
+      margin: 0;
+
+      font-family:
+        "Inter",
+        Arial,
+        sans-serif;
+
+      background: var(--bg);
+
+      color: var(--text);
+
+      line-height: 1.65;
+
+      transition:
+        background .25s ease,
+        color .25s ease;
+
+    }
+
+
+    a {
+
+      color: var(--primary);
+
+      text-decoration: none;
+
+    }
+
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+
+    button,
+    input,
+    select {
+      font: inherit;
+    }
+
+
+    /* HEADER */
+
+    .site-header {
+
+      position: sticky;
+
+      top: 0;
+
+      z-index: 1000;
+
+      background:
+        rgba(255,255,255,.92);
+
+      backdrop-filter: blur(12px);
+
+      border-bottom:
+        1px solid var(--border);
+
+    }
+
+
+    body.dark .site-header {
+
+      background:
+        rgba(14,27,45,.94);
+
+    }
+
+
+    .nav {
+
+      max-width: 1180px;
+
+      margin: auto;
+
+      padding: 14px 20px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      gap: 18px;
+
+    }
+
+
+    .brand {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 10px;
+
+      color: var(--text);
+
+      font-weight: 800;
+
+      white-space: nowrap;
+
+    }
+
+
+    .logo {
+
+      width: 40px;
+
+      height: 40px;
+
+      display: grid;
+
+      place-items: center;
+
+      border-radius: 12px;
+
+      color: white;
+
+      font-weight: 800;
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--primary),
+          var(--primary2)
+        );
+
+      box-shadow:
+        0 8px 20px rgba(14,165,233,.25);
+
+    }
+
+
+    .nav-links {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 18px;
+
+    }
+
+
+    .nav-links a {
+
+      color: var(--text);
+
+      font-size: 14px;
+
+      font-weight: 600;
+
+    }
+
+
+    .theme-toggle {
+
+      width: 42px;
+
+      height: 42px;
+
+      border:
+        1px solid var(--border);
+
+      border-radius: 12px;
+
+      background: var(--surface);
+
+      color: var(--text);
+
+      cursor: pointer;
+
+    }
+
+
+    /* HERO */
+
+    .hero {
+
+      padding:
+        70px 20px 80px;
+
+      color: white;
+
+      background:
+
+        radial-gradient(
+          circle at 10% 20%,
+          rgba(14,165,233,.28),
+          transparent 30%
+        ),
+
+        radial-gradient(
+          circle at 90% 20%,
+          rgba(56,189,248,.18),
+          transparent 28%
+        ),
+
+        linear-gradient(
+          135deg,
+          #063b5c,
+          #075985 55%,
+          #0ea5e9
+        );
+
+    }
+
+
+    .hero-inner {
+
+      max-width: 1050px;
+
+      margin: auto;
+
+      text-align: center;
+
+    }
+
+
+    .eyebrow {
+
+      display: inline-block;
+
+      padding: 7px 12px;
+
+      margin-bottom: 16px;
+
+      border:
+        1px solid rgba(255,255,255,.22);
+
+      border-radius: 999px;
+
+      background:
+        rgba(255,255,255,.13);
+
+      font-size: 13px;
+
+      font-weight: 700;
+
+    }
+
+
+    h1 {
+
+      max-width: 850px;
+
+      margin:
+        0 auto 16px;
+
+      font-size:
+        clamp(32px,6vw,58px);
+
+      line-height: 1.08;
+
+      letter-spacing: -.035em;
+
+    }
+
+
+    .hero p {
+
+      max-width: 760px;
+
+      margin: auto;
+
+      color:
+        rgba(255,255,255,.88);
+
+      font-size: 17px;
+
+    }
+
+
+    /* CONTAINER */
+
+    .container {
+
+      max-width: 1100px;
+
+      margin: auto;
+
+      padding:
+        0 20px;
+
+    }
+
+
+    .calculator-wrap {
+
+      position: relative;
+
+      z-index: 5;
+
+      margin-top: -45px;
+
+    }
+
+
+    .calculator-card {
+
+      overflow: hidden;
+
+      background: var(--surface);
+
+      border:
+        1px solid var(--border);
+
+      border-radius: 24px;
+
+      box-shadow: var(--shadow);
+
+    }
+
+
+    .card-head {
+
+      padding:
+        24px 26px;
+
+      border-bottom:
+        1px solid var(--border);
+
+    }
+
+
+    .card-head h2 {
+
+      margin:
+        0 0 5px;
+
+      font-size: 22px;
+
+    }
+
+
+    .card-head p {
+
+      margin: 0;
+
+      color: var(--muted);
+
+      font-size: 14px;
+
+    }
+
+
+    .form {
+
+      padding: 26px;
+
+    }
+
+
+    .grid {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(2,1fr);
+
+      gap: 18px;
+
+    }
+
+
+    .field {
+
+      display: flex;
+
+      flex-direction: column;
+
+      gap: 7px;
+
+    }
+
+
+    .field.full {
+
+      grid-column:
+        1 / -1;
+
+    }
+
+
+    label {
+
+      font-size: 13px;
+
+      font-weight: 700;
+
+    }
+
+
+    input,
+    select {
+
+      width: 100%;
+
+      padding:
+        13px 14px;
+
+      border:
+        1px solid var(--border);
+
+      border-radius: 12px;
+
+      background: var(--surface2);
+
+      color: var(--text);
+
+      outline: none;
+
+      transition: .2s ease;
+
+    }
+
+
+    input:focus,
+    select:focus {
+
+      border-color:
+        var(--primary2);
+
+      box-shadow:
+        0 0 0 3px
+        rgba(14,165,233,.12);
+
+    }
+
+
+    .hint {
+
+      color: var(--muted);
+
+      font-size: 12px;
+
+    }
+
+
+    /* BUTTONS */
+
+    .buttons {
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 12px;
+
+      margin-top: 22px;
+
+    }
+
+
+    .btn {
+
+      border: 0;
+
+      border-radius: 12px;
+
+      padding:
+        12px 18px;
+
+      font-weight: 700;
+
+      cursor: pointer;
+
+    }
+
+
+    .btn-primary {
+
+      color: white;
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--primary),
+          var(--primary2)
+        );
+
+    }
+
+
+    .btn-secondary {
+
+      background: var(--surface2);
+
+      color: var(--text);
+
+      border:
+        1px solid var(--border);
+
+    }
+
+
+    /* MESSAGE */
+
+    .notice {
+
+      margin-top: 18px;
+
+      padding:
+        14px 16px;
+
+      border-radius: 13px;
+
+      background:
+        rgba(217,119,6,.09);
+
+      border:
+        1px solid rgba(217,119,6,.25);
+
+      color: var(--text);
+
+      font-size: 13px;
+
+    }
+
+
+    /* RESULTS */
+
+    .results {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(4,1fr);
+
+      gap: 14px;
+
+      margin-top: 25px;
+
+    }
+
+
+    .result {
+
+      padding: 18px;
+
+      background: var(--surface2);
+
+      border:
+        1px solid var(--border);
+
+      border-radius: 16px;
+
+    }
+
+
+    .result-label {
+
+      margin-bottom: 7px;
+
+      color: var(--muted);
+
+      font-size: 12px;
+
+      font-weight: 700;
+
+    }
+
+
+    .result-value {
+
+      font-size: 23px;
+
+      font-weight: 800;
+
+      line-height: 1.2;
+
+      overflow-wrap: anywhere;
+
+    }
+
+
+    .result small {
+
+      display: block;
+
+      margin-top: 5px;
+
+      color: var(--muted);
+
+    }
+
+
+    .positive {
+      color: var(--success);
+    }
+
+
+    .negative {
+      color: var(--danger);
+    }
+
+
+    .neutral {
+      color: var(--primary);
+    }
+
+
+    /* CONTENT */
+
+    .content {
+
+      padding:
+        65px 20px;
+
+    }
+
+
+    .content-inner {
+
+      max-width: 1000px;
+
+      margin: auto;
+
+    }
+
+
+    .content h2 {
+
+      margin-top: 48px;
+
+      font-size: 30px;
+
+      line-height: 1.2;
+
+    }
+
+
+    .content h3 {
+
+      margin-top: 30px;
+
+      font-size: 21px;
+
+    }
+
+
+    .content p,
+    .content li {
+
+      color: var(--muted);
+
+    }
+
+
+    .formula {
+
+      overflow-x: auto;
+
+      margin:
+        18px 0;
+
+      padding: 18px;
+
+      border:
+        1px solid var(--border);
+
+      border-radius: 14px;
+
+      background: var(--surface2);
+
+      font-weight: 700;
+
+    }
+
+
+    .example {
+
+      padding: 20px;
+
+      border:
+        1px solid var(--border);
+
+      border-radius: 16px;
+
+      background: var(--surface2);
+
+    }
+
+
+    /* FAQ */
+
+    .faq {
+
+      margin-top: 25px;
+
+    }
+
+
+    details {
+
+      margin-bottom: 10px;
+
+      padding:
+        15px 17px;
+
+      background: var(--surface);
+
+      border:
+        1px solid var(--border);
+
+      border-radius: 14px;
+
+    }
+
+
+    summary {
+
+      cursor: pointer;
+
+      font-weight: 700;
+
+    }
+
+
+    details p {
+
+      margin-bottom: 0;
+
+    }
+
+
+    /* RELATED */
+
+    .related {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(3,1fr);
+
+      gap: 14px;
+
+      margin-top: 20px;
+
+    }
+
+
+    .related a {
+
+      display: block;
+
+      padding: 17px;
+
+      background: var(--surface);
+
+      border:
+        1px solid var(--border);
+
+      border-radius: 14px;
+
+      font-weight: 700;
+
+    }
+
+
+    /* DISCLAIMER */
+
+    .disclaimer {
+
+      margin-top: 45px;
+
+      padding: 22px;
+
+      border-radius: 16px;
+
+      background: var(--surface2);
+
+      border:
+        1px solid var(--border);
+
+    }
+
+
+    /* FOOTER */
+
+    footer {
+
+      padding:
+        35px 20px;
+
+      border-top:
+        1px solid var(--border);
+
+      background: var(--surface);
+
+    }
+
+
+    .footer-inner {
+
+      max-width: 1100px;
+
+      margin: auto;
+
+      display: flex;
+
+      justify-content: space-between;
+
+      gap: 20px;
+
+      flex-wrap: wrap;
+
+    }
+
+
+    .footer-links {
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 14px;
+
+      font-size: 13px;
+
+    }
+
+
+    .copyright {
+
+      color: var(--muted);
+
+      font-size: 13px;
+
+    }
+
+
+    /* RESPONSIVE */
+
+    @media (max-width: 900px) {
+
+      .results {
+
+        grid-template-columns:
+          repeat(2,1fr);
+
+      }
+
+      .related {
+
+        grid-template-columns:
+          repeat(2,1fr);
+
+      }
+
+    }
+
+
+    @media (max-width: 700px) {
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        padding:
+          50px 18px 70px;
+      }
+
+      .container,
+      .content {
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+
+      .form {
+        padding: 19px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .field.full {
+        grid-column: auto;
+      }
+
+      .results {
+        grid-template-columns:
+          1fr 1fr;
+      }
+
+      .related {
+        grid-template-columns: 1fr;
+      }
+
+      .result-value {
+        font-size: 19px;
+      }
+
+    }
+
+
+    @media (max-width: 420px) {
+
+      .results {
+        grid-template-columns: 1fr;
+      }
+
+      .buttons .btn {
+        width: 100%;
+      }
+
+    }
+
+
+    /* PRINT */
+
+    @media print {
+
+      .site-header,
+      .hero,
+      .buttons,
+      footer,
+      .related {
+        display: none !important;
+      }
+
+      .calculator-wrap {
+        margin-top: 0;
+      }
+
+      body {
+        background: white;
+        color: black;
+      }
+
+      .calculator-card,
+      .result {
+        box-shadow: none;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+<!-- HEADER -->
+
+<header class="site-header">
+
+  <nav class="nav" aria-label="Main navigation">
+
+    <a
+      href="index.html"
+      class="brand"
+      aria-label="EZTradingHub homepage">
+
+      <span
+        class="logo"
+        aria-hidden="true">
+        EZ
+      </span>
+
+      <span>
+        EZTradingHub
+      </span>
+
+    </a>
+
+
+    <div class="nav-links">
+
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="calculators.html">
+        Calculators
+      </a>
+
+      <a href="trade-journal.html">
+        Trade Journal
+      </a>
+
+      <a href="Dashboard.html">
+        Dashboard
+      </a>
+
+      <a href="about.html">
+        About
+      </a>
+
+    </div>
+
+
+    <button
+      id="themeToggle"
+      class="theme-toggle"
+      type="button"
+      aria-label="Switch between light and dark mode"
+      title="Toggle light and dark mode">
+
+      🌙
+
+    </button>
+
+  </nav>
+
+</header>
+
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+  <div class="hero-inner">
+
+    <div class="eyebrow">
+      COMMODITY TRADING TOOL
+    </div>
+
+
+    <h1>
+      Commodity Margin Calculator
+    </h1>
+
+
+    <p>
+      Estimate the margin required to open a commodity position and understand
+      your position value, leverage, margin usage and available trading
+      capital.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<main>
+
+
+  <!-- CALCULATOR -->
+
+  <section class="calculator-wrap">
+
+    <div class="container">
+
+      <div class="calculator-card">
+
+
+        <div class="card-head">
+
+          <h2>
+            Calculate Commodity Margin
+          </h2>
+
+          <p>
+            Enter your position details and margin requirement to estimate the
+            capital required for the trade.
+          </p>
+
+        </div>
+
+
+
+        <div class="form">
+
+
+          <div class="grid">
+
+
+            <!-- COMMODITY -->
+
+            <div class="field">
+
+              <label for="commodity">
+                Commodity
+              </label>
+
+              <select id="commodity">
+
+                <option value="Gold">
+                  Gold
+                </option>
+
+                <option value="Silver">
+                  Silver
+                </option>
+
+                <option value="Crude Oil">
+                  Crude Oil
+                </option>
+
+                <option value="Brent Oil">
+                  Brent Oil
+                </option>
+
+                <option value="Natural Gas">
+                  Natural Gas
+                </option>
+
+                <option value="Copper">
+                  Copper
+                </option>
+
+                <option value="Platinum">
+                  Platinum
+                </option>
+
+                <option value="Palladium">
+                  Palladium
+                </option>
+
+                <option value="Custom Commodity">
+                  Custom Commodity
+                </option>
+
+              </select>
+
+            </div>
+
+
+            <!-- CURRENCY -->
+
+            <div class="field">
+
+              <label for="currency">
+                Account Currency
+              </label>
+
+              <select id="currency">
+
+                <option value="USD">
+                  $ USD
+                </option>
+
+                <option value="NGN">
+                  ₦ NGN
+                </option>
+
+                <option value="EUR">
+                  € EUR
+                </option>
+
+                <option value="GBP">
+                  £ GBP
+                </option>
+
+              </select>
+
+            </div>
+
+
+            <!-- ACCOUNT BALANCE -->
+
+            <div class="field">
+
+              <label for="balance">
+                Account Balance
+              </label>
+
+              <input
+                id="balance"
+                type="number"
+                min="0"
+                step="any"
+                value="10000"
+                inputmode="decimal">
+
+              <span class="hint">
+                Total trading account equity or balance.
+              </span>
+
+            </div>
+
+
+            <!-- POSITION SIZE -->
+
+            <div class="field">
+
+              <label for="positionSize">
+                Position Size
+              </label>
+
+              <input
+                id="positionSize"
+                type="number"
+                min="0"
+                step="any"
+                value="1"
+                inputmode="decimal">
+
+              <span class="hint">
+                Enter units, lots or contracts according to your product.
+              </span>
+
+            </div>
+
+
+            <!-- ENTRY PRICE -->
+
+            <div class="field">
+
+              <label for="entry">
+                Entry Price
+              </label>
+
+              <input
+                id="entry"
+                type="number"
+                min="0"
+                step="any"
+                value="2300"
+                inputmode="decimal">
+
+            </div>
+
+
+            <!-- CONTRACT SIZE -->
+
+            <div class="field">
+
+              <label for="contractSize">
+                Contract / Unit Size
+              </label>
+
+              <input
+                id="contractSize"
+                type="number"
+                min="0.000001"
+                step="any"
+                value="1"
+                inputmode="decimal">
+
+              <span class="hint">
+                Check the exact specification with your broker or exchange.
+              </span>
+
+            </div>
+
+
+            <!-- MARGIN -->
+
+            <div class="field">
+
+              <label for="marginPercent">
+                Margin Requirement (%)
+              </label>
+
+              <input
+                id="marginPercent"
+                type="number"
+                min="0.01"
+                max="100"
+                step="0.01"
+                value="5"
+                inputmode="decimal">
+
+              <span class="hint">
+                Example: 5% margin corresponds to approximately 20:1 leverage.
+              </span>
+
+            </div>
+
+
+            <!-- LEVERAGE -->
+
+            <div class="field">
+
+              <label for="leverage">
+                Leverage (Optional)
+              </label>
+
+              <input
+                id="leverage"
+                type="number"
+                min="1"
+                step="any"
+                value="20"
+                inputmode="decimal">
+
+              <span class="hint">
+                Leave empty or use 0 if you want to calculate using margin %.
+              </span>
+
+            </div>
+
+
+            <!-- EXTRA MARGIN -->
+
+            <div class="field">
+
+              <label for="extraMargin">
+                Existing Margin Used
+              </label>
+
+              <input
+                id="extraMargin"
+                type="number"
+                min="0"
+                step="any"
+                value="0"
+                inputmode="decimal">
+
+              <span class="hint">
+                Optional margin already committed to other positions.
+              </span>
+
+            </div>
+
+
+          </div>
+
+
+
+          <!-- BUTTONS -->
+
+          <div class="buttons">
+
+            <button
+              id="calculateBtn"
+              class="btn btn-primary"
+              type="button">
+
+              Calculate Margin
+
+            </button>
+
+
+            <button
+              id="resetBtn"
+              class="btn btn-secondary"
+              type="button">
+
+              Reset
+
+            </button>
+
+
+            <button
+              class="btn btn-secondary"
+              type="button"
+              onclick="window.print()">
+
+              Print
+
+            </button>
+
+          </div>
+
+
+
+          <!-- MESSAGE -->
+
+          <div
+            id="message"
+            class="notice"
+            role="status"
+            aria-live="polite">
+
+            Enter your trade details to calculate estimated commodity margin.
+
+          </div>
+
+
+
+          <!-- RESULTS -->
+
+          <div
+            class="results"
+            aria-live="polite">
+
+
+            <div class="result">
+
+              <div class="result-label">
+                Position Value
+              </div>
+
+              <div
+                id="positionValue"
+                class="result-value neutral">
+
+                —
+
+              </div>
+
+              <small>
+                Approximate notional value
+              </small>
+
+            </div>
+
+
+            <div class="result">
+
+              <div class="result-label">
+                Required Margin
+              </div>
+
+              <div
+                id="requiredMargin"
+                class="result-value neutral">
+
+                —
+
+              </div>
+
+              <small>
+                Estimated capital required
+              </small>
+
+            </div>
+
+
+            <div class="result">
+
+              <div class="result-label">
+                Margin %
+              </div>
+
+              <div
+                id="effectiveMargin"
+                class="result-value">
+
+                —
+
+              </div>
+
+              <small>
+                Used in calculation
+              </small>
+
+            </div>
+
+
+            <div class="result">
+
+              <div class="result-label">
+                Effective Leverage
+              </div>
+
+              <div
+                id="effectiveLeverage"
+                class="result-value">
+
+                —
+
+              </div>
+
+              <small>
+                Approximate position leverage
+              </small>
+
+            </div>
+
+
+            <div class="result">
+
+              <div class="result-label">
+                Available Margin
+              </div>
+
+              <div
+                id="availableMargin"
+                class="result-value positive">
+
+                —
+
+              </div>
+
+              <small>
+                After estimated requirement
+              </small>
+
+            </div>
+
+
+            <div class="result">
+
+              <div class="result-label">
+                Margin Usage
+              </div>
+
+              <div
+                id="marginUsage"
+                class="result-value">
+
+                —
+
+              </div>
+
+              <small>
+                Percentage of account
+              </small>
+
+            </div>
+
+
+            <div class="result">
+
+              <div class="result-label">
+                Existing Margin
+              </div>
+
+              <div
+                id="existingMargin"
+                class="result-value">
+
+                —
+
+              </div>
+
+              <small>
+                Other positions
+              </small>
+
+            </div>
+
+
+            <div class="result">
+
+              <div class="result-label">
+                Total Margin Used
+              </div>
+
+              <div
+                id="totalMargin"
+                class="result-value negative">
+
+                —
+
+              </div>
+
+              <small>
+                Existing + new position
+              </small>
+
+            </div>
+
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- EDUCATIONAL CONTENT -->
+
+  <section class="content">
+
+    <div class="content-inner">
+
+
+      <h2>
+        What Is a Commodity Margin Calculator?
+      </h2>
+
+
+      <p>
+        A commodity margin calculator estimates how much trading capital may
+        be required to open a commodity position. Margin is commonly associated
+        with leveraged trading, where a trader controls a position whose
+        notional value is larger than the capital committed as margin.
+      </p>
+
+
+      <p>
+        This calculator can be used for commodities such as gold, silver,
+        crude oil, Brent oil, natural gas, copper, platinum and palladium.
+        Because contract specifications vary, users should always confirm the
+        exact margin requirements with their broker or exchange.
+      </p>
+
+
+
+      <h2>
+        How Commodity Margin Is Calculated
+      </h2>
+
+
+      <p>
+        A simplified margin calculation uses the position's notional value and
+        the required margin percentage.
+      </p>
+
+
+      <div class="formula">
+
+        Position Value =
+        Entry Price × Position Size × Contract / Unit Size
+
+      </div>
+
+
+      <div class="formula">
+
+        Required Margin =
+        Position Value × Margin Requirement ÷ 100
+
+      </div>
+
+
+      <p>
+        When leverage is used instead of a margin percentage, an approximate
+        required margin can be calculated as:
+      </p>
+
+
+      <div class="formula">
+
+        Required Margin =
+        Position Value ÷ Leverage
+
+      </div>
+
+
+      <p>
+        These are simplified calculations. Your broker may use different
+        formulas, conversion rates, maintenance requirements or tiered margin
+        rules.
+      </p>
+
+
+
+      <h2>
+        Example: Gold Margin Calculation
+      </h2>
+
+
+      <div class="example">
+
+        <p>
+          Consider a simplified gold position with these assumptions:
+        </p>
+
+
+        <ul>
+
+          <li>
+            Account balance: $10,000
+          </li>
+
+          <li>
+            Gold price: $2,300
+          </li>
+
+          <li>
+            Position size: 2 units
+          </li>
+
+          <li>
+            Contract/unit size: 1
+          </li>
+
+          <li>
+            Margin requirement: 5%
+          </li>
+
+        </ul>
+
+
+        <p>
+          The approximate position value is:
+        </p>
+
+
+        <div class="formula">
+
+          $2,300 × 2 × 1 = $4,600
+
+        </div>
+
+
+        <p>
+          The estimated required margin is:
+        </p>
+
+
+        <div class="formula">
+
+          $4,600 × 5% = $230
+
+        </div>
+
+
+        <p>
+          Under these simplified assumptions, approximately $230 of account
+          capital would be required as margin for the position.
+        </p>
+
+
+        <p>
+          This does not mean the maximum possible loss is $230. Market losses
+          can be substantially different depending on price movement and
+          position size.
+        </p>
+
+      </div>
+
+
+
+      <h2>
+        Margin vs Trading Risk
+      </h2>
+
+
+      <p>
+        Margin and risk are two different concepts.
+      </p>
+
+
+      <p>
+        <strong>Margin</strong> is the amount of capital required to support a
+        position.
+      </p>
+
+
+      <p>
+        <strong>Trading risk</strong> is the potential financial loss from an
+        adverse price movement.
+      </p>
+
+
+      <p>
+        A position could require relatively little margin while still having
+        substantial market exposure because of leverage.
+      </p>
+
+
+
+      <h2>
+        Margin vs Leverage
+      </h2>
+
+
+      <p>
+        Margin and leverage are closely related.
+      </p>
+
+
+      <div class="formula">
+
+        Approximate Leverage =
+        100 ÷ Margin Percentage
+
+      </div>
+
+
+      <p>
+        For example, a 5% margin requirement corresponds to approximately
+        20:1 leverage under a simple relationship.
+      </p>
+
+
+      <p>
+        However, actual broker leverage can vary by instrument, account type,
+        market conditions, position size and regulatory requirements.
+      </p>
+
+
+
+      <h2>
+        What Is Margin Usage?
+      </h2>
+
+
+      <p>
+        Margin usage measures how much of your account balance or equity is
+        committed to margin.
+      </p>
+
+
+      <div class="formula">
+
+        Margin Usage =
+        Total Margin Used ÷ Account Balance × 100
+
+      </div>
+
+
+      <p>
+        Higher margin usage leaves less capital available to absorb adverse
+        market movements or support additional positions.
+      </p>
+
+
+
+      <h2>
+        Available Margin
+      </h2>
+
+
+      <p>
+        Available margin represents the portion of the account balance that is
+        not allocated to the estimated margin requirement in this simplified
+        model.
+      </p>
+
+
+      <div class="formula">
+
+        Available Margin =
+        Account Balance − Total Margin Used
+
+      </div>
+
+
+      <p>
+        Actual brokers generally calculate available margin using account
+        equity, unrealized profit and loss, margin requirements and other open
+        positions. Therefore, this calculator should be treated as an
+        educational estimate rather than a broker statement.
+      </p>
+
+
+
+      <h2>
+        Commodity Margin for Gold
+      </h2>
+
+
+      <p>
+        Gold is widely traded through futures, CFDs and other financial
+        products. The margin required for gold can differ significantly between
+        products and brokers.
+      </p>
+
+
+      <p>
+        Before trading gold, check the product's contract size, margin
+        requirement, tick value, minimum trade size and leverage conditions.
+      </p>
+
+
+
+      <h2>
+        Commodity Margin for Oil
+      </h2>
+
+
+      <p>
+        Crude oil and Brent oil can have significant price volatility. Margin
+        requirements can also vary depending on the product and provider.
+      </p>
+
+
+      <p>
+        Oil traders should pay attention to contract specifications, rollover
+        or financing charges, spreads, price gaps and changes in margin
+        requirements.
+      </p>
+
+
+
+      <h2>
+        Why Margin Requirements Can Change
+      </h2>
+
+
+      <p>
+        Brokers and exchanges can adjust margin requirements depending on
+        market conditions and risk factors.
+      </p>
+
+
+      <p>
+        Possible factors include:
+      </p>
+
+
+      <ul>
+
+        <li>
+          Market volatility
+        </li>
+
+        <li>
+          Economic announcements
+        </li>
+
+        <li>
+          Liquidity conditions
+        </li>
+
+        <li>
+          Position size
+        </li>
+
+        <li>
+          Contract specifications
+        </li>
+
+        <li>
+          Regulatory requirements
+        </li>
+
+        <li>
+          Broker risk policies
+        </li>
+
+      </ul>
+
+
+
+      <h2>
+        Does Leverage Make Commodity Trading Safer?
+      </h2>
+
+
+      <p>
+        No. Leverage does not make commodity trading safer. It allows a trader
+        to control a larger notional position with less initial margin, but the
+        underlying market exposure remains.
+      </p>
+
+
+      <p>
+        A relatively small price movement can therefore produce a meaningful
+        gain or loss compared with the capital committed as margin.
+      </p>
+
+
+
+      <h2>
+        Margin Call and Stop-Out Risk
+      </h2>
+
+
+      <p>
+        If losses reduce account equity sufficiently, a broker may issue a
+        margin warning or begin closing positions depending on its margin
+        policy.
+      </p>
+
+
+      <p>
+        The exact thresholds and procedures differ between brokers and
+        jurisdictions. Traders should understand their broker's margin-call
+        and stop-out rules before using leverage.
+      </p>
+
+
+
+      <h2>
+        Margin Is Not a Stop-Loss
+      </h2>
+
+
+      <p>
+        A common mistake is to treat the required margin as the maximum amount
+        that can be lost.
+      </p>
+
+
+      <p>
+        Margin simply supports the position. A stop-loss or other risk-control
+        method is what defines the intended exit level. Actual losses can
+        exceed planned losses because of slippage, gaps and market execution
+        conditions.
+      </p>
+
+
+
+      <h2>
+        Important Limitations
+      </h2>
+
+
+      <ul>
+
+        <li>
+          This calculator does not provide live commodity prices.
+        </li>
+
+        <li>
+          Prices are entered manually.
+        </li>
+
+        <li>
+          Broker and exchange margin requirements can differ.
+        </li>
+
+        <li>
+          Contract sizes vary between commodity products.
+        </li>
+
+        <li>
+          Actual margin may change as market conditions change.
+        </li>
+
+        <li>
+          Currency conversion may affect margin requirements.
+        </li>
+
+        <li>
+          Maintenance margin may differ from initial margin.
+        </li>
+
+        <li>
+          Actual account equity and unrealized P/L can affect available margin.
+        </li>
+
+      </ul>
+
+
+
+      <!-- FAQ -->
+
+      <h2>
+        Frequently Asked Questions
+      </h2>
+
+
+      <div class="faq">
+
+
+        <details>
+
+          <summary>
+            What is a commodity margin calculator?
+          </summary>
+
+          <p>
+            It estimates the amount of account capital that may be required to
+            open and support a commodity position based on position value and
+            the applicable margin requirement.
+          </p>
+
+        </details>
+
+
+        <details>
+
+          <summary>
+            How is commodity margin calculated?
+          </summary>
+
+          <p>
+            A simplified calculation multiplies position value by the margin
+            percentage. When leverage is known, required margin can also be
+            estimated by dividing position value by leverage.
+          </p>
+
+        </details>
+
+
+        <details>
+
+          <summary>
+            Can I calculate gold and oil margin?
+          </summary>
+
+          <p>
+            Yes. The calculator supports gold, silver, crude oil, Brent oil,
+            natural gas, copper, platinum, palladium and custom commodities.
+            Always verify the actual requirements with your broker.
+          </p>
+
+        </details>
+
+
+        <details>
+
+          <summary>
+            Does margin mean the maximum amount I can lose?
+          </summary>
+
+          <p>
+            No. Margin is not the same as maximum trading loss. A leveraged
+            position can experience losses that are substantially different
+            from the initial margin requirement.
+          </p>
+
+        </details>
+
+
+        <details>
+
+          <summary>
+            Does leverage reduce commodity trading risk?
+          </summary>
+
+          <p>
+            No. Leverage can reduce the capital needed to control a position,
+            but it does not reduce the underlying market exposure.
+          </p>
+
+        </details>
+
+
+        <details>
+
+          <summary>
+            Does this calculator use live commodity prices?
+          </summary>
+
+          <p>
+            No. Commodity prices are entered manually, so the calculator does
+            not require a live market data feed.
+          </p>
+
+        </details>
+
+
+      </div>
+
+
+
+      <!-- RELATED -->
+
+      <h2>
+        Related Commodity & Trading Calculators
+      </h2>
+
+
+      <div class="related">
+
+
+        <a href="commodity-risks-calculator.html">
+          Commodity Risk Calculator
+        </a>
+
+
+        <a href="commodity-position-size-calculator.html">
+          Commodity Position Size Calculator
+        </a>
+
+
+        <a href="commodity-profit-calculator.html">
+          Commodity Profit Calculator
+        </a>
+
+
+        <a href="gold-calculators.html">
+          Gold Calculators
+        </a>
+
+
+        <a href="margin-calculator.html">
+          Margin Calculator
+        </a>
+
+
+        <a href="leverage-calculator.html">
+          Leverage Calculator
+        </a>
+
+
+        <a href="risk-calculator.html">
+          Risk Calculator
+        </a>
+
+
+        <a href="risk-reward-calculator.html">
+          Risk-to-Reward Calculator
+        </a>
+
+
+        <a href="drawdown-calculator.html">
+          Drawdown Calculator
+        </a>
+
+
+      </div>
+
+
+
+      <!-- DISCLAIMER -->
+
+      <div class="disclaimer">
+
+        <h3>
+          Financial Disclaimer
+        </h3>
+
+
+        <p>
+          EZTradingHub calculators are provided for educational and
+          informational purposes only. They are not financial, investment,
+          trading, tax or legal advice and do not constitute a recommendation
+          to buy or sell any financial instrument.
+        </p>
+
+
+        <p>
+          Commodity trading involves substantial risk. Leverage can magnify
+          both gains and losses. Actual margin requirements and trading results
+          may differ from calculator estimates because of broker policies,
+          contract specifications, market conditions, currency conversion,
+          spreads, financing costs and other factors.
+        </p>
+
+
+        <p>
+          Always verify the exact margin requirement, contract size, leverage,
+          tick value, maintenance margin and stop-out rules with your broker
+          or exchange before placing a trade.
+        </p>
+
+
+        <p>
+          Never trade with money you cannot afford to lose.
+        </p>
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+</main>
+
+
+
+<!-- FOOTER -->
+
+<footer>
+
+  <div class="footer-inner">
+
+
+    <div class="copyright">
+
+      ©
+      <span id="year"></span>
+      EZTradingHub. All rights reserved.
+
+    </div>
+
+
+    <div class="footer-links">
+
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="calculators.html">
+        Calculators
+      </a>
+
+      <a href="about.html">
+        About
+      </a>
+
+      <a href="faq.html">
+        FAQ
+      </a>
+      
+      <a href="contact.html">
+        Contact
+      </a>
+
+      <a href="privacy-policy.html">
+        Privacy
+      </a>
+
+      <a href="terms.html">
+        Terms
+      </a>
+
+      <a href="cookie-policy.html">
+        Cookies
+      </a>
+
+      <a href="disclaimer.html">
+        Disclaimer
+      </a>
+
+    </div>
+
+  </div>
+
+</footer>
+
+
+
+<script>
+
+"use strict";
+
+
+/* =========================
+   HELPER
+========================= */
+
+const $ = id =>
+  document.getElementById(id);
+
+
+/* =========================
+   THEME
+========================= */
+
+const themeToggle =
+  $("themeToggle");
+
+
+const savedTheme =
+  localStorage.getItem("ezth-theme");
+
+
+if (savedTheme === "dark") {
+
+  document.body.classList.add("dark");
+
+}
+
+
+function updateThemeIcon() {
+
+  themeToggle.textContent =
+    document.body.classList.contains("dark")
+      ? "☀️"
+      : "🌙";
+
+}
+
+
+updateThemeIcon();
+
+
+themeToggle.addEventListener(
+  "click",
+  () => {
+
+    document.body.classList.toggle("dark");
+
+    localStorage.setItem(
+      "ezth-theme",
+      document.body.classList.contains("dark")
+        ? "dark"
+        : "light"
+    );
+
+    updateThemeIcon();
+
+  }
+);
+
+
+/* =========================
+   CURRENCY
+========================= */
+
+const currencySymbols = {
+
+  USD: "$",
+
+  NGN: "₦",
+
+  EUR: "€",
+
+  GBP: "£"
+
+};
+
+
+function money(value) {
+
+  const currency =
+    $("currency").value;
+
+  const symbol =
+    currencySymbols[currency] || "";
+
+  if (!Number.isFinite(value)) {
+
+    return "—";
+
+  }
+
+  return symbol +
+
+    Number(value).toLocaleString(
+      undefined,
+      {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+      }
+    );
+
+}
+
+
+function num(
+  value,
+  decimals = 4
+) {
+
+  if (!Number.isFinite(value)) {
+
+    return "—";
+
+  }
+
+  return Number(value).toLocaleString(
+    undefined,
+    {
+      maximumFractionDigits: decimals
+    }
+  );
+
+}
+
+
+/* =========================
+   CALCULATE
+========================= */
+
+function calculateMargin() {
+
+
+  const balance =
+    parseFloat(
+      $("balance").value
+    );
+
+
+  const positionSize =
+    parseFloat(
+      $("positionSize").value
+    );
+
+
+  const entry =
+    parseFloat(
+      $("entry").value
+    );
+
+
+  const contractSize =
+    parseFloat(
+      $("contractSize").value
+    );
+
+
+  let marginPercent =
+    parseFloat(
+      $("marginPercent").value
+    );
+
+
+  const leverage =
+    parseFloat(
+      $("leverage").value
+    );
+
+
+  const existingMargin =
+    parseFloat(
+      $("extraMargin").value
+    ) || 0;
+
+
+  const commodity =
+    $("commodity").value;
+
+
+  /* -------------------------
+     VALIDATION
+  ------------------------- */
+
+  if (
+
+    !Number.isFinite(balance) ||
+    balance <= 0 ||
+
+    !Number.isFinite(positionSize) ||
+    positionSize <= 0 ||
+
+    !Number.isFinite(entry) ||
+    entry <= 0 ||
+
+    !Number.isFinite(contractSize) ||
+    contractSize <= 0 ||
+
+    existingMargin < 0
+
+  ) {
+
+    $("message").textContent =
+      "Please enter valid positive values for account balance, position size, entry price and contract size.";
+
+    clearResults();
+
+    return;
+
+  }
+
+
+  /* -------------------------
+     DETERMINE MARGIN
+  ------------------------- */
+
+  if (
+    Number.isFinite(leverage) &&
+    leverage > 0
+  ) {
+
+    marginPercent =
+      100 / leverage;
+
+  }
+
+
+  if (
+    !Number.isFinite(marginPercent) ||
+    marginPercent <= 0 ||
+    marginPercent > 100
+  ) {
+
+    $("message").textContent =
+      "Please enter a valid margin percentage or leverage.";
+
+    clearResults();
+
+    return;
+
+  }
+
+
+  /* -------------------------
+     POSITION VALUE
+  ------------------------- */
+
+  const positionValue =
+
+    entry *
+    positionSize *
+    contractSize;
+
+
+  /* -------------------------
+     REQUIRED MARGIN
+  ------------------------- */
+
+  const requiredMargin =
+
+    positionValue *
+    marginPercent /
+    100;
+
+
+  /* -------------------------
+     TOTAL MARGIN
+  ------------------------- */
+
+  const totalMargin =
+
+    existingMargin +
+    requiredMargin;
+
+
+  /* -------------------------
+     AVAILABLE MARGIN
+  ------------------------- */
+
+  const availableMargin =
+
+    balance -
+    totalMargin;
+
+
+  /* -------------------------
+     MARGIN USAGE
+  ------------------------- */
+
+  const marginUsage =
+
+    balance > 0
+      ? (totalMargin / balance) * 100
+      : 0;
+
+
+  /* -------------------------
+     EFFECTIVE LEVERAGE
+  ------------------------- */
+
+  const effectiveLeverage =
+
+    requiredMargin > 0
+      ? positionValue / requiredMargin
+      : 0;
+
+
+  /* -------------------------
+     DISPLAY
+  ------------------------- */
+
+  $("positionValue").textContent =
+    money(positionValue);
+
+
+  $("requiredMargin").textContent =
+    money(requiredMargin);
+
+
+  $("effectiveMargin").textContent =
+    num(marginPercent, 2) + "%";
+
+
+  $("effectiveLeverage").textContent =
+    effectiveLeverage > 0
+      ? num(effectiveLeverage, 2) + ":1"
+      : "—";
+
+
+  $("availableMargin").textContent =
+    money(availableMargin);
+
+
+  $("marginUsage").textContent =
+    num(marginUsage, 2) + "%";
+
+
+  $("existingMargin").textContent =
+    money(existingMargin);
+
+
+  $("totalMargin").textContent =
+    money(totalMargin);
+
+
+  /* -------------------------
+     STATUS MESSAGE
+  ------------------------- */
+
+  let message =
+
+    commodity +
+    " estimated margin is " +
+    money(requiredMargin) +
+    " for a position value of " +
+    money(positionValue) +
+    ".";
+
+
+  if (availableMargin < 0) {
+
+    message +=
+      " The estimated margin requirement exceeds the account balance.";
+
+  }
+  else if (marginUsage >= 80) {
+
+    message +=
+      " Estimated margin usage is high; review available account equity before trading.";
+
+  }
+  else if (marginUsage >= 50) {
+
+    message +=
+      " Review your remaining available margin and broker requirements.";
+
+  }
+
+
+  message +=
+    " Confirm the actual margin requirement with your broker.";
+
+  $("message").textContent =
+    message;
+
+}
+
+
+/* =========================
+   CLEAR RESULTS
+========================= */
+
+function clearResults() {
+
+  $("positionValue").textContent =
+    "—";
+
+  $("requiredMargin").textContent =
+    "—";
+
+  $("effectiveMargin").textContent =
+    "—";
+
+  $("effectiveLeverage").textContent =
+    "—";
+
+  $("availableMargin").textContent =
+    "—";
+
+  $("marginUsage").textContent =
+    "—";
+
+  $("existingMargin").textContent =
+    "—";
+
+  $("totalMargin").textContent =
+    "—";
+
+}
+
+
+/* =========================
+   RESET
+========================= */
+
+$("resetBtn").addEventListener(
+  "click",
+  () => {
+
+    $("commodity").value =
+      "Gold";
+
+    $("currency").value =
+      "USD";
+
+    $("balance").value =
+      "10000";
+
+    $("positionSize").value =
+      "1";
+
+    $("entry").value =
+      "2300";
+
+    $("contractSize").value =
+      "1";
+
+    $("marginPercent").value =
+      "5";
+
+    $("leverage").value =
+      "20";
+
+    $("extraMargin").value =
+      "0";
+
+
+    clearResults();
+
+
+    $("message").textContent =
+      "Calculator reset. Enter your trade details to calculate estimated commodity margin.";
+
+
+    calculateMargin();
+
+  }
+);
+
+
+/* =========================
+   INPUT EVENTS
+========================= */
+
+const inputs =
+  document.querySelectorAll(
+    "input, select"
+  );
+
+
+inputs.forEach(
+  input => {
+
+    input.addEventListener(
+      "input",
+      calculateMargin
+    );
+
+    input.addEventListener(
+      "change",
+      calculateMargin
+    );
+
+  }
+);
+
+
+/* =========================
+   BUTTON
+========================= */
+
+$("calculateBtn").addEventListener(
+  "click",
+  calculateMargin
+);
+
+
+/* =========================
+   YEAR
+========================= */
+
+$("year").textContent =
+  new Date().getFullYear();
+
+
+/* =========================
+   INITIAL
+========================= */
+
+calculateMargin();
+
+</script>
+
+
+</body>
+</html>
