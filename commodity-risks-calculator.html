@@ -1,0 +1,2600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Commodity Risk Calculator | Gold & Oil Trading Risk Calculator | EZTradingHub</title>
+
+  <meta name="description" content="Use the free EZTradingHub Commodity Risk Calculator to calculate trading risk, maximum loss, risk percentage, stop-loss exposure, position value and risk-to-reward for gold, oil and other commodities.">
+
+  <meta name="keywords" content="commodity risk calculator, commodity trading risk calculator, gold risk calculator, oil risk calculator, commodity stop loss calculator, commodity trading risk management, gold trading risk calculator">
+
+  <meta name="author" content="EZTradingHub">
+  <meta name="robots" content="index, follow">
+
+  <link rel="canonical" href="https://eztradinghub.com/commodity-risks-calculator.html">
+
+  <meta name="theme-color" content="#075985">
+
+  <link rel="icon" type="image/png" href="/assets/images/favicon.png">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Commodity Risk Calculator | EZTradingHub">
+  <meta property="og:description" content="Calculate commodity trading risk, maximum loss, stop-loss exposure, position value and risk-to-reward for gold, oil and other commodities.">
+  <meta property="og:url" content="https://eztradinghub.com/commodity-risk-calculator.html">
+  <meta property="og:site_name" content="EZTradingHub">
+  <meta property="og:image" content="https://eztradinghub.com/assets/images/og-image.png">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Commodity Risk Calculator | EZTradingHub">
+  <meta name="twitter:description" content="Calculate commodity trading risk, maximum loss and stop-loss exposure before placing a trade.">
+  <meta name="twitter:image" content="https://eztradinghub.com/assets/images/og-image.png">
+
+  <!-- Performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- WebApplication Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Commodity Risk Calculator",
+    "url": "https://eztradinghub.com/commodity-risk-calculator.html",
+    "description": "Free commodity trading risk calculator for estimating maximum loss, risk percentage, stop-loss exposure, position value and risk-to-reward.",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Web",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "EZTradingHub",
+      "url": "https://eztradinghub.com/"
+    }
+  }
+  </script>
+
+  <!-- Breadcrumb Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "EZTradingHub",
+        "item": "https://eztradinghub.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Calculators",
+        "item": "https://eztradinghub.com/calculators.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Commodity Risk Calculator",
+        "item": "https://eztradinghub.com/commodity-risk-calculator.html"
+      }
+    ]
+  }
+  </script>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a commodity risk calculator?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A commodity risk calculator estimates the amount of money exposed to potential loss on a commodity trade using factors such as account balance, position size, entry price and stop-loss price."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How is commodity trading risk calculated?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Commodity trade risk can be estimated by multiplying the price distance between entry and stop-loss by the position quantity and contract or unit size, then adding applicable trading costs."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I use this calculator for gold and oil?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. The calculator can be used for gold, silver, crude oil, Brent oil, natural gas, copper, platinum, palladium and other commodities. Contract specifications should always be verified with your broker."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does this calculator use live commodity prices?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Commodity prices are entered manually, so the calculator does not require a live market data connection."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is risk percentage in trading?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Risk percentage is the percentage of an account balance that a trader is willing to expose to a potential loss on a trade."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does leverage reduce trading risk?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Leverage can reduce the margin required to open a position but does not eliminate market risk. A leveraged position can still produce substantial losses."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg: #f4f7fb;
+      --surface: #ffffff;
+      --surface2: #f8fafc;
+      --text: #172033;
+      --muted: #667085;
+      --border: #e2e8f0;
+
+      --primary: #075985;
+      --primary2: #0ea5e9;
+
+      --success: #16a34a;
+      --warning: #d97706;
+      --danger: #dc2626;
+
+      --shadow: 0 12px 35px rgba(15, 23, 42, .08);
+      --radius: 18px;
+    }
+
+    body.dark {
+      --bg: #07111f;
+      --surface: #0e1b2d;
+      --surface2: #111f33;
+      --text: #f1f5f9;
+      --muted: #aab7c9;
+      --border: #24364d;
+
+      --primary: #38bdf8;
+      --primary2: #0ea5e9;
+
+      --success: #4ade80;
+      --warning: #fbbf24;
+      --danger: #fb7185;
+
+      --shadow: 0 12px 35px rgba(0, 0, 0, .25);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Inter", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      transition: background .25s ease, color .25s ease;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    button,
+    input,
+    select {
+      font: inherit;
+    }
+
+    /* HEADER */
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    body.dark .site-header {
+      background: rgba(14,27,45,.94);
+    }
+
+    .nav {
+      max-width: 1180px;
+      margin: auto;
+      padding: 14px 20px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      color: var(--text);
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .logo {
+      width: 40px;
+      height: 40px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 12px;
+
+      color: #fff;
+      font-weight: 800;
+
+      background: linear-gradient(
+        135deg,
+        var(--primary),
+        var(--primary2)
+      );
+
+      box-shadow: 0 8px 20px rgba(14,165,233,.25);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .nav-links a {
+      color: var(--text);
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .theme-toggle {
+      width: 42px;
+      height: 42px;
+
+      border: 1px solid var(--border);
+      border-radius: 12px;
+
+      background: var(--surface);
+      color: var(--text);
+
+      cursor: pointer;
+    }
+
+    /* HERO */
+
+    .hero {
+      padding: 70px 20px 80px;
+
+      color: #fff;
+
+      background:
+        radial-gradient(
+          circle at 10% 20%,
+          rgba(14,165,233,.28),
+          transparent 30%
+        ),
+        radial-gradient(
+          circle at 90% 20%,
+          rgba(56,189,248,.18),
+          transparent 28%
+        ),
+        linear-gradient(
+          135deg,
+          #063b5c,
+          #075985 55%,
+          #0ea5e9
+        );
+    }
+
+    .hero-inner {
+      max-width: 1050px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+
+      padding: 7px 12px;
+      margin-bottom: 16px;
+
+      border: 1px solid rgba(255,255,255,.22);
+      border-radius: 999px;
+
+      background: rgba(255,255,255,.13);
+
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    h1 {
+      max-width: 850px;
+
+      margin: 0 auto 16px;
+
+      font-size: clamp(32px, 6vw, 58px);
+      line-height: 1.08;
+
+      letter-spacing: -.035em;
+    }
+
+    .hero p {
+      max-width: 760px;
+      margin: auto;
+
+      color: rgba(255,255,255,.88);
+
+      font-size: 17px;
+    }
+
+    /* MAIN */
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 0 20px;
+    }
+
+    .calculator-wrap {
+      position: relative;
+      z-index: 5;
+
+      margin-top: -45px;
+    }
+
+    .calculator-card {
+      overflow: hidden;
+
+      background: var(--surface);
+
+      border: 1px solid var(--border);
+      border-radius: 24px;
+
+      box-shadow: var(--shadow);
+    }
+
+    .card-head {
+      padding: 24px 26px;
+
+      border-bottom: 1px solid var(--border);
+    }
+
+    .card-head h2 {
+      margin: 0 0 5px;
+      font-size: 22px;
+    }
+
+    .card-head p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .form {
+      padding: 26px;
+    }
+
+    .grid {
+      display: grid;
+
+      grid-template-columns: repeat(2, 1fr);
+
+      gap: 18px;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .field.full {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    input,
+    select {
+      width: 100%;
+
+      padding: 13px 14px;
+
+      border: 1px solid var(--border);
+      border-radius: 12px;
+
+      background: var(--surface2);
+      color: var(--text);
+
+      outline: none;
+
+      transition: .2s ease;
+    }
+
+    input:focus,
+    select:focus {
+      border-color: var(--primary2);
+
+      box-shadow:
+        0 0 0 3px rgba(14,165,233,.12);
+    }
+
+    .hint {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    /* DIRECTION */
+
+    .direction {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .direction label {
+      position: relative;
+      cursor: pointer;
+    }
+
+    .direction input {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .direction span {
+      display: block;
+
+      padding: 12px;
+
+      text-align: center;
+
+      border: 1px solid var(--border);
+      border-radius: 12px;
+
+      background: var(--surface2);
+
+      font-weight: 700;
+    }
+
+    .direction input:checked + span {
+      border-color: var(--primary2);
+
+      background: rgba(14,165,233,.12);
+
+      color: var(--primary);
+    }
+
+    /* BUTTONS */
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+
+      gap: 12px;
+
+      margin-top: 22px;
+    }
+
+    .btn {
+      border: 0;
+      border-radius: 12px;
+
+      padding: 12px 18px;
+
+      font-weight: 700;
+
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      color: #fff;
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--primary),
+          var(--primary2)
+        );
+    }
+
+    .btn-secondary {
+      background: var(--surface2);
+      color: var(--text);
+
+      border: 1px solid var(--border);
+    }
+
+    /* MESSAGE */
+
+    .notice {
+      margin-top: 18px;
+
+      padding: 14px 16px;
+
+      border-radius: 13px;
+
+      background: rgba(217,119,6,.09);
+
+      border: 1px solid rgba(217,119,6,.25);
+
+      color: var(--text);
+
+      font-size: 13px;
+    }
+
+    /* RESULTS */
+
+    .results {
+      display: grid;
+
+      grid-template-columns: repeat(4, 1fr);
+
+      gap: 14px;
+
+      margin-top: 25px;
+    }
+
+    .result {
+      padding: 18px;
+
+      background: var(--surface2);
+
+      border: 1px solid var(--border);
+      border-radius: 16px;
+    }
+
+    .result-label {
+      margin-bottom: 7px;
+
+      color: var(--muted);
+
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .result-value {
+      font-size: 23px;
+      font-weight: 800;
+
+      line-height: 1.2;
+
+      overflow-wrap: anywhere;
+    }
+
+    .result small {
+      display: block;
+
+      margin-top: 5px;
+
+      color: var(--muted);
+    }
+
+    .positive {
+      color: var(--success);
+    }
+
+    .negative {
+      color: var(--danger);
+    }
+
+    .neutral {
+      color: var(--primary);
+    }
+
+    /* CONTENT */
+
+    .content {
+      padding: 65px 20px;
+    }
+
+    .content-inner {
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .content h2 {
+      margin-top: 48px;
+
+      font-size: 30px;
+      line-height: 1.2;
+    }
+
+    .content h3 {
+      margin-top: 30px;
+      font-size: 21px;
+    }
+
+    .content p,
+    .content li {
+      color: var(--muted);
+    }
+
+    .formula {
+      overflow-x: auto;
+
+      margin: 18px 0;
+      padding: 18px;
+
+      border: 1px solid var(--border);
+      border-radius: 14px;
+
+      background: var(--surface2);
+
+      font-weight: 700;
+    }
+
+    .example {
+      padding: 20px;
+
+      border: 1px solid var(--border);
+      border-radius: 16px;
+
+      background: var(--surface2);
+    }
+
+    /* FAQ */
+
+    .faq {
+      margin-top: 25px;
+    }
+
+    details {
+      margin-bottom: 10px;
+
+      padding: 15px 17px;
+
+      background: var(--surface);
+
+      border: 1px solid var(--border);
+      border-radius: 14px;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    details p {
+      margin-bottom: 0;
+    }
+
+    /* RELATED */
+
+    .related {
+      display: grid;
+
+      grid-template-columns: repeat(3, 1fr);
+
+      gap: 14px;
+
+      margin-top: 20px;
+    }
+
+    .related a {
+      display: block;
+
+      padding: 17px;
+
+      background: var(--surface);
+
+      border: 1px solid var(--border);
+      border-radius: 14px;
+
+      font-weight: 700;
+    }
+
+    /* DISCLAIMER */
+
+    .disclaimer {
+      margin-top: 45px;
+
+      padding: 22px;
+
+      border-radius: 16px;
+
+      background: var(--surface2);
+
+      border: 1px solid var(--border);
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 35px 20px;
+
+      border-top: 1px solid var(--border);
+
+      background: var(--surface);
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: auto;
+
+      display: flex;
+      justify-content: space-between;
+
+      gap: 20px;
+
+      flex-wrap: wrap;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+
+      gap: 14px;
+
+      font-size: 13px;
+    }
+
+    .copyright {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 900px) {
+
+      .results {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .related {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 700px) {
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        padding: 50px 18px 70px;
+      }
+
+      .container,
+      .content {
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+
+      .form {
+        padding: 19px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .field.full {
+        grid-column: auto;
+      }
+
+      .results {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .related {
+        grid-template-columns: 1fr;
+      }
+
+      .result-value {
+        font-size: 19px;
+      }
+    }
+
+    @media (max-width: 420px) {
+
+      .results {
+        grid-template-columns: 1fr;
+      }
+
+      .buttons .btn {
+        width: 100%;
+      }
+    }
+
+    /* PRINT */
+
+    @media print {
+
+      .site-header,
+      .hero,
+      .buttons,
+      footer,
+      .related {
+        display: none !important;
+      }
+
+      .calculator-wrap {
+        margin-top: 0;
+      }
+
+      body {
+        background: #fff;
+        color: #000;
+      }
+
+      .calculator-card,
+      .result {
+        box-shadow: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="site-header">
+
+  <nav class="nav" aria-label="Main navigation">
+
+    <a href="index.html" class="brand" aria-label="EZTradingHub homepage">
+      <span class="logo" aria-hidden="true">EZ</span>
+      <span>EZTradingHub</span>
+    </a>
+
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="calculators.html">Calculators</a>
+      <a href="trade-journal.html">Trade Journal</a>
+      <a href="Dashboard.html">Dashboard</a>
+      <a href="about.html">About</a>
+    </div>
+
+    <button
+      id="themeToggle"
+      class="theme-toggle"
+      type="button"
+      aria-label="Switch between light and dark mode"
+      title="Toggle light and dark mode">
+      🌙
+    </button>
+
+  </nav>
+
+</header>
+
+
+<section class="hero">
+
+  <div class="hero-inner">
+
+    <div class="eyebrow">
+      COMMODITY RISK MANAGEMENT TOOL
+    </div>
+
+    <h1>Commodity Risk Calculator</h1>
+
+    <p>
+      Calculate potential commodity trade risk, maximum loss, stop-loss
+      exposure, position value and risk-to-reward before entering a trade.
+    </p>
+
+  </div>
+
+</section>
+
+
+<main>
+
+  <section class="calculator-wrap">
+
+    <div class="container">
+
+      <div class="calculator-card">
+
+        <div class="card-head">
+
+          <h2>Calculate Your Commodity Trading Risk</h2>
+
+          <p>
+            Estimate how much your trade could lose if price reaches your
+            stop-loss.
+          </p>
+
+        </div>
+
+
+        <div class="form">
+
+          <div class="grid">
+
+            <!-- COMMODITY -->
+
+            <div class="field">
+
+              <label for="commodity">
+                Commodity
+              </label>
+
+              <select id="commodity">
+
+                <option value="Gold">Gold</option>
+                <option value="Silver">Silver</option>
+                <option value="Crude Oil">Crude Oil</option>
+                <option value="Brent Oil">Brent Oil</option>
+                <option value="Natural Gas">Natural Gas</option>
+                <option value="Copper">Copper</option>
+                <option value="Platinum">Platinum</option>
+                <option value="Palladium">Palladium</option>
+                <option value="Custom Commodity">
+                  Custom Commodity
+                </option>
+
+              </select>
+
+            </div>
+
+
+            <!-- CURRENCY -->
+
+            <div class="field">
+
+              <label for="currency">
+                Account Currency
+              </label>
+
+              <select id="currency">
+
+                <option value="USD">$ USD</option>
+                <option value="NGN">₦ NGN</option>
+                <option value="EUR">€ EUR</option>
+                <option value="GBP">£ GBP</option>
+
+              </select>
+
+            </div>
+
+
+            <!-- DIRECTION -->
+
+            <div class="field full">
+
+              <label>
+                Position Direction
+              </label>
+
+              <div class="direction">
+
+                <label>
+
+                  <input
+                    type="radio"
+                    name="direction"
+                    value="long"
+                    checked>
+
+                  <span>
+                    Long / Buy
+                  </span>
+
+                </label>
+
+
+                <label>
+
+                  <input
+                    type="radio"
+                    name="direction"
+                    value="short">
+
+                  <span>
+                    Short / Sell
+                  </span>
+
+                </label>
+
+              </div>
+
+            </div>
+
+
+            <!-- ACCOUNT BALANCE -->
+
+            <div class="field">
+
+              <label for="balance">
+                Account Balance
+              </label>
+
+              <input
+                id="balance"
+                type="number"
+                min="0"
+                step="any"
+                value="10000"
+                inputmode="decimal">
+
+              <span class="hint">
+                Total available trading account balance.
+              </span>
+
+            </div>
+
+
+            <!-- POSITION SIZE -->
+
+            <div class="field">
+
+              <label for="positionSize">
+                Position Size / Units
+              </label>
+
+              <input
+                id="positionSize"
+                type="number"
+                min="0"
+                step="any"
+                value="1"
+                inputmode="decimal">
+
+              <span class="hint">
+                Enter contracts, lots or commodity units according to your
+                broker's specification.
+              </span>
+
+            </div>
+
+
+            <!-- ENTRY -->
+
+            <div class="field">
+
+              <label for="entry">
+                Entry Price
+              </label>
+
+              <input
+                id="entry"
+                type="number"
+                min="0"
+                step="any"
+                value="2300"
+                inputmode="decimal">
+
+            </div>
+
+
+            <!-- STOP -->
+
+            <div class="field">
+
+              <label for="stop">
+                Stop-Loss Price
+              </label>
+
+              <input
+                id="stop"
+                type="number"
+                min="0"
+                step="any"
+                value="2280"
+                inputmode="decimal">
+
+              <span class="hint">
+                Price level where the trade is planned to exit if wrong.
+              </span>
+
+            </div>
+
+
+            <!-- CONTRACT SIZE -->
+
+            <div class="field">
+
+              <label for="contractSize">
+                Contract / Unit Size
+              </label>
+
+              <input
+                id="contractSize"
+                type="number"
+                min="0.000001"
+                step="any"
+                value="1"
+                inputmode="decimal">
+
+              <span class="hint">
+                Check your broker or exchange for the exact specification.
+              </span>
+
+            </div>
+
+
+            <!-- TARGET -->
+
+            <div class="field">
+
+              <label for="target">
+                Optional Take-Profit Price
+              </label>
+
+              <input
+                id="target"
+                type="number"
+                min="0"
+                step="any"
+                value="2340"
+                inputmode="decimal">
+
+              <span class="hint">
+                Enter 0 if no target is planned.
+              </span>
+
+            </div>
+
+
+            <!-- COMMISSION -->
+
+            <div class="field">
+
+              <label for="commission">
+                Commission / Trading Costs
+              </label>
+
+              <input
+                id="commission"
+                type="number"
+                min="0"
+                step="any"
+                value="0"
+                inputmode="decimal">
+
+              <span class="hint">
+                Estimated total cost for opening and closing the position.
+              </span>
+
+            </div>
+
+
+            <!-- SLIPPAGE -->
+
+            <div class="field">
+
+              <label for="slippage">
+                Estimated Slippage
+              </label>
+
+              <input
+                id="slippage"
+                type="number"
+                min="0"
+                step="any"
+                value="0"
+                inputmode="decimal">
+
+              <span class="hint">
+                Additional adverse price movement in price units.
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <!-- BUTTONS -->
+
+          <div class="buttons">
+
+            <button
+              id="calculateBtn"
+              class="btn btn-primary"
+              type="button">
+
+              Calculate Risk
+
+            </button>
+
+
+            <button
+              id="resetBtn"
+              class="btn btn-secondary"
+              type="button">
+
+              Reset
+
+            </button>
+
+
+            <button
+              class="btn btn-secondary"
+              type="button"
+              onclick="window.print()">
+
+              Print
+
+            </button>
+
+          </div>
+
+
+          <!-- STATUS -->
+
+          <div
+            id="message"
+            class="notice"
+            role="status"
+            aria-live="polite">
+
+            Enter your trade details to calculate commodity risk.
+
+          </div>
+
+
+          <!-- RESULTS -->
+
+          <div
+            class="results"
+            aria-live="polite">
+
+            <div class="result">
+
+              <div class="result-label">
+                Maximum Planned Risk
+              </div>
+
+              <div
+                id="riskAmount"
+                class="result-value neutral">
+                —
+              </div>
+
+              <small>
+                Based on stop-loss
+              </small>
+
+            </div>
+
+
+            <div class="result">
+
+              <div class="result-label">
+                Risk %
+              </div>
+
+              <div
+                id="riskPercent"
+                class="result-value neutral">
+                —
+              </div>
+
+              <small>
+                Of account balance
+              </small>
+
+            </div>
+
+
+            <div class="result">
+
+              <div class="result-label">
+                Price Risk
+              </div>
+
+              <div
+                id="priceRisk"
+                class="result-value">
+                —
+              </div>
+
+              <small>
+                Entry to stop distance
+              </small>
+
+            </div>
+
+
+            <div class="result">
+
+              <div class="result-label">
+                Position Value
+              </div>
+
+              <div
+                id="positionValue"
+                class="result-value">
+                —
+              </div>
+
+              <small>
+                Approximate notional value
+              </small>
+
+            </div>
+
+
+            <div class="result">
+
+              <div class="result-label">
+                Loss at Stop
+              </div>
+
+              <div
+                id="stopLoss"
+                class="result-value negative">
+                —
+              </div>
+
+              <small>
+                Including estimated costs
+              </small>
+
+            </div>
+
+
+            <div class="result">
+
+              <div class="result-label">
+                Potential Profit
+              </div>
+
+              <div
+                id="profit"
+                class="result-value positive">
+                —
+              </div>
+
+              <small>
+                Based on target price
+              </small>
+
+            </div>
+
+
+            <div class="result">
+
+              <div class="result-label">
+                Risk-to-Reward
+              </div>
+
+              <div
+                id="riskReward"
+                class="result-value neutral">
+                —
+              </div>
+
+              <small>
+                Potential reward / risk
+              </small>
+
+            </div>
+
+
+            <div class="result">
+
+              <div class="result-label">
+                Account Exposure
+              </div>
+
+              <div
+                id="exposure"
+                class="result-value">
+                —
+              </div>
+
+              <small>
+                Position value / balance
+              </small>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- SEO EDUCATIONAL CONTENT -->
+
+  <section class="content">
+
+    <div class="content-inner">
+
+
+      <h2>
+        What Is a Commodity Risk Calculator?
+      </h2>
+
+      <p>
+        A commodity risk calculator helps traders estimate how much money is
+        exposed to potential loss on a commodity trade. It can be useful when
+        trading instruments such as gold, silver, crude oil, Brent oil,
+        natural gas, copper and other commodities.
+      </p>
+
+      <p>
+        The calculator uses the entry price, stop-loss price, position size
+        and contract or unit size to estimate the potential loss if the
+        stop-loss is reached.
+      </p>
+
+
+      <h2>
+        How Commodity Trading Risk Is Calculated
+      </h2>
+
+      <p>
+        A simplified commodity risk calculation begins with the difference
+        between the entry price and the stop-loss price.
+      </p>
+
+      <div class="formula">
+        Price Risk = |Entry Price − Stop-Loss Price|
+      </div>
+
+      <p>
+        The estimated market loss can then be calculated using the position
+        size and contract or unit size.
+      </p>
+
+      <div class="formula">
+        Gross Risk = Price Risk × Position Size × Contract / Unit Size
+      </div>
+
+      <p>
+        If trading costs are included, the estimated total loss can be
+        represented as:
+      </p>
+
+      <div class="formula">
+        Total Risk = Gross Risk + Trading Costs
+      </div>
+
+
+      <h2>
+        Example: Gold Trading Risk
+      </h2>
+
+      <div class="example">
+
+        <p>
+          Consider a simplified gold trade with the following assumptions:
+        </p>
+
+        <ul>
+
+          <li>
+            Account balance: $10,000
+          </li>
+
+          <li>
+            Position size: 2 units
+          </li>
+
+          <li>
+            Entry price: $2,300
+          </li>
+
+          <li>
+            Stop-loss: $2,280
+          </li>
+
+          <li>
+            Contract/unit size: 1
+          </li>
+
+        </ul>
+
+        <p>
+          The price risk is:
+        </p>
+
+        <div class="formula">
+          $2,300 − $2,280 = $20
+        </div>
+
+        <p>
+          Estimated gross risk is therefore:
+        </p>
+
+        <div class="formula">
+          $20 × 2 × 1 = $40
+        </div>
+
+        <p>
+          The estimated risk as a percentage of the account is:
+        </p>
+
+        <div class="formula">
+          $40 ÷ $10,000 × 100 = 0.40%
+        </div>
+
+        <p>
+          This is a simplified example. The actual result depends on the
+          contract specification and value of the commodity product being
+          traded.
+        </p>
+
+      </div>
+
+
+      <h2>
+        Why Commodity Risk Management Matters
+      </h2>
+
+      <p>
+        Commodity markets can experience significant price movements. Gold,
+        oil and other commodities can react quickly to economic data,
+        geopolitical events, interest-rate decisions, inventory reports,
+        currency movements and changes in supply and demand.
+      </p>
+
+      <p>
+        Risk management helps traders decide how much exposure they are
+        comfortable taking before entering a position.
+      </p>
+
+
+      <h3>
+        1. Define Your Maximum Acceptable Loss
+      </h3>
+
+      <p>
+        Before entering a trade, consider how much of your account you are
+        willing to risk if the trade reaches its stop-loss. A percentage-based
+        risk limit can make the approach easier to apply across different
+        account sizes.
+      </p>
+
+
+      <h3>
+        2. Use the Stop-Loss Distance
+      </h3>
+
+      <p>
+        The distance between entry and stop-loss directly affects the potential
+        loss of a position. A wider stop generally creates more risk per unit,
+        while a narrower stop creates less risk per unit under the same
+        contract assumptions.
+      </p>
+
+
+      <h3>
+        3. Consider Position Size
+      </h3>
+
+      <p>
+        Two traders can use the same entry and stop-loss but have very
+        different potential losses if their position sizes are different.
+        Position size should therefore be considered together with the
+        stop-loss distance.
+      </p>
+
+
+      <h3>
+        4. Account for Trading Costs
+      </h3>
+
+      <p>
+        Commission, spread, slippage and financing costs can affect actual
+        trading results. A theoretical stop-loss calculation may not exactly
+        match the final loss recorded by a broker.
+      </p>
+
+
+      <h2>
+        Commodity Risk Percentage
+      </h2>
+
+      <p>
+        Risk percentage expresses the estimated trade risk as a percentage of
+        the account balance.
+      </p>
+
+      <div class="formula">
+        Risk % = Estimated Trade Risk ÷ Account Balance × 100
+      </div>
+
+      <p>
+        For example, a $100 potential loss on a $10,000 account represents
+        1% of the account.
+      </p>
+
+      <p>
+        Risk percentage is a planning metric, not a guarantee of the actual
+        amount that will be lost. Fast markets, gaps and execution conditions
+        can cause actual losses to differ from the planned amount.
+      </p>
+
+
+      <h2>
+        Gold Trading Risk
+      </h2>
+
+      <p>
+        Gold is one of the most actively traded commodities. Its price can
+        respond to interest-rate expectations, inflation data, US dollar
+        movements, central-bank activity, geopolitical developments and
+        changes in investor demand.
+      </p>
+
+      <p>
+        Traders using this calculator for gold should pay particular attention
+        to their broker's contract size, minimum trade size, tick value and
+        price precision.
+      </p>
+
+
+      <h2>
+        Oil Trading Risk
+      </h2>
+
+      <p>
+        Crude oil and Brent oil can experience substantial price movements due
+        to changes in supply, demand, inventories, production decisions,
+        geopolitical events and broader economic conditions.
+      </p>
+
+      <p>
+        Oil products can also have different contract specifications depending
+        on whether you are trading futures, CFDs or another derivative.
+      </p>
+
+
+      <h2>
+        Position Value Is Not the Same as Risk
+      </h2>
+
+      <p>
+        Position value represents the approximate notional value controlled by
+        a position. It should not be confused with the amount actually at risk.
+      </p>
+
+      <p>
+        For example, a leveraged commodity position may have a large notional
+        value while the planned stop-loss risk is considerably smaller.
+        However, leverage can also amplify losses and margin requirements can
+        change as market conditions move.
+      </p>
+
+
+      <h2>
+        Risk-to-Reward Ratio
+      </h2>
+
+      <p>
+        Risk-to-reward compares the potential profit of a trade with the
+        estimated loss at the stop-loss.
+      </p>
+
+      <div class="formula">
+        Risk-to-Reward = Potential Profit ÷ Estimated Risk
+      </div>
+
+      <p>
+        For example, if a trade has an estimated risk of $100 and a potential
+        profit of $200, the reward-to-risk relationship is 2:1.
+      </p>
+
+      <p>
+        A higher potential reward does not automatically make a trade
+        profitable. Market conditions, probability, execution quality and the
+        trading strategy also matter.
+      </p>
+
+
+      <h2>
+        Commodity Contract Size Matters
+      </h2>
+
+      <p>
+        There is no single universal contract size for every commodity trading
+        product. Futures, CFDs and other derivatives can represent different
+        quantities of an underlying commodity.
+      </p>
+
+      <p>
+        Before trading, verify:
+      </p>
+
+      <ul>
+
+        <li>Contract size</li>
+
+        <li>Tick size</li>
+
+        <li>Tick value</li>
+
+        <li>Minimum trade size</li>
+
+        <li>Maximum trade size</li>
+
+        <li>Margin requirement</li>
+
+        <li>Commission</li>
+
+        <li>Spread</li>
+
+        <li>Financing or overnight charges</li>
+
+      </ul>
+
+
+      <h2>
+        Does Leverage Change Your Risk?
+      </h2>
+
+      <p>
+        Leverage changes how much capital or margin may be required to control
+        a position, but it does not remove the underlying market exposure.
+      </p>
+
+      <p>
+        A trader should generally determine acceptable loss first and then
+        choose a position size that fits that risk level rather than using
+        maximum available leverage as the starting point.
+      </p>
+
+
+      <h2>
+        Risk Calculator vs Position Size Calculator
+      </h2>
+
+      <p>
+        These two tools have related but different purposes.
+      </p>
+
+      <ul>
+
+        <li>
+          <strong>Commodity Risk Calculator:</strong>
+          estimates the potential loss and account risk of an existing or
+          planned position.
+        </li>
+
+        <li>
+          <strong>Commodity Position Size Calculator:</strong>
+          determines an appropriate position size based on a predefined risk
+          amount and stop-loss distance.
+        </li>
+
+      </ul>
+
+      <p>
+        Using both tools together can provide a more complete risk-management
+        workflow.
+      </p>
+
+
+      <h2>
+        Important Limitations
+      </h2>
+
+      <ul>
+
+        <li>
+          This calculator does not provide live commodity prices.
+        </li>
+
+        <li>
+          Prices must be entered manually.
+        </li>
+
+        <li>
+          Contract specifications differ between brokers and markets.
+        </li>
+
+        <li>
+          Actual execution may differ from the planned entry or stop-loss.
+        </li>
+
+        <li>
+          Slippage can increase actual losses.
+        </li>
+
+        <li>
+          Taxes, financing costs and some trading costs may not be included.
+        </li>
+
+        <li>
+          Calculated values may need to be rounded to your broker's permitted
+          trade size.
+        </li>
+
+      </ul>
+
+
+      <!-- FAQ -->
+
+      <h2>
+        Frequently Asked Questions
+      </h2>
+
+      <div class="faq">
+
+        <details>
+
+          <summary>
+            What is a commodity risk calculator?
+          </summary>
+
+          <p>
+            A commodity risk calculator estimates the amount of money exposed
+            to potential loss on a commodity trade using factors such as
+            account balance, position size, entry price and stop-loss price.
+          </p>
+
+        </details>
+
+
+        <details>
+
+          <summary>
+            How is commodity trading risk calculated?
+          </summary>
+
+          <p>
+            A simplified calculation multiplies the entry-to-stop price
+            distance by position size and contract or unit size. Applicable
+            trading costs can then be added to estimate total exposure.
+          </p>
+
+        </details>
+
+
+        <details>
+
+          <summary>
+            Can I use this calculator for gold and oil?
+          </summary>
+
+          <p>
+            Yes. You can use it for gold, silver, crude oil, Brent oil,
+            natural gas, copper, platinum, palladium and custom commodities.
+            Always confirm the exact contract specification with your broker.
+          </p>
+
+        </details>
+
+
+        <details>
+
+          <summary>
+            Does this calculator use live commodity prices?
+          </summary>
+
+          <p>
+            No. Prices are entered manually. The calculator does not connect to
+            a live commodity price feed.
+          </p>
+
+        </details>
+
+
+        <details>
+
+          <summary>
+            What is risk percentage in trading?
+          </summary>
+
+          <p>
+            Risk percentage is the estimated amount at risk expressed as a
+            percentage of the account balance.
+          </p>
+
+        </details>
+
+
+        <details>
+
+          <summary>
+            Does leverage reduce trading risk?
+          </summary>
+
+          <p>
+            No. Leverage may reduce the margin needed to open a position but
+            does not eliminate the risk of market losses.
+          </p>
+
+        </details>
+
+      </div>
+
+
+      <!-- RELATED TOOLS -->
+
+      <h2>
+        Related Trading Calculators
+      </h2>
+
+      <div class="related">
+
+        <a href="commodity-position-size-calculator.html">
+          Commodity Position Size Calculator
+        </a>
+
+        <a href="commodity-profit-calculator.html">
+          Commodity Profit Calculator
+        </a>
+
+        <a href="gold-calculators.html">
+          Gold Calculators
+        </a>
+
+        <a href="risk-calculator.html">
+          Risk Calculator
+        </a>
+
+        <a href="risk-reward-calculator.html">
+          Risk-to-Reward Calculator
+        </a>
+
+        <a href="position-size-calculator.html">
+          Position Size Calculator
+        </a>
+
+        <a href="margin-calculator.html">
+          Margin Calculator
+        </a>
+
+        <a href="leverage-calculator.html">
+          Leverage Calculator
+        </a>
+
+        <a href="drawdown-calculator.html">
+          Drawdown Calculator
+        </a>
+
+      </div>
+
+
+      <!-- DISCLAIMER -->
+
+      <div class="disclaimer">
+
+        <h3>
+          Financial Disclaimer
+        </h3>
+
+        <p>
+          EZTradingHub calculators are provided for educational and
+          informational purposes only. They are not financial, investment,
+          trading, tax or legal advice and do not constitute a recommendation
+          to buy or sell any financial instrument.
+        </p>
+
+        <p>
+          Commodity trading involves substantial risk. Leverage can magnify
+          both gains and losses. Actual results may differ from calculator
+          estimates because of spreads, slippage, commissions, financing
+          charges, contract specifications, liquidity and market conditions.
+        </p>
+
+        <p>
+          Always verify contract specifications, tick values, margin
+          requirements and trading costs with your broker or exchange before
+          placing a trade. Never risk money you cannot afford to lose.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+<footer>
+
+  <div class="footer-inner">
+
+    <div class="copyright">
+      © <span id="year"></span> EZTradingHub. All rights reserved.
+    </div>
+
+    <div class="footer-links">
+
+      <a href="index.html">Home</a>
+      <a href="calculators.html">Calculators</a>
+      <a href="about.html">About</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">Contact</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="cookie-policy.html">Cookies</a>
+      <a href="disclaimer.html">Disclaimer</a>
+
+    </div>
+
+  </div>
+
+</footer>
+
+
+<script>
+"use strict";
+
+/* =========================
+   HELPER
+========================= */
+
+const $ = id => document.getElementById(id);
+
+
+/* =========================
+   THEME
+========================= */
+
+const themeToggle = $("themeToggle");
+
+const savedTheme =
+  localStorage.getItem("ezth-theme");
+
+if (savedTheme === "dark") {
+  document.body.classList.add("dark");
+}
+
+
+function updateThemeIcon() {
+
+  themeToggle.textContent =
+    document.body.classList.contains("dark")
+      ? "☀️"
+      : "🌙";
+
+}
+
+
+updateThemeIcon();
+
+
+themeToggle.addEventListener("click", () => {
+
+  document.body.classList.toggle("dark");
+
+  localStorage.setItem(
+    "ezth-theme",
+    document.body.classList.contains("dark")
+      ? "dark"
+      : "light"
+  );
+
+  updateThemeIcon();
+
+});
+
+
+/* =========================
+   CURRENCY
+========================= */
+
+const currencySymbols = {
+
+  USD: "$",
+  NGN: "₦",
+  EUR: "€",
+  GBP: "£"
+
+};
+
+
+function money(value) {
+
+  const currency =
+    $("currency").value;
+
+  const symbol =
+    currencySymbols[currency] || "";
+
+  if (!Number.isFinite(value)) {
+    return "—";
+  }
+
+  return symbol +
+    Number(value).toLocaleString(
+      undefined,
+      {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+      }
+    );
+
+}
+
+
+function num(value, decimals = 4) {
+
+  if (!Number.isFinite(value)) {
+    return "—";
+  }
+
+  return Number(value).toLocaleString(
+    undefined,
+    {
+      maximumFractionDigits: decimals
+    }
+  );
+
+}
+
+
+/* =========================
+   DIRECTION
+========================= */
+
+function getDirection() {
+
+  const selected =
+    document.querySelector(
+      'input[name="direction"]:checked'
+    );
+
+  return selected
+    ? selected.value
+    : "long";
+
+}
+
+
+/* =========================
+   CALCULATE
+========================= */
+
+function calculateRisk() {
+
+  const balance =
+    parseFloat($("balance").value);
+
+  const positionSize =
+    parseFloat($("positionSize").value);
+
+  const entry =
+    parseFloat($("entry").value);
+
+  const stop =
+    parseFloat($("stop").value);
+
+  const contractSize =
+    parseFloat($("contractSize").value);
+
+  const target =
+    parseFloat($("target").value) || 0;
+
+  const commission =
+    parseFloat($("commission").value) || 0;
+
+  const slippage =
+    parseFloat($("slippage").value) || 0;
+
+  const commodity =
+    $("commodity").value;
+
+  const direction =
+    getDirection();
+
+
+  /* -------------------------
+     VALIDATION
+  ------------------------- */
+
+  if (
+    !Number.isFinite(balance) ||
+    balance <= 0 ||
+
+    !Number.isFinite(positionSize) ||
+    positionSize <= 0 ||
+
+    !Number.isFinite(entry) ||
+    entry <= 0 ||
+
+    !Number.isFinite(stop) ||
+    stop <= 0 ||
+
+    !Number.isFinite(contractSize) ||
+    contractSize <= 0 ||
+
+    commission < 0 ||
+
+    slippage < 0
+  ) {
+
+    $("message").textContent =
+      "Please enter valid positive values for account balance, position size, entry price, stop-loss and contract size.";
+
+    clearResults();
+
+    return;
+  }
+
+
+  /* -------------------------
+     STOP VALIDATION
+  ------------------------- */
+
+  if (
+    direction === "long" &&
+    stop >= entry
+  ) {
+
+    $("message").textContent =
+      "For a Long / Buy trade, the stop-loss should normally be below the entry price.";
+
+    clearResults();
+
+    return;
+  }
+
+
+  if (
+    direction === "short" &&
+    stop <= entry
+  ) {
+
+    $("message").textContent =
+      "For a Short / Sell trade, the stop-loss should normally be above the entry price.";
+
+    clearResults();
+
+    return;
+  }
+
+
+  /* -------------------------
+     PRICE DISTANCE
+  ------------------------- */
+
+  const basePriceRisk =
+    Math.abs(entry - stop);
+
+
+  /*
+    Slippage represents additional
+    adverse movement.
+  */
+
+  const effectivePriceRisk =
+    basePriceRisk + slippage;
+
+
+  /* -------------------------
+     GROSS RISK
+  ------------------------- */
+
+  const grossRisk =
+    effectivePriceRisk *
+    positionSize *
+    contractSize;
+
+
+  /* -------------------------
+     TOTAL RISK
+  ------------------------- */
+
+  const totalRisk =
+    grossRisk + commission;
+
+
+  /* -------------------------
+     RISK PERCENT
+  ------------------------- */
+
+  const riskPercent =
+    (totalRisk / balance) * 100;
+
+
+  /* -------------------------
+     POSITION VALUE
+  ------------------------- */
+
+  const positionValue =
+    entry *
+    positionSize *
+    contractSize;
+
+
+  /* -------------------------
+     POTENTIAL PROFIT
+  ------------------------- */
+
+  let potentialProfit = 0;
+
+  if (target > 0) {
+
+    let rewardDistance;
+
+    if (direction === "long") {
+
+      rewardDistance =
+        target - entry;
+
+    } else {
+
+      rewardDistance =
+        entry - target;
+
+    }
+
+
+    if (rewardDistance > 0) {
+
+      potentialProfit =
+        (
+          rewardDistance *
+          positionSize *
+          contractSize
+        ) - commission;
+
+      if (potentialProfit < 0) {
+        potentialProfit = 0;
+      }
+
+    }
+
+  }
+
+
+  /* -------------------------
+     RISK REWARD
+  ------------------------- */
+
+  let rr = 0;
+
+  if (
+    potentialProfit > 0 &&
+    totalRisk > 0
+  ) {
+
+    rr =
+      potentialProfit / totalRisk;
+
+  }
+
+
+  /* -------------------------
+     ACCOUNT EXPOSURE
+  ------------------------- */
+
+  const exposure =
+    (positionValue / balance) * 100;
+
+
+  /* -------------------------
+     DISPLAY
+  ------------------------- */
+
+  $("riskAmount").textContent =
+    money(totalRisk);
+
+  $("riskPercent").textContent =
+    num(riskPercent, 2) + "%";
+
+  $("priceRisk").textContent =
+    num(effectivePriceRisk, 5);
+
+  $("positionValue").textContent =
+    money(positionValue);
+
+  $("stopLoss").textContent =
+    money(totalRisk);
+
+  $("profit").textContent =
+    target > 0 && potentialProfit > 0
+      ? money(potentialProfit)
+      : "—";
+
+  $("riskReward").textContent =
+    rr > 0
+      ? "1 : " + num(rr, 2)
+      : "—";
+
+  $("exposure").textContent =
+    num(exposure, 2) + "%";
+
+
+  /* -------------------------
+     RISK MESSAGE
+  ------------------------- */
+
+  let riskMessage =
+    commodity +
+    " trade risk calculated at approximately " +
+    money(totalRisk) +
+    " (" +
+    num(riskPercent, 2) +
+    "% of account balance).";
+
+
+  if (riskPercent > 5) {
+
+    riskMessage +=
+      " This represents relatively high account exposure; review your risk before trading.";
+
+  } else if (riskPercent > 2) {
+
+    riskMessage +=
+      " Review whether this risk level fits your trading plan.";
+
+  }
+
+
+  riskMessage +=
+    " Verify contract specifications and trading costs with your broker.";
+
+  $("message").textContent =
+    riskMessage;
+
+}
+
+
+/* =========================
+   CLEAR
+========================= */
+
+function clearResults() {
+
+  $("riskAmount").textContent = "—";
+  $("riskPercent").textContent = "—";
+  $("priceRisk").textContent = "—";
+  $("positionValue").textContent = "—";
+  $("stopLoss").textContent = "—";
+  $("profit").textContent = "—";
+  $("riskReward").textContent = "—";
+  $("exposure").textContent = "—";
+
+}
+
+
+/* =========================
+   RESET
+========================= */
+
+$("resetBtn").addEventListener(
+  "click",
+  () => {
+
+    $("commodity").value =
+      "Gold";
+
+    $("currency").value =
+      "USD";
+
+    $("balance").value =
+      "10000";
+
+    $("positionSize").value =
+      "1";
+
+    $("entry").value =
+      "2300";
+
+    $("stop").value =
+      "2280";
+
+    $("contractSize").value =
+      "1";
+
+    $("target").value =
+      "2340";
+
+    $("commission").value =
+      "0";
+
+    $("slippage").value =
+      "0";
+
+
+    document.querySelector(
+      'input[name="direction"][value="long"]'
+    ).checked = true;
+
+
+    clearResults();
+
+
+    $("message").textContent =
+      "Calculator reset. Enter your trade details to calculate commodity risk.";
+
+    calculateRisk();
+
+  }
+);
+
+
+/* =========================
+   AUTO CALCULATION
+========================= */
+
+const allInputs =
+  document.querySelectorAll(
+    "input, select"
+  );
+
+
+allInputs.forEach(
+  input => {
+
+    input.addEventListener(
+      "input",
+      calculateRisk
+    );
+
+    input.addEventListener(
+      "change",
+      calculateRisk
+    );
+
+  }
+);
+
+
+$("calculateBtn").addEventListener(
+  "click",
+  calculateRisk
+);
+
+
+/* =========================
+   YEAR
+========================= */
+
+$("year").textContent =
+  new Date().getFullYear();
+
+
+/* =========================
+   INITIAL CALCULATION
+========================= */
+
+calculateRisk();
+
+</script>
+
+</body>
+</html>
