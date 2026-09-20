@@ -1,0 +1,1142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <!-- Mobile & Accessibility -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#003366">
+
+  <!-- Primary SEO -->
+  <title>Bond Coupon Payment Calculator | Calculate Coupon Income</title>
+  <meta name="description" content="Calculate bond coupon payments and annual coupon income from face value, coupon rate, and payment frequency with EZTradingHub's free Bond Coupon Payment Calculator.">
+  <meta name="keywords" content="bond coupon calculator, coupon payment calculator, bond coupon payment, annual coupon income calculator, fixed income calculator, bond interest calculator, bond calculator">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://eztradinghub.com/bond-coupon-calculator.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Bond Coupon Payment Calculator | EZTradingHub">
+  <meta property="og:description" content="Calculate bond coupon payments, annual coupon income, total coupon payments and coupon yield quickly and easily.">
+  <meta property="og:url" content="https://eztradinghub.com/bond-coupon-calculator.html">
+  <meta property="og:site_name" content="EZTradingHub">
+  <meta property="og:image" content="https://eztradinghub.com/assets/images/og-image.jpg">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Bond Coupon Payment Calculator | EZTradingHub">
+  <meta name="twitter:description" content="Free bond coupon payment calculator for estimating periodic coupon payments and annual bond income.">
+  <meta name="twitter:image" content="https://eztradinghub.com/assets/images/og-image.jpg">
+
+  <!-- Web App Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Bond Coupon Payment Calculator",
+    "url": "https://eztradinghub.com/bond-coupon-calculator.html",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Web",
+    "description": "A free online calculator for estimating bond coupon payments, annual coupon income and total coupon payments.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "EZTradingHub",
+      "url": "https://eztradinghub.com"
+    }
+  }
+  </script>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a bond coupon payment?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A bond coupon payment is the periodic interest payment made to a bondholder based on the bond's face value and coupon rate."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How is a bond coupon payment calculated?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The annual coupon income is generally calculated as face value multiplied by the annual coupon rate. The periodic coupon payment is then the annual coupon income divided by the number of coupon payments per year."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between coupon rate and yield to maturity?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The coupon rate determines the bond's scheduled interest payments based on face value, while yield to maturity reflects the return an investor may earn if the bond is held to maturity at its current market price."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How often are bond coupons paid?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Bond coupons may be paid annually, semiannually, quarterly or monthly depending on the bond's terms."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --primary: #003366;
+      --primary-dark: #002244;
+      --accent: #ffb400;
+      --bg: #f4f7fb;
+      --card: #ffffff;
+      --text: #17202a;
+      --muted: #667085;
+      --border: #d9e1ea;
+      --input: #ffffff;
+      --result: #eef6ff;
+      --success: #198754;
+      --danger: #dc3545;
+      --shadow: 0 8px 25px rgba(0, 51, 102, 0.08);
+    }
+
+    body.dark {
+      --primary: #0d6ead;
+      --primary-dark: #084d7a;
+      --bg: #101820;
+      --card: #18232d;
+      --text: #f2f5f7;
+      --muted: #aab7c4;
+      --border: #30404d;
+      --input: #121b23;
+      --result: #142d40;
+      --shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      transition: background 0.25s ease, color 0.25s ease;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .site-header {
+      background: var(--primary);
+      color: #fff;
+      padding: 14px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.12);
+    }
+
+    .header-inner {
+      max-width: 1150px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #fff;
+      font-weight: 800;
+      font-size: 1.15rem;
+      text-decoration: none;
+    }
+
+    .logo-icon {
+      width: 38px;
+      height: 38px;
+      background: var(--accent);
+      color: #003366;
+      display: grid;
+      place-items: center;
+      border-radius: 9px;
+      font-weight: 900;
+    }
+
+    nav {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: #fff;
+      font-size: 0.93rem;
+      font-weight: 600;
+    }
+
+    .theme-btn {
+      border: 1px solid rgba(255,255,255,0.35);
+      background: transparent;
+      color: #fff;
+      border-radius: 8px;
+      padding: 8px 11px;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+
+    .container {
+      width: min(1100px, 92%);
+      margin: auto;
+    }
+
+    .hero {
+      padding: 50px 0 25px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      color: var(--primary);
+      font-size: clamp(1.8rem, 5vw, 2.7rem);
+      margin-bottom: 12px;
+    }
+
+    .hero p {
+      max-width: 760px;
+      margin: auto;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .ad-box {
+      max-width: 970px;
+      min-height: 90px;
+      margin: 25px auto;
+      border: 1px dashed var(--border);
+      background: var(--card);
+      display: grid;
+      place-items: center;
+      color: var(--muted);
+      border-radius: 10px;
+      font-size: 0.85rem;
+    }
+
+    .calculator-card {
+      max-width: 850px;
+      margin: 30px auto;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .calculator-card h2 {
+      color: var(--primary);
+      margin-bottom: 22px;
+      font-size: 1.45rem;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .field.full {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      font-weight: 700;
+      font-size: 0.94rem;
+    }
+
+    input,
+    select {
+      width: 100%;
+      padding: 13px 14px;
+      border: 1px solid var(--border);
+      background: var(--input);
+      color: var(--text);
+      border-radius: 9px;
+      font-size: 1rem;
+      outline: none;
+    }
+
+    input:focus,
+    select:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(0, 102, 170, 0.12);
+    }
+
+    .hint {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .calculate-btn {
+      width: 100%;
+      margin-top: 22px;
+      padding: 15px;
+      border: none;
+      border-radius: 9px;
+      background: var(--accent);
+      color: #003366;
+      font-size: 1.05rem;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .calculate-btn:hover {
+      filter: brightness(0.95);
+    }
+
+    .error {
+      display: none;
+      background: rgba(220,53,69,0.1);
+      color: var(--danger);
+      border: 1px solid rgba(220,53,69,0.3);
+      padding: 12px;
+      margin-top: 16px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+    }
+
+    .results {
+      display: none;
+      margin-top: 28px;
+    }
+
+    .results h3 {
+      color: var(--primary);
+      margin-bottom: 14px;
+    }
+
+    .result-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 13px;
+    }
+
+    .result-box {
+      background: var(--result);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 15px;
+    }
+
+    .result-label {
+      display: block;
+      color: var(--muted);
+      font-size: 0.82rem;
+      margin-bottom: 4px;
+    }
+
+    .result-value {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--primary);
+    }
+
+    .status {
+      margin-top: 15px;
+      padding: 14px;
+      border-radius: 9px;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .content-section {
+      max-width: 900px;
+      margin: 40px auto;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .content-section h2 {
+      color: var(--primary);
+      margin-bottom: 14px;
+    }
+
+    .content-section h3 {
+      color: var(--primary);
+      margin: 22px 0 8px;
+    }
+
+    .content-section p {
+      margin-bottom: 13px;
+    }
+
+    .content-section ul,
+    .content-section ol {
+      margin: 10px 0 15px 22px;
+    }
+
+    .formula {
+      background: var(--result);
+      border-left: 4px solid var(--accent);
+      padding: 18px;
+      margin: 18px 0;
+      border-radius: 7px;
+      overflow-x: auto;
+      font-family: Georgia, serif;
+    }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .related-link {
+      display: block;
+      padding: 14px;
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      background: var(--bg);
+      font-weight: 700;
+    }
+
+    .related-link:hover {
+      text-decoration: none;
+      border-color: var(--primary);
+    }
+
+    .faq-item {
+      padding: 17px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-item h3 {
+      margin: 0 0 7px;
+      font-size: 1.05rem;
+    }
+
+    .disclaimer {
+      font-size: 0.88rem;
+      color: var(--muted);
+      background: var(--bg);
+      padding: 16px;
+      border-radius: 9px;
+      margin-top: 20px;
+    }
+
+    footer {
+      margin-top: 50px;
+      padding: 35px 20px;
+      background: var(--primary-dark);
+      color: #fff;
+      text-align: center;
+    }
+
+    footer p {
+      margin: 7px 0;
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: #fff;
+      margin: 0 7px;
+    }
+
+    @media (max-width: 700px) {
+      .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav {
+        width: 100%;
+      }
+
+      .hero {
+        padding-top: 35px;
+      }
+
+      .calculator-card,
+      .content-section {
+        padding: 20px;
+      }
+
+      .form-grid,
+      .result-grid,
+      .related-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .field.full {
+        grid-column: auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+
+    <a href="index.html" class="logo" aria-label="EZTradingHub Home">
+      <span class="logo-icon">EZ</span>
+      <span>EZTradingHub</span>
+    </a>
+
+    <nav aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="calculators.html">Calculators</a>
+      <a href="trade-journal.html">Trade Journal</a>
+      <a href="about.html">About</a>
+
+      <button
+        class="theme-btn"
+        type="button"
+        onclick="toggleTheme()"
+        aria-label="Toggle light and dark mode">
+        🌙 / ☀️
+      </button>
+    </nav>
+
+  </div>
+</header>
+
+<main>
+
+  <section class="hero container">
+    <h1>Bond Coupon Payment Calculator</h1>
+    <p>
+      Calculate periodic bond coupon payments, annual coupon income,
+      total coupon payments and coupon yield using face value,
+      coupon rate and payment frequency.
+    </p>
+  </section>
+
+  <div class="ad-box" aria-label="Advertisement">
+    Advertisement
+  </div>
+
+  <section class="calculator-card" aria-labelledby="calculator-title">
+
+    <h2 id="calculator-title">Calculate Your Bond Coupon Payment</h2>
+
+    <div class="form-grid">
+
+      <div class="field">
+        <label for="faceValue">Face / Par Value</label>
+        <input
+          type="number"
+          id="faceValue"
+          min="0"
+          step="0.01"
+          value="1000"
+          placeholder="e.g. 1000">
+        <span class="hint">
+          The amount the bond promises to repay at maturity.
+        </span>
+      </div>
+
+      <div class="field">
+        <label for="couponRate">Annual Coupon Rate (%)</label>
+        <input
+          type="number"
+          id="couponRate"
+          min="0"
+          step="0.01"
+          value="5"
+          placeholder="e.g. 5">
+        <span class="hint">
+          The bond's stated annual interest rate.
+        </span>
+      </div>
+
+      <div class="field">
+        <label for="frequency">Coupon Payment Frequency</label>
+
+        <select id="frequency">
+          <option value="1">Annual — 1 payment/year</option>
+          <option value="2" selected>Semiannual — 2 payments/year</option>
+          <option value="4">Quarterly — 4 payments/year</option>
+          <option value="12">Monthly — 12 payments/year</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="years">Years to Maturity</label>
+
+        <input
+          type="number"
+          id="years"
+          min="0"
+          step="0.01"
+          value="5"
+          placeholder="e.g. 5">
+
+        <span class="hint">
+          Used to estimate the number of remaining coupon payments.
+        </span>
+      </div>
+
+      <div class="field">
+        <label for="currency">Currency</label>
+
+        <select id="currency">
+          <option value="USD" selected>USD — US Dollar</option>
+          <option value="NGN">NGN — Nigerian Naira</option>
+          <option value="EUR">EUR — Euro</option>
+          <option value="GBP">GBP — British Pound</option>
+          <option value="CAD">CAD — Canadian Dollar</option>
+          <option value="AUD">AUD — Australian Dollar</option>
+        </select>
+      </div>
+
+    </div>
+
+    <button
+      class="calculate-btn"
+      type="button"
+      onclick="calculateCoupon()">
+      Calculate Coupon Payment
+    </button>
+
+    <div id="errorBox" class="error" role="alert"></div>
+
+    <div id="results" class="results">
+
+      <h3>Coupon Payment Results</h3>
+
+      <div class="result-grid">
+
+        <div class="result-box">
+          <span class="result-label">Periodic Coupon Payment</span>
+          <span id="periodicCoupon" class="result-value">—</span>
+        </div>
+
+        <div class="result-box">
+          <span class="result-label">Annual Coupon Income</span>
+          <span id="annualCoupon" class="result-value">—</span>
+        </div>
+
+        <div class="result-box">
+          <span class="result-label">Total Coupon Payments</span>
+          <span id="totalCoupons" class="result-value">—</span>
+        </div>
+
+        <div class="result-box">
+          <span class="result-label">Number of Payments</span>
+          <span id="paymentCount" class="result-value">—</span>
+        </div>
+
+        <div class="result-box">
+          <span class="result-label">Coupon Rate</span>
+          <span id="displayCouponRate" class="result-value">—</span>
+        </div>
+
+        <div class="result-box">
+          <span class="result-label">Face Value</span>
+          <span id="displayFaceValue" class="result-value">—</span>
+        </div>
+
+      </div>
+
+      <div id="status" class="status"></div>
+
+    </div>
+
+  </section>
+
+  <div class="ad-box" aria-label="Advertisement">
+    Advertisement
+  </div>
+
+  <section class="content-section">
+
+    <h2>What Is a Bond Coupon Payment?</h2>
+
+    <p>
+      A bond coupon payment is the interest payment made by a bond issuer
+      to a bondholder according to the terms of the bond.
+    </p>
+
+    <p>
+      The amount of each payment is normally determined by the bond's
+      face value, coupon rate and payment frequency.
+    </p>
+
+    <h3>Bond Coupon Payment Formula</h3>
+
+    <div class="formula">
+      Annual Coupon Income = Face Value × Coupon Rate
+      <br><br>
+      Periodic Coupon Payment =
+      Annual Coupon Income ÷ Payments Per Year
+    </div>
+
+    <p>
+      For example, a bond with a face value of $1,000 and a 5% annual
+      coupon rate produces $50 in annual coupon income.
+      If the bond pays coupons twice per year, each payment would be
+      $25.
+    </p>
+
+  </section>
+
+  <section class="content-section">
+
+    <h2>How to Use the Bond Coupon Calculator</h2>
+
+    <ol>
+      <li>Enter the bond's face or par value.</li>
+      <li>Enter the annual coupon rate.</li>
+      <li>Select how frequently coupons are paid.</li>
+      <li>Enter the years remaining until maturity.</li>
+      <li>Select your preferred currency.</li>
+      <li>Click <strong>Calculate Coupon Payment</strong>.</li>
+    </ol>
+
+    <h3>Example</h3>
+
+    <p>
+      Suppose a bond has a $1,000 face value and a 5% coupon rate.
+      If it pays coupons semiannually:
+    </p>
+
+    <div class="formula">
+      Annual Coupon = $1,000 × 5% = $50
+      <br><br>
+      Semiannual Coupon = $50 ÷ 2 = $25
+    </div>
+
+    <p>
+      Therefore, the investor would receive approximately $25 every
+      six months, assuming the bond's terms remain unchanged.
+    </p>
+
+  </section>
+
+  <section class="content-section">
+
+    <h2>Coupon Rate vs. Bond Yield</h2>
+
+    <p>
+      The <strong>coupon rate</strong> is the interest rate stated on
+      the bond and is generally applied to its face value.
+    </p>
+
+    <p>
+      The <strong>yield</strong> measures the return an investor may
+      receive based on the price paid for the bond and other factors.
+    </p>
+
+    <p>
+      Because bonds can trade above or below face value, the coupon
+      rate and an investor's actual yield can be different.
+    </p>
+
+    <h3>Premium Bond</h3>
+
+    <p>
+      If a bond trades above its face value, its current yield may be
+      lower than its coupon rate.
+    </p>
+
+    <h3>Discount Bond</h3>
+
+    <p>
+      If a bond trades below face value, its current yield may be
+      higher than its coupon rate.
+    </p>
+
+  </section>
+
+  <section class="content-section">
+
+    <h2>Why Bond Coupon Payments Matter</h2>
+
+    <ul>
+      <li>They provide scheduled income to bond investors.</li>
+      <li>They help investors estimate cash flow.</li>
+      <li>They can be compared with other fixed-income investments.</li>
+      <li>They help investors understand the income characteristics of a bond.</li>
+      <li>They can be used when building an income-focused portfolio.</li>
+    </ul>
+
+  </section>
+
+  <section class="content-section">
+
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+      <h3>What is a bond coupon payment?</h3>
+      <p>
+        It is a scheduled interest payment made by a bond issuer
+        to the bondholder.
+      </p>
+    </div>
+
+    <div class="faq-item">
+      <h3>How is a coupon payment calculated?</h3>
+      <p>
+        Annual coupon income is generally calculated by multiplying
+        the face value by the annual coupon rate. The annual amount
+        is then divided by the number of payments per year.
+      </p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Does the bond price affect the coupon payment?</h3>
+      <p>
+        For a standard fixed-rate bond, the scheduled coupon payment
+        is generally based on face value rather than the current
+        market price. However, the market price affects measures
+        such as current yield and yield to maturity.
+      </p>
+    </div>
+
+    <div class="faq-item">
+      <h3>How often can coupons be paid?</h3>
+      <p>
+        Depending on the bond, coupons may be paid annually,
+        semiannually, quarterly or monthly.
+      </p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Is coupon rate the same as yield?</h3>
+      <p>
+        No. Coupon rate determines scheduled interest payments,
+        while yield incorporates the price paid for the bond and
+        potentially other cash flows.
+      </p>
+    </div>
+
+  </section>
+
+  <section class="content-section">
+
+    <h2>Related Bond & Fixed-Income Calculators</h2>
+
+    <div class="related-grid">
+
+      <a class="related-link" href="bond-price-calculator.html">
+        Bond Price Calculator
+      </a>
+
+      <a class="related-link" href="bond-ytm-calculator.html">
+        Bond YTM Calculator
+      </a>
+
+      <a class="related-link" href="bond-yield-calculator.html">
+        Bond Yield Calculator
+      </a>
+
+      <a class="related-link" href="bond-duration-calculator.html">
+        Bond Duration Calculator
+      </a>
+
+      <a class="related-link" href="bond-convexity-calculator.html">
+        Bond Convexity Calculator
+      </a>
+
+      <a class="related-link" href="present-value-calculator.html">
+        Present Value Calculator
+      </a>
+
+    </div>
+
+  </section>
+
+  <section class="content-section">
+
+    <h2>Important Disclaimer</h2>
+
+    <div class="disclaimer">
+      EZTradingHub calculators are provided for educational and
+      informational purposes only. Results are estimates and should
+      not be considered financial, investment, tax or legal advice.
+
+      <br><br>
+
+      This calculator assumes a standard fixed-rate coupon bond.
+      It does not account for accrued interest, irregular coupon
+      periods, floating-rate coupons, callable or putable features,
+      taxes, commissions, transaction costs or other bond-specific
+      provisions.
+
+      <br><br>
+
+      Always verify calculations against the official terms of the
+      security and consult a qualified financial professional when
+      making investment decisions.
+    </div>
+
+  </section>
+
+</main>
+
+<footer>
+
+  <p>
+    <strong>EZTradingHub</strong> — Smart Trading & Investment Tools
+  </p>
+
+  <p>
+    <a href="index.html">Home</a>
+    <a href="calculators.html">Calculators</a>
+    <a href="about.html">About</a>
+    <a href="faq.html">FAQ</a>
+    <a href="contact.html">Contact</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="terms.html">Terms</a>
+    <a href="disclaimer.html">Disclaimer</a>
+    <a href="cookie-policy.html">Cookie Policy</a>
+  </p>
+
+  <p>
+    © <span id="year"></span> EZTradingHub. All rights reserved.
+  </p>
+
+</footer>
+
+<script>
+  /* ============================
+     DARK / LIGHT MODE
+  ============================ */
+
+  function applySavedTheme() {
+    const savedTheme = localStorage.getItem("ezth-theme");
+
+    if (savedTheme === "dark") {
+      document.body.classList.add("dark");
+    } else if (savedTheme === "light") {
+      document.body.classList.remove("dark");
+    } else {
+      const prefersDark =
+        window.matchMedia &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+      if (prefersDark) {
+        document.body.classList.add("dark");
+      }
+    }
+  }
+
+  function toggleTheme() {
+    document.body.classList.toggle("dark");
+
+    localStorage.setItem(
+      "ezth-theme",
+      document.body.classList.contains("dark")
+        ? "dark"
+        : "light"
+    );
+  }
+
+  applySavedTheme();
+
+
+  /* ============================
+     CURRENCY FORMATTER
+  ============================ */
+
+  function formatMoney(value, currency) {
+    try {
+      return new Intl.NumberFormat(undefined, {
+        style: "currency",
+        currency: currency,
+        maximumFractionDigits: 2
+      }).format(value);
+    } catch (error) {
+      return currency + " " + value.toFixed(2);
+    }
+  }
+
+
+  /* ============================
+     COUPON CALCULATOR
+  ============================ */
+
+  function calculateCoupon() {
+
+    const faceValue =
+      parseFloat(document.getElementById("faceValue").value);
+
+    const couponRate =
+      parseFloat(document.getElementById("couponRate").value);
+
+    const frequency =
+      parseInt(document.getElementById("frequency").value, 10);
+
+    const years =
+      parseFloat(document.getElementById("years").value);
+
+    const currency =
+      document.getElementById("currency").value;
+
+    const errorBox =
+      document.getElementById("errorBox");
+
+    const results =
+      document.getElementById("results");
+
+    errorBox.style.display = "none";
+    results.style.display = "none";
+
+    /* Validation */
+
+    if (
+      !Number.isFinite(faceValue) ||
+      !Number.isFinite(couponRate) ||
+      !Number.isFinite(years)
+    ) {
+      showError("Please enter valid numbers in all required fields.");
+      return;
+    }
+
+    if (faceValue <= 0) {
+      showError("Face value must be greater than zero.");
+      return;
+    }
+
+    if (couponRate < 0) {
+      showError("Coupon rate cannot be negative.");
+      return;
+    }
+
+    if (years <= 0) {
+      showError("Years to maturity must be greater than zero.");
+      return;
+    }
+
+    if (frequency <= 0) {
+      showError("Please select a valid coupon frequency.");
+      return;
+    }
+
+    /*
+      For a standard bond:
+
+      Annual Coupon Income =
+      Face Value × Coupon Rate / 100
+
+      Periodic Coupon =
+      Annual Coupon Income / Frequency
+
+      Number of Payments =
+      Years × Frequency
+    */
+
+    const annualCoupon =
+      faceValue * (couponRate / 100);
+
+    const periodicCoupon =
+      annualCoupon / frequency;
+
+    const paymentCount =
+      Math.round(years * frequency);
+
+    const totalCoupons =
+      periodicCoupon * paymentCount;
+
+    /* Display Results */
+
+    document.getElementById("periodicCoupon").textContent =
+      formatMoney(periodicCoupon, currency);
+
+    document.getElementById("annualCoupon").textContent =
+      formatMoney(annualCoupon, currency);
+
+    document.getElementById("totalCoupons").textContent =
+      formatMoney(totalCoupons, currency);
+
+    document.getElementById("paymentCount").textContent =
+      paymentCount.toLocaleString();
+
+    document.getElementById("displayCouponRate").textContent =
+      couponRate.toFixed(2) + "%";
+
+    document.getElementById("displayFaceValue").textContent =
+      formatMoney(faceValue, currency);
+
+    const status =
+      document.getElementById("status");
+
+    status.textContent =
+      "Estimated coupon income: " +
+      formatMoney(annualCoupon, currency) +
+      " per year, with approximately " +
+      paymentCount +
+      " scheduled payment(s) over the selected period.";
+
+    status.style.background =
+      "rgba(25, 135, 84, 0.12)";
+
+    status.style.color =
+      "var(--success)";
+
+    results.style.display = "block";
+  }
+
+
+  function showError(message) {
+    const errorBox =
+      document.getElementById("errorBox");
+
+    errorBox.textContent = message;
+    errorBox.style.display = "block";
+  }
+
+
+  /* ============================
+     CURRENT YEAR
+  ============================ */
+
+  document.getElementById("year").textContent =
+    new Date().getFullYear();
+</script>
+
+</body>
+</html>
