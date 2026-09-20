@@ -1,0 +1,1562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Trading Assistant | EZTradingHub</title>
+
+    <meta name="description" content="Use the EZTradingHub AI Trading Assistant to explore trading concepts, risk management, forex tools, technical analysis and financial-market education.">
+
+    <meta name="keywords" content="AI trading assistant, EZTradingHub AI, forex AI assistant, trading assistant, trading education, forex tools, risk management">
+
+    <meta name="author" content="EZTradingHub">
+
+    <meta name="robots" content="index, follow">
+
+    <link rel="canonical" href="https://eztradinghub.com/aiassistant.html">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --dark: #0b1220;
+            --dark-2: #111c31;
+            --green: #19c37d;
+            --green-light: #e8fff5;
+            --text: #172033;
+            --muted: #667085;
+            --border: #e2e7ef;
+            --bg: #f5f7fb;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            background: var(--dark);
+            color: white;
+            padding: 18px 6%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
+        .nav {
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            white-space: nowrap;
+        }
+
+        .logo span {
+            color: var(--green);
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--green);
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            background:
+                radial-gradient(
+                    circle at top right,
+                    rgba(25,195,125,0.18),
+                    transparent 35%
+                ),
+                linear-gradient(
+                    135deg,
+                    var(--dark),
+                    var(--dark-2)
+                );
+
+            color: white;
+            text-align: center;
+            padding: 65px 20px 85px;
+        }
+
+        .ai-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 15px;
+            background: rgba(25,195,125,0.12);
+            border: 1px solid rgba(25,195,125,0.35);
+            border-radius: 30px;
+            color: #7ff0bd;
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--green);
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(25,195,125,0.8);
+        }
+
+        .hero h1 {
+            font-size: clamp(38px, 6vw, 62px);
+            line-height: 1.1;
+            margin-bottom: 18px;
+        }
+
+        .hero h1 span {
+            color: var(--green);
+        }
+
+        .hero p {
+            max-width: 760px;
+            margin: auto;
+            color: #d6dfeb;
+            font-size: 18px;
+        }
+
+        /* =========================
+           MAIN
+        ========================= */
+
+        .container {
+            width: 92%;
+            max-width: 1050px;
+            margin: -45px auto 70px;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* =========================
+           AI PANEL
+        ========================= */
+
+        .ai-panel {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(15,30,50,0.12);
+        }
+
+        /* =========================
+           CHAT HEADER
+        ========================= */
+
+        .chat-header {
+            background: var(--dark);
+            color: white;
+            padding: 18px 22px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+        }
+
+        .assistant-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .assistant-avatar {
+            width: 45px;
+            height: 45px;
+            border-radius: 14px;
+            background: linear-gradient(
+                135deg,
+                var(--green),
+                #0c9c66
+            );
+            color: #06150e;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            font-weight: 800;
+        }
+
+        .assistant-info h2 {
+            font-size: 17px;
+        }
+
+        .assistant-info p {
+            color: #aebbc9;
+            font-size: 12px;
+        }
+
+        .clear-btn {
+            border: 1px solid rgba(255,255,255,0.18);
+            background: transparent;
+            color: white;
+            padding: 8px 13px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            transition: 0.3s;
+        }
+
+        .clear-btn:hover {
+            background: rgba(255,255,255,0.1);
+        }
+
+        /* =========================
+           CHAT AREA
+        ========================= */
+
+        .chat-box {
+            height: 500px;
+            overflow-y: auto;
+            padding: 25px;
+            background:
+                linear-gradient(
+                    rgba(245,247,251,0.92),
+                    rgba(245,247,251,0.92)
+                );
+        }
+
+        .message {
+            display: flex;
+            margin-bottom: 20px;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+
+            from {
+                opacity: 0;
+                transform: translateY(5px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+        }
+
+        .message.user {
+            justify-content: flex-end;
+        }
+
+        .message-content {
+            max-width: 78%;
+            padding: 14px 17px;
+            border-radius: 16px;
+            font-size: 14px;
+        }
+
+        .message.ai .message-content {
+            background: white;
+            border: 1px solid var(--border);
+            border-bottom-left-radius: 5px;
+            color: #344054;
+        }
+
+        .message.user .message-content {
+            background: var(--dark);
+            color: white;
+            border-bottom-right-radius: 5px;
+        }
+
+        .message-content strong {
+            color: var(--green);
+        }
+
+        .message.user .message-content strong {
+            color: var(--green);
+        }
+
+        /* =========================
+           TYPING
+        ========================= */
+
+        .typing {
+            display: none;
+            margin-bottom: 18px;
+        }
+
+        .typing-bubble {
+            background: white;
+            border: 1px solid var(--border);
+            display: inline-flex;
+            gap: 5px;
+            padding: 12px 15px;
+            border-radius: 15px;
+        }
+
+        .typing-bubble span {
+            width: 7px;
+            height: 7px;
+            background: #8b98a9;
+            border-radius: 50%;
+            animation: typing 1.2s infinite;
+        }
+
+        .typing-bubble span:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .typing-bubble span:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes typing {
+
+            0%, 60%, 100% {
+                transform: translateY(0);
+                opacity: 0.5;
+            }
+
+            30% {
+                transform: translateY(-5px);
+                opacity: 1;
+            }
+
+        }
+
+        /* =========================
+           SUGGESTIONS
+        ========================= */
+
+        .suggestions {
+            padding: 15px 20px;
+            border-top: 1px solid var(--border);
+            background: white;
+        }
+
+        .suggestions-title {
+            color: var(--muted);
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .suggestion-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .suggestion {
+            border: 1px solid #dbe2eb;
+            background: #f8fafc;
+            color: #344054;
+            padding: 9px 13px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 12px;
+            transition: 0.3s;
+        }
+
+        .suggestion:hover {
+            border-color: var(--green);
+            background: var(--green-light);
+            color: #08734b;
+        }
+
+        /* =========================
+           INPUT
+        ========================= */
+
+        .input-area {
+            display: flex;
+            gap: 10px;
+            padding: 15px;
+            background: white;
+            border-top: 1px solid var(--border);
+        }
+
+        #userInput {
+            flex: 1;
+            min-width: 0;
+            border: 1px solid #d7dee8;
+            border-radius: 12px;
+            padding: 14px 15px;
+            font-size: 14px;
+            font-family: inherit;
+            outline: none;
+            resize: none;
+            min-height: 50px;
+            max-height: 120px;
+        }
+
+        #userInput:focus {
+            border-color: var(--green);
+            box-shadow: 0 0 0 3px rgba(25,195,125,0.1);
+        }
+
+        #sendBtn {
+            width: 52px;
+            height: 50px;
+            border: none;
+            border-radius: 12px;
+            background: var(--green);
+            color: #06150e;
+            cursor: pointer;
+            font-size: 20px;
+            font-weight: 800;
+            transition: 0.3s;
+        }
+
+        #sendBtn:hover {
+            background: #25e395;
+            transform: translateY(-2px);
+        }
+
+        /* =========================
+           INFO CARDS
+        ========================= */
+
+        .info-section {
+            margin-top: 45px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .section-title h2 {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+
+        .section-title p {
+            color: var(--muted);
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .info-card {
+            background: white;
+            border: 1px solid var(--border);
+            padding: 27px;
+            border-radius: 18px;
+            box-shadow: 0 8px 25px rgba(20,35,60,0.05);
+        }
+
+        .info-icon {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--green-light);
+            border-radius: 13px;
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        .info-card h3 {
+            margin-bottom: 8px;
+            font-size: 18px;
+        }
+
+        .info-card p {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        /* =========================
+           DISCLAIMER
+        ========================= */
+
+        .disclaimer {
+            margin-top: 30px;
+            padding: 20px;
+            border-radius: 14px;
+            background: #fff8e6;
+            border: 1px solid #efd98d;
+            color: #6e5507;
+            font-size: 13px;
+        }
+
+        .disclaimer strong {
+            color: #594400;
+        }
+
+        /* =========================
+           CTA
+        ========================= */
+
+        .cta {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 70px 20px;
+        }
+
+        .cta h2 {
+            font-size: 34px;
+            margin-bottom: 12px;
+        }
+
+        .cta p {
+            max-width: 700px;
+            margin: 0 auto 25px;
+            color: #cbd5e1;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 28px;
+            border-radius: 10px;
+            background: var(--green);
+            color: #06150e;
+            text-decoration: none;
+            font-weight: 800;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #25e395;
+            transform: translateY(-2px);
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: #070c16;
+            color: #aeb8c7;
+            padding: 35px 20px;
+            text-align: center;
+        }
+
+        footer a {
+            color: var(--green);
+            text-decoration: none;
+        }
+
+        .footer-links {
+            margin-bottom: 15px;
+        }
+
+        .footer-links a {
+            margin: 0 9px;
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 800px) {
+
+            .nav {
+                flex-direction: column;
+            }
+
+            nav a {
+                margin: 0 6px;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .chat-box {
+                height: 480px;
+            }
+
+        }
+
+        @media (max-width: 550px) {
+
+            .hero {
+                padding: 55px 18px 75px;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .hero p {
+                font-size: 15px;
+            }
+
+            .container {
+                width: 94%;
+            }
+
+            .chat-header {
+                padding: 14px;
+            }
+
+            .chat-box {
+                height: 450px;
+                padding: 17px;
+            }
+
+            .message-content {
+                max-width: 90%;
+                font-size: 13px;
+            }
+
+            .suggestions {
+                padding: 12px;
+            }
+
+            .suggestion {
+                font-size: 11px;
+            }
+
+            .input-area {
+                padding: 10px;
+            }
+
+            .info-card {
+                padding: 22px;
+            }
+
+            nav a {
+                font-size: 11px;
+            }
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+
+    <div class="nav">
+
+        <div class="logo">
+            EZ<span>TradingHub</span>
+        </div>
+
+        <nav>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="index.html#tools">
+                Tools
+            </a>
+
+            <a href="about.html">
+                About
+            </a>
+
+            <a href="FAQ.html">
+                FAQ
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+    <div class="ai-badge">
+
+        <span class="status-dot"></span>
+
+        EZTradingHub AI Assistant
+
+    </div>
+
+
+    <h1>
+        Your <span>AI Trading Assistant</span>
+    </h1>
+
+
+    <p>
+        Ask questions about trading concepts, risk management,
+        forex calculations, technical analysis and financial markets.
+    </p>
+
+</section>
+
+
+<!-- =========================
+     AI ASSISTANT
+========================= -->
+
+<main class="container">
+
+    <div class="ai-panel">
+
+
+        <!-- CHAT HEADER -->
+
+        <div class="chat-header">
+
+            <div class="assistant-info">
+
+                <div class="assistant-avatar">
+                    AI
+                </div>
+
+                <div>
+
+                    <h2>
+                        EZTradingHub Assistant
+                    </h2>
+
+                    <p>
+                        Educational trading assistant
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <button
+                class="clear-btn"
+                id="clearBtn"
+                type="button"
+            >
+                Clear Chat
+            </button>
+
+        </div>
+
+
+        <!-- CHAT -->
+
+        <div
+            class="chat-box"
+            id="chatBox"
+        >
+
+            <div class="message ai">
+
+                <div class="message-content">
+
+                    👋 <strong>Welcome to EZTradingHub AI.</strong>
+
+                    <br><br>
+
+                    I can help explain trading concepts,
+                    risk management, position sizing,
+                    forex terminology and other educational
+                    topics.
+
+                    <br><br>
+
+                    What would you like to learn today?
+
+                </div>
+
+            </div>
+
+
+            <!-- TYPING -->
+
+            <div
+                class="typing"
+                id="typing"
+            >
+
+                <div class="typing-bubble">
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- SUGGESTIONS -->
+
+        <div class="suggestions">
+
+            <div class="suggestions-title">
+                Try asking:
+            </div>
+
+
+            <div class="suggestion-list">
+
+                <button
+                    class="suggestion"
+                    type="button"
+                    data-question="What is risk management in trading?"
+                >
+                    What is risk management?
+                </button>
+
+
+                <button
+                    class="suggestion"
+                    type="button"
+                    data-question="How does a lot size calculator work?"
+                >
+                    How does lot size work?
+                </button>
+
+
+                <button
+                    class="suggestion"
+                    type="button"
+                    data-question="What is a pip in forex?"
+                >
+                    What is a pip?
+                </button>
+
+
+                <button
+                    class="suggestion"
+                    type="button"
+                    data-question="What is risk to reward ratio?"
+                >
+                    Explain risk-to-reward
+                </button>
+
+
+                <button
+                    class="suggestion"
+                    type="button"
+                    data-question="What is XAUUSD?"
+                >
+                    What is XAUUSD?
+                </button>
+
+
+                <button
+                    class="suggestion"
+                    type="button"
+                    data-question="What is position sizing?"
+                >
+                    Explain position sizing
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- INPUT -->
+
+        <div class="input-area">
+
+            <textarea
+                id="userInput"
+                placeholder="Ask your trading question..."
+                rows="1"
+                maxlength="1000"
+            ></textarea>
+
+
+            <button
+                id="sendBtn"
+                type="button"
+                aria-label="Send message"
+            >
+                ➤
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         INFO CARDS
+    ========================= -->
+
+    <section class="info-section">
+
+        <div class="section-title">
+
+            <h2>
+                What Can the Assistant Help With?
+            </h2>
+
+            <p>
+                Explore trading topics and improve your understanding.
+            </p>
+
+        </div>
+
+
+        <div class="info-grid">
+
+
+            <div class="info-card">
+
+                <div class="info-icon">
+                    📊
+                </div>
+
+                <h3>
+                    Trading Concepts
+                </h3>
+
+                <p>
+                    Learn about forex terminology, pips, lots,
+                    leverage, spreads, margin and other trading concepts.
+                </p>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <div class="info-icon">
+                    🛡️
+                </div>
+
+                <h3>
+                    Risk Management
+                </h3>
+
+                <p>
+                    Learn about position sizing, stop-losses,
+                    risk percentages, drawdown and risk-to-reward ratios.
+                </p>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <div class="info-icon">
+                    🧠
+                </div>
+
+                <h3>
+                    Trading Education
+                </h3>
+
+                <p>
+                    Ask educational questions about trading strategies,
+                    market terminology and financial-market concepts.
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="disclaimer">
+
+            <strong>Important:</strong>
+
+            EZTradingHub AI Assistant is intended for educational
+            and informational purposes only. It does not provide
+            personalized financial, investment or trading advice,
+            and it cannot guarantee trading profits.
+
+            Always conduct your own research and consider your
+            financial circumstances before making trading decisions.
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- =========================
+     CTA
+========================= -->
+
+<section class="cta">
+
+    <h2>
+        Need a Trading Calculator?
+    </h2>
+
+    <p>
+        Use the EZTradingHub collection of trading calculators
+        to perform important calculations before entering a trade.
+    </p>
+
+    <a
+        href="market.html"
+        class="btn"
+    >
+        Explore Trading Tools
+    </a>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+        <div>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="faq.html">FAQ</a>
+            <a href="terms.html">Terms & Conditions</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="cookie-policy.html">Cookie Policy</a>
+            <a href="disclaimer.html">Disclaimer</a>
+            <a href="contact.html">Contact</a>
+        </div>
+
+        <p class="copyright">
+            © 2026 EZTradingHub. All rights reserved.
+        </p>
+
+        <p class="copyright">
+            EZTradingHub provides educational and informational tools.
+            Trading involves risk.
+        </p>
+
+    </footer>
+    <script src="cookie-consent.js"></script>
+
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script>
+
+    const chatBox =
+        document.getElementById("chatBox");
+
+    const userInput =
+        document.getElementById("userInput");
+
+    const sendBtn =
+        document.getElementById("sendBtn");
+
+    const clearBtn =
+        document.getElementById("clearBtn");
+
+    const typing =
+        document.getElementById("typing");
+
+    const suggestions =
+        document.querySelectorAll(".suggestion");
+
+
+    /* =========================
+       ADD MESSAGE
+    ========================= */
+
+    function addMessage(text, sender) {
+
+        const message =
+            document.createElement("div");
+
+        message.className =
+            "message " + sender;
+
+
+        const content =
+            document.createElement("div");
+
+        content.className =
+            "message-content";
+
+
+        content.innerHTML =
+            text;
+
+
+        message.appendChild(content);
+
+
+        chatBox.insertBefore(
+            message,
+            typing
+        );
+
+
+        chatBox.scrollTop =
+            chatBox.scrollHeight;
+
+    }
+
+
+    /* =========================
+       SIMPLE DEMO AI
+    ========================= */
+
+    function generateResponse(question) {
+
+        const q =
+            question.toLowerCase();
+
+
+        if (
+            q.includes("risk management") ||
+            q.includes("manage risk")
+        ) {
+
+            return `
+                <strong>Risk management</strong> is the process
+                of controlling how much capital you are willing
+                to expose to a trade.
+
+                <br><br>
+
+                Common risk-management principles include:
+
+                <br>
+                • Risking only a defined percentage of your account.
+                <br>
+                • Using a logical stop-loss.
+                <br>
+                • Calculating position size before entering.
+                <br>
+                • Maintaining a reasonable risk-to-reward ratio.
+
+                <br><br>
+
+                Good risk management cannot eliminate losses,
+                but it can help control potential damage to your account.
+            `;
+
+        }
+
+
+        if (
+            q.includes("pip")
+        ) {
+
+            return `
+                A <strong>pip</strong> is a commonly used unit
+                for measuring price movement in forex.
+
+                <br><br>
+
+                For many major currency pairs, one pip is
+                typically the fourth decimal place. For
+                JPY-related pairs, the convention is commonly
+                the second decimal place.
+
+                <br><br>
+
+                The monetary value of a pip depends on factors
+                such as the currency pair, trade size and account
+                currency.
+            `;
+
+        }
+
+
+        if (
+            q.includes("lot size") ||
+            q.includes("lot")
+        ) {
+
+            return `
+                <strong>Lot size</strong> represents the size
+                of a trading position.
+
+                <br><br>
+
+                Common forex lot sizes include:
+
+                <br>
+                • Standard lot = 100,000 units
+                <br>
+                • Mini lot = 10,000 units
+                <br>
+                • Micro lot = 1,000 units
+
+                <br><br>
+
+                The appropriate position size should also consider
+                your account balance, risk percentage and stop-loss
+                distance.
+            `;
+
+        }
+
+
+        if (
+            q.includes("risk to reward") ||
+            q.includes("risk reward") ||
+            q.includes("rr")
+        ) {
+
+            return `
+                The <strong>risk-to-reward ratio</strong>
+                compares the amount you are willing to risk
+                with the potential reward of a trade.
+
+                <br><br>
+
+                For example, a 1:2 risk-to-reward ratio means
+                that you are targeting approximately twice the
+                amount you are risking.
+
+                <br><br>
+
+                A favorable ratio does not guarantee a profitable
+                strategy. Win rate, trading costs and execution
+                also matter.
+            `;
+
+        }
+
+
+        if (
+            q.includes("xauusd") ||
+            q.includes("gold")
+        ) {
+
+            return `
+                <strong>XAUUSD</strong> is the commonly used
+                trading symbol for gold priced in U.S. dollars.
+
+                <br><br>
+
+                Gold can experience significant price movements,
+                especially around major economic announcements.
+
+                <br><br>
+
+                Because volatility can be high, position sizing
+                and risk management are particularly important
+                when trading gold.
+            `;
+
+        }
+
+
+        if (
+            q.includes("position sizing") ||
+            q.includes("position size")
+        ) {
+
+            return `
+                <strong>Position sizing</strong> determines how
+                large a trade should be based on your account
+                and risk parameters.
+
+                <br><br>
+
+                A common approach considers:
+
+                <br>
+                • Account balance
+                <br>
+                • Percentage of capital at risk
+                <br>
+                • Entry price
+                <br>
+                • Stop-loss distance
+                <br>
+                • Instrument specifications
+
+                <br><br>
+
+                The EZTradingHub Position Size Calculator can
+                help simplify this calculation.
+            `;
+
+        }
+
+
+        if (
+            q.includes("leverage")
+        ) {
+
+            return `
+                <strong>Leverage</strong> allows traders to
+                control a larger position with a smaller amount
+                of deposited capital.
+
+                <br><br>
+
+                However, leverage can increase both potential
+                gains and potential losses. High leverage does
+                not reduce the underlying market risk.
+            `;
+
+        }
+
+
+        if (
+            q.includes("margin")
+        ) {
+
+            return `
+                <strong>Margin</strong> is the amount of capital
+                a broker may require to open and maintain a
+                leveraged position.
+
+                <br><br>
+
+                Margin requirements can vary depending on the
+                broker, instrument, account type, leverage and
+                market conditions.
+            `;
+
+        }
+
+
+        if (
+            q.includes("stop loss") ||
+            q.includes("stop-loss")
+        ) {
+
+            return `
+                A <strong>stop-loss</strong> is an order or
+                predefined exit level intended to limit the loss
+                on a position.
+
+                <br><br>
+
+                Traders should consider market volatility,
+                technical structure and their risk limits when
+                determining where a stop-loss should be placed.
+            `;
+
+        }
+
+
+        return `
+            That's an interesting trading question.
+
+            <br><br>
+
+            I can currently help with educational topics such as
+            <strong>forex, pips, lot sizes, position sizing,
+            risk management, risk-to-reward ratios, leverage,
+            margin, stop-losses and XAUUSD</strong>.
+
+            <br><br>
+
+            Try asking a more specific question and I'll provide
+            an educational explanation.
+        `;
+
+    }
+
+
+    /* =========================
+       SEND MESSAGE
+    ========================= */
+
+    function sendMessage() {
+
+        const question =
+            userInput.value.trim();
+
+
+        if (!question) {
+            return;
+        }
+
+
+        addMessage(
+            escapeHTML(question),
+            "user"
+        );
+
+
+        userInput.value = "";
+
+
+        typing.style.display =
+            "block";
+
+
+        chatBox.scrollTop =
+            chatBox.scrollHeight;
+
+
+        setTimeout(function() {
+
+            typing.style.display =
+                "none";
+
+
+            const response =
+                generateResponse(question);
+
+
+            addMessage(
+                response,
+                "ai"
+            );
+
+        }, 700);
+
+    }
+
+
+    /* =========================
+       SEND BUTTON
+    ========================= */
+
+    sendBtn.addEventListener(
+        "click",
+        sendMessage
+    );
+
+
+    /* =========================
+       ENTER KEY
+    ========================= */
+
+    userInput.addEventListener(
+        "keydown",
+        function(event) {
+
+            if (
+                event.key === "Enter" &&
+                !event.shiftKey
+            ) {
+
+                event.preventDefault();
+
+                sendMessage();
+
+            }
+
+        }
+    );
+
+
+    /* =========================
+       SUGGESTIONS
+    ========================= */
+
+    suggestions.forEach(function(button) {
+
+        button.addEventListener(
+            "click",
+            function() {
+
+                userInput.value =
+                    button.getAttribute(
+                        "data-question"
+                    );
+
+                sendMessage();
+
+            }
+        );
+
+    });
+
+
+    /* =========================
+       CLEAR CHAT
+    ========================= */
+
+    clearBtn.addEventListener(
+        "click",
+        function() {
+
+            const messages =
+                chatBox.querySelectorAll(
+                    ".message"
+                );
+
+
+            messages.forEach(
+                function(message) {
+                    message.remove();
+                }
+            );
+
+
+            addMessage(
+                `
+                👋 <strong>Chat cleared.</strong>
+
+                <br><br>
+
+                What would you like to learn about trading?
+                `,
+                "ai"
+            );
+
+        }
+    );
+
+
+    /* =========================
+       ESCAPE USER TEXT
+    ========================= */
+
+    function escapeHTML(text) {
+
+        const div =
+            document.createElement("div");
+
+        div.textContent =
+            text;
+
+        return div.innerHTML;
+
+    }
+
+</script>
+
+</body>
+</html>
