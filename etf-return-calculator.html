@@ -1,0 +1,2424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <!-- =========================
+       BASIC SEO & MOBILE
+  ========================== -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#003366">
+
+  <title>ETF Return Calculator | Calculate ETF Total Return & ROI</title>
+
+  <meta name="description" content="Calculate ETF total return, capital gain, dividend income, ROI and annualized return with EZTradingHub's free ETF Return Calculator.">
+
+  <meta name="keywords" content="ETF return calculator, ETF total return calculator, ETF ROI calculator, ETF annualized return calculator, ETF investment return calculator, ETF performance calculator">
+
+  <meta name="robots" content="index, follow, max-image-preview:large">
+
+  <link rel="canonical" href="https://eztradinghub.com/etf-return-calculator.html">
+
+  <!-- =========================
+       OPEN GRAPH
+  ========================== -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="ETF Return Calculator | EZTradingHub">
+  <meta property="og:description" content="Calculate ETF total return, capital gains, dividends, ROI and annualized return.">
+  <meta property="og:url" content="https://eztradinghub.com/etf-return-calculator.html">
+  <meta property="og:site_name" content="EZTradingHub">
+  <meta property="og:image" content="https://eztradinghub.com/assets/images/og-image.jpg">
+
+  <!-- =========================
+       TWITTER
+  ========================== -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ETF Return Calculator | EZTradingHub">
+  <meta name="twitter:description" content="Free ETF return calculator for estimating total return, dividends, capital gains and annualized ROI.">
+  <meta name="twitter:image" content="https://eztradinghub.com/assets/images/og-image.jpg">
+
+  <!-- =========================
+       WEB APPLICATION SCHEMA
+  ========================== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "ETF Return Calculator",
+    "url": "https://eztradinghub.com/etf-return-calculator.html",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Web",
+    "description": "Free ETF return calculator for estimating capital gains, dividend income, total return, ROI and annualized return.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "EZTradingHub",
+      "url": "https://eztradinghub.com"
+    }
+  }
+  </script>
+
+  <!-- =========================
+       FAQ SCHEMA
+  ========================== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How is ETF total return calculated?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "ETF total return can be estimated by combining the change in investment value with dividends received and subtracting applicable fees and costs."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is ETF ROI?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "ETF ROI is the estimated return relative to the original investment, normally expressed as a percentage."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is annualized ETF return?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Annualized return converts an investment's overall growth over a period into an equivalent yearly compounded growth rate."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do ETF dividends count toward total return?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Dividends can contribute to an investor's total return when they are received during the investment period."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does this calculator account for taxes?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Tax treatment varies by investor and jurisdiction and should be considered separately."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+
+    /* =========================
+       THEME VARIABLES
+    ========================== */
+
+    :root {
+      --primary: #003366;
+      --primary-dark: #002244;
+      --accent: #ffb400;
+
+      --background: #f4f7fb;
+      --card: #ffffff;
+      --input: #ffffff;
+
+      --text: #17202a;
+      --muted: #667085;
+
+      --border: #d9e1ea;
+      --result: #eef6ff;
+
+      --success: #198754;
+      --danger: #dc3545;
+
+      --shadow:
+        0 8px 25px rgba(0, 51, 102, 0.08);
+    }
+
+    body.dark {
+      --primary: #0d6ead;
+      --primary-dark: #073b5c;
+
+      --background: #101820;
+      --card: #18232d;
+      --input: #121b23;
+
+      --text: #f2f5f7;
+      --muted: #aab7c4;
+
+      --border: #30404d;
+      --result: #142d40;
+
+      --shadow:
+        0 8px 25px rgba(0, 0, 0, 0.35);
+    }
+
+    /* =========================
+       RESET
+    ========================== */
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+      background: var(--background);
+      color: var(--text);
+
+      line-height: 1.65;
+
+      transition:
+        background 0.25s ease,
+        color 0.25s ease;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* =========================
+       HEADER
+    ========================== */
+
+    .site-header {
+      background: var(--primary);
+      color: #ffffff;
+
+      padding: 14px 20px;
+
+      position: sticky;
+      top: 0;
+
+      z-index: 1000;
+
+      box-shadow:
+        0 3px 12px rgba(0, 0, 0, 0.12);
+    }
+
+    .header-inner {
+      max-width: 1150px;
+
+      margin: auto;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      gap: 20px;
+    }
+
+    .logo {
+      display: flex;
+
+      align-items: center;
+
+      gap: 10px;
+
+      color: #ffffff;
+
+      font-weight: 800;
+
+      font-size: 1.15rem;
+
+      text-decoration: none;
+    }
+
+    .logo-icon {
+      width: 38px;
+      height: 38px;
+
+      display: grid;
+
+      place-items: center;
+
+      background: var(--accent);
+
+      color: #003366;
+
+      border-radius: 9px;
+
+      font-weight: 900;
+    }
+
+    nav {
+      display: flex;
+
+      align-items: center;
+
+      gap: 16px;
+
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: #ffffff;
+
+      font-size: 0.93rem;
+
+      font-weight: 600;
+    }
+
+    .theme-btn {
+      background: transparent;
+
+      color: #ffffff;
+
+      border:
+        1px solid rgba(255,255,255,0.35);
+
+      border-radius: 8px;
+
+      padding: 8px 11px;
+
+      cursor: pointer;
+
+      font-size: 0.9rem;
+    }
+
+    /* =========================
+       CONTAINER
+    ========================== */
+
+    .container {
+      width: min(1100px, 92%);
+
+      margin: auto;
+    }
+
+    /* =========================
+       HERO
+    ========================== */
+
+    .hero {
+      padding: 50px 0 25px;
+
+      text-align: center;
+    }
+
+    .hero h1 {
+      color: var(--primary);
+
+      font-size:
+        clamp(1.8rem, 5vw, 2.7rem);
+
+      margin-bottom: 12px;
+    }
+
+    .hero p {
+      max-width: 800px;
+
+      margin: auto;
+
+      color: var(--muted);
+
+      font-size: 1.05rem;
+    }
+
+    /* =========================
+       ADSENSE
+    ========================== */
+
+    .ad-box {
+      max-width: 970px;
+
+      min-height: 90px;
+
+      margin: 25px auto;
+
+      display: grid;
+
+      place-items: center;
+
+      background: var(--card);
+
+      border:
+        1px dashed var(--border);
+
+      border-radius: 10px;
+
+      color: var(--muted);
+
+      font-size: 0.85rem;
+    }
+
+    /* =========================
+       CALCULATOR
+    ========================== */
+
+    .calculator-card {
+      max-width: 900px;
+
+      margin: 30px auto;
+
+      padding: 28px;
+
+      background: var(--card);
+
+      border:
+        1px solid var(--border);
+
+      border-radius: 16px;
+
+      box-shadow: var(--shadow);
+    }
+
+    .calculator-card h2 {
+      color: var(--primary);
+
+      margin-bottom: 22px;
+
+      font-size: 1.45rem;
+    }
+
+    .form-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, 1fr);
+
+      gap: 18px;
+    }
+
+    .field {
+      display: flex;
+
+      flex-direction: column;
+
+      gap: 7px;
+    }
+
+    .field.full {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      font-weight: 700;
+
+      font-size: 0.94rem;
+    }
+
+    input,
+    select {
+      width: 100%;
+
+      padding: 13px 14px;
+
+      border:
+        1px solid var(--border);
+
+      border-radius: 9px;
+
+      background: var(--input);
+
+      color: var(--text);
+
+      font-size: 1rem;
+
+      outline: none;
+    }
+
+    input:focus,
+    select:focus {
+      border-color: var(--primary);
+
+      box-shadow:
+        0 0 0 3px
+        rgba(0,102,170,0.12);
+    }
+
+    .hint {
+      color: var(--muted);
+
+      font-size: 0.8rem;
+    }
+
+    /* =========================
+       BUTTON
+    ========================== */
+
+    .calculate-btn {
+      width: 100%;
+
+      margin-top: 22px;
+
+      padding: 15px;
+
+      border: none;
+
+      border-radius: 9px;
+
+      background: var(--accent);
+
+      color: #003366;
+
+      font-size: 1.05rem;
+
+      font-weight: 800;
+
+      cursor: pointer;
+    }
+
+    .calculate-btn:hover {
+      filter: brightness(0.95);
+    }
+
+    /* =========================
+       ERROR
+    ========================== */
+
+    .error {
+      display: none;
+
+      margin-top: 16px;
+
+      padding: 12px;
+
+      border-radius: 8px;
+
+      color: var(--danger);
+
+      background:
+        rgba(220,53,69,0.1);
+
+      border:
+        1px solid
+        rgba(220,53,69,0.3);
+
+      font-size: 0.9rem;
+    }
+
+    /* =========================
+       RESULTS
+    ========================== */
+
+    .results {
+      display: none;
+
+      margin-top: 28px;
+    }
+
+    .results h3 {
+      color: var(--primary);
+
+      margin-bottom: 14px;
+    }
+
+    .result-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, 1fr);
+
+      gap: 13px;
+    }
+
+    .result-box {
+      background: var(--result);
+
+      border:
+        1px solid var(--border);
+
+      border-radius: 10px;
+
+      padding: 15px;
+    }
+
+    .result-box.main {
+      grid-column: 1 / -1;
+
+      border-left:
+        5px solid var(--accent);
+    }
+
+    .result-label {
+      display: block;
+
+      color: var(--muted);
+
+      font-size: 0.82rem;
+
+      margin-bottom: 4px;
+    }
+
+    .result-value {
+      color: var(--primary);
+
+      font-size: 1.2rem;
+
+      font-weight: 800;
+    }
+
+    .result-box.main .result-value {
+      font-size: 1.6rem;
+    }
+
+    .status {
+      margin-top: 15px;
+
+      padding: 14px;
+
+      border-radius: 9px;
+
+      font-weight: 700;
+
+      text-align: center;
+    }
+
+    /* =========================
+       CONTENT
+    ========================== */
+
+    .content-section {
+      max-width: 900px;
+
+      margin: 40px auto;
+
+      padding: 28px;
+
+      background: var(--card);
+
+      border:
+        1px solid var(--border);
+
+      border-radius: 14px;
+
+      box-shadow: var(--shadow);
+    }
+
+    .content-section h2 {
+      color: var(--primary);
+
+      margin-bottom: 14px;
+    }
+
+    .content-section h3 {
+      color: var(--primary);
+
+      margin: 22px 0 8px;
+    }
+
+    .content-section p {
+      margin-bottom: 13px;
+    }
+
+    .content-section ul,
+    .content-section ol {
+      margin:
+        10px 0 15px 22px;
+    }
+
+    .formula {
+      background: var(--result);
+
+      border-left:
+        4px solid var(--accent);
+
+      padding: 18px;
+
+      margin: 18px 0;
+
+      border-radius: 7px;
+
+      overflow-x: auto;
+
+      font-family: Georgia, serif;
+    }
+
+    /* =========================
+       RELATED TOOLS
+    ========================== */
+
+    .related-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, 1fr);
+
+      gap: 12px;
+
+      margin-top: 18px;
+    }
+
+    .related-link {
+      display: block;
+
+      padding: 14px;
+
+      border:
+        1px solid var(--border);
+
+      border-radius: 9px;
+
+      background: var(--background);
+
+      font-weight: 700;
+    }
+
+    .related-link:hover {
+      text-decoration: none;
+
+      border-color: var(--primary);
+    }
+
+    /* =========================
+       FAQ
+    ========================== */
+
+    .faq-item {
+      padding: 17px 0;
+
+      border-bottom:
+        1px solid var(--border);
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-item h3 {
+      margin: 0 0 7px;
+
+      font-size: 1.05rem;
+    }
+
+    /* =========================
+       DISCLAIMER
+    ========================== */
+
+    .disclaimer {
+      padding: 16px;
+
+      border-radius: 9px;
+
+      background: var(--background);
+
+      color: var(--muted);
+
+      font-size: 0.88rem;
+    }
+
+    /* =========================
+       FOOTER
+    ========================== */
+
+    footer {
+      margin-top: 50px;
+
+      padding: 35px 20px;
+
+      background: var(--primary-dark);
+
+      color: #ffffff;
+
+      text-align: center;
+    }
+
+    footer p {
+      margin: 7px 0;
+
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: #ffffff;
+
+      margin: 0 7px;
+    }
+
+    /* =========================
+       MOBILE
+    ========================== */
+
+    @media (max-width: 700px) {
+
+      .header-inner {
+        flex-direction: column;
+
+        align-items: flex-start;
+      }
+
+      nav {
+        width: 100%;
+      }
+
+      .hero {
+        padding-top: 35px;
+      }
+
+      .calculator-card,
+      .content-section {
+        padding: 20px;
+      }
+
+      .form-grid,
+      .result-grid,
+      .related-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .field.full,
+      .result-box.main {
+        grid-column: auto;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================
+       HEADER
+  ========================== -->
+
+  <header class="site-header">
+
+    <div class="header-inner">
+
+      <a href="index.html"
+        class="logo"
+        aria-label="EZTradingHub Home">
+
+        <span class="logo-icon">
+          EZ
+        </span>
+
+        <span>
+          EZTradingHub
+        </span>
+
+      </a>
+
+      <nav aria-label="Main navigation">
+
+        <a href="index.html">
+          Home
+        </a>
+
+        <a href="calculators.html">
+          Calculators
+        </a>
+
+        <a href="trade-journal.html">
+          Trade Journal
+        </a>
+
+        <a href="about.html">
+          About
+        </a>
+
+        <button
+          class="theme-btn"
+          type="button"
+          onclick="toggleTheme()"
+          aria-label="Toggle light and dark mode">
+
+          🌙 / ☀️
+
+        </button>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+  <main>
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <section class="hero container">
+
+      <h1>
+        ETF Return Calculator
+      </h1>
+
+      <p>
+        Estimate your ETF investment's capital gain,
+        dividend income, total return, ROI and
+        annualized return over your investment period.
+      </p>
+
+    </section>
+
+
+    <!-- AD -->
+
+    <div
+      class="ad-box"
+      aria-label="Advertisement">
+
+      Advertisement
+
+    </div>
+
+
+    <!-- =========================
+         CALCULATOR
+    ========================== -->
+
+    <section
+      class="calculator-card"
+      aria-labelledby="calculator-title">
+
+      <h2 id="calculator-title">
+        Calculate ETF Investment Return
+      </h2>
+
+
+      <div class="form-grid">
+
+        <!-- ETF NAME -->
+
+        <div class="field">
+
+          <label for="etfName">
+            ETF Name / Symbol
+          </label>
+
+          <input
+            type="text"
+            id="etfName"
+            placeholder="e.g. VOO, SPY, QQQ">
+
+          <span class="hint">
+            Optional. Used only for your reference.
+          </span>
+
+        </div>
+
+
+        <!-- SHARES -->
+
+        <div class="field">
+
+          <label for="shares">
+            Number of Shares
+          </label>
+
+          <input
+            type="number"
+            id="shares"
+            min="0"
+            step="0.0001"
+            value="10"
+            placeholder="e.g. 10">
+
+          <span class="hint">
+            Enter the number of ETF shares.
+          </span>
+
+        </div>
+
+
+        <!-- START PRICE -->
+
+        <div class="field">
+
+          <label for="startPrice">
+            Purchase Price Per Share
+          </label>
+
+          <input
+            type="number"
+            id="startPrice"
+            min="0"
+            step="0.01"
+            value="100"
+            placeholder="e.g. 100">
+
+          <span class="hint">
+            Your average purchase price.
+          </span>
+
+        </div>
+
+
+        <!-- END PRICE -->
+
+        <div class="field">
+
+          <label for="endPrice">
+            Current / Ending Price Per Share
+          </label>
+
+          <input
+            type="number"
+            id="endPrice"
+            min="0"
+            step="0.01"
+            value="125"
+            placeholder="e.g. 125">
+
+          <span class="hint">
+            Current market price or selling price.
+          </span>
+
+        </div>
+
+
+        <!-- DIVIDEND -->
+
+        <div class="field">
+
+          <label for="dividend">
+            Total Dividends Per Share
+          </label>
+
+          <input
+            type="number"
+            id="dividend"
+            min="0"
+            step="0.01"
+            value="3"
+            placeholder="e.g. 3">
+
+          <span class="hint">
+            Total dividends received per share.
+          </span>
+
+        </div>
+
+
+        <!-- FEES -->
+
+        <div class="field">
+
+          <label for="fees">
+            Total Fees / Costs
+          </label>
+
+          <input
+            type="number"
+            id="fees"
+            min="0"
+            step="0.01"
+            value="0"
+            placeholder="e.g. 10">
+
+          <span class="hint">
+            Estimated transaction and other costs.
+          </span>
+
+        </div>
+
+
+        <!-- INVESTMENT PERIOD -->
+
+        <div class="field">
+
+          <label for="years">
+            Investment Period (Years)
+          </label>
+
+          <input
+            type="number"
+            id="years"
+            min="0.01"
+            step="0.01"
+            value="3"
+            placeholder="e.g. 3">
+
+          <span class="hint">
+            Used to calculate annualized return.
+          </span>
+
+        </div>
+
+
+        <!-- CURRENCY -->
+
+        <div class="field">
+
+          <label for="currency">
+            Currency
+          </label>
+
+          <select id="currency">
+
+            <option value="USD" selected>
+              USD — US Dollar
+            </option>
+
+            <option value="NGN">
+              NGN — Nigerian Naira
+            </option>
+
+            <option value="EUR">
+              EUR — Euro
+            </option>
+
+            <option value="GBP">
+              GBP — British Pound
+            </option>
+
+            <option value="CAD">
+              CAD — Canadian Dollar
+            </option>
+
+            <option value="AUD">
+              AUD — Australian Dollar
+            </option>
+
+          </select>
+
+        </div>
+
+      </div>
+
+
+      <button
+        class="calculate-btn"
+        type="button"
+        onclick="calculateReturn()">
+
+        Calculate ETF Return
+
+      </button>
+
+
+      <div
+        id="errorBox"
+        class="error"
+        role="alert">
+      </div>
+
+
+      <!-- =========================
+           RESULTS
+      ========================== -->
+
+      <div
+        id="results"
+        class="results">
+
+        <h3>
+          ETF Return Results
+        </h3>
+
+
+        <div class="result-grid">
+
+
+          <!-- TOTAL RETURN -->
+
+          <div class="result-box main">
+
+            <span class="result-label">
+              Total Return
+            </span>
+
+            <span
+              id="totalReturn"
+              class="result-value">
+
+              —
+
+            </span>
+
+          </div>
+
+
+          <!-- CAPITAL GAIN -->
+
+          <div class="result-box">
+
+            <span class="result-label">
+              Capital Gain / Loss
+            </span>
+
+            <span
+              id="capitalGain"
+              class="result-value">
+
+              —
+
+            </span>
+
+          </div>
+
+
+          <!-- DIVIDENDS -->
+
+          <div class="result-box">
+
+            <span class="result-label">
+              Dividend Income
+            </span>
+
+            <span
+              id="dividendIncome"
+              class="result-value">
+
+              —
+
+            </span>
+
+          </div>
+
+
+          <!-- INITIAL -->
+
+          <div class="result-box">
+
+            <span class="result-label">
+              Initial Investment
+            </span>
+
+            <span
+              id="initialInvestment"
+              class="result-value">
+
+              —
+
+            </span>
+
+          </div>
+
+
+          <!-- ENDING -->
+
+          <div class="result-box">
+
+            <span class="result-label">
+              Ending Investment Value
+            </span>
+
+            <span
+              id="endingValue"
+              class="result-value">
+
+              —
+
+            </span>
+
+          </div>
+
+
+          <!-- ROI -->
+
+          <div class="result-box">
+
+            <span class="result-label">
+              Total ROI
+            </span>
+
+            <span
+              id="roi"
+              class="result-value">
+
+              —
+
+            </span>
+
+          </div>
+
+
+          <!-- ANNUALIZED -->
+
+          <div class="result-box">
+
+            <span class="result-label">
+              Annualized Return
+            </span>
+
+            <span
+              id="annualizedReturn"
+              class="result-value">
+
+              —
+
+            </span>
+
+          </div>
+
+
+          <!-- PRICE CHANGE -->
+
+          <div class="result-box">
+
+            <span class="result-label">
+              ETF Price Change
+            </span>
+
+            <span
+              id="priceChange"
+              class="result-value">
+
+              —
+
+            </span>
+
+          </div>
+
+
+          <!-- FEES -->
+
+          <div class="result-box">
+
+            <span class="result-label">
+              Total Fees
+            </span>
+
+            <span
+              id="displayFees"
+              class="result-value">
+
+              —
+
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <div
+          id="status"
+          class="status">
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- AD -->
+
+    <div
+      class="ad-box"
+      aria-label="Advertisement">
+
+      Advertisement
+
+    </div>
+
+
+    <!-- =========================
+         WHAT IS ETF RETURN
+    ========================== -->
+
+    <section class="content-section">
+
+      <h2>
+        What Is ETF Return?
+      </h2>
+
+      <p>
+        ETF return measures how much an investment in an
+        exchange-traded fund has increased or decreased
+        over a particular period.
+      </p>
+
+      <p>
+        An investor's overall return can come from two
+        main sources: changes in the ETF's market price
+        and distributions such as dividends.
+      </p>
+
+      <p>
+        Investment costs can also reduce the final return.
+      </p>
+
+
+      <h3>
+        ETF Total Return Formula
+      </h3>
+
+      <div class="formula">
+
+        Capital Gain =
+        Ending Value − Initial Investment
+
+        <br><br>
+
+        Dividend Income =
+        Shares × Total Dividend Per Share
+
+        <br><br>
+
+        Total Return =
+        Capital Gain + Dividend Income − Fees
+
+        <br><br>
+
+        ROI =
+        (Total Return ÷ Initial Investment) × 100
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         ANNUALIZED RETURN
+    ========================== -->
+
+    <section class="content-section">
+
+      <h2>
+        What Is Annualized ETF Return?
+      </h2>
+
+      <p>
+        Annualized return expresses the overall growth of
+        an investment as an equivalent yearly compounded
+        growth rate.
+      </p>
+
+      <p>
+        A common compound annual growth rate (CAGR)
+        calculation is:
+      </p>
+
+      <div class="formula">
+
+        CAGR =
+        (Ending Value ÷ Initial Value)
+        <sup>1 ÷ Years</sup>
+        − 1
+
+      </div>
+
+      <p>
+        This calculator uses the estimated total return,
+        including the entered dividends and fees, when
+        calculating the annualized return.
+      </p>
+
+    </section>
+
+
+    <!-- =========================
+         HOW TO USE
+    ========================== -->
+
+    <section class="content-section">
+
+      <h2>
+        How to Use the ETF Return Calculator
+      </h2>
+
+      <ol>
+
+        <li>
+          Enter the ETF name or ticker symbol.
+        </li>
+
+        <li>
+          Enter the number of shares.
+        </li>
+
+        <li>
+          Enter your purchase price per share.
+        </li>
+
+        <li>
+          Enter the current or ending price.
+        </li>
+
+        <li>
+          Enter total dividends received per share.
+        </li>
+
+        <li>
+          Enter applicable fees and costs.
+        </li>
+
+        <li>
+          Enter the investment period in years.
+        </li>
+
+        <li>
+          Select your preferred currency.
+        </li>
+
+        <li>
+          Click <strong>Calculate ETF Return</strong>.
+        </li>
+
+      </ol>
+
+    </section>
+
+
+    <!-- =========================
+         EXAMPLE
+    ========================== -->
+
+    <section class="content-section">
+
+      <h2>
+        ETF Return Calculator Example
+      </h2>
+
+      <p>
+        Imagine an investor purchases 10 ETF shares
+        at $100 each.
+      </p>
+
+      <p>
+        The initial investment would therefore be $1,000.
+        If the ETF rises to $125 per share, the investment
+        becomes worth $1,250 before considering dividends
+        and fees.
+      </p>
+
+      <div class="formula">
+
+        Initial Investment =
+        10 × $100 = $1,000
+
+        <br><br>
+
+        Ending Value =
+        10 × $125 = $1,250
+
+        <br><br>
+
+        Capital Gain =
+        $1,250 − $1,000 = $250
+
+      </div>
+
+      <p>
+        If the investor received $3 per share in dividends,
+        the dividend income would be $30 before taxes and
+        other applicable costs.
+      </p>
+
+    </section>
+
+
+    <!-- =========================
+         PRICE RETURN VS TOTAL RETURN
+    ========================== -->
+
+    <section class="content-section">
+
+      <h2>
+        ETF Price Return vs. Total Return
+      </h2>
+
+      <p>
+        <strong>Price return</strong> focuses on the change
+        in the ETF's market price.
+      </p>
+
+      <p>
+        <strong>Total return</strong> can include both price
+        appreciation and distributions such as dividends.
+      </p>
+
+      <p>
+        As a result, an ETF's total return can differ from
+        its price change.
+      </p>
+
+    </section>
+
+
+    <!-- =========================
+         DIVIDENDS
+    ========================== -->
+
+    <section class="content-section">
+
+      <h2>
+        How ETF Dividends Affect Returns
+      </h2>
+
+      <p>
+        Some ETFs distribute income generated by their
+        underlying holdings.
+      </p>
+
+      <p>
+        Dividends can provide an additional component of
+        investment return. Investors may receive the
+        distributions as cash or, depending on their
+        account and broker, reinvest them.
+      </p>
+
+      <p>
+        This calculator allows you to enter total dividends
+        received per share so they can be included in the
+        estimated total return.
+      </p>
+
+    </section>
+
+
+    <!-- =========================
+         FEES
+    ========================== -->
+
+    <section class="content-section">
+
+      <h2>
+        How Fees Affect ETF Returns
+      </h2>
+
+      <p>
+        Investment costs can reduce the amount an investor
+        ultimately earns.
+      </p>
+
+      <p>
+        Depending on the investment and broker, costs can
+        include commissions, trading costs, account fees
+        and other expenses.
+      </p>
+
+      <p>
+        ETF expense ratios are generally reflected in the
+        fund's performance rather than entered as a separate
+        transaction fee. Therefore, this calculator provides
+        a separate fee field for additional costs you want
+        to account for.
+      </p>
+
+    </section>
+
+
+    <!-- =========================
+         FAQ
+    ========================== -->
+
+    <section class="content-section">
+
+      <h2>
+        Frequently Asked Questions
+      </h2>
+
+
+      <div class="faq-item">
+
+        <h3>
+          How is ETF total return calculated?
+        </h3>
+
+        <p>
+          Total return is estimated by combining capital
+          appreciation with dividend income and subtracting
+          applicable fees.
+        </p>
+
+      </div>
+
+
+      <div class="faq-item">
+
+        <h3>
+          What is ETF ROI?
+        </h3>
+
+        <p>
+          ROI measures the estimated return relative to
+          the original investment and is expressed as
+          a percentage.
+        </p>
+
+      </div>
+
+
+      <div class="faq-item">
+
+        <h3>
+          What is annualized ETF return?
+        </h3>
+
+        <p>
+          Annualized return converts investment growth
+          over a multi-year period into an equivalent
+          yearly compounded rate.
+        </p>
+
+      </div>
+
+
+      <div class="faq-item">
+
+        <h3>
+          Do dividends count toward ETF return?
+        </h3>
+
+        <p>
+          Yes. Dividends can form part of total investment
+          return when they are received during the
+          investment period.
+        </p>
+
+      </div>
+
+
+      <div class="faq-item">
+
+        <h3>
+          Does this calculator include taxes?
+        </h3>
+
+        <p>
+          No. Tax treatment varies by investor,
+          jurisdiction and account type.
+        </p>
+
+      </div>
+
+
+      <div class="faq-item">
+
+        <h3>
+          Does this calculator use live ETF prices?
+        </h3>
+
+        <p>
+          No. You enter the purchase and ending prices
+          manually. The calculator does not require a
+          live market-data API.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         RELATED CALCULATORS
+    ========================== -->
+
+    <section class="content-section">
+
+      <h2>
+        Related ETF & Investment Calculators
+      </h2>
+
+      <div class="related-grid">
+
+        <a
+          class="related-link"
+          href="etf-profit-calculator.html">
+
+          ETF Profit Calculator
+
+        </a>
+
+
+        <a
+          class="related-link"
+          href="etf-dividend-calculator.html">
+
+          ETF Dividend Calculator
+
+        </a>
+
+
+        <a
+          class="related-link"
+          href="stock-profit-calculator.html">
+
+          Stock Profit Calculator
+
+        </a>
+
+
+        <a
+          class="related-link"
+          href="stock-dividend-calculator.html">
+
+          Stock Dividend Calculator
+
+        </a>
+
+
+        <a
+          class="related-link"
+          href="compound-interest-calculator.html">
+
+          Compound Interest Calculator
+
+        </a>
+
+
+        <a
+          class="related-link"
+          href="portfolio-calculator.html">
+
+          Portfolio Calculator
+
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         DISCLAIMER
+    ========================== -->
+
+    <section class="content-section">
+
+      <h2>
+        Important Disclaimer
+      </h2>
+
+      <div class="disclaimer">
+
+        EZTradingHub calculators are provided for educational
+        and informational purposes only. Results are estimates
+        and should not be considered financial, investment,
+        tax or legal advice.
+
+        <br><br>
+
+        This calculator does not provide live market data.
+        It does not account for every possible tax,
+        transaction cost, fund expense, dividend adjustment,
+        currency effect or market condition.
+
+        <br><br>
+
+        Past performance does not guarantee future results.
+        Always conduct your own research and consider
+        consulting a qualified financial professional
+        before making investment decisions.
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer>
+
+    <p>
+      <strong>EZTradingHub</strong>
+      — Smart Trading & Investment Tools
+    </p>
+
+    <p>
+
+      <a href="about.html">
+        About
+      </a>
+
+      <a href="contact.html">
+        Contact
+      </a>
+
+      <a href="privacy.html">
+        Privacy
+      </a>
+
+      <a href="terms.html">
+        Terms
+      </a>
+
+      <a href="disclaimer.html">
+        Disclaimer
+      </a>
+
+      <a href="cookie-policy.html">
+        Cookie Policy
+      </a>
+
+    </p>
+
+    <p>
+      © <span id="year"></span>
+      EZTradingHub. All rights reserved.
+    </p>
+
+  </footer>
+
+
+  <script>
+
+    /* =========================
+       LIGHT / DARK MODE
+    ========================== */
+
+    function applySavedTheme() {
+
+      const savedTheme =
+        localStorage.getItem("ezth-theme");
+
+      if (savedTheme === "dark") {
+
+        document.body.classList.add("dark");
+
+      } else if (savedTheme === "light") {
+
+        document.body.classList.remove("dark");
+
+      } else {
+
+        const prefersDark =
+          window.matchMedia &&
+          window.matchMedia(
+            "(prefers-color-scheme: dark)"
+          ).matches;
+
+        if (prefersDark) {
+          document.body.classList.add("dark");
+        }
+
+      }
+
+    }
+
+
+    function toggleTheme() {
+
+      document.body.classList.toggle("dark");
+
+      localStorage.setItem(
+        "ezth-theme",
+
+        document.body.classList.contains("dark")
+          ? "dark"
+          : "light"
+      );
+
+    }
+
+
+    applySavedTheme();
+
+
+    /* =========================
+       MONEY FORMATTER
+    ========================== */
+
+    function formatMoney(value, currency) {
+
+      try {
+
+        return new Intl.NumberFormat(
+          undefined,
+          {
+            style: "currency",
+            currency: currency,
+            maximumFractionDigits: 2
+          }
+        ).format(value);
+
+      } catch (error) {
+
+        return currency +
+          " " +
+          value.toFixed(2);
+
+      }
+
+    }
+
+
+    /* =========================
+       ETF RETURN CALCULATOR
+    ========================== */
+
+    function calculateReturn() {
+
+      const etfName =
+        document.getElementById(
+          "etfName"
+        ).value.trim();
+
+
+      const shares =
+        parseFloat(
+          document.getElementById(
+            "shares"
+          ).value
+        );
+
+
+      const startPrice =
+        parseFloat(
+          document.getElementById(
+            "startPrice"
+          ).value
+        );
+
+
+      const endPrice =
+        parseFloat(
+          document.getElementById(
+            "endPrice"
+          ).value
+        );
+
+
+      const dividend =
+        parseFloat(
+          document.getElementById(
+            "dividend"
+          ).value
+        );
+
+
+      const fees =
+        parseFloat(
+          document.getElementById(
+            "fees"
+          ).value
+        );
+
+
+      const years =
+        parseFloat(
+          document.getElementById(
+            "years"
+          ).value
+        );
+
+
+      const currency =
+        document.getElementById(
+          "currency"
+        ).value;
+
+
+      const errorBox =
+        document.getElementById(
+          "errorBox"
+        );
+
+
+      const results =
+        document.getElementById(
+          "results"
+        );
+
+
+      errorBox.style.display =
+        "none";
+
+      results.style.display =
+        "none";
+
+
+      /* =========================
+         VALIDATION
+      ========================== */
+
+      if (
+        !Number.isFinite(shares) ||
+        !Number.isFinite(startPrice) ||
+        !Number.isFinite(endPrice) ||
+        !Number.isFinite(dividend) ||
+        !Number.isFinite(fees) ||
+        !Number.isFinite(years)
+      ) {
+
+        showError(
+          "Please enter valid numbers in all required fields."
+        );
+
+        return;
+
+      }
+
+
+      if (shares <= 0) {
+
+        showError(
+          "Number of shares must be greater than zero."
+        );
+
+        return;
+
+      }
+
+
+      if (startPrice <= 0) {
+
+        showError(
+          "Purchase price must be greater than zero."
+        );
+
+        return;
+
+      }
+
+
+      if (endPrice <= 0) {
+
+        showError(
+          "Ending price must be greater than zero."
+        );
+
+        return;
+
+      }
+
+
+      if (dividend < 0) {
+
+        showError(
+          "Dividend per share cannot be negative."
+        );
+
+        return;
+
+      }
+
+
+      if (fees < 0) {
+
+        showError(
+          "Fees cannot be negative."
+        );
+
+        return;
+
+      }
+
+
+      if (years <= 0) {
+
+        showError(
+          "Investment period must be greater than zero."
+        );
+
+        return;
+
+      }
+
+
+      /* =========================
+         INITIAL INVESTMENT
+      ========================== */
+
+      const initialInvestment =
+        shares * startPrice;
+
+
+      /* =========================
+         ENDING VALUE
+      ========================== */
+
+      const endingValue =
+        shares * endPrice;
+
+
+      /* =========================
+         CAPITAL GAIN
+      ========================== */
+
+      const capitalGain =
+        endingValue -
+        initialInvestment;
+
+
+      /* =========================
+         DIVIDENDS
+      ========================== */
+
+      const dividendIncome =
+        shares * dividend;
+
+
+      /* =========================
+         TOTAL RETURN
+      ========================== */
+
+      const totalReturn =
+        capitalGain +
+        dividendIncome -
+        fees;
+
+
+      /* =========================
+         ROI
+      ========================== */
+
+      const roi =
+        (totalReturn /
+          initialInvestment) *
+        100;
+
+
+      /* =========================
+         PRICE CHANGE
+      ========================== */
+
+      const priceChange =
+        ((endPrice -
+          startPrice) /
+          startPrice) *
+        100;
+
+
+      /* =========================
+         ADJUSTED END VALUE
+         FOR ANNUALIZED RETURN
+      ========================== */
+
+      const adjustedEndingValue =
+        initialInvestment +
+        totalReturn;
+
+
+      let annualizedReturn;
+
+
+      /*
+        CAGR requires a positive
+        ending value.
+
+        If the estimated ending
+        value is zero or negative,
+        annualized return cannot
+        be calculated using CAGR.
+      */
+
+      if (adjustedEndingValue > 0) {
+
+        annualizedReturn =
+          (
+            Math.pow(
+              adjustedEndingValue /
+              initialInvestment,
+              1 / years
+            ) - 1
+          ) * 100;
+
+      } else {
+
+        annualizedReturn = null;
+
+      }
+
+
+      /* =========================
+         DISPLAY RESULTS
+      ========================== */
+
+      document.getElementById(
+        "totalReturn"
+      ).textContent =
+        formatMoney(
+          totalReturn,
+          currency
+        );
+
+
+      document.getElementById(
+        "capitalGain"
+      ).textContent =
+        formatMoney(
+          capitalGain,
+          currency
+        );
+
+
+      document.getElementById(
+        "dividendIncome"
+      ).textContent =
+        formatMoney(
+          dividendIncome,
+          currency
+        );
+
+
+      document.getElementById(
+        "initialInvestment"
+      ).textContent =
+        formatMoney(
+          initialInvestment,
+          currency
+        );
+
+
+      document.getElementById(
+        "endingValue"
+      ).textContent =
+        formatMoney(
+          endingValue,
+          currency
+        );
+
+
+      document.getElementById(
+        "roi"
+      ).textContent =
+        roi.toFixed(2) +
+        "%";
+
+
+      document.getElementById(
+        "priceChange"
+      ).textContent =
+        priceChange.toFixed(2) +
+        "%";
+
+
+      document.getElementById(
+        "displayFees"
+      ).textContent =
+        formatMoney(
+          fees,
+          currency
+        );
+
+
+      if (annualizedReturn !== null) {
+
+        document.getElementById(
+          "annualizedReturn"
+        ).textContent =
+          annualizedReturn.toFixed(2) +
+          "%";
+
+      } else {
+
+        document.getElementById(
+          "annualizedReturn"
+        ).textContent =
+          "N/A";
+
+      }
+
+
+      /* =========================
+         STATUS MESSAGE
+      ========================== */
+
+      const status =
+        document.getElementById(
+          "status"
+        );
+
+
+      if (totalReturn > 0) {
+
+        status.textContent =
+          (etfName
+            ? etfName + ": "
+            : "") +
+          "Estimated total return is " +
+          formatMoney(
+            totalReturn,
+            currency
+          ) +
+          " with an ROI of " +
+          roi.toFixed(2) +
+          "%.";
+
+        status.style.background =
+          "rgba(25, 135, 84, 0.12)";
+
+        status.style.color =
+          "var(--success)";
+
+      } else if (totalReturn < 0) {
+
+        status.textContent =
+          (etfName
+            ? etfName + ": "
+            : "") +
+          "Estimated total result is a loss of " +
+          formatMoney(
+            Math.abs(totalReturn),
+            currency
+          ) +
+          " with an ROI of " +
+          roi.toFixed(2) +
+          "%.";
+
+        status.style.background =
+          "rgba(220, 53, 69, 0.12)";
+
+        status.style.color =
+          "var(--danger)";
+
+      } else {
+
+        status.textContent =
+          "Estimated total return is approximately zero.";
+
+        status.style.background =
+          "rgba(108,117,125,0.12)";
+
+        status.style.color =
+          "var(--muted)";
+
+      }
+
+
+      results.style.display =
+        "block";
+
+    }
+
+
+    /* =========================
+       ERROR
+    ========================== */
+
+    function showError(message) {
+
+      const errorBox =
+        document.getElementById(
+          "errorBox"
+        );
+
+      errorBox.textContent =
+        message;
+
+      errorBox.style.display =
+        "block";
+
+    }
+
+
+    /* =========================
+       CURRENT YEAR
+    ========================== */
+
+    document.getElementById(
+      "year"
+    ).textContent =
+      new Date().getFullYear();
+
+  </script>
+
+</body>
+</html>
