@@ -1,0 +1,2256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Commodity Lot Size Calculator | Gold & Oil Lot Size Calculator | EZTradingHub</title>
+
+  <meta name="description" content="Use the free EZTradingHub Commodity Lot Size Calculator to calculate lot size for gold, oil, silver and other commodities based on account balance, risk percentage, entry price and stop-loss.">
+
+  <meta name="keywords" content="commodity lot size calculator, gold lot size calculator, oil lot size calculator, commodity position size calculator, commodity risk calculator, gold trading lot size calculator, commodity trading calculator">
+
+  <meta name="author" content="EZTradingHub">
+
+  <meta name="robots" content="index, follow">
+
+  <link rel="canonical" href="https://eztradinghub.com/commodity-lot-size-calculator.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Commodity Lot Size Calculator | EZTradingHub">
+  <meta property="og:description" content="Calculate an estimated commodity lot size using account balance, risk percentage, entry price and stop-loss.">
+  <meta property="og:url" content="https://eztradinghub.com/commodity-lot-size-calculator.html">
+  <meta property="og:site_name" content="EZTradingHub">
+  <meta property="og:image" content="https://eztradinghub.com/assets/images/og-image.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Commodity Lot Size Calculator | EZTradingHub">
+  <meta name="twitter:description" content="Calculate estimated commodity lot size, risk amount, position value and potential loss for gold, oil and other commodities.">
+  <meta name="twitter:image" content="https://eztradinghub.com/assets/images/og-image.png">
+
+  <meta name="theme-color" content="#075985">
+
+  <link rel="icon" type="image/png" href="/assets/images/favicon.png">
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- WebApplication Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Commodity Lot Size Calculator",
+    "url": "https://eztradinghub.com/commodity-lot-size-calculator.html",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Web",
+    "description": "Free commodity lot size calculator for estimating trade size based on account balance, risk percentage, entry price and stop-loss.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "EZTradingHub",
+      "url": "https://eztradinghub.com"
+    }
+  }
+  </script>
+
+  <!-- Breadcrumb Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "EZTradingHub",
+        "item": "https://eztradinghub.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Calculators",
+        "item": "https://eztradinghub.com/calculators.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Commodity Lot Size Calculator",
+        "item": "https://eztradinghub.com/commodity-lot-size-calculator.html"
+      }
+    ]
+  }
+  </script>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a commodity lot size calculator?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A commodity lot size calculator estimates how many lots, contracts or units may fit within a chosen risk amount based on account balance, risk percentage, entry price, stop-loss and contract size."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How is commodity lot size calculated?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A simplified calculation divides the maximum acceptable trade risk by the monetary loss per lot at the selected stop-loss distance. The result depends on the contract size and the price movement value of the specific commodity product."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I calculate gold lot size with this calculator?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. You can use the calculator for gold and other commodities, provided you enter the correct contract or unit size for the product you are trading."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does a larger lot size mean higher risk?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Generally, a larger position creates greater monetary exposure to the same price movement. Actual risk depends on position size, contract specifications, stop-loss distance, price movement and trading costs."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does this calculator use live commodity prices?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. The calculator uses the values entered by the user. Actual market prices, contract sizes, tick values, margin requirements and broker specifications should be confirmed before trading."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is the calculated lot size guaranteed to be accepted by my broker?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Brokers may impose minimum and maximum trade sizes, lot increments, margin requirements and other restrictions. Always verify the calculated size against the specifications of your trading account."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg:#f4f7fb;
+      --surface:#ffffff;
+      --surface2:#f8fafc;
+      --text:#172033;
+      --muted:#667085;
+      --border:#e2e8f0;
+      --primary:#075985;
+      --primary2:#0ea5e9;
+      --success:#16a34a;
+      --warning:#d97706;
+      --danger:#dc2626;
+      --shadow:0 12px 35px rgba(15,23,42,.08);
+      --radius:18px;
+    }
+
+    body.dark {
+      --bg:#07111f;
+      --surface:#0e1b2d;
+      --surface2:#111f33;
+      --text:#f1f5f9;
+      --muted:#aab7c9;
+      --border:#24364d;
+      --primary:#38bdf8;
+      --primary2:#0ea5e9;
+      --success:#4ade80;
+      --warning:#fbbf24;
+      --danger:#fb7185;
+      --shadow:0 12px 35px rgba(0,0,0,.25);
+    }
+
+    * {
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+    }
+
+    html {
+      scroll-behavior:smooth;
+    }
+
+    body {
+      font-family:Inter,Arial,sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.7;
+      transition:background .25s,color .25s;
+    }
+
+    a {
+      color:var(--primary);
+      text-decoration:none;
+    }
+
+    a:hover {
+      text-decoration:underline;
+    }
+
+    .site-header {
+      position:sticky;
+      top:0;
+      z-index:1000;
+      background:var(--surface);
+      border-bottom:1px solid var(--border);
+      box-shadow:0 4px 20px rgba(0,0,0,.05);
+    }
+
+    .nav {
+      max-width:1180px;
+      margin:auto;
+      padding:14px 20px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+    }
+
+    .brand {
+      display:flex;
+      align-items:center;
+      gap:10px;
+      color:var(--text);
+      font-weight:800;
+      text-decoration:none;
+    }
+
+    .brand-icon {
+      width:42px;
+      height:42px;
+      border-radius:12px;
+      display:grid;
+      place-items:center;
+      color:#fff;
+      background:linear-gradient(135deg,#075985,#0ea5e9);
+      font-weight:800;
+      box-shadow:0 8px 20px rgba(14,165,233,.25);
+    }
+
+    .brand-text {
+      font-size:1rem;
+    }
+
+    .nav-links {
+      display:flex;
+      align-items:center;
+      gap:18px;
+    }
+
+    .nav-links a {
+      color:var(--text);
+      font-size:.92rem;
+      font-weight:600;
+    }
+
+    .theme-btn {
+      width:42px;
+      height:42px;
+      border:1px solid var(--border);
+      border-radius:12px;
+      background:var(--surface2);
+      color:var(--text);
+      cursor:pointer;
+      font-size:1.05rem;
+    }
+
+    .hero {
+      background:linear-gradient(135deg,#063b5c,#075985 55%,#0ea5e9);
+      color:#fff;
+      padding:58px 20px 72px;
+    }
+
+    .hero-inner {
+      max-width:1000px;
+      margin:auto;
+      text-align:center;
+    }
+
+    .badge {
+      display:inline-block;
+      padding:7px 13px;
+      border-radius:999px;
+      background:rgba(255,255,255,.1);
+      border:1px solid rgba(255,255,255,.25);
+      font-size:.8rem;
+      font-weight:700;
+      margin-bottom:16px;
+    }
+
+    .hero h1 {
+      font-size:clamp(2rem,5vw,3.4rem);
+      line-height:1.15;
+      letter-spacing:-.04em;
+      margin-bottom:18px;
+    }
+
+    .hero p {
+      max-width:780px;
+      margin:auto;
+      color:rgba(255,255,255,.9);
+      font-size:1.05rem;
+    }
+
+    .container {
+      max-width:1080px;
+      margin:-35px auto 0;
+      padding:0 20px 60px;
+      position:relative;
+    }
+
+    .calculator-card {
+      background:var(--surface);
+      border:1px solid var(--border);
+      border-radius:24px;
+      box-shadow:var(--shadow);
+      padding:28px;
+    }
+
+    .section-title {
+      font-size:1.35rem;
+      margin-bottom:6px;
+    }
+
+    .section-subtitle {
+      color:var(--muted);
+      font-size:.92rem;
+      margin-bottom:24px;
+    }
+
+    .form-grid {
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:18px;
+    }
+
+    .field {
+      display:flex;
+      flex-direction:column;
+      gap:7px;
+    }
+
+    .field label {
+      font-size:.86rem;
+      font-weight:700;
+    }
+
+    .field small {
+      color:var(--muted);
+      font-size:.76rem;
+    }
+
+    input,
+    select {
+      width:100%;
+      padding:13px 14px;
+      border:1px solid var(--border);
+      border-radius:12px;
+      background:var(--surface2);
+      color:var(--text);
+      font:inherit;
+      outline:none;
+    }
+
+    input:focus,
+    select:focus {
+      border-color:var(--primary2);
+      box-shadow:0 0 0 3px rgba(14,165,233,.12);
+    }
+
+    .actions {
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:24px;
+    }
+
+    .btn {
+      border:0;
+      border-radius:12px;
+      padding:12px 18px;
+      cursor:pointer;
+      font-weight:700;
+    }
+
+    .btn-primary {
+      background:linear-gradient(135deg,#075985,#0ea5e9);
+      color:#fff;
+    }
+
+    .btn-secondary {
+      background:var(--surface2);
+      color:var(--text);
+      border:1px solid var(--border);
+    }
+
+    .results {
+      margin-top:30px;
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:14px;
+    }
+
+    .result-card {
+      background:var(--surface2);
+      border:1px solid var(--border);
+      border-radius:16px;
+      padding:18px;
+      min-height:120px;
+    }
+
+    .result-card.highlight {
+      border:2px solid var(--primary2);
+      background:rgba(14,165,233,.07);
+    }
+
+    .result-label {
+      color:var(--muted);
+      font-size:.78rem;
+      font-weight:700;
+      margin-bottom:7px;
+    }
+
+    .result-value {
+      font-size:1.35rem;
+      font-weight:800;
+      word-break:break-word;
+    }
+
+    .result-note {
+      color:var(--muted);
+      font-size:.75rem;
+      margin-top:5px;
+    }
+
+    .risk-meter {
+      margin-top:24px;
+    }
+
+    .risk-meter-head {
+      display:flex;
+      justify-content:space-between;
+      gap:10px;
+      font-size:.84rem;
+      font-weight:700;
+      margin-bottom:7px;
+    }
+
+    .progress {
+      width:100%;
+      height:12px;
+      background:var(--border);
+      border-radius:999px;
+      overflow:hidden;
+    }
+
+    .progress-bar {
+      height:100%;
+      width:0;
+      background:linear-gradient(90deg,#16a34a,#0ea5e9);
+      transition:width .3s ease;
+    }
+
+    .info-box {
+      margin-top:22px;
+      padding:16px;
+      border-radius:14px;
+      background:rgba(14,165,233,.08);
+      border:1px solid rgba(14,165,233,.2);
+      font-size:.86rem;
+    }
+
+    .content {
+      max-width:1000px;
+      margin:38px auto 0;
+    }
+
+    .content section {
+      background:var(--surface);
+      border:1px solid var(--border);
+      border-radius:18px;
+      padding:26px;
+      margin-bottom:20px;
+      box-shadow:0 8px 25px rgba(15,23,42,.04);
+    }
+
+    .content h2 {
+      font-size:1.45rem;
+      margin-bottom:12px;
+    }
+
+    .content h3 {
+      font-size:1.08rem;
+      margin:20px 0 8px;
+    }
+
+    .content p {
+      margin-bottom:12px;
+    }
+
+    .content ul,
+    .content ol {
+      padding-left:22px;
+      margin-bottom:12px;
+    }
+
+    .formula {
+      padding:16px;
+      background:var(--surface2);
+      border:1px dashed var(--border);
+      border-radius:12px;
+      margin:14px 0;
+      font-weight:700;
+      overflow-x:auto;
+    }
+
+    .example {
+      border-left:4px solid var(--primary2);
+      padding:15px 18px;
+      background:var(--surface2);
+      border-radius:0 12px 12px 0;
+      margin:16px 0;
+    }
+
+    .faq-item {
+      border-top:1px solid var(--border);
+      padding:18px 0;
+    }
+
+    .faq-item:first-child {
+      border-top:0;
+      padding-top:0;
+    }
+
+    .faq-item h3 {
+      margin:0 0 8px;
+    }
+
+    .related-grid {
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:12px;
+      margin-top:15px;
+    }
+
+    .related-link {
+      display:block;
+      padding:14px;
+      background:var(--surface2);
+      border:1px solid var(--border);
+      border-radius:12px;
+      font-weight:700;
+    }
+
+    .disclaimer {
+      border-left:4px solid var(--warning) !important;
+      background:rgba(217,119,6,.08) !important;
+    }
+
+    footer {
+      background:var(--surface);
+      border-top:1px solid var(--border);
+      padding:35px 20px;
+      text-align:center;
+      color:var(--muted);
+      font-size:.85rem;
+    }
+
+    .footer-links {
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:15px;
+      margin-bottom:15px;
+    }
+
+    @media(max-width:850px) {
+      .results {
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .related-grid {
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .nav-links a:nth-child(n+4) {
+        display:none;
+      }
+    }
+
+    @media(max-width:650px) {
+      .nav {
+        padding:11px 14px;
+      }
+
+      .nav-links {
+        gap:8px;
+      }
+
+      .nav-links a {
+        display:none;
+      }
+
+      .brand-text {
+        font-size:.9rem;
+      }
+
+      .hero {
+        padding:45px 16px 65px;
+      }
+
+      .hero h1 {
+        font-size:2rem;
+      }
+
+      .container {
+        padding:0 12px 45px;
+      }
+
+      .calculator-card {
+        padding:20px 16px;
+        border-radius:18px;
+      }
+
+      .form-grid,
+      .results,
+      .related-grid {
+        grid-template-columns:1fr;
+      }
+
+      .content section {
+        padding:20px 16px;
+      }
+    }
+
+    @media print {
+      .site-header,
+      .theme-btn,
+      .actions,
+      footer {
+        display:none !important;
+      }
+
+      .hero {
+        background:#fff;
+        color:#000;
+        padding:20px;
+      }
+
+      .container {
+        margin:0;
+      }
+
+      body {
+        background:#fff;
+      }
+
+      .calculator-card,
+      .content section {
+        box-shadow:none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="site-header">
+
+  <nav class="nav" aria-label="Main navigation">
+
+    <a href="index.html" class="brand" >
+      <span class="brand-icon" aria-hidden="true">EZ</span>
+      <span class="brand-text">EZTradingHub</span>
+    </a>
+
+    <div class="nav-links">
+
+      <a href="index.html">Home</a>
+      <a href="calculators.html">Calculators</a>
+      <a href="trade-journal.html">Trade Journal</a>
+      <a href="Dashboard.html">Dashboard</a>
+      <a href="about.html">About</a>
+
+      <button
+        class="theme-btn"
+        id="themeToggle"
+        type="button"
+        aria-label="Switch between light and dark mode"
+        title="Toggle dark mode">
+        🌙
+      </button>
+
+    </div>
+
+  </nav>
+
+</header>
+
+
+<section class="hero">
+
+  <div class="hero-inner">
+
+    <span class="badge">FREE COMMODITY TRADING TOOL</span>
+
+    <h1>Commodity Lot Size Calculator</h1>
+
+    <p>
+      Calculate an estimated lot size for gold, oil, silver and other
+      commodities based on your account balance, risk percentage,
+      entry price and stop-loss distance.
+    </p>
+
+  </div>
+
+</section>
+
+
+<main class="container">
+
+  <div class="calculator-card">
+
+    <h2 class="section-title">Calculate Your Commodity Lot Size</h2>
+
+    <p class="section-subtitle">
+      Set the amount you are willing to risk and the distance to your
+      stop-loss. The calculator estimates a position size based on the
+      contract size you enter.
+    </p>
+
+
+    <div class="form-grid">
+
+      <div class="field">
+
+        <label for="commodity">
+          Commodity
+        </label>
+
+        <select id="commodity">
+
+          <option value="Gold">Gold</option>
+          <option value="Silver">Silver</option>
+          <option value="Crude Oil">Crude Oil</option>
+          <option value="Brent Oil">Brent Oil</option>
+          <option value="Natural Gas">Natural Gas</option>
+          <option value="Copper">Copper</option>
+          <option value="Platinum">Platinum</option>
+          <option value="Palladium">Palladium</option>
+          <option value="Custom Commodity">Custom Commodity</option>
+
+        </select>
+
+      </div>
+
+
+      <div class="field">
+
+        <label for="currency">
+          Account Currency
+        </label>
+
+        <select id="currency">
+
+          <option value="USD">$ USD</option>
+          <option value="NGN">₦ NGN</option>
+          <option value="EUR">€ EUR</option>
+          <option value="GBP">£ GBP</option>
+
+        </select>
+
+      </div>
+
+
+      <div class="field">
+
+        <label for="balance">
+          Account Balance
+        </label>
+
+        <input
+          id="balance"
+          type="number"
+          value="10000"
+          min="0"
+          step="0.01"
+          inputmode="decimal">
+
+        <small>
+          Your trading account balance or equity.
+        </small>
+
+      </div>
+
+
+      <div class="field">
+
+        <label for="riskPercent">
+          Risk Per Trade (%)
+        </label>
+
+        <input
+          id="riskPercent"
+          type="number"
+          value="1"
+          min="0"
+          step="0.01"
+          inputmode="decimal">
+
+        <small>
+          Example: 1% of a $10,000 account = $100 maximum risk.
+        </small>
+
+      </div>
+
+
+      <div class="field">
+
+        <label for="entryPrice">
+          Entry Price
+        </label>
+
+        <input
+          id="entryPrice"
+          type="number"
+          value="2300"
+          min="0"
+          step="0.01"
+          inputmode="decimal">
+
+        <small>
+          Planned entry price.
+        </small>
+
+      </div>
+
+
+      <div class="field">
+
+        <label for="stopLoss">
+          Stop-Loss Price
+        </label>
+
+        <input
+          id="stopLoss"
+          type="number"
+          value="2290"
+          min="0"
+          step="0.01"
+          inputmode="decimal">
+
+        <small>
+          Planned stop-loss price.
+        </small>
+
+      </div>
+
+
+      <div class="field">
+
+        <label for="contractSize">
+          Contract / Lot Size
+        </label>
+
+        <input
+          id="contractSize"
+          type="number"
+          value="1"
+          min="0.000001"
+          step="0.01"
+          inputmode="decimal">
+
+        <small>
+          Units represented by one lot or contract.
+        </small>
+
+      </div>
+
+
+      <div class="field">
+
+        <label for="fees">
+          Estimated Trading Costs
+        </label>
+
+        <input
+          id="fees"
+          type="number"
+          value="0"
+          min="0"
+          step="0.01"
+          inputmode="decimal">
+
+        <small>
+          Optional fixed cost per lot/contract in account currency.
+        </small>
+
+      </div>
+
+
+      <div class="field">
+
+        <label for="lotStep">
+          Lot Size Increment
+        </label>
+
+        <input
+          id="lotStep"
+          type="number"
+          value="0.01"
+          min="0.000001"
+          step="0.01"
+          inputmode="decimal">
+
+        <small>
+          Example: 0.01 for brokers that allow 0.01-lot increments.
+        </small>
+
+      </div>
+
+
+      <div class="field">
+
+        <label for="maxLot">
+          Maximum Lot Size
+        </label>
+
+        <input
+          id="maxLot"
+          type="number"
+          value="100"
+          min="0.000001"
+          step="0.01"
+          inputmode="decimal">
+
+        <small>
+          Optional broker/product maximum used to cap the estimate.
+        </small>
+
+      </div>
+
+    </div>
+
+
+    <div class="actions">
+
+      <button
+        class="btn btn-primary"
+        id="calculateBtn"
+        type="button">
+        Calculate Lot Size
+      </button>
+
+      <button
+        class="btn btn-secondary"
+        id="resetBtn"
+        type="button">
+        Reset
+      </button>
+
+      <button
+        class="btn btn-secondary"
+        id="printBtn"
+        type="button">
+        Print
+      </button>
+
+    </div>
+
+
+    <div
+      class="results"
+      id="results"
+      aria-live="polite">
+
+      <div class="result-card highlight">
+
+        <div class="result-label">
+          Recommended Lot Size
+        </div>
+
+        <div
+          class="result-value"
+          id="lotSize">
+          —
+        </div>
+
+        <div class="result-note">
+          Rounded down to your selected lot increment
+        </div>
+
+      </div>
+
+
+      <div class="result-card">
+
+        <div class="result-label">
+          Maximum Risk
+        </div>
+
+        <div
+          class="result-value"
+          id="riskAmount">
+          —
+        </div>
+
+        <div class="result-note">
+          Account risk limit
+        </div>
+
+      </div>
+
+
+      <div class="result-card">
+
+        <div class="result-label">
+          Stop-Loss Distance
+        </div>
+
+        <div
+          class="result-value"
+          id="stopDistance">
+          —
+        </div>
+
+        <div class="result-note">
+          Price movement against the position
+        </div>
+
+      </div>
+
+
+      <div class="result-card">
+
+        <div class="result-label">
+          Risk Per Lot
+        </div>
+
+        <div
+          class="result-value"
+          id="riskPerLot">
+          —
+        </div>
+
+        <div class="result-note">
+          Estimated loss per one lot
+        </div>
+
+      </div>
+
+
+      <div class="result-card">
+
+        <div class="result-label">
+          Position Units
+        </div>
+
+        <div
+          class="result-value"
+          id="positionUnits">
+          —
+        </div>
+
+        <div class="result-note">
+          Estimated commodity units
+        </div>
+
+      </div>
+
+
+      <div class="result-card">
+
+        <div class="result-label">
+          Position Value
+        </div>
+
+        <div
+          class="result-value"
+          id="positionValue">
+          —
+        </div>
+
+        <div class="result-note">
+          Entry price × position units
+        </div>
+
+      </div>
+
+
+      <div class="result-card">
+
+        <div class="result-label">
+          Estimated Loss at Stop
+        </div>
+
+        <div
+          class="result-value"
+          id="estimatedLoss">
+          —
+        </div>
+
+        <div class="result-note">
+          Includes estimated trading costs
+        </div>
+
+      </div>
+
+
+      <div class="result-card">
+
+        <div class="result-label">
+          Actual Risk %
+        </div>
+
+        <div
+          class="result-value"
+          id="actualRisk">
+          —
+        </div>
+
+        <div class="result-note">
+          Based on rounded lot size
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="risk-meter">
+
+      <div class="risk-meter-head">
+
+        <span>
+          Actual Risk vs Selected Risk
+        </span>
+
+        <span id="riskText">
+          0%
+        </span>
+
+      </div>
+
+      <div class="progress" aria-hidden="true">
+
+        <div
+          class="progress-bar"
+          id="riskBar">
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div
+      class="info-box"
+      id="statusMessage">
+
+      Enter your trade details to calculate an estimated commodity lot
+      size. Always verify the contract specifications and minimum lot
+      size with your broker before placing a trade.
+
+    </div>
+
+  </div>
+
+
+  <article class="content">
+
+
+    <section>
+
+      <h2>What Is a Commodity Lot Size Calculator?</h2>
+
+      <p>
+        A commodity lot size calculator helps traders estimate how many
+        lots, contracts or units they can trade while keeping a planned
+        amount of account capital at risk.
+      </p>
+
+      <p>
+        The calculation normally considers the account balance, percentage
+        risk, entry price, stop-loss price and the contract size of the
+        commodity product.
+      </p>
+
+      <p>
+        This can be particularly useful when trading commodities such as
+        gold, silver, crude oil, Brent oil, natural gas and other
+        commodity-based instruments.
+      </p>
+
+    </section>
+
+
+    <section>
+
+      <h2>How Commodity Lot Size Is Calculated</h2>
+
+      <p>
+        The calculator first determines how much money you are willing to
+        risk on the trade.
+      </p>
+
+      <div class="formula">
+        Maximum Risk = Account Balance × Risk Percentage ÷ 100
+      </div>
+
+      <p>
+        It then determines the price distance between your entry and
+        stop-loss.
+      </p>
+
+      <div class="formula">
+        Stop-Loss Distance = |Entry Price − Stop-Loss Price|
+      </div>
+
+      <p>
+        The estimated monetary risk of one lot is then:
+      </p>
+
+      <div class="formula">
+        Risk Per Lot = Stop-Loss Distance × Contract Size
+      </div>
+
+      <p>
+        Finally, the estimated lot size is:
+      </p>
+
+      <div class="formula">
+        Lot Size = Maximum Risk ÷ Risk Per Lot
+      </div>
+
+      <p>
+        This page rounds the result down to the selected lot-size
+        increment so that the estimate does not exceed the chosen risk
+        amount because of rounding.
+      </p>
+
+    </section>
+
+
+    <section>
+
+      <h2>Gold Lot Size Calculator Example</h2>
+
+      <div class="example">
+
+        <p>
+          Assume a trader has a $10,000 account and wants to risk 1% on
+          a gold trade.
+        </p>
+
+        <ul>
+          <li>Account balance: $10,000</li>
+          <li>Risk: 1%</li>
+          <li>Entry price: $2,300</li>
+          <li>Stop-loss: $2,290</li>
+          <li>Contract size: 1 unit</li>
+        </ul>
+
+        <p>
+          Maximum account risk is:
+        </p>
+
+        <div class="formula">
+          $10,000 × 1% = $100
+        </div>
+
+        <p>
+          Stop-loss distance is:
+        </p>
+
+        <div class="formula">
+          |$2,300 − $2,290| = $10
+        </div>
+
+        <p>
+          Estimated risk per lot is:
+        </p>
+
+        <div class="formula">
+          $10 × 1 = $10
+        </div>
+
+        <p>
+          Therefore, the simplified position-size calculation gives:
+        </p>
+
+        <div class="formula">
+          $100 ÷ $10 = 10 lots
+        </div>
+
+        <p>
+          This is only a mathematical example. The correct lot size for
+          an actual gold trading product depends on the broker's contract
+          specifications, tick value and minimum lot size.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <section>
+
+      <h2>Why Contract Size Matters</h2>
+
+      <p>
+        Contract size is one of the most important inputs in commodity
+        position sizing.
+      </p>
+
+      <p>
+        Different brokers and exchanges can offer different commodity
+        products. A "lot" does not necessarily represent the same number
+        of units across every platform.
+      </p>
+
+      <p>
+        For example, a commodity CFD, futures contract and spot commodity
+        product may have different specifications even when they reference
+        the same underlying commodity.
+      </p>
+
+      <p>
+        Always check the product specification supplied by your broker or
+        exchange before relying on a lot-size calculation.
+      </p>
+
+    </section>
+
+
+    <section>
+
+      <h2>Gold, Silver and Oil Lot Sizes</h2>
+
+      <p>
+        Commodity lot sizes can differ significantly between products.
+        Gold, silver, crude oil and natural gas may all use different
+        contract specifications.
+      </p>
+
+      <h3>Gold</h3>
+
+      <p>
+        Gold trading products may be quoted in different units and can
+        have different contract sizes. Confirm the exact specification
+        before entering your contract size into the calculator.
+      </p>
+
+      <h3>Silver</h3>
+
+      <p>
+        Silver can have a different contract value and price movement
+        relationship from gold. A lot size that is appropriate for one
+        metal may not be appropriate for another.
+      </p>
+
+      <h3>Crude Oil</h3>
+
+      <p>
+        Oil contracts can represent substantial quantities of the
+        underlying commodity. Stop-loss distance and contract size can
+        therefore have a significant effect on monetary risk.
+      </p>
+
+    </section>
+
+
+    <section>
+
+      <h2>Lot Size vs Position Size</h2>
+
+      <p>
+        The terms "lot size" and "position size" are often used
+        interchangeably, but they can describe slightly different things.
+      </p>
+
+      <p>
+        <strong>Lot size</strong> usually describes the number of lots or
+        contracts being traded.
+      </p>
+
+      <p>
+        <strong>Position size</strong> can describe the total number of
+        underlying units represented by those lots or contracts.
+      </p>
+
+      <div class="formula">
+        Position Units = Lot Size × Contract Size
+      </div>
+
+      <p>
+        Understanding the distinction helps prevent mistakes when moving
+        between different brokers, exchanges and commodity products.
+      </p>
+
+    </section>
+
+
+    <section>
+
+      <h2>Why Stop-Loss Distance Changes Lot Size</h2>
+
+      <p>
+        The wider your stop-loss, the more price movement your position
+        can experience before the trade is closed.
+      </p>
+
+      <p>
+        If your maximum risk remains fixed, a wider stop generally
+        requires a smaller position size.
+      </p>
+
+      <p>
+        Conversely, a tighter stop may mathematically permit a larger
+        position for the same planned account risk. However, a very tight
+        stop can be more vulnerable to normal market volatility and
+        execution conditions.
+      </p>
+
+    </section>
+
+
+    <section>
+
+      <h2>Risk Management When Trading Commodities</h2>
+
+      <p>
+        Lot size should be determined from risk rather than selected
+        simply because a particular number of lots looks attractive.
+      </p>
+
+      <p>Before opening a commodity trade, consider:</p>
+
+      <ul>
+        <li>Account balance and available equity</li>
+        <li>Maximum percentage risk per trade</li>
+        <li>Entry price</li>
+        <li>Stop-loss price</li>
+        <li>Contract or lot size</li>
+        <li>Spread and commission</li>
+        <li>Potential slippage</li>
+        <li>Market volatility</li>
+        <li>Margin requirements</li>
+        <li>Broker minimum and maximum lot sizes</li>
+      </ul>
+
+    </section>
+
+
+    <section>
+
+      <h2>Lot Size and Leverage Are Different</h2>
+
+      <p>
+        Leverage and lot size are related to trading exposure, but they
+        are not the same measurement.
+      </p>
+
+      <p>
+        Lot size determines how much commodity exposure the position
+        represents. Leverage determines how much exposure can be
+        controlled relative to the capital or margin supporting the
+        position.
+      </p>
+
+      <p>
+        A high leverage setting does not mean a trader should automatically
+        use a large lot size. Position size should still be based on the
+        trader's risk limit and trading plan.
+      </p>
+
+    </section>
+
+
+    <section>
+
+      <h2>How to Use the Commodity Lot Size Calculator</h2>
+
+      <ol>
+
+        <li>
+          Select the commodity you want to analyze.
+        </li>
+
+        <li>
+          Select your account currency.
+        </li>
+
+        <li>
+          Enter your account balance.
+        </li>
+
+        <li>
+          Enter the percentage of your account you are willing to risk.
+        </li>
+
+        <li>
+          Enter your planned entry price.
+        </li>
+
+        <li>
+          Enter your stop-loss price.
+        </li>
+
+        <li>
+          Enter the correct contract or unit size.
+        </li>
+
+        <li>
+          Enter your broker's lot-size increment.
+        </li>
+
+        <li>
+          Enter the maximum lot size if you want to apply a cap.
+        </li>
+
+        <li>
+          Select <strong>Calculate Lot Size</strong>.
+        </li>
+
+      </ol>
+
+    </section>
+
+
+    <section>
+
+      <h2>Important Limitations</h2>
+
+      <p>
+        This calculator is an educational estimation tool. It does not
+        connect to a broker or exchange and does not automatically retrieve
+        live commodity prices.
+      </p>
+
+      <p>
+        The simplified model assumes that the account currency and the
+        monetary value of the commodity price movement are compatible.
+        Some real-world products may require currency conversion, tick
+        value calculations or other contract-specific adjustments.
+      </p>
+
+      <p>
+        Actual trading results can also be affected by spreads,
+        commissions, swaps, slippage, liquidity, market gaps and execution
+        conditions.
+      </p>
+
+    </section>
+
+
+    <section>
+
+      <h2>Frequently Asked Questions</h2>
+
+
+      <div class="faq-item">
+
+        <h3>
+          What is a commodity lot size calculator?
+        </h3>
+
+        <p>
+          It estimates how many lots, contracts or units may fit within a
+          chosen risk amount based on account balance, risk percentage,
+          entry price, stop-loss and contract size.
+        </p>
+
+      </div>
+
+
+      <div class="faq-item">
+
+        <h3>
+          How is commodity lot size calculated?
+        </h3>
+
+        <p>
+          A simplified calculation divides the maximum acceptable trade
+          risk by the estimated monetary loss per lot at the selected
+          stop-loss distance.
+        </p>
+
+      </div>
+
+
+      <div class="faq-item">
+
+        <h3>
+          Can I calculate gold lot size with this calculator?
+        </h3>
+
+        <p>
+          Yes. You can calculate an estimated gold lot size as long as
+          you enter the correct contract or unit size for your particular
+          gold trading product.
+        </p>
+
+      </div>
+
+
+      <div class="faq-item">
+
+        <h3>
+          Does a larger lot size mean higher risk?
+        </h3>
+
+        <p>
+          Generally, a larger position creates greater monetary exposure
+          to the same price movement. Actual risk depends on position size,
+          contract specifications, stop-loss distance and trading costs.
+        </p>
+
+      </div>
+
+
+      <div class="faq-item">
+
+        <h3>
+          Does this calculator use live commodity prices?
+        </h3>
+
+        <p>
+          No. Prices and contract specifications are entered manually.
+          Confirm current market data and contract specifications with your
+          broker or exchange.
+        </p>
+
+      </div>
+
+
+      <div class="faq-item">
+
+        <h3>
+          Is the calculated lot size guaranteed to be accepted by my broker?
+        </h3>
+
+        <p>
+          No. Brokers can impose minimum and maximum trade sizes, lot
+          increments, margin requirements and other restrictions. Always
+          verify the result before placing an order.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <section>
+
+      <h2>Related Commodity & Trading Calculators</h2>
+
+      <div class="related-grid">
+
+        <a
+          class="related-link"
+          href="commodity-position-size-calculator.html">
+          Commodity Position Size Calculator
+        </a>
+
+        <a
+          class="related-link"
+          href="commodity-risks-calculator.html">
+          Commodity Risk Calculator
+        </a>
+
+        <a
+          class="related-link"
+          href="commodity-profit-calculator.html">
+          Commodity Profit Calculator
+        </a>
+
+        <a
+          class="related-link"
+          href="commodity-margin-calculator.html">
+          Commodity Margin Calculator
+        </a>
+
+        <a
+          class="related-link"
+          href="commodity-leverage-calculator.html">
+          Commodity Leverage Calculator
+        </a>
+
+        <a
+          class="related-link"
+          href="gold-calculators.html">
+          Gold Calculators
+        </a>
+
+        <a
+          class="related-link"
+          href="risk-calculator.html">
+          Risk Calculator
+        </a>
+
+        <a
+          class="related-link"
+          href="lot-size-calculator.html">
+          Lot Size Calculator
+        </a>
+
+        <a
+          class="related-link"
+          href="risk-reward-calculator.html">
+          Risk-to-Reward Calculator
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <section class="disclaimer">
+
+      <h2>Financial Disclaimer</h2>
+
+      <p>
+        EZTradingHub provides calculators and educational information for
+        general informational purposes only. Nothing on this page should
+        be considered financial, investment, trading, tax or legal advice.
+      </p>
+
+      <p>
+        Commodity trading and leveraged products involve substantial risk
+        of loss. The calculated lot size is an estimate and does not
+        guarantee a particular trading outcome or maximum loss.
+      </p>
+
+      <p>
+        Actual contract size, tick value, margin, minimum lot size,
+        maximum lot size, commissions, spreads, slippage and execution
+        conditions vary between brokers and products.
+      </p>
+
+      <p>
+        Always verify the specifications of the exact financial product
+        with your broker or exchange and never trade with money you cannot
+        afford to lose.
+      </p>
+
+    </section>
+
+  </article>
+
+</main>
+
+
+<footer>
+
+  <div class="footer-links">
+
+    <a href="index.html">Home</a>
+
+    <a href="calculators.html">
+      Calculators
+    </a>
+
+    <a href="about.html">
+      About
+    </a>
+    
+    <a href="faq.html">
+      FAQ
+    </a>
+
+    <a href="contact.html">
+      Contact
+    </a>
+
+    <a href="privacy.html">
+      Privacy Policy
+    </a>
+
+    <a href="terms.html">
+      Terms
+    </a>
+
+    <a href="disclaimer.html">
+      Disclaimer
+    </a>
+
+    <a href="cookie-policy.html">
+      Cookie Policy
+    </a>
+
+  </div>
+
+  <p>
+    © <span id="year"></span> EZTradingHub. All rights reserved.
+  </p>
+
+</footer>
+
+
+<script>
+
+  const $ = id => document.getElementById(id);
+
+
+  const currencySymbols = {
+    USD: "$",
+    NGN: "₦",
+    EUR: "€",
+    GBP: "£"
+  };
+
+
+  const defaults = {
+    commodity: "Gold",
+    currency: "USD",
+    balance: 10000,
+    riskPercent: 1,
+    entryPrice: 2300,
+    stopLoss: 2290,
+    contractSize: 1,
+    fees: 0,
+    lotStep: 0.01,
+    maxLot: 100
+  };
+
+
+  function num(id) {
+
+    const value = parseFloat($(id).value);
+
+    return Number.isFinite(value) ? value : 0;
+
+  }
+
+
+  function money(value, currency) {
+
+    const symbol =
+      currencySymbols[currency] || "";
+
+    if (!Number.isFinite(value)) {
+      return symbol + "—";
+    }
+
+    return symbol + value.toLocaleString(undefined, {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    });
+
+  }
+
+
+  function roundDownToStep(value, step) {
+
+    if (step <= 0) {
+      return value;
+    }
+
+    const decimals =
+      Math.max(
+        0,
+        (step.toString().split(".")[1] || "").length
+      );
+
+    const result =
+      Math.floor((value + 1e-12) / step) * step;
+
+    return Number(result.toFixed(decimals));
+
+  }
+
+
+  function calculate() {
+
+    const commodity =
+      $("commodity").value;
+
+    const currency =
+      $("currency").value;
+
+    const balance =
+      num("balance");
+
+    const riskPercent =
+      num("riskPercent");
+
+    const entryPrice =
+      num("entryPrice");
+
+    const stopLoss =
+      num("stopLoss");
+
+    const contractSize =
+      num("contractSize");
+
+    const fees =
+      num("fees");
+
+    const lotStep =
+      num("lotStep");
+
+    const maxLot =
+      num("maxLot");
+
+
+    if (
+      balance <= 0 ||
+      riskPercent <= 0 ||
+      entryPrice <= 0 ||
+      stopLoss <= 0 ||
+      contractSize <= 0 ||
+      lotStep <= 0 ||
+      maxLot <= 0
+    ) {
+
+      $("statusMessage").textContent =
+        "Please enter valid positive values for your balance, risk, prices, contract size, lot increment and maximum lot size.";
+
+      return;
+
+    }
+
+
+    const maximumRisk =
+      balance * riskPercent / 100;
+
+
+    const stopDistance =
+      Math.abs(entryPrice - stopLoss);
+
+
+    if (stopDistance <= 0) {
+
+      $("statusMessage").textContent =
+        "Entry price and stop-loss price must be different so the calculator can determine the risk distance.";
+
+      return;
+
+    }
+
+
+    /*
+      Simplified commodity model:
+
+      Price risk per lot =
+      stop-loss distance × contract size
+
+      Fees are treated as a fixed estimated cost
+      per lot/contract.
+    */
+
+    const priceRiskPerLot =
+      stopDistance * contractSize;
+
+
+    const riskPerLot =
+      priceRiskPerLot + Math.max(fees, 0);
+
+
+    if (riskPerLot <= 0) {
+
+      $("statusMessage").textContent =
+        "The estimated risk per lot must be greater than zero.";
+
+      return;
+
+    }
+
+
+    const rawLotSize =
+      maximumRisk / riskPerLot;
+
+
+    const roundedLot =
+      Math.min(
+        maxLot,
+        roundDownToStep(rawLotSize, lotStep)
+      );
+
+
+    const positionUnits =
+      roundedLot * contractSize;
+
+
+    const positionValue =
+      positionUnits * entryPrice;
+
+
+    const estimatedLoss =
+      roundedLot * riskPerLot;
+
+
+    const actualRiskPercent =
+      balance > 0
+        ? estimatedLoss / balance * 100
+        : 0;
+
+
+    const riskRatio =
+      riskPercent > 0
+        ? actualRiskPercent / riskPercent * 100
+        : 0;
+
+
+    $("lotSize").textContent =
+      roundedLot.toFixed(
+        Math.max(
+          2,
+          (lotStep.toString().split(".")[1] || "").length
+        )
+      );
+
+
+    $("riskAmount").textContent =
+      money(maximumRisk, currency);
+
+
+    $("stopDistance").textContent =
+      stopDistance.toLocaleString(undefined, {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 4
+      });
+
+
+    $("riskPerLot").textContent =
+      money(riskPerLot, currency);
+
+
+    $("positionUnits").textContent =
+      positionUnits.toLocaleString(undefined, {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 4
+      });
+
+
+    $("positionValue").textContent =
+      money(positionValue, currency);
+
+
+    $("estimatedLoss").textContent =
+      money(estimatedLoss, currency);
+
+
+    $("actualRisk").textContent =
+      actualRiskPercent.toFixed(2) + "%";
+
+
+    $("riskText").textContent =
+      riskRatio.toFixed(1) + "%";
+
+
+    const safeRiskRatio =
+      Math.min(
+        Math.max(riskRatio, 0),
+        100
+      );
+
+
+    $("riskBar").style.width =
+      safeRiskRatio + "%";
+
+
+    $("commodityResult") &&
+      ($("commodityResult").textContent = commodity);
+
+
+    let message =
+      "The estimated lot size is " +
+      roundedLot.toFixed(4) +
+      ". Verify your broker's contract size, minimum lot size, tick value and trading conditions before placing the trade.";
+
+
+    if (roundedLot <= 0) {
+
+      message =
+        "The calculated lot size rounds down to zero at the selected lot increment. Consider checking your risk amount, stop-loss distance and contract size.";
+
+    }
+
+
+    if (roundedLot >= maxLot) {
+
+      message =
+        "The calculation reached the maximum lot size you entered. Your broker may impose a different maximum. Verify the product specifications before trading.";
+
+    }
+
+
+    if (actualRiskPercent > riskPercent + 0.01) {
+
+      message =
+        "Caution: the rounded position may exceed your selected risk because of the minimum lot increment or the estimated trading cost. Review the result before trading.";
+
+    }
+
+
+    $("statusMessage").textContent =
+      message;
+
+  }
+
+
+  function resetCalculator() {
+
+    $("commodity").value =
+      defaults.commodity;
+
+    $("currency").value =
+      defaults.currency;
+
+    $("balance").value =
+      defaults.balance;
+
+    $("riskPercent").value =
+      defaults.riskPercent;
+
+    $("entryPrice").value =
+      defaults.entryPrice;
+
+    $("stopLoss").value =
+      defaults.stopLoss;
+
+    $("contractSize").value =
+      defaults.contractSize;
+
+    $("fees").value =
+      defaults.fees;
+
+    $("lotStep").value =
+      defaults.lotStep;
+
+    $("maxLot").value =
+      defaults.maxLot;
+
+    calculate();
+
+  }
+
+
+  $("calculateBtn")
+    .addEventListener(
+      "click",
+      calculate
+    );
+
+
+  $("resetBtn")
+    .addEventListener(
+      "click",
+      resetCalculator
+    );
+
+
+  $("printBtn")
+    .addEventListener(
+      "click",
+      () => window.print()
+    );
+
+
+  [
+    "commodity",
+    "currency",
+    "balance",
+    "riskPercent",
+    "entryPrice",
+    "stopLoss",
+    "contractSize",
+    "fees",
+    "lotStep",
+    "maxLot"
+  ].forEach(id => {
+
+    $(id).addEventListener(
+      "input",
+      calculate
+    );
+
+    $(id).addEventListener(
+      "change",
+      calculate
+    );
+
+  });
+
+
+  /* Light / Dark Mode */
+
+  const savedTheme =
+    localStorage.getItem("ezth-theme");
+
+
+  if (savedTheme === "dark") {
+
+    document.body.classList.add("dark");
+
+  }
+
+
+  function updateThemeIcon() {
+
+    $("themeToggle").textContent =
+      document.body.classList.contains("dark")
+        ? "☀️"
+        : "🌙";
+
+  }
+
+
+  $("themeToggle")
+    .addEventListener(
+      "click",
+      () => {
+
+        document.body.classList.toggle("dark");
+
+        localStorage.setItem(
+          "ezth-theme",
+          document.body.classList.contains("dark")
+            ? "dark"
+            : "light"
+        );
+
+        updateThemeIcon();
+
+      }
+    );
+
+
+  updateThemeIcon();
+
+
+  $("year").textContent =
+    new Date().getFullYear();
+
+
+  calculate();
+
+</script>
+
+</body>
+</html>
