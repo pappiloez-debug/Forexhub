@@ -1,551 +1,976 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+  <meta charset="UTF-8">
 
-    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+  <title>Cookie Policy | EZTradingHub</title>
 
-    <title>Cookie Policy | EZTradingHub</title>
+  <meta name="description"
+        content="Read the EZTradingHub Cookie Policy to understand how cookies, local storage, advertising technologies, and similar technologies may be used on our trading tools website.">
 
-    <meta name="description"
-          content="Learn how EZTradingHub uses cookies, local storage, analytics and advertising technologies.">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="EZTradingHub">
 
-    <meta name="robots"
-          content="index, follow">
+  <link rel="canonical" href="https://eztradinghub.com/cookie-policy.html">
 
-    <style>
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Cookie Policy | EZTradingHub">
+  <meta property="og:description"
+        content="Learn how EZTradingHub uses cookies, local storage, advertising technologies, and similar technologies.">
+  <meta property="og:url" content="https://eztradinghub.com/cookie-policy.html">
+  <meta property="og:site_name" content="EZTradingHub">
+  <meta property="og:image" content="https://eztradinghub.com/assets/images/og-image.jpg">
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Cookie Policy | EZTradingHub">
+  <meta name="twitter:description"
+        content="Learn how EZTradingHub uses cookies, local storage, advertising technologies, and similar technologies.">
+  <meta name="twitter:image" content="https://eztradinghub.com/assets/images/og-image.jpg">
 
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #f5f7fb;
-            color: #1f2937;
-            line-height: 1.7;
-        }
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
 
-        header {
-            background: #0b1220;
-            padding: 18px 20px;
-        }
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Cookie Policy | EZTradingHub",
+    "url": "https://eztradinghub.com/cookie-policy.html",
+    "description": "Cookie Policy explaining how EZTradingHub may use cookies, local storage, advertising technologies, and similar technologies.",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "EZTradingHub",
+      "url": "https://eztradinghub.com/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "EZTradingHub",
+      "url": "https://eztradinghub.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://eztradinghub.com/assets/images/favicon.png"
+      }
+    }
+  }
+  </script>
 
-        .header-container {
-            max-width: 1100px;
-            margin: auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+  <style>
+    :root {
+      --bg: #f5f7fb;
+      --card: #ffffff;
+      --text: #172033;
+      --muted: #5f6b7a;
+      --primary: #0b63ce;
+      --primary-dark: #084b9d;
+      --border: #dfe5ec;
+      --header: #062b57;
+      --accent: #f5b700;
+      --shadow: 0 8px 25px rgba(18, 38, 63, 0.08);
+    }
 
-        .logo {
-            color: #ffffff;
-            text-decoration: none;
-            font-size: 24px;
-            font-weight: 800;
-        }
+    body.dark {
+      --bg: #0b1220;
+      --card: #111b2d;
+      --text: #edf3fb;
+      --muted: #aab7c8;
+      --primary: #4da3ff;
+      --primary-dark: #78b9ff;
+      --border: #26364d;
+      --header: #07101e;
+      --accent: #ffc928;
+      --shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+    }
 
-        .logo span {
-            color: #22c55e;
-        }
+    * {
+      box-sizing: border-box;
+    }
 
-        nav a {
-            color: #ffffff;
-            text-decoration: none;
-            margin-left: 18px;
-            font-size: 14px;
-        }
+    html {
+      scroll-behavior: smooth;
+    }
 
-        nav a:hover {
-            color: #22c55e;
-        }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family:
+        Inter,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Arial,
+        sans-serif;
+      line-height: 1.7;
+      transition: background 0.25s ease, color 0.25s ease;
+    }
 
-        .hero {
-            background: linear-gradient(
-                135deg,
-                #0b1220,
-                #172554
-            );
+    a {
+      color: var(--primary);
+      text-decoration: none;
+    }
 
-            color: white;
-            text-align: center;
-            padding: 70px 20px;
-        }
+    a:hover {
+      text-decoration: underline;
+    }
 
-        .hero h1 {
-            font-size: 42px;
-            margin-bottom: 10px;
-        }
+    a:focus-visible,
+    button:focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 3px;
+    }
 
-        .hero p {
-            color: #cbd5e1;
-        }
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: var(--header);
+      color: #fff;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
+    }
 
-        .container {
-            max-width: 950px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
+    .nav-container {
+      width: min(1180px, calc(100% - 32px));
+      margin: auto;
+      min-height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
 
-        .content {
-            background: #ffffff;
-            padding: 45px;
-            border-radius: 18px;
-            box-shadow:
-                0 8px 30px rgba(15,23,42,.08);
-        }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: #fff;
+      font-weight: 800;
+      font-size: 1.15rem;
+      white-space: nowrap;
+    }
 
-        .updated {
-            background: #f0fdf4;
-            border-left: 4px solid #22c55e;
-            padding: 15px;
-            margin-bottom: 30px;
-        }
+    .brand:hover {
+      text-decoration: none;
+    }
 
-        h2 {
-            color: #0f172a;
-            margin-top: 35px;
-            margin-bottom: 12px;
-        }
+    .brand-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+      background: var(--accent);
+      color: #062b57;
+      font-weight: 900;
+      letter-spacing: -1px;
+    }
 
-        p {
-            margin-bottom: 16px;
-        }
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
 
-        ul {
-            margin: 10px 0 20px 25px;
-        }
+    nav a {
+      color: #fff;
+      font-size: 0.95rem;
+      font-weight: 600;
+      opacity: 0.95;
+    }
 
-        li {
-            margin-bottom: 8px;
-        }
+    nav a:hover {
+      opacity: 1;
+      text-decoration: underline;
+    }
 
-        .cookie-card {
-            background: #f8fafc;
-            border: 1px solid #e2e8f0;
-            padding: 22px;
-            border-radius: 12px;
-            margin: 15px 0;
-        }
+    .theme-btn {
+      border: 1px solid rgba(255,255,255,0.25);
+      background: rgba(255,255,255,0.08);
+      color: #fff;
+      border-radius: 10px;
+      padding: 9px 12px;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
 
-        .cookie-card h3 {
-            color: #0f172a;
-            margin-bottom: 8px;
-        }
+    .hero {
+      background:
+        linear-gradient(135deg, #062b57 0%, #0b63ce 65%, #1684ed 100%);
+      color: #fff;
+      padding: 70px 20px;
+    }
 
-        .manage {
-            background: #eff6ff;
-            border-left: 4px solid #2563eb;
-            padding: 20px;
-            margin-top: 30px;
-        }
+    .hero-inner {
+      width: min(980px, 100%);
+      margin: auto;
+      text-align: center;
+    }
 
-        .settings-button {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 11px 18px;
-            background: #2563eb;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: 700;
-        }
+    .hero h1 {
+      margin: 0 0 14px;
+      font-size: clamp(2rem, 5vw, 3.3rem);
+      line-height: 1.1;
+      letter-spacing: -0.04em;
+    }
 
-        footer {
-            background: #0b1220;
-            color: #94a3b8;
-            text-align: center;
-            padding: 35px 20px;
-            margin-top: 50px;
-        }
+    .hero p {
+      margin: 0 auto;
+      max-width: 760px;
+      color: rgba(255,255,255,0.9);
+      font-size: 1.05rem;
+    }
 
-        footer a {
-            color: #cbd5e1;
-            text-decoration: none;
-            margin: 0 8px;
-        }
+    .updated {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 7px 13px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
+      font-size: 0.9rem;
+    }
 
-        footer a:hover {
-            color: #22c55e;
-        }
+    main {
+      width: min(980px, calc(100% - 32px));
+      margin: 40px auto 70px;
+    }
 
-        .copyright {
-            margin-top: 15px;
-            font-size: 13px;
-        }
+    .notice {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-left: 5px solid var(--primary);
+      border-radius: 14px;
+      padding: 20px;
+      margin-bottom: 24px;
+      box-shadow: var(--shadow);
+    }
 
-        @media (max-width: 700px) {
+    .notice strong {
+      color: var(--primary);
+    }
 
-            .header-container {
-                flex-direction: column;
-                gap: 12px;
-            }
+    .content-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: clamp(22px, 4vw, 38px);
+      margin-bottom: 22px;
+      box-shadow: var(--shadow);
+    }
 
-            nav {
-                text-align: center;
-            }
+    .content-card h2 {
+      margin-top: 0;
+      margin-bottom: 14px;
+      font-size: 1.45rem;
+      line-height: 1.3;
+    }
 
-            nav a {
-                margin: 0 5px;
-                font-size: 13px;
-            }
+    .content-card h3 {
+      margin-top: 24px;
+      margin-bottom: 8px;
+      font-size: 1.1rem;
+    }
 
-            .hero {
-                padding: 50px 20px;
-            }
+    .content-card p {
+      margin: 0 0 15px;
+    }
 
-            .hero h1 {
-                font-size: 32px;
-            }
+    .content-card p:last-child {
+      margin-bottom: 0;
+    }
 
-            .content {
-                padding: 25px 20px;
-            }
+    .content-card ul {
+      margin: 10px 0 0;
+      padding-left: 22px;
+    }
 
-        }
+    .content-card li {
+      margin-bottom: 9px;
+    }
 
-    </style>
+    .policy-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
 
+    .policy-box {
+      border: 1px solid var(--border);
+      border-radius: 13px;
+      padding: 18px;
+      background: color-mix(in srgb, var(--card) 94%, var(--primary) 6%);
+    }
+
+    .policy-box h3 {
+      margin-top: 0;
+      margin-bottom: 7px;
+    }
+
+    .policy-box p {
+      font-size: 0.94rem;
+      color: var(--muted);
+    }
+
+    .footer {
+      background: var(--header);
+      color: #dbe7f5;
+      padding: 45px 20px 25px;
+    }
+
+    .footer-grid {
+      width: min(1180px, 100%);
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 35px;
+    }
+
+    .footer h3 {
+      margin-top: 0;
+      color: #fff;
+      font-size: 1rem;
+    }
+
+    .footer p {
+      color: #b9c9dc;
+      margin-top: 0;
+    }
+
+    .footer a {
+      color: #dbe7f5;
+      display: block;
+      margin: 7px 0;
+    }
+
+    .footer-bottom {
+      width: min(1180px, 100%);
+      margin: 30px auto 0;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.15);
+      text-align: center;
+      color: #9eb1c8;
+      font-size: 0.9rem;
+    }
+
+    .back-top {
+      text-align: center;
+      margin-top: 28px;
+    }
+
+    .back-top a {
+      font-weight: 700;
+    }
+
+    @media (max-width: 800px) {
+      .nav-container {
+        padding: 12px 0;
+        align-items: flex-start;
+      }
+
+      nav {
+        gap: 10px 14px;
+      }
+
+      .policy-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding: 55px 18px;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .nav-container {
+        flex-direction: column;
+      }
+
+      nav {
+        width: 100%;
+        justify-content: flex-start;
+      }
+
+      .theme-btn {
+        margin-top: 2px;
+      }
+
+      main {
+        width: min(100% - 22px, 980px);
+        margin-top: 25px;
+      }
+
+      .content-card {
+        padding: 22px 18px;
+      }
+
+      .hero h1 {
+        font-size: 2.05rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      body {
+        transition: none;
+      }
+    }
+  </style>
 </head>
 
+<body id="top">
 
-<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="nav-container">
 
+      <a class="brand" href="index.html" aria-label="EZTradingHub Home">
+        <span class="brand-icon" aria-hidden="true">EZ</span>
+        <span>EZTradingHub</span>
+      </a>
 
-<header>
+      <nav aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="calculators.html">Calculators</a>
+        <a href="about.html">About</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Contact</a>
 
-    <div class="header-container">
+        <button
+          type="button"
+          class="theme-btn"
+          id="themeToggle"
+          aria-label="Switch color theme"
+          aria-pressed="false">
+          🌙 Dark
+        </button>
+      </nav>
 
-        <a href="index.html"
-           class="logo">
-            EZ<span>TradingHub</span>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-inner">
+      <h1>Cookie Policy</h1>
+
+      <p>
+        Learn how EZTradingHub may use cookies, local storage,
+        advertising technologies, and similar technologies to operate
+        and improve our website.
+      </p>
+
+      <div class="updated">
+        Last Updated: September 21, 2026
+      </div>
+    </div>
+  </section>
+
+  <main>
+
+    <div class="notice">
+      <strong>Important:</strong>
+      This Cookie Policy explains how cookies and similar technologies
+      may be used on EZTradingHub. The technologies actually used on
+      the website may change as features, analytics, advertising, and
+      third-party services are added or removed.
+    </div>
+
+    <!-- 1 -->
+    <section class="content-card">
+      <h2>1. What Are Cookies?</h2>
+
+      <p>
+        Cookies are small text files that websites may place on your
+        device when you visit a website. They can help websites
+        remember information, maintain functionality, understand how
+        visitors use a website, and support advertising or measurement
+        activities.
+      </p>
+
+      <p>
+        Cookies may be session-based, meaning they expire when your
+        browsing session ends, or persistent, meaning they remain on
+        your device for a specified period or until they are deleted.
+      </p>
+    </section>
+
+    <!-- 2 -->
+    <section class="content-card">
+      <h2>2. How EZTradingHub May Use Cookies</h2>
+
+      <p>
+        EZTradingHub may use cookies and similar technologies for
+        purposes such as:
+      </p>
+
+      <ul>
+        <li>Keeping the website functioning properly.</li>
+        <li>Remembering certain user preferences.</li>
+        <li>Supporting website security and performance.</li>
+        <li>Understanding how visitors interact with our pages.</li>
+        <li>Measuring website traffic and engagement.</li>
+        <li>Supporting advertising and ad measurement.</li>
+        <li>Improving website content, navigation, and user experience.</li>
+      </ul>
+    </section>
+
+    <!-- 3 -->
+    <section class="content-card">
+      <h2>3. Types of Cookies and Similar Technologies</h2>
+
+      <div class="policy-grid">
+
+        <div class="policy-box">
+          <h3>Essential Technologies</h3>
+          <p>
+            These technologies may be necessary for certain website
+            features, security functions, navigation, or basic
+            functionality.
+          </p>
+        </div>
+
+        <div class="policy-box">
+          <h3>Preference Technologies</h3>
+          <p>
+            These may remember choices such as display preferences or
+            other settings so that the website can provide a more
+            consistent experience.
+          </p>
+        </div>
+
+        <div class="policy-box">
+          <h3>Analytics Technologies</h3>
+          <p>
+            Where analytics services are used, cookies or similar
+            technologies may help measure traffic, page usage, and
+            general website performance.
+          </p>
+        </div>
+
+        <div class="policy-box">
+          <h3>Advertising Technologies</h3>
+          <p>
+            Advertising partners may use cookies or similar technologies
+            to serve, measure, personalize, or limit advertisements,
+            subject to applicable settings and requirements.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 4 -->
+    <section class="content-card">
+      <h2>4. Local Storage and Similar Technologies</h2>
+
+      <p>
+        EZTradingHub may use browser technologies such as local storage
+        in addition to traditional cookies.
+      </p>
+
+      <p>
+        For example, the website's light/dark theme preference may be
+        stored locally on your device so that your preferred display
+        mode can be remembered when you return to the website.
+      </p>
+
+      <p>
+        Local storage is different from cookies, but it can perform
+        similar functions in certain situations.
+      </p>
+    </section>
+
+    <!-- 5 -->
+    <section class="content-card">
+      <h2>5. Theme Preference</h2>
+
+      <p>
+        EZTradingHub may use browser local storage to remember whether
+        you selected the light or dark appearance of the website.
+      </p>
+
+      <p>
+        This preference is intended to improve usability and does not
+        require you to create an account.
+      </p>
+
+      <p>
+        Clearing your browser's site data may remove this saved
+        preference.
+      </p>
+    </section>
+
+    <!-- 6 -->
+    <section class="content-card">
+      <h2>6. Analytics and Measurement</h2>
+
+      <p>
+        EZTradingHub may use analytics or measurement technologies to
+        understand general website usage, such as which pages receive
+        visits, how visitors navigate the website, and how website
+        performance can be improved.
+      </p>
+
+      <p>
+        If an analytics provider is used, that provider may process
+        information according to its own privacy policy and terms.
+      </p>
+
+      <p>
+        EZTradingHub does not intend for analytics information to be
+        used as a substitute for personally identifying information
+        unless such information is intentionally provided or otherwise
+        processed by the relevant service.
+      </p>
+    </section>
+
+    <!-- 7 -->
+    <section class="content-card">
+      <h2>7. Advertising and Google AdSense</h2>
+
+      <p>
+        EZTradingHub may display advertisements from third-party
+        advertising providers, including Google AdSense, if advertising
+        services are enabled on the website.
+      </p>
+
+      <p>
+        Advertising providers may use cookies or similar technologies
+        to deliver advertisements, measure advertising performance,
+        prevent fraud, and provide advertising that may be more
+        relevant to users.
+      </p>
+
+      <p>
+        The availability and operation of advertising technologies can
+        depend on your browser settings, applicable consent
+        requirements, regional rules, and the configuration of the
+        advertising provider.
+      </p>
+
+      <p>
+        Third-party advertising services may have their own privacy
+        policies and controls. Users should review the relevant
+        provider's documentation for more information about how those
+        services process data.
+      </p>
+    </section>
+
+    <!-- 8 -->
+    <section class="content-card">
+      <h2>8. Third-Party Services</h2>
+
+      <p>
+        Some features, content, advertising, analytics, embedded
+        services, or external resources on EZTradingHub may be provided
+        by third parties.
+      </p>
+
+      <p>
+        These third parties may use cookies or similar technologies in
+        accordance with their own policies.
+      </p>
+
+      <p>
+        EZTradingHub does not control the privacy practices of
+        independent third-party services. We recommend reviewing the
+        privacy and cookie information provided by those services when
+        appropriate.
+      </p>
+    </section>
+
+    <!-- 9 -->
+    <section class="content-card">
+      <h2>9. Managing Cookies</h2>
+
+      <p>
+        Most modern browsers allow you to control or delete cookies
+        through their settings.
+      </p>
+
+      <p>
+        Depending on your browser, you may be able to:
+      </p>
+
+      <ul>
+        <li>Block all cookies.</li>
+        <li>Delete existing cookies.</li>
+        <li>Allow cookies only from selected websites.</li>
+        <li>Receive notifications when cookies are being used.</li>
+        <li>Clear website data and local storage.</li>
+      </ul>
+
+      <p>
+        Blocking or deleting certain cookies may affect the
+        functionality or appearance of some websites.
+      </p>
+    </section>
+
+    <!-- 10 -->
+    <section class="content-card">
+      <h2>10. Browser Settings</h2>
+
+      <p>
+        You can generally manage cookies through the privacy or
+        security settings of your web browser.
+      </p>
+
+      <p>
+        The exact controls vary between browsers and devices. For
+        detailed instructions, consult the official support information
+        for the browser you use.
+      </p>
+    </section>
+
+    <!-- 11 -->
+    <section class="content-card">
+      <h2>11. Do Not Track and Similar Signals</h2>
+
+      <p>
+        Some browsers and devices provide privacy signals or settings
+        intended to communicate user preferences regarding tracking.
+      </p>
+
+      <p>
+        The way such signals are interpreted can vary depending on the
+        technology provider, browser, jurisdiction, and services
+        operating on a website.
+      </p>
+    </section>
+
+    <!-- 12 -->
+    <section class="content-card">
+      <h2>12. Cookie Consent and Regional Requirements</h2>
+
+      <p>
+        Where applicable, EZTradingHub may use consent mechanisms or
+        other controls designed to comply with relevant requirements
+        concerning cookies, advertising technologies, and similar
+        technologies.
+      </p>
+
+      <p>
+        The availability of consent choices may differ depending on
+        your location and the technologies being used on the website.
+      </p>
+
+      <p>
+        If you are presented with cookie or privacy choices, you should
+        review them before making your selection.
+      </p>
+    </section>
+
+    <!-- 13 -->
+    <section class="content-card">
+      <h2>13. Changes to This Cookie Policy</h2>
+
+      <p>
+        EZTradingHub may update this Cookie Policy when our website,
+        technology, advertising arrangements, analytics services, or
+        legal requirements change.
+      </p>
+
+      <p>
+        When changes are made, the updated policy will be published on
+        this page with a revised "Last Updated" date.
+      </p>
+
+      <p>
+        You should periodically review this page for the latest
+        information.
+      </p>
+    </section>
+
+    <!-- 14 -->
+    <section class="content-card">
+      <h2>14. Related Policies</h2>
+
+      <p>
+        This Cookie Policy should be read together with the other
+        policies governing EZTradingHub.
+      </p>
+
+      <div class="policy-grid">
+
+        <div class="policy-box">
+          <h3>Privacy Policy</h3>
+          <p>
+            Learn how information may be collected, used, protected,
+            and disclosed.
+          </p>
+          <a href="privacy.html">Read Privacy Policy →</a>
+        </div>
+
+        <div class="policy-box">
+          <h3>Terms & Conditions</h3>
+          <p>
+            Review the terms governing your use of EZTradingHub.
+          </p>
+          <a href="terms.html">Read Terms →</a>
+        </div>
+
+        <div class="policy-box">
+          <h3>Financial Disclaimer</h3>
+          <p>
+            Understand the educational nature and limitations of
+            trading calculators and financial information.
+          </p>
+          <a href="disclaimer.html">Read Disclaimer →</a>
+        </div>
+
+       
+
+      </div>
+    </section>
+
+    <!-- 15 -->
+    <section class="content-card">
+      <h2>15. Contact EZTradingHub</h2>
+
+      <p>
+        If you have questions about this Cookie Policy or how
+        EZTradingHub uses cookies and similar technologies, you can
+        contact us.
+      </p>
+
+      <p>
+        <strong>Email:</strong>
+        <a href="mailto:pappiloez@gmail.com">
+          pappiloez@gmail.com
         </a>
+      </p>
 
-        <nav>
+      <p>
+        <strong>Phone:</strong>
+        <a href="tel:+2347067182830">
+          +234 706 718 2830
+        </a>
+      </p>
 
-            <a href="index.html">
-                Home
-            </a>
+      <p>
+        <a href="contact.html">Visit our Contact page →</a>
+      </p>
+    </section>
 
-            <a href="about.html">
-                About
-            </a>
+    <div class="back-top">
+      <a href="#top">↑ Back to top</a>
+    </div>
 
-            <a href="privacy.html">
-                Privacy
-            </a>
+  </main>
 
-            <a href="terms.html">
-                Terms
-            </a>
+  <!-- Footer -->
+  <footer class="footer">
 
-        </nav>
+    <div class="footer-grid">
+
+      <div>
+        <h3>EZTradingHub</h3>
+
+        <p>
+          Smart trading tools, calculators, educational resources,
+          and practical information for traders and investors.
+        </p>
+
+        <a href="about.html">About EZTradingHub</a>
+        <a href="contact.html">Contact Us</a>
+      </div>
+
+      <div>
+        <h3>Explore</h3>
+
+        <a href="index.html">Home</a>
+        <a href="calculators.html">Trading Calculators</a>
+        <a href="faq.html">FAQ</a>
+      </div>
+
+      <div>
+        <h3>Legal</h3>
+
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="cookie-policy.html" aria-current="page">
+          Cookie Policy
+        </a>
+        <a href="terms.html">Terms & Conditions</a>
+        <a href="disclaimer.html">Financial Disclaimer</a>
+        
+      </div>
 
     </div>
 
-</header>
-
-
-<section class="hero">
-
-    <h1>Cookie Policy</h1>
-
-    <p>
-        How EZTradingHub uses cookies and similar technologies.
-    </p>
-
-</section>
-
-
-<main class="container">
-
-<article class="content">
-
-
-<div class="updated">
-
-    <strong>Effective Date:</strong>
-    August 21, 2026
-
-    <br>
-
-    <strong>Website:</strong>
-    EZTradingHub.com
-
-</div>
-
-
-<h2>1. What Are Cookies?</h2>
-
-<p>
-Cookies are small text files or similar technologies that may be
-stored on your device when you visit a website.
-</p>
-
-<p>
-They can help websites remember preferences, maintain functionality,
-understand website usage, and provide certain services.
-</p>
-
-
-<h2>2. How EZTradingHub Uses Cookies</h2>
-
-<p>
-EZTradingHub may use cookies, local storage, pixels, tags, and similar
-technologies for different purposes.
-</p>
-
-<p>
-These purposes may include:
-</p>
-
-<ul>
-
-    <li>
-        Essential website functionality.
-    </li>
-
-    <li>
-        Remembering your cookie-consent preferences.
-    </li>
-
-    <li>
-        Understanding how visitors use the website.
-    </li>
-
-    <li>
-        Measuring website performance.
-    </li>
-
-    <li>
-        Supporting advertising and advertising measurement.
-    </li>
-
-</ul>
-
-
-<h2>3. Types of Technologies We May Use</h2>
-
-
-<div class="cookie-card">
-
-    <h3>Necessary Technologies</h3>
-
-    <p>
-        These technologies are required for essential website
-        functionality and security.
-    </p>
-
-    <p>
-        They may also be used to remember your consent preferences.
-    </p>
-
-</div>
-
-
-<div class="cookie-card">
-
-    <h3>Analytics Technologies</h3>
-
-    <p>
-        Analytics technologies may help us understand visitor
-        interactions, traffic patterns, popular pages, and website
-        performance.
-    </p>
-
-    <p>
-        These technologies are optional and may only be activated
-        after the appropriate consent is provided.
-    </p>
-
-</div>
-
-
-<div class="cookie-card">
-
-    <h3>Advertising Technologies</h3>
-
-    <p>
-        Advertising technologies may be used to display, measure,
-        or personalize advertising where applicable.
-    </p>
-
-    <p>
-        These technologies are optional and may only be activated
-        after the appropriate consent is provided where required.
-    </p>
-
-</div>
-
-
-<h2>4. Third-Party Services</h2>
-
-<p>
-EZTradingHub may use third-party services such as analytics providers,
-advertising networks, affiliate platforms, embedded content providers,
-or other service providers.
-</p>
-
-<p>
-These third parties may use cookies or similar technologies according
-to their own privacy policies and terms.
-</p>
-
-<p>
-The exact third parties used by EZTradingHub may change as the website
-develops.
-</p>
-
-
-<h2>5. Your Cookie Choices</h2>
-
-<p>
-Where consent is required, you can choose whether to allow optional
-analytics and advertising technologies.
-</p>
-
-<p>
-You can select:
-</p>
-
-<ul>
-
-    <li>
-        Accept all optional technologies.
-    </li>
-
-    <li>
-        Reject optional technologies.
-    </li>
-
-    <li>
-        Choose individual categories through Cookie Settings.
-    </li>
-
-</ul>
-
-
-<div class="manage">
-
-    <strong>Manage Your Cookie Preferences</strong>
-
-    <p>
-        You can review or change your cookie preferences at any time.
-    </p>
-
-    <button
-        type="button"
-        class="settings-button"
-        onclick="openCookieSettings()">
-
-        Cookie Settings
-
-    </button>
-
-</div>
-
-
-<h2>6. Browser Settings</h2>
-
-<p>
-You may also be able to control cookies through your browser settings.
-However, disabling certain cookies may affect the functionality or
-appearance of some websites.
-</p>
-
-
-<h2>7. Changes to This Cookie Policy</h2>
-
-<p>
-We may update this Cookie Policy from time to time to reflect changes
-to our website, technology, services, or applicable requirements.
-</p>
-
-<p>
-The latest version will always be published on this page with an
-updated effective date.
-</p>
-
-
-<h2>8. Contact</h2>
-
-<p>
-If you have questions about this Cookie Policy or how EZTradingHub
-uses cookies and similar technologies, please contact us through the
-contact information provided on our website.
-</p>
-
-<p>
-
-<strong>EZTradingHub</strong>
-<br>
-Website: EZTradingHub.com
-
-</p>
-
-
-</article>
-
-</main>
-
-
-<footer>
-
-        <div>
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="faq.html">FAQ</a>
-            <a href="terms.html">Terms & Conditions</a>
-            <a href="privacy.html">Privacy Policy</a>
-            <a href="cookie-policy.html">Cookie Policy</a>
-            <a href="disclaimer.html">Disclaimer</a>
-            <a href="contact.html">Contact</a>
-        </div>
-
-        <p class="copyright">
-            © 2026 EZTradingHub. All rights reserved.
-        </p>
-
-        <p class="copyright">
-            EZTradingHub provides educational and informational tools.
-            Trading involves risk.
-        </p>
-
-    </footer>
-    <script src="cookie-consent.js"></script>
-
-
-
-<script src="cookie-consent.js"></script>
-
-<script>
-
-    function openCookieSettings() {
-
-        if (window.EZTHCookieSettings) {
-
-            window.EZTHCookieSettings();
-
-        } else {
-
-            alert(
-                "Cookie settings are currently unavailable."
-            );
-
+    <div class="footer-bottom">
+      © <span id="currentYear"></span> EZTradingHub. All rights reserved.
+    </div>
+
+  </footer>
+
+  <!-- Theme Script -->
+  <script>
+    (function () {
+      const body = document.body;
+      const button = document.getElementById("themeToggle");
+      const savedTheme = localStorage.getItem("ezth-theme");
+
+      function applyTheme(theme) {
+        const isDark = theme === "dark";
+
+        body.classList.toggle("dark", isDark);
+
+        if (button) {
+          button.textContent = isDark ? "☀️ Light" : "🌙 Dark";
+          button.setAttribute("aria-pressed", String(isDark));
+          button.setAttribute(
+            "aria-label",
+            isDark
+              ? "Switch to light mode"
+              : "Switch to dark mode"
+          );
         }
+      }
 
-    }
+      const systemDark =
+        window.matchMedia &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches;
 
-</script>
+      applyTheme(
+        savedTheme ||
+        (systemDark ? "dark" : "light")
+      );
 
+      if (button) {
+        button.addEventListener("click", function () {
+          const newTheme =
+            body.classList.contains("dark")
+              ? "light"
+              : "dark";
+
+          localStorage.setItem("ezth-theme", newTheme);
+          applyTheme(newTheme);
+        });
+      }
+
+      const yearElement =
+        document.getElementById("currentYear");
+
+      if (yearElement) {
+        yearElement.textContent =
+          new Date().getFullYear();
+      }
+    })();
+  </script>
 
 </body>
-
 </html>
