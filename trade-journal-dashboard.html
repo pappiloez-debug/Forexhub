@@ -1,0 +1,4084 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Trade Journal Dashboard | Trading Performance & Statistics | EZTradingHub</title>
+
+  <meta
+    name="description"
+    content="Analyze your trading performance with the EZTradingHub Trade Journal Dashboard. Track trades, win rate, profit and loss, streaks, best pairs, monthly performance and trading statistics."
+  >
+
+  <meta
+    name="robots"
+    content="index, follow, max-image-preview:large"
+  >
+
+  <meta
+    name="author"
+    content="EZTradingHub"
+  >
+
+  <meta
+    name="theme-color"
+    content="#003366"
+  >
+
+  <link
+    rel="canonical"
+    href="https://eztradinghub.com/trade-journal-dashboard.html"
+  >
+
+  <!-- =========================
+       OPEN GRAPH
+  ========================== -->
+
+  <meta
+    property="og:type"
+    content="website"
+  >
+
+  <meta
+    property="og:site_name"
+    content="EZTradingHub"
+  >
+
+  <meta
+    property="og:title"
+    content="Trade Journal Dashboard | EZTradingHub"
+  >
+
+  <meta
+    property="og:description"
+    content="Analyze trading performance, win rate, profit and loss, trading streaks, best-performing pairs and monthly results with the EZTradingHub Trade Journal Dashboard."
+  >
+
+  <meta
+    property="og:url"
+    content="https://eztradinghub.com/trade-journal-dashboard.html"
+  >
+
+  <meta
+    property="og:image"
+    content="https://eztradinghub.com/assets/images/og-image.jpg"
+  >
+
+  <meta
+    property="og:image:width"
+    content="1200"
+  >
+
+  <meta
+    property="og:image:height"
+    content="630"
+  >
+
+  <!-- =========================
+       TWITTER
+  ========================== -->
+
+  <meta
+    name="twitter:card"
+    content="summary_large_image"
+  >
+
+  <meta
+    name="twitter:title"
+    content="Trade Journal Dashboard | EZTradingHub"
+  >
+
+  <meta
+    name="twitter:description"
+    content="Review trading performance, win rate, profit and loss, streaks and monthly results with EZTradingHub."
+  >
+
+  <meta
+    name="twitter:image"
+    content="https://eztradinghub.com/assets/images/og-image.jpg"
+  >
+
+  <!-- =========================
+       FAVICON
+  ========================== -->
+
+  <link
+    rel="icon"
+    type="image/png"
+    href="assets/images/favicon.png"
+  >
+
+  <link
+    rel="manifest"
+    href="manifest.json"
+  >
+
+  <!-- =========================
+       STRUCTURED DATA
+  ========================== -->
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "EZTradingHub Trade Journal Dashboard",
+    "url": "https://eztradinghub.com/trade-journal-dashboard.html",
+    "description": "Trading performance dashboard for reviewing trades, profit and loss, win rate, trading streaks and monthly performance.",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "EZTradingHub",
+      "url": "https://eztradinghub.com/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "EZTradingHub",
+      "url": "https://eztradinghub.com/"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "EZTradingHub Trade Journal Dashboard",
+    "url": "https://eztradinghub.com/trade-journal-dashboard.html",
+    "description": "A browser-based trading performance dashboard for reviewing trade statistics and journal data.",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Web",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "EZTradingHub",
+      "url": "https://eztradinghub.com/"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a trade journal dashboard?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A trade journal dashboard summarizes recorded trades using statistics such as total trades, winning trades, losing trades, win rate, profit and loss, trading streaks and monthly performance."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Where does the EZTradingHub dashboard get my trades?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The dashboard reads trade records stored locally in the browser by the EZTradingHub trading journal."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I use the trade journal dashboard on my phone?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. The dashboard uses a responsive layout designed for smartphones, tablets and desktop computers."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is the trading dashboard financial advice?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. The dashboard is an educational record-keeping and analysis tool. Its statistics do not constitute personalized financial or investment advice."
+        }
+      }
+    ]
+  }
+  </script>
+
+
+  <style>
+
+    /* =====================================================
+       ROOT VARIABLES
+    ====================================================== */
+
+    :root {
+
+      --primary: #003366;
+      --primary-2: #004b80;
+      --accent: #ffb400;
+
+      --bg: #f5f7fa;
+      --surface: #ffffff;
+      --surface-2: #eef4f8;
+
+      --text: #172033;
+      --muted: #667085;
+
+      --border: #dfe6ee;
+
+      --success: #16834b;
+      --danger: #b42318;
+
+      --focus: #1b75bc;
+
+      --shadow:
+        0 8px 30px rgba(0, 30, 60, 0.08);
+
+      --radius: 16px;
+    }
+
+
+    /* =====================================================
+       DARK MODE
+    ====================================================== */
+
+    html[data-theme="dark"] {
+
+      --bg: #0d1620;
+
+      --surface: #14212d;
+
+      --surface-2: #1b2b39;
+
+      --text: #edf4f8;
+
+      --muted: #aab8c4;
+
+      --border: #2b3d4c;
+
+      --shadow:
+        0 8px 30px rgba(0, 0, 0, 0.30);
+    }
+
+
+    /* =====================================================
+       RESET
+    ====================================================== */
+
+    * {
+      box-sizing: border-box;
+    }
+
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+
+    body {
+
+      margin: 0;
+
+      font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Arial,
+        sans-serif;
+
+      line-height: 1.65;
+
+      background: var(--bg);
+
+      color: var(--text);
+
+      transition:
+        background-color .25s ease,
+        color .25s ease;
+    }
+
+
+    a {
+      color: var(--primary-2);
+      text-decoration: none;
+    }
+
+
+    html[data-theme="dark"] a {
+      color: #75bdf0;
+    }
+
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+
+    button,
+    input,
+    select {
+      font: inherit;
+    }
+
+
+    button {
+      cursor: pointer;
+    }
+
+
+    button:focus-visible,
+    a:focus-visible {
+      outline: 3px solid var(--focus);
+      outline-offset: 3px;
+    }
+
+
+    .container {
+
+      width:
+        min(
+          1180px,
+          calc(100% - 30px)
+        );
+
+      margin: auto;
+    }
+
+
+    /* =====================================================
+       HEADER
+    ====================================================== */
+
+    header {
+
+      position: sticky;
+
+      top: 0;
+
+      z-index: 1000;
+
+      background: var(--surface);
+
+      border-bottom:
+        1px solid var(--border);
+
+      box-shadow:
+        0 2px 12px rgba(0,0,0,.05);
+    }
+
+
+    .header-inner {
+
+      min-height: 70px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      gap: 18px;
+    }
+
+
+    .brand {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 10px;
+
+      color: var(--primary);
+
+      font-weight: 900;
+
+      text-decoration: none;
+    }
+
+
+    html[data-theme="dark"] .brand {
+      color: #ffffff;
+    }
+
+
+    .logo {
+
+      width: 42px;
+
+      height: 42px;
+
+      display: grid;
+
+      place-items: center;
+
+      border-radius: 12px;
+
+      background: var(--primary);
+
+      color: #ffffff;
+
+      font-weight: 900;
+    }
+
+
+    .brand-name {
+      font-size: 17px;
+    }
+
+
+    .brand-subtitle {
+
+      display: block;
+
+      font-size: 11px;
+
+      color: var(--muted);
+
+      font-weight: 600;
+
+      margin-top: 2px;
+    }
+
+
+    nav {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 4px;
+
+      flex-wrap: wrap;
+    }
+
+
+    nav a {
+
+      color: var(--text);
+
+      font-size: 14px;
+
+      font-weight: 700;
+
+      padding: 8px 10px;
+
+      border-radius: 9px;
+    }
+
+
+    nav a:hover {
+
+      background: var(--surface-2);
+
+      text-decoration: none;
+    }
+
+
+    .theme-toggle {
+
+      width: 40px;
+
+      height: 40px;
+
+      display: grid;
+
+      place-items: center;
+
+      border:
+        1px solid var(--border);
+
+      border-radius: 10px;
+
+      background: var(--surface);
+
+      color: var(--text);
+
+      font-size: 18px;
+    }
+
+
+    /* =====================================================
+       HERO
+    ====================================================== */
+
+    .hero {
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--primary),
+          var(--primary-2)
+        );
+
+      color: #ffffff;
+
+      padding: 65px 0;
+
+      position: relative;
+
+      overflow: hidden;
+    }
+
+
+    .hero::after {
+
+      content: "";
+
+      position: absolute;
+
+      width: 480px;
+
+      height: 480px;
+
+      border-radius: 50%;
+
+      background:
+        rgba(255,255,255,.06);
+
+      right: -180px;
+
+      top: -220px;
+    }
+
+
+    .hero-content {
+
+      position: relative;
+
+      z-index: 2;
+
+      max-width: 820px;
+    }
+
+
+    .eyebrow {
+
+      display: inline-block;
+
+      border:
+        1px solid rgba(255,255,255,.25);
+
+      border-radius: 999px;
+
+      padding: 6px 12px;
+
+      font-size: 12px;
+
+      font-weight: 800;
+
+      letter-spacing: .08em;
+
+      text-transform: uppercase;
+
+      margin-bottom: 16px;
+    }
+
+
+    .hero h1 {
+
+      font-size:
+        clamp(
+          2rem,
+          5vw,
+          3.25rem
+        );
+
+      line-height: 1.08;
+
+      margin:
+        0 0 18px;
+    }
+
+
+    .hero p {
+
+      max-width: 760px;
+
+      color:
+        rgba(255,255,255,.88);
+
+      font-size: 17px;
+
+      margin:
+        0 0 23px;
+    }
+
+
+    .hero-actions {
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 10px;
+    }
+
+
+    .btn {
+
+      display: inline-flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      gap: 7px;
+
+      padding: 11px 17px;
+
+      border-radius: 10px;
+
+      font-weight: 800;
+
+      border: 0;
+
+      text-decoration: none;
+    }
+
+
+    .btn:hover {
+      text-decoration: none;
+    }
+
+
+    .btn-primary {
+
+      background: var(--accent);
+
+      color: #161616;
+    }
+
+
+    .btn-secondary {
+
+      background:
+        rgba(255,255,255,.12);
+
+      border:
+        1px solid rgba(255,255,255,.25);
+
+      color: #ffffff;
+    }
+
+
+    /* =====================================================
+       AD PLACEHOLDER
+    ====================================================== */
+
+    .ad-container {
+
+      width:
+        min(
+          970px,
+          calc(100% - 30px)
+        );
+
+      min-height: 90px;
+
+      margin: 25px auto;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      border:
+        1px dashed var(--border);
+
+      background: var(--surface);
+
+      border-radius: 12px;
+
+      color: var(--muted);
+
+      font-size: 12px;
+
+      text-align: center;
+    }
+
+
+    /* =====================================================
+       MAIN
+    ====================================================== */
+
+    main {
+      padding: 40px 0 70px;
+    }
+
+
+    .section-heading {
+      margin-bottom: 20px;
+    }
+
+
+    .section-heading h2 {
+
+      margin:
+        0 0 7px;
+
+      font-size:
+        clamp(
+          1.5rem,
+          3vw,
+          2.15rem
+        );
+    }
+
+
+    .section-heading p {
+
+      color: var(--muted);
+
+      max-width: 780px;
+
+      margin: 0;
+    }
+
+
+    /* =====================================================
+       DASHBOARD GRID
+    ====================================================== */
+
+    .dashboard-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(
+          4,
+          minmax(0,1fr)
+        );
+
+      gap: 15px;
+
+      margin-bottom: 28px;
+    }
+
+
+    .dashboard-card {
+
+      background: var(--surface);
+
+      border:
+        1px solid var(--border);
+
+      border-radius: var(--radius);
+
+      padding: 19px;
+
+      box-shadow: var(--shadow);
+
+      min-width: 0;
+    }
+
+
+    .dashboard-card h3 {
+
+      margin:
+        0 0 9px;
+
+      font-size: 14px;
+
+      color: var(--muted);
+
+      font-weight: 800;
+    }
+
+
+    .dashboard-card .metric {
+
+      font-size: 27px;
+
+      line-height: 1.2;
+
+      font-weight: 900;
+
+      word-break: break-word;
+    }
+
+
+    .dashboard-card .subtext {
+
+      margin-top: 5px;
+
+      color: var(--muted);
+
+      font-size: 12px;
+    }
+
+
+    .positive {
+      color: var(--success);
+    }
+
+
+    .negative {
+      color: var(--danger);
+    }
+
+
+    /* =====================================================
+       SPECIAL CARDS
+    ====================================================== */
+
+    .wide-card {
+
+      grid-column:
+        span 2;
+    }
+
+
+    .chart-card {
+
+      grid-column:
+        span 2;
+    }
+
+
+    .progress {
+
+      width: 100%;
+
+      height: 10px;
+
+      border-radius: 999px;
+
+      overflow: hidden;
+
+      background: var(--surface-2);
+
+      margin-top: 12px;
+    }
+
+
+    .progress-bar {
+
+      height: 100%;
+
+      width: 0%;
+
+      background: var(--success);
+
+      transition: width .25s ease;
+    }
+
+
+    /* =====================================================
+       CHART
+    ====================================================== */
+
+    .chart-wrap {
+
+      position: relative;
+
+      width: 100%;
+
+      min-height: 230px;
+    }
+
+
+    #profitChart {
+
+      width: 100%;
+
+      height: 230px;
+
+      display: block;
+
+      border-radius: 12px;
+
+      background: var(--surface-2);
+    }
+
+
+    .chart-empty {
+
+      text-align: center;
+
+      color: var(--muted);
+
+      font-size: 13px;
+
+      margin-top: -135px;
+
+      position: relative;
+
+      pointer-events: none;
+    }
+
+
+    /* =====================================================
+       PANEL
+    ====================================================== */
+
+    .panel {
+
+      background: var(--surface);
+
+      border:
+        1px solid var(--border);
+
+      border-radius: var(--radius);
+
+      padding: 24px;
+
+      box-shadow: var(--shadow);
+
+      margin-top: 24px;
+    }
+
+
+    .panel h2 {
+
+      margin:
+        0 0 7px;
+
+      font-size: 21px;
+    }
+
+
+    .panel-intro {
+
+      color: var(--muted);
+
+      font-size: 14px;
+
+      margin:
+        0 0 18px;
+    }
+
+
+    /* =====================================================
+       RELATED TOOLS
+    ====================================================== */
+
+    .related-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(
+          3,
+          minmax(0,1fr)
+        );
+
+      gap: 13px;
+    }
+
+
+    .tool-link {
+
+      display: block;
+
+      padding: 17px;
+
+      border:
+        1px solid var(--border);
+
+      border-radius: 12px;
+
+      background: var(--surface-2);
+
+      color: var(--text);
+    }
+
+
+    .tool-link:hover {
+
+      text-decoration: none;
+
+      border-color:
+        var(--primary-2);
+
+      transform: translateY(-1px);
+    }
+
+
+    .tool-link strong {
+
+      display: block;
+
+      margin-bottom: 4px;
+    }
+
+
+    .tool-link span {
+
+      display: block;
+
+      color: var(--muted);
+
+      font-size: 13px;
+    }
+
+
+    /* =====================================================
+       EDUCATIONAL CONTENT
+    ====================================================== */
+
+    .article {
+
+      background: var(--surface);
+
+      border:
+        1px solid var(--border);
+
+      border-radius: var(--radius);
+
+      padding: 26px;
+
+      box-shadow: var(--shadow);
+
+      margin-top: 24px;
+    }
+
+
+    .article h2 {
+
+      margin:
+        0 0 12px;
+
+      font-size: 24px;
+    }
+
+
+    .article h3 {
+
+      margin:
+        20px 0 7px;
+
+      font-size: 18px;
+    }
+
+
+    .article p {
+
+      color: var(--muted);
+
+      margin:
+        0 0 12px;
+    }
+
+
+    .article ul {
+
+      color: var(--muted);
+
+      padding-left: 22px;
+    }
+
+
+    .article li {
+      margin-bottom: 7px;
+    }
+
+
+    /* =====================================================
+       FAQ
+    ====================================================== */
+
+    .faq-list {
+
+      display: grid;
+
+      gap: 12px;
+    }
+
+
+    details {
+
+      background: var(--surface);
+
+      border:
+        1px solid var(--border);
+
+      border-radius: 12px;
+
+      padding: 16px 18px;
+
+      box-shadow: var(--shadow);
+    }
+
+
+    summary {
+
+      cursor: pointer;
+
+      font-weight: 900;
+    }
+
+
+    details p {
+
+      color: var(--muted);
+
+      font-size: 14px;
+
+      margin:
+        10px 0 0;
+    }
+
+
+    /* =====================================================
+       DISCLAIMER
+    ====================================================== */
+
+    .disclaimer {
+
+      margin-top: 24px;
+
+      padding: 20px;
+
+      border:
+        1px solid var(--border);
+
+      border-radius: 12px;
+
+      background: var(--surface-2);
+    }
+
+
+    .disclaimer h3 {
+      margin: 0 0 8px;
+    }
+
+
+    .disclaimer p {
+
+      margin: 0;
+
+      color: var(--muted);
+
+      font-size: 13px;
+    }
+
+
+    /* =====================================================
+       FOOTER
+    ====================================================== */
+
+    footer {
+
+      background: #071522;
+
+      color: #dce7ef;
+
+      padding:
+        44px 0 25px;
+    }
+
+
+    .footer-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        1.5fr 1fr 1fr;
+
+      gap: 30px;
+    }
+
+
+    footer h3,
+    footer h4 {
+
+      color: #ffffff;
+
+      margin:
+        0 0 10px;
+    }
+
+
+    footer p {
+
+      color: #aebdca;
+
+      font-size: 14px;
+    }
+
+
+    .footer-links {
+
+      display: grid;
+
+      gap: 7px;
+    }
+
+
+    .footer-links a {
+
+      color: #c7d6e2;
+
+      font-size: 14px;
+    }
+
+
+    .footer-bottom {
+
+      border-top:
+        1px solid rgba(255,255,255,.12);
+
+      margin-top: 28px;
+
+      padding-top: 19px;
+
+      text-align: center;
+
+      color: #91a3b1;
+
+      font-size: 13px;
+    }
+
+
+    /* =====================================================
+       BACK TO TOP
+    ====================================================== */
+
+    #topBtn {
+
+      position: fixed;
+
+      right: 18px;
+
+      bottom: 18px;
+
+      width: 44px;
+
+      height: 44px;
+
+      display: none;
+
+      place-items: center;
+
+      border: 0;
+
+      border-radius: 50%;
+
+      background: var(--primary);
+
+      color: #ffffff;
+
+      font-size: 18px;
+
+      box-shadow: var(--shadow);
+
+      z-index: 900;
+    }
+
+
+    #topBtn.show {
+      display: grid;
+    }
+
+
+    /* =====================================================
+       RESPONSIVE
+    ====================================================== */
+
+    @media (max-width: 1000px) {
+
+      .dashboard-grid {
+
+        grid-template-columns:
+          repeat(
+            2,
+            minmax(0,1fr)
+          );
+      }
+
+
+      .wide-card,
+      .chart-card {
+        grid-column: span 1;
+      }
+
+
+      .related-grid {
+
+        grid-template-columns:
+          repeat(
+            2,
+            minmax(0,1fr)
+          );
+      }
+    }
+
+
+    @media (max-width: 700px) {
+
+      .container {
+
+        width:
+          min(
+            100% - 22px,
+            1180px
+          );
+      }
+
+
+      .header-inner {
+
+        min-height: 64px;
+      }
+
+
+      .brand-subtitle {
+        display: none;
+      }
+
+
+      nav a:nth-child(2),
+      nav a:nth-child(3),
+      nav a:nth-child(4),
+      nav a:nth-child(5) {
+        display: none;
+      }
+
+
+      nav a {
+
+        padding: 7px;
+
+        font-size: 12px;
+      }
+
+
+      .hero {
+
+        padding: 50px 0;
+      }
+
+
+      .hero p {
+        font-size: 15px;
+      }
+
+
+      .dashboard-grid {
+
+        grid-template-columns:
+          1fr;
+      }
+
+
+      .wide-card,
+      .chart-card {
+
+        grid-column: span 1;
+      }
+
+
+      .related-grid {
+
+        grid-template-columns:
+          1fr;
+      }
+
+
+      .panel,
+      .article {
+
+        padding: 19px;
+      }
+
+
+      .footer-grid {
+
+        grid-template-columns:
+          1fr;
+      }
+    }
+
+
+    @media (prefers-reduced-motion: reduce) {
+
+      html {
+        scroll-behavior: auto;
+      }
+
+
+      *,
+      *::before,
+      *::after {
+
+        animation: none !important;
+
+        transition: none !important;
+      }
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <!-- =====================================================
+       HEADER
+  ====================================================== -->
+
+  <header>
+
+    <div class="container header-inner">
+
+      <a
+        href="index.html"
+        class="brand"
+        aria-label="EZTradingHub homepage">
+
+        <span
+          class="logo"
+          aria-hidden="true">
+          EZ
+        </span>
+
+        <span>
+
+          <span class="brand-name">
+            EZTradingHub
+          </span>
+
+          <span class="brand-subtitle">
+            Smart Trading Tools
+          </span>
+
+        </span>
+
+      </a>
+
+
+      <nav aria-label="Main navigation">
+
+        <a href="index.html">
+          Home
+        </a>
+
+        <a href="calculators.html">
+          Calculators
+        </a>
+
+        <a href="Dashboard.html">
+          Dashboard
+        </a>
+
+        <a href="trade-journal.html">
+          Journal
+        </a>
+
+        <a href="about.html">
+          About
+        </a>
+
+        <a
+          href="trade-journal-dashboard.html"
+          aria-current="page">
+          Analytics
+        </a>
+
+        <button
+          type="button"
+          id="themeToggle"
+          class="theme-toggle"
+          aria-label="Switch to dark mode"
+          title="Toggle light and dark mode">
+          🌙
+        </button>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+  <!-- =====================================================
+       HERO
+  ====================================================== -->
+
+  <section class="hero">
+
+    <div class="container">
+
+      <div class="hero-content">
+
+        <span class="eyebrow">
+          Trading Performance Analytics
+        </span>
+
+        <h1>
+          Trade Journal Dashboard
+        </h1>
+
+        <p>
+          Review your trading history with key performance
+          statistics including win rate, profit and loss,
+          trading streaks, best-performing pairs and monthly
+          results.
+        </p>
+
+        <div class="hero-actions">
+
+          <a
+            href="trade-journal.html"
+            class="btn btn-primary">
+            📓 Open Trade Journal
+          </a>
+
+          <a
+            href="calculators.html"
+            class="btn btn-secondary">
+            🧮 Trading Calculators
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       AD PLACEHOLDER
+  ====================================================== -->
+
+  <div
+    class="ad-container"
+    aria-label="Advertisement">
+
+    <span>
+      Advertisement
+    </span>
+
+    <!--
+      Insert your approved Google AdSense ad unit here
+      after your website has been approved.
+
+      Keep advertisements clearly separated from
+      navigation and primary calculator functionality.
+    -->
+
+  </div>
+
+
+  <!-- =====================================================
+       MAIN
+  ====================================================== -->
+
+  <main>
+
+    <div class="container">
+
+
+      <section>
+
+        <div class="section-heading">
+
+          <h2>
+            Your Trading Performance
+          </h2>
+
+          <p>
+            These statistics are calculated from the trades
+            saved in your EZTradingHub trading journal.
+          </p>
+
+        </div>
+
+
+        <!-- =================================================
+             METRICS
+        ================================================== -->
+
+        <div class="dashboard-grid">
+
+
+          <!-- TOTAL TRADES -->
+
+          <div class="dashboard-card">
+
+            <h3>
+              💼 Total Trades
+            </h3>
+
+            <div
+              class="metric"
+              id="totalTrades">
+              0
+            </div>
+
+            <div class="subtext">
+              Recorded trades
+            </div>
+
+          </div>
+
+
+          <!-- WINNING TRADES -->
+
+          <div class="dashboard-card">
+
+            <h3>
+              ✅ Winning Trades
+            </h3>
+
+            <div
+              class="metric positive"
+              id="winningTrades">
+              0
+            </div>
+
+            <div class="subtext">
+              Profitable trades
+            </div>
+
+          </div>
+
+
+          <!-- LOSING TRADES -->
+
+          <div class="dashboard-card">
+
+            <h3>
+              ❌ Losing Trades
+            </h3>
+
+            <div
+              class="metric negative"
+              id="losingTrades">
+              0
+            </div>
+
+            <div class="subtext">
+              Losing trades
+            </div>
+
+          </div>
+
+
+          <!-- WIN RATE -->
+
+          <div class="dashboard-card">
+
+            <h3>
+              🏆 Win Rate
+            </h3>
+
+            <div
+              class="metric"
+              id="winRate">
+              0%
+            </div>
+
+            <div class="subtext">
+              Winning trades ÷ total trades
+            </div>
+
+          </div>
+
+
+          <!-- TOTAL PROFIT -->
+
+          <div class="dashboard-card">
+
+            <h3>
+              💰 Total Profit
+            </h3>
+
+            <div
+              class="metric positive"
+              id="totalProfit">
+              $0.00
+            </div>
+
+            <div class="subtext">
+              Sum of profitable trades
+            </div>
+
+          </div>
+
+
+          <!-- TOTAL LOSS -->
+
+          <div class="dashboard-card">
+
+            <h3>
+              📉 Total Loss
+            </h3>
+
+            <div
+              class="metric negative"
+              id="totalLoss">
+              $0.00
+            </div>
+
+            <div class="subtext">
+              Sum of losing trades
+            </div>
+
+          </div>
+
+
+          <!-- NET PROFIT -->
+
+          <div class="dashboard-card">
+
+            <h3>
+              💹 Net P/L
+            </h3>
+
+            <div
+              class="metric"
+              id="netProfit">
+              $0.00
+            </div>
+
+            <div class="subtext">
+              Profit minus losses
+            </div>
+
+          </div>
+
+
+          <!-- PROFIT FACTOR -->
+
+          <div class="dashboard-card">
+
+            <h3>
+              ⚖️ Profit Factor
+            </h3>
+
+            <div
+              class="metric"
+              id="profitFactor">
+              0.00
+            </div>
+
+            <div class="subtext">
+              Gross profit ÷ gross loss
+            </div>
+
+          </div>
+
+
+          <!-- LARGEST WIN -->
+
+          <div class="dashboard-card">
+
+            <h3>
+              🥇 Largest Winning Trade
+            </h3>
+
+            <div
+              class="metric positive"
+              id="largestWin">
+              $0.00
+            </div>
+
+          </div>
+
+
+          <!-- LARGEST LOSS -->
+
+          <div class="dashboard-card">
+
+            <h3>
+              📉 Largest Losing Trade
+            </h3>
+
+            <div
+              class="metric negative"
+              id="largestLoss">
+              $0.00
+            </div>
+
+          </div>
+
+
+          <!-- AVERAGE WIN -->
+
+          <div class="dashboard-card">
+
+            <h3>
+              📈 Average Winning Trade
+            </h3>
+
+            <div
+              class="metric positive"
+              id="avgWin">
+              $0.00
+            </div>
+
+          </div>
+
+
+          <!-- AVERAGE LOSS -->
+
+          <div class="dashboard-card">
+
+            <h3>
+              📉 Average Losing Trade
+            </h3>
+
+            <div
+              class="metric negative"
+              id="avgLoss">
+              $0.00
+            </div>
+
+          </div>
+
+
+          <!-- BEST PAIR -->
+
+          <div class="dashboard-card">
+
+            <h3>
+              💱 Best Performing Pair
+            </h3>
+
+            <div
+              class="metric"
+              id="bestPair">
+              None
+            </div>
+
+          </div>
+
+
+          <!-- BEST DAY -->
+
+          <div class="dashboard-card">
+
+            <h3>
+              🥇 Best Trading Day
+            </h3>
+
+            <div
+              class="metric"
+              id="bestDay">
+              None
+            </div>
+
+          </div>
+
+
+          <!-- WORST DAY -->
+
+          <div class="dashboard-card">
+
+            <h3>
+              📉 Worst Trading Day
+            </h3>
+
+            <div
+              class="metric"
+              id="worstDay">
+              None
+            </div>
+
+          </div>
+
+
+          <!-- WIN STREAK -->
+
+          <div class="dashboard-card">
+
+            <h3>
+              🔥 Longest Winning Streak
+            </h3>
+
+            <div
+              class="metric"
+              id="winStreak">
+              0
+            </div>
+
+            <div class="subtext">
+              Consecutive profitable trades
+            </div>
+
+          </div>
+
+
+          <!-- LOSS STREAK -->
+
+          <div class="dashboard-card">
+
+            <h3>
+              ❄️ Longest Losing Streak
+            </h3>
+
+            <div
+              class="metric"
+              id="lossStreak">
+              0
+            </div>
+
+            <div class="subtext">
+              Consecutive losing trades
+            </div>
+
+          </div>
+
+
+          <!-- MONTHLY PERFORMANCE -->
+
+          <div class="dashboard-card wide-card">
+
+            <h3>
+              📅 Current Month Performance
+            </h3>
+
+            <div
+              class="metric"
+              id="monthlyProfit">
+              $0.00
+            </div>
+
+            <div class="subtext">
+
+              <span id="monthlyTrades">
+                0
+              </span>
+              trades ·
+
+              <span id="monthlyWinRate">
+                0%
+              </span>
+              win rate
+
+            </div>
+
+          </div>
+
+
+          <!-- DAILY GOAL -->
+
+          <div class="dashboard-card wide-card">
+
+            <h3>
+              🎯 Daily Trading Goal
+            </h3>
+
+            <div
+              class="metric"
+              id="dailyGoal">
+              $0.00 / $500.00
+            </div>
+
+            <div class="progress">
+
+              <div
+                class="progress-bar"
+                id="goalProgress">
+              </div>
+
+            </div>
+
+            <div class="subtext">
+              Based on today's recorded profit or loss.
+            </div>
+
+          </div>
+
+
+          <!-- PROFIT CHART -->
+
+          <div class="dashboard-card chart-card">
+
+            <h3>
+              📈 Cumulative Profit Trend
+            </h3>
+
+            <div class="chart-wrap">
+
+              <canvas
+                id="profitChart"
+                width="700"
+                height="230"
+                aria-label="Cumulative trading profit chart">
+              </canvas>
+
+              <div
+                class="chart-empty"
+                id="chartEmpty">
+                Add trades to your journal to display the chart.
+              </div>
+
+            </div>
+
+          </div>
+
+
+        </div>
+
+      </section>
+
+
+      <!-- =================================================
+           ADVERTISEMENT
+      ================================================== -->
+
+      <div
+        class="ad-container"
+        aria-label="Advertisement">
+
+        <span>
+          Advertisement
+        </span>
+
+      </div>
+
+
+      <!-- =================================================
+           RELATED TOOLS
+      ================================================== -->
+
+      <section class="panel">
+
+        <h2>
+          Related Trading Tools
+        </h2>
+
+        <p class="panel-intro">
+          Use these EZTradingHub tools to plan trades, review
+          risk and analyze different trading scenarios.
+        </p>
+
+
+        <div class="related-grid">
+
+
+          <a
+            href="trade-journal.html"
+            class="tool-link">
+
+            <strong>
+              📓 Trade Journal
+            </strong>
+
+            <span>
+              Record entries, exits, P/L, strategy and trading notes.
+            </span>
+
+          </a>
+
+
+          <a
+            href="risk-calculator.html"
+            class="tool-link">
+
+            <strong>
+              🛡️ Risk Calculator
+            </strong>
+
+            <span>
+              Explore hypothetical trade-risk calculations.
+            </span>
+
+          </a>
+
+
+          <a
+            href="position-size-calculator.html"
+            class="tool-link">
+
+            <strong>
+              📊 Position Size Calculator
+            </strong>
+
+            <span>
+              Estimate position size using selected inputs.
+            </span>
+
+          </a>
+
+
+          <a
+            href="profit-calculator.html"
+            class="tool-link">
+
+            <strong>
+              💰 Profit Calculator
+            </strong>
+
+            <span>
+              Explore potential profit and loss calculations.
+            </span>
+
+          </a>
+
+
+          <a
+            href="drawdown-calculator.html"
+            class="tool-link">
+
+            <strong>
+              📉 Drawdown Calculator
+            </strong>
+
+            <span>
+              Examine account drawdown and recovery scenarios.
+            </span>
+
+          </a>
+
+
+          <a
+            href="account-growth-calculator.html"
+            class="tool-link">
+
+            <strong>
+              📈 Account Growth Calculator
+            </strong>
+
+            <span>
+              Explore hypothetical account-growth scenarios.
+            </span>
+
+          </a>
+
+
+          <a
+            href="risk-reward-calculator.html"
+            class="tool-link">
+
+            <strong>
+              🎯 Risk-Reward Calculator
+            </strong>
+
+            <span>
+              Compare hypothetical risk and reward levels.
+            </span>
+
+          </a>
+
+
+          <a
+            href="compounding-calculator.html"
+            class="tool-link">
+
+            <strong>
+              🔄 Compounding Calculator
+            </strong>
+
+            <span>
+              Explore hypothetical compounding scenarios.
+            </span>
+
+          </a>
+
+
+          <a
+            href="calculators.html"
+            class="tool-link">
+
+            <strong>
+              🧮 All Trading Calculators
+            </strong>
+
+            <span>
+              Browse the complete EZTradingHub calculator collection.
+            </span>
+
+          </a>
+
+
+        </div>
+
+      </section>
+
+
+      <!-- =================================================
+           EDUCATIONAL SEO CONTENT
+      ================================================== -->
+
+      <article class="article">
+
+        <h2>
+          How to Use a Trading Journal Dashboard
+        </h2>
+
+        <p>
+          A trading journal dashboard provides a structured way
+          to review historical trades. Instead of looking at
+          individual trades separately, a dashboard can summarize
+          important statistics such as the number of trades,
+          winning trades, losing trades, win rate and net profit
+          or loss.
+        </p>
+
+        <p>
+          The EZTradingHub Trade Journal Dashboard is designed
+          to work with trade information recorded through the
+          EZTradingHub trading journal. It can help organize
+          historical performance information for educational
+          review.
+        </p>
+
+
+        <h3>
+          Review Your Win Rate
+        </h3>
+
+        <p>
+          Win rate represents the percentage of recorded trades
+          that were profitable. A higher win rate does not
+          automatically mean that a trading strategy is profitable,
+          because the size of winning and losing trades also matters.
+        </p>
+
+
+        <h3>
+          Review Average Wins and Losses
+        </h3>
+
+        <p>
+          Comparing average winning trades with average losing
+          trades can provide additional context when reviewing
+          historical performance. Two trading approaches can have
+          similar win rates while producing very different results
+          because their average win and average loss sizes differ.
+        </p>
+
+
+        <h3>
+          Study Trading Streaks
+        </h3>
+
+        <p>
+          Winning and losing streaks can help traders examine the
+          sequence of their historical results. Streak information
+          should be interpreted carefully because a historical
+          sequence does not guarantee that the same sequence will
+          occur again.
+        </p>
+
+
+        <h3>
+          Review Your Best and Worst Trading Days
+        </h3>
+
+        <p>
+          Looking at daily results can help organize a performance
+          review. Traders may choose to examine whether certain
+          market conditions, sessions, instruments or strategies
+          appeared frequently on their strongest or weakest days.
+        </p>
+
+
+        <h3>
+          Why Keep a Trading Journal?
+        </h3>
+
+        <p>
+          A trading journal creates a record of the decisions and
+          results associated with individual trades. Useful journal
+          information can include the instrument, direction, entry,
+          exit, stop loss, target, position size, profit or loss,
+          strategy and notes about trading psychology.
+        </p>
+
+      </article>
+
+
+      <!-- =================================================
+           DATA & PRIVACY
+      ================================================== -->
+
+      <article class="article">
+
+        <h2>
+          How Your Journal Data Is Used
+        </h2>
+
+        <p>
+          This dashboard is designed to calculate statistics from
+          trade records stored in your browser. The dashboard does
+          not need a server-side database to calculate the displayed
+          statistics.
+        </p>
+
+        <p>
+          Because browser storage can be cleared by the user,
+          browser data should not be treated as a permanent backup.
+          If your trading journal provides an export function,
+          regularly export important records and keep your own
+          backup.
+        </p>
+
+        <p>
+          Avoid entering passwords, banking credentials, account
+          login information or other highly sensitive personal
+          information into a trading journal.
+        </p>
+
+      </article>
+
+
+      <!-- =================================================
+           DISCLAIMER
+      ================================================== -->
+
+      <div class="disclaimer">
+
+        <h3>
+          Important Financial Disclaimer
+        </h3>
+
+        <p>
+          EZTradingHub provides calculators, dashboards and
+          educational information for general informational and
+          educational purposes. Nothing on this website constitutes
+          personalized financial, investment or trading advice.
+          Trading forex, cryptocurrencies, stocks, commodities,
+          ETFs, bonds and other financial instruments involves risk,
+          including the potential loss of capital. Dashboard
+          statistics are calculated from user-provided journal data
+          and should not be interpreted as guarantees of future
+          performance.
+        </p>
+
+      </div>
+
+
+      <!-- =================================================
+           FAQ
+      ================================================== -->
+
+      <section class="panel">
+
+        <h2>
+          Trade Journal Dashboard FAQ
+        </h2>
+
+        <p class="panel-intro">
+          Common questions about the EZTradingHub trading
+          performance dashboard.
+        </p>
+
+
+        <div class="faq-list">
+
+
+          <details>
+
+            <summary>
+              What is a trade journal dashboard?
+            </summary>
+
+            <p>
+              A trade journal dashboard summarizes recorded
+              trades using statistics such as total trades,
+              winning trades, losing trades, win rate, profit
+              and loss, trading streaks and monthly performance.
+            </p>
+
+          </details>
+
+
+          <details>
+
+            <summary>
+              Where does the dashboard get my trades?
+            </summary>
+
+            <p>
+              The dashboard reads trade records saved locally
+              by the EZTradingHub trading journal in your browser.
+              The dashboard uses those records to calculate the
+              displayed statistics.
+            </p>
+
+          </details>
+
+
+          <details>
+
+            <summary>
+              Can I use this dashboard on my phone?
+            </summary>
+
+            <p>
+              Yes. The page is responsive and is designed to
+              work on smartphones, tablets and desktop devices.
+            </p>
+
+          </details>
+
+
+          <details>
+
+            <summary>
+              Does the dashboard provide trading signals?
+            </summary>
+
+            <p>
+              No. The dashboard summarizes historical journal
+              information. Its statistics are not trading signals
+              or predictions of future market movements.
+            </p>
+
+          </details>
+
+
+          <details>
+
+            <summary>
+              Is this dashboard financial advice?
+            </summary>
+
+            <p>
+              No. The dashboard is an educational record-keeping
+              and performance-analysis tool and does not provide
+              personalized financial or investment advice.
+            </p>
+
+          </details>
+
+
+        </div>
+
+      </section>
+
+
+    </div>
+
+  </main>
+
+
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
+
+  <footer>
+
+    <div class="container">
+
+      <div class="footer-grid">
+
+
+        <div>
+
+          <h3>
+            EZTradingHub
+          </h3>
+
+          <p>
+            Smart trading calculators, trading journals,
+            performance tools and educational resources
+            for traders and investors.
+          </p>
+
+        </div>
+
+
+        <div>
+
+          <h4>
+            Explore
+          </h4>
+
+          <div class="footer-links">
+
+            <a href="index.html">
+              Home
+            </a>
+
+            <a href="calculators.html">
+              Calculators
+            </a>
+
+            <a href="Dashboard.html">
+              Dashboard
+            </a>
+
+            <a href="trade-journal.html">
+              Trade Journal
+            </a>
+
+            <a href="trade-journal-dashboard.html">
+              Journal Analytics
+            </a>
+
+            <a href="about.html">
+              About
+            </a>
+
+            <a href="contact.html">
+              Contact
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <div>
+
+          <h4>
+            Policies
+          </h4>
+
+          <div class="footer-links">
+
+            <a href="faq.html">
+              FAQ
+            </a>
+
+            <a href="privacy.html">
+              Privacy Policy
+            </a>
+
+            <a href="cookie-policy.html">
+              Cookie Policy
+            </a>
+
+            <a href="terms.html">
+              Terms & Conditions
+            </a>
+
+            <a href="disclaimer.html">
+              Disclaimer
+            </a>
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+
+      <div class="footer-bottom">
+
+        ©
+        <span id="currentYear">
+          2026
+        </span>
+        EZTradingHub. All rights reserved.
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- =====================================================
+       BACK TO TOP
+  ====================================================== -->
+
+  <button
+    type="button"
+    id="topBtn"
+    aria-label="Back to top"
+    title="Back to top">
+
+    ↑
+
+  </button>
+
+
+  <!-- =====================================================
+       JAVASCRIPT
+  ====================================================== -->
+
+  <script>
+
+    "use strict";
+
+
+    /* =====================================================
+       SETTINGS
+    ====================================================== */
+
+    const JOURNAL_STORAGE_KEY =
+      "EZTH-trading-journal-v2";
+
+    const THEME_STORAGE_KEY =
+      "EZTH-theme";
+
+    const DAILY_GOAL =
+      500;
+
+
+    /* =====================================================
+       THEME
+    ====================================================== */
+
+    const themeToggle =
+      document.getElementById(
+        "themeToggle"
+      );
+
+
+    function updateThemeButton() {
+
+      const isDark =
+        document.documentElement
+          .getAttribute("data-theme") ===
+        "dark";
+
+
+      themeToggle.textContent =
+        isDark ? "☀️" : "🌙";
+
+
+      themeToggle.setAttribute(
+        "aria-label",
+        isDark
+          ? "Switch to light mode"
+          : "Switch to dark mode"
+      );
+
+
+      themeToggle.title =
+        isDark
+          ? "Switch to light mode"
+          : "Switch to dark mode";
+    }
+
+
+    const savedTheme =
+      localStorage.getItem(
+        THEME_STORAGE_KEY
+      );
+
+
+    if (savedTheme === "dark") {
+
+      document.documentElement
+        .setAttribute(
+          "data-theme",
+          "dark"
+        );
+    }
+
+
+    updateThemeButton();
+
+
+    themeToggle.addEventListener(
+      "click",
+      function() {
+
+        const isDark =
+          document.documentElement
+            .getAttribute("data-theme") ===
+          "dark";
+
+
+        if (isDark) {
+
+          document.documentElement
+            .removeAttribute(
+              "data-theme"
+            );
+
+          localStorage.setItem(
+            THEME_STORAGE_KEY,
+            "light"
+          );
+
+        } else {
+
+          document.documentElement
+            .setAttribute(
+              "data-theme",
+              "dark"
+            );
+
+          localStorage.setItem(
+            THEME_STORAGE_KEY,
+            "dark"
+          );
+        }
+
+
+        updateThemeButton();
+
+        drawProfitChart(
+          currentTrades
+        );
+      }
+    );
+
+
+    /* =====================================================
+       SAFE NUMBER
+    ====================================================== */
+
+    function toNumber(value) {
+
+      const number =
+        parseFloat(value);
+
+      return Number.isFinite(number)
+        ? number
+        : 0;
+    }
+
+
+    /* =====================================================
+       CURRENCY
+    ====================================================== */
+
+    function money(value) {
+
+      const number =
+        toNumber(value);
+
+
+      const absolute =
+        Math.abs(number)
+          .toLocaleString(
+            "en-US",
+            {
+              minimumFractionDigits: 2,
+              maximumFractionDigits: 2
+            }
+          );
+
+
+      if (number > 0) {
+
+        return "$" + absolute;
+      }
+
+
+      if (number < 0) {
+
+        return "-$" + absolute;
+      }
+
+
+      return "$0.00";
+    }
+
+
+    /* =====================================================
+       PERCENTAGE
+    ====================================================== */
+
+    function percent(value) {
+
+      return (
+        toNumber(value)
+          .toFixed(1)
+      ) + "%";
+    }
+
+
+    /* =====================================================
+       LOAD JOURNAL DATA
+    ====================================================== */
+
+    function loadTrades() {
+
+      try {
+
+        const raw =
+          localStorage.getItem(
+            JOURNAL_STORAGE_KEY
+          );
+
+
+        if (!raw) {
+          return [];
+        }
+
+
+        const parsed =
+          JSON.parse(raw);
+
+
+        if (!Array.isArray(parsed)) {
+          return [];
+        }
+
+
+        return parsed;
+
+      } catch (error) {
+
+        console.warn(
+          "Unable to load journal data.",
+          error
+        );
+
+        return [];
+      }
+    }
+
+
+    let currentTrades =
+      loadTrades();
+
+
+    /* =====================================================
+       GET TRADE P/L
+    ====================================================== */
+
+    function getTradePL(trade) {
+
+      return toNumber(
+        trade.profitLoss ??
+        trade.pnl ??
+        trade.pl ??
+        trade.profit ??
+        trade.loss ??
+        0
+      );
+    }
+
+
+    /* =====================================================
+       GET TRADE DATE
+    ====================================================== */
+
+    function getTradeDate(trade) {
+
+      const value =
+        trade.date ??
+        trade.createdAt ??
+        trade.timestamp ??
+        "";
+
+
+      if (!value) {
+        return null;
+      }
+
+
+      const date =
+        new Date(value);
+
+
+      if (
+        Number.isNaN(
+          date.getTime()
+        )
+      ) {
+
+        return null;
+      }
+
+
+      return date;
+    }
+
+
+    /* =====================================================
+       GET MARKET / PAIR
+    ====================================================== */
+
+    function getMarket(trade) {
+
+      return String(
+        trade.market ??
+        trade.symbol ??
+        trade.pair ??
+        "Unknown"
+      ).trim() || "Unknown";
+    }
+
+
+    /* =====================================================
+       UPDATE TEXT
+    ====================================================== */
+
+    function setText(
+      id,
+      value
+    ) {
+
+      const element =
+        document.getElementById(id);
+
+
+      if (element) {
+
+        element.textContent =
+          value;
+      }
+    }
+
+
+    /* =====================================================
+       PERFORMANCE ANALYSIS
+    ====================================================== */
+
+    function calculateStatistics(
+      trades
+    ) {
+
+      const total =
+        trades.length;
+
+
+      const wins =
+        trades.filter(
+          trade =>
+            getTradePL(trade) > 0
+        );
+
+
+      const losses =
+        trades.filter(
+          trade =>
+            getTradePL(trade) < 0
+        );
+
+
+      const grossProfit =
+        wins.reduce(
+          (sum, trade) =>
+            sum + getTradePL(trade),
+          0
+        );
+
+
+      const grossLoss =
+        Math.abs(
+          losses.reduce(
+            (sum, trade) =>
+              sum + getTradePL(trade),
+            0
+          )
+        );
+
+
+      const net =
+        grossProfit -
+        grossLoss;
+
+
+      const winRate =
+        total > 0
+          ? (wins.length / total) * 100
+          : 0;
+
+
+      const averageWin =
+        wins.length > 0
+          ? grossProfit / wins.length
+          : 0;
+
+
+      const averageLoss =
+        losses.length > 0
+          ? grossLoss / losses.length
+          : 0;
+
+
+      const largestWin =
+        wins.length > 0
+          ? Math.max(
+              ...wins.map(
+                getTradePL
+              )
+            )
+          : 0;
+
+
+      const largestLoss =
+        losses.length > 0
+          ? Math.min(
+              ...losses.map(
+                getTradePL
+              )
+            )
+          : 0;
+
+
+      const profitFactor =
+        grossLoss > 0
+          ? grossProfit / grossLoss
+          : 0;
+
+
+      return {
+
+        total,
+
+        wins,
+
+        losses,
+
+        grossProfit,
+
+        grossLoss,
+
+        net,
+
+        winRate,
+
+        averageWin,
+
+        averageLoss,
+
+        largestWin,
+
+        largestLoss,
+
+        profitFactor
+      };
+    }
+
+
+    /* =====================================================
+       BEST PAIR
+    ====================================================== */
+
+    function calculateBestPair(
+      trades
+    ) {
+
+      const pairTotals = {};
+
+
+      trades.forEach(
+        trade => {
+
+          const market =
+            getMarket(trade);
+
+
+          if (!pairTotals[market]) {
+
+            pairTotals[market] = 0;
+          }
+
+
+          pairTotals[market] +=
+            getTradePL(trade);
+        }
+      );
+
+
+      const entries =
+        Object.entries(
+          pairTotals
+        );
+
+
+      if (!entries.length) {
+
+        return "None";
+      }
+
+
+      entries.sort(
+        (a,b) =>
+          b[1] - a[1]
+      );
+
+
+      return entries[0][0];
+    }
+
+
+    /* =====================================================
+       DAILY PERFORMANCE
+    ====================================================== */
+
+    function calculateDailyPerformance(
+      trades
+    ) {
+
+      const daily = {};
+
+
+      trades.forEach(
+        trade => {
+
+          const date =
+            getTradeDate(trade);
+
+
+          if (!date) {
+            return;
+          }
+
+
+          const key =
+            date.toISOString()
+              .slice(0,10);
+
+
+          if (!daily[key]) {
+
+            daily[key] = 0;
+          }
+
+
+          daily[key] +=
+            getTradePL(trade);
+        }
+      );
+
+
+      const entries =
+        Object.entries(
+          daily
+        );
+
+
+      if (!entries.length) {
+
+        return {
+          best: null,
+          worst: null
+        };
+      }
+
+
+      entries.sort(
+        (a,b) =>
+          b[1] - a[1]
+      );
+
+
+      return {
+
+        best: entries[0],
+
+        worst:
+          entries[
+            entries.length - 1
+          ]
+      };
+    }
+
+
+    /* =====================================================
+       FORMAT DAY
+    ====================================================== */
+
+    function formatDay(
+      entry
+    ) {
+
+      if (!entry) {
+        return "None";
+      }
+
+
+      const date =
+        new Date(
+          entry[0] +
+          "T00:00:00"
+        );
+
+
+      if (
+        Number.isNaN(
+          date.getTime()
+        )
+      ) {
+
+        return entry[0];
+      }
+
+
+      return (
+        date.toLocaleDateString(
+          "en-US",
+          {
+            month: "short",
+            day: "numeric",
+            year: "numeric"
+          }
+        ) +
+        " · " +
+        money(entry[1])
+      );
+    }
+
+
+    /* =====================================================
+       STREAKS
+    ====================================================== */
+
+    function calculateStreaks(
+      trades
+    ) {
+
+      const sorted =
+        [...trades].sort(
+          (a,b) => {
+
+            const da =
+              getTradeDate(a);
+
+            const db =
+              getTradeDate(b);
+
+
+            return (
+              (da?.getTime() || 0) -
+              (db?.getTime() || 0)
+            );
+          }
+        );
+
+
+      let currentWin = 0;
+      let currentLoss = 0;
+
+      let longestWin = 0;
+      let longestLoss = 0;
+
+
+      sorted.forEach(
+        trade => {
+
+          const pl =
+            getTradePL(trade);
+
+
+          if (pl > 0) {
+
+            currentWin++;
+
+            currentLoss = 0;
+
+            longestWin =
+              Math.max(
+                longestWin,
+                currentWin
+              );
+
+          } else if (pl < 0) {
+
+            currentLoss++;
+
+            currentWin = 0;
+
+            longestLoss =
+              Math.max(
+                longestLoss,
+                currentLoss
+              );
+
+          } else {
+
+            currentWin = 0;
+            currentLoss = 0;
+          }
+
+        }
+      );
+
+
+      return {
+
+        longestWin,
+
+        longestLoss
+      };
+    }
+
+
+    /* =====================================================
+       MONTHLY STATISTICS
+    ====================================================== */
+
+    function calculateCurrentMonth(
+      trades
+    ) {
+
+      const now =
+        new Date();
+
+
+      const year =
+        now.getFullYear();
+
+
+      const month =
+        now.getMonth();
+
+
+      const monthly =
+        trades.filter(
+          trade => {
+
+            const date =
+              getTradeDate(trade);
+
+
+            return (
+              date &&
+              date.getFullYear() === year &&
+              date.getMonth() === month
+            );
+          }
+        );
+
+
+      const profit =
+        monthly.reduce(
+          (sum, trade) =>
+            sum + getTradePL(trade),
+          0
+        );
+
+
+      const wins =
+        monthly.filter(
+          trade =>
+            getTradePL(trade) > 0
+        ).length;
+
+
+      const winRate =
+        monthly.length
+          ? (
+              wins /
+              monthly.length
+            ) * 100
+          : 0;
+
+
+      return {
+
+        trades:
+          monthly.length,
+
+        profit,
+
+        winRate
+      };
+    }
+
+
+    /* =====================================================
+       TODAY'S PERFORMANCE
+    ====================================================== */
+
+    function calculateToday(
+      trades
+    ) {
+
+      const now =
+        new Date();
+
+
+      const today =
+        now.toISOString()
+          .slice(0,10);
+
+
+      return trades
+        .filter(
+          trade => {
+
+            const date =
+              getTradeDate(trade);
+
+
+            return (
+              date &&
+              date.toISOString()
+                .slice(0,10) === today
+            );
+          }
+        )
+        .reduce(
+          (sum, trade) =>
+            sum + getTradePL(trade),
+          0
+        );
+    }
+
+
+    /* =====================================================
+       UPDATE DASHBOARD
+    ====================================================== */
+
+    function updateDashboard() {
+
+      currentTrades =
+        loadTrades();
+
+
+      const stats =
+        calculateStatistics(
+          currentTrades
+        );
+
+
+      setText(
+        "totalTrades",
+        stats.total
+      );
+
+
+      setText(
+        "winningTrades",
+        stats.wins.length
+      );
+
+
+      setText(
+        "losingTrades",
+        stats.losses.length
+      );
+
+
+      setText(
+        "winRate",
+        percent(stats.winRate)
+      );
+
+
+      setText(
+        "totalProfit",
+        money(stats.grossProfit)
+      );
+
+
+      setText(
+        "totalLoss",
+        money(-stats.grossLoss)
+      );
+
+
+      setText(
+        "netProfit",
+        money(stats.net)
+      );
+
+
+      setText(
+        "profitFactor",
+        stats.profitFactor
+          ? stats.profitFactor.toFixed(2)
+          : "0.00"
+      );
+
+
+      setText(
+        "largestWin",
+        money(stats.largestWin)
+      );
+
+
+      setText(
+        "largestLoss",
+        money(stats.largestLoss)
+      );
+
+
+      setText(
+        "avgWin",
+        money(stats.averageWin)
+      );
+
+
+      setText(
+        "avgLoss",
+        money(-stats.averageLoss)
+      );
+
+
+      setText(
+        "bestPair",
+        calculateBestPair(
+          currentTrades
+        )
+      );
+
+
+      const daily =
+        calculateDailyPerformance(
+          currentTrades
+        );
+
+
+      setText(
+        "bestDay",
+        formatDay(
+          daily.best
+        )
+      );
+
+
+      setText(
+        "worstDay",
+        formatDay(
+          daily.worst
+        )
+      );
+
+
+      const streaks =
+        calculateStreaks(
+          currentTrades
+        );
+
+
+      setText(
+        "winStreak",
+        streaks.longestWin
+      );
+
+
+      setText(
+        "lossStreak",
+        streaks.longestLoss
+      );
+
+
+      const monthly =
+        calculateCurrentMonth(
+          currentTrades
+        );
+
+
+      setText(
+        "monthlyProfit",
+        money(monthly.profit)
+      );
+
+
+      setText(
+        "monthlyTrades",
+        monthly.trades
+      );
+
+
+      setText(
+        "monthlyWinRate",
+        percent(
+          monthly.winRate
+        )
+      );
+
+
+      const todayProfit =
+        calculateToday(
+          currentTrades
+        );
+
+
+      setText(
+        "dailyGoal",
+        money(todayProfit) +
+        " / " +
+        money(DAILY_GOAL)
+      );
+
+
+      const progress =
+        Math.max(
+          0,
+          Math.min(
+            100,
+            (todayProfit / DAILY_GOAL) *
+            100
+          )
+        );
+
+
+      const progressBar =
+        document.getElementById(
+          "goalProgress"
+        );
+
+
+      if (progressBar) {
+
+        progressBar.style.width =
+          progress + "%";
+      }
+
+
+      drawProfitChart(
+        currentTrades
+      );
+    }
+
+
+    /* =====================================================
+       PROFIT CHART
+    ====================================================== */
+
+    function drawProfitChart(
+      trades
+    ) {
+
+      const canvas =
+        document.getElementById(
+          "profitChart"
+        );
+
+
+      const empty =
+        document.getElementById(
+          "chartEmpty"
+        );
+
+
+      if (!canvas) {
+        return;
+      }
+
+
+      const ctx =
+        canvas.getContext("2d");
+
+
+      const rect =
+        canvas.getBoundingClientRect();
+
+
+      const ratio =
+        window.devicePixelRatio || 1;
+
+
+      const width =
+        Math.max(
+          300,
+          rect.width
+        );
+
+
+      const height =
+        230;
+
+
+      canvas.width =
+        width * ratio;
+
+
+      canvas.height =
+        height * ratio;
+
+
+      ctx.setTransform(
+        ratio,
+        0,
+        0,
+        ratio,
+        0,
+        0
+      );
+
+
+      ctx.clearRect(
+        0,
+        0,
+        width,
+        height
+      );
+
+
+      if (!trades.length) {
+
+        if (empty) {
+          empty.style.display =
+            "block";
+        }
+
+        return;
+      }
+
+
+      if (empty) {
+        empty.style.display =
+          "none";
+      }
+
+
+      const sorted =
+        [...trades].sort(
+          (a,b) => {
+
+            const da =
+              getTradeDate(a);
+
+            const db =
+              getTradeDate(b);
+
+
+            return (
+              (da?.getTime() || 0) -
+              (db?.getTime() || 0)
+            );
+          }
+        );
+
+
+      let running = 0;
+
+
+      const values =
+        sorted.map(
+          trade => {
+
+            running +=
+              getTradePL(trade);
+
+            return running;
+          }
+        );
+
+
+      const padding = 30;
+
+
+      const min =
+        Math.min(
+          0,
+          ...values
+        );
+
+
+      const max =
+        Math.max(
+          0,
+          ...values
+        );
+
+
+      const range =
+        max - min || 1;
+
+
+      const styles =
+        getComputedStyle(
+          document.documentElement
+        );
+
+
+      const border =
+        styles.getPropertyValue(
+          "--border"
+        );
+
+
+      const primary =
+        styles.getPropertyValue(
+          "--primary-2"
+        );
+
+
+      const text =
+        styles.getPropertyValue(
+          "--muted"
+        );
+
+
+      /* GRID */
+
+      ctx.strokeStyle =
+        border.trim();
+
+
+      ctx.lineWidth = 1;
+
+
+      for (
+        let i = 0;
+        i <= 4;
+        i++
+      ) {
+
+        const y =
+          padding +
+          (
+            (height -
+              padding * 2) *
+            i / 4
+          );
+
+
+        ctx.beginPath();
+
+        ctx.moveTo(
+          padding,
+          y
+        );
+
+        ctx.lineTo(
+          width - padding,
+          y
+        );
+
+        ctx.stroke();
+      }
+
+
+      /* ZERO LINE */
+
+      const zeroY =
+        padding +
+        (
+          (max / range) *
+          (height -
+            padding * 2)
+        );
+
+
+      ctx.strokeStyle =
+        text.trim();
+
+      ctx.setLineDash(
+        [4,4]
+      );
+
+
+      ctx.beginPath();
+
+      ctx.moveTo(
+        padding,
+        zeroY
+      );
+
+      ctx.lineTo(
+        width - padding,
+        zeroY
+      );
+
+      ctx.stroke();
+
+      ctx.setLineDash([]);
+
+
+      /* CURVE */
+
+      ctx.strokeStyle =
+        primary.trim();
+
+      ctx.lineWidth = 3;
+
+      ctx.lineJoin = "round";
+
+      ctx.lineCap = "round";
+
+
+      ctx.beginPath();
+
+
+      values.forEach(
+        (value, index) => {
+
+          const x =
+            values.length === 1
+              ? width / 2
+              : padding +
+                (
+                  (index /
+                    (values.length - 1)) *
+                  (width -
+                    padding * 2)
+                );
+
+
+          const y =
+            padding +
+            (
+              ((max - value) /
+                range) *
+              (height -
+                padding * 2)
+            );
+
+
+          if (index === 0) {
+
+            ctx.moveTo(
+              x,
+              y
+            );
+
+          } else {
+
+            ctx.lineTo(
+              x,
+              y
+            );
+          }
+
+        }
+      );
+
+
+      ctx.stroke();
+
+
+      /* LAST POINT */
+
+      const last =
+        values[
+          values.length - 1
+        ];
+
+
+      const lastX =
+        values.length === 1
+          ? width / 2
+          : width - padding;
+
+
+      const lastY =
+        padding +
+        (
+          ((max - last) /
+            range) *
+          (height -
+            padding * 2)
+        );
+
+
+      ctx.fillStyle =
+        primary.trim();
+
+
+      ctx.beginPath();
+
+      ctx.arc(
+        lastX,
+        lastY,
+        5,
+        0,
+        Math.PI * 2
+      );
+
+      ctx.fill();
+    }
+
+
+    /* =====================================================
+       WINDOW RESIZE
+    ====================================================== */
+
+    let resizeTimer;
+
+
+    window.addEventListener(
+      "resize",
+      function() {
+
+        clearTimeout(
+          resizeTimer
+        );
+
+
+        resizeTimer =
+          setTimeout(
+            function() {
+
+              drawProfitChart(
+                currentTrades
+              );
+
+            },
+            150
+          );
+      }
+    );
+
+
+    /* =====================================================
+       LISTEN FOR JOURNAL UPDATES
+    ====================================================== */
+
+    window.addEventListener(
+      "storage",
+      function(event) {
+
+        if (
+          event.key ===
+          JOURNAL_STORAGE_KEY
+        ) {
+
+          updateDashboard();
+        }
+
+      }
+    );
+
+
+    /* =====================================================
+       CURRENT YEAR
+    ====================================================== */
+
+    const yearElement =
+      document.getElementById(
+        "currentYear"
+      );
+
+
+    if (yearElement) {
+
+      yearElement.textContent =
+        new Date()
+          .getFullYear();
+    }
+
+
+    /* =====================================================
+       BACK TO TOP
+    ====================================================== */
+
+    const topBtn =
+      document.getElementById(
+        "topBtn"
+      );
+
+
+    window.addEventListener(
+      "scroll",
+      function() {
+
+        if (
+          window.scrollY > 500
+        ) {
+
+          topBtn.classList.add(
+            "show"
+          );
+
+        } else {
+
+          topBtn.classList.remove(
+            "show"
+          );
+        }
+
+      }
+    );
+
+
+    topBtn.addEventListener(
+      "click",
+      function() {
+
+        window.scrollTo(
+          {
+            top: 0,
+            behavior: "smooth"
+          }
+        );
+
+      }
+    );
+
+
+    /* =====================================================
+       INITIALIZE
+    ====================================================== */
+
+    updateDashboard();
+
+  </script>
+
+
+</body>
+</html>
