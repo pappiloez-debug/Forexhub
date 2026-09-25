@@ -1,0 +1,2300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Dividend Reinvestment Calculator | DRIP & Dividend Growth Calculator | EZTradingHub</title>
+
+  <meta name="description"
+        content="Use the free EZTradingHub Dividend Reinvestment Calculator to estimate dividend income, reinvested dividends, share growth, portfolio value and compound growth with DRIP.">
+
+  <meta name="keywords"
+        content="dividend reinvestment calculator, DRIP calculator, dividend calculator, dividend growth calculator, reinvest dividends calculator, stock dividend reinvestment">
+
+  <meta name="author" content="EZTradingHub">
+
+  <meta name="robots" content="index, follow">
+
+  <link rel="canonical"
+        href="https://eztradinghub.com/dividend-reinvestment-calculator.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title"
+        content="Dividend Reinvestment Calculator | EZTradingHub">
+  <meta property="og:description"
+        content="Estimate how reinvested dividends can increase shares, dividend income and portfolio value over time.">
+  <meta property="og:url"
+        content="https://eztradinghub.com/dividend-reinvestment-calculator.html">
+  <meta property="og:site_name" content="EZTradingHub">
+  <meta property="og:image"
+        content="https://eztradinghub.com/assets/images/og-image.png">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title"
+        content="Dividend Reinvestment Calculator | EZTradingHub">
+  <meta name="twitter:description"
+        content="Calculate potential dividend reinvestment growth, additional shares, dividend income and projected portfolio value.">
+  <meta name="twitter:image"
+        content="https://eztradinghub.com/assets/images/og-image.png">
+
+  <meta name="theme-color" content="#075985">
+
+  <link rel="icon"
+        type="image/png"
+        href="/assets/images/favicon.png">
+
+  <link rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+  <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+  <!-- WebApplication Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Dividend Reinvestment Calculator",
+    "url": "https://eztradinghub.com/dividend-reinvestment-calculator.html",
+    "description": "Free dividend reinvestment calculator for estimating dividend growth, reinvested dividends, share accumulation and portfolio value.",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Web",
+    "browserRequirements": "Requires JavaScript",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "EZTradingHub",
+      "url": "https://eztradinghub.com/"
+    }
+  }
+  </script>
+
+  <!-- Breadcrumb Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://eztradinghub.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Calculators",
+        "item": "https://eztradinghub.com/calculators.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Dividend Reinvestment Calculator",
+        "item": "https://eztradinghub.com/dividend-reinvestment-calculator.html"
+      }
+    ]
+  }
+  </script>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is dividend reinvestment?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Dividend reinvestment means using dividend payments to purchase additional shares of the investment instead of taking the dividends as cash."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is a DRIP?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "DRIP stands for Dividend Reinvestment Plan. A DRIP allows investors to automatically use dividends to purchase additional shares, subject to the rules and fees of the broker or plan."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does dividend reinvestment increase the number of shares?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. When dividends are reinvested, they can purchase additional whole or fractional shares. Those additional shares may then generate future dividends."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does this calculator use live stock prices?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. EZTradingHub's Dividend Reinvestment Calculator uses the assumptions entered by the user and does not automatically retrieve live stock prices or dividend data."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are dividends guaranteed to continue?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Companies can increase, reduce, suspend or eliminate dividends. Dividend payments are not guaranteed."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does dividend reinvestment compound returns?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Reinvested dividends can create a compounding effect because additional shares may generate additional dividends in future periods."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg:#f4f7fb;
+      --surface:#ffffff;
+      --surface2:#f8fafc;
+      --text:#172033;
+      --muted:#667085;
+      --border:#e2e8f0;
+      --primary:#075985;
+      --primary2:#0ea5e9;
+      --success:#16a34a;
+      --warning:#d97706;
+      --danger:#dc2626;
+      --shadow:0 12px 35px rgba(15,23,42,.08);
+      --radius:18px;
+    }
+
+    body.dark {
+      --bg:#07111f;
+      --surface:#0e1b2d;
+      --surface2:#111f33;
+      --text:#f1f5f9;
+      --muted:#aab7c9;
+      --border:#24364d;
+      --primary:#38bdf8;
+      --primary2:#0ea5e9;
+      --success:#4ade80;
+      --warning:#fbbf24;
+      --danger:#fb7185;
+      --shadow:0 12px 35px rgba(0,0,0,.25);
+    }
+
+    * {
+      box-sizing:border-box;
+    }
+
+    html {
+      scroll-behavior:smooth;
+    }
+
+    body {
+      margin:0;
+      font-family:"Inter",Arial,sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.65;
+      transition:background .25s ease,color .25s ease;
+    }
+
+    a {
+      color:var(--primary);
+      text-decoration:none;
+    }
+
+    a:hover {
+      text-decoration:underline;
+    }
+
+    button,
+    input,
+    select {
+      font:inherit;
+    }
+
+    button {
+      cursor:pointer;
+    }
+
+    .site-header {
+      position:sticky;
+      top:0;
+      z-index:1000;
+      background:var(--surface);
+      border-bottom:1px solid var(--border);
+      box-shadow:0 4px 18px rgba(0,0,0,.04);
+    }
+
+    .nav {
+      max-width:1180px;
+      margin:auto;
+      padding:14px 20px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+    }
+
+    .brand {
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-weight:800;
+      color:var(--text);
+      text-decoration:none;
+    }
+
+    .brand:hover {
+      text-decoration:none;
+    }
+
+    .brand-icon {
+      width:40px;
+      height:40px;
+      display:grid;
+      place-items:center;
+      border-radius:12px;
+      background:linear-gradient(135deg,var(--primary),var(--primary2));
+      color:#fff;
+      font-weight:800;
+    }
+
+    .nav-links {
+      display:flex;
+      align-items:center;
+      gap:18px;
+    }
+
+    .nav-links a {
+      color:var(--text);
+      font-weight:600;
+      font-size:14px;
+    }
+
+    .theme-btn {
+      border:1px solid var(--border);
+      background:var(--surface2);
+      color:var(--text);
+      border-radius:10px;
+      width:40px;
+      height:40px;
+      display:grid;
+      place-items:center;
+    }
+
+    .hero {
+      background:
+        radial-gradient(
+          circle at top right,
+          rgba(14,165,233,.28),
+          transparent 35%
+        ),
+        linear-gradient(
+          135deg,
+          #063b5c,
+          #075985 55%,
+          #0ea5e9
+        );
+      color:#fff;
+      padding:68px 20px;
+    }
+
+    .hero-inner {
+      max-width:1050px;
+      margin:auto;
+    }
+
+    .eyebrow {
+      display:inline-block;
+      padding:7px 12px;
+      border-radius:999px;
+      background:rgba(255,255,255,.14);
+      border:1px solid rgba(255,255,255,.2);
+      font-size:12px;
+      font-weight:700;
+      letter-spacing:.05em;
+      text-transform:uppercase;
+    }
+
+    .hero h1 {
+      font-size:clamp(32px,5vw,56px);
+      line-height:1.08;
+      margin:18px 0 16px;
+      max-width:900px;
+    }
+
+    .hero p {
+      max-width:800px;
+      margin:0;
+      font-size:18px;
+      opacity:.94;
+    }
+
+    .container {
+      width:min(1100px,calc(100% - 32px));
+      margin:auto;
+    }
+
+    .calculator-wrap {
+      margin-top:-38px;
+      position:relative;
+      z-index:2;
+    }
+
+    .calculator-card {
+      background:var(--surface);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:26px;
+    }
+
+    .calculator-card h2 {
+      margin-top:0;
+      font-size:24px;
+    }
+
+    .grid {
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:18px;
+    }
+
+    .field {
+      display:flex;
+      flex-direction:column;
+      gap:7px;
+    }
+
+    label {
+      font-weight:700;
+      font-size:14px;
+    }
+
+    .help {
+      color:var(--muted);
+      font-size:12px;
+    }
+
+    input,
+    select {
+      width:100%;
+      border:1px solid var(--border);
+      background:var(--surface2);
+      color:var(--text);
+      border-radius:11px;
+      padding:12px 13px;
+      outline:none;
+    }
+
+    input:focus,
+    select:focus {
+      border-color:var(--primary2);
+      box-shadow:0 0 0 3px rgba(14,165,233,.15);
+    }
+
+    .button-row {
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:22px;
+    }
+
+    .btn {
+      border:0;
+      border-radius:11px;
+      padding:12px 18px;
+      font-weight:800;
+      transition:transform .15s ease,opacity .15s ease;
+    }
+
+    .btn:hover {
+      transform:translateY(-1px);
+      opacity:.95;
+    }
+
+    .btn-primary {
+      background:linear-gradient(135deg,var(--primary),var(--primary2));
+      color:#fff;
+    }
+
+    .btn-secondary {
+      background:var(--surface2);
+      color:var(--text);
+      border:1px solid var(--border);
+    }
+
+    .results {
+      margin-top:28px;
+    }
+
+    .result-grid {
+      display:grid;
+      grid-template-columns:repeat(4,minmax(0,1fr));
+      gap:12px;
+    }
+
+    .result-box {
+      background:var(--surface2);
+      border:1px solid var(--border);
+      border-radius:14px;
+      padding:17px;
+    }
+
+    .result-label {
+      color:var(--muted);
+      font-size:12px;
+      font-weight:700;
+      text-transform:uppercase;
+      letter-spacing:.04em;
+    }
+
+    .result-value {
+      margin-top:5px;
+      font-size:21px;
+      font-weight:800;
+      overflow-wrap:anywhere;
+    }
+
+    .positive {
+      color:var(--success);
+    }
+
+    .negative {
+      color:var(--danger);
+    }
+
+    .formula {
+      margin-top:22px;
+      padding:18px;
+      border-radius:14px;
+      background:rgba(14,165,233,.08);
+      border:1px solid rgba(14,165,233,.18);
+    }
+
+    .formula strong {
+      display:block;
+      margin-bottom:6px;
+    }
+
+    .table-wrap {
+      margin-top:22px;
+      overflow-x:auto;
+      border:1px solid var(--border);
+      border-radius:14px;
+    }
+
+    table {
+      width:100%;
+      border-collapse:collapse;
+      min-width:700px;
+    }
+
+    th,
+    td {
+      padding:12px;
+      border-bottom:1px solid var(--border);
+      text-align:left;
+      font-size:13px;
+    }
+
+    th {
+      background:var(--surface2);
+      font-weight:800;
+    }
+
+    tr:last-child td {
+      border-bottom:0;
+    }
+
+    main {
+      padding-bottom:60px;
+    }
+
+    .content-section {
+      margin-top:42px;
+      background:var(--surface);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      padding:30px;
+      box-shadow:var(--shadow);
+    }
+
+    .content-section h2 {
+      margin-top:0;
+      font-size:27px;
+    }
+
+    .content-section h3 {
+      margin-top:28px;
+      font-size:20px;
+    }
+
+    .content-section ul,
+    .content-section ol {
+      padding-left:22px;
+    }
+
+    .example {
+      background:var(--surface2);
+      border-left:4px solid var(--primary2);
+      padding:17px 20px;
+      border-radius:10px;
+      margin:18px 0;
+    }
+
+    .faq-item {
+      border-bottom:1px solid var(--border);
+      padding:16px 0;
+    }
+
+    .faq-item:last-child {
+      border-bottom:0;
+    }
+
+    .faq-question {
+      font-weight:800;
+      margin-bottom:7px;
+    }
+
+    .related-grid {
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:12px;
+    }
+
+    .related-card {
+      display:block;
+      background:var(--surface2);
+      border:1px solid var(--border);
+      border-radius:14px;
+      padding:16px;
+      color:var(--text);
+    }
+
+    .related-card strong {
+      display:block;
+      margin-bottom:5px;
+    }
+
+    .disclaimer {
+      border-left:4px solid var(--warning);
+      background:rgba(217,119,6,.08);
+      padding:18px;
+      border-radius:10px;
+    }
+
+    footer {
+      background:var(--surface);
+      border-top:1px solid var(--border);
+      padding:35px 20px;
+    }
+
+    .footer-inner {
+      max-width:1100px;
+      margin:auto;
+      display:grid;
+      grid-template-columns:1.5fr 1fr 1fr;
+      gap:30px;
+    }
+
+    footer h3 {
+      margin-top:0;
+    }
+
+    footer a {
+      display:block;
+      margin:7px 0;
+      color:var(--muted);
+    }
+
+    .copyright {
+      max-width:1100px;
+      margin:25px auto 0;
+      padding-top:20px;
+      border-top:1px solid var(--border);
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    @media (max-width:850px) {
+
+      .nav-links a:nth-child(-n+3) {
+        display:none;
+      }
+
+      .result-grid {
+        grid-template-columns:repeat(2,minmax(0,1fr));
+      }
+
+      .related-grid {
+        grid-template-columns:1fr 1fr;
+      }
+
+      .footer-inner {
+        grid-template-columns:1fr 1fr;
+      }
+    }
+
+    @media (max-width:620px) {
+
+      .nav {
+        padding:12px 14px;
+      }
+
+      .hero {
+        padding:48px 16px 62px;
+      }
+
+      .hero p {
+        font-size:16px;
+      }
+
+      .container {
+        width:min(100% - 20px,1100px);
+      }
+
+      .calculator-card,
+      .content-section {
+        padding:20px;
+      }
+
+      .grid,
+      .result-grid,
+      .related-grid,
+      .footer-inner {
+        grid-template-columns:1fr;
+      }
+
+      .button-row .btn {
+        width:100%;
+      }
+    }
+
+    @media print {
+
+      .site-header,
+      .hero,
+      .button-row,
+      footer,
+      .related-section {
+        display:none !important;
+      }
+
+      body {
+        background:#fff;
+        color:#000;
+      }
+
+      .calculator-wrap {
+        margin-top:20px;
+      }
+
+      .calculator-card,
+      .content-section {
+        box-shadow:none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="site-header">
+
+  <nav class="nav" aria-label="Main navigation">
+
+    <a class="brand" href="index.html">
+      <span class="brand-icon" aria-hidden="true">EZ</span>
+      <span>EZTradingHub</span>
+    </a>
+
+    <div class="nav-links">
+
+      <a href="index.html">Home</a>
+      <a href="calculators.html">Calculators</a>
+      <a href="trade-journal.html">Trade Journal</a>
+      <a href="Dashboard.html">Dashboard</a>
+
+      <button
+        id="themeToggle"
+        class="theme-btn"
+        type="button"
+        aria-label="Switch between light and dark mode"
+        title="Toggle dark mode">
+        🌙
+      </button>
+
+    </div>
+
+  </nav>
+
+</header>
+
+
+<section class="hero">
+
+  <div class="hero-inner">
+
+    <span class="eyebrow">
+      Dividend Investing Tool
+    </span>
+
+    <h1>
+      Dividend Reinvestment Calculator
+    </h1>
+
+    <p>
+      Estimate how reinvesting dividends can increase your share count,
+      dividend income and portfolio value over time.
+    </p>
+
+  </div>
+
+</section>
+
+
+<main>
+
+<div class="container calculator-wrap">
+
+<section class="calculator-card"
+         aria-labelledby="calculator-title">
+
+  <h2 id="calculator-title">
+    Calculate Dividend Reinvestment Growth
+  </h2>
+
+  <p class="help">
+    Enter your investment assumptions below. The calculator provides an
+    illustrative projection based on constant assumptions.
+  </p>
+
+
+  <div class="grid">
+
+    <div class="field">
+
+      <label for="stock">
+        Stock / Ticker
+      </label>
+
+      <input
+        id="stock"
+        type="text"
+        value="AAPL"
+        maxlength="20"
+        placeholder="e.g. AAPL"
+        autocomplete="off">
+
+    </div>
+
+
+    <div class="field">
+
+      <label for="currency">
+        Currency
+      </label>
+
+      <select id="currency">
+
+        <option value="USD">
+          USD ($)
+        </option>
+
+        <option value="NGN">
+          NGN (₦)
+        </option>
+
+        <option value="EUR">
+          EUR (€)
+        </option>
+
+        <option value="GBP">
+          GBP (£)
+        </option>
+
+      </select>
+
+    </div>
+
+
+    <div class="field">
+
+      <label for="initialInvestment">
+        Initial Investment
+      </label>
+
+      <input
+        id="initialInvestment"
+        type="number"
+        min="0.01"
+        step="0.01"
+        value="10000"
+        inputmode="decimal">
+
+    </div>
+
+
+    <div class="field">
+
+      <label for="sharePrice">
+        Current Share Price
+      </label>
+
+      <input
+        id="sharePrice"
+        type="number"
+        min="0.01"
+        step="0.01"
+        value="100"
+        inputmode="decimal">
+
+      <span class="help">
+        Used to estimate the initial number of shares and reinvestment.
+      </span>
+
+    </div>
+
+
+    <div class="field">
+
+      <label for="dividendPerShare">
+        Annual Dividend Per Share
+      </label>
+
+      <input
+        id="dividendPerShare"
+        type="number"
+        min="0"
+        step="0.0001"
+        value="2.00"
+        inputmode="decimal">
+
+      <span class="help">
+        Enter the annual dividend per share, not the individual payment.
+      </span>
+
+    </div>
+
+
+    <div class="field">
+
+      <label for="dividendGrowth">
+        Annual Dividend Growth
+      </label>
+
+      <input
+        id="dividendGrowth"
+        type="number"
+        min="-100"
+        max="100"
+        step="0.1"
+        value="5"
+        inputmode="decimal">
+
+      <span class="help">
+        Assumed annual percentage increase or decrease in dividends.
+      </span>
+
+    </div>
+
+
+    <div class="field">
+
+      <label for="shareGrowth">
+        Annual Share Price Growth
+      </label>
+
+      <input
+        id="shareGrowth"
+        type="number"
+        min="-100"
+        max="100"
+        step="0.1"
+        value="5"
+        inputmode="decimal">
+
+      <span class="help">
+        Assumed annual stock price growth.
+      </span>
+
+    </div>
+
+
+    <div class="field">
+
+      <label for="years">
+        Investment Period
+      </label>
+
+      <input
+        id="years"
+        type="number"
+        min="1"
+        max="100"
+        step="1"
+        value="20"
+        inputmode="numeric">
+
+    </div>
+
+
+    <div class="field">
+
+      <label for="frequency">
+        Dividend Frequency
+      </label>
+
+      <select id="frequency">
+
+        <option value="1">
+          Annual
+        </option>
+
+        <option value="2">
+          Semi-Annual
+        </option>
+
+        <option value="4" selected>
+          Quarterly
+        </option>
+
+        <option value="12">
+          Monthly
+        </option>
+
+      </select>
+
+    </div>
+
+
+    <div class="field">
+
+      <label for="reinvest">
+        Reinvest Dividends
+      </label>
+
+      <select id="reinvest">
+
+        <option value="yes" selected>
+          Yes — Reinvest Dividends
+        </option>
+
+        <option value="no">
+          No — Take Dividends as Cash
+        </option>
+
+      </select>
+
+    </div>
+
+  </div>
+
+
+  <div class="button-row">
+
+    <button
+      class="btn btn-primary"
+      id="calculateBtn"
+      type="button">
+      Calculate Projection
+    </button>
+
+    <button
+      class="btn btn-secondary"
+      id="resetBtn"
+      type="button">
+      Reset
+    </button>
+
+    <button
+      class="btn btn-secondary"
+      id="printBtn"
+      type="button">
+      Print Results
+    </button>
+
+  </div>
+
+
+  <div
+    id="errorMessage"
+    role="alert"
+    aria-live="polite"
+    class="help"
+    style="display:none;margin-top:15px;">
+  </div>
+
+
+  <section class="results"
+           aria-labelledby="results-title">
+
+    <h2 id="results-title">
+      Projection Results
+    </h2>
+
+    <div class="result-grid">
+
+      <div class="result-box">
+
+        <div class="result-label">
+          Initial Shares
+        </div>
+
+        <div class="result-value"
+             id="resultInitialShares">
+          100.00
+        </div>
+
+      </div>
+
+
+      <div class="result-box">
+
+        <div class="result-label">
+          Final Shares
+        </div>
+
+        <div class="result-value positive"
+             id="resultFinalShares">
+          0.00
+        </div>
+
+      </div>
+
+
+      <div class="result-box">
+
+        <div class="result-label">
+          Reinvested Dividends
+        </div>
+
+        <div class="result-value positive"
+             id="resultReinvested">
+          $0.00
+        </div>
+
+      </div>
+
+
+      <div class="result-box">
+
+        <div class="result-label">
+          Total Dividends
+        </div>
+
+        <div class="result-value"
+             id="resultDividends">
+          $0.00
+        </div>
+
+      </div>
+
+
+      <div class="result-box">
+
+        <div class="result-label">
+          Final Share Price
+        </div>
+
+        <div class="result-value"
+             id="resultFinalPrice">
+          $0.00
+        </div>
+
+      </div>
+
+
+      <div class="result-box">
+
+        <div class="result-label">
+          Final Portfolio Value
+        </div>
+
+        <div class="result-value positive"
+             id="resultPortfolio">
+          $0.00
+        </div>
+
+      </div>
+
+
+      <div class="result-box">
+
+        <div class="result-label">
+          Total Growth
+        </div>
+
+        <div class="result-value positive"
+             id="resultGrowth">
+          $0.00
+        </div>
+
+      </div>
+
+
+      <div class="result-box">
+
+        <div class="result-label">
+          Estimated Annual Dividend
+        </div>
+
+        <div class="result-value"
+             id="resultAnnualDividend">
+          $0.00
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="formula">
+
+      <strong>
+        Core Reinvestment Concept
+      </strong>
+
+      <span>
+        New Shares = Dividend Payment ÷ Share Price
+      </span>
+
+      <br>
+
+      <span>
+        Future Shares = Existing Shares + Reinvested Shares
+      </span>
+
+    </div>
+
+
+    <div class="table-wrap">
+
+      <table>
+
+        <thead>
+
+          <tr>
+            <th>Year</th>
+            <th>Shares</th>
+            <th>Share Price</th>
+            <th>Annual Dividend/Share</th>
+            <th>Dividend Income</th>
+            <th>Portfolio Value</th>
+          </tr>
+
+        </thead>
+
+        <tbody id="projectionBody">
+        </tbody>
+
+      </table>
+
+    </div>
+
+  </section>
+
+</section>
+
+
+<!-- Educational Content -->
+
+<section class="content-section">
+
+  <h2>
+    What Is Dividend Reinvestment?
+  </h2>
+
+  <p>
+    Dividend reinvestment is the process of using dividends received from
+    an investment to purchase additional shares instead of taking the
+    dividend as cash.
+  </p>
+
+  <p>
+    When additional shares are purchased, those shares may generate their
+    own dividends in future periods. Over long periods, this can create a
+    compounding effect where dividend income contributes to the growth of
+    the investment.
+  </p>
+
+
+  <h3>
+    What Is a DRIP?
+  </h3>
+
+  <p>
+    DRIP stands for <strong>Dividend Reinvestment Plan</strong>. A DRIP
+    allows dividends to be automatically reinvested into additional shares
+    of the investment.
+  </p>
+
+  <p>
+    Depending on the broker or plan, investors may be able to purchase
+    fractional shares. Fees, eligibility and tax treatment can vary.
+  </p>
+
+
+  <h3>
+    How This Calculator Works
+  </h3>
+
+  <ol>
+
+    <li>
+      Your initial investment is divided by the starting share price
+      to estimate your starting shares.
+    </li>
+
+    <li>
+      The calculator estimates dividend income based on the number
+      of shares held.
+    </li>
+
+    <li>
+      If dividend reinvestment is enabled, dividend income is used
+      to purchase additional shares.
+    </li>
+
+    <li>
+      The assumed dividend growth rate changes the estimated dividend
+      per share over time.
+    </li>
+
+    <li>
+      The assumed share-price growth rate changes the estimated value
+      of the investment.
+    </li>
+
+  </ol>
+
+
+  <h3>
+    Example of Dividend Compounding
+  </h3>
+
+  <div class="example">
+
+    <p>
+      Imagine you invest <strong>$10,000</strong> in a stock priced at
+      <strong>$100 per share</strong>. You would initially own approximately
+      <strong>100 shares</strong>.
+    </p>
+
+    <p>
+      If the stock pays $2 in annual dividends per share, the initial
+      annual dividend would be approximately $200.
+    </p>
+
+    <p>
+      If those dividends are reinvested, the $200 can be used to acquire
+      additional shares. Those additional shares can potentially produce
+      additional dividends in later years.
+    </p>
+
+  </div>
+
+
+  <h3>
+    Dividend Reinvestment vs Taking Cash
+  </h3>
+
+  <p>
+    Investors generally have two choices when receiving dividends: take
+    the dividend as cash or reinvest it into additional shares.
+  </p>
+
+  <p>
+    Reinvesting may increase the number of shares owned over time.
+    Taking dividends as cash may instead provide current income that can
+    be used for other purposes.
+  </p>
+
+  <p>
+    Neither approach is automatically better for every investor. The
+    appropriate choice depends on investment goals, taxes, valuation,
+    cash-flow needs and risk tolerance.
+  </p>
+
+
+  <h3>
+    Why Dividend Growth Matters
+  </h3>
+
+  <p>
+    A company that increases its dividend over time can potentially
+    increase the income generated by the shares an investor already owns.
+    However, dividend growth is never guaranteed.
+  </p>
+
+  <p>
+    Companies can reduce or eliminate dividends when business conditions,
+    cash flow or financial priorities change.
+  </p>
+
+
+  <h3>
+    Dividend Yield and Dividend Reinvestment
+  </h3>
+
+  <p>
+    Dividend yield compares the annual dividend per share with the current
+    share price. A higher yield does not necessarily mean a better investment.
+  </p>
+
+  <p>
+    Investors should examine the company's financial position, dividend
+    history, earnings, cash flow, valuation and broader business risks.
+  </p>
+
+
+  <h3>
+    Important Assumptions and Limitations
+  </h3>
+
+  <ul>
+
+    <li>
+      The calculator uses user-entered assumptions.
+    </li>
+
+    <li>
+      It does not retrieve live stock prices.
+    </li>
+
+    <li>
+      Actual share prices can fluctuate significantly.
+    </li>
+
+    <li>
+      Actual dividends can increase, decrease or stop.
+    </li>
+
+    <li>
+      Taxes and transaction costs may reduce actual returns.
+    </li>
+
+    <li>
+      Fractional-share availability depends on the broker or investment plan.
+    </li>
+
+    <li>
+      Projections are illustrative and are not predictions of future performance.
+    </li>
+
+  </ul>
+
+</section>
+
+
+<!-- FAQ -->
+
+<section class="content-section">
+
+  <h2>
+    Dividend Reinvestment Calculator FAQ
+  </h2>
+
+
+  <div class="faq-item">
+
+    <div class="faq-question">
+      What is dividend reinvestment?
+    </div>
+
+    <div>
+      Dividend reinvestment means using dividend payments to purchase
+      additional shares instead of receiving the dividends as cash.
+    </div>
+
+  </div>
+
+
+  <div class="faq-item">
+
+    <div class="faq-question">
+      What is a DRIP?
+    </div>
+
+    <div>
+      DRIP stands for Dividend Reinvestment Plan. It allows dividends
+      to be automatically used to purchase additional shares, subject
+      to the rules of the broker or plan.
+    </div>
+
+  </div>
+
+
+  <div class="faq-item">
+
+    <div class="faq-question">
+      Does dividend reinvestment increase the number of shares?
+    </div>
+
+    <div>
+      Yes. Reinvested dividends can purchase additional whole or
+      fractional shares. Those additional shares may then generate
+      future dividends.
+    </div>
+
+  </div>
+
+
+  <div class="faq-item">
+
+    <div class="faq-question">
+      Does this calculator use live stock prices?
+    </div>
+
+    <div>
+      No. The calculator uses the assumptions you enter and does not
+      automatically retrieve live stock prices or dividend information.
+    </div>
+
+  </div>
+
+
+  <div class="faq-item">
+
+    <div class="faq-question">
+      Are dividends guaranteed to continue?
+    </div>
+
+    <div>
+      No. Companies can increase, reduce, suspend or eliminate dividends.
+      Dividend payments are not guaranteed.
+    </div>
+
+  </div>
+
+
+  <div class="faq-item">
+
+    <div class="faq-question">
+      Does dividend reinvestment compound returns?
+    </div>
+
+    <div>
+      Reinvested dividends can contribute to compounding because the
+      additional shares may generate additional dividends in future periods.
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- Related Tools -->
+
+<section class="content-section related-section">
+
+  <h2>
+    Related Stock & Investment Calculators
+  </h2>
+
+  <p>
+    Explore more EZTradingHub tools for analyzing stock returns,
+    dividends and portfolio growth.
+  </p>
+
+
+  <div class="related-grid">
+
+    <a class="related-card"
+       href="stock-dividend-calculator.html">
+
+      <strong>
+        Stock Dividend Calculator
+      </strong>
+
+      Estimate annual dividend income and dividend yield.
+
+    </a>
+
+
+    <a class="related-card"
+       href="stock-dividend-yield-calculator.html">
+
+      <strong>
+        Stock Dividend Yield Calculator
+      </strong>
+
+      Calculate dividend yield and estimated dividend income.
+
+    </a>
+
+
+    <a class="related-card"
+       href="stock-cagr-calculator.html">
+
+      <strong>
+        Stock CAGR Calculator
+      </strong>
+
+      Calculate compound annual growth rate.
+
+    </a>
+
+
+    <a class="related-card"
+       href="stock-return-calculator.html">
+
+      <strong>
+        Stock Return Calculator
+      </strong>
+
+      Calculate stock investment return, dividends and ROI.
+
+    </a>
+
+
+    <a class="related-card"
+       href="stock-profit-calculator.html">
+
+      <strong>
+        Stock Profit Calculator
+      </strong>
+
+      Calculate stock profit, loss, fees and break-even price.
+
+    </a>
+
+
+    <a class="related-card"
+       href="stock-portfolio-calculator.html">
+
+      <strong>
+        Stock Portfolio Calculator
+      </strong>
+
+      Calculate portfolio value, allocation, profit and ROI.
+
+    </a>
+
+
+    <a class="related-card"
+       href="stock-average-cost-calculator.html">
+
+      <strong>
+        Stock Average Cost Calculator
+      </strong>
+
+      Calculate average share cost across multiple purchases.
+
+    </a>
+
+
+    <a class="related-card"
+       href="account-growth-calculator.html">
+
+      <strong>
+        Account Growth Calculator
+      </strong>
+
+      Explore the effect of compound investment growth.
+
+    </a>
+
+
+    <a class="related-card"
+       href="calculators.html">
+
+      <strong>
+        All Trading Calculators
+      </strong>
+
+      Browse the full EZTradingHub calculator collection.
+
+    </a>
+
+  </div>
+
+</section>
+
+
+<!-- Disclaimer -->
+
+<section class="content-section">
+
+  <h2>
+    Financial Disclaimer
+  </h2>
+
+  <div class="disclaimer">
+
+    <p>
+      EZTradingHub provides calculators and educational information
+      for general informational purposes only. The Dividend Reinvestment
+      Calculator is not financial, investment, tax or legal advice.
+    </p>
+
+    <p>
+      The projections generated by this calculator are estimates based
+      on user-entered assumptions. Actual investment results can differ
+      substantially because stock prices, dividends, taxes, fees and
+      market conditions change over time.
+    </p>
+
+    <p>
+      Historical dividend payments and investment returns do not guarantee
+      future results. Always conduct your own research and consider
+      consulting a qualified financial professional before making
+      investment decisions.
+    </p>
+
+  </div>
+
+</section>
+
+</div>
+
+</main>
+
+
+<footer>
+
+  <div class="footer-inner">
+
+    <div>
+
+      <h3>
+        EZTradingHub
+      </h3>
+
+      <p>
+        Smart trading and investment tools designed to help users
+        understand risk, returns, portfolio growth and financial
+        calculations.
+      </p>
+
+    </div>
+
+
+    <div>
+
+      <h3>
+        Explore
+      </h3>
+
+      <a href="index.html">Home</a>
+      <a href="calculators.html">Calculators</a>
+      <a href="trade-journal.html">Trade Journal</a>
+      <a href="Dashboard.html">Dashboard</a>
+      <a href="about.html">About</a>
+
+    </div>
+
+
+    <div>
+
+      <h3>
+        Legal
+      </h3>
+          
+      <a href="faq.html">
+        FAQ
+      </a>
+
+
+      <a href="privacy.html">
+        Privacy Policy
+      </a>
+
+      <a href="terms.html">
+        Terms
+      </a>
+
+      <a href="disclaimer.html">
+        Disclaimer
+      </a>
+
+      <a href="cookie-policy.html">
+        Cookie Policy
+      </a>
+
+      <a href="contact.html">
+        Contact
+      </a>
+
+    </div>
+
+  </div>
+
+
+  <div class="copyright">
+
+    © <span id="year"></span>
+    EZTradingHub. All rights reserved.
+
+  </div>
+
+</footer>
+
+
+<script>
+
+"use strict";
+
+
+/* =========================
+   THEME
+========================= */
+
+const themeToggle =
+  document.getElementById("themeToggle");
+
+const savedTheme =
+  localStorage.getItem("ezth-theme");
+
+if (savedTheme === "dark") {
+  document.body.classList.add("dark");
+}
+
+
+function updateThemeIcon() {
+
+  themeToggle.textContent =
+    document.body.classList.contains("dark")
+      ? "☀️"
+      : "🌙";
+
+}
+
+
+updateThemeIcon();
+
+
+themeToggle.addEventListener("click", () => {
+
+  document.body.classList.toggle("dark");
+
+  localStorage.setItem(
+    "ezth-theme",
+    document.body.classList.contains("dark")
+      ? "dark"
+      : "light"
+  );
+
+  updateThemeIcon();
+
+});
+
+
+/* =========================
+   HELPERS
+========================= */
+
+function get(id) {
+  return document.getElementById(id);
+}
+
+
+function getCurrencyInfo() {
+
+  const currency =
+    get("currency").value;
+
+  const currencies = {
+
+    USD: {
+      symbol:"$",
+      locale:"en-US"
+    },
+
+    NGN: {
+      symbol:"₦",
+      locale:"en-NG"
+    },
+
+    EUR: {
+      symbol:"€",
+      locale:"de-DE"
+    },
+
+    GBP: {
+      symbol:"£",
+      locale:"en-GB"
+    }
+
+  };
+
+  return currencies[currency] || currencies.USD;
+
+}
+
+
+function money(value) {
+
+  const info =
+    getCurrencyInfo();
+
+  return new Intl.NumberFormat(
+    info.locale,
+    {
+      minimumFractionDigits:2,
+      maximumFractionDigits:2
+    }
+  ).format(value) + " " + info.symbol;
+
+}
+
+
+function number(value, decimals = 2) {
+
+  return Number(value).toLocaleString(
+    undefined,
+    {
+      minimumFractionDigits:decimals,
+      maximumFractionDigits:decimals
+    }
+  );
+
+}
+
+
+/* =========================
+   CALCULATOR
+========================= */
+
+function calculate() {
+
+  const stock =
+    get("stock").value
+      .trim()
+      .toUpperCase() || "—";
+
+  const initialInvestment =
+    Number(get("initialInvestment").value);
+
+  const sharePrice =
+    Number(get("sharePrice").value);
+
+  const annualDividend =
+    Number(get("dividendPerShare").value);
+
+  const dividendGrowth =
+    Number(get("dividendGrowth").value) / 100;
+
+  const shareGrowth =
+    Number(get("shareGrowth").value) / 100;
+
+  const years =
+    Number(get("years").value);
+
+  const frequency =
+    Number(get("frequency").value);
+
+  const reinvest =
+    get("reinvest").value === "yes";
+
+  const error =
+    get("errorMessage");
+
+
+  error.style.display = "none";
+  error.textContent = "";
+
+
+  if (
+    !Number.isFinite(initialInvestment) ||
+    initialInvestment <= 0
+  ) {
+
+    error.textContent =
+      "Please enter an initial investment greater than zero.";
+
+    error.style.display = "block";
+    return;
+
+  }
+
+
+  if (
+    !Number.isFinite(sharePrice) ||
+    sharePrice <= 0
+  ) {
+
+    error.textContent =
+      "Please enter a share price greater than zero.";
+
+    error.style.display = "block";
+    return;
+
+  }
+
+
+  if (
+    !Number.isFinite(annualDividend) ||
+    annualDividend < 0
+  ) {
+
+    error.textContent =
+      "Annual dividend per share cannot be negative.";
+
+    error.style.display = "block";
+    return;
+
+  }
+
+
+  if (
+    !Number.isFinite(years) ||
+    years < 1 ||
+    years > 100
+  ) {
+
+    error.textContent =
+      "Please enter an investment period between 1 and 100 years.";
+
+    error.style.display = "block";
+    return;
+
+  }
+
+
+  if (
+    !Number.isFinite(dividendGrowth) ||
+    dividendGrowth <= -1
+  ) {
+
+    error.textContent =
+      "Dividend growth must be greater than -100%.";
+
+    error.style.display = "block";
+    return;
+
+  }
+
+
+  if (
+    !Number.isFinite(shareGrowth) ||
+    shareGrowth <= -1
+  ) {
+
+    error.textContent =
+      "Share-price growth must be greater than -100%.";
+
+    error.style.display = "block";
+    return;
+
+  }
+
+
+  const initialShares =
+    initialInvestment / sharePrice;
+
+
+  let shares =
+    initialShares;
+
+  let totalDividends = 0;
+  let totalReinvested = 0;
+
+  let currentPrice =
+    sharePrice;
+
+  let currentDividend =
+    annualDividend;
+
+
+  const projectionBody =
+    get("projectionBody");
+
+  projectionBody.innerHTML = "";
+
+
+  /*
+    We simulate each dividend period.
+
+    Dividend per period =
+    annual dividend / payment frequency.
+
+    At the end of each period:
+
+    dividend income =
+    shares × dividend per period
+
+    If reinvestment is enabled:
+
+    new shares =
+    dividend income / current share price
+  */
+
+
+  for (let year = 1; year <= years; year++) {
+
+    let yearlyDividend = 0;
+
+    const dividendPerPeriod =
+      currentDividend / frequency;
+
+
+    for (
+      let period = 1;
+      period <= frequency;
+      period++
+    ) {
+
+      const dividendPayment =
+        shares * dividendPerPeriod;
+
+      yearlyDividend +=
+        dividendPayment;
+
+      totalDividends +=
+        dividendPayment;
+
+
+      if (reinvest) {
+
+        const newShares =
+          dividendPayment / currentPrice;
+
+        shares += newShares;
+
+        totalReinvested +=
+          dividendPayment;
+
+      }
+
+    }
+
+
+    const portfolioValue =
+      shares * currentPrice;
+
+
+    const row =
+      document.createElement("tr");
+
+
+    row.innerHTML = `
+
+      <td>${year}</td>
+
+      <td>${number(shares, 4)}</td>
+
+      <td>${money(currentPrice)}</td>
+
+      <td>${money(currentDividend)}</td>
+
+      <td>${money(yearlyDividend)}</td>
+
+      <td>${money(portfolioValue)}</td>
+
+    `;
+
+
+    projectionBody.appendChild(row);
+
+
+    /*
+      Apply annual growth assumptions
+      for the next year.
+    */
+
+    currentPrice *=
+      (1 + shareGrowth);
+
+    currentDividend *=
+      (1 + dividendGrowth);
+
+  }
+
+
+  const finalPrice =
+    currentPrice / (1 + shareGrowth);
+
+
+  const finalPortfolio =
+    shares * finalPrice;
+
+
+  const finalAnnualDividend =
+    shares * currentDividend /
+    (1 + dividendGrowth);
+
+
+  const totalGrowth =
+    finalPortfolio -
+    initialInvestment;
+
+
+  get("resultInitialShares")
+    .textContent =
+    number(initialShares, 4);
+
+
+  get("resultFinalShares")
+    .textContent =
+    number(shares, 4);
+
+
+  get("resultReinvested")
+    .textContent =
+    money(totalReinvested);
+
+
+  get("resultDividends")
+    .textContent =
+    money(totalDividends);
+
+
+  get("resultFinalPrice")
+    .textContent =
+    money(finalPrice);
+
+
+  get("resultPortfolio")
+    .textContent =
+    money(finalPortfolio);
+
+
+  get("resultGrowth")
+    .textContent =
+    money(totalGrowth);
+
+
+  get("resultAnnualDividend")
+    .textContent =
+    money(finalAnnualDividend);
+
+
+  get("results-title").textContent =
+    stock + " Dividend Reinvestment Projection";
+
+}
+
+
+/* =========================
+   RESET
+========================= */
+
+get("resetBtn").addEventListener(
+  "click",
+  () => {
+
+    get("stock").value = "AAPL";
+
+    get("currency").value = "USD";
+
+    get("initialInvestment").value =
+      "10000";
+
+    get("sharePrice").value =
+      "100";
+
+    get("dividendPerShare").value =
+      "2";
+
+    get("dividendGrowth").value =
+      "5";
+
+    get("shareGrowth").value =
+      "5";
+
+    get("years").value =
+      "20";
+
+    get("frequency").value =
+      "4";
+
+    get("reinvest").value =
+      "yes";
+
+    calculate();
+
+  }
+);
+
+
+/* =========================
+   PRINT
+========================= */
+
+get("printBtn").addEventListener(
+  "click",
+  () => {
+    window.print();
+  }
+);
+
+
+/* =========================
+   EVENTS
+========================= */
+
+get("calculateBtn").addEventListener(
+  "click",
+  calculate
+);
+
+
+[
+  "stock",
+  "initialInvestment",
+  "sharePrice",
+  "dividendPerShare",
+  "dividendGrowth",
+  "shareGrowth",
+  "years"
+].forEach(id => {
+
+  get(id).addEventListener(
+    "input",
+    calculate
+  );
+
+});
+
+
+[
+  "currency",
+  "frequency",
+  "reinvest"
+].forEach(id => {
+
+  get(id).addEventListener(
+    "change",
+    calculate
+  );
+
+});
+
+
+/* =========================
+   FOOTER YEAR
+========================= */
+
+get("year").textContent =
+  new Date().getFullYear();
+
+
+/* Initial calculation */
+
+calculate();
+
+</script>
+
+</body>
+</html>
