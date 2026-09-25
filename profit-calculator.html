@@ -1,416 +1,2145 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Forex Profit Calculator — Calculate Trading Profit | EZTradingHub</title>
+  <meta charset="UTF-8">
 
-<meta name="description" content="Use the free EZTradingHub Forex Profit Calculator to estimate trading profit or loss from entry price, exit price, trade direction and position size.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="canonical" href="https://eztradinghub.com/calculators/profit-calculator.html">
+  <title>Trading Profit Calculator – Calculate Forex Profit & Loss | EZTradingHub</title>
 
-<meta property="og:title" content="Forex Profit Calculator | EZTradingHub">
-<meta property="og:description" content="Calculate estimated forex trading profit or loss using entry price, exit price, trade direction and position size.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://eztradinghub.com/calculators/profit-calculator.html">
-<meta property="og:image" content="https://eztradinghub.com/og-image.jpg">
+  <meta name="description" content="Use the free EZTradingHub Trading Profit Calculator to estimate potential forex trading profit or loss using entry price, exit price, lot size and pip value.">
 
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Forex Profit Calculator | EZTradingHub">
-<meta name="twitter:description" content="Estimate forex trading profit or loss before entering or reviewing a trade.">
-<meta name="twitter:image" content="https://eztradinghub.com/og-image.jpg">
+  <meta name="keywords" content="profit calculator, forex profit calculator, trading profit calculator, forex profit and loss calculator, P&L calculator, trading P&L calculator, forex lot profit calculator">
 
-<meta name="description"
-      content="Free Forex Profit Calculator to estimate potential profit or loss from your trades using entry price, exit price, lot size and trade direction.">
+  <meta name="author" content="EZTradingHub">
 
-<meta name="keywords"
-      content="forex profit calculator, trading profit calculator, forex profit and loss calculator, forex calculator, trading calculator">
+  <meta name="robots" content="index, follow, max-image-preview:large">
 
-<meta name="robots"
-      content="index, follow">
+  <link rel="canonical" href="https://eztradinghub.com/profit-calculator.html">
 
-<link rel="canonical"
-      href="https://eztradinghub.com/profit-calculator.html">
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+  <link rel="apple-touch-icon" href="assets/images/favicon-32x32.png">
 
-<link rel="stylesheet" href="style.css">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Trading Profit Calculator – EZTradingHub">
+  <meta property="og:description" content="Calculate estimated forex trading profit or loss using entry price, exit price, lot size and pip value.">
+  <meta property="og:url" content="https://eztradinghub.com/profit-calculator.html">
+  <meta property="og:site_name" content="EZTradingHub">
+  <meta property="og:image" content="https://eztradinghub.com/assets/images/og-image.jpg">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Trading Profit Calculator – EZTradingHub">
+  <meta name="twitter:description" content="Estimate forex trading profit or loss with the EZTradingHub Profit Calculator.">
+  <meta name="twitter:image" content="https://eztradinghub.com/assets/images/og-image.jpg">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- WebApplication Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "EZTradingHub Trading Profit Calculator",
+    "url": "https://eztradinghub.com/profit-calculator.html",
+    "description": "Free online trading profit and loss calculator for estimating forex trade outcomes from entry price, exit price, lot size and pip value.",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Web",
+    "browserRequirements": "Requires JavaScript",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "EZTradingHub",
+      "url": "https://eztradinghub.com/"
+    }
+  }
+  </script>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a trading profit calculator?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A trading profit calculator estimates the potential profit or loss of a trade using information such as entry price, exit price, position size and pip value."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How is forex profit calculated?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Forex profit can be estimated from the price movement, position size and monetary value of each pip. The exact calculation depends on the currency pair, account currency and contract specifications."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can this calculator calculate both profit and loss?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. The calculator estimates a positive result when the trade moves in the selected direction and a negative result when it moves against the selected direction."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does the calculator include broker fees?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The basic calculation does not automatically include broker commissions, spreads, swaps, slippage or other trading costs."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+
+    :root {
+      --bg: #f5f7fb;
+      --surface: #ffffff;
+      --surface-2: #eef3f8;
+      --text: #172033;
+      --muted: #667085;
+      --border: #dce3ec;
+      --primary: #003b73;
+      --primary-2: #0066b3;
+      --accent: #f5b400;
+      --success: #16834b;
+      --danger: #c93636;
+      --shadow: 0 12px 35px rgba(20, 40, 70, 0.08);
+      --radius: 16px;
+    }
+
+    body.dark {
+      --bg: #0a1220;
+      --surface: #121d2e;
+      --surface-2: #1a273b;
+      --text: #edf3fa;
+      --muted: #aab7c9;
+      --border: #2b3a51;
+      --primary: #4ca7ff;
+      --primary-2: #78bcff;
+      --accent: #ffc533;
+      --success: #42ce84;
+      --danger: #ff7373;
+      --shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Inter", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      transition: background 0.25s ease, color 0.25s ease;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    button,
+    input,
+    select {
+      font: inherit;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: auto;
+    }
+
+    /* HEADER */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 3px 15px rgba(0,0,0,0.04);
+    }
+
+    .nav {
+      min-height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--text);
+      font-weight: 800;
+      font-size: 1.08rem;
+    }
+
+    .brand:hover {
+      text-decoration: none;
+    }
+
+    .brand-logo {
+      width: 40px;
+      height: 40px;
+      display: grid;
+      place-items: center;
+      border-radius: 11px;
+      background: linear-gradient(135deg, var(--primary), var(--primary-2));
+      color: #fff;
+      font-weight: 800;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    nav a {
+      color: var(--text);
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .theme-btn {
+      border: 1px solid var(--border);
+      background: var(--surface-2);
+      color: var(--text);
+      border-radius: 10px;
+      padding: 9px 12px;
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    /* HERO */
+
+    .hero {
+      padding: 65px 0 40px;
+      text-align: center;
+    }
+
+    .badge {
+      display: inline-block;
+      background: var(--surface-2);
+      color: var(--primary);
+      border-radius: 30px;
+      padding: 7px 13px;
+      margin-bottom: 17px;
+      font-size: 0.8rem;
+      font-weight: 800;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.25rem);
+      line-height: 1.15;
+      letter-spacing: -1.2px;
+      margin-bottom: 18px;
+    }
+
+    .hero p {
+      max-width: 770px;
+      margin: auto;
+      color: var(--muted);
+      font-size: 1.04rem;
+    }
+
+    /* ADS */
+
+    .ad-box {
+      max-width: 970px;
+      min-height: 90px;
+      margin: 25px auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px dashed var(--border);
+      border-radius: 12px;
+      background: var(--surface);
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+    /* CALCULATOR */
+
+    .calculator-grid {
+      display: grid;
+      grid-template-columns: 1fr 0.9fr;
+      gap: 25px;
+      margin: 25px 0 40px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 27px;
+      box-shadow: var(--shadow);
+    }
+
+    .card h2 {
+      font-size: 1.3rem;
+      margin-bottom: 7px;
+    }
+
+    .card-intro {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 23px;
+    }
+
+    .form-group {
+      margin-bottom: 17px;
+    }
+
+    label {
+      display: block;
+      font-size: 0.87rem;
+      font-weight: 700;
+      margin-bottom: 7px;
+    }
+
+    .hint {
+      display: block;
+      color: var(--muted);
+      font-size: 0.76rem;
+      margin-top: 5px;
+    }
+
+    input,
+    select {
+      width: 100%;
+      padding: 12px 13px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: var(--surface);
+      color: var(--text);
+      outline: none;
+    }
+
+    input:focus,
+    select:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(0, 102, 179, 0.12);
+    }
+
+    .input-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .button-row {
+      display: flex;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .btn {
+      flex: 1;
+      border: 0;
+      border-radius: 10px;
+      padding: 13px 18px;
+      cursor: pointer;
+      font-weight: 800;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      opacity: 0.9;
+    }
+
+    .btn-secondary {
+      background: var(--surface-2);
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+
+    /* RESULTS */
+
+    .result-main {
+      text-align: center;
+      padding: 25px;
+      border-radius: 14px;
+      background: var(--surface-2);
+      margin-bottom: 18px;
+    }
+
+    .result-label {
+      color: var(--muted);
+      font-size: 0.82rem;
+      font-weight: 800;
+    }
+
+    .profit-result {
+      font-size: 3rem;
+      line-height: 1.1;
+      font-weight: 800;
+      color: var(--success);
+      margin: 8px 0;
+      word-break: break-word;
+    }
+
+    .result-subtitle {
+      color: var(--muted);
+      font-size: 0.84rem;
+    }
+
+    .result-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .result-item {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      padding: 12px 14px;
+      background: var(--surface-2);
+      border-radius: 10px;
+      font-size: 0.88rem;
+    }
+
+    .result-item span:first-child {
+      color: var(--muted);
+    }
+
+    .result-item strong {
+      text-align: right;
+    }
+
+    .positive {
+      color: var(--success);
+    }
+
+    .negative {
+      color: var(--danger);
+    }
+
+    .warning {
+      margin-top: 18px;
+      padding: 13px;
+      border-left: 4px solid var(--accent);
+      border-radius: 8px;
+      background: rgba(245, 180, 0, 0.12);
+      font-size: 0.82rem;
+    }
+
+    /* CONTENT */
+
+    .content-section {
+      margin: 35px 0;
+    }
+
+    .content-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 30px;
+      box-shadow: var(--shadow);
+    }
+
+    .content-card h2 {
+      font-size: 1.5rem;
+      margin-bottom: 13px;
+    }
+
+    .content-card h3 {
+      margin: 25px 0 9px;
+      font-size: 1.1rem;
+    }
+
+    .content-card p {
+      color: var(--muted);
+      margin-bottom: 13px;
+    }
+
+    .formula {
+      margin: 18px 0;
+      padding: 16px;
+      background: var(--surface-2);
+      border-left: 4px solid var(--primary);
+      border-radius: 8px;
+      font-weight: 700;
+      overflow-x: auto;
+    }
+
+    ul {
+      padding-left: 22px;
+      color: var(--muted);
+    }
+
+    li {
+      margin-bottom: 7px;
+    }
+
+    /* TABLE */
+
+    .table-wrapper {
+      overflow-x: auto;
+      margin: 20px 0;
+    }
+
+    table {
+      width: 100%;
+      min-width: 620px;
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      border: 1px solid var(--border);
+      padding: 12px;
+      text-align: left;
+    }
+
+    th {
+      background: var(--surface-2);
+    }
+
+    /* FAQ */
+
+    .faq-item {
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .faq-item:last-child {
+      border-bottom: 0;
+    }
+
+    .faq-question {
+      font-weight: 800;
+      margin-bottom: 6px;
+    }
+
+    .faq-answer {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    /* RELATED */
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .related-card {
+      display: block;
+      padding: 17px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--surface-2);
+    }
+
+    .related-card strong {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--text);
+    }
+
+    .related-card span {
+      color: var(--muted);
+      font-size: 0.8rem;
+    }
+
+    .related-card:hover {
+      text-decoration: none;
+      border-color: var(--primary);
+    }
+
+    /* DISCLAIMER */
+
+    .disclaimer {
+      margin: 35px 0;
+      padding: 18px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--surface-2);
+      color: var(--muted);
+      font-size: 0.83rem;
+    }
+
+    /* FOOTER */
+
+    footer {
+      margin-top: 50px;
+      padding: 35px 0;
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 30px;
+    }
+
+    footer h3 {
+      font-size: 1rem;
+      margin-bottom: 10px;
+    }
+
+    footer p,
+    footer a {
+      color: var(--muted);
+      font-size: 0.84rem;
+    }
+
+    .footer-links {
+      display: grid;
+      gap: 6px;
+    }
+
+    .copyright {
+      margin-top: 25px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      text-align: center;
+      font-size: 0.78rem;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 850px) {
+
+      .calculator-grid {
+        grid-template-columns: 1fr;
+      }
+
+      nav a {
+        display: none;
+      }
+
+      .related-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 560px) {
+
+      .hero {
+        padding-top: 45px;
+      }
+
+      .card,
+      .content-card {
+        padding: 20px;
+      }
+
+      .input-row {
+        grid-template-columns: 1fr;
+      }
+
+      .button-row {
+        flex-direction: column;
+      }
+
+      .related-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .profit-result {
+        font-size: 2.4rem;
+      }
+    }
+
+  </style>
 </head>
 
 <body>
-      
-<style>
-:root{--navy:#062f5f;--green:#047857;--dark:#111827;--text:#1f2937;--muted:#475569;--bg:#f8fafc;--card:#fff;--border:#e2e8f0}
-*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;line-height:1.7;color:var(--text);background:var(--bg)}
-header{background:var(--navy);color:#fff;padding:18px 20px}.header-inner{max-width:1000px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:20px}
-.brand,.back-link{color:#fff;text-decoration:none;font-weight:800}.brand{font-size:1.35rem}.back-link{font-weight:700}
-main{max-width:1000px;margin:40px auto;padding:0 20px}.hero,section{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:28px;margin-bottom:18px}
-.hero{padding:32px}.hero h1{margin-top:0;color:var(--dark);font-size:clamp(2rem,5vw,3rem)}h2{color:var(--dark);margin-top:0}.updated{color:var(--muted);font-size:.95rem}
-p,li{color:var(--text)}a{color:#065f46;font-weight:600}.notice{border-left:5px solid var(--green);background:#f0fdf4;padding:16px 18px;border-radius:8px}
-footer{background:var(--dark);color:#fff;text-align:center;padding:28px 20px;margin-top:45px}footer p{color:#fff}footer a{color:#fff;margin:0 8px}
-@media(max-width:650px){.header-inner{align-items:flex-start;flex-direction:column}main{margin-top:24px;padding:0 14px}.hero,section{padding:22px}}
-</style>
 
-<header>
-     <div class="header-inner">
-<a class="brand" href="index.html">EZTradingHub</a>
-<a class="back-link" href="index.html">← Back to Home</a>
-</div>
-</header>
-    
+  <!-- =========================
+       HEADER
+  ========================== -->
 
-    <h1>Forex Profit Calculator</h1>
+  <header>
 
-<p>
-Estimate the potential profit or loss of a forex trade using your entry
-price, exit price, trade direction and position size. Use the free
-EZTradingHub Profit Calculator to plan and review trades.
-</p>
+    <div class="container nav">
 
-    
+      <a href="index.html"
+         class="brand"
+         aria-label="EZTradingHub Home">
 
+        <span class="brand-logo">EZ</span>
+        <span>EZTradingHub</span>
 
-<section class="hero">
-    
-<label><strong>Trade Type</strong></label>
+      </a>
 
-<br><br>
+      <nav aria-label="Main navigation">
 
-<select id="tradeType">
+        <a href="index.html">Home</a>
+        <a href="calculators.html">Calculators</a>
+        <a href="about.html">About</a>
+        <a href="faq.html">FAQ</a>
 
-<option value="buy">🟢 Buy</option>
+        <button
+          type="button"
+          class="theme-btn"
+          id="themeToggle"
+          aria-label="Toggle light and dark mode">
+          🌙
+        </button>
 
-<option value="sell">🔴 Sell</option>
-
-</select>
-
-<br><br>
-
-<input type="number" id="entry" placeholder="Entry Price">
-
-<br><br>
-
-<input type="number" id="exit" placeholder="Exit Price">
-
-<br><br>
-
-<input type="number" id="lot" placeholder="Lot Size">
-
-<br><br>
-
-<button class="btn" onclick="calculateProfit()">
-Calculate Profit
-</button>
-    
-<br><br>
-
-<button class="btn" onclick="resetForm()">
-🔄 Reset
-</button>
-    
-<button class="btn" onclick="copyResult('profitResult')">
-📋 Copy Result
-</button>
-    
-<div id="profitResult" class="result-card"></div>
-    
-<h3>📜 Recent Calculations</h3>
-
-<div id="history" class="result-card">
-No calculations yet.
-</div>
-    
-<br><br>
-      
-      <section>
-    <h2>What Is a Forex Profit Calculator?</h2>
-
-    <p>
-        A forex profit calculator estimates how much a trading position
-        could gain or lose based on the price at which the trade is opened,
-        the price at which it is closed, the trade direction and the
-        position size.
-    </p>
-
-    <p>
-        It can be useful before entering a trade to understand potential
-        outcomes and after a trade to review its performance.
-    </p>
-
-    <p>
-        The calculated result is an estimate. Actual trading results can
-        differ because of spreads, commissions, swaps, slippage, exchange
-        rates and broker-specific contract specifications.
-    </p>
-</section>
-      
-      <section>
-    <h2>How Buy and Sell Trades Affect Profit</h2>
-
-    <h3>Buy Trade</h3>
-
-    <p>
-        A buy trade generally profits when the market price increases
-        after the position is opened. The basic price movement is
-        calculated as the exit price minus the entry price.
-    </p>
-
-    <h3>Sell Trade</h3>
-
-    <p>
-        A sell trade generally profits when the market price decreases
-        after the position is opened. The basic price movement is
-        calculated as the entry price minus the exit price.
-    </p>
-</section>
-      
-      <section>
-    <h2>Forex Profit Calculation Formula</h2>
-
-    <p>For a simplified calculation:</p>
-
-    <div class="formula-box">
-        <strong>
-            Buy Profit = (Exit Price − Entry Price) × Position Size
-        </strong>
-    </div>
-
-    <div class="formula-box">
-        <strong>
-            Sell Profit = (Entry Price − Exit Price) × Position Size
-        </strong>
-    </div>
-
-    <p>
-        The exact monetary result depends on the instrument, contract size,
-        account currency and applicable exchange rate.
-    </p>
-</section>
-      
-      <section>
-    <h2>Forex Profit Calculator Example</h2>
-
-    <p>
-        Suppose a trader buys EUR/USD at 1.1000 and closes the position
-        at 1.1050.
-    </p>
-
-    <ul>
-        <li>Direction: Buy</li>
-        <li>Entry price: 1.1000</li>
-        <li>Exit price: 1.1050</li>
-        <li>Price movement: 0.0050</li>
-    </ul>
-
-    <p>
-        The position has moved in the trader's favor. The actual monetary
-        profit depends on the position size and the contract specifications
-        of the trade.
-    </p>
-</section>
-      
-      <section>
-    <h2>What Happens When a Trade Loses?</h2>
-
-    <p>
-        A loss occurs when the market moves against the trading position.
-        For a buy position, this generally means the exit price is below
-        the entry price. For a sell position, the exit price is above
-        the entry price.
-    </p>
-
-    <p>
-        Understanding potential losses is just as important as estimating
-        potential profits. Traders should consider their stop-loss,
-        position size and planned account risk before entering a trade.
-    </p>
-</section>
-      
-      <section>
-    <h2>Profit Potential and Risk Management</h2>
-
-    <p>
-        Estimating potential profit should not be separated from risk
-        management. Traders can compare a potential target with their
-        planned stop-loss to evaluate the risk-to-reward relationship
-        of a trade.
-    </p>
-
-    <p>
-        A larger potential profit does not automatically mean a trade is
-        better. Position size, probability, market conditions and the
-        amount being risked should also be considered.
-    </p>
-            <a href="risk-reward-calculator.html">
-    Calculate Risk-to-Reward Ratio
-</a>
-</section>
-      
-      <section>
-    <h2>Can the Profit Calculator Be Used for Gold?</h2>
-
-    <p>
-        Gold trading, commonly represented by XAUUSD, can also involve
-        calculating potential profit or loss from price movement and
-        position size.
-    </p>
-
-    <p>
-        However, gold contract specifications can differ from standard
-        forex currency pairs. Traders should verify the contract size,
-        tick size, tick value and minimum position size provided by their
-        broker.
-    </p>
-
-    <p>
-        For gold-specific calculations, see our
-        <a href="gold-profit-calculator.html">
-            Gold Profit Calculator
-        </a>.
-    </p>
-</section>
-      
-      <section>
-    <h2>Can I Calculate Crypto Profit?</h2>
-
-    <p>
-        Cryptocurrency trades can also involve calculating the difference
-        between an entry price and exit price multiplied by the amount of
-        the asset held.
-    </p>
-
-    <p>
-        Crypto exchanges can use different contract, fee and settlement
-        structures, so actual results may differ from a simple calculator
-        estimate.
-    </p>
-
-    <p>
-        For cryptocurrency-specific calculations, use the </p>
-        <a href="crypto-profit-calculator.html">
-            Crypto Profit Calculator
-        </a>.
-    
-            <p>check our FAQ session for more answers to your questions <a href="../faq.html">FREQUENT ASK QUESTION</a></p>
-</section>
-      
-      <section class="calculator-disclaimer">
-    <h2>Important Disclaimer</h2>
-
-    <p>
-        The EZTradingHub Pip Calculator is provided for educational and
-        informational purposes only. Calculated values are estimates and
-        may differ from the figures provided by your broker.
-    </p>
-
-    <p>
-        Actual trading results may be affected by exchange rates, spreads,
-        commissions, swaps, contract specifications, slippage, execution
-        prices and other market conditions.
-    </p>
-
-    <p>
-        Nothing on EZTradingHub constitutes financial, investment or trading
-        advice. Trading forex, CFDs, cryptocurrencies and other financial
-        instruments involves significant risk of loss.
-    </p>
-            
-    <a href="../disclaimer.html">Financial Disclaimer</a>
-</section>
-
-
-      
-<section class="related-tools">
-
-    <h2>Related Trading Calculators</h2>
-
-    <p>Explore more tools to help plan and manage your trades.</p>
-
-    <div class="related-tools-grid">
-
-        <a href="pip-calculator.html">
-            📈 Pip Calculator
-        </a>
-
-        <a href="lot-size-calculator.html">
-            📏 Lot Size Calculator
-        </a>
-
-        <a href="position-size-calculator.html">
-            📊 Position Size Calculator
-        </a>
-
-        <a href="risk-reward-calculator.html">
-            🎯 Risk-to-Reward Calculator
-        </a>
-
-        <a href="margin-calculator.html">
-            📉 Margin Calculator
-        </a>
-
-        <a href="drawdown-calculator.html">
-            📉 Drawdown Calculator
-        </a>
+      </nav>
 
     </div>
 
-</section>
+  </header>
 
-<a href="index.html" class="btn">
-🏠 Back to Home
-</a>
-    
-</section>
-<script src="script.js"></script>
 
-<footer>
+  <main>
 
-        <div>
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="faq.html">FAQ</a>
-            <a href="terms.html">Terms & Conditions</a>
-            <a href="privacy.html">Privacy Policy</a>
-            <a href="cookie-policy.html">Cookie Policy</a>
-            <a href="disclaimer.html">Disclaimer</a>
-            <a href="contact.html">Contact</a>
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <section class="hero">
+
+      <div class="container">
+
+        <span class="badge">
+          FREE TRADING CALCULATOR
+        </span>
+
+        <h1>
+          Trading Profit Calculator
+        </h1>
+
+        <p>
+          Estimate your potential forex trading profit or loss using your
+          entry price, exit price, lot size and pip value. Plan your trade
+          before entering the market with EZTradingHub.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- TOP AD -->
+
+    <div class="container">
+
+      <div class="ad-box" aria-label="Advertisement">
+        Advertisement
+      </div>
+
+    </div>
+
+
+    <!-- =========================
+         CALCULATOR
+    ========================== -->
+
+    <section class="container">
+
+      <div class="calculator-grid">
+
+
+        <!-- INPUT -->
+
+        <div class="card">
+
+          <h2>
+            Calculate Trading Profit
+          </h2>
+
+          <p class="card-intro">
+            Enter your trade details below to estimate the potential profit
+            or loss of your position.
+          </p>
+
+
+          <form id="profitForm">
+
+
+            <div class="form-group">
+
+              <label for="direction">
+                Trade Direction
+              </label>
+
+              <select id="direction">
+
+                <option value="buy">
+                  Buy / Long
+                </option>
+
+                <option value="sell">
+                  Sell / Short
+                </option>
+
+              </select>
+
+              <span class="hint">
+                Choose whether the trade is a buy or sell position.
+              </span>
+
+            </div>
+
+
+            <div class="input-row">
+
+
+              <div class="form-group">
+
+                <label for="entry">
+                  Entry Price
+                </label>
+
+                <input
+                  type="number"
+                  id="entry"
+                  min="0"
+                  step="0.00001"
+                  placeholder="Example: 1.08500"
+                  required>
+
+              </div>
+
+
+              <div class="form-group">
+
+                <label for="exit">
+                  Exit Price
+                </label>
+
+                <input
+                  type="number"
+                  id="exit"
+                  min="0"
+                  step="0.00001"
+                  placeholder="Example: 1.09500"
+                  required>
+
+              </div>
+
+            </div>
+
+
+            <div class="input-row">
+
+
+              <div class="form-group">
+
+                <label for="lotSize">
+                  Lot Size
+                </label>
+
+                <input
+                  type="number"
+                  id="lotSize"
+                  min="0.00001"
+                  step="0.01"
+                  placeholder="Example: 0.10"
+                  required>
+
+                <span class="hint">
+                  Example: 0.01, 0.10 or 1.00 lots.
+                </span>
+
+              </div>
+
+
+              <div class="form-group">
+
+                <label for="pipValue">
+                  Pip Value Per Standard Lot
+                </label>
+
+                <input
+                  type="number"
+                  id="pipValue"
+                  min="0.000001"
+                  step="0.000001"
+                  value="10"
+                  required>
+
+                <span class="hint">
+                  Example: $10 per pip for many USD-quoted pairs.
+                </span>
+
+              </div>
+
+            </div>
+
+
+            <div class="form-group">
+
+              <label for="pipSize">
+                Pip Size
+              </label>
+
+              <select id="pipSize">
+
+                <option value="0.0001">
+                  0.0001 — Most Forex Pairs
+                </option>
+
+                <option value="0.01">
+                  0.01 — JPY Pairs / Instruments
+                </option>
+
+              </select>
+
+              <span class="hint">
+                Select the pip size used by the instrument.
+              </span>
+
+            </div>
+
+
+            <div class="form-group">
+
+              <label for="commission">
+                Estimated Commission Per Lot
+              </label>
+
+              <input
+                type="number"
+                id="commission"
+                min="0"
+                step="0.01"
+                value="0"
+                placeholder="Example: 3.50">
+
+              <span class="hint">
+                Optional. Enter the estimated round-trip commission per
+                standard lot if you want it included.
+              </span>
+
+            </div>
+
+
+            <div class="button-row">
+
+              <button
+                type="submit"
+                class="btn btn-primary">
+                Calculate Profit
+              </button>
+
+              <button
+                type="button"
+                class="btn btn-secondary"
+                id="resetBtn">
+                Reset
+              </button>
+
+            </div>
+
+
+          </form>
+
         </div>
 
-        <p class="copyright">
-            © 2026 EZTradingHub. All rights reserved.
+
+        <!-- RESULTS -->
+
+        <div class="card">
+
+          <h2>
+            Profit & Loss Result
+          </h2>
+
+          <p class="card-intro">
+            Your estimated trade outcome is displayed below.
+          </p>
+
+
+          <div class="result-main">
+
+            <div class="result-label">
+              ESTIMATED NET RESULT
+            </div>
+
+            <div
+              id="profitResult"
+              class="profit-result">
+              $0.00
+            </div>
+
+            <div
+              id="resultSubtitle"
+              class="result-subtitle">
+              Enter your trade details to calculate.
+            </div>
+
+          </div>
+
+
+          <div class="result-list">
+
+
+            <div class="result-item">
+
+              <span>
+                Price Movement
+              </span>
+
+              <strong id="priceMovement">
+                0.00000
+              </strong>
+
+            </div>
+
+
+            <div class="result-item">
+
+              <span>
+                Pips
+              </span>
+
+              <strong id="pipMovement">
+                0.00 pips
+              </strong>
+
+            </div>
+
+
+            <div class="result-item">
+
+              <span>
+                Gross Profit / Loss
+              </span>
+
+              <strong id="grossResult">
+                $0.00
+              </strong>
+
+            </div>
+
+
+            <div class="result-item">
+
+              <span>
+                Estimated Commission
+              </span>
+
+              <strong id="commissionResult">
+                $0.00
+              </strong>
+
+            </div>
+
+
+            <div class="result-item">
+
+              <span>
+                Lot Size
+              </span>
+
+              <strong id="lotResult">
+                0.00
+              </strong>
+
+            </div>
+
+
+            <div class="result-item">
+
+              <span>
+                Result Per Pip
+              </span>
+
+              <strong id="perPipResult">
+                $0.00
+              </strong>
+
+            </div>
+
+
+          </div>
+
+
+          <div class="warning">
+
+            <strong>Important:</strong>
+            This calculator provides an estimate. Actual trading results
+            can differ because of spread, slippage, commission, swaps,
+            execution price, currency conversion and broker contract
+            specifications.
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- MIDDLE AD -->
+
+    <div class="container">
+
+      <div class="ad-box" aria-label="Advertisement">
+        Advertisement
+      </div>
+
+    </div>
+
+
+    <!-- =========================
+         EDUCATIONAL CONTENT
+    ========================== -->
+
+    <section class="container content-section">
+
+      <article class="content-card">
+
+        <h2>
+          What Is a Trading Profit Calculator?
+        </h2>
+
+        <p>
+          A trading profit calculator is a tool that estimates the potential
+          monetary gain or loss from a trade. Traders can enter an entry
+          price, exit price, position size and pip value to estimate how a
+          price movement could affect the position.
         </p>
 
-        <p class="copyright">
-            EZTradingHub provides educational and informational tools.
-            Trading involves risk.
+        <p>
+          Profit and loss calculations are particularly useful when planning
+          a trade because they allow traders to understand the approximate
+          financial effect of a planned price movement before opening a
+          position.
         </p>
 
-    </footer>
-    <script src="cookie-consent.js"></script>
+
+        <h3>
+          How Forex Trading Profit Is Calculated
+        </h3>
+
+        <p>
+          A simplified forex calculation uses the number of pips gained or
+          lost and the monetary value of each pip.
+        </p>
+
+        <div class="formula">
+
+          Gross Profit/Loss =
+          Pip Movement × Pip Value Per Lot × Lot Size
+
+        </div>
+
+        <p>
+          The pip movement is determined by comparing the entry price and
+          exit price. For a buy position, a higher exit price generally
+          produces a positive price movement. For a sell position, a lower
+          exit price generally produces a positive price movement.
+        </p>
 
 
-<button id="topBtn" onclick="topFunction()">
+        <h3>
+          Example: Buy Trade
+        </h3>
 
-⬆️
+        <p>
+          Suppose a trader buys EUR/USD at 1.08500 and closes the position
+          at 1.09500. The difference is 0.01000, equivalent to 100 pips
+          using a 0.0001 pip size.
+        </p>
 
-</button>
+        <p>
+          If the position is 0.10 standard lots and the assumed pip value is
+          $10 per standard lot, the estimated gross result would be:
+        </p>
+
+        <div class="formula">
+
+          100 pips × $10 × 0.10 =
+          $100 estimated gross profit
+
+        </div>
+
+
+        <h3>
+          Example: Sell Trade
+        </h3>
+
+        <p>
+          For a sell position, the calculation works in the opposite
+          direction. If the entry price is higher than the exit price, the
+          trade can produce a positive price-based result before trading
+          costs.
+        </p>
+
+
+        <h3>
+          Gross Profit vs. Net Profit
+        </h3>
+
+        <p>
+          Gross profit or loss is the result before trading costs. Net profit
+          or loss accounts for applicable costs such as commissions.
+        </p>
+
+        <div class="formula">
+
+          Net Profit/Loss =
+          Gross Profit/Loss − Trading Costs
+
+        </div>
+
+        <p>
+          Spreads, commissions, swaps, slippage and other charges can affect
+          the actual result of a trade. This calculator allows an optional
+          commission estimate, but it does not automatically know your
+          broker's actual trading costs.
+        </p>
+
+
+        <h3>
+          What Affects Trading Profit?
+        </h3>
+
+        <ul>
+
+          <li>
+            Entry price
+          </li>
+
+          <li>
+            Exit price
+          </li>
+
+          <li>
+            Position size
+          </li>
+
+          <li>
+            Pip value
+          </li>
+
+          <li>
+            Spread
+          </li>
+
+          <li>
+            Commission
+          </li>
+
+          <li>
+            Slippage
+          </li>
+
+          <li>
+            Swap or overnight financing
+          </li>
+
+          <li>
+            Currency conversion
+          </li>
+
+          <li>
+            Broker contract specifications
+          </li>
+
+        </ul>
+
+
+        <h3>
+          Profit Does Not Mean Guaranteed Returns
+        </h3>
+
+        <p>
+          A calculator can estimate the mathematical outcome of a price
+          movement, but it cannot predict whether a trade will reach its
+          target. Market prices can move unpredictably, and actual execution
+          can differ from the prices used in a calculation.
+        </p>
+
+      </article>
+
+    </section>
+
+
+    <!-- =========================
+         P&L TABLE
+    ========================== -->
+
+    <section class="container content-section">
+
+      <div class="content-card">
+
+        <h2>
+          Common Forex Position Sizes
+        </h2>
+
+        <p>
+          The following examples show commonly used standard-lot
+          conventions. Actual contract specifications can vary by broker
+          and instrument.
+        </p>
+
+
+        <div class="table-wrapper">
+
+          <table>
+
+            <thead>
+
+              <tr>
+                <th>Lot Size</th>
+                <th>Approximate Units</th>
+                <th>Common Description</th>
+              </tr>
+
+            </thead>
+
+            <tbody>
+
+              <tr>
+                <td>1.00</td>
+                <td>100,000</td>
+                <td>Standard Lot</td>
+              </tr>
+
+              <tr>
+                <td>0.10</td>
+                <td>10,000</td>
+                <td>Mini Lot</td>
+              </tr>
+
+              <tr>
+                <td>0.01</td>
+                <td>1,000</td>
+                <td>Micro Lot</td>
+              </tr>
+
+              <tr>
+                <td>0.001</td>
+                <td>100</td>
+                <td>Nano Lot</td>
+              </tr>
+
+            </tbody>
+
+          </table>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         RELATED CALCULATORS
+    ========================== -->
+
+    <section class="container content-section">
+
+      <div class="content-card">
+
+        <h2>
+          Related Trading Calculators
+        </h2>
+
+        <p>
+          Continue planning your trades with other EZTradingHub calculators.
+        </p>
+
+
+        <div class="related-grid">
+
+
+          <a
+            href="lot-size-calculator.html"
+            class="related-card">
+
+            <strong>
+              Lot Size Calculator
+            </strong>
+
+            <span>
+              Estimate position size based on account risk.
+            </span>
+
+          </a>
+
+
+          <a
+            href="risk-calculator.html"
+            class="related-card">
+
+            <strong>
+              Risk Calculator
+            </strong>
+
+            <span>
+              Estimate your planned monetary trading risk.
+            </span>
+
+          </a>
+
+
+          <a
+            href="risk-reward-calculator.html"
+            class="related-card">
+
+            <strong>
+              Risk-Reward Calculator
+            </strong>
+
+            <span>
+              Compare potential risk with potential reward.
+            </span>
+
+          </a>
+
+
+          <a
+            href="pip-calculator.html"
+            class="related-card">
+
+            <strong>
+              Pip Calculator
+            </strong>
+
+            <span>
+              Estimate pip values for forex positions.
+            </span>
+
+          </a>
+
+
+          <a
+            href="margin-calculator.html"
+            class="related-card">
+
+            <strong>
+              Margin Calculator
+            </strong>
+
+            <span>
+              Estimate potential margin requirements.
+            </span>
+
+          </a>
+
+
+          <a
+            href="position-size-calculator.html"
+            class="related-card">
+
+            <strong>
+              Position Size Calculator
+            </strong>
+
+            <span>
+              Calculate position size from your planned risk.
+            </span>
+
+          </a>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         FAQ
+    ========================== -->
+
+    <section class="container content-section">
+
+      <div class="content-card">
+
+        <h2>
+          Trading Profit Calculator FAQ
+        </h2>
+
+
+        <div class="faq-item">
+
+          <div class="faq-question">
+            What is a trading profit calculator?
+          </div>
+
+          <div class="faq-answer">
+            A trading profit calculator estimates potential profit or loss
+            using information such as entry price, exit price, position size
+            and pip value.
+          </div>
+
+        </div>
+
+
+        <div class="faq-item">
+
+          <div class="faq-question">
+            Can I calculate both profit and loss?
+          </div>
+
+          <div class="faq-answer">
+            Yes. The calculator can display a positive result when the price
+            moves in the selected trade direction and a negative result when
+            it moves against the selected direction.
+          </div>
+
+        </div>
+
+
+        <div class="faq-item">
+
+          <div class="faq-question">
+            Does this calculator work for forex?
+          </div>
+
+          <div class="faq-answer">
+            Yes. This calculator is designed primarily for basic forex
+            profit-and-loss estimation using pip values and standard lot
+            sizes.
+          </div>
+
+        </div>
+
+
+        <div class="faq-item">
+
+          <div class="faq-question">
+            Does it include spread and slippage?
+          </div>
+
+          <div class="faq-answer">
+            No. Spread and slippage are not automatically calculated because
+            they vary between brokers, instruments and market conditions.
+          </div>
+
+        </div>
+
+
+        <div class="faq-item">
+
+          <div class="faq-question">
+            Can I include commission?
+          </div>
+
+          <div class="faq-answer">
+            Yes. You can enter an estimated round-trip commission per
+            standard lot. The calculator subtracts the estimated commission
+            from the gross result.
+          </div>
+
+        </div>
+
+
+        <div class="faq-item">
+
+          <div class="faq-question">
+            Can I use this calculator for gold or cryptocurrency?
+          </div>
+
+          <div class="faq-answer">
+            Gold, cryptocurrencies, indices, stocks and commodities can use
+            different contract sizes and tick or point values. For those
+            instruments, use the appropriate EZTradingHub calculator and
+            verify the contract specifications with your broker.
+          </div>
+
+        </div>
+
+
+        <div class="faq-item">
+
+          <div class="faq-question">
+            Does a calculated profit guarantee that I will make money?
+          </div>
+
+          <div class="faq-answer">
+            No. The calculator only performs a mathematical estimate based
+            on the prices and position information entered. It does not
+            predict future market movements or guarantee trading results.
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+    <!-- BOTTOM AD -->
+
+    <div class="container">
+
+      <div class="ad-box" aria-label="Advertisement">
+        Advertisement
+      </div>
+
+    </div>
+
+
+    <!-- DISCLAIMER -->
+
+    <section class="container">
+
+      <div class="disclaimer">
+
+        <strong>Trading Disclaimer:</strong>
+        EZTradingHub provides calculators and educational resources for
+        general informational purposes only. Nothing on this page constitutes
+        financial, investment, trading or other professional advice.
+        Calculated results are estimates and should be independently verified
+        against your broker's specifications before making trading decisions.
+        Leveraged financial products involve significant risk and you can
+        lose money.
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer>
+
+    <div class="container">
+
+      <div class="footer-grid">
+
+
+        <div>
+
+          <h3>
+            EZTradingHub
+          </h3>
+
+          <p>
+            Smart trading calculators, tools and educational resources
+            designed to help traders plan and analyze their trades.
+          </p>
+
+        </div>
+
+
+        <div>
+
+          <h3>
+            Trading Tools
+          </h3>
+
+          <div class="footer-links">
+
+            <a href="calculators.html">
+              All Calculators
+            </a>
+
+            <a href="profit-calculator.html">
+              Profit Calculator
+            </a>
+
+            <a href="lot-size-calculator.html">
+              Lot Size Calculator
+            </a>
+
+            <a href="risk-calculator.html">
+              Risk Calculator
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <div>
+
+          <h3>
+            Information
+          </h3>
+
+          <div class="footer-links">
+
+            <a href="about.html">
+              About
+            </a>
+
+            <a href="faq.html">
+              FAQ
+            </a>
+
+            <a href="privacy.html">
+              Privacy Policy
+            </a>
+
+            <a href="terms.html">
+              Terms
+            </a>
+
+            <a href="disclaimer.html">
+              Disclaimer
+            </a>
+
+            <a href="contact.html">
+              Contact
+            </a>
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+
+      <div class="copyright">
+
+        © <span id="year"></span>
+        EZTradingHub. All rights reserved.
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- =========================
+       JAVASCRIPT
+  ========================== -->
+
+  <script>
+
+    /* =========================
+       THEME
+    ========================== */
+
+    const themeToggle =
+      document.getElementById("themeToggle");
+
+    function applyTheme(theme) {
+
+      if (theme === "dark") {
+
+        document.body.classList.add("dark");
+
+        themeToggle.textContent = "☀️";
+
+        themeToggle.setAttribute(
+          "aria-label",
+          "Switch to light mode"
+        );
+
+      } else {
+
+        document.body.classList.remove("dark");
+
+        themeToggle.textContent = "🌙";
+
+        themeToggle.setAttribute(
+          "aria-label",
+          "Switch to dark mode"
+        );
+
+      }
+
+    }
+
+
+    const savedTheme =
+      localStorage.getItem("ezth-theme");
+
+
+    if (savedTheme) {
+
+      applyTheme(savedTheme);
+
+    } else {
+
+      const prefersDark =
+        window.matchMedia &&
+        window.matchMedia(
+          "(prefers-color-scheme: dark)"
+        ).matches;
+
+      applyTheme(
+        prefersDark ? "dark" : "light"
+      );
+
+    }
+
+
+    themeToggle.addEventListener(
+      "click",
+      function () {
+
+        const isDark =
+          document.body.classList.contains("dark");
+
+        const newTheme =
+          isDark ? "light" : "dark";
+
+        localStorage.setItem(
+          "ezth-theme",
+          newTheme
+        );
+
+        applyTheme(newTheme);
+
+      }
+    );
+
+
+    /* =========================
+       CALCULATOR
+    ========================== */
+
+    const form =
+      document.getElementById("profitForm");
+
+    const direction =
+      document.getElementById("direction");
+
+    const entryInput =
+      document.getElementById("entry");
+
+    const exitInput =
+      document.getElementById("exit");
+
+    const lotInput =
+      document.getElementById("lotSize");
+
+    const pipValueInput =
+      document.getElementById("pipValue");
+
+    const pipSizeInput =
+      document.getElementById("pipSize");
+
+    const commissionInput =
+      document.getElementById("commission");
+
+
+    const profitResult =
+      document.getElementById("profitResult");
+
+    const resultSubtitle =
+      document.getElementById("resultSubtitle");
+
+    const priceMovement =
+      document.getElementById("priceMovement");
+
+    const pipMovement =
+      document.getElementById("pipMovement");
+
+    const grossResult =
+      document.getElementById("grossResult");
+
+    const commissionResult =
+      document.getElementById("commissionResult");
+
+    const lotResult =
+      document.getElementById("lotResult");
+
+    const perPipResult =
+      document.getElementById("perPipResult");
+
+
+    function formatMoney(value) {
+
+      const sign =
+        value < 0 ? "-$" : "$";
+
+      return sign +
+        Math.abs(value).toLocaleString(
+          undefined,
+          {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+          }
+        );
+
+    }
+
+
+    function calculateProfit() {
+
+      const directionValue =
+        direction.value;
+
+      const entry =
+        parseFloat(entryInput.value);
+
+      const exit =
+        parseFloat(exitInput.value);
+
+      const lotSize =
+        parseFloat(lotInput.value);
+
+      const pipValue =
+        parseFloat(pipValueInput.value);
+
+      const pipSize =
+        parseFloat(pipSizeInput.value);
+
+      const commissionPerLot =
+        parseFloat(
+          commissionInput.value
+        ) || 0;
+
+
+      if (
+        !Number.isFinite(entry) ||
+        !Number.isFinite(exit) ||
+        !Number.isFinite(lotSize) ||
+        !Number.isFinite(pipValue) ||
+        !Number.isFinite(pipSize)
+      ) {
+
+        return;
+
+      }
+
+
+      if (
+        entry <= 0 ||
+        exit <= 0 ||
+        lotSize <= 0 ||
+        pipValue <= 0 ||
+        pipSize <= 0
+      ) {
+
+        alert(
+          "Please enter valid positive values."
+        );
+
+        return;
+
+      }
+
+
+      /*
+        Buy:
+        Exit - Entry
+
+        Sell:
+        Entry - Exit
+      */
+
+      let movement;
+
+      if (directionValue === "buy") {
+
+        movement =
+          exit - entry;
+
+      } else {
+
+        movement =
+          entry - exit;
+
+      }
+
+
+      const pips =
+        movement / pipSize;
+
+
+      const perPip =
+        pipValue * lotSize;
+
+
+      const gross =
+        pips * perPip;
+
+
+      const commission =
+        commissionPerLot * lotSize;
+
+
+      const net =
+        gross - commission;
+
+
+      priceMovement.textContent =
+        movement.toFixed(5);
+
+
+      pipMovement.textContent =
+        pips.toFixed(2) + " pips";
+
+
+      grossResult.textContent =
+        formatMoney(gross);
+
+
+      commissionResult.textContent =
+        formatMoney(commission);
+
+
+      lotResult.textContent =
+        lotSize.toFixed(2);
+
+
+      perPipResult.textContent =
+        formatMoney(perPip);
+
+
+      profitResult.textContent =
+        formatMoney(net);
+
+
+      profitResult.classList.remove(
+        "positive",
+        "negative"
+      );
+
+
+      if (net > 0) {
+
+        profitResult.classList.add(
+          "positive"
+        );
+
+        resultSubtitle.textContent =
+          "Estimated net profit";
+
+      } else if (net < 0) {
+
+        profitResult.classList.add(
+          "negative"
+        );
+
+        resultSubtitle.textContent =
+          "Estimated net loss";
+
+      } else {
+
+        resultSubtitle.textContent =
+          "Estimated break-even result";
+
+      }
+
+    }
+
+
+    form.addEventListener(
+      "submit",
+      function(event) {
+
+        event.preventDefault();
+
+        calculateProfit();
+
+      }
+    );
+
+
+    /* =========================
+       RESET
+    ========================== */
+
+    document
+      .getElementById("resetBtn")
+      .addEventListener(
+        "click",
+        function() {
+
+          form.reset();
+
+          pipValueInput.value = "10";
+
+          commissionInput.value = "0";
+
+          profitResult.textContent =
+            "$0.00";
+
+          profitResult.classList.remove(
+            "positive",
+            "negative"
+          );
+
+          resultSubtitle.textContent =
+            "Enter your trade details to calculate.";
+
+          priceMovement.textContent =
+            "0.00000";
+
+          pipMovement.textContent =
+            "0.00 pips";
+
+          grossResult.textContent =
+            "$0.00";
+
+          commissionResult.textContent =
+            "$0.00";
+
+          lotResult.textContent =
+            "0.00";
+
+          perPipResult.textContent =
+            "$0.00";
+
+        }
+      );
+
+
+    /* =========================
+       FOOTER YEAR
+    ========================== */
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+  </script>
 
 </body>
-
 </html>
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "EZTradingHub Forex Profit Calculator",
-  "url": "https://eztradinghub.com/calculators/profit-calculator.html",
-  "applicationCategory": "FinanceApplication",
-  "operatingSystem": "Web",
-  "description": "Free forex profit and loss calculator for estimating trading results using entry price, exit price, direction and position size.",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  }
-}
-</script>
-
