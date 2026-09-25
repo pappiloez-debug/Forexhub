@@ -1,0 +1,2667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Stock Risk Calculator | Stock Trade Risk & Loss Calculator | EZTradingHub</title>
+
+  <meta name="description" content="Use the free EZTradingHub Stock Risk Calculator to estimate stock trade risk, maximum loss, risk per share, position value, risk percentage and potential profit.">
+
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="EZTradingHub">
+  <meta name="theme-color" content="#075985">
+
+  <link rel="canonical" href="https://eztradinghub.com/stock-risk-calculator.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Stock Risk Calculator | EZTradingHub">
+  <meta property="og:description" content="Calculate stock trade risk, maximum potential loss, risk per share, position value and potential profit.">
+  <meta property="og:url" content="https://eztradinghub.com/stock-risk-calculator.html">
+  <meta property="og:site_name" content="EZTradingHub">
+  <meta property="og:image" content="https://eztradinghub.com/assets/images/og-image.png">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Stock Risk Calculator | EZTradingHub">
+  <meta name="twitter:description" content="Calculate stock trade risk, maximum loss, position value and potential profit before entering a trade.">
+  <meta name="twitter:image" content="https://eztradinghub.com/assets/images/og-image.png">
+
+  <!-- Favicon -->
+  <link rel="icon" href="/assets/images/favicon.png">
+
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- =========================
+       WEB APPLICATION SCHEMA
+  ========================== -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebApplication",
+    "name":"Stock Risk Calculator",
+    "url":"https://eztradinghub.com/stock-risk-calculator.html",
+    "applicationCategory":"FinanceApplication",
+    "operatingSystem":"Web",
+    "description":"A free stock risk calculator for estimating risk per share, maximum loss, position value, account risk percentage and potential profit.",
+    "publisher":{
+      "@type":"Organization",
+      "name":"EZTradingHub",
+      "url":"https://eztradinghub.com/"
+    }
+  }
+  </script>
+
+  <!-- =========================
+       BREADCRUMB SCHEMA
+  ========================== -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BreadcrumbList",
+    "itemListElement":[
+      {
+        "@type":"ListItem",
+        "position":1,
+        "name":"EZTradingHub",
+        "item":"https://eztradinghub.com/"
+      },
+      {
+        "@type":"ListItem",
+        "position":2,
+        "name":"Calculators",
+        "item":"https://eztradinghub.com/calculators.html"
+      },
+      {
+        "@type":"ListItem",
+        "position":3,
+        "name":"Stock Risk Calculator",
+        "item":"https://eztradinghub.com/stock-risk-calculator.html"
+      }
+    ]
+  }
+  </script>
+
+  <!-- =========================
+       FAQ SCHEMA
+  ========================== -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {
+        "@type":"Question",
+        "name":"What is stock trade risk?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Stock trade risk is the amount of money a trader estimates could be lost if a stock reaches the planned stop-loss price. It is commonly calculated using the number of shares and the difference between entry price and stop-loss price."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"How do I calculate stock risk?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Stock risk can be estimated by multiplying the number of shares by the absolute difference between the entry price and stop-loss price, then adding applicable trading costs if required."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"What is risk percentage in stock trading?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Risk percentage represents the estimated amount at risk compared with the total account balance. It can be calculated by dividing estimated trade risk by account balance and multiplying by 100."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Does this calculator guarantee my maximum loss?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"No. The calculator provides an estimate based on the prices and position size entered. Market gaps, slippage, liquidity and execution conditions can cause actual losses to differ."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Does this stock risk calculator use live prices?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"No. The calculator uses prices entered manually by the user and does not connect to a brokerage account or provide live stock prices."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+
+    /* =========================
+       THEME VARIABLES
+    ========================== */
+
+    :root{
+      --bg:#f4f7fb;
+      --surface:#ffffff;
+      --surface2:#f8fafc;
+      --text:#172033;
+      --muted:#667085;
+      --border:#e2e8f0;
+
+      --primary:#075985;
+      --primary2:#0ea5e9;
+
+      --success:#16a34a;
+      --warning:#d97706;
+      --danger:#dc2626;
+
+      --shadow:0 12px 35px rgba(15,23,42,.08);
+
+      --radius:18px;
+    }
+
+    body.dark{
+      --bg:#07111f;
+      --surface:#0e1b2d;
+      --surface2:#111f33;
+      --text:#f1f5f9;
+      --muted:#aab7c9;
+      --border:#24364d;
+
+      --primary:#38bdf8;
+      --primary2:#0ea5e9;
+
+      --success:#4ade80;
+      --warning:#fbbf24;
+      --danger:#fb7185;
+
+      --shadow:0 12px 35px rgba(0,0,0,.25);
+    }
+
+    /* =========================
+       GLOBAL
+    ========================== */
+
+    *{
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      margin:0;
+      font-family:Inter,Arial,sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.65;
+      transition:
+        background .25s ease,
+        color .25s ease;
+    }
+
+    a{
+      color:var(--primary);
+      text-decoration:none;
+    }
+
+    a:hover{
+      text-decoration:underline;
+    }
+
+    /* =========================
+       HEADER
+    ========================== */
+
+    .site-header{
+      position:sticky;
+      top:0;
+      z-index:1000;
+
+      background:rgba(255,255,255,.94);
+
+      border-bottom:1px solid var(--border);
+
+      backdrop-filter:blur(12px);
+    }
+
+    body.dark .site-header{
+      background:rgba(7,17,31,.94);
+    }
+
+    .nav{
+      max-width:1180px;
+      min-height:68px;
+
+      margin:auto;
+      padding:0 18px;
+
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+
+      gap:18px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+
+      gap:10px;
+
+      color:var(--text);
+
+      font-weight:800;
+
+      white-space:nowrap;
+    }
+
+    .brand-icon{
+      width:40px;
+      height:40px;
+
+      display:grid;
+      place-items:center;
+
+      border-radius:12px;
+
+      color:#fff;
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--primary),
+          var(--primary2)
+        );
+
+      box-shadow:
+        0 8px 20px rgba(14,165,233,.22);
+    }
+
+    .nav-links{
+      display:flex;
+      align-items:center;
+      justify-content:flex-end;
+
+      gap:17px;
+
+      flex-wrap:wrap;
+    }
+
+    .nav-links a{
+      color:var(--text);
+
+      font-size:14px;
+
+      font-weight:600;
+    }
+
+    .theme-btn{
+      width:42px;
+      height:42px;
+
+      border:1px solid var(--border);
+
+      border-radius:12px;
+
+      background:var(--surface);
+
+      color:var(--text);
+
+      cursor:pointer;
+
+      font-size:18px;
+    }
+
+    /* =========================
+       HERO
+    ========================== */
+
+    .hero{
+      padding:68px 18px;
+
+      color:#fff;
+
+      background:
+        radial-gradient(
+          circle at 15% 20%,
+          rgba(14,165,233,.18),
+          transparent 32%
+        ),
+        radial-gradient(
+          circle at 85% 20%,
+          rgba(7,89,133,.20),
+          transparent 32%
+        ),
+        linear-gradient(
+          135deg,
+          #06283d,
+          #075985 55%,
+          #0ea5e9
+        );
+    }
+
+    .hero-inner{
+      max-width:1000px;
+
+      margin:auto;
+
+      text-align:center;
+    }
+
+    .eyebrow{
+      display:inline-block;
+
+      padding:7px 13px;
+
+      margin-bottom:15px;
+
+      border:1px solid rgba(255,255,255,.25);
+
+      border-radius:999px;
+
+      background:rgba(255,255,255,.10);
+
+      font-size:13px;
+
+      font-weight:700;
+    }
+
+    h1{
+      max-width:850px;
+
+      margin:0 auto 16px;
+
+      font-size:clamp(
+        30px,
+        5vw,
+        48px
+      );
+
+      line-height:1.1;
+
+      letter-spacing:-1.5px;
+    }
+
+    .hero p{
+      max-width:760px;
+
+      margin:auto;
+
+      color:rgba(255,255,255,.88);
+
+      font-size:17px;
+    }
+
+    /* =========================
+       CONTAINER
+    ========================== */
+
+    .container{
+      width:min(
+        1100px,
+        calc(100% - 32px)
+      );
+
+      margin:auto;
+    }
+
+    .calculator-wrap{
+      position:relative;
+
+      z-index:2;
+
+      margin-top:-35px;
+    }
+
+    /* =========================
+       CALCULATOR CARD
+    ========================== */
+
+    .calculator-card{
+      overflow:hidden;
+
+      background:var(--surface);
+
+      border:1px solid var(--border);
+
+      border-radius:var(--radius);
+
+      box-shadow:var(--shadow);
+    }
+
+    .card-header{
+      padding:24px;
+
+      border-bottom:1px solid var(--border);
+    }
+
+    .card-header h2{
+      margin:0 0 6px;
+
+      font-size:23px;
+    }
+
+    .card-header p{
+      margin:0;
+
+      color:var(--muted);
+
+      font-size:14px;
+    }
+
+    .form-area{
+      padding:24px;
+    }
+
+    .grid{
+      display:grid;
+
+      grid-template-columns:
+        repeat(2,minmax(0,1fr));
+
+      gap:18px;
+    }
+
+    .field{
+      display:flex;
+
+      flex-direction:column;
+
+      gap:7px;
+    }
+
+    label{
+      font-size:14px;
+
+      font-weight:700;
+    }
+
+    input,
+    select{
+      width:100%;
+
+      padding:13px 14px;
+
+      border:1px solid var(--border);
+
+      border-radius:12px;
+
+      background:var(--surface2);
+
+      color:var(--text);
+
+      outline:none;
+
+      font:inherit;
+    }
+
+    input:focus,
+    select:focus{
+      border-color:var(--primary2);
+
+      box-shadow:
+        0 0 0 3px
+        rgba(14,165,233,.13);
+    }
+
+    .help{
+      color:var(--muted);
+
+      font-size:12px;
+    }
+
+    /* =========================
+       BUTTONS
+    ========================== */
+
+    .actions{
+      display:flex;
+
+      gap:10px;
+
+      flex-wrap:wrap;
+
+      margin-top:22px;
+    }
+
+    .btn{
+      padding:12px 18px;
+
+      border:0;
+
+      border-radius:12px;
+
+      cursor:pointer;
+
+      font:inherit;
+
+      font-weight:700;
+    }
+
+    .btn-primary{
+      color:#fff;
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--primary),
+          var(--primary2)
+        );
+    }
+
+    .btn-secondary{
+      color:var(--text);
+
+      background:var(--surface2);
+
+      border:1px solid var(--border);
+    }
+
+    /* =========================
+       RESULTS
+    ========================== */
+
+    .results{
+      padding:24px;
+
+      background:var(--surface2);
+
+      border-top:1px solid var(--border);
+    }
+
+    .results h3{
+      margin:0 0 15px;
+    }
+
+    .result-grid{
+      display:grid;
+
+      grid-template-columns:
+        repeat(4,minmax(0,1fr));
+
+      gap:12px;
+    }
+
+    .result-box{
+      padding:16px;
+
+      background:var(--surface);
+
+      border:1px solid var(--border);
+
+      border-radius:14px;
+    }
+
+    .result-box.highlight{
+      border-color:
+        rgba(14,165,233,.45);
+
+      box-shadow:
+        0 6px 20px
+        rgba(14,165,233,.08);
+    }
+
+    .result-label{
+      margin-bottom:6px;
+
+      color:var(--muted);
+
+      font-size:12px;
+
+      font-weight:600;
+    }
+
+    .result-value{
+      font-size:20px;
+
+      font-weight:800;
+
+      word-break:break-word;
+    }
+
+    .positive{
+      color:var(--success);
+    }
+
+    .negative{
+      color:var(--danger);
+    }
+
+    .warning{
+      color:var(--warning);
+    }
+
+    .notice{
+      margin-top:16px;
+
+      padding:14px 16px;
+
+      border-radius:12px;
+
+      background:
+        rgba(217,119,6,.08);
+
+      border:
+        1px solid
+        rgba(217,119,6,.25);
+
+      font-size:13px;
+    }
+
+    /* =========================
+       CONTENT
+    ========================== */
+
+    main{
+      padding:52px 0;
+    }
+
+    .content{
+      max-width:900px;
+
+      margin:auto;
+    }
+
+    .section{
+      padding:28px;
+
+      margin-bottom:20px;
+
+      background:var(--surface);
+
+      border:1px solid var(--border);
+
+      border-radius:var(--radius);
+
+      box-shadow:
+        0 8px 25px
+        rgba(15,23,42,.04);
+    }
+
+    .section h2{
+      margin-top:0;
+
+      font-size:25px;
+    }
+
+    .section h3{
+      margin-top:24px;
+
+      font-size:18px;
+    }
+
+    .section p,
+    .section li{
+      color:var(--muted);
+    }
+
+    .formula{
+      padding:17px;
+
+      overflow:auto;
+
+      border:1px solid var(--border);
+
+      border-radius:12px;
+
+      background:var(--surface2);
+
+      font-weight:700;
+    }
+
+    .example{
+      padding:18px;
+
+      border-left:
+        4px solid var(--primary2);
+
+      border-radius:10px;
+
+      background:var(--surface2);
+    }
+
+    /* =========================
+       FAQ
+    ========================== */
+
+    .faq details{
+      margin-bottom:10px;
+
+      padding:15px 17px;
+
+      border:1px solid var(--border);
+
+      border-radius:12px;
+
+      background:var(--surface2);
+    }
+
+    .faq summary{
+      cursor:pointer;
+
+      font-weight:700;
+    }
+
+    /* =========================
+       RELATED
+    ========================== */
+
+    .related{
+      display:grid;
+
+      grid-template-columns:
+        repeat(2,minmax(0,1fr));
+
+      gap:12px;
+    }
+
+    .related a{
+      display:block;
+
+      padding:15px;
+
+      border:1px solid var(--border);
+
+      border-radius:12px;
+
+      background:var(--surface2);
+
+      font-weight:700;
+    }
+
+    /* =========================
+       DISCLAIMER
+    ========================== */
+
+    .disclaimer{
+      border-left:
+        4px solid var(--warning);
+    }
+
+    /* =========================
+       FOOTER
+    ========================== */
+
+    footer{
+      padding:35px 18px;
+
+      border-top:1px solid var(--border);
+
+      background:var(--surface);
+    }
+
+    .footer-inner{
+      max-width:1100px;
+
+      margin:auto;
+
+      display:flex;
+
+      justify-content:space-between;
+
+      gap:25px;
+
+      flex-wrap:wrap;
+    }
+
+    .footer-links{
+      display:flex;
+
+      gap:14px;
+
+      flex-wrap:wrap;
+    }
+
+    .footer-links a{
+      font-size:13px;
+    }
+
+    .copyright{
+      color:var(--muted);
+
+      font-size:13px;
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================== */
+
+    @media(max-width:850px){
+
+      .result-grid{
+        grid-template-columns:
+          repeat(2,minmax(0,1fr));
+      }
+
+      .nav-links a:nth-child(n+4){
+        display:none;
+      }
+    }
+
+    @media(max-width:650px){
+
+      .hero{
+        padding:50px 16px;
+      }
+
+      .container{
+        width:min(
+          100% - 20px,
+          1100px
+        );
+      }
+
+      .grid{
+        grid-template-columns:1fr;
+      }
+
+      .result-grid{
+        grid-template-columns:
+          repeat(2,minmax(0,1fr));
+      }
+
+      .section,
+      .form-area,
+      .results,
+      .card-header{
+        padding:20px;
+      }
+
+      .related{
+        grid-template-columns:1fr;
+      }
+
+      .nav{
+        padding:0 10px;
+      }
+
+      .brand span:last-child{
+        display:none;
+      }
+    }
+
+    @media(max-width:430px){
+
+      .result-grid{
+        grid-template-columns:1fr;
+      }
+
+      .actions .btn{
+        width:100%;
+      }
+    }
+
+    /* =========================
+       PRINT
+    ========================== */
+
+    @media print{
+
+      .site-header,
+      .hero,
+      .actions,
+      footer{
+        display:none!important;
+      }
+
+      .calculator-wrap{
+        margin-top:0;
+      }
+
+      body{
+        background:#fff;
+
+        color:#000;
+      }
+
+      .calculator-card,
+      .section{
+        box-shadow:none;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+<!-- =========================
+     HEADER
+========================== -->
+
+<header class="site-header">
+
+  <nav
+    class="nav"
+    aria-label="Main navigation">
+
+    <a
+      class="brand"
+      href="index.html">
+
+      <span class="brand-icon">
+        EZ
+      </span>
+
+      <span>
+        EZTradingHub
+      </span>
+
+    </a>
+
+    <div class="nav-links">
+
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="calculators.html">
+        Calculators
+      </a>
+
+      <a href="trade-journal.html">
+        Trade Journal
+      </a>
+
+      <a href="Dashboard.html">
+        Dashboard
+      </a>
+
+      <a href="about.html">
+        About
+      </a>
+
+      <button
+        class="theme-btn"
+        id="themeToggle"
+        type="button"
+        aria-label="Switch between light and dark mode"
+        title="Toggle dark mode">
+
+        🌙
+
+      </button>
+
+    </div>
+
+  </nav>
+
+</header>
+
+
+<!-- =========================
+     HERO
+========================== -->
+
+<section class="hero">
+
+  <div class="hero-inner">
+
+    <div class="eyebrow">
+      FREE STOCK RISK MANAGEMENT TOOL
+    </div>
+
+    <h1>
+      Stock Risk Calculator
+    </h1>
+
+    <p>
+      Estimate your stock trade risk, potential loss,
+      risk percentage, position value and potential profit
+      before entering a trade.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     CALCULATOR
+========================== -->
+
+<div class="container calculator-wrap">
+
+  <section
+    class="calculator-card"
+    aria-labelledby="calculator-title">
+
+    <div class="card-header">
+
+      <h2 id="calculator-title">
+        Calculate Stock Trade Risk
+      </h2>
+
+      <p>
+        Enter your account balance, position size,
+        entry price and stop-loss to estimate the
+        financial risk of the trade.
+      </p>
+
+    </div>
+
+
+    <div class="form-area">
+
+      <div class="grid">
+
+        <!-- Stock -->
+
+        <div class="field">
+
+          <label for="stock">
+            Stock / Ticker
+          </label>
+
+          <input
+            id="stock"
+            type="text"
+            value="AAPL"
+            maxlength="15"
+            autocomplete="off"
+            placeholder="e.g. AAPL">
+
+        </div>
+
+
+        <!-- Currency -->
+
+        <div class="field">
+
+          <label for="currency">
+            Currency
+          </label>
+
+          <select id="currency">
+
+            <option value="$">
+              $ USD
+            </option>
+
+            <option value="₦">
+              ₦ NGN
+            </option>
+
+            <option value="€">
+              € EUR
+            </option>
+
+            <option value="£">
+              £ GBP
+            </option>
+
+          </select>
+
+        </div>
+
+
+        <!-- Account -->
+
+        <div class="field">
+
+          <label for="account">
+            Account Balance
+          </label>
+
+          <input
+            id="account"
+            type="number"
+            min="0"
+            step="0.01"
+            value="10000"
+            inputmode="decimal">
+
+          <span class="help">
+            Total capital available for the trading account.
+          </span>
+
+        </div>
+
+
+        <!-- Shares -->
+
+        <div class="field">
+
+          <label for="shares">
+            Number of Shares
+          </label>
+
+          <input
+            id="shares"
+            type="number"
+            min="0"
+            step="1"
+            value="20"
+            inputmode="numeric">
+
+          <span class="help">
+            Enter the number of shares you plan to hold.
+          </span>
+
+        </div>
+
+
+        <!-- Entry -->
+
+        <div class="field">
+
+          <label for="entry">
+            Entry Price Per Share
+          </label>
+
+          <input
+            id="entry"
+            type="number"
+            min="0"
+            step="0.01"
+            value="100"
+            inputmode="decimal">
+
+        </div>
+
+
+        <!-- Stop -->
+
+        <div class="field">
+
+          <label for="stop">
+            Stop-Loss Price
+          </label>
+
+          <input
+            id="stop"
+            type="number"
+            min="0"
+            step="0.01"
+            value="95"
+            inputmode="decimal">
+
+          <span class="help">
+            Price at which you plan to exit if the trade moves against you.
+          </span>
+
+        </div>
+
+
+        <!-- Target -->
+
+        <div class="field">
+
+          <label for="target">
+            Take-Profit Price
+          </label>
+
+          <input
+            id="target"
+            type="number"
+            min="0"
+            step="0.01"
+            value="115"
+            inputmode="decimal">
+
+          <span class="help">
+            Optional target price used to estimate potential reward.
+          </span>
+
+        </div>
+
+
+        <!-- Fees -->
+
+        <div class="field">
+
+          <label for="fees">
+            Estimated Total Trading Fees
+          </label>
+
+          <input
+            id="fees"
+            type="number"
+            min="0"
+            step="0.01"
+            value="0"
+            inputmode="decimal">
+
+          <span class="help">
+            Enter estimated commissions and other trading costs.
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <!-- ACTIONS -->
+
+      <div class="actions">
+
+        <button
+          class="btn btn-primary"
+          id="calculateBtn"
+          type="button">
+
+          Calculate Risk
+
+        </button>
+
+
+        <button
+          class="btn btn-secondary"
+          id="resetBtn"
+          type="button">
+
+          Reset
+
+        </button>
+
+
+        <button
+          class="btn btn-secondary"
+          id="printBtn"
+          type="button">
+
+          Print
+
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <!-- =========================
+         RESULTS
+    ========================== -->
+
+    <div
+      class="results"
+      aria-live="polite">
+
+      <h3>
+        Stock Risk Results
+      </h3>
+
+
+      <div class="result-grid">
+
+
+        <div class="result-box highlight">
+
+          <div class="result-label">
+            Risk Per Share
+          </div>
+
+          <div
+            class="result-value"
+            id="riskPerShare">
+
+            —
+
+          </div>
+
+        </div>
+
+
+        <div class="result-box highlight">
+
+          <div class="result-label">
+            Estimated Trade Risk
+          </div>
+
+          <div
+            class="result-value negative"
+            id="tradeRisk">
+
+            —
+
+          </div>
+
+        </div>
+
+
+        <div class="result-box">
+
+          <div class="result-label">
+            Risk % of Account
+          </div>
+
+          <div
+            class="result-value"
+            id="riskPercent">
+
+            —
+
+          </div>
+
+        </div>
+
+
+        <div class="result-box">
+
+          <div class="result-label">
+            Position Value
+          </div>
+
+          <div
+            class="result-value"
+            id="positionValue">
+
+            —
+
+          </div>
+
+        </div>
+
+
+        <div class="result-box">
+
+          <div class="result-label">
+            Potential Gross Profit
+          </div>
+
+          <div
+            class="result-value positive"
+            id="potentialProfit">
+
+            —
+
+          </div>
+
+        </div>
+
+
+        <div class="result-box">
+
+          <div class="result-label">
+            Potential Net Profit
+          </div>
+
+          <div
+            class="result-value positive"
+            id="netProfit">
+
+            —
+
+          </div>
+
+        </div>
+
+
+        <div class="result-box">
+
+          <div class="result-label">
+            Risk-to-Reward
+          </div>
+
+          <div
+            class="result-value"
+            id="rrRatio">
+
+            —
+
+          </div>
+
+        </div>
+
+
+        <div class="result-box">
+
+          <div class="result-label">
+            Position % of Account
+          </div>
+
+          <div
+            class="result-value"
+            id="positionPercent">
+
+            —
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div
+        class="notice"
+        id="message">
+
+        Enter your stock trade information to calculate risk.
+
+      </div>
+
+    </div>
+
+  </section>
+
+</div>
+
+
+<!-- =========================
+     CONTENT
+========================== -->
+
+<main>
+
+  <div class="container content">
+
+
+    <!-- INTRO -->
+
+    <section class="section">
+
+      <h2>
+        What Is Stock Trade Risk?
+      </h2>
+
+      <p>
+        Stock trade risk is the amount of money a trader estimates could
+        be lost if a position reaches its planned stop-loss. Understanding
+        this amount before entering a trade can help traders make more
+        consistent risk-management decisions.
+      </p>
+
+      <p>
+        The basic calculation depends on the number of shares,
+        entry price and stop-loss price. Trading fees and other
+        execution costs can also affect the final result.
+      </p>
+
+      <p>
+        This Stock Risk Calculator is designed to help you estimate
+        those numbers quickly using the information you enter.
+      </p>
+
+    </section>
+
+
+    <!-- HOW TO USE -->
+
+    <section class="section">
+
+      <h2>
+        How to Use the Stock Risk Calculator
+      </h2>
+
+      <ol>
+
+        <li>
+          Enter the stock ticker or symbol.
+        </li>
+
+        <li>
+          Enter your account balance.
+        </li>
+
+        <li>
+          Enter the number of shares you plan to trade.
+        </li>
+
+        <li>
+          Enter your planned entry price.
+        </li>
+
+        <li>
+          Enter your stop-loss price.
+        </li>
+
+        <li>
+          Optionally enter your take-profit price.
+        </li>
+
+        <li>
+          Add estimated trading fees.
+        </li>
+
+        <li>
+          Select <strong>Calculate Risk</strong>.
+        </li>
+
+      </ol>
+
+      <p>
+        The calculator then estimates your risk per share,
+        total trade risk, risk percentage, position value,
+        potential reward and risk-to-reward ratio.
+      </p>
+
+    </section>
+
+
+    <!-- FORMULAS -->
+
+    <section class="section">
+
+      <h2>
+        Stock Risk Calculation Formula
+      </h2>
+
+      <p>
+        The basic price risk per share is calculated using the
+        absolute difference between the entry price and stop-loss.
+      </p>
+
+      <div class="formula">
+        Risk Per Share = |Entry Price − Stop-Loss Price|
+      </div>
+
+      <br>
+
+      <div class="formula">
+        Trade Risk = Risk Per Share × Number of Shares
+      </div>
+
+      <br>
+
+      <div class="formula">
+        Account Risk % = (Trade Risk ÷ Account Balance) × 100
+      </div>
+
+      <br>
+
+      <div class="formula">
+        Position Value = Entry Price × Number of Shares
+      </div>
+
+      <p>
+        These formulas provide an estimate. They do not account for
+        every possible market condition or execution outcome.
+      </p>
+
+    </section>
+
+
+    <!-- EXAMPLE -->
+
+    <section class="section">
+
+      <h2>
+        Stock Risk Calculation Example
+      </h2>
+
+      <div class="example">
+
+        <p>
+          Imagine a trader has a
+          <strong>$10,000</strong>
+          account and wants to purchase
+          <strong>20 shares</strong>
+          at
+          <strong>$100</strong>
+          per share.
+        </p>
+
+        <p>
+          The planned stop-loss is
+          <strong>$95</strong>.
+        </p>
+
+        <div class="formula">
+          Risk Per Share = $100 − $95 = $5
+        </div>
+
+        <br>
+
+        <div class="formula">
+          Trade Risk = $5 × 20 = $100
+        </div>
+
+        <br>
+
+        <div class="formula">
+          Account Risk = ($100 ÷ $10,000) × 100 = 1%
+        </div>
+
+        <p>
+          Under this simplified calculation, the trade has approximately
+          $100 of price risk before additional trading costs and execution
+          differences.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- RISK PERCENTAGE -->
+
+    <section class="section">
+
+      <h2>
+        What Is Risk Percentage?
+      </h2>
+
+      <p>
+        Risk percentage shows how large the estimated trade risk is
+        relative to the account balance.
+      </p>
+
+      <p>
+        For example, if a $20,000 account has an estimated $200 trade risk,
+        the trade risk is 1% of the account.
+      </p>
+
+      <div class="formula">
+        $200 ÷ $20,000 × 100 = 1%
+      </div>
+
+      <p>
+        Using a predefined risk percentage can help traders avoid allowing
+        individual positions to become disproportionately large relative
+        to their account.
+      </p>
+
+    </section>
+
+
+    <!-- STOP LOSS -->
+
+    <section class="section">
+
+      <h2>
+        Why Stop-Loss Distance Matters
+      </h2>
+
+      <p>
+        The distance between the entry price and stop-loss directly affects
+        the amount of risk per share.
+      </p>
+
+      <p>
+        If the stop-loss is farther away while the number of shares remains
+        unchanged, the estimated dollar risk increases.
+      </p>
+
+      <p>
+        Conversely, if a trader wants to maintain the same maximum dollar
+        risk while using a wider stop, the position size may need to be
+        reduced.
+      </p>
+
+      <p>
+        This relationship is one reason professional risk management often
+        considers both stop distance and position size together.
+      </p>
+
+    </section>
+
+
+    <!-- POSITION VALUE -->
+
+    <section class="section">
+
+      <h2>
+        Stock Risk vs. Position Value
+      </h2>
+
+      <p>
+        Trade risk and position value are not the same thing.
+      </p>
+
+      <ul>
+
+        <li>
+          <strong>Trade risk</strong> estimates the amount potentially lost
+          if the stop-loss is reached.
+        </li>
+
+        <li>
+          <strong>Position value</strong> represents the total value of
+          the shares purchased at the entry price.
+        </li>
+
+      </ul>
+
+      <p>
+        A $10,000 position does not automatically mean that $10,000 is at
+        risk. The estimated risk depends on the stop-loss distance and
+        number of shares.
+      </p>
+
+    </section>
+
+
+    <!-- RISK REWARD -->
+
+    <section class="section">
+
+      <h2>
+        Understanding Risk-to-Reward Ratio
+      </h2>
+
+      <p>
+        When a take-profit price is provided, the calculator estimates the
+        potential reward compared with the price risk.
+      </p>
+
+      <div class="formula">
+        Risk-to-Reward = Potential Reward Per Share ÷ Risk Per Share
+      </div>
+
+      <p>
+        For example, a 2:1 risk-to-reward ratio means the potential price
+        movement toward the target is twice the distance between the entry
+        and stop-loss.
+      </p>
+
+      <p>
+        Risk-to-reward ratio alone does not determine whether a trading
+        strategy is profitable. Win rate, market conditions, costs and
+        execution are also important.
+      </p>
+
+    </section>
+
+
+    <!-- FEES -->
+
+    <section class="section">
+
+      <h2>
+        How Trading Fees Affect Stock Risk
+      </h2>
+
+      <p>
+        Commissions, exchange fees, platform charges and other costs can
+        reduce the actual result of a trade.
+      </p>
+
+      <p>
+        For this reason, the calculator allows you to enter an estimated
+        total trading fee amount.
+      </p>
+
+      <p>
+        Your broker's fee schedule should be used when estimating actual
+        trading costs.
+      </p>
+
+    </section>
+
+
+    <!-- RISKS -->
+
+    <section class="section">
+
+      <h2>
+        Important Stock Trading Risks
+      </h2>
+
+      <ul>
+
+        <li>
+          Stock prices can move rapidly during volatile markets.
+        </li>
+
+        <li>
+          Stocks can gap below a stop-loss price.
+        </li>
+
+        <li>
+          Actual execution may differ from the planned stop price.
+        </li>
+
+        <li>
+          Low liquidity can increase execution costs.
+        </li>
+
+        <li>
+          Trading fees can reduce net returns.
+        </li>
+
+        <li>
+          Concentrating too much capital in one stock increases portfolio risk.
+        </li>
+
+        <li>
+          Position sizing does not predict the future direction of a stock.
+        </li>
+
+      </ul>
+
+    </section>
+
+
+    <!-- LIVE DATA -->
+
+    <section class="section">
+
+      <h2>
+        Does This Calculator Use Live Stock Prices?
+      </h2>
+
+      <p>
+        No. This Stock Risk Calculator uses the prices entered manually.
+        It does not connect to a stock exchange, brokerage account or
+        live market-data service.
+      </p>
+
+      <p>
+        Always verify the current market price, bid/ask spread, liquidity,
+        trading hours and execution conditions with your broker or trusted
+        market-data provider before placing an order.
+      </p>
+
+    </section>
+
+
+    <!-- FAQ -->
+
+    <section class="section faq">
+
+      <h2>
+        Frequently Asked Questions
+      </h2>
+
+
+      <details>
+
+        <summary>
+          What is stock trade risk?
+        </summary>
+
+        <p>
+          Stock trade risk is the estimated amount that could be lost if
+          the position reaches its planned stop-loss. It is commonly based
+          on the number of shares and the difference between entry and
+          stop-loss prices.
+        </p>
+
+      </details>
+
+
+      <details>
+
+        <summary>
+          How do I calculate stock risk?
+        </summary>
+
+        <p>
+          Multiply the risk per share by the number of shares.
+          Risk per share is the absolute difference between the entry
+          price and stop-loss price.
+        </p>
+
+      </details>
+
+
+      <details>
+
+        <summary>
+          What is risk percentage in stock trading?
+        </summary>
+
+        <p>
+          Risk percentage compares the estimated trade risk with the
+          account balance. It can be calculated by dividing trade risk
+          by account balance and multiplying by 100.
+        </p>
+
+      </details>
+
+
+      <details>
+
+        <summary>
+          Does this calculator guarantee my maximum loss?
+        </summary>
+
+        <p>
+          No. It is an estimate. Gaps, slippage, liquidity and execution
+          conditions can cause actual losses to differ from the calculated
+          amount.
+        </p>
+
+      </details>
+
+
+      <details>
+
+        <summary>
+          Does this stock risk calculator use live prices?
+        </summary>
+
+        <p>
+          No. Prices must be entered manually. The calculator does not
+          provide live market data.
+        </p>
+
+      </details>
+
+    </section>
+
+
+    <!-- RELATED -->
+
+    <section class="section">
+
+      <h2>
+        More EZTradingHub Investment Calculators
+      </h2>
+
+      <div class="related">
+
+        <a href="stock-position-size-calculator.html">
+          Stock Position Size Calculator
+        </a>
+
+        <a href="stock-profit-calculator.html">
+          Stock Profit Calculator
+        </a>
+
+        <a href="stock-return-calculator.html">
+          Stock Return Calculator
+        </a>
+
+        <a href="stock-average-cost-calculator.html">
+          Stock Average Cost Calculator
+        </a>
+
+        <a href="stock-dividend-calculator.html">
+          Stock Dividend Calculator
+        </a>
+
+        <a href="stock-dividend-yield-calculator.html">
+          Stock Dividend Yield Calculator
+        </a>
+
+        <a href="risk-calculator.html">
+          Trading Risk Calculator
+        </a>
+
+        <a href="risk-reward-calculator.html">
+          Risk-to-Reward Calculator
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- DISCLAIMER -->
+
+    <section class="section disclaimer">
+
+      <h2>
+        Financial Disclaimer
+      </h2>
+
+      <p>
+        EZTradingHub provides calculators and educational information for
+        general informational purposes only. This calculator does not
+        provide investment, financial, tax or trading advice.
+      </p>
+
+      <p>
+        Results are estimates based on the information entered by the user.
+        Actual trading results may differ because of market volatility,
+        gaps, slippage, liquidity, commissions, taxes and execution
+        conditions.
+      </p>
+
+      <p>
+        You are responsible for your own investment and trading decisions.
+        Consider consulting a qualified financial professional before
+        making decisions involving your money.
+      </p>
+
+    </section>
+
+  </div>
+
+</main>
+
+
+<!-- =========================
+     FOOTER
+========================== -->
+
+<footer>
+
+  <div class="footer-inner">
+
+    <div>
+
+      <strong>
+        EZTradingHub
+      </strong>
+
+      <div class="copyright">
+        Smart trading and investment tools for informed decision-making.
+      </div>
+
+    </div>
+
+
+    <div class="footer-links">
+
+      <a href="index.html">
+        Home
+      </a>
+      
+      <a href="calculators.html">
+        Calculators
+      </a>
+      
+      <a href="about.html">
+        About
+      </a>
+      
+      <a href="faq.html">
+        FAQ
+      </a>
+
+      <a href="contact.html">
+        Contact
+      </a>
+
+      <a href="privacy.html">
+        Privacy
+      </a>
+
+      <a href="terms.html">
+        Terms
+      </a>
+
+      <a href="disclaimer.html">
+        Disclaimer
+      </a>
+
+      <a href="cookie-policy.html">
+        Cookie Policy
+      </a>
+
+    </div>
+
+  </div>
+
+</footer>
+
+
+<!-- =========================
+     JAVASCRIPT
+========================== -->
+
+<script>
+
+  /* =========================
+     THEME SYSTEM
+  ========================== */
+
+  const themeToggle =
+    document.getElementById("themeToggle");
+
+  const savedTheme =
+    localStorage.getItem("ezth-theme");
+
+  if(savedTheme === "dark"){
+    document.body.classList.add("dark");
+  }
+
+
+  function updateThemeIcon(){
+
+    themeToggle.textContent =
+      document.body.classList.contains("dark")
+        ? "☀️"
+        : "🌙";
+
+    themeToggle.setAttribute(
+      "aria-label",
+      document.body.classList.contains("dark")
+        ? "Switch to light mode"
+        : "Switch to dark mode"
+    );
+
+  }
+
+
+  updateThemeIcon();
+
+
+  themeToggle.addEventListener(
+    "click",
+    function(){
+
+      document.body.classList.toggle("dark");
+
+      localStorage.setItem(
+        "ezth-theme",
+        document.body.classList.contains("dark")
+          ? "dark"
+          : "light"
+      );
+
+      updateThemeIcon();
+
+    }
+  );
+
+
+  /* =========================
+     INPUT HELPERS
+  ========================== */
+
+  function number(value){
+
+    const n =
+      parseFloat(value);
+
+    return Number.isFinite(n)
+      ? n
+      : 0;
+
+  }
+
+
+  function formatMoney(
+    value,
+    currency
+  ){
+
+    if(!Number.isFinite(value)){
+      return "—";
+    }
+
+    return currency +
+      value.toLocaleString(
+        undefined,
+        {
+          minimumFractionDigits:2,
+          maximumFractionDigits:2
+        }
+      );
+
+  }
+
+
+  function formatNumber(value){
+
+    if(!Number.isFinite(value)){
+      return "—";
+    }
+
+    return value.toLocaleString(
+      undefined,
+      {
+        maximumFractionDigits:4
+      }
+    );
+
+  }
+
+
+  /* =========================
+     CALCULATOR
+  ========================== */
+
+  function calculate(){
+
+    const currency =
+      document.getElementById(
+        "currency"
+      ).value;
+
+
+    const account =
+      number(
+        document.getElementById(
+          "account"
+        ).value
+      );
+
+
+    const shares =
+      number(
+        document.getElementById(
+          "shares"
+        ).value
+      );
+
+
+    const entry =
+      number(
+        document.getElementById(
+          "entry"
+        ).value
+      );
+
+
+    const stop =
+      number(
+        document.getElementById(
+          "stop"
+        ).value
+      );
+
+
+    const target =
+      number(
+        document.getElementById(
+          "target"
+        ).value
+      );
+
+
+    const fees =
+      Math.max(
+        0,
+        number(
+          document.getElementById(
+            "fees"
+          ).value
+        )
+      );
+
+
+    /* =========================
+       VALIDATION
+    ========================== */
+
+    if(
+      account <= 0 ||
+      shares <= 0 ||
+      entry <= 0 ||
+      stop <= 0
+    ){
+
+      clearResults();
+
+      document.getElementById(
+        "message"
+      ).textContent =
+        "Please enter a valid account balance, number of shares, entry price and stop-loss price.";
+
+      return;
+
+    }
+
+
+    if(entry === stop){
+
+      clearResults();
+
+      document.getElementById(
+        "message"
+      ).textContent =
+        "Entry price and stop-loss price must be different.";
+
+      return;
+
+    }
+
+
+    /* =========================
+       RISK CALCULATIONS
+    ========================== */
+
+    const riskPerShare =
+      Math.abs(
+        entry - stop
+      );
+
+
+    const priceRisk =
+      riskPerShare * shares;
+
+
+    const estimatedTradeRisk =
+      priceRisk + fees;
+
+
+    const riskPercent =
+      account > 0
+        ? (
+            estimatedTradeRisk /
+            account
+          ) * 100
+        : 0;
+
+
+    const positionValue =
+      entry * shares;
+
+
+    const positionPercent =
+      account > 0
+        ? (
+            positionValue /
+            account
+          ) * 100
+        : 0;
+
+
+    /* =========================
+       PROFIT CALCULATION
+    ========================== */
+
+    let potentialProfit = 0;
+
+    let netProfit = 0;
+
+    let rr = 0;
+
+
+    if(target > 0){
+
+      const rewardPerShare =
+        Math.abs(
+          target - entry
+        );
+
+
+      potentialProfit =
+        rewardPerShare *
+        shares;
+
+
+      netProfit =
+        Math.max(
+          0,
+          potentialProfit - fees
+        );
+
+
+      rr =
+        rewardPerShare /
+        riskPerShare;
+
+    }
+
+
+    /* =========================
+       DISPLAY
+    ========================== */
+
+    document.getElementById(
+      "riskPerShare"
+    ).textContent =
+      formatMoney(
+        riskPerShare,
+        currency
+      );
+
+
+    document.getElementById(
+      "tradeRisk"
+    ).textContent =
+      "-" +
+      formatMoney(
+        estimatedTradeRisk,
+        currency
+      );
+
+
+    document.getElementById(
+      "riskPercent"
+    ).textContent =
+      riskPercent.toFixed(2) +
+      "%";
+
+
+    document.getElementById(
+      "positionValue"
+    ).textContent =
+      formatMoney(
+        positionValue,
+        currency
+      );
+
+
+    document.getElementById(
+      "potentialProfit"
+    ).textContent =
+      target > 0
+        ? formatMoney(
+            potentialProfit,
+            currency
+          )
+        : "—";
+
+
+    document.getElementById(
+      "netProfit"
+    ).textContent =
+      target > 0
+        ? formatMoney(
+            netProfit,
+            currency
+          )
+        : "—";
+
+
+    document.getElementById(
+      "rrRatio"
+    ).textContent =
+      target > 0
+        ? formatNumber(rr) +
+          ":1"
+        : "—";
+
+
+    document.getElementById(
+      "positionPercent"
+    ).textContent =
+      positionPercent.toFixed(2) +
+      "%";
+
+
+    /* =========================
+       MESSAGE
+    ========================== */
+
+    let message =
+      "Estimated price risk is " +
+      formatMoney(
+        priceRisk,
+        currency
+      ) +
+      " before trading fees.";
+
+
+    if(
+      riskPercent > 5
+    ){
+
+      message +=
+        " The estimated risk is above 5% of the account. Review your position size and risk plan.";
+
+    }
+
+
+    if(
+      target > 0
+    ){
+
+      message +=
+        " Estimated risk-to-reward ratio: " +
+        rr.toFixed(2) +
+        ":1.";
+
+    }
+
+
+    document.getElementById(
+      "message"
+    ).textContent =
+      message;
+
+  }
+
+
+  /* =========================
+     CLEAR RESULTS
+  ========================== */
+
+  function clearResults(){
+
+    const ids = [
+
+      "riskPerShare",
+      "tradeRisk",
+      "riskPercent",
+      "positionValue",
+      "potentialProfit",
+      "netProfit",
+      "rrRatio",
+      "positionPercent"
+
+    ];
+
+
+    ids.forEach(
+      function(id){
+
+        document.getElementById(
+          id
+        ).textContent = "—";
+
+      }
+    );
+
+  }
+
+
+  /* =========================
+     AUTO CALCULATION
+  ========================== */
+
+  const fields = [
+
+    "account",
+    "shares",
+    "entry",
+    "stop",
+    "target",
+    "fees"
+
+  ];
+
+
+  fields.forEach(
+    function(id){
+
+      document.getElementById(id)
+        .addEventListener(
+          "input",
+          calculate
+        );
+
+    }
+  );
+
+
+  document.getElementById(
+    "currency"
+  ).addEventListener(
+    "change",
+    calculate
+  );
+
+
+  document.getElementById(
+    "stock"
+  ).addEventListener(
+    "input",
+    calculate
+  );
+
+
+  document.getElementById(
+    "calculateBtn"
+  ).addEventListener(
+    "click",
+    calculate
+  );
+
+
+  /* =========================
+     RESET
+  ========================== */
+
+  document.getElementById(
+    "resetBtn"
+  ).addEventListener(
+    "click",
+    function(){
+
+      document.getElementById(
+        "stock"
+      ).value = "AAPL";
+
+
+      document.getElementById(
+        "currency"
+      ).value = "$";
+
+
+      document.getElementById(
+        "account"
+      ).value = "10000";
+
+
+      document.getElementById(
+        "shares"
+      ).value = "20";
+
+
+      document.getElementById(
+        "entry"
+      ).value = "100";
+
+
+      document.getElementById(
+        "stop"
+      ).value = "95";
+
+
+      document.getElementById(
+        "target"
+      ).value = "115";
+
+
+      document.getElementById(
+        "fees"
+      ).value = "0";
+
+
+      calculate();
+
+    }
+  );
+
+
+  /* =========================
+     PRINT
+  ========================== */
+
+  document.getElementById(
+    "printBtn"
+  ).addEventListener(
+    "click",
+    function(){
+
+      window.print();
+
+    }
+  );
+
+
+  /* =========================
+     INITIAL CALCULATION
+  ========================== */
+
+  calculate();
+
+</script>
+
+</body>
+</html>
