@@ -1,384 +1,1507 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Forex Lot Size Calculator – Calculate Trade Lot Size | EZTradingHub</title>
+  <meta charset="UTF-8">
 
-<meta name="description" content="Use the free EZTradingHub Forex Lot Size Calculator to calculate an appropriate trade lot size based on account balance, risk percentage, stop-loss distance and pip value.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="canonical" href="https://eztradinghub.com/calculators/lot-size-calculator.html">
+  <title>Lot Size Calculator – Calculate Forex Position Size | EZTradingHub</title>
 
-<meta property="og:title" content="Forex Lot Size Calculator | EZTradingHub">
-<meta property="og:description" content="Calculate forex lot size using your account balance, risk percentage, stop-loss and pip value.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://eztradinghub.com/calculators/lot-size-calculator.html">
-<meta property="og:image" content="https://eztradinghub.com/og-image.jpg">
+  <meta name="description" content="Use the EZTradingHub Lot Size Calculator to calculate an estimated forex position size based on account balance, risk percentage, entry price, stop-loss and pip value. Free trading tool.">
 
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Forex Lot Size Calculator | EZTradingHub">
-<meta name="twitter:description" content="Calculate trade lot size based on your planned risk and stop-loss distance.">
-<meta name="twitter:image" content="https://eztradinghub.com/og-image.jpg">
+  <meta name="keywords" content="lot size calculator, forex lot size calculator, position size calculator, forex risk calculator, trading lot calculator, calculate lot size, forex risk management">
+
+  <meta name="author" content="EZTradingHub">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+
+  <link rel="canonical" href="https://eztradinghub.com/lot-size-calculator.html">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+  <link rel="apple-touch-icon" href="assets/images/favicon-32x32.png">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Lot Size Calculator – EZTradingHub">
+  <meta property="og:description" content="Calculate an estimated forex lot size based on account balance, risk percentage, stop-loss distance and pip value.">
+  <meta property="og:url" content="https://eztradinghub.com/lot-size-calculator.html">
+  <meta property="og:site_name" content="EZTradingHub">
+  <meta property="og:image" content="https://eztradinghub.com/assets/images/og-image.jpg">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Lot Size Calculator – EZTradingHub">
+  <meta name="twitter:description" content="Calculate estimated forex position size and manage trading risk with EZTradingHub.">
+  <meta name="twitter:image" content="https://eztradinghub.com/assets/images/og-image.jpg">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "EZTradingHub Lot Size Calculator",
+    "url": "https://eztradinghub.com/lot-size-calculator.html",
+    "description": "Free online forex lot size calculator for estimating position size based on account balance, risk percentage, stop-loss distance and pip value.",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Web",
+    "browserRequirements": "Requires JavaScript",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "EZTradingHub",
+      "url": "https://eztradinghub.com/"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a lot size in forex trading?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Lot size represents the size of a forex trading position. Common forex sizes include standard lots, mini lots, micro lots and nano lots."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How is forex lot size calculated?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A basic lot-size calculation uses the amount of money you are willing to risk, the stop-loss distance in pips, and the pip value per standard lot."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is a standard forex lot?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A standard forex lot is commonly defined as 100,000 units of the base currency."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does this calculator guarantee a profitable trade?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. The calculator only estimates position size based on the information entered. It does not predict market direction or guarantee trading results."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg: #f5f7fb;
+      --surface: #ffffff;
+      --surface-2: #eef2f7;
+      --text: #172033;
+      --muted: #647084;
+      --border: #dce3ec;
+      --primary: #003b73;
+      --primary-2: #005ca8;
+      --accent: #f5b400;
+      --success: #16834b;
+      --danger: #c93434;
+      --shadow: 0 12px 35px rgba(17, 35, 60, 0.08);
+      --radius: 16px;
+    }
+
+    body.dark {
+      --bg: #0b1220;
+      --surface: #121c2d;
+      --surface-2: #1a2639;
+      --text: #edf3fb;
+      --muted: #aab7ca;
+      --border: #2a3950;
+      --primary: #3d9cff;
+      --primary-2: #68b5ff;
+      --accent: #ffc533;
+      --success: #36c47b;
+      --danger: #ff6b6b;
+      --shadow: 0 12px 35px rgba(0, 0, 0, 0.28);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Inter", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      transition: background 0.25s ease, color 0.25s ease;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    button,
+    input,
+    select {
+      font: inherit;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: auto;
+    }
+
+    /* HEADER */
+
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 3px 15px rgba(0,0,0,0.04);
+    }
+
+    .nav {
+      min-height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      font-size: 1.1rem;
+      color: var(--text);
+    }
+
+    .brand-logo {
+      width: 40px;
+      height: 40px;
+      border-radius: 11px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--primary), var(--primary-2));
+      color: white;
+      font-weight: 800;
+      box-shadow: var(--shadow);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    nav a {
+      color: var(--text);
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .theme-btn {
+      border: 1px solid var(--border);
+      background: var(--surface-2);
+      color: var(--text);
+      border-radius: 10px;
+      padding: 9px 12px;
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    /* HERO */
+
+    .hero {
+      padding: 65px 0 40px;
+      text-align: center;
+    }
+
+    .badge {
+      display: inline-block;
+      background: var(--surface-2);
+      color: var(--primary);
+      padding: 7px 13px;
+      border-radius: 30px;
+      font-size: 0.82rem;
+      font-weight: 800;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.3rem);
+      line-height: 1.15;
+      margin-bottom: 18px;
+      letter-spacing: -1.2px;
+    }
+
+    .hero p {
+      max-width: 760px;
+      margin: auto;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    /* ADS */
+
+    .ad-box {
+      min-height: 90px;
+      border: 1px dashed var(--border);
+      background: var(--surface);
+      border-radius: 12px;
+      margin: 25px auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      font-size: 0.82rem;
+      max-width: 970px;
+    }
+
+    /* MAIN GRID */
+
+    .calculator-grid {
+      display: grid;
+      grid-template-columns: 1fr 0.9fr;
+      gap: 25px;
+      margin: 25px 0 40px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 27px;
+    }
+
+    .card h2 {
+      font-size: 1.3rem;
+      margin-bottom: 7px;
+    }
+
+    .card-intro {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 23px;
+    }
+
+    .form-group {
+      margin-bottom: 17px;
+    }
+
+    label {
+      display: block;
+      font-size: 0.87rem;
+      font-weight: 700;
+      margin-bottom: 7px;
+    }
+
+    .hint {
+      display: block;
+      color: var(--muted);
+      font-size: 0.76rem;
+      margin-top: 5px;
+    }
+
+    input,
+    select {
+      width: 100%;
+      padding: 12px 13px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      border-radius: 10px;
+      outline: none;
+    }
+
+    input:focus,
+    select:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(0, 92, 168, 0.12);
+    }
+
+    .input-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .button-row {
+      display: flex;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .btn {
+      flex: 1;
+      border: 0;
+      border-radius: 10px;
+      padding: 13px 18px;
+      cursor: pointer;
+      font-weight: 800;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      opacity: 0.9;
+    }
+
+    .btn-secondary {
+      background: var(--surface-2);
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+
+    /* RESULTS */
+
+    .result-main {
+      text-align: center;
+      padding: 25px;
+      border-radius: 14px;
+      background: var(--surface-2);
+      margin-bottom: 18px;
+    }
+
+    .result-label {
+      color: var(--muted);
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
+    .lot-result {
+      font-size: 3rem;
+      line-height: 1.1;
+      font-weight: 800;
+      color: var(--primary);
+      margin: 7px 0;
+    }
+
+    .result-subtitle {
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    .result-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .result-item {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      padding: 12px 14px;
+      background: var(--surface-2);
+      border-radius: 10px;
+      font-size: 0.88rem;
+    }
+
+    .result-item span:first-child {
+      color: var(--muted);
+    }
+
+    .result-item strong {
+      text-align: right;
+    }
+
+    .warning {
+      background: rgba(245, 180, 0, 0.12);
+      border-left: 4px solid var(--accent);
+      padding: 13px;
+      border-radius: 8px;
+      color: var(--text);
+      font-size: 0.82rem;
+      margin-top: 18px;
+    }
+
+    /* CONTENT */
+
+    .content-section {
+      margin: 35px 0;
+    }
+
+    .content-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 30px;
+      box-shadow: var(--shadow);
+    }
+
+    .content-card h2 {
+      font-size: 1.5rem;
+      margin-bottom: 13px;
+    }
+
+    .content-card h3 {
+      margin: 25px 0 9px;
+      font-size: 1.1rem;
+    }
+
+    .content-card p {
+      color: var(--muted);
+      margin-bottom: 13px;
+    }
+
+    .formula {
+      background: var(--surface-2);
+      border-left: 4px solid var(--primary);
+      padding: 16px;
+      border-radius: 8px;
+      margin: 18px 0;
+      font-weight: 700;
+      overflow-x: auto;
+    }
+
+    ul {
+      padding-left: 22px;
+      color: var(--muted);
+    }
+
+    li {
+      margin-bottom: 7px;
+    }
+
+    /* TABLE */
+
+    .table-wrapper {
+      overflow-x: auto;
+      margin: 20px 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 600px;
+    }
+
+    th,
+    td {
+      padding: 12px;
+      border: 1px solid var(--border);
+      text-align: left;
+    }
+
+    th {
+      background: var(--surface-2);
+    }
+
+    /* FAQ */
+
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+      padding: 16px 0;
+    }
+
+    .faq-item:last-child {
+      border-bottom: 0;
+    }
+
+    .faq-question {
+      font-weight: 800;
+      margin-bottom: 6px;
+    }
+
+    .faq-answer {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    /* RELATED */
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .related-card {
+      border: 1px solid var(--border);
+      background: var(--surface-2);
+      border-radius: 12px;
+      padding: 17px;
+    }
+
+    .related-card strong {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .related-card span {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    /* DISCLAIMER */
+
+    .disclaimer {
+      border: 1px solid var(--border);
+      background: var(--surface-2);
+      border-radius: 12px;
+      padding: 18px;
+      margin: 35px 0;
+      color: var(--muted);
+      font-size: 0.83rem;
+    }
+
+    /* FOOTER */
+
+    footer {
+      margin-top: 50px;
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      padding: 35px 0;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 30px;
+    }
+
+    footer h3 {
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
+
+    footer p,
+    footer a {
+      color: var(--muted);
+      font-size: 0.84rem;
+    }
+
+    .footer-links {
+      display: grid;
+      gap: 6px;
+    }
+
+    .copyright {
+      border-top: 1px solid var(--border);
+      margin-top: 25px;
+      padding-top: 20px;
+      color: var(--muted);
+      font-size: 0.78rem;
+      text-align: center;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 850px) {
+      .calculator-grid {
+        grid-template-columns: 1fr;
+      }
+
+      nav a {
+        display: none;
+      }
+
+      .related-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .hero {
+        padding-top: 45px;
+      }
+
+      .card,
+      .content-card {
+        padding: 20px;
+      }
+
+      .input-row {
+        grid-template-columns: 1fr;
+      }
+
+      .related-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .button-row {
+        flex-direction: column;
+      }
+
+      .lot-result {
+        font-size: 2.5rem;
+      }
+    }
+  </style>
+</head>
 
 <body>
 
-<style>
-:root{--navy:#062f5f;--green:#047857;--dark:#111827;--text:#1f2937;--muted:#475569;--bg:#f8fafc;--card:#fff;--border:#e2e8f0}
-*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;line-height:1.7;color:var(--text);background:var(--bg)}
-header{background:var(--navy);color:#fff;padding:18px 20px}.header-inner{max-width:1000px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:20px}
-.brand,.back-link{color:#fff;text-decoration:none;font-weight:800}.brand{font-size:1.35rem}.back-link{font-weight:700}
-main{max-width:1000px;margin:40px auto;padding:0 20px}.hero,section{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:28px;margin-bottom:18px}
-.hero{padding:32px}.hero h1{margin-top:0;color:var(--dark);font-size:clamp(2rem,5vw,3rem)}h2{color:var(--dark);margin-top:0}.updated{color:var(--muted);font-size:.95rem}
-p,li{color:var(--text)}a{color:#065f46;font-weight:600}.notice{border-left:5px solid var(--green);background:#f0fdf4;padding:16px 18px;border-radius:8px}
-footer{background:var(--dark);color:#fff;text-align:center;padding:28px 20px;margin-top:45px}footer p{color:#fff}footer a{color:#fff;margin:0 8px}
-@media(max-width:650px){.header-inner{align-items:flex-start;flex-direction:column}main{margin-top:24px;padding:0 14px}.hero,section{padding:22px}}
-</style>
+  <!-- HEADER -->
+  <header>
+    <div class="container nav">
 
-<header>
-     <div class="header-inner">
-<a class="brand" href="index.html">EZTradingHub</a>
-<a class="back-link" href="index.html">← Back to Home</a>
-</div>
-</header>
-    
+      <a href="index.html" class="brand" aria-label="EZTradingHub Home">
+        <span class="brand-logo">EZ</span>
+        <span>EZTradingHub</span>
+      </a>
 
-    <h1>Forex Lot Size Calculator</h1>
+      <nav aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="calculators.html">Calculators</a>
+        <a href="about.html">About</a>
+        <a href="faq.html">FAQ</a>
 
-<p>
-Calculate the appropriate position size for your forex trade based on
-your account balance, risk percentage, stop-loss distance and pip value.
-Use the EZTradingHub Lot Size Calculator to plan your trade before
-entering the market.
-</p>
+        <button
+          class="theme-btn"
+          id="themeToggle"
+          type="button"
+          aria-label="Toggle light and dark mode">
+          🌙
+        </button>
+      </nav>
 
-<section class="hero">
+    </div>
+  </header>
 
-<input type="number" id="balance" placeholder="Account Balance ($)">
+  <main>
 
-<br><br>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container">
 
-<input type="number" id="risk" placeholder="Risk (%)">
+        <span class="badge">FREE FOREX RISK MANAGEMENT TOOL</span>
 
-<br><br>
+        <h1>Forex Lot Size Calculator</h1>
 
-<input type="number" id="stoploss" placeholder="Stop Loss (Pips)">
+        <p>
+          Calculate an estimated forex position size based on your account
+          balance, risk percentage, stop-loss distance and pip value.
+          Use the result to help structure trades with consistent risk.
+        </p>
 
-<br><br>
+      </div>
+    </section>
 
-<button class="btn" onclick="calculateLotSize()">
-Calculate Lot Size
-</button>
-    
-<br><br>
-
-<button class="btn" onclick="resetForm()">
-🔄 Reset
-</button>
-    
-<button class="btn" onclick="copyResult('lotResult')">
-📋 Copy Result
-</button>
-
-<div id="lotResult" class="result-card"></div>
-
-<h3>📜 Recent Calculations</h3>
-
-<div id="history" class="result-card">
-No calculations yet.
-</div>
-    
-</section>
-    
-    <section>
-    <h2>What Is Lot Size in Forex?</h2>
-
-    <p>
-        Lot size represents the size of a forex position. It determines
-        how much currency is being traded and directly affects the
-        monetary value of price movements.
-    </p>
-
-    <p>
-        Common forex position sizes include standard lots, mini lots and
-        micro lots. A standard lot is commonly 100,000 units of the base
-        currency, while a mini lot is 10,000 units and a micro lot is
-        1,000 units.
-    </p>
-
-    <p>
-        Contract specifications can vary between instruments and brokers,
-        so traders should always verify the specifications of the
-        instrument they are trading.
-    </p>
-</section>
-    
-    
-<section>
-    <h2>How Does Lot Size Affect Trading Risk?</h2>
-
-    <p>
-        Larger position sizes generally increase the amount gained or
-        lost when the market moves. Smaller position sizes generally
-        reduce the monetary impact of the same price movement.
-    </p>
-
-    <p>
-        A trader can therefore use account balance, risk percentage and
-        stop-loss distance to determine a position size that fits within
-        their planned risk.
-    </p>
-
-    <p>
-        For example, increasing the stop-loss distance while keeping the
-        same maximum monetary risk generally requires reducing the
-        position size.
-    </p>
-</section>
-    
-    <section>
-    <h2>How to Calculate Forex Lot Size</h2>
-
-    <p>
-        A simplified position-sizing formula is:
-    </p>
-
-    <div class="formula-box">
-        <strong>
-            Lot Size = Risk Amount ÷ (Stop Loss in Pips × Pip Value per Lot)
-        </strong>
+    <!-- TOP AD -->
+    <div class="container">
+      <div class="ad-box" aria-label="Advertisement">
+        Advertisement
+      </div>
     </div>
 
-    <p>
-        First calculate your maximum planned risk:
-    </p>
+    <!-- CALCULATOR -->
+    <section class="container">
 
-    <div class="formula-box">
-        <strong>
-            Risk Amount = Account Balance × Risk Percentage ÷ 100
-        </strong>
-    </div>
+      <div class="calculator-grid">
 
-    <p>
-        The exact calculation can vary depending on the currency pair,
-        account currency, exchange rate and broker contract specifications.
-    </p>
-</section>
-    
-    <section>
-    <h2>Forex Lot Size Example</h2>
+        <!-- INPUT CARD -->
+        <div class="card">
 
-    <p>
-        Suppose a trader has a $1,000 account and wants to risk 1% on
-        a trade with a 20-pip stop-loss.
-    </p>
+          <h2>Lot Size Calculator</h2>
 
-    <ul>
-        <li>Account balance: $1,000</li>
-        <li>Risk percentage: 1%</li>
-        <li>Maximum planned risk: $10</li>
-        <li>Stop-loss: 20 pips</li>
-    </ul>
+          <p class="card-intro">
+            Enter your trading account information and trade setup.
+            The calculator estimates the position size based on your maximum
+            planned risk.
+          </p>
 
-    <p>
-        If the pip value for the selected position size were $0.50 per
-        pip, a 20-pip stop would represent approximately $10 of planned
-        risk.
-    </p>
+          <form id="lotForm">
 
-    <p>
-        The actual lot size should be calculated using the currency pair,
-        account currency, exchange rate and broker specifications.
-    </p>
-</section>
-    
-    <section>
-    <h2>Common Forex Lot Sizes</h2>
+            <div class="form-group">
+              <label for="balance">
+                Account Balance
+              </label>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Lot Type</th>
-                <th>Approx. Units</th>
-                <th>Common Name</th>
-            </tr>
-        </thead>
+              <input
+                type="number"
+                id="balance"
+                min="0"
+                step="0.01"
+                placeholder="Example: 10000"
+                required>
 
-        <tbody>
-            <tr>
-                <td>1.00</td>
-                <td>100,000</td>
-                <td>Standard Lot</td>
-            </tr>
+              <span class="hint">
+                Enter your current or planned trading account balance.
+              </span>
+            </div>
 
-            <tr>
-                <td>0.10</td>
-                <td>10,000</td>
-                <td>Mini Lot</td>
-            </tr>
+            <div class="input-row">
 
-            <tr>
-                <td>0.01</td>
-                <td>1,000</td>
-                <td>Micro Lot</td>
-            </tr>
-        </tbody>
-    </table>
+              <div class="form-group">
+                <label for="riskPercent">
+                  Risk Per Trade (%)
+                </label>
 
-    <p>
-        These are common forex conventions. Always check the contract
-        specifications of the specific instrument with your broker.
-    </p>
-</section>
-    
-    <section>
-    <h2>Can I Use a Lot Size Calculator for Gold?</h2>
+                <input
+                  type="number"
+                  id="riskPercent"
+                  min="0.01"
+                  max="100"
+                  step="0.01"
+                  value="1"
+                  required>
 
-    <p>
-        Gold, commonly represented as XAUUSD, can also be position-sized
-        using a risk-based approach. However, gold does not necessarily
-        use the same contract specifications as a standard forex pair.
-    </p>
+                <span class="hint">
+                  Example: 1% of account balance.
+                </span>
+              </div>
 
-    <p>
-        Traders should check their broker's XAUUSD contract size, tick
-        size, tick value, minimum lot size and other trading conditions
-        before relying on a calculated position size.
-    </p>
+              <div class="form-group">
+                <label for="pipValue">
+                  Pip Value Per Standard Lot
+                </label>
 
-    <p>
-        This is especially important when trading gold with small
-        accounts because relatively small price movements can have a
-        significant effect on a leveraged position.
-    </p>
-</section>
-    
-    <section>
-    <h2>Why Position Sizing Matters</h2>
+                <input
+                  type="number"
+                  id="pipValue"
+                  min="0.000001"
+                  step="0.000001"
+                  value="10"
+                  required>
 
-    <p>
-        Position sizing is one of the most important parts of risk
-        management. A technically good trade can still expose an account
-        to excessive losses if the position size is too large.
-    </p>
+                <span class="hint">
+                  Example: $10 per pip for many USD-quoted pairs.
+                </span>
+              </div>
 
-    <p>
-        Using a predefined risk percentage can help traders maintain
-        consistency across different trades and market conditions.
-    </p>
+            </div>
 
-    <p>
-        Traders should also consider spreads, commissions, swaps,
-        slippage, market gaps and other trading costs when evaluating
-        their actual exposure.
-    </p>
-        
-        <p>for more answers to your questions, check our faq page</p>  
-        <a href="faq.html">FREQUENT ASK QUESTION</a>
-</section>
-    
-    <section>
-    <h2>Related Trading Calculators</h2>
+            <div class="form-group">
+              <label for="direction">
+                Trade Direction
+              </label>
 
-    <ul>
-        <li>
-            <a href="pip-calculator.html">
-                Pip Calculator
-            </a>
-        </li>
+              <select id="direction">
+                <option value="buy">Buy / Long</option>
+                <option value="sell">Sell / Short</option>
+              </select>
+            </div>
 
-        <li>
-            <a href="risk-calculator.html">
-                Risk Calculator
-            </a>
-        </li>
+            <div class="input-row">
 
-        <li>
-            <a href="position-size-calculator.html">
-                Position Size Calculator
-            </a>
-        </li>
+              <div class="form-group">
+                <label for="entry">
+                  Entry Price
+                </label>
 
-        <li>
-            <a href="margin-calculator.html">
-                Margin Calculator
-            </a>
-        </li>
+                <input
+                  type="number"
+                  id="entry"
+                  min="0"
+                  step="0.00001"
+                  placeholder="Example: 1.08500"
+                  required>
+              </div>
 
-        <li>
-            <a href="profit-calculator.html">
-                Profit Calculator
-            </a>
-        </li>
+              <div class="form-group">
+                <label for="stopLoss">
+                  Stop-Loss Price
+                </label>
 
-        <li>
-            <a href="gold-profit-calculator.html">
-                Gold Profit Calculator
-            </a>
-        </li>
-    </ul>
-</section>
-    
-    <section class="calculator-disclaimer">
-    <h2>Important Disclaimer</h2>
+                <input
+                  type="number"
+                  id="stopLoss"
+                  min="0"
+                  step="0.00001"
+                  placeholder="Example: 1.08000"
+                  required>
+              </div>
 
-    <p>
-        The EZTradingHub Pip Calculator is provided for educational and
-        informational purposes only. Calculated values are estimates and
-        may differ from the figures provided by your broker.
-    </p>
+            </div>
 
-    <p>
-        Actual trading results may be affected by exchange rates, spreads,
-        commissions, swaps, contract specifications, slippage, execution
-        prices and other market conditions.
-    </p>
+            <div class="form-group">
+              <label for="pipSize">
+                Pip Size
+              </label>
 
-    <p>
-        Nothing on EZTradingHub constitutes financial, investment or trading
-        advice. Trading forex, CFDs, cryptocurrencies and other financial
-        instruments involves significant risk of loss.
-    </p>
-            
-    <a href="disclaimer.html">Financial Disclaimer</a>
-</section>
+              <select id="pipSize">
+                <option value="0.0001">0.0001 — Most Forex Pairs</option>
+                <option value="0.01">0.01 — JPY Pairs / Instruments</option>
+              </select>
 
-<script src="script.js"></script>
+              <span class="hint">
+                Choose the pip size that matches your instrument.
+              </span>
+            </div>
 
-<footer>
+            <div class="button-row">
 
-        <div>
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="faq.html">FAQ</a>
-            <a href="terms.html">Terms & Conditions</a>
-            <a href="privacy.html">Privacy Policy</a>
-            <a href="cookie-policy.html">Cookie Policy</a>
-            <a href="disclaimer.html">Disclaimer</a>
-            <a href="contact.html">Contact</a>
+              <button
+                type="submit"
+                class="btn btn-primary">
+                Calculate Lot Size
+              </button>
+
+              <button
+                type="button"
+                class="btn btn-secondary"
+                id="resetBtn">
+                Reset
+              </button>
+
+            </div>
+
+          </form>
+
         </div>
 
-        <p class="copyright">
-            © 2026 EZTradingHub. All rights reserved.
+        <!-- RESULT CARD -->
+        <div class="card">
+
+          <h2>Calculated Position Size</h2>
+
+          <p class="card-intro">
+            Your estimated position size and planned monetary risk are shown
+            below.
+          </p>
+
+          <div class="result-main">
+
+            <div class="result-label">
+              ESTIMATED LOT SIZE
+            </div>
+
+            <div
+              class="lot-result"
+              id="lotResult">
+              0.00
+            </div>
+
+            <div class="result-subtitle">
+              standard lots
+            </div>
+
+          </div>
+
+          <div class="result-list">
+
+            <div class="result-item">
+              <span>Maximum Risk</span>
+              <strong id="moneyRisk">$0.00</strong>
+            </div>
+
+            <div class="result-item">
+              <span>Stop-Loss Distance</span>
+              <strong id="pipDistance">0.00 pips</strong>
+            </div>
+
+            <div class="result-item">
+              <span>Risk Per Pip</span>
+              <strong id="riskPerPip">$0.00</strong>
+            </div>
+
+            <div class="result-item">
+              <span>Position Units</span>
+              <strong id="units">0</strong>
+            </div>
+
+            <div class="result-item">
+              <span>Risk Percentage</span>
+              <strong id="riskDisplay">0.00%</strong>
+            </div>
+
+          </div>
+
+          <div class="warning">
+            <strong>Important:</strong>
+            This is an estimate. Actual monetary risk can differ because of
+            spread, commission, slippage, contract specifications, currency
+            conversion and broker rules.
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- MIDDLE AD -->
+    <div class="container">
+      <div class="ad-box" aria-label="Advertisement">
+        Advertisement
+      </div>
+    </div>
+
+    <!-- EDUCATIONAL CONTENT -->
+    <section class="container content-section">
+
+      <article class="content-card">
+
+        <h2>What Is a Forex Lot Size?</h2>
+
+        <p>
+          Lot size describes the quantity of currency being traded in a
+          forex position. Choosing an appropriate position size is an
+          important part of risk management because the same price movement
+          can produce very different gains or losses depending on the size
+          of the position.
         </p>
 
-        <p class="copyright">
-            EZTradingHub provides educational and informational tools.
-            Trading involves risk.
+        <p>
+          Traders commonly refer to standard lots, mini lots, micro lots and
+          nano lots when describing forex position sizes.
         </p>
 
-    </footer>
-    <script src="cookie-consent.js"></script>
+        <h3>Common Forex Lot Sizes</h3>
+
+        <div class="table-wrapper">
+
+          <table>
+            <thead>
+              <tr>
+                <th>Lot Type</th>
+                <th>Approximate Units</th>
+                <th>Typical Lot Value</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>Standard Lot</td>
+                <td>100,000 units</td>
+                <td>1.00 lot</td>
+              </tr>
+
+              <tr>
+                <td>Mini Lot</td>
+                <td>10,000 units</td>
+                <td>0.10 lot</td>
+              </tr>
+
+              <tr>
+                <td>Micro Lot</td>
+                <td>1,000 units</td>
+                <td>0.01 lot</td>
+              </tr>
+
+              <tr>
+                <td>Nano Lot</td>
+                <td>100 units</td>
+                <td>0.001 lot</td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+
+        <h3>How the Lot Size Formula Works</h3>
+
+        <p>
+          A basic forex position-sizing formula can be represented as:
+        </p>
+
+        <div class="formula">
+          Lot Size = Maximum Risk ÷ (Stop-Loss in Pips × Pip Value Per Standard Lot)
+        </div>
+
+        <p>
+          Your maximum risk is normally calculated from your account balance
+          and your selected risk percentage:
+        </p>
+
+        <div class="formula">
+          Maximum Risk = Account Balance × Risk Percentage ÷ 100
+        </div>
+
+        <h3>Example</h3>
+
+        <p>
+          Suppose a trader has a $10,000 account and chooses to risk 1% on
+          a trade. The maximum planned risk would be $100. If the stop-loss
+          is 50 pips away and the pip value is $10 per standard lot, the
+          estimated position size would be:
+        </p>
+
+        <div class="formula">
+          $100 ÷ (50 × $10) = 0.20 lots
+        </div>
+
+        <p>
+          The example demonstrates the calculation method. Actual pip values
+          vary between currency pairs, account currencies, position sizes
+          and broker specifications.
+        </p>
+
+        <h3>Why Position Sizing Matters</h3>
+
+        <ul>
+          <li>It can help traders control the amount they expose to each trade.</li>
+          <li>It can make risk management more consistent across different setups.</li>
+          <li>It connects stop-loss distance with position size.</li>
+          <li>It can help prevent unnecessarily large positions.</li>
+          <li>It provides a structured way to plan trade risk before entering a position.</li>
+        </ul>
+
+        <h3>Factors That Can Change Actual Trading Risk</h3>
+
+        <p>
+          The calculator provides an estimate rather than a guaranteed
+          trading result. Actual execution can be affected by:
+        </p>
+
+        <ul>
+          <li>Bid/ask spread</li>
+          <li>Broker commission</li>
+          <li>Slippage</li>
+          <li>Market volatility</li>
+          <li>Currency conversion</li>
+          <li>Contract specifications</li>
+          <li>Broker minimum and maximum lot sizes</li>
+          <li>Different pip or tick values between instruments</li>
+        </ul>
+
+      </article>
+
+    </section>
+
+    <!-- RELATED CALCULATORS -->
+    <section class="container content-section">
+
+      <div class="content-card">
+
+        <h2>Related Trading Calculators</h2>
+
+        <p>
+          Explore more EZTradingHub tools for position sizing, risk
+          management and trading calculations.
+        </p>
+
+        <div class="related-grid">
+
+          <a href="risk-calculator.html" class="related-card">
+            <strong>Risk Calculator</strong>
+            <span>Estimate monetary risk for a trade.</span>
+          </a>
+
+          <a href="position-size-calculator.html" class="related-card">
+            <strong>Position Size Calculator</strong>
+            <span>Calculate position size from your trading risk.</span>
+          </a>
+
+          <a href="pip-calculator.html" class="related-card">
+            <strong>Pip Calculator</strong>
+            <span>Estimate pip value for forex positions.</span>
+          </a>
+
+          <a href="risk-reward-calculator.html" class="related-card">
+            <strong>Risk-Reward Calculator</strong>
+            <span>Compare potential risk and reward.</span>
+          </a>
+
+          <a href="margin-calculator.html" class="related-card">
+            <strong>Margin Calculator</strong>
+            <span>Estimate margin requirements.</span>
+          </a>
+
+          <a href="leverage-calculator.html" class="related-card">
+            <strong>Leverage Calculator</strong>
+            <span>Explore leverage and trading exposure.</span>
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- FAQ -->
+    <section class="container content-section">
+
+      <div class="content-card">
+
+        <h2>Lot Size Calculator FAQ</h2>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            What is a lot size in forex?
+          </div>
+
+          <div class="faq-answer">
+            Lot size represents the amount of currency in a forex trading
+            position. Standard, mini and micro lots represent different
+            position sizes.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            How do I calculate forex lot size?
+          </div>
+
+          <div class="faq-answer">
+            A basic calculation divides the amount you are willing to risk
+            by the stop-loss distance multiplied by the pip value per
+            standard lot.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            What does 0.01 lot mean?
+          </div>
+
+          <div class="faq-answer">
+            In the commonly used forex lot convention, 0.01 standard lot is
+            approximately 1,000 currency units and is often called a micro
+            lot.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            What does 0.10 lot mean?
+          </div>
+
+          <div class="faq-answer">
+            Under the standard forex convention, 0.10 lot represents
+            approximately 10,000 units and is commonly called a mini lot.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            Can I use this calculator for every trading instrument?
+          </div>
+
+          <div class="faq-answer">
+            The calculator is primarily designed for basic forex position
+            sizing. Instruments such as gold, indices, stocks, commodities
+            and cryptocurrencies may use different contract sizes, tick
+            values or point values.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            Does the calculator guarantee my maximum loss?
+          </div>
+
+          <div class="faq-answer">
+            No. The calculation is an estimate based on the inputs provided.
+            Slippage, spread, commissions, gaps and other execution factors
+            can cause the actual result to differ.
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- BOTTOM AD -->
+    <div class="container">
+      <div class="ad-box" aria-label="Advertisement">
+        Advertisement
+      </div>
+    </div>
+
+    <!-- DISCLAIMER -->
+    <section class="container">
+
+      <div class="disclaimer">
+
+        <strong>Trading Disclaimer:</strong>
+        EZTradingHub provides calculators and educational information for
+        general informational purposes only. This calculator does not
+        constitute financial, investment, trading or risk-management advice.
+        Calculated values are estimates and should be independently verified
+        against your broker's contract specifications before placing a trade.
+        Trading leveraged financial products involves significant risk and
+        may result in losses.
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div>
+          <h3>EZTradingHub</h3>
+
+          <p>
+            Smart trading calculators, tools and educational resources
+            designed to help traders plan and analyze their trades.
+          </p>
+        </div>
+
+        <div>
+          <h3>Tools</h3>
+
+          <div class="footer-links">
+            <a href="calculators.html">All Calculators</a>
+            <a href="risk-calculator.html">Risk Calculator</a>
+            <a href="pip-calculator.html">Pip Calculator</a>
+            <a href="position-size-calculator.html">Position Size</a>
+          </div>
+        </div>
+
+        <div>
+          <h3>Information</h3>
+
+          <div class="footer-links">
+            <a href="about.html">About</a>
+            <a href="faq.html">FAQ</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms</a>
+            <a href="disclaimer.html">Disclaimer</a>
+            <a href="contact.html">Contact</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="copyright">
+        © <span id="year"></span> EZTradingHub. All rights reserved.
+      </div>
+
+    </div>
+
+  </footer>
+
+  <script>
+
+    /* =========================
+       THEME
+    ========================== */
+
+    const themeToggle = document.getElementById("themeToggle");
+
+    function applyTheme(theme) {
+      if (theme === "dark") {
+        document.body.classList.add("dark");
+        themeToggle.textContent = "☀️";
+        themeToggle.setAttribute("aria-label", "Switch to light mode");
+      } else {
+        document.body.classList.remove("dark");
+        themeToggle.textContent = "🌙";
+        themeToggle.setAttribute("aria-label", "Switch to dark mode");
+      }
+    }
+
+    const savedTheme = localStorage.getItem("ezth-theme");
+
+    if (savedTheme) {
+      applyTheme(savedTheme);
+    } else {
+      const prefersDark =
+        window.matchMedia &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+      applyTheme(prefersDark ? "dark" : "light");
+    }
+
+    themeToggle.addEventListener("click", function () {
+
+      const isDark = document.body.classList.contains("dark");
+
+      const newTheme = isDark ? "light" : "dark";
+
+      localStorage.setItem("ezth-theme", newTheme);
+
+      applyTheme(newTheme);
+
+    });
 
 
-<button id="topBtn" onclick="topFunction()">
+    /* =========================
+       CALCULATOR
+    ========================== */
 
-⬆️
+    const form = document.getElementById("lotForm");
 
-</button>
+    const balanceInput = document.getElementById("balance");
+    const riskPercentInput = document.getElementById("riskPercent");
+    const pipValueInput = document.getElementById("pipValue");
+    const entryInput = document.getElementById("entry");
+    const stopLossInput = document.getElementById("stopLoss");
+    const pipSizeInput = document.getElementById("pipSize");
+
+    const lotResult = document.getElementById("lotResult");
+    const moneyRisk = document.getElementById("moneyRisk");
+    const pipDistance = document.getElementById("pipDistance");
+    const riskPerPip = document.getElementById("riskPerPip");
+    const units = document.getElementById("units");
+    const riskDisplay = document.getElementById("riskDisplay");
+
+    function formatMoney(value) {
+
+      return "$" + value.toLocaleString(undefined, {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+      });
+
+    }
+
+    function calculateLotSize() {
+
+      const balance = parseFloat(balanceInput.value);
+      const riskPercent = parseFloat(riskPercentInput.value);
+      const pipValue = parseFloat(pipValueInput.value);
+      const entry = parseFloat(entryInput.value);
+      const stopLoss = parseFloat(stopLossInput.value);
+      const pipSize = parseFloat(pipSizeInput.value);
+
+      if (
+        !Number.isFinite(balance) ||
+        !Number.isFinite(riskPercent) ||
+        !Number.isFinite(pipValue) ||
+        !Number.isFinite(entry) ||
+        !Number.isFinite(stopLoss) ||
+        !Number.isFinite(pipSize)
+      ) {
+        return;
+      }
+
+      if (
+        balance <= 0 ||
+        riskPercent <= 0 ||
+        pipValue <= 0 ||
+        entry <= 0 ||
+        stopLoss <= 0 ||
+        pipSize <= 0
+      ) {
+        alert("Please enter valid positive values.");
+        return;
+      }
+
+      if (entry === stopLoss) {
+        alert("Entry price and stop-loss price cannot be the same.");
+        return;
+      }
+
+      const riskAmount =
+        balance * (riskPercent / 100);
+
+      const priceDistance =
+        Math.abs(entry - stopLoss);
+
+      const pips =
+        priceDistance / pipSize;
+
+      if (pips <= 0) {
+        alert("Stop-loss distance must be greater than zero.");
+        return;
+      }
+
+      /*
+        Basic formula:
+
+        Lot Size =
+        Risk Amount /
+        (Stop Loss Pips × Pip Value Per Standard Lot)
+      */
+
+      const lotSize =
+        riskAmount / (pips * pipValue);
+
+      const riskPip =
+        lotSize * pipValue;
+
+      const positionUnits =
+        lotSize * 100000;
+
+      lotResult.textContent =
+        lotSize.toFixed(2);
+
+      moneyRisk.textContent =
+        formatMoney(riskAmount);
+
+      pipDistance.textContent =
+        pips.toFixed(2) + " pips";
+
+      riskPerPip.textContent =
+        formatMoney(riskPip);
+
+      units.textContent =
+        Math.round(positionUnits).toLocaleString();
+
+      riskDisplay.textContent =
+        riskPercent.toFixed(2) + "%";
+
+    }
+
+    form.addEventListener("submit", function(event) {
+
+      event.preventDefault();
+
+      calculateLotSize();
+
+    });
+
+
+    /* =========================
+       RESET
+    ========================== */
+
+    document.getElementById("resetBtn")
+      .addEventListener("click", function() {
+
+        form.reset();
+
+        document.getElementById("riskPercent").value = "1";
+        document.getElementById("pipValue").value = "10";
+
+        lotResult.textContent = "0.00";
+        moneyRisk.textContent = "$0.00";
+        pipDistance.textContent = "0.00 pips";
+        riskPerPip.textContent = "$0.00";
+        units.textContent = "0";
+        riskDisplay.textContent = "0.00%";
+
+      });
+
+
+    /* =========================
+       FOOTER YEAR
+    ========================== */
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+  </script>
 
 </body>
-
 </html>
-
-
