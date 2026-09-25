@@ -1,206 +1,3686 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta charset="UTF-8">
+  <title>Free Trading Journal | Record & Review Your Trades | EZTradingHub</title>
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Use the free EZTradingHub trading journal to record trades, track entry and exit details, risk, profit and loss, trading psychology, and review your performance.">
 
-<title>Forex Trading Journal — Track & Review Your Trades | EZTradingHub</title>
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="author" content="EZTradingHub">
+  <meta name="theme-color" content="#003366">
 
-<meta name="descripti<!DOCTYPE html>
-<html lang="en">
-<head>
+  <link rel="canonical" href="https://eztradinghub.com/trade-journal.html">
 
-<meta charset="UTF-8">
+  <link rel="icon" href="assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="assets/images/favicon.png">
+  <link rel="manifest" href="manifest.json">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Free Trading Journal | EZTradingHub">
+  <meta property="og:description" content="Record, review and analyze your trades with the free EZTradingHub trading journal.">
+  <meta property="og:url" content="https://eztradinghub.com/trade-journal.html">
+  <meta property="og:site_name" content="EZTradingHub">
+  <meta property="og:image" content="https://eztradinghub.com/assets/images/og-image.jpg">
+  <meta property="og:image:alt" content="EZTradingHub Trading Journal">
 
-<title>Forex Trading Journal — Track & Review Your Trades | EZTradingHub</title>
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Free Trading Journal | EZTradingHub">
+  <meta name="twitter:description" content="Record and review your trades, risk, profit and loss with EZTradingHub.">
+  <meta name="twitter:image" content="https://eztradinghub.com/assets/images/og-image.jpg">
 
-<meta name="description"
-      content="Free Forex Trading Journal to record, review and analyze your trades. Track winning and losing trades, export your trading history and monitor your performance.">
+  <!-- WebApplication Schema -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebApplication",
+    "name":"EZTradingHub Trading Journal",
+    "url":"https://eztradinghub.com/trade-journal.html",
+    "applicationCategory":"FinanceApplication",
+    "operatingSystem":"Web Browser",
+    "description":"A free browser-based trading journal for recording and reviewing trades.",
+    "offers":{
+      "@type":"Offer",
+      "price":"0",
+      "priceCurrency":"USD"
+    },
+    "publisher":{
+      "@type":"Organization",
+      "name":"EZTradingHub",
+      "url":"https://eztradinghub.com"
+    }
+  }
+  </script>
 
-<meta name="keywords"
-      content="forex trading journal, trading journal, forex trade journal, trading log, trade tracker, trading performance tracker">
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {
+        "@type":"Question",
+        "name":"What is a trading journal?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"A trading journal is a record of trades and the decisions behind them. It can help traders review entries, exits, risk, results and trading behavior."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Where are my trades stored?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"This journal stores trade records in your browser using localStorage. The records are not automatically uploaded to an EZTradingHub server."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Can this journal work with the EZTradingHub dashboard?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Yes. This page uses the shared EZTH-trading-journal-v2 localStorage key and compatible trade fields so the EZTradingHub trade-journal-dashboard.html page can analyze saved trades in the same browser."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Does a trading journal guarantee profitable trading?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"No. A journal is a record-keeping and review tool. It does not guarantee profits or remove the risks of trading."
+        }
+      }
+    ]
+  }
+  </script>
 
-<meta name="robots"
-      content="index, follow">
+<style>
 
-<link rel="canonical"
-      href="https://eztradinghub.com/trade-journal.html">
+:root{
+  --primary:#003366;
+  --primary-2:#07558f;
+  --accent:#ffb400;
 
-<link rel="stylesheet" href="style.css">
+  --bg:#f5f8fc;
+  --surface:#ffffff;
+  --surface-2:#eef4fa;
 
-      <style>
-:root{--navy:#062f5f;--green:#047857;--dark:#111827;--text:#1f2937;--muted:#475569;--bg:#f8fafc;--card:#fff;--border:#e2e8f0}
-*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;line-height:1.7;color:var(--text);background:var(--bg)}
-header{background:var(--navy);color:#fff;padding:18px 20px}.header-inner{max-width:1000px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:20px}
-.brand,.back-link{color:#fff;text-decoration:none;font-weight:800}.brand{font-size:1.35rem}.back-link{font-weight:700}
-main{max-width:1000px;margin:40px auto;padding:0 20px}.hero,section{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:28px;margin-bottom:18px}
-.hero{padding:32px}.hero h1{margin-top:0;color:var(--dark);font-size:clamp(2rem,5vw,3rem)}h2{color:var(--dark);margin-top:0}.updated{color:var(--muted);font-size:.95rem}
-p,li{color:var(--text)}a{color:#065f46;font-weight:600}.notice{border-left:5px solid var(--green);background:#f0fdf4;padding:16px 18px;border-radius:8px}
-footer{background:var(--dark);color:#fff;text-align:center;padding:28px 20px;margin-top:45px}footer p{color:#fff}footer a{color:#fff;margin:0 8px}
-@media(max-width:650px){.header-inner{align-items:flex-start;flex-direction:column}main{margin-top:24px;padding:0 14px}.hero,section{padding:22px}}
+  --text:#17202a;
+  --muted:#5d6b78;
+
+  --border:#d9e2ec;
+
+  --success:#137a45;
+  --danger:#b42318;
+
+  --shadow:0 12px 35px rgba(0,35,75,.09);
+
+  --radius:16px;
+}
+
+html[data-theme="dark"]{
+
+  --bg:#0b1220;
+  --surface:#111c2e;
+  --surface-2:#17253a;
+
+  --text:#edf4fb;
+  --muted:#aab8c7;
+
+  --border:#293b52;
+
+  --shadow:0 12px 35px rgba(0,0,0,.28);
+}
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+
+  margin:0;
+
+  font-family:
+  Inter,
+  system-ui,
+  -apple-system,
+  BlinkMacSystemFont,
+  "Segoe UI",
+  Roboto,
+  Arial,
+  sans-serif;
+
+  background:var(--bg);
+  color:var(--text);
+
+  line-height:1.65;
+}
+
+a{
+  color:var(--primary-2);
+  text-decoration:none;
+}
+
+html[data-theme="dark"] a{
+  color:#72b8f0;
+}
+
+a:hover{
+  text-decoration:underline;
+}
+
+button,
+input,
+select,
+textarea{
+  font:inherit;
+}
+
+
+/* HEADER */
+
+.site-header{
+
+  position:sticky;
+  top:0;
+  z-index:1000;
+
+  background:var(--surface);
+
+  border-bottom:1px solid var(--border);
+
+  box-shadow:
+  0 4px 18px rgba(0,0,0,.04);
+}
+
+.nav{
+
+  max-width:1180px;
+
+  margin:auto;
+
+  padding:12px 18px;
+
+  display:flex;
+
+  align-items:center;
+
+  gap:16px;
+}
+
+.brand{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:10px;
+
+  color:var(--text);
+
+  font-weight:800;
+
+  white-space:nowrap;
+
+  text-decoration:none;
+}
+
+.brand:hover{
+  text-decoration:none;
+}
+
+.brand-mark{
+
+  width:42px;
+  height:42px;
+
+  border-radius:11px;
+
+  display:grid;
+  place-items:center;
+
+  background:var(--primary);
+
+  color:#fff;
+
+  font-weight:900;
+
+  letter-spacing:-1px;
+}
+
+.nav-links{
+
+  margin-left:auto;
+
+  display:flex;
+
+  align-items:center;
+
+  gap:8px;
+
+  flex-wrap:wrap;
+
+  justify-content:flex-end;
+}
+
+.nav-links a{
+
+  color:var(--text);
+
+  padding:8px 10px;
+
+  border-radius:9px;
+
+  font-size:.92rem;
+
+  font-weight:600;
+}
+
+.nav-links a:hover{
+
+  background:var(--surface-2);
+
+  text-decoration:none;
+}
+
+.theme-btn{
+
+  border:1px solid var(--border);
+
+  background:var(--surface-2);
+
+  color:var(--text);
+
+  width:42px;
+  height:42px;
+
+  border-radius:10px;
+
+  cursor:pointer;
+
+  font-size:1.1rem;
+}
+
+
+/* CONTAINER */
+
+.container{
+
+  width:min(1180px,calc(100% - 32px));
+
+  margin:auto;
+}
+
+
+/* HERO */
+
+.hero{
+
+  padding:58px 0 34px;
+}
+
+.hero-grid{
+
+  display:grid;
+
+  grid-template-columns:1.3fr .7fr;
+
+  gap:26px;
+
+  align-items:stretch;
+}
+
+.hero-copy,
+.hero-card,
+.panel,
+.info-card,
+.faq-item{
+
+  background:var(--surface);
+
+  border:1px solid var(--border);
+
+  border-radius:var(--radius);
+
+  box-shadow:var(--shadow);
+}
+
+.hero-copy{
+  padding:34px;
+}
+
+.eyebrow{
+
+  display:inline-flex;
+
+  align-items:center;
+
+  gap:8px;
+
+  background:rgba(0,51,102,.08);
+
+  color:var(--primary);
+
+  border-radius:999px;
+
+  padding:6px 12px;
+
+  font-size:.8rem;
+
+  font-weight:800;
+
+  letter-spacing:.04em;
+
+  text-transform:uppercase;
+}
+
+html[data-theme="dark"] .eyebrow{
+
+  background:rgba(114,184,240,.12);
+
+  color:#8ac8f7;
+}
+
+h1{
+
+  margin:16px 0 12px;
+
+  font-size:clamp(2rem,5vw,3.4rem);
+
+  line-height:1.08;
+
+  letter-spacing:-.04em;
+}
+
+h2{
+
+  margin:0 0 10px;
+
+  line-height:1.2;
+
+  letter-spacing:-.02em;
+}
+
+h3{
+  line-height:1.3;
+}
+
+.hero-copy p{
+
+  color:var(--muted);
+
+  font-size:1.04rem;
+
+  max-width:720px;
+}
+
+.hero-card{
+
+  padding:26px;
+
+  background:
+  linear-gradient(
+    145deg,
+    var(--primary),
+    #08669f
+  );
+
+  color:#fff;
+
+  border-color:transparent;
+}
+
+.hero-card h2{
+  color:#fff;
+}
+
+.hero-card p{
+  color:rgba(255,255,255,.84);
+}
+
+.hero-points{
+
+  list-style:none;
+
+  padding:0;
+
+  margin:18px 0 0;
+}
+
+.hero-points li{
+
+  margin:10px 0;
+
+  padding-left:24px;
+
+  position:relative;
+}
+
+.hero-points li::before{
+
+  content:"✓";
+
+  position:absolute;
+
+  left:0;
+
+  color:var(--accent);
+
+  font-weight:900;
+}
+
+
+/* ADS */
+
+.ad{
+
+  min-height:90px;
+
+  margin:24px 0;
+
+  border:1px dashed var(--border);
+
+  border-radius:14px;
+
+  display:grid;
+
+  place-items:center;
+
+  color:var(--muted);
+
+  background:var(--surface);
+
+  font-size:.82rem;
+}
+
+
+/* SECTIONS */
+
+.section{
+
+  padding:22px 0 42px;
+}
+
+.section-heading{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:flex-end;
+
+  gap:16px;
+
+  margin-bottom:16px;
+}
+
+.section-heading p{
+
+  margin:0;
+
+  color:var(--muted);
+
+  max-width:700px;
+}
+
+
+/* FORM */
+
+.panel{
+
+  padding:24px;
+}
+
+.form-grid{
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(4,1fr);
+
+  gap:15px;
+}
+
+.field{
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:7px;
+}
+
+.field.full{
+  grid-column:1/-1;
+}
+
+.field label{
+
+  font-size:.88rem;
+
+  font-weight:750;
+}
+
+.field small{
+
+  color:var(--muted);
+
+  font-size:.76rem;
+}
+
+input,
+select,
+textarea{
+
+  width:100%;
+
+  border:1px solid var(--border);
+
+  background:var(--surface);
+
+  color:var(--text);
+
+  border-radius:10px;
+
+  padding:11px 12px;
+
+  outline:none;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+
+  border-color:#4e94c8;
+
+  box-shadow:
+  0 0 0 3px
+  rgba(78,148,200,.13);
+}
+
+textarea{
+
+  min-height:105px;
+
+  resize:vertical;
+}
+
+
+/* BUTTONS */
+
+.actions{
+
+  display:flex;
+
+  flex-wrap:wrap;
+
+  gap:10px;
+
+  margin-top:20px;
+}
+
+.btn{
+
+  border:0;
+
+  border-radius:10px;
+
+  padding:11px 16px;
+
+  cursor:pointer;
+
+  font-weight:800;
+
+  display:inline-block;
+}
+
+.btn-primary{
+
+  background:var(--primary);
+
+  color:#fff;
+}
+
+.btn-primary:hover{
+
+  background:#06487a;
+
+  text-decoration:none;
+}
+
+.btn-accent{
+
+  background:var(--accent);
+
+  color:#151515;
+}
+
+.btn-accent:hover{
+  text-decoration:none;
+}
+
+.btn-secondary{
+
+  background:var(--surface-2);
+
+  color:var(--text);
+
+  border:1px solid var(--border);
+}
+
+.btn-secondary:hover{
+  text-decoration:none;
+}
+
+.btn-danger{
+
+  background:#fee4e2;
+
+  color:var(--danger);
+}
+
+html[data-theme="dark"] .btn-danger{
+
+  background:#401e23;
+
+  color:#ffaaa5;
+}
+
+
+/* NOTICE */
+
+.notice{
+
+  margin-top:18px;
+
+  padding:13px 15px;
+
+  border-radius:10px;
+
+  background:var(--surface-2);
+
+  color:var(--muted);
+
+  font-size:.9rem;
+}
+
+.status{
+
+  margin-top:12px;
+
+  min-height:24px;
+
+  font-weight:700;
+
+  font-size:.9rem;
+}
+
+.status.success{
+  color:var(--success);
+}
+
+.status.error{
+  color:var(--danger);
+}
+
+
+/* STATS */
+
+.stats{
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(6,1fr);
+
+  gap:12px;
+}
+
+.stat{
+
+  padding:18px;
+
+  background:var(--surface);
+
+  border:1px solid var(--border);
+
+  border-radius:14px;
+}
+
+.stat span{
+
+  display:block;
+
+  color:var(--muted);
+
+  font-size:.78rem;
+
+  font-weight:700;
+
+  margin-bottom:5px;
+}
+
+.stat strong{
+
+  font-size:1.35rem;
+
+  line-height:1.2;
+}
+
+.positive{
+  color:var(--success);
+}
+
+.negative{
+  color:var(--danger);
+}
+
+
+/* TABLE */
+
+.table-wrap{
+
+  overflow:auto;
+
+  border:1px solid var(--border);
+
+  border-radius:12px;
+}
+
+table{
+
+  width:100%;
+
+  min-width:950px;
+
+  border-collapse:collapse;
+
+  background:var(--surface);
+}
+
+th,
+td{
+
+  padding:12px 10px;
+
+  border-bottom:1px solid var(--border);
+
+  text-align:left;
+
+  vertical-align:top;
+
+  font-size:.86rem;
+}
+
+th{
+
+  background:var(--surface-2);
+
+  color:var(--text);
+
+  font-size:.78rem;
+
+  text-transform:uppercase;
+
+  letter-spacing:.04em;
+}
+
+tr:last-child td{
+  border-bottom:0;
+}
+
+.empty{
+
+  padding:28px;
+
+  text-align:center;
+
+  color:var(--muted);
+}
+
+.mini-btn{
+
+  border:1px solid var(--border);
+
+  background:var(--surface-2);
+
+  color:var(--text);
+
+  padding:6px 9px;
+
+  border-radius:7px;
+
+  cursor:pointer;
+
+  font-weight:700;
+}
+
+
+/* CONTENT */
+
+.content-grid{
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(3,1fr);
+
+  gap:18px;
+}
+
+.info-card{
+
+  padding:22px;
+}
+
+.info-card p,
+.info-card li{
+
+  color:var(--muted);
+}
+
+.info-card ul{
+  padding-left:20px;
+}
+
+
+/* FAQ */
+
+.faq-list{
+
+  display:grid;
+
+  gap:12px;
+}
+
+.faq-item{
+
+  padding:20px;
+}
+
+.faq-item h3{
+
+  margin:0 0 7px;
+
+  font-size:1rem;
+}
+
+.faq-item p{
+
+  margin:0;
+
+  color:var(--muted);
+}
+
+
+/* FOOTER */
+
+footer{
+
+  margin-top:30px;
+
+  background:var(--primary);
+
+  color:#fff;
+
+  padding:34px 0;
+}
+
+.footer-grid{
+
+  display:grid;
+
+  grid-template-columns:
+  1.3fr 1fr 1fr;
+
+  gap:25px;
+}
+
+footer h3{
+  margin-top:0;
+}
+
+footer p,
+footer li{
+  color:rgba(255,255,255,.75);
+}
+
+footer a{
+  color:#fff;
+}
+
+footer ul{
+  padding-left:20px;
+}
+
+.copyright{
+
+  border-top:
+  1px solid
+  rgba(255,255,255,.16);
+
+  margin-top:24px;
+
+  padding-top:18px;
+
+  color:rgba(255,255,255,.68);
+
+  font-size:.86rem;
+}
+
+
+/* BACK TO TOP */
+
+#topBtn{
+
+  position:fixed;
+
+  right:18px;
+
+  bottom:18px;
+
+  width:44px;
+  height:44px;
+
+  border:0;
+
+  border-radius:50%;
+
+  background:var(--primary);
+
+  color:#fff;
+
+  cursor:pointer;
+
+  display:none;
+
+  box-shadow:var(--shadow);
+}
+
+
+/* RESPONSIVE */
+
+@media(max-width:1000px){
+
+  .hero-grid{
+    grid-template-columns:1fr;
+  }
+
+  .form-grid{
+    grid-template-columns:
+    repeat(2,1fr);
+  }
+
+  .stats{
+    grid-template-columns:
+    repeat(3,1fr);
+  }
+
+  .content-grid{
+    grid-template-columns:1fr;
+  }
+
+  .footer-grid{
+    grid-template-columns:
+    1fr 1fr;
+  }
+}
+
+@media(max-width:700px){
+
+  .nav{
+    align-items:flex-start;
+  }
+
+  .nav-links{
+    display:none;
+  }
+
+  .hero{
+    padding-top:30px;
+  }
+
+  .hero-copy,
+  .hero-card,
+  .panel{
+    padding:20px;
+  }
+
+  .form-grid{
+    grid-template-columns:1fr;
+  }
+
+  .field.full{
+    grid-column:auto;
+  }
+
+  .stats{
+    grid-template-columns:
+    repeat(2,1fr);
+  }
+
+  .footer-grid{
+    grid-template-columns:1fr;
+  }
+
+  .section-heading{
+    display:block;
+  }
+}
+
+@media(max-width:430px){
+
+  .container{
+    width:min(
+      100% - 22px,
+      1180px
+    );
+  }
+
+  .stats{
+    grid-template-columns:
+    1fr 1fr;
+  }
+
+  .stat{
+    padding:14px;
+  }
+
+  .stat strong{
+    font-size:1.12rem;
+  }
+
+  h1{
+    font-size:2.1rem;
+  }
+}
+
 </style>
 </head>
+
 <body>
-<header><div class="header-inner">
-<a class="brand" href="index.html">EZTradingHub</a>
-<a class="back-link" href="index.html">← Back to Home</a>
-</div></header>
-    <h1>📓 Trade Journal</h1>
 
-    <p>Record and review your trades.</p>
-</header>
-<nav class="navbar">
+<header class="site-header">
 
-    <a href="index.html">🏠 Home</a>
+  <nav class="nav" aria-label="Main navigation">
 
-    <a href="trade-journal.html" class="active">📓 Journal</a>
+    <a class="brand"
+       href="index.html"
+       aria-label="EZTradingHub home">
 
-    <a href="dashboard.html">📊 Dashboard</a>
+      <span class="brand-mark">EZ</span>
 
-</nav>
+      <span>EZTradingHub</span>
 
-<section class="hero">
+    </a>
 
-<input type="date" id="tradeDate">
+    <div class="nav-links">
 
-<br><br>
+      <a href="index.html">
+        Home
+      </a>
 
-<input type="text" id="pair" placeholder="Currency Pair (e.g. XAUUSD)">
+      <a href="calculators.html">
+        Calculators
+      </a>
 
-<br><br>
+      <a href="trade-journal.html"
+         aria-current="page">
+        Trade Journal
+      </a>
 
-<select id="tradeType">
-    <option value="Buy">🟢 Buy</option>
-    <option value="Sell">🔴 Sell</option>
-</select>
+      <a href="trade-journal-dashboard.html">
+        Dashboard
+      </a>
 
-<br><br>
+      <a href="about.html">
+        About
+      </a>
 
-<input type="number" id="profit" placeholder="Profit/Loss ($)">
-
-<br><br>
-
-<button class="btn" onclick="saveTrade()">
-💾 Save Trade
-</button>
-    
-<button class="btn" onclick="clearJournal()">
-🗑️ Clear Journal
-</button>
-    
-<button class="btn" onclick="exportCSV()">
-📤 Export to CSV
-</button>
-    
-<div class="filter-buttons">
-
-<button id="allBtn" onclick="filterTrades('all')" class="btn">
-🟢 All Trades
-</button>
-
-<button id="winBtn" onclick="filterTrades('win')" class="btn">
-🏆 Winning Trades
-</button>
-
-<button id="lossBtn" onclick="filterTrades('loss')" class="btn">
-📉 Losing Trades
-</button>
-
-</div>
-    
-<button class="btn" onclick="window.location.href='dashboard.html'">
-📊 View Dashboard
-</button>
-
-<br><br>
-
-<div id="journalResult" class="result-card">
-No trades saved yet.
-</div>
-    
-<br><br>
-      
-<section class="related-tools">
-
-    <h2>Related Trading Tools</h2>
-
-    <p>Analyze your trades and manage risk with these EZTradingHub tools.</p>
-
-    <div class="related-tools-grid">
-
-        <a href="dashboard.html">
-            📊 Trading Dashboard
-        </a>
-
-        <a href="risk-calculator.html">
-            🛡️ Risk Calculator
-        </a>
-
-        <a href="position-size-calculator.html">
-            📊 Position Size Calculator
-        </a>
-
-        <a href="profit-calculator.html">
-            💰 Profit Calculator
-        </a>
-
-        <a href="drawdown-calculator.html">
-            📉 Drawdown Calculator
-        </a>
-
-        <a href="trading-plan-generator.html">
-            📝 Trading Plan Generator
-        </a>
+      <a href="contact.html">
+        Contact
+      </a>
 
     </div>
 
+    <button
+      class="theme-btn"
+      id="themeToggle"
+      type="button"
+      aria-label="Toggle light and dark mode"
+      title="Toggle theme">
+
+      🌙
+
+    </button>
+
+  </nav>
+
+</header>
+
+
+<main>
+
+<!-- HERO -->
+
+<section class="hero">
+
+  <div class="container hero-grid">
+
+    <div class="hero-copy">
+
+      <span class="eyebrow">
+        Free Trading Tool
+      </span>
+
+      <h1>
+        Trading Journal
+      </h1>
+
+      <p>
+        Record your trades, document your strategy,
+        track risk and profit or loss, and review
+        the decisions behind each trade. Your saved
+        records can also be analyzed by the
+        EZTradingHub Trade Journal Dashboard.
+      </p>
+
+      <div class="actions">
+
+        <a
+          class="btn btn-accent"
+          href="#journal-form">
+
+          Record a Trade
+
+        </a>
+
+        <a
+          class="btn btn-secondary"
+          href="trade-journal-dashboard.html">
+
+          Open Dashboard
+
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <aside class="hero-card">
+
+      <h2>
+        Build a better trading review process
+      </h2>
+
+      <p>
+        A journal can help you identify patterns
+        in execution, risk management and trading
+        behavior.
+      </p>
+
+      <ul class="hero-points">
+
+        <li>
+          Record entry, exit, stop loss and target
+        </li>
+
+        <li>
+          Track position size and P/L
+        </li>
+
+        <li>
+          Document setup and psychology
+        </li>
+
+        <li>
+          Review your history on the dashboard
+        </li>
+
+      </ul>
+
+    </aside>
+
+  </div>
+
 </section>
-    
-<a href="index.html" class="btn">
-🏠 Back to Home
-</a>
-    
+
+
+<div class="container">
+
+  <div
+    class="ad"
+    aria-label="Advertisement">
+
+    Advertisement
+
+  </div>
+
+</div>
+
+
+<!-- JOURNAL FORM -->
+
+<section
+  class="section"
+  id="journal-form">
+
+  <div class="container">
+
+    <div class="section-heading">
+
+      <div>
+
+        <h2>
+          Record a Trade
+        </h2>
+
+        <p>
+          Enter the information available for
+          your trade. Fields such as entry,
+          exit and P/L can be left blank when
+          they are not applicable.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="panel">
+
+      <form
+        id="tradeForm"
+        novalidate>
+
+        <div class="form-grid">
+
+
+          <div class="field">
+
+            <label for="tradeDate">
+              Trade date *
+            </label>
+
+            <input
+              id="tradeDate"
+              name="date"
+              type="date"
+              required>
+
+          </div>
+
+
+          <div class="field">
+
+            <label for="market">
+              Market / Symbol *
+            </label>
+
+            <input
+              id="market"
+              name="market"
+              type="text"
+              placeholder="e.g. XAUUSD"
+              required>
+
+          </div>
+
+
+          <div class="field">
+
+            <label for="direction">
+              Direction
+            </label>
+
+            <select
+              id="direction"
+              name="direction">
+
+              <option value="BUY">
+                BUY
+              </option>
+
+              <option value="SELL">
+                SELL
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <div class="field">
+
+            <label for="timeframe">
+              Timeframe
+            </label>
+
+            <select
+              id="timeframe"
+              name="timeframe">
+
+              <option value="">
+                Select
+              </option>
+
+              <option>M1</option>
+              <option>M5</option>
+              <option>M15</option>
+              <option>M30</option>
+              <option>H1</option>
+              <option>H4</option>
+              <option>D1</option>
+              <option>W1</option>
+              <option>MN</option>
+
+            </select>
+
+          </div>
+
+
+          <div class="field">
+
+            <label for="entry">
+              Entry price
+            </label>
+
+            <input
+              id="entry"
+              name="entry"
+              type="number"
+              step="any"
+              inputmode="decimal"
+              placeholder="0.00">
+
+          </div>
+
+
+          <div class="field">
+
+            <label for="exit">
+              Exit price
+            </label>
+
+            <input
+              id="exit"
+              name="exit"
+              type="number"
+              step="any"
+              inputmode="decimal"
+              placeholder="0.00">
+
+          </div>
+
+
+          <div class="field">
+
+            <label for="stopLoss">
+              Stop loss
+            </label>
+
+            <input
+              id="stopLoss"
+              name="stopLoss"
+              type="number"
+              step="any"
+              inputmode="decimal"
+              placeholder="0.00">
+
+          </div>
+
+
+          <div class="field">
+
+            <label for="target">
+              Take profit / Target
+            </label>
+
+            <input
+              id="target"
+              name="target"
+              type="number"
+              step="any"
+              inputmode="decimal"
+              placeholder="0.00">
+
+          </div>
+
+
+          <div class="field">
+
+            <label for="positionSize">
+              Position size / Lot size
+            </label>
+
+            <input
+              id="positionSize"
+              name="positionSize"
+              type="number"
+              step="any"
+              inputmode="decimal"
+              placeholder="0.01">
+
+          </div>
+
+
+          <div class="field">
+
+            <label for="pl">
+              Profit / Loss *
+            </label>
+
+            <input
+              id="pl"
+              name="profitLoss"
+              type="number"
+              step="any"
+              inputmode="decimal"
+              placeholder="e.g. 125 or -50"
+              required>
+
+            <small>
+              Use a positive number for profit
+              and a negative number for loss.
+            </small>
+
+          </div>
+
+
+          <div class="field">
+
+            <label for="setup">
+              Trade setup
+            </label>
+
+            <input
+              id="setup"
+              name="setup"
+              type="text"
+              placeholder="e.g. Breakout, FVG, BOS/CHOCH">
+
+          </div>
+
+
+          <div class="field">
+
+            <label for="session">
+              Trading session
+            </label>
+
+            <select
+              id="session"
+              name="session">
+
+              <option value="">
+                Select
+              </option>
+
+              <option>
+                Asia
+              </option>
+
+              <option>
+                London
+              </option>
+
+              <option>
+                New York
+              </option>
+
+              <option>
+                London / New York overlap
+              </option>
+
+              <option>
+                Other
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <div class="field full">
+
+            <label for="psychology">
+              Trading psychology
+            </label>
+
+            <textarea
+              id="psychology"
+              name="psychology"
+              placeholder="How did you feel before, during and after the trade?"></textarea>
+
+          </div>
+
+
+          <div class="field full">
+
+            <label for="notes">
+              Trade notes / lesson learned
+            </label>
+
+            <textarea
+              id="notes"
+              name="notes"
+              placeholder="Why did you take the trade? What went well? What would you change?"></textarea>
+
+          </div>
+
+
+        </div>
+
+
+        <div class="actions">
+
+          <button
+            class="btn btn-primary"
+            type="submit">
+
+            Save Trade
+
+          </button>
+
+          <button
+            class="btn btn-secondary"
+            type="button"
+            id="clearForm">
+
+            Clear Form
+
+          </button>
+
+        </div>
+
+
+        <div
+          id="status"
+          class="status"
+          role="status"
+          aria-live="polite">
+        </div>
+
+
+        <div class="notice">
+
+          <strong>
+            Privacy note:
+          </strong>
+
+          Trade records are stored locally
+          in this browser using
+          <code>localStorage</code>.
+
+          Clearing browser/site data can
+          remove them.
+
+          The journal does not automatically
+          send your trade history to an
+          EZTradingHub server.
+
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
 </section>
-<script src="script.js"></script>
+
+
+<!-- SUMMARY -->
+
+<section
+  class="section"
+  aria-labelledby="stats-title">
+
+  <div class="container">
+
+    <div class="section-heading">
+
+      <div>
+
+        <h2 id="stats-title">
+          Journal Summary
+        </h2>
+
+        <p>
+          This quick summary updates from
+          the same saved trade records used
+          by the dashboard.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="stats">
+
+      <div class="stat">
+
+        <span>
+          Total Trades
+        </span>
+
+        <strong id="totalTrades">
+          0
+        </strong>
+
+      </div>
+
+
+      <div class="stat">
+
+        <span>
+          Winning Trades
+        </span>
+
+        <strong id="winningTrades">
+          0
+        </strong>
+
+      </div>
+
+
+      <div class="stat">
+
+        <span>
+          Losing Trades
+        </span>
+
+        <strong id="losingTrades">
+          0
+        </strong>
+
+      </div>
+
+
+      <div class="stat">
+
+        <span>
+          Win Rate
+        </span>
+
+        <strong id="winRate">
+          0%
+        </strong>
+
+      </div>
+
+
+      <div class="stat">
+
+        <span>
+          Net P/L
+        </span>
+
+        <strong id="netPL">
+          $0.00
+        </strong>
+
+      </div>
+
+
+      <div class="stat">
+
+        <span>
+          Average P/L
+        </span>
+
+        <strong id="avgPL">
+          $0.00
+        </strong>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- HISTORY -->
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="section-heading">
+
+      <div>
+
+        <h2>
+          Saved Trade History
+        </h2>
+
+        <p>
+          Your latest saved records are shown
+          below. The dashboard uses the same
+          storage key.
+        </p>
+
+      </div>
+
+
+      <button
+        class="btn btn-secondary"
+        id="exportCSV"
+        type="button">
+
+        Export CSV
+
+      </button>
+
+    </div>
+
+
+    <div class="panel">
+
+      <div class="table-wrap">
+
+        <table>
+
+          <thead>
+
+            <tr>
+
+              <th>Date</th>
+              <th>Market</th>
+              <th>Direction</th>
+              <th>Timeframe</th>
+              <th>Entry</th>
+              <th>Exit</th>
+              <th>Stop</th>
+              <th>Target</th>
+              <th>Size</th>
+              <th>P/L</th>
+              <th>Setup</th>
+              <th>Action</th>
+
+            </tr>
+
+          </thead>
+
+          <tbody id="tradeTableBody">
+          </tbody>
+
+        </table>
+
+      </div>
+
+
+      <div
+        id="emptyState"
+        class="empty">
+
+        No trades have been saved yet.
+        Record your first trade above.
+
+      </div>
+
+
+      <div class="actions">
+
+        <button
+          class="btn btn-danger"
+          id="deleteAll"
+          type="button">
+
+          Delete All Trades
+
+        </button>
+
+
+        <a
+          class="btn btn-primary"
+          href="trade-journal-dashboard.html">
+
+          View Full Dashboard
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<div class="container">
+
+  <div
+    class="ad"
+    aria-label="Advertisement">
+
+    Advertisement
+
+  </div>
+
+</div>
+
+
+<!-- EDUCATION -->
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="section-heading">
+
+      <div>
+
+        <h2>
+          How to Use a Trading Journal
+        </h2>
+
+        <p>
+          Consistent records can make
+          post-trade review more structured
+          and easier to repeat.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="content-grid">
+
+
+      <article class="info-card">
+
+        <h3>
+          1. Record the setup
+        </h3>
+
+        <p>
+          Write down the market, direction,
+          timeframe and setup that led to
+          the trade. A consistent description
+          makes later comparisons easier.
+        </p>
+
+      </article>
+
+
+      <article class="info-card">
+
+        <h3>
+          2. Record risk and outcome
+        </h3>
+
+        <p>
+          Capture your entry, stop loss,
+          target, position size and final
+          profit or loss. These records can
+          help you review execution and
+          risk management.
+        </p>
+
+      </article>
+
+
+      <article class="info-card">
+
+        <h3>
+          3. Review psychology
+        </h3>
+
+        <p>
+          Record emotions, discipline,
+          hesitation, overtrading or other
+          observations. Reviewing behavior
+          can add context to numerical
+          results.
+        </p>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- INTERNAL LINKS / SEO CONTENT -->
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="content-grid">
+
+
+      <article class="info-card">
+
+        <h2>
+          Useful EZTradingHub Tools
+        </h2>
+
+        <ul>
+
+          <li>
+            <a href="risk-calculator.html">
+              Risk Calculator
+            </a>
+          </li>
+
+          <li>
+            <a href="lot-size-calculator.html">
+              Lot Size Calculator
+            </a>
+          </li>
+
+          <li>
+            <a href="position-size-calculator.html">
+              Position Size Calculator
+            </a>
+          </li>
+
+          <li>
+            <a href="risk-reward-calculator.html">
+              Risk-to-Reward Calculator
+            </a>
+          </li>
+
+          <li>
+            <a href="drawdown-calculator.html">
+              Drawdown Calculator
+            </a>
+          </li>
+
+        </ul>
+
+      </article>
+
+
+      <article class="info-card">
+
+        <h2>
+          Trading Journal Best Practices
+        </h2>
+
+        <ul>
+
+          <li>
+            Record trades consistently rather
+            than only profitable trades.
+          </li>
+
+          <li>
+            Separate the quality of a decision
+            from the financial outcome.
+          </li>
+
+          <li>
+            Review recurring mistakes and
+            rule violations.
+          </li>
+
+          <li>
+            Use statistics as evidence for
+            review rather than as a guarantee
+            of future results.
+          </li>
+
+        </ul>
+
+      </article>
+
+
+      <article class="info-card">
+
+        <h2>
+          Risk Reminder
+        </h2>
+
+        <p>
+          Trading financial markets involves
+          risk, including the possible loss
+          of capital.
+
+          A trading journal is an educational
+          record-keeping tool and is not
+          investment, financial or trading
+          advice.
+        </p>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- FAQ -->
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="section-heading">
+
+      <div>
+
+        <h2>
+          Frequently Asked Questions
+        </h2>
+
+        <p>
+          Common questions about the
+          EZTradingHub trading journal.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="faq-list">
+
+
+      <article class="faq-item">
+
+        <h3>
+          What is a trading journal?
+        </h3>
+
+        <p>
+          A trading journal is a structured
+          record of trades and the decisions
+          behind them. It can be used to
+          review entries, exits, risk,
+          results and trading behavior.
+        </p>
+
+      </article>
+
+
+      <article class="faq-item">
+
+        <h3>
+          Where are my trades stored?
+        </h3>
+
+        <p>
+          Your saved trades are stored
+          locally in the browser using
+          localStorage. They are not
+          automatically uploaded to an
+          EZTradingHub server.
+        </p>
+
+      </article>
+
+
+      <article class="faq-item">
+
+        <h3>
+          Does this work with the
+          trade-journal-dashboard.html page?
+        </h3>
+
+        <p>
+          Yes. Both pages use the shared
+          <strong>
+            EZTH-trading-journal-v2
+          </strong>
+          localStorage key.
+
+          Save trades here, then open the
+          dashboard in the same browser and
+          on the same website origin to
+          analyze them.
+        </p>
+
+      </article>
+
+
+      <article class="faq-item">
+
+        <h3>
+          Will my trades sync to another
+          phone or computer?
+        </h3>
+
+        <p>
+          No. Browser localStorage is
+          device/browser specific.
+
+          Use the CSV export to keep an
+          external copy of your records.
+        </p>
+
+      </article>
+
+
+      <article class="faq-item">
+
+        <h3>
+          Can a trading journal guarantee
+          profits?
+        </h3>
+
+        <p>
+          No. A journal can organize
+          records and support review, but
+          it cannot guarantee profitable
+          trading or eliminate market risk.
+        </p>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- DISCLAIMER -->
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="panel">
+
+      <h2>
+        Important Disclaimer
+      </h2>
+
+      <p>
+        EZTradingHub provides calculators,
+        journals and educational tools for
+        informational and educational
+        purposes.
+
+        Nothing on this page constitutes
+        financial, investment, legal or
+        tax advice.
+
+        Trading stocks, forex, commodities,
+        cryptocurrencies, derivatives and
+        other financial instruments involves
+        substantial risk.
+
+        You are responsible for your own
+        trading decisions and risk management.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+</main>
+
+
+<!-- FOOTER -->
 
 <footer>
 
-        <div>
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="faq.html">FAQ</a>
-            <a href="terms.html">Terms & Conditions</a>
-            <a href="privacy.html">Privacy Policy</a>
-            <a href="cookie-policy.html">Cookie Policy</a>
-            <a href="disclaimer.html">Disclaimer</a>
-            <a href="contact.html">Contact</a>
-        </div>
+  <div class="container">
 
-        <p class="copyright">
-            © 2026 EZTradingHub. All rights reserved.
+    <div class="footer-grid">
+
+
+      <div>
+
+        <h3>
+          EZTradingHub
+        </h3>
+
+        <p>
+          Trading calculators, journals and
+          educational tools designed to help
+          traders organize and review their
+          trading process.
         </p>
 
-        <p class="copyright">
-            EZTradingHub provides educational and informational tools.
-            Trading involves risk.
-        </p>
-
-    </footer>
-    <script src="cookie-consent.js"></script>
+      </div>
 
 
-<button id="topBtn" onclick="topFunction()">
+      <div>
 
-⬆️
+        <h3>
+          Trading Tools
+        </h3>
+
+        <ul>
+
+          <li>
+            <a href="calculators.html">
+              All Calculators
+            </a>
+          </li>
+
+          <li>
+            <a href="trade-journal.html">
+              Trade Journal
+            </a>
+          </li>
+
+          <li>
+            <a href="trade-journal-dashboard.html">
+              Journal Dashboard
+            </a>
+          </li>
+
+          <li>
+            <a href="risk-calculator.html">
+              Risk Calculator
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+
+      <div>
+
+        <h3>
+          Company & Policies
+        </h3>
+
+        <ul>
+
+          <li>
+            <a href="about.html">
+              About
+            </a>
+          </li>
+
+          <li>
+            <a href="contact.html">
+              Contact
+            </a>
+          </li>
+
+          <li>
+            <a href="privacy.html">
+              Privacy Policy
+            </a>
+          </li>
+
+          <li>
+            <a href="terms.html">
+              Terms
+            </a>
+          </li>
+
+          <li>
+            <a href="disclaimer.html">
+              Disclaimer
+            </a>
+          </li>
+
+          <li>
+            <a href="cookie-policy.html">
+              Cookie Policy
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+
+    </div>
+
+
+    <div class="copyright">
+
+      ©
+      <span id="year"></span>
+      EZTradingHub.
+      All rights reserved.
+
+    </div>
+
+  </div>
+
+</footer>
+
+
+<button
+  id="topBtn"
+  type="button"
+  aria-label="Back to top">
+
+  ↑
 
 </button>
 
+
+<script>
+
+(function(){
+
+"use strict";
+
+
+/*
+========================================================
+SHARED STORAGE KEY
+========================================================
+
+This MUST remain the same on:
+
+trade-journal.html
+
+AND
+
+trade-journal-dashboard.html
+*/
+
+const STORAGE_KEY =
+  "EZTH-trading-journal-v2";
+
+const THEME_KEY =
+  "EZTH-theme";
+
+
+const $ = (id) =>
+  document.getElementById(id);
+
+
+/*
+========================================================
+READ TRADES
+========================================================
+*/
+
+function getTrades(){
+
+  try{
+
+    const raw =
+      localStorage.getItem(STORAGE_KEY);
+
+    if(!raw){
+      return [];
+    }
+
+    const parsed =
+      JSON.parse(raw);
+
+    return Array.isArray(parsed)
+      ? parsed
+      : [];
+
+  }catch(error){
+
+    console.error(
+      "Could not read trading journal:",
+      error
+    );
+
+    return [];
+  }
+}
+
+
+/*
+========================================================
+SAVE TRADES
+========================================================
+*/
+
+function saveTrades(trades){
+
+  localStorage.setItem(
+    STORAGE_KEY,
+    JSON.stringify(trades)
+  );
+}
+
+
+/*
+========================================================
+NUMBER HANDLER
+========================================================
+*/
+
+function numberOrNull(value){
+
+  if(
+    value === "" ||
+    value === null ||
+    value === undefined
+  ){
+
+    return null;
+  }
+
+  const n =
+    Number(value);
+
+  return Number.isFinite(n)
+    ? n
+    : null;
+}
+
+
+/*
+========================================================
+MONEY
+========================================================
+*/
+
+function money(value){
+
+  const n =
+    Number(value) || 0;
+
+  return (
+    n < 0
+      ? "-$"
+      : "$"
+  ) +
+
+  Math.abs(n).toLocaleString(
+    undefined,
+    {
+      minimumFractionDigits:2,
+      maximumFractionDigits:2
+    }
+  );
+}
+
+
+/*
+========================================================
+ESCAPE HTML
+========================================================
+*/
+
+function escapeHTML(value){
+
+  return String(value ?? "")
+
+    .replace(/&/g,"&amp;")
+
+    .replace(/</g,"&lt;")
+
+    .replace(/>/g,"&gt;")
+
+    .replace(/"/g,"&quot;")
+
+    .replace(/'/g,"&#039;");
+}
+
+
+/*
+========================================================
+GET PROFIT / LOSS
+========================================================
+
+The dashboard can recognize these fields.
+
+Primary field:
+profitLoss
+
+Compatibility fields:
+pnl
+pl
+profit
+loss
+========================================================
+*/
+
+function getPL(trade){
+
+  const candidates = [
+
+    trade.profitLoss,
+
+    trade.pnl,
+
+    trade.pl,
+
+    trade.profit
+
+  ];
+
+
+  for(
+    const value of candidates
+  ){
+
+    const n =
+      Number(value);
+
+    if(
+      Number.isFinite(n)
+    ){
+
+      return n;
+    }
+  }
+
+
+  if(
+    Number.isFinite(
+      Number(trade.loss)
+    )
+  ){
+
+    return -Math.abs(
+      Number(trade.loss)
+    );
+  }
+
+
+  return 0;
+}
+
+
+/*
+========================================================
+NORMALIZE TRADE
+========================================================
+*/
+
+function normalizeTrade(trade){
+
+  return {
+
+    id:
+      trade.id ||
+      (
+        "trade-" +
+        Date.now() +
+        "-" +
+        Math.random()
+          .toString(36)
+          .slice(2)
+      ),
+
+    date:
+      trade.date || "",
+
+    market:
+      trade.market ||
+      trade.symbol ||
+      trade.pair ||
+      "",
+
+    symbol:
+      trade.symbol ||
+      trade.market ||
+      trade.pair ||
+      "",
+
+    pair:
+      trade.pair ||
+      trade.market ||
+      trade.symbol ||
+      "",
+
+    direction:
+      trade.direction ||
+      trade.type ||
+      "BUY",
+
+    timeframe:
+      trade.timeframe || "",
+
+    entry:
+      numberOrNull(
+        trade.entry
+      ),
+
+    exit:
+      numberOrNull(
+        trade.exit
+      ),
+
+    stopLoss:
+      numberOrNull(
+        trade.stopLoss ??
+        trade.sl
+      ),
+
+    target:
+      numberOrNull(
+        trade.target ??
+        trade.takeProfit ??
+        trade.tp
+      ),
+
+    positionSize:
+      numberOrNull(
+        trade.positionSize ??
+        trade.lotSize ??
+        trade.lots
+      ),
+
+    profitLoss:
+      getPL(trade),
+
+    setup:
+      trade.setup || "",
+
+    session:
+      trade.session || "",
+
+    psychology:
+      trade.psychology || "",
+
+    notes:
+      trade.notes || "",
+
+    createdAt:
+      trade.createdAt ||
+      new Date().toISOString()
+
+  };
+}
+
+
+/*
+========================================================
+FORMAT VALUE
+========================================================
+*/
+
+function formatValue(value){
+
+  if(
+    value === null ||
+    value === undefined ||
+    value === ""
+  ){
+
+    return "—";
+  }
+
+  return escapeHTML(value);
+}
+
+
+/*
+========================================================
+RENDER
+========================================================
+*/
+
+function render(){
+
+  const trades =
+    getTrades()
+      .map(normalizeTrade);
+
+
+  const total =
+    trades.length;
+
+
+  const wins =
+    trades.filter(
+      t => t.profitLoss > 0
+    ).length;
+
+
+  const losses =
+    trades.filter(
+      t => t.profitLoss < 0
+    ).length;
+
+
+  const net =
+    trades.reduce(
+      (sum,t) =>
+        sum + t.profitLoss,
+      0
+    );
+
+
+  const avg =
+    total
+      ? net / total
+      : 0;
+
+
+  const winRate =
+    total
+      ? (wins / total) * 100
+      : 0;
+
+
+  $("totalTrades")
+    .textContent = total;
+
+
+  $("winningTrades")
+    .textContent = wins;
+
+
+  $("losingTrades")
+    .textContent = losses;
+
+
+  $("winRate")
+    .textContent =
+      winRate.toFixed(1) + "%";
+
+
+  $("netPL")
+    .textContent =
+      money(net);
+
+
+  $("netPL").className =
+    net > 0
+      ? "positive"
+      : net < 0
+        ? "negative"
+        : "";
+
+
+  $("avgPL")
+    .textContent =
+      money(avg);
+
+
+  $("avgPL").className =
+    avg > 0
+      ? "positive"
+      : avg < 0
+        ? "negative"
+        : "";
+
+
+  const tbody =
+    $("tradeTableBody");
+
+
+  const empty =
+    $("emptyState");
+
+
+  if(!trades.length){
+
+    tbody.innerHTML = "";
+
+    empty.style.display =
+      "block";
+
+    return;
+  }
+
+
+  empty.style.display =
+    "none";
+
+
+  const sorted =
+    [...trades].sort(
+      (a,b) =>
+
+        String(b.date)
+          .localeCompare(
+            String(a.date)
+          )
+
+        ||
+
+        String(b.createdAt)
+          .localeCompare(
+            String(a.createdAt)
+          )
+    );
+
+
+  tbody.innerHTML =
+    sorted.map(t => {
+
+      const plClass =
+        t.profitLoss > 0
+          ? "positive"
+          : t.profitLoss < 0
+            ? "negative"
+            : "";
+
+
+      return `
+
+        <tr>
+
+          <td>
+            ${formatValue(t.date)}
+          </td>
+
+          <td>
+            <strong>
+              ${formatValue(t.market)}
+            </strong>
+          </td>
+
+          <td>
+            ${formatValue(t.direction)}
+          </td>
+
+          <td>
+            ${formatValue(t.timeframe)}
+          </td>
+
+          <td>
+            ${formatValue(t.entry)}
+          </td>
+
+          <td>
+            ${formatValue(t.exit)}
+          </td>
+
+          <td>
+            ${formatValue(t.stopLoss)}
+          </td>
+
+          <td>
+            ${formatValue(t.target)}
+          </td>
+
+          <td>
+            ${formatValue(t.positionSize)}
+          </td>
+
+          <td class="${plClass}">
+            <strong>
+              ${money(t.profitLoss)}
+            </strong>
+          </td>
+
+          <td>
+            ${formatValue(t.setup)}
+          </td>
+
+          <td>
+
+            <button
+              class="mini-btn"
+              type="button"
+              data-delete-id="${escapeHTML(t.id)}">
+
+              Delete
+
+            </button>
+
+          </td>
+
+        </tr>
+
+      `;
+
+    }).join("");
+
+}
+
+
+/*
+========================================================
+STATUS
+========================================================
+*/
+
+function setStatus(
+  message,
+  type
+){
+
+  const el =
+    $("status");
+
+  el.textContent =
+    message || "";
+
+  el.className =
+    "status" +
+    (
+      type
+        ? " " + type
+        : ""
+    );
+}
+
+
+/*
+========================================================
+TODAY
+========================================================
+*/
+
+function setToday(){
+
+  const today =
+    new Date();
+
+
+  const localDate =
+    new Date(
+      today.getTime() -
+      today.getTimezoneOffset() *
+      60000
+    )
+    .toISOString()
+    .slice(0,10);
+
+
+  $("tradeDate")
+    .value =
+      localDate;
+}
+
+
+/*
+========================================================
+SAVE TRADE
+========================================================
+*/
+
+$("tradeForm")
+.addEventListener(
+  "submit",
+  function(event){
+
+    event.preventDefault();
+
+
+    const market =
+      $("market")
+        .value
+        .trim();
+
+
+    const plRaw =
+      $("pl").value;
+
+
+    if(!market){
+
+      setStatus(
+        "Please enter a market or symbol.",
+        "error"
+      );
+
+      $("market").focus();
+
+      return;
+    }
+
+
+    if(
+      plRaw === "" ||
+      !Number.isFinite(
+        Number(plRaw)
+      )
+    ){
+
+      setStatus(
+        "Please enter a valid profit or loss amount.",
+        "error"
+      );
+
+      $("pl").focus();
+
+      return;
+    }
+
+
+    const trade = {
+
+      id:
+        "trade-" +
+        Date.now() +
+        "-" +
+        Math.random()
+          .toString(36)
+          .slice(2),
+
+
+      date:
+        $("tradeDate").value,
+
+
+      market:
+        market,
+
+
+      symbol:
+        market,
+
+
+      pair:
+        market,
+
+
+      direction:
+        $("direction").value,
+
+
+      timeframe:
+        $("timeframe").value,
+
+
+      entry:
+        numberOrNull(
+          $("entry").value
+        ),
+
+
+      exit:
+        numberOrNull(
+          $("exit").value
+        ),
+
+
+      stopLoss:
+        numberOrNull(
+          $("stopLoss").value
+        ),
+
+
+      target:
+        numberOrNull(
+          $("target").value
+        ),
+
+
+      positionSize:
+        numberOrNull(
+          $("positionSize").value
+        ),
+
+
+      profitLoss:
+        Number(plRaw),
+
+
+      pnl:
+        Number(plRaw),
+
+
+      pl:
+        Number(plRaw),
+
+
+      setup:
+        $("setup")
+          .value
+          .trim(),
+
+
+      session:
+        $("session").value,
+
+
+      psychology:
+        $("psychology")
+          .value
+          .trim(),
+
+
+      notes:
+        $("notes")
+          .value
+          .trim(),
+
+
+      createdAt:
+        new Date()
+          .toISOString()
+
+    };
+
+
+    const trades =
+      getTrades();
+
+
+    trades.push(trade);
+
+
+    saveTrades(
+      trades
+    );
+
+
+    render();
+
+
+    setStatus(
+      "Trade saved successfully. Your dashboard can now analyze this record.",
+      "success"
+    );
+
+
+    $("tradeForm")
+      .reset();
+
+
+    setToday();
+
+
+    $("direction").value =
+      "BUY";
+
+
+    window.location.hash =
+      "journal-form";
+
+  }
+);
+
+
+/*
+========================================================
+CLEAR FORM
+========================================================
+*/
+
+$("clearForm")
+.addEventListener(
+  "click",
+  function(){
+
+    $("tradeForm")
+      .reset();
+
+    setToday();
+
+    $("direction").value =
+      "BUY";
+
+    setStatus(
+      "Form cleared.",
+      "success"
+    );
+
+  }
+);
+
+
+/*
+========================================================
+DELETE SINGLE TRADE
+========================================================
+*/
+
+$("tradeTableBody")
+.addEventListener(
+  "click",
+  function(event){
+
+    const button =
+      event.target.closest(
+        "[data-delete-id]"
+      );
+
+
+    if(!button){
+      return;
+    }
+
+
+    const id =
+      button.getAttribute(
+        "data-delete-id"
+      );
+
+
+    if(
+      !confirm(
+        "Delete this trade? This action cannot be undone."
+      )
+    ){
+
+      return;
+    }
+
+
+    const trades =
+      getTrades()
+        .filter(
+          t =>
+            String(t.id) !==
+            String(id)
+        );
+
+
+    saveTrades(
+      trades
+    );
+
+
+    render();
+
+
+    setStatus(
+      "Trade deleted.",
+      "success"
+    );
+
+  }
+);
+
+
+/*
+========================================================
+DELETE ALL
+========================================================
+*/
+
+$("deleteAll")
+.addEventListener(
+  "click",
+  function(){
+
+    const trades =
+      getTrades();
+
+
+    if(!trades.length){
+
+      setStatus(
+        "There are no saved trades to delete.",
+        "error"
+      );
+
+      return;
+    }
+
+
+    if(
+      !confirm(
+        "Delete ALL saved trades from this browser? This cannot be undone."
+      )
+    ){
+
+      return;
+    }
+
+
+    localStorage.removeItem(
+      STORAGE_KEY
+    );
+
+
+    render();
+
+
+    setStatus(
+      "All saved trades were deleted from this browser.",
+      "success"
+    );
+
+  }
+);
+
+
+/*
+========================================================
+CSV EXPORT
+========================================================
+*/
+
+$("exportCSV")
+.addEventListener(
+  "click",
+  function(){
+
+    const trades =
+      getTrades()
+        .map(normalizeTrade);
+
+
+    if(!trades.length){
+
+      setStatus(
+        "There are no trades to export.",
+        "error"
+      );
+
+      return;
+    }
+
+
+    const headers = [
+
+      "Date",
+      "Market",
+      "Direction",
+      "Timeframe",
+      "Entry",
+      "Exit",
+      "Stop Loss",
+      "Target",
+      "Position Size",
+      "Profit/Loss",
+      "Setup",
+      "Session",
+      "Psychology",
+      "Notes"
+
+    ];
+
+
+    const rows =
+      trades.map(t => [
+
+        t.date,
+        t.market,
+        t.direction,
+        t.timeframe,
+        t.entry ?? "",
+        t.exit ?? "",
+        t.stopLoss ?? "",
+        t.target ?? "",
+        t.positionSize ?? "",
+        t.profitLoss,
+        t.setup,
+        t.session,
+        t.psychology,
+        t.notes
+
+      ]);
+
+
+    const csv =
+      [headers,...rows]
+
+      .map(
+        row =>
+
+          row.map(
+            value => {
+
+              const text =
+                String(value ?? "");
+
+              return (
+                '"' +
+                text.replace(
+                  /"/g,
+                  '""'
+                ) +
+                '"'
+              );
+
+            }
+          )
+
+          .join(",")
+
+      )
+
+      .join("\r\n");
+
+
+    const blob =
+      new Blob(
+        [csv],
+        {
+          type:
+            "text/csv;charset=utf-8;"
+        }
+      );
+
+
+    const url =
+      URL.createObjectURL(
+        blob
+      );
+
+
+    const link =
+      document.createElement(
+        "a"
+      );
+
+
+    link.href =
+      url;
+
+
+    link.download =
+      "eztradinghub-trading-journal.csv";
+
+
+    document.body.appendChild(
+      link
+    );
+
+
+    link.click();
+
+
+    link.remove();
+
+
+    URL.revokeObjectURL(
+      url
+    );
+
+
+    setStatus(
+      "CSV export created successfully.",
+      "success"
+    );
+
+  }
+);
+
+
+/*
+========================================================
+LIGHT / DARK MODE
+========================================================
+*/
+
+function applyTheme(theme){
+
+  document.documentElement
+    .setAttribute(
+      "data-theme",
+      theme
+    );
+
+
+  localStorage.setItem(
+    THEME_KEY,
+    theme
+  );
+
+
+  $("themeToggle")
+    .textContent =
+      theme === "dark"
+        ? "☀️"
+        : "🌙";
+
+
+  $("themeToggle")
+    .setAttribute(
+      "aria-label",
+
+      theme === "dark"
+        ? "Switch to light mode"
+        : "Switch to dark mode"
+    );
+
+}
+
+
+const storedTheme =
+  localStorage.getItem(
+    THEME_KEY
+  );
+
+
+const preferredDark =
+  window.matchMedia &&
+  window.matchMedia(
+    "(prefers-color-scheme: dark)"
+  ).matches;
+
+
+applyTheme(
+  storedTheme ||
+  (
+    preferredDark
+      ? "dark"
+      : "light"
+  )
+);
+
+
+$("themeToggle")
+.addEventListener(
+  "click",
+  function(){
+
+    const current =
+      document.documentElement
+        .getAttribute(
+          "data-theme"
+        );
+
+
+    applyTheme(
+      current === "dark"
+        ? "light"
+        : "dark"
+    );
+
+  }
+);
+
+
+/*
+========================================================
+YEAR
+========================================================
+*/
+
+$("year")
+.textContent =
+  new Date()
+    .getFullYear();
+
+
+/*
+========================================================
+BACK TO TOP
+========================================================
+*/
+
+const topBtn =
+  $("topBtn");
+
+
+window.addEventListener(
+  "scroll",
+  function(){
+
+    topBtn.style.display =
+      window.scrollY > 450
+        ? "block"
+        : "none";
+
+  }
+);
+
+
+topBtn.addEventListener(
+  "click",
+  function(){
+
+    window.scrollTo({
+      top:0,
+      behavior:"smooth"
+    });
+
+  }
+);
+
+
+/*
+========================================================
+CROSS-TAB SYNCHRONIZATION
+========================================================
+
+If the dashboard or another tab changes
+the journal records, this page refreshes.
+========================================================
+*/
+
+window.addEventListener(
+  "storage",
+  function(event){
+
+    if(
+      event.key ===
+      STORAGE_KEY
+    ){
+
+      render();
+
+    }
+
+
+    if(
+      event.key ===
+      THEME_KEY &&
+      event.newValue
+    ){
+
+      applyTheme(
+        event.newValue
+      );
+
+    }
+
+  }
+);
+
+
+/*
+========================================================
+INITIALIZE
+========================================================
+*/
+
+setToday();
+
+render();
+
+})();
+
+</script>
+
 </body>
-
 </html>
-
