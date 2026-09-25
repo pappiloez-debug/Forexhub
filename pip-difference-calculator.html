@@ -1,141 +1,2106 @@
-<title>Forex Pip Difference Calculator — Calculate Pip Difference | EZTradingHub</title>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
 
-<meta name="description"
-      content="Free Forex Pip Difference Calculator to calculate the number of pips between two Forex prices quickly and accurately.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="keywords"
-      content="pip difference calculator, forex pip calculator, pips calculator, price difference calculator, forex trading calculator">
+  <title>Pip Difference Calculator – Calculate Pips Between Prices | EZTradingHub</title>
 
-<meta name="robots"
-      content="index, follow">
+  <meta name="description" content="Use the EZTradingHub Pip Difference Calculator to calculate the pip difference between two forex prices, identify price movement direction, and convert price differences into pips or points.">
+  <meta name="keywords" content="pip difference calculator, pip calculator, forex pip difference, calculate pips between prices, forex price difference calculator, pips calculator">
+  <meta name="author" content="EZTradingHub">
+  <meta name="robots" content="index, follow, max-image-preview:large">
 
-<link rel="canonical"
-      href="https://eztradinghub.com/pip-difference-calculator.html">
+  <link rel="canonical" href="https://eztradinghub.com/pip-difference-calculators.html">
 
-<link rel="stylesheet" href="style.css">
-<style>
-:root{--navy:#062f5f;--green:#047857;--dark:#111827;--text:#1f2937;--muted:#475569;--bg:#f8fafc;--card:#fff;--border:#e2e8f0}
-*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;line-height:1.7;color:var(--text);background:var(--bg)}
-header{background:var(--navy);color:#fff;padding:18px 20px}.header-inner{max-width:1000px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:20px}
-.brand,.back-link{color:#fff;text-decoration:none;font-weight:800}.brand{font-size:1.35rem}.back-link{font-weight:700}
-main{max-width:1000px;margin:40px auto;padding:0 20px}.hero,section{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:28px;margin-bottom:18px}
-.hero{padding:32px}.hero h1{margin-top:0;color:var(--dark);font-size:clamp(2rem,5vw,3rem)}h2{color:var(--dark);margin-top:0}.updated{color:var(--muted);font-size:.95rem}
-p,li{color:var(--text)}a{color:#065f46;font-weight:600}.notice{border-left:5px solid var(--green);background:#f0fdf4;padding:16px 18px;border-radius:8px}
-footer{background:var(--dark);color:#fff;text-align:center;padding:28px 20px;margin-top:45px}footer p{color:#fff}footer a{color:#fff;margin:0 8px}
-@media(max-width:650px){.header-inner{align-items:flex-start;flex-direction:column}main{margin-top:24px;padding:0 14px}.hero,section{padding:22px}}
-</style>
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+  <link rel="apple-touch-icon" href="assets/images/favicon-32x32.png">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Pip Difference Calculator – Calculate Pips Between Prices">
+  <meta property="og:description" content="Calculate the pip difference between two forex prices quickly with EZTradingHub.">
+  <meta property="og:url" content="https://eztradinghub.com/pip-difference-calculators.html">
+  <meta property="og:site_name" content="EZTradingHub">
+  <meta property="og:image" content="https://eztradinghub.com/assets/images/og-image.jpg">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Pip Difference Calculator | EZTradingHub">
+  <meta name="twitter:description" content="Calculate forex pip differences and price movement between two prices.">
+  <meta name="twitter:image" content="https://eztradinghub.com/assets/images/og-image.jpg">
+
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- WebApplication Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "EZTradingHub Pip Difference Calculator",
+    "url": "https://eztradinghub.com/pip-difference-calculators.html",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Any",
+    "description": "Free online calculator for calculating the pip difference and price movement between two forex prices.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "EZTradingHub",
+      "url": "https://eztradinghub.com/"
+    }
+  }
+  </script>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a pip in forex trading?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A pip is a standardized unit used to measure price movement in many forex currency pairs. For many major currency pairs, one pip is 0.0001, while for many JPY pairs one pip is 0.01."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do you calculate the pip difference between two prices?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Subtract the starting price from the ending price, take the absolute price difference, and divide it by the pip size."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between a pip and a point?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The terms can vary between brokers and markets. In many five-decimal forex quotes, a point or pipette is one-tenth of a standard pip."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does pip difference tell me the money I made?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Pip difference measures price movement. Monetary profit or loss also depends on position size, pip value, contract specifications, and the account currency."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+
+    :root {
+      --bg: #f5f7fb;
+      --surface: #ffffff;
+      --surface-2: #eef3f8;
+      --text: #142033;
+      --muted: #667487;
+      --border: #dce4ed;
+      --primary: #003b70;
+      --primary-2: #0066b3;
+      --accent: #f4b400;
+      --accent-dark: #d99b00;
+      --success: #16864f;
+      --danger: #d64545;
+      --shadow: 0 10px 30px rgba(0, 45, 90, 0.08);
+      --radius: 16px;
+    }
+
+    body.dark {
+      --bg: #07111f;
+      --surface: #0d1b2a;
+      --surface-2: #13283d;
+      --text: #f3f7fc;
+      --muted: #aab8c8;
+      --border: #273d53;
+      --primary: #3c9cff;
+      --primary-2: #56aaff;
+      --accent: #f4b400;
+      --accent-dark: #ffc62e;
+      --success: #3bd486;
+      --danger: #ff7777;
+      --shadow: 0 14px 38px rgba(0, 0, 0, 0.30);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Inter", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      transition: background 0.25s ease, color 0.25s ease;
+    }
+
+    a {
+      color: var(--primary-2);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    button,
+    input,
+    select {
+      font: inherit;
+    }
+
+    /* HEADER */
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.05);
+    }
+
+    .nav {
+      max-width: 1180px;
+      margin: auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--text);
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .brand:hover {
+      text-decoration: none;
+    }
+
+    .brand-logo {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: var(--primary);
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      letter-spacing: -1px;
+      box-shadow: 0 6px 16px rgba(0, 70, 130, 0.22);
+    }
+
+    .brand-text {
+      line-height: 1.1;
+    }
+
+    .brand-text strong {
+      display: block;
+      font-size: 16px;
+    }
+
+    .brand-text span {
+      display: block;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 500;
+      margin-top: 3px;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav-link {
+      padding: 8px 12px;
+      color: var(--text);
+      font-size: 14px;
+      font-weight: 600;
+      border-radius: 8px;
+    }
+
+    .nav-link:hover {
+      background: var(--surface-2);
+      text-decoration: none;
+    }
+
+    .theme-toggle {
+      width: 42px;
+      height: 42px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: var(--surface-2);
+      color: var(--text);
+      cursor: pointer;
+    }
+
+    .theme-toggle:hover {
+      border-color: var(--primary);
+    }
+
+    /* MAIN */
+
+    .container {
+      max-width: 1180px;
+      margin: auto;
+      padding: 0 20px;
+    }
+
+    .hero {
+      padding: 55px 20px 30px;
+      text-align: center;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      padding: 7px 13px;
+      border-radius: 999px;
+      background: rgba(244, 180, 0, 0.15);
+      color: var(--accent-dark);
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.7px;
+      margin-bottom: 14px;
+    }
+
+    .hero h1 {
+      max-width: 900px;
+      margin: 0 auto 14px;
+      font-size: clamp(30px, 5vw, 50px);
+      line-height: 1.12;
+      letter-spacing: -1.6px;
+    }
+
+    .hero p {
+      max-width: 780px;
+      margin: auto;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .ad-slot {
+      min-height: 90px;
+      margin: 22px 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px dashed var(--border);
+      border-radius: 12px;
+      background: var(--surface);
+      color: var(--muted);
+      font-size: 12px;
+      text-align: center;
+    }
+
+    /* CALCULATOR */
+
+    .calculator-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+      margin: 25px 0;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .card h2,
+    .card h3 {
+      line-height: 1.3;
+    }
+
+    .card h2 {
+      margin-top: 0;
+      font-size: 22px;
+    }
+
+    .card h3 {
+      font-size: 18px;
+    }
+
+    .card-intro {
+      margin-top: -5px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .input-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .field.full {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    input,
+    select {
+      width: 100%;
+      padding: 12px 13px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: var(--surface);
+      color: var(--text);
+      outline: none;
+    }
+
+    input:focus,
+    select:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(0, 92, 168, 0.12);
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .btn {
+      border: 0;
+      border-radius: 10px;
+      padding: 12px 18px;
+      font-weight: 800;
+      cursor: pointer;
+      background: var(--primary);
+      color: #fff;
+    }
+
+    .btn:hover {
+      opacity: 0.92;
+    }
+
+    .btn.secondary {
+      background: var(--surface-2);
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+
+    /* RESULTS */
+
+    .result-box {
+      margin-top: 20px;
+      padding: 18px;
+      border-radius: 12px;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+    }
+
+    .result-title {
+      margin-bottom: 8px;
+      font-weight: 800;
+    }
+
+    .big-result {
+      font-size: 34px;
+      font-weight: 800;
+      line-height: 1.2;
+      color: var(--primary-2);
+      overflow-wrap: anywhere;
+    }
+
+    .result-sub {
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 6px;
+    }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    .summary-item {
+      padding: 12px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+    }
+
+    .summary-label {
+      display: block;
+      color: var(--muted);
+      font-size: 11px;
+      margin-bottom: 4px;
+    }
+
+    .summary-value {
+      font-weight: 800;
+    }
+
+    /* INFO */
+
+    .section {
+      margin: 42px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .section-title h2 {
+      margin-bottom: 8px;
+      font-size: 30px;
+    }
+
+    .section-title p {
+      max-width: 780px;
+      margin: auto;
+      color: var(--muted);
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .info-card {
+      padding: 20px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+    }
+
+    .info-card h3 {
+      margin-top: 0;
+      font-size: 17px;
+    }
+
+    .formula {
+      padding: 14px;
+      margin: 12px 0;
+      border-left: 4px solid var(--accent);
+      border-radius: 10px;
+      background: var(--surface-2);
+      font-family: monospace;
+      overflow-x: auto;
+    }
+
+    /* RELATED */
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .related-link {
+      display: block;
+      padding: 15px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      font-weight: 700;
+    }
+
+    .related-link:hover {
+      border-color: var(--primary);
+      text-decoration: none;
+    }
+
+    /* FAQ */
+
+    .faq {
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .faq:last-child {
+      border-bottom: 0;
+    }
+
+    .faq h3 {
+      margin: 0 0 7px;
+      font-size: 17px;
+    }
+
+    .faq p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    /* DISCLAIMER */
+
+    .disclaimer {
+      padding: 20px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: var(--surface-2);
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      margin-top: 50px;
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-inner {
+      max-width: 1180px;
+      margin: auto;
+      padding: 28px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .footer-copy {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 900px) {
+
+      .calculator-grid,
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .related-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .nav-link {
+        display: none;
+      }
+    }
+
+    @media (max-width: 600px) {
+
+      .nav {
+        padding: 11px 14px;
+      }
+
+      .container {
+        padding: 0 14px;
+      }
+
+      .hero {
+        padding: 40px 14px 20px;
+      }
+
+      .hero h1 {
+        font-size: 32px;
+      }
+
+      .hero p {
+        font-size: 15px;
+      }
+
+      .card {
+        padding: 18px;
+      }
+
+      .input-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .field.full {
+        grid-column: auto;
+      }
+
+      .summary-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .related-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+      }
+    }
+
+  </style>
 </head>
-<body>
-<header><div class="header-inner">
-<a class="brand" href="index.html">EZTradingHub</a>
-<a class="back-link" href="index.html">← Back to Home</a>
-</div></header>
 
-    <h1>📏 Pip Difference Calculator</h1>
-
-    <p>Find the correct lot size for every trade.</p>
-</header>
-    <title>Pip Difference Calculator</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-
-<section class="cards">
 
 <body>
-    
-<div class="calculator-card">
 
 
-<label>Entry Price</label>
-<input type="number" id="pipEntry" step="0.00001">
+<!-- HEADER -->
 
-<label>Exit Price</label>
-<input type="number" id="pipExit" step="0.00001">
+<header class="site-header">
 
-<button class="btn" onclick="calculatePipDifference()">
-Calculate
-</button>
+  <nav class="nav" aria-label="Main navigation">
 
-<h2 id="pipDifferenceResult"></h2>
+    <a
+      class="brand"
+      href="index.html"
+      aria-label="EZTradingHub Home">
 
-</div>
+      <div class="brand-logo">
+        EZ
+      </div>
+
+      <div class="brand-text">
+        <strong>EZTradingHub</strong>
+        <span>Smart Trading Tools</span>
+      </div>
+
+    </a>
+
+
+    <div class="nav-actions">
+
+      <a
+        class="nav-link"
+        href="index.html">
+        Home
+      </a>
       
-<section class="related-tools">
+      <a
+        class="nav-link"
+        href="calculators.html">
+        Calculators
+      </a>
 
-    <h2>Related Trading Calculators</h2>
+      <a
+        class="nav-link"
+        href="about.html">
+        About
+      </a>
 
-    <p>Calculate price differences, pip values and trading costs.</p>
+      <a
+        class="nav-link"
+        href="contact.html">
+        Contact
+      </a>
 
-    <div class="related-tools-grid">
-
-        <a href="pip-calculator.html">
-            📈 Pip Calculator
-        </a>
-
-        <a href="profit-calculator.html">
-            💰 Profit Calculator
-        </a>
-
-        <a href="lot-size-calculator.html">
-            📏 Lot Size Calculator
-        </a>
-
-        <a href="position-size-calculator.html">
-            📊 Position Size Calculator
-        </a>
-
-        <a href="spread-cost-calculator.html">
-            💸 Spread Cost Calculator
-        </a>
-
-        <a href="risk-reward-calculator.html">
-            🎯 Risk-to-Reward Calculator
-        </a>
+      <button
+        class="theme-toggle"
+        id="themeToggle"
+        type="button"
+        aria-label="Switch to dark mode"
+        title="Toggle light and dark mode">
+        🌙
+      </button>
 
     </div>
 
+  </nav>
+
+</header>
+
+
+<main>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+  <span class="hero-badge">
+    Forex Calculator
+  </span>
+
+  <h1>
+    Pip Difference Calculator
+  </h1>
+
+  <p>
+    Calculate the number of pips between two forex prices, determine the
+    direction of the price movement, and convert price differences into
+    standard pips or points.
+  </p>
+
 </section>
 
-<a href="index.html" class="btn">
-🏠 Back to Home
-</a>
-    
+
+<div class="container">
+
+
+<!-- AD SLOT -->
+
+<div
+  class="ad-slot"
+  aria-label="Advertisement">
+  Advertisement
+</div>
+
+
+<!-- CALCULATORS -->
+
+<section
+  class="calculator-grid"
+  aria-label="Pip difference calculators">
+
+
+<!-- MAIN PIP CALCULATOR -->
+
+<article class="card">
+
+  <h2>
+    Calculate Pip Difference
+  </h2>
+
+  <p class="card-intro">
+    Enter the starting and ending prices and select the appropriate pip size
+    for the currency pair.
+  </p>
+
+
+  <div class="input-grid">
+
+
+    <div class="field">
+
+      <label for="startPrice">
+        Starting Price
+      </label>
+
+      <input
+        type="number"
+        id="startPrice"
+        value="1.10000"
+        step="any"
+        inputmode="decimal"
+        autocomplete="off">
+
+    </div>
+
+
+    <div class="field">
+
+      <label for="endPrice">
+        Ending Price
+      </label>
+
+      <input
+        type="number"
+        id="endPrice"
+        value="1.10500"
+        step="any"
+        inputmode="decimal"
+        autocomplete="off">
+
+    </div>
+
+
+    <div class="field full">
+
+      <label for="pipSize">
+        Pip Size
+      </label>
+
+      <select id="pipSize">
+
+        <option value="0.0001" selected>
+          Standard Forex Pair — 0.0001
+        </option>
+
+        <option value="0.01">
+          JPY Pair — 0.01
+        </option>
+
+        <option value="0.1">
+          Custom — 0.1
+        </option>
+
+        <option value="0.001">
+          Custom — 0.001
+        </option>
+
+        <option value="0.00001">
+          Pipette / 5th Decimal — 0.00001
+        </option>
+
+        <option value="custom">
+          Enter Custom Pip Size
+        </option>
+
+      </select>
+
+    </div>
+
+
+    <div
+      class="field full"
+      id="customPipField"
+      style="display:none;">
+
+      <label for="customPipSize">
+        Custom Pip Size
+      </label>
+
+      <input
+        type="number"
+        id="customPipSize"
+        value="0.0001"
+        min="0.00000001"
+        step="any"
+        inputmode="decimal">
+
+    </div>
+
+
+  </div>
+
+
+  <div class="button-row">
+
+    <button
+      class="btn"
+      type="button"
+      onclick="calculatePipDifference()">
+      Calculate Pips
+    </button>
+
+
+    <button
+      class="btn secondary"
+      type="button"
+      onclick="resetPipCalculator()">
+      Reset
+    </button>
+
+  </div>
+
+
+  <div
+    class="result-box"
+    aria-live="polite">
+
+    <div class="result-title">
+      Pip Difference
+    </div>
+
+    <div
+      class="big-result"
+      id="pipResult">
+      —
+    </div>
+
+    <div
+      class="result-sub"
+      id="directionResult">
+      Enter prices to calculate movement.
+    </div>
+
+
+    <div class="summary-grid">
+
+
+      <div class="summary-item">
+
+        <span class="summary-label">
+          Price Difference
+        </span>
+
+        <span
+          class="summary-value"
+          id="priceDifference">
+          —
+        </span>
+
+      </div>
+
+
+      <div class="summary-item">
+
+        <span class="summary-label">
+          Absolute Pips
+        </span>
+
+        <span
+          class="summary-value"
+          id="absolutePips">
+          —
+        </span>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</article>
+
+
+<!-- PIP / POINT CONVERTER -->
+
+<article class="card">
+
+  <h2>
+    Pip & Point Converter
+  </h2>
+
+  <p class="card-intro">
+    Convert a number of pips into the corresponding price movement.
+  </p>
+
+
+  <div class="input-grid">
+
+
+    <div class="field">
+
+      <label for="pipAmount">
+        Number of Pips
+      </label>
+
+      <input
+        type="number"
+        id="pipAmount"
+        value="50"
+        step="any"
+        inputmode="decimal">
+
+    </div>
+
+
+    <div class="field">
+
+      <label for="converterPipSize">
+        Pip Size
+      </label>
+
+      <select id="converterPipSize">
+
+        <option value="0.0001" selected>
+          Standard Forex — 0.0001
+        </option>
+
+        <option value="0.01">
+          JPY Pair — 0.01
+        </option>
+
+        <option value="0.00001">
+          Pipette — 0.00001
+        </option>
+
+        <option value="custom">
+          Custom Pip Size
+        </option>
+
+      </select>
+
+    </div>
+
+
+    <div
+      class="field full"
+      id="converterCustomField"
+      style="display:none;">
+
+      <label for="converterCustomPip">
+        Custom Pip Size
+      </label>
+
+      <input
+        type="number"
+        id="converterCustomPip"
+        value="0.0001"
+        min="0.00000001"
+        step="any"
+        inputmode="decimal">
+
+    </div>
+
+
+  </div>
+
+
+  <div class="button-row">
+
+    <button
+      class="btn"
+      type="button"
+      onclick="calculatePipConversion()">
+      Convert
+    </button>
+
+
+    <button
+      class="btn secondary"
+      type="button"
+      onclick="resetConverter()">
+      Reset
+    </button>
+
+  </div>
+
+
+  <div
+    class="result-box"
+    aria-live="polite">
+
+    <div class="result-title">
+      Price Movement
+    </div>
+
+    <div
+      class="big-result"
+      id="conversionResult">
+      —
+    </div>
+
+    <div class="result-sub">
+      Price movement represented by the selected number of pips.
+    </div>
+
+  </div>
+
+</article>
+
 </section>
-<script src="script.js"></script>
+
+
+<!-- AD SLOT -->
+
+<div
+  class="ad-slot"
+  aria-label="Advertisement">
+  Advertisement
+</div>
+
+
+<!-- EDUCATIONAL SECTION -->
+
+<section class="section">
+
+
+  <div class="section-title">
+
+    <h2>
+      Understanding Pips in Forex Trading
+    </h2>
+
+    <p>
+      A pip is a commonly used unit for measuring price movement in the
+      foreign-exchange market.
+    </p>
+
+  </div>
+
+
+  <div class="info-grid">
+
+
+    <article class="info-card">
+
+      <h3>
+        Standard Forex Pairs
+      </h3>
+
+      <p>
+        For many non-JPY currency pairs, one standard pip is commonly
+        represented by 0.0001 of the quoted exchange rate.
+      </p>
+
+    </article>
+
+
+    <article class="info-card">
+
+      <h3>
+        JPY Currency Pairs
+      </h3>
+
+      <p>
+        For many Japanese-yen currency pairs, one standard pip is commonly
+        represented by 0.01.
+      </p>
+
+    </article>
+
+
+    <article class="info-card">
+
+      <h3>
+        Pipettes
+      </h3>
+
+      <p>
+        Some brokers quote forex prices to an additional decimal place. A
+        fractional pip is often called a pipette.
+      </p>
+
+    </article>
+
+
+    <article class="info-card">
+
+      <h3>
+        Price Difference
+      </h3>
+
+      <p>
+        The price difference is the ending price minus the starting price.
+        Dividing that difference by the pip size converts it into pips.
+      </p>
+
+    </article>
+
+
+    <article class="info-card">
+
+      <h3>
+        Bullish Movement
+      </h3>
+
+      <p>
+        When the ending price is higher than the starting price, the price
+        movement is positive or bullish.
+      </p>
+
+    </article>
+
+
+    <article class="info-card">
+
+      <h3>
+        Bearish Movement
+      </h3>
+
+      <p>
+        When the ending price is lower than the starting price, the price
+        movement is negative or bearish.
+      </p>
+
+    </article>
+
+  </div>
+
+</section>
+
+
+<!-- FORMULA -->
+
+<section class="section">
+
+
+  <div class="section-title">
+
+    <h2>
+      Pip Difference Formula
+    </h2>
+
+    <p>
+      The basic calculation is straightforward when the correct pip size is
+      known.
+    </p>
+
+  </div>
+
+
+  <div class="card">
+
+    <div class="formula">
+      Pip Difference = (Ending Price − Starting Price) ÷ Pip Size
+    </div>
+
+
+    <p>
+      For example, if a forex pair moves from 1.10000 to 1.10500 and the pip
+      size is 0.0001:
+    </p>
+
+
+    <div class="formula">
+      (1.10500 − 1.10000) ÷ 0.0001 = 50 pips
+    </div>
+
+
+    <p>
+      The calculator also reports the absolute pip movement so that the size
+      of the move can be reviewed independently from its direction.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- PIPS VS MONEY -->
+
+<section class="section">
+
+
+  <div class="section-title">
+
+    <h2>
+      Pips vs. Monetary Profit
+    </h2>
+
+    <p>
+      Pip movement and trading profit are related but they are not the same
+      measurement.
+    </p>
+
+  </div>
+
+
+  <div class="info-grid">
+
+
+    <article class="info-card">
+
+      <h3>
+        Pip Movement
+      </h3>
+
+      <p>
+        Measures how far the market price moved according to the selected pip
+        convention.
+      </p>
+
+    </article>
+
+
+    <article class="info-card">
+
+      <h3>
+        Pip Value
+      </h3>
+
+      <p>
+        Represents the monetary value of one pip for a particular position,
+        depending on the instrument, position size and account currency.
+      </p>
+
+    </article>
+
+
+    <article class="info-card">
+
+      <h3>
+        Position Size
+      </h3>
+
+      <p>
+        Larger or smaller positions can change the monetary impact of the
+        same number of pips.
+      </p>
+
+    </article>
+
+  </div>
+
+
+  <div class="card" style="margin-top:18px;">
+
+    <div class="formula">
+      Approximate Profit/Loss = Pip Difference × Pip Value
+    </div>
+
+    <p>
+      This relationship is simplified. Actual trading results can also be
+      affected by spread, commission, swaps, execution price, contract
+      specifications and currency conversion.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- RELATED TOOLS -->
+
+<section class="section">
+
+
+  <div class="section-title">
+
+    <h2>
+      Related EZTradingHub Calculators
+    </h2>
+
+    <p>
+      Explore additional tools for forex analysis, position sizing and risk
+      management.
+    </p>
+
+  </div>
+
+
+  <div class="related-grid">
+
+
+    <a
+      class="related-link"
+      href="pip-calculator.html">
+      Pip Calculator
+    </a>
+
+
+    <a
+      class="related-link"
+      href="profit-calculator.html">
+      Profit Calculator
+    </a>
+
+
+    <a
+      class="related-link"
+      href="lot-size-calculator.html">
+      Lot Size Calculator
+    </a>
+
+
+    <a
+      class="related-link"
+      href="position-size-calculator.html">
+      Position Size Calculator
+    </a>
+
+
+    <a
+      class="related-link"
+      href="risk-calculator.html">
+      Risk Calculator
+    </a>
+
+
+    <a
+      class="related-link"
+      href="risk-reward-calculator.html">
+      Risk-to-Reward Calculator
+    </a>
+
+
+    <a
+      class="related-link"
+      href="spread-cost-calculator.html">
+      Spread Cost Calculator
+    </a>
+
+
+    <a
+      class="related-link"
+      href="calculators.html">
+      All Trading Calculators
+    </a>
+
+  </div>
+
+</section>
+
+
+<!-- FAQ -->
+
+<section class="section">
+
+
+  <div class="section-title">
+
+    <h2>
+      Frequently Asked Questions
+    </h2>
+
+    <p>
+      Common questions about pips and price movement.
+    </p>
+
+  </div>
+
+
+  <div class="card">
+
+
+    <div class="faq">
+
+      <h3>
+        What is a pip?
+      </h3>
+
+      <p>
+        A pip is a commonly used unit for measuring price movement in forex.
+        For many major currency pairs it is 0.0001, while many JPY pairs use
+        0.01.
+      </p>
+
+    </div>
+
+
+    <div class="faq">
+
+      <h3>
+        How do I calculate pips between two prices?
+      </h3>
+
+      <p>
+        Subtract the starting price from the ending price and divide the
+        result by the appropriate pip size.
+      </p>
+
+    </div>
+
+
+    <div class="faq">
+
+      <h3>
+        What is a pipette?
+      </h3>
+
+      <p>
+        A pipette is commonly used to describe a fractional pip. For example,
+        on a five-decimal forex quote, one pipette can represent 0.00001.
+      </p>
+
+    </div>
+
+
+    <div class="faq">
+
+      <h3>
+        Does 100 pips always equal the same amount of money?
+      </h3>
+
+      <p>
+        No. The monetary value of 100 pips depends on the currency pair,
+        position size, pip value and account currency.
+      </p>
+
+    </div>
+
+
+    <div class="faq">
+
+      <h3>
+        Can I use this calculator for XAUUSD?
+      </h3>
+
+      <p>
+        You can use the calculator for price differences when you know the
+        appropriate price-movement unit for your broker and instrument.
+        Gold contracts can use different point or tick conventions, so verify
+        the specification provided by your broker.
+      </p>
+
+    </div>
+
+
+    <div class="faq">
+
+      <h3>
+        Is the pip difference the same as profit?
+      </h3>
+
+      <p>
+        No. Pip difference measures price movement. Profit or loss depends on
+        position size and the monetary value of the price movement.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- DISCLAIMER -->
+
+<section class="section">
+
+
+  <div class="disclaimer">
+
+    <strong>
+      Financial Disclaimer:
+    </strong>
+
+    EZTradingHub provides calculators and educational information for
+    informational purposes only. Calculator results are mathematical estimates
+    based on the information entered by the user.
+
+    Pip conventions, contract specifications and point values can vary between
+    brokers and financial instruments. Always verify instrument specifications
+    with your broker or trading platform.
+
+    Trading forex, cryptocurrencies, commodities, stocks and other financial
+    instruments involves risk, including possible loss of capital. Nothing on
+    this page constitutes financial, investment or trading advice.
+
+  </div>
+
+</section>
+
+
+</div>
+
+</main>
+
+
+<!-- FOOTER -->
 
 <footer>
 
-        <div>
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="faq.html">FAQ</a>
-            <a href="terms.html">Terms & Conditions</a>
-            <a href="privacy.html">Privacy Policy</a>
-            <a href="cookie-policy.html">Cookie Policy</a>
-            <a href="disclaimer.html">Disclaimer</a>
-            <a href="contact.html">Contact</a>
-        </div>
-
-        <p class="copyright">
-            © 2026 EZTradingHub. All rights reserved.
-        </p>
-
-        <p class="copyright">
-            EZTradingHub provides educational and informational tools.
-            Trading involves risk.
-        </p>
-
-    </footer>
-    <script src="cookie-consent.js"></script>
+  <div class="footer-inner">
 
 
-<button id="topBtn" onclick="topFunction()">
+    <div class="footer-copy">
 
-⬆️
+      © <span id="year"></span>
+      EZTradingHub. All rights reserved.
 
-</button>
+    </div>
+
+
+    <div class="footer-links">
+
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="calculators.html">
+        Calculators
+      </a>
+      
+      <a href="about.html">
+        About
+      </a>
+
+      <a href="faq.html">
+        FAQ
+      </a>
+
+      <a href="privacy.html">
+        Privacy
+      </a>
+
+      <a href="terms.html">
+        Terms
+      </a>
+
+      <a href="cookie-policy.html">
+        Cookies
+      </a>
+
+      <a href="disclaimer.html">
+        Disclaimer
+      </a>
+
+      <a href="contact.html">
+        Contact
+      </a>
+
+    </div>
+
+  </div>
+
+</footer>
+
+
+<script>
+
+  /* ==========================================
+     THEME
+  ========================================== */
+
+  const themeToggle =
+    document.getElementById("themeToggle");
+
+
+  function applyTheme(theme) {
+
+    if (theme === "dark") {
+
+      document.body.classList.add("dark");
+
+      themeToggle.textContent = "☀️";
+
+      themeToggle.setAttribute(
+        "aria-label",
+        "Switch to light mode"
+      );
+
+    } else {
+
+      document.body.classList.remove("dark");
+
+      themeToggle.textContent = "🌙";
+
+      themeToggle.setAttribute(
+        "aria-label",
+        "Switch to dark mode"
+      );
+
+    }
+
+  }
+
+
+  const savedTheme =
+    localStorage.getItem("ezth-theme");
+
+
+  if (savedTheme) {
+
+    applyTheme(savedTheme);
+
+  } else if (
+    window.matchMedia &&
+    window.matchMedia("(prefers-color-scheme: dark)").matches
+  ) {
+
+    applyTheme("dark");
+
+  } else {
+
+    applyTheme("light");
+
+  }
+
+
+  themeToggle.addEventListener(
+    "click",
+    function () {
+
+      const newTheme =
+        document.body.classList.contains("dark")
+          ? "light"
+          : "dark";
+
+      localStorage.setItem(
+        "ezth-theme",
+        newTheme
+      );
+
+      applyTheme(newTheme);
+
+    }
+  );
+
+
+  /* ==========================================
+     FORMAT NUMBERS
+  ========================================== */
+
+  function formatNumber(value, decimals = 2) {
+
+    if (!Number.isFinite(value)) {
+      return "—";
+    }
+
+    return value.toLocaleString(
+      undefined,
+      {
+        minimumFractionDigits: decimals,
+        maximumFractionDigits: decimals
+      }
+    );
+
+  }
+
+
+  /* ==========================================
+     GET PIP SIZE
+  ========================================== */
+
+  function getPipSize(
+    selectId,
+    customId
+  ) {
+
+    const selected =
+      document.getElementById(
+        selectId
+      ).value;
+
+
+    if (selected === "custom") {
+
+      const custom =
+        parseFloat(
+          document.getElementById(
+            customId
+          ).value
+        );
+
+      return custom;
+
+    }
+
+
+    return parseFloat(selected);
+
+  }
+
+
+  /* ==========================================
+     MAIN PIP DIFFERENCE
+  ========================================== */
+
+  function calculatePipDifference() {
+
+    const start =
+      parseFloat(
+        document.getElementById(
+          "startPrice"
+        ).value
+      );
+
+
+    const end =
+      parseFloat(
+        document.getElementById(
+          "endPrice"
+        ).value
+      );
+
+
+    const pipSize =
+      getPipSize(
+        "pipSize",
+        "customPipSize"
+      );
+
+
+    const pipResult =
+      document.getElementById(
+        "pipResult"
+      );
+
+
+    if (
+      !Number.isFinite(start) ||
+      !Number.isFinite(end) ||
+      !Number.isFinite(pipSize) ||
+      pipSize <= 0
+    ) {
+
+      pipResult.textContent =
+        "Invalid input";
+
+      document.getElementById(
+        "directionResult"
+      ).textContent =
+        "Please enter valid prices and a valid pip size.";
+
+      return;
+
+    }
+
+
+    const priceDifference =
+      end - start;
+
+
+    const absoluteDifference =
+      Math.abs(priceDifference);
+
+
+    const pips =
+      priceDifference / pipSize;
+
+
+    const absolutePips =
+      absoluteDifference / pipSize;
+
+
+    let direction;
+
+
+    if (priceDifference > 0) {
+
+      direction =
+        "▲ Bullish movement: price increased.";
+
+    } else if (priceDifference < 0) {
+
+      direction =
+        "▼ Bearish movement: price decreased.";
+
+    } else {
+
+      direction =
+        "No price movement.";
+
+    }
+
+
+    pipResult.textContent =
+      formatNumber(
+        pips,
+        2
+      ) + " pips";
+
+
+    document.getElementById(
+      "directionResult"
+    ).textContent =
+      direction;
+
+
+    document.getElementById(
+      "priceDifference"
+    ).textContent =
+      formatNumber(
+        priceDifference,
+        5
+      );
+
+
+    document.getElementById(
+      "absolutePips"
+    ).textContent =
+      formatNumber(
+        absolutePips,
+        2
+      ) + " pips";
+
+  }
+
+
+  /* ==========================================
+     PIP CONVERTER
+  ========================================== */
+
+  function calculatePipConversion() {
+
+    const pips =
+      parseFloat(
+        document.getElementById(
+          "pipAmount"
+        ).value
+      );
+
+
+    const pipSize =
+      getPipSize(
+        "converterPipSize",
+        "converterCustomPip"
+      );
+
+
+    if (
+      !Number.isFinite(pips) ||
+      !Number.isFinite(pipSize) ||
+      pipSize <= 0
+    ) {
+
+      document.getElementById(
+        "conversionResult"
+      ).textContent =
+        "Invalid input";
+
+      return;
+
+    }
+
+
+    const movement =
+      pips * pipSize;
+
+
+    document.getElementById(
+      "conversionResult"
+    ).textContent =
+      formatNumber(
+        movement,
+        5
+      );
+
+  }
+
+
+  /* ==========================================
+     CUSTOM PIP SIZE TOGGLES
+  ========================================== */
+
+  document.getElementById(
+    "pipSize"
+  ).addEventListener(
+    "change",
+    function () {
+
+      document.getElementById(
+        "customPipField"
+      ).style.display =
+        this.value === "custom"
+          ? "flex"
+          : "none";
+
+    }
+  );
+
+
+  document.getElementById(
+    "converterPipSize"
+  ).addEventListener(
+    "change",
+    function () {
+
+      document.getElementById(
+        "converterCustomField"
+      ).style.display =
+        this.value === "custom"
+          ? "flex"
+          : "none";
+
+    }
+  );
+
+
+  /* ==========================================
+     RESET MAIN CALCULATOR
+  ========================================== */
+
+  function resetPipCalculator() {
+
+    document.getElementById(
+      "startPrice"
+    ).value =
+      "1.10000";
+
+
+    document.getElementById(
+      "endPrice"
+    ).value =
+      "1.10500";
+
+
+    document.getElementById(
+      "pipSize"
+    ).value =
+      "0.0001";
+
+
+    document.getElementById(
+      "customPipSize"
+    ).value =
+      "0.0001";
+
+
+    document.getElementById(
+      "customPipField"
+    ).style.display =
+      "none";
+
+
+    calculatePipDifference();
+
+  }
+
+
+  /* ==========================================
+     RESET CONVERTER
+  ========================================== */
+
+  function resetConverter() {
+
+    document.getElementById(
+      "pipAmount"
+    ).value =
+      "50";
+
+
+    document.getElementById(
+      "converterPipSize"
+    ).value =
+      "0.0001";
+
+
+    document.getElementById(
+      "converterCustomPip"
+    ).value =
+      "0.0001";
+
+
+    document.getElementById(
+      "converterCustomField"
+    ).style.display =
+      "none";
+
+
+    calculatePipConversion();
+
+  }
+
+
+  /* ==========================================
+     INITIALIZE
+  ========================================== */
+
+  document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+      calculatePipDifference();
+
+      calculatePipConversion();
+
+
+      document.getElementById(
+        "year"
+      ).textContent =
+        new Date().getFullYear();
+
+    }
+  );
+
+</script>
+
 
 </body>
-
 </html>
-
