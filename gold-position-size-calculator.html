@@ -1,0 +1,2256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B5T8QM08CE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-B5T8QM08CE');
+</script>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Gold Position Size Calculator for Prop Firms & Funded Accounts | XAUUSD</title>
+
+  <meta name="description" content="Calculate XAUUSD gold position size using account balance, risk percentage, stop-loss distance and gold price. Designed for prop firms, funded accounts, FundedNext scenarios and gold traders.">
+
+  <meta name="keywords" content="gold position size calculator, XAUUSD position size calculator, gold position size calculator for prop firms, gold position size calculator for funded accounts, funded account gold position size calculator, prop firm XAUUSD position size calculator, FundedNext gold position size calculator, FundedNext XAUUSD position size calculator, gold lot size calculator for funded accounts, XAUUSD lot size calculator for prop firms, gold risk position size calculator, gold trading position size calculator, XAUUSD risk calculator, gold stop loss position size calculator, XAUUSD stop loss lot size calculator, gold risk per trade calculator, funded trader gold position sizing, prop firm gold risk calculator, XAUUSD position sizing calculator, gold position calculator for $10000 account, gold position calculator for $25000 account, gold position calculator for $50000 account, gold position calculator for $100000 account, XAUUSD position size with stop loss, gold lot size based on risk">
+
+  <meta name="author" content="EZTradingHub">
+
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="googlebot" content="index, follow, max-image-preview:large">
+
+  <meta name="theme-color" content="#07111f">
+
+  <link rel="canonical" href="https://eztradinghub.com/gold-position-size-calculator.html">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+  <link rel="apple-touch-icon" href="assets/images/favicon-32x32.png">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Gold Position Size Calculator for Prop Firms & Funded Accounts">
+  <meta property="og:description" content="Calculate XAUUSD position size and lot size from account equity, risk percentage and stop-loss distance.">
+  <meta property="og:url" content="https://eztradinghub.com/gold-position-size-calculator.html">
+  <meta property="og:site_name" content="EZTradingHub">
+  <meta property="og:image" content="https://eztradinghub.com/assets/images/og-image.jpg">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Gold Position Size Calculator | XAUUSD">
+  <meta name="twitter:description" content="Calculate risk-based XAUUSD position size, lot size and gold exposure.">
+  <meta name="twitter:image" content="https://eztradinghub.com/assets/images/og-image.jpg">
+
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- WebApplication Schema -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebApplication",
+    "name":"Gold Position Size Calculator",
+    "url":"https://eztradinghub.com/gold-position-size-calculator.html",
+    "applicationCategory":"FinanceApplication",
+    "operatingSystem":"Any",
+    "description":"A free XAUUSD gold position size calculator for estimating risk-based lot size, ounces, position value and margin.",
+    "provider":{
+      "@type":"Organization",
+      "name":"EZTradingHub",
+      "url":"https://eztradinghub.com/"
+    },
+    "offers":{
+      "@type":"Offer",
+      "price":"0",
+      "priceCurrency":"USD"
+    }
+  }
+  </script>
+
+  <!-- Breadcrumb Schema -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BreadcrumbList",
+    "itemListElement":[
+      {
+        "@type":"ListItem",
+        "position":1,
+        "name":"Home",
+        "item":"https://eztradinghub.com/"
+      },
+      {
+        "@type":"ListItem",
+        "position":2,
+        "name":"Gold Calculators",
+        "item":"https://eztradinghub.com/gold-calculators.html"
+      },
+      {
+        "@type":"ListItem",
+        "position":3,
+        "name":"Gold Position Size Calculator",
+        "item":"https://eztradinghub.com/gold-position-size-calculator.html"
+      }
+    ]
+  }
+  </script>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {
+        "@type":"Question",
+        "name":"What is a gold position size calculator?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"A gold position size calculator estimates the XAUUSD lot size that corresponds to a chosen account risk amount and stop-loss distance."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"How do I calculate XAUUSD position size?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"A basic risk-based calculation divides the amount you are willing to risk by the dollar loss per one lot at the selected stop-loss distance."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Can I use this gold position size calculator for a prop firm?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Yes. The calculator can model risk-based XAUUSD position sizes for proprietary trading and funded-account scenarios, but the resulting position must still comply with the firm's current rules."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Can I use this calculator for FundedNext?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"The calculator can be used to model XAUUSD position-sizing scenarios relevant to funded-account trading, including scenarios a trader may compare with FundedNext rules. It is not an official FundedNext calculator."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Does leverage determine my position size?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Risk-based position size is primarily determined by the amount at risk and stop-loss distance. Leverage mainly affects the margin required to hold the position."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root{
+      --bg:#f5f7fb;
+      --surface:#ffffff;
+      --surface2:#eef2f7;
+      --text:#172033;
+      --muted:#647084;
+      --border:#dce3ec;
+      --navy:#07111f;
+      --navy2:#0d1c30;
+      --gold:#f2b84b;
+      --gold-dark:#bd7e10;
+      --green:#16845b;
+      --red:#c73b3b;
+      --shadow:0 15px 45px rgba(7,17,31,.09);
+    }
+
+    [data-theme="dark"]{
+      --bg:#07111f;
+      --surface:#0d1c30;
+      --surface2:#12243b;
+      --text:#edf3fb;
+      --muted:#a9b7c9;
+      --border:#263951;
+      --navy:#020914;
+      --navy2:#0b192c;
+      --shadow:0 18px 55px rgba(0,0,0,.3);
+    }
+
+    *{
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      margin:0;
+      font-family:Inter,Arial,sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.7;
+    }
+
+    a{
+      color:inherit;
+    }
+
+    .skip-link{
+      position:absolute;
+      left:-9999px;
+      top:10px;
+      z-index:9999;
+      background:var(--gold);
+      color:#111;
+      padding:10px 14px;
+      border-radius:8px;
+      font-weight:800;
+    }
+
+    .skip-link:focus{
+      left:10px;
+    }
+
+    :focus-visible{
+      outline:3px solid var(--gold);
+      outline-offset:3px;
+    }
+
+    .site-header{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      background:rgba(7,17,31,.96);
+      border-bottom:1px solid rgba(255,255,255,.08);
+      backdrop-filter:blur(14px);
+    }
+
+    .nav{
+      max-width:1180px;
+      margin:auto;
+      padding:14px 20px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      color:#fff;
+      text-decoration:none;
+      font-weight:800;
+      white-space:nowrap;
+    }
+
+    .brand-logo{
+      width:38px;
+      height:38px;
+      display:grid;
+      place-items:center;
+      border-radius:10px;
+      background:linear-gradient(135deg,#f2b84b,#ffe29a);
+      color:#07111f;
+      font-weight:900;
+    }
+
+    .nav-links{
+      display:flex;
+      align-items:center;
+      justify-content:flex-end;
+      flex-wrap:wrap;
+      gap:7px;
+    }
+
+    .nav-links a{
+      color:#dce7f5;
+      text-decoration:none;
+      padding:8px 10px;
+      border-radius:8px;
+      font-size:.9rem;
+    }
+
+    .nav-links a:hover{
+      background:rgba(255,255,255,.08);
+    }
+
+    .theme-toggle{
+      border:1px solid rgba(255,255,255,.15);
+      background:rgba(255,255,255,.07);
+      color:#fff;
+      border-radius:9px;
+      padding:9px 11px;
+      cursor:pointer;
+    }
+
+    .container{
+      width:min(1120px,calc(100% - 32px));
+      margin:auto;
+    }
+
+    .breadcrumb{
+      padding:20px 0 5px;
+      color:var(--muted);
+      font-size:.88rem;
+    }
+
+    .breadcrumb a{
+      color:var(--gold-dark);
+      text-decoration:none;
+    }
+
+    .hero{
+      padding:35px 0 25px;
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.5fr .8fr;
+      gap:25px;
+    }
+
+    .hero-card{
+      background:linear-gradient(135deg,var(--navy),var(--navy2));
+      color:#fff;
+      border-radius:22px;
+      padding:38px;
+      box-shadow:var(--shadow);
+    }
+
+    .eyebrow{
+      color:var(--gold);
+      font-size:.82rem;
+      font-weight:800;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+    }
+
+    h1{
+      margin:12px 0 15px;
+      font-size:clamp(2rem,5vw,3.2rem);
+      line-height:1.1;
+    }
+
+    .hero-card p{
+      color:#c8d5e5;
+      max-width:780px;
+    }
+
+    .hero-side{
+      background:var(--surface);
+      border:1px solid var(--border);
+      border-radius:22px;
+      padding:28px;
+      box-shadow:var(--shadow);
+    }
+
+    .hero-side h2{
+      margin-top:0;
+      font-size:1.1rem;
+    }
+
+    .hero-side ul{
+      margin:0;
+      padding-left:20px;
+      color:var(--muted);
+    }
+
+    .ad-slot{
+      min-height:105px;
+      border:1px dashed var(--border);
+      background:var(--surface);
+      border-radius:14px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:var(--muted);
+      font-size:.8rem;
+      margin:24px 0;
+    }
+
+    .section{
+      margin:38px 0;
+    }
+
+    .section h2{
+      font-size:1.75rem;
+      line-height:1.25;
+      margin-bottom:10px;
+    }
+
+    .section-intro{
+      color:var(--muted);
+      max-width:880px;
+    }
+
+    .calculator{
+      background:var(--surface);
+      border:1px solid var(--border);
+      border-radius:22px;
+      padding:28px;
+      box-shadow:var(--shadow);
+    }
+
+    .calculator-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:20px;
+    }
+
+    .field label{
+      display:block;
+      margin-bottom:7px;
+      font-weight:700;
+      font-size:.9rem;
+    }
+
+    .field small{
+      display:block;
+      margin-top:5px;
+      color:var(--muted);
+      font-size:.78rem;
+    }
+
+    input,select{
+      width:100%;
+      border:1px solid var(--border);
+      border-radius:10px;
+      padding:13px 14px;
+      background:var(--surface2);
+      color:var(--text);
+      font:inherit;
+    }
+
+    .buttons{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:22px;
+    }
+
+    .primary-btn,
+    .secondary-btn{
+      border-radius:10px;
+      padding:12px 18px;
+      cursor:pointer;
+      font-weight:800;
+    }
+
+    .primary-btn{
+      border:0;
+      background:var(--gold);
+      color:#111;
+    }
+
+    .secondary-btn{
+      border:1px solid var(--border);
+      background:var(--surface2);
+      color:var(--text);
+    }
+
+    .results{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
+      margin-top:25px;
+    }
+
+    .result{
+      background:var(--surface2);
+      border:1px solid var(--border);
+      border-radius:14px;
+      padding:18px;
+    }
+
+    .result span{
+      display:block;
+      color:var(--muted);
+      font-size:.8rem;
+      margin-bottom:5px;
+    }
+
+    .result strong{
+      font-size:1.25rem;
+    }
+
+    .highlight{
+      border-color:var(--gold);
+      box-shadow:inset 0 0 0 1px rgba(242,184,75,.18);
+    }
+
+    .formula{
+      background:var(--navy);
+      color:#dce7f5;
+      padding:20px;
+      border-radius:14px;
+      overflow:auto;
+      font-family:monospace;
+      margin:18px 0;
+      white-space:pre-wrap;
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+
+    .info-card{
+      background:var(--surface);
+      border:1px solid var(--border);
+      border-radius:16px;
+      padding:22px;
+    }
+
+    .info-card h3{
+      margin-top:0;
+      line-height:1.3;
+    }
+
+    .info-card p{
+      color:var(--muted);
+      margin-bottom:0;
+    }
+
+    .table-wrap{
+      overflow-x:auto;
+      border:1px solid var(--border);
+      border-radius:15px;
+      background:var(--surface);
+    }
+
+    table{
+      width:100%;
+      border-collapse:collapse;
+      min-width:650px;
+    }
+
+    th,td{
+      padding:13px 15px;
+      text-align:left;
+      border-bottom:1px solid var(--border);
+    }
+
+    th{
+      background:var(--surface2);
+    }
+
+    .faq{
+      border-top:1px solid var(--border);
+    }
+
+    details{
+      border-bottom:1px solid var(--border);
+      padding:17px 0;
+    }
+
+    summary{
+      cursor:pointer;
+      font-weight:700;
+    }
+
+    .disclaimer{
+      background:var(--surface2);
+      border-left:4px solid var(--gold);
+      padding:20px;
+      border-radius:10px;
+      color:var(--muted);
+    }
+
+    .related{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+
+    .related a{
+      padding:9px 12px;
+      border:1px solid var(--border);
+      border-radius:9px;
+      text-decoration:none;
+      background:var(--surface);
+      font-size:.88rem;
+    }
+
+    .related a:hover{
+      border-color:var(--gold);
+    }
+
+    footer{
+      margin-top:55px;
+      background:var(--navy);
+      color:#b9c6d6;
+      padding:35px 0;
+    }
+
+    footer a{
+      color:#fff;
+      text-decoration:none;
+    }
+
+    .footer-grid{
+      display:grid;
+      grid-template-columns:2fr 1fr 1fr;
+      gap:25px;
+    }
+
+    @media(max-width:850px){
+
+      .hero-grid,
+      .calculator-grid,
+      .footer-grid{
+        grid-template-columns:1fr;
+      }
+
+      .cards{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .results{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .nav-links{
+        display:none;
+      }
+    }
+
+    @media(max-width:560px){
+
+      .container{
+        width:min(100% - 22px,1120px);
+      }
+
+      .hero-card,
+      .hero-side,
+      .calculator{
+        padding:21px;
+      }
+
+      .cards,
+      .results{
+        grid-template-columns:1fr;
+      }
+
+      h1{
+        font-size:2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+
+  <nav class="nav" aria-label="Main navigation">
+
+    <a class="brand" href="index.html">
+      <span class="brand-logo">EZ</span>
+      <span>EZTradingHub</span>
+    </a>
+
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="calculators.html">Calculators</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+
+    <button
+      class="theme-toggle"
+      id="themeToggle"
+      type="button"
+      aria-label="Toggle light and dark mode">
+      🌙
+    </button>
+
+  </nav>
+
+</header>
+
+
+<main id="main">
+
+  <div class="container">
+
+    <div class="breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Home</a> /
+      <a href="calculators.html">Calculators</a> /
+      Gold Position Size Calculator
+    </div>
+
+
+    <section class="hero">
+
+      <div class="hero-grid">
+
+        <div class="hero-card">
+
+          <div class="eyebrow">
+            XAUUSD Risk Management Tool
+          </div>
+
+          <h1>
+            Gold Position Size Calculator for Prop Firms & Funded Accounts
+          </h1>
+
+          <p>
+            Calculate the appropriate mathematical XAUUSD position size from
+            your account equity, risk percentage and stop-loss distance.
+          </p>
+
+          <p>
+            Model gold lot size, dollar risk, ounces, notional exposure and
+            estimated margin for personal trading accounts, proprietary trading
+            accounts and funded-account scenarios.
+          </p>
+
+        </div>
+
+
+        <aside class="hero-side">
+
+          <h2>Calculate your gold position</h2>
+
+          <ul>
+            <li>Risk-based XAUUSD lot size</li>
+            <li>Dollar amount at risk</li>
+            <li>Gold ounces</li>
+            <li>Position value</li>
+            <li>Estimated margin</li>
+            <li>Effective account exposure</li>
+          </ul>
+
+        </aside>
+
+      </div>
+
+    </section>
+
+
+    <div class="ad-slot" aria-label="Advertisement">
+      Advertisement
+    </div>
+
+
+    <!-- CALCULATOR -->
+
+    <section class="section" id="calculator">
+
+      <h2>Free XAUUSD Gold Position Size Calculator</h2>
+
+      <p class="section-intro">
+        Enter your account equity, risk percentage, XAUUSD entry price and
+        stop-loss price. The calculator estimates the position size that
+        corresponds to your selected maximum monetary risk.
+      </p>
+
+
+      <div class="calculator">
+
+        <div class="calculator-grid">
+
+          <div class="field">
+
+            <label for="equity">
+              Account Equity
+            </label>
+
+            <input
+              id="equity"
+              type="number"
+              value="10000"
+              min="0"
+              step="100">
+
+            <small>
+              Example: $10,000, $25,000, $50,000 or $100,000.
+            </small>
+
+          </div>
+
+
+          <div class="field">
+
+            <label for="riskPercent">
+              Risk Per Trade (%)
+            </label>
+
+            <input
+              id="riskPercent"
+              type="number"
+              value="1"
+              min="0.01"
+              max="100"
+              step="0.01">
+
+            <small>
+              Percentage of account equity you intend to risk on the trade.
+            </small>
+
+          </div>
+
+
+          <div class="field">
+
+            <label for="entryPrice">
+              XAUUSD Entry Price
+            </label>
+
+            <input
+              id="entryPrice"
+              type="number"
+              value="2650"
+              min="0"
+              step="0.01">
+
+            <small>
+              Example: 2650.00 for XAUUSD.
+            </small>
+
+          </div>
+
+
+          <div class="field">
+
+            <label for="stopPrice">
+              XAUUSD Stop-Loss Price
+            </label>
+
+            <input
+              id="stopPrice"
+              type="number"
+              value="2640"
+              min="0"
+              step="0.01">
+
+            <small>
+              The calculator uses the absolute distance between entry and stop.
+            </small>
+
+          </div>
+
+
+          <div class="field">
+
+            <label for="contractSize">
+              Contract Size (oz per lot)
+            </label>
+
+            <input
+              id="contractSize"
+              type="number"
+              value="100"
+              min="0.01"
+              step="1">
+
+            <small>
+              Many XAUUSD specifications use 100 troy ounces per standard lot.
+              Verify your broker or prop firm.
+            </small>
+
+          </div>
+
+
+          <div class="field">
+
+            <label for="leverage">
+              Leverage
+            </label>
+
+            <input
+              id="leverage"
+              type="number"
+              value="100"
+              min="1"
+              step="1">
+
+            <small>
+              Used only to estimate required margin.
+            </small>
+
+          </div>
+
+
+          <div class="field">
+
+            <label for="direction">
+              Trade Direction
+            </label>
+
+            <select id="direction">
+
+              <option value="buy">
+                Buy / Long
+              </option>
+
+              <option value="sell">
+                Sell / Short
+              </option>
+
+            </select>
+
+            <small>
+              Direction is displayed for reference; risk sizing uses price distance.
+            </small>
+
+          </div>
+
+
+          <div class="field">
+
+            <label for="currency">
+              Display Currency
+            </label>
+
+            <select id="currency">
+
+              <option value="$">
+                USD ($)
+              </option>
+
+              <option value="€">
+                EUR (€)
+              </option>
+
+              <option value="£">
+                GBP (£)
+              </option>
+
+              <option value="₦">
+                NGN (₦)
+              </option>
+
+            </select>
+
+            <small>
+              Display symbol only. No currency conversion is performed.
+            </small>
+
+          </div>
+
+        </div>
+
+
+        <div class="buttons">
+
+          <button
+            class="primary-btn"
+            id="calculateBtn"
+            type="button">
+            Calculate Position Size
+          </button>
+
+          <button
+            class="secondary-btn"
+            id="resetBtn"
+            type="button">
+            Reset
+          </button>
+
+        </div>
+
+
+        <div
+          class="results"
+          aria-live="polite">
+
+          <div class="result highlight">
+
+            <span>
+              Recommended Risk-Based Lot Size
+            </span>
+
+            <strong id="lotSize">
+              0.00 lots
+            </strong>
+
+          </div>
+
+
+          <div class="result">
+
+            <span>
+              Maximum Risk Amount
+            </span>
+
+            <strong id="riskAmount">
+              $0.00
+            </strong>
+
+          </div>
+
+
+          <div class="result">
+
+            <span>
+              Stop-Loss Distance
+            </span>
+
+            <strong id="stopDistance">
+              $0.00
+            </strong>
+
+          </div>
+
+
+          <div class="result">
+
+            <span>
+              Position Size
+            </span>
+
+            <strong id="ounces">
+              0.00 oz
+            </strong>
+
+          </div>
+
+
+          <div class="result">
+
+            <span>
+              Position Value
+            </span>
+
+            <strong id="positionValue">
+              $0.00
+            </strong>
+
+          </div>
+
+
+          <div class="result">
+
+            <span>
+              Estimated Margin
+            </span>
+
+            <strong id="margin">
+              $0.00
+            </strong>
+
+          </div>
+
+
+          <div class="result">
+
+            <span>
+              Effective Exposure
+            </span>
+
+            <strong id="effectiveLeverage">
+              0.00x
+            </strong>
+
+          </div>
+
+
+          <div class="result">
+
+            <span>
+              Risk / Equity
+            </span>
+
+            <strong id="riskDisplay">
+              0.00%
+            </strong>
+
+          </div>
+
+
+          <div class="result">
+
+            <span>
+              Trade Direction
+            </span>
+
+            <strong id="directionOutput">
+              BUY
+            </strong>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <div class="ad-slot" aria-label="Advertisement">
+      Advertisement
+    </div>
+
+
+    <!-- EDUCATIONAL CONTENT -->
+
+    <section class="section">
+
+      <h2>
+        How to Calculate XAUUSD Position Size
+      </h2>
+
+      <p>
+        A risk-based gold position size calculation starts with the amount of
+        money you are willing to lose if your stop-loss is reached. The
+        calculation then considers the distance between the XAUUSD entry price
+        and stop-loss price.
+      </p>
+
+      <div class="formula">
+Risk Amount = Account Equity × Risk Percentage
+
+Stop Distance = |Entry Price − Stop-Loss Price|
+
+Position Size (oz) =
+Risk Amount ÷ Stop Distance
+
+Lot Size =
+Position Size (oz) ÷ Contract Size
+      </div>
+
+      <p>
+        For example, if a trader has a $10,000 account and chooses a 1% risk,
+        the maximum planned risk is $100. If the XAUUSD entry is $2,650 and the
+        stop-loss is $2,640, the stop distance is $10 per ounce. With a
+        100-ounce standard contract, the mathematical position size would be
+        0.10 lots.
+      </p>
+
+    </section>
+
+
+    <section class="section">
+
+      <h2>
+        Gold Position Size Calculator for Prop Firms
+      </h2>
+
+      <p>
+        Prop firm traders can use risk-based position sizing to connect an
+        XAUUSD trade to a predefined account-risk limit. This is particularly
+        useful when a proprietary trading account has specific daily loss,
+        maximum drawdown or position-size restrictions.
+      </p>
+
+      <p>
+        The calculator does not determine whether a particular position is
+        permitted by a prop firm. Traders should compare the calculated
+        position with the firm's current rules before placing an order.
+      </p>
+
+      <div class="cards">
+
+        <article class="info-card">
+
+          <h3>
+            Daily Loss Limits
+          </h3>
+
+          <p>
+            A position can be mathematically valid under a per-trade risk
+            percentage while still interacting with a firm's daily loss limit.
+            Existing open and closed losses may need to be considered.
+          </p>
+
+        </article>
+
+
+        <article class="info-card">
+
+          <h3>
+            Maximum Drawdown
+          </h3>
+
+          <p>
+            Funded trading accounts may have an overall drawdown threshold.
+            Position sizing should be considered alongside the remaining
+            drawdown buffer.
+          </p>
+
+        </article>
+
+
+        <article class="info-card">
+
+          <h3>
+            XAUUSD Volatility
+          </h3>
+
+          <p>
+            Gold can move quickly during volatile sessions and major economic
+            releases, making stop-loss distance an important component of
+            position sizing.
+          </p>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <section class="section">
+
+      <h2>
+        Gold Position Size Calculator for Funded Accounts
+      </h2>
+
+      <p>
+        Funded-account traders can enter their account size and preferred risk
+        percentage to estimate an XAUUSD position size. This can be useful for
+        comparing a consistent risk model across different account sizes.
+      </p>
+
+      <p>
+        For example, the same 1% risk framework produces different monetary
+        risk amounts on $10,000, $25,000, $50,000 and $100,000 accounts.
+        The stop-loss distance also changes the resulting position size.
+      </p>
+
+    </section>
+
+
+    <section class="section">
+
+      <h2>
+        XAUUSD Position Size Examples for Funded Accounts
+      </h2>
+
+      <div class="table-wrap">
+
+        <table>
+
+          <thead>
+
+            <tr>
+              <th>Account</th>
+              <th>Risk</th>
+              <th>Risk Amount</th>
+              <th>Stop Distance</th>
+              <th>Example Position</th>
+            </tr>
+
+          </thead>
+
+          <tbody>
+
+            <tr>
+              <td>$10,000</td>
+              <td>1%</td>
+              <td>$100</td>
+              <td>$10/oz</td>
+              <td>10 oz / 0.10 lot</td>
+            </tr>
+
+            <tr>
+              <td>$25,000</td>
+              <td>1%</td>
+              <td>$250</td>
+              <td>$10/oz</td>
+              <td>25 oz / 0.25 lot</td>
+            </tr>
+
+            <tr>
+              <td>$50,000</td>
+              <td>1%</td>
+              <td>$500</td>
+              <td>$10/oz</td>
+              <td>50 oz / 0.50 lot</td>
+            </tr>
+
+            <tr>
+              <td>$100,000</td>
+              <td>1%</td>
+              <td>$1,000</td>
+              <td>$10/oz</td>
+              <td>100 oz / 1.00 lot</td>
+            </tr>
+
+          </tbody>
+
+        </table>
+
+      </div>
+
+      <p>
+        These are mathematical examples using a 100-ounce-per-lot contract.
+        Actual broker and prop firm contract specifications may differ.
+      </p>
+
+    </section>
+
+
+    <section class="section">
+
+      <h2>
+        FundedNext Gold Position Size Calculator
+      </h2>
+
+      <p>
+        Traders searching for a
+        <strong>FundedNext gold position size calculator</strong>,
+        <strong>FundedNext XAUUSD position size calculator</strong> or
+        <strong>FundedNext gold lot size calculator</strong> can use this tool
+        to model risk-based XAUUSD position sizing.
+      </p>
+
+      <p>
+        Enter the account equity applicable to your scenario, select the amount
+        you want to risk, and enter the distance between your planned XAUUSD
+        entry and stop-loss.
+      </p>
+
+      <p>
+        EZTradingHub is independent and is not affiliated with, sponsored by,
+        or endorsed by FundedNext. Funded-account rules can change, so verify
+        the current official specifications before trading.
+      </p>
+
+    </section>
+
+
+    <section class="section">
+
+      <h2>
+        Gold Lot Size vs Gold Position Size
+      </h2>
+
+      <p>
+        Gold position size and lot size are closely related but are not exactly
+        the same measurement. Position size can be expressed in ounces, while
+        lot size represents the number of trading contracts.
+      </p>
+
+      <div class="formula">
+Position Size (oz) = Lot Size × Contract Size
+
+Lot Size = Position Size (oz) ÷ Contract Size
+      </div>
+
+      <p>
+        Because brokers can use different contract specifications, always
+        confirm the XAUUSD contract size before using a position-sizing result
+        in a live account.
+      </p>
+
+    </section>
+
+
+    <section class="section">
+
+      <h2>
+        XAUUSD Position Size With Stop Loss
+      </h2>
+
+      <p>
+        Stop-loss distance is one of the most important inputs in risk-based
+        gold position sizing. For a fixed dollar risk, a wider stop generally
+        produces a smaller position while a narrower stop produces a larger
+        mathematical position.
+      </p>
+
+      <p>
+        This relationship means traders should not select a stop-loss solely
+        to obtain a desired lot size. The stop should be determined from the
+        trading setup and market structure, after which the position size can
+        be calculated from the resulting risk.
+      </p>
+
+    </section>
+
+
+    <section class="section">
+
+      <h2>
+        Gold Position Size and Leverage
+      </h2>
+
+      <p>
+        Leverage and risk-based position sizing serve different purposes.
+        Position sizing determines the amount of exposure based on risk and
+        stop-loss distance. Leverage primarily determines the amount of margin
+        required to hold that exposure.
+      </p>
+
+      <p>
+        A trader may have enough available leverage to open a large XAUUSD
+        position, but that does not mean the position is consistent with the
+        trader's intended risk limit.
+      </p>
+
+      <p>
+        Use the
+        <a href="gold-leverage-calculator.html">
+          Gold Leverage Calculator
+        </a>
+        to examine the relationship between gold exposure and margin.
+      </p>
+
+    </section>
+
+
+    <section class="section">
+
+      <h2>
+        Gold Position Sizing for $10K, $25K, $50K and $100K Accounts
+      </h2>
+
+      <p>
+        Long-tail searches such as "gold position size calculator for a
+        $10,000 account" or "XAUUSD position size for a $100,000 funded
+        account" generally depend on three important inputs: account equity,
+        risk percentage and stop-loss distance.
+      </p>
+
+      <p>
+        There is therefore no single lot size that applies to every account.
+        Two traders with the same account size may require very different
+        XAUUSD position sizes if their stop-loss distances or risk limits
+        differ.
+      </p>
+
+    </section>
+
+
+    <section class="section">
+
+      <h2>
+        Gold Risk Management for Prop Firm Traders
+      </h2>
+
+      <div class="cards">
+
+        <article class="info-card">
+
+          <h3>
+            Define Risk First
+          </h3>
+
+          <p>
+            Determine the maximum amount you are prepared to lose before
+            calculating the position size.
+          </p>
+
+        </article>
+
+
+        <article class="info-card">
+
+          <h3>
+            Determine the Stop
+          </h3>
+
+          <p>
+            Use the trading setup to establish the stop-loss level and calculate
+            the price distance from entry.
+          </p>
+
+        </article>
+
+
+        <article class="info-card">
+
+          <h3>
+            Calculate the Position
+          </h3>
+
+          <p>
+            Convert the risk amount and stop distance into ounces and then into
+            lots using the applicable contract specification.
+          </p>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <section class="section">
+
+      <h2>
+        XAUUSD Gold Trading During High-Impact News
+      </h2>
+
+      <p>
+        Gold can experience rapid price movements around major economic events,
+        including U.S. inflation reports, employment data, central-bank
+        decisions and changes in interest-rate expectations.
+      </p>
+
+      <p>
+        A theoretical position-size calculation does not guarantee that the
+        intended risk will be achieved. Slippage, spread changes, execution
+        conditions and gaps can affect the actual result.
+      </p>
+
+      <p>
+        Prop firms and funded-account providers may also have specific rules
+        concerning news trading, overnight positions and maximum exposure.
+      </p>
+
+    </section>
+
+
+    <section class="section">
+
+      <h2>
+        Related Gold, Forex and Risk Calculators
+      </h2>
+
+      <div class="related">
+
+        <a href="gold-lot-size-calculator.html">
+          Gold Lot Size Calculator
+        </a>
+
+        <a href="gold-risk-calculator.html">
+          Gold Risk Calculator
+        </a>
+
+        <a href="gold-margin-calculator.html">
+          Gold Margin Calculator
+        </a>
+
+        <a href="gold-leverage-calculator.html">
+          Gold Leverage Calculator
+        </a>
+
+        <a href="gold-profit-calculator.html">
+          Gold Profit Calculator
+        </a>
+
+        <a href="position-size-calculator.html">
+          Forex Position Size Calculator
+        </a>
+
+        <a href="lot-size-calculator.html">
+          Forex Lot Size Calculator
+        </a>
+
+        <a href="risk-calculator.html">
+          Risk Calculator
+        </a>
+
+        <a href="risk-reward-calculator.html">
+          Risk-Reward Calculator
+        </a>
+
+        <a href="drawdown-calculator.html">
+          Drawdown Calculator
+        </a>
+
+        <a href="calculators.html">
+          All Trading Calculators
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <div class="ad-slot" aria-label="Advertisement">
+      Advertisement
+    </div>
+
+
+    <!-- FAQ -->
+
+    <section class="section">
+
+      <h2>
+        Frequently Asked Questions About Gold Position Size
+      </h2>
+
+      <div class="faq">
+
+        <details>
+
+          <summary>
+            What is a gold position size calculator?
+          </summary>
+
+          <p>
+            A gold position size calculator estimates the XAUUSD lot size
+            corresponding to a selected account risk and stop-loss distance.
+          </p>
+
+        </details>
+
+
+        <details>
+
+          <summary>
+            How do I calculate XAUUSD position size?
+          </summary>
+
+          <p>
+            First calculate the amount of money you are willing to risk.
+            Then divide that risk amount by the potential loss per ounce at
+            your selected stop distance. Finally convert ounces into lots using
+            the applicable contract size.
+          </p>
+
+        </details>
+
+
+        <details>
+
+          <summary>
+            What is the position size for 1% risk on a $10,000 account?
+          </summary>
+
+          <p>
+            A 1% risk on a $10,000 account equals $100. The resulting XAUUSD
+            lot size depends on the stop-loss distance and contract size.
+          </p>
+
+        </details>
+
+
+        <details>
+
+          <summary>
+            Can I use this calculator for a prop firm?
+          </summary>
+
+          <p>
+            Yes. It can be used for mathematical risk-sizing scenarios for
+            proprietary trading accounts. However, the calculated position must
+            still comply with the relevant firm's current rules.
+          </p>
+
+        </details>
+
+
+        <details>
+
+          <summary>
+            Can I use this for a funded account?
+          </summary>
+
+          <p>
+            Yes. Enter the funded account's applicable equity, risk percentage
+            and XAUUSD stop-loss distance to model a risk-based position size.
+          </p>
+
+        </details>
+
+
+        <details>
+
+          <summary>
+            Can I use this as a FundedNext gold position size calculator?
+          </summary>
+
+          <p>
+            It can be used to model XAUUSD position-size scenarios that a trader
+            may compare with FundedNext rules. It is not an official FundedNext
+            calculator.
+          </p>
+
+        </details>
+
+
+        <details>
+
+          <summary>
+            Does higher leverage allow me to take more risk?
+          </summary>
+
+          <p>
+            Higher leverage can reduce the margin needed for a position, but
+            it does not automatically make a larger position appropriate.
+            Risk depends on position size and price movement relative to the
+            account.
+          </p>
+
+        </details>
+
+
+        <details>
+
+          <summary>
+            Why does my broker show a different lot size?
+          </summary>
+
+          <p>
+            Brokers can use different XAUUSD contract sizes, margin rules,
+            instrument specifications and account currencies. Verify the
+            contract specification for your trading account.
+          </p>
+
+        </details>
+
+
+        <details>
+
+          <summary>
+            Does the calculator guarantee my exact trading loss?
+          </summary>
+
+          <p>
+            No. It provides a mathematical estimate. Slippage, spread,
+            execution conditions and market gaps can cause actual results to
+            differ from the theoretical calculation.
+          </p>
+
+        </details>
+
+      </div>
+
+    </section>
+
+
+    <!-- DISCLAIMER -->
+
+    <section class="section">
+
+      <h2>
+        Important Gold Trading Disclaimer
+      </h2>
+
+      <div class="disclaimer">
+
+        <strong>Educational use only:</strong>
+
+        This Gold Position Size Calculator is provided for mathematical and
+        educational purposes. It does not constitute financial, investment or
+        trading advice.
+
+        <br><br>
+
+        Actual trading results can differ from calculator estimates because of
+        spreads, commissions, slippage, execution conditions, contract
+        specifications, currency conversion and market volatility.
+
+        <br><br>
+
+        Prop firm and funded-account rules can change. Always verify current
+        risk limits, drawdown rules, leverage, position-size restrictions,
+        news-trading rules and instrument specifications with the relevant
+        provider before trading.
+
+        <br><br>
+
+        EZTradingHub is an independent website and is not affiliated with,
+        sponsored by or endorsed by FundedNext or any other proprietary trading
+        firm referenced on this page.
+
+      </div>
+
+    </section>
+
+  </div>
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+  <div class="container">
+
+    <div class="footer-grid">
+
+      <div>
+
+        <h2>
+          EZTradingHub
+        </h2>
+
+        <p>
+          Free trading calculators and educational tools for forex, gold,
+          stocks, crypto, commodities, bonds and ETFs.
+        </p>
+
+        <p>
+          © <span id="year"></span> EZTradingHub. All rights reserved.
+        </p>
+
+      </div>
+
+
+      <div>
+
+        <h3>
+          Explore
+        </h3>
+
+        <p>
+          <a href="calculators.html">
+            Calculators
+          </a>
+        </p>
+
+        <p>
+          <a href="market-scanner.html">
+            Market Scanner
+          </a>
+        </p>
+
+      </div>
+
+
+      <div>
+
+        <h3>
+          Information
+        </h3>
+
+        <p>
+          <a href="about.html">
+            About
+          </a>
+        </p>
+
+        <p>
+          <a href="faq.html">
+            FAQ
+          </a>
+        </p>
+
+        <p>
+          <a href="privacy.html">
+            Privacy
+          </a>
+        </p>
+
+        <p>
+          <a href="terms.html">
+            Terms
+          </a>
+        </p>
+
+        <p>
+          <a href="cookie-policy.html">
+            Cookie Policy
+          </a>
+        </p>
+
+        
+        <p>
+          <a href="disclaimer.html">
+            Disclaimer
+          </a>
+        </p>
+
+        <p>
+          <a href="contact.html">
+            Contact
+          </a>
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</footer>
+
+
+<script>
+
+  /* =========================
+     LIGHT / DARK MODE
+  ========================= */
+
+  const root = document.documentElement;
+  const themeToggle = document.getElementById("themeToggle");
+
+  function setTheme(theme){
+
+    root.setAttribute("data-theme", theme);
+
+    localStorage.setItem(
+      "ezth-theme",
+      theme
+    );
+
+    themeToggle.textContent =
+      theme === "dark" ? "☀️" : "🌙";
+
+    themeToggle.setAttribute(
+      "aria-label",
+      theme === "dark"
+        ? "Switch to light mode"
+        : "Switch to dark mode"
+    );
+  }
+
+
+  const savedTheme =
+    localStorage.getItem("ezth-theme");
+
+
+  if(savedTheme){
+
+    setTheme(savedTheme);
+
+  }else{
+
+    const prefersDark =
+      window.matchMedia &&
+      window.matchMedia(
+        "(prefers-color-scheme: dark)"
+      ).matches;
+
+    setTheme(
+      prefersDark ? "dark" : "light"
+    );
+  }
+
+
+  themeToggle.addEventListener(
+    "click",
+    function(){
+
+      const current =
+        root.getAttribute("data-theme");
+
+      setTheme(
+        current === "dark"
+          ? "light"
+          : "dark"
+      );
+
+    }
+  );
+
+
+  /* =========================
+     CALCULATOR ELEMENTS
+  ========================= */
+
+  const equity =
+    document.getElementById("equity");
+
+  const riskPercent =
+    document.getElementById("riskPercent");
+
+  const entryPrice =
+    document.getElementById("entryPrice");
+
+  const stopPrice =
+    document.getElementById("stopPrice");
+
+  const contractSize =
+    document.getElementById("contractSize");
+
+  const leverage =
+    document.getElementById("leverage");
+
+  const direction =
+    document.getElementById("direction");
+
+  const currency =
+    document.getElementById("currency");
+
+
+  const lotSizeOutput =
+    document.getElementById("lotSize");
+
+  const riskAmountOutput =
+    document.getElementById("riskAmount");
+
+  const stopDistanceOutput =
+    document.getElementById("stopDistance");
+
+  const ouncesOutput =
+    document.getElementById("ounces");
+
+  const positionValueOutput =
+    document.getElementById("positionValue");
+
+  const marginOutput =
+    document.getElementById("margin");
+
+  const effectiveLeverageOutput =
+    document.getElementById("effectiveLeverage");
+
+  const riskDisplayOutput =
+    document.getElementById("riskDisplay");
+
+  const directionOutput =
+    document.getElementById("directionOutput");
+
+
+  /* =========================
+     HELPERS
+  ========================= */
+
+  function num(value){
+
+    return Number(value) || 0;
+
+  }
+
+
+  function money(value){
+
+    return currency.value +
+
+      Number(value).toLocaleString(
+        undefined,
+        {
+          minimumFractionDigits:2,
+          maximumFractionDigits:2
+        }
+      );
+
+  }
+
+
+  /* =========================
+     CALCULATE
+  ========================= */
+
+  function calculate(){
+
+    const accountEquity =
+      num(equity.value);
+
+    const risk =
+      num(riskPercent.value);
+
+    const entry =
+      num(entryPrice.value);
+
+    const stop =
+      num(stopPrice.value);
+
+    const contract =
+      num(contractSize.value);
+
+    const lev =
+      num(leverage.value);
+
+
+    if(
+      accountEquity <= 0 ||
+      risk <= 0 ||
+      entry <= 0 ||
+      stop <= 0 ||
+      contract <= 0 ||
+      lev <= 0
+    ){
+
+      lotSizeOutput.textContent = "—";
+      riskAmountOutput.textContent = "—";
+      stopDistanceOutput.textContent = "—";
+      ouncesOutput.textContent = "—";
+      positionValueOutput.textContent = "—";
+      marginOutput.textContent = "—";
+      effectiveLeverageOutput.textContent = "—";
+      riskDisplayOutput.textContent = "—";
+
+      return;
+
+    }
+
+
+    const riskAmount =
+      accountEquity * (risk / 100);
+
+
+    const stopDistance =
+      Math.abs(entry - stop);
+
+
+    if(stopDistance <= 0){
+
+      lotSizeOutput.textContent =
+        "—";
+
+      stopDistanceOutput.textContent =
+        "0.00";
+
+      return;
+
+    }
+
+
+    /*
+      XAUUSD assumption:
+
+      1 ounce loses/gains approximately
+      the stop distance in USD.
+
+      Example:
+      $10 stop distance = $10 risk per ounce.
+
+      Position ounces =
+      risk amount / stop distance.
+    */
+
+    const ounces =
+      riskAmount / stopDistance;
+
+
+    const lots =
+      ounces / contract;
+
+
+    const positionValue =
+      entry * ounces;
+
+
+    const estimatedMargin =
+      positionValue / lev;
+
+
+    const effectiveLeverage =
+      accountEquity > 0
+        ? positionValue / accountEquity
+        : 0;
+
+
+    lotSizeOutput.textContent =
+      lots.toFixed(2) + " lots";
+
+
+    riskAmountOutput.textContent =
+      money(riskAmount);
+
+
+    stopDistanceOutput.textContent =
+      money(stopDistance);
+
+
+    ouncesOutput.textContent =
+      ounces.toLocaleString(
+        undefined,
+        {
+          minimumFractionDigits:2,
+          maximumFractionDigits:2
+        }
+      ) + " oz";
+
+
+    positionValueOutput.textContent =
+      money(positionValue);
+
+
+    marginOutput.textContent =
+      money(estimatedMargin);
+
+
+    effectiveLeverageOutput.textContent =
+      effectiveLeverage.toFixed(2) + "x";
+
+
+    riskDisplayOutput.textContent =
+      risk.toFixed(2) + "%";
+
+
+    directionOutput.textContent =
+      direction.value === "buy"
+        ? "BUY / LONG"
+        : "SELL / SHORT";
+
+  }
+
+
+  /* =========================
+     RESET
+  ========================= */
+
+  document
+    .getElementById("resetBtn")
+    .addEventListener(
+      "click",
+      function(){
+
+        equity.value = 10000;
+
+        riskPercent.value = 1;
+
+        entryPrice.value = 2650;
+
+        stopPrice.value = 2640;
+
+        contractSize.value = 100;
+
+        leverage.value = 100;
+
+        direction.value = "buy";
+
+        currency.value = "$";
+
+        calculate();
+
+      }
+    );
+
+
+  /* =========================
+     EVENTS
+  ========================= */
+
+  document
+    .getElementById("calculateBtn")
+    .addEventListener(
+      "click",
+      calculate
+    );
+
+
+  [
+    equity,
+    riskPercent,
+    entryPrice,
+    stopPrice,
+    contractSize,
+    leverage,
+    direction,
+    currency
+  ].forEach(
+    function(element){
+
+      element.addEventListener(
+        "input",
+        calculate
+      );
+
+      element.addEventListener(
+        "change",
+        calculate
+      );
+
+    }
+  );
+
+
+  /* =========================
+     YEAR
+  ========================= */
+
+  document.getElementById("year").textContent =
+    new Date().getFullYear();
+
+
+  /* =========================
+     INITIAL CALCULATION
+  ========================= */
+
+  calculate();
+
+</script>
+
+</body>
+</html>
