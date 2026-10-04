@@ -1,0 +1,1681 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Prop Firm Drawdown Calculator | Daily & Maximum Loss Tool</title>
+
+  <meta name="description" content="Calculate prop firm daily drawdown, maximum overall loss, remaining drawdown allowance and equity limits for funded trading accounts. Free drawdown calculator with examples.">
+
+  <meta name="keywords" content="prop firm drawdown calculator, prop firm daily drawdown calculator, maximum drawdown calculator, funded account drawdown calculator, FundedNext drawdown calculator, funded trader risk calculator, daily loss limit calculator, overall drawdown calculator, trailing drawdown calculator, prop trading risk management">
+
+  <meta name="author" content="EZTradingHub">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#0b1730">
+
+  <link rel="canonical" href="https://eztradinghub.com/prop-firm-drawdown-calculator.html">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="EZTradingHub">
+  <meta property="og:title" content="Prop Firm Drawdown Calculator | EZTradingHub">
+  <meta property="og:description" content="Estimate daily drawdown, overall loss limits, remaining risk allowance and account equity thresholds for prop firm challenges and funded accounts.">
+  <meta property="og:url" content="https://eztradinghub.com/prop-firm-drawdown-calculator.html">
+  <meta property="og:image" content="https://eztradinghub.com/assets/images/og-image.jpg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Prop Firm Drawdown Calculator">
+  <meta name="twitter:description" content="Calculate daily and overall drawdown limits for prop firm and funded trading accounts.">
+  <meta name="twitter:image" content="https://eztradinghub.com/assets/images/og-image.jpg">
+
+  <script>
+    (function () {
+      try {
+        const saved = localStorage.getItem("ezth-theme");
+        const preferred = window.matchMedia &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches;
+        document.documentElement.dataset.theme =
+          saved || (preferred ? "dark" : "light");
+      } catch (e) {
+        document.documentElement.dataset.theme = "light";
+      }
+    })();
+  </script>
+
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f4f7fb;
+      --surface: #ffffff;
+      --surface-2: #edf3fb;
+      --text: #17243b;
+      --muted: #617089;
+      --border: #dce4ef;
+      --primary: #0758ca;
+      --primary-hover: #0646a2;
+      --accent: #ffb400;
+      --green: #087b51;
+      --green-bg: #e4f7ee;
+      --red: #c33142;
+      --red-bg: #fff0f1;
+      --shadow: 0 10px 35px rgba(15, 35, 70, .07);
+      --radius: 18px;
+    }
+
+    html[data-theme="dark"] {
+      color-scheme: dark;
+      --bg: #09111f;
+      --surface: #111e31;
+      --surface-2: #192941;
+      --text: #eef4ff;
+      --muted: #a9b8cf;
+      --border: #2b3d57;
+      --primary: #76adff;
+      --primary-hover: #a2c7ff;
+      --accent: #ffca45;
+      --green: #72e2b1;
+      --green-bg: #14382f;
+      --red: #ff9ba5;
+      --red-bg: #411f2a;
+      --shadow: 0 10px 35px rgba(0, 0, 0, .2);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      transition: background .2s, color .2s;
+    }
+
+    a { color: var(--primary); }
+    a:hover { text-decoration-thickness: 2px; }
+
+    button, input, select {
+      font: inherit;
+    }
+
+    button, input, select, a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    button:focus-visible,
+    input:focus-visible,
+    select:focus-visible,
+    a:focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 3px;
+    }
+
+    .site-header {
+      background: #0b1730;
+      color: #fff;
+      border-bottom: 3px solid var(--accent);
+    }
+
+    .header-inner {
+      max-width: 1150px;
+      margin: auto;
+      padding: 15px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.2rem;
+      font-weight: 850;
+      letter-spacing: -.4px;
+    }
+
+    .brand-icon {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      background: var(--accent);
+      color: #111827;
+      border-radius: 12px;
+      font-weight: 950;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .header-link {
+      color: #e5edff;
+      font-size: .92rem;
+      text-decoration: none;
+    }
+
+    .theme-toggle {
+      padding: 9px 13px;
+      border: 1px solid #43516b;
+      border-radius: 10px;
+      background: #172641;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    .container {
+      width: min(100% - 32px, 1060px);
+      margin-inline: auto;
+    }
+
+    .breadcrumbs {
+      padding: 17px 0 4px;
+      color: var(--muted);
+      font-size: .87rem;
+    }
+
+    .breadcrumbs a { text-decoration: none; }
+
+    .hero {
+      padding: 36px 0 27px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 5px 11px;
+      border-radius: 999px;
+      background: var(--surface-2);
+      color: var(--primary);
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: .7px;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3 {
+      line-height: 1.25;
+      letter-spacing: -.5px;
+    }
+
+    h1 {
+      max-width: 850px;
+      margin: 15px 0;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+    }
+
+    h2 {
+      margin-top: 0;
+      font-size: clamp(1.45rem, 3vw, 2rem);
+    }
+
+    h3 { font-size: 1.13rem; }
+
+    .hero p {
+      max-width: 780px;
+      color: var(--muted);
+      font-size: 1.07rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 18px;
+      border: 0;
+      border-radius: 11px;
+      background: var(--primary);
+      color: #fff;
+      font-weight: 750;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    html[data-theme="dark"] .button {
+      color: #09111f;
+    }
+
+    .button:hover {
+      filter: brightness(.94);
+    }
+
+    .button-secondary {
+      background: var(--surface);
+      color: var(--text) !important;
+      border: 1px solid var(--border);
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.55fr) minmax(250px, .8fr);
+      align-items: start;
+      gap: 22px;
+      padding-bottom: 30px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 24px;
+      min-width: 0;
+    }
+
+    .card + .card { margin-top: 20px; }
+
+    .section-heading {
+      margin: 0 0 7px;
+    }
+
+    .muted { color: var(--muted); }
+
+    .small {
+      font-size: .88rem;
+      color: var(--muted);
+    }
+
+    .field-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .field { min-width: 0; }
+
+    .field label {
+      display: block;
+      margin-bottom: 6px;
+      font-size: .91rem;
+      font-weight: 750;
+    }
+
+    .field input,
+    .field select {
+      width: 100%;
+      min-height: 47px;
+      padding: 10px 12px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    .field input:disabled {
+      opacity: .6;
+      cursor: not-allowed;
+    }
+
+    .full { grid-column: 1 / -1; }
+
+    .form-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .results {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .result-box {
+      padding: 15px;
+      border: 1px solid var(--border);
+      border-radius: 13px;
+      background: var(--surface-2);
+      overflow-wrap: anywhere;
+    }
+
+    .result-label {
+      display: block;
+      font-size: .83rem;
+      color: var(--muted);
+      margin-bottom: 5px;
+    }
+
+    .result-value {
+      display: block;
+      font-size: clamp(1.1rem, 3vw, 1.55rem);
+      font-weight: 850;
+      line-height: 1.4;
+    }
+
+    .result-note {
+      margin-top: 5px;
+      font-size: .8rem;
+      color: var(--muted);
+    }
+
+    .status {
+      margin-top: 16px;
+      padding: 13px 15px;
+      border-radius: 11px;
+      background: var(--green-bg);
+      color: var(--green);
+      font-weight: 750;
+    }
+
+    .status.warning {
+      background: var(--red-bg);
+      color: var(--red);
+    }
+
+    .status.neutral {
+      background: var(--surface-2);
+      color: var(--text);
+    }
+
+    .progress-track {
+      height: 11px;
+      margin-top: 12px;
+      border-radius: 99px;
+      overflow: hidden;
+      background: var(--border);
+    }
+
+    .progress-fill {
+      width: 0;
+      height: 100%;
+      background: var(--green);
+      transition: width .25s;
+    }
+
+    .progress-fill.warning { background: var(--red); }
+
+    .notice {
+      padding: 14px 16px;
+      background: var(--surface-2);
+      border-left: 4px solid var(--accent);
+      border-radius: 8px;
+      font-size: .91rem;
+    }
+
+    .side-nav {
+      padding: 0;
+      list-style: none;
+      margin: 15px 0 0;
+    }
+
+    .side-nav li { margin: 11px 0; }
+
+    .side-nav a {
+      text-decoration: none;
+      font-weight: 650;
+    }
+
+    .content-section {
+      padding-bottom: 22px;
+    }
+
+    .content-section p,
+    .content-section li {
+      color: var(--muted);
+    }
+
+    .content-section strong { color: var(--text); }
+
+    .example-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 17px 0;
+      font-size: .93rem;
+    }
+
+    .example-table th,
+    .example-table td {
+      padding: 11px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .example-table th {
+      background: var(--surface-2);
+      color: var(--text);
+    }
+
+    .faq-item {
+      padding: 17px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .faq-item:last-child { border-bottom: 0; }
+
+    .faq-item h3 { margin: 0 0 8px; }
+
+    .faq-item p {
+      margin-bottom: 0;
+      color: var(--muted);
+    }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .related-link {
+      display: block;
+      padding: 15px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      text-decoration: none;
+      background: var(--surface);
+      font-weight: 750;
+    }
+
+    .related-link span {
+      display: block;
+      margin-top: 5px;
+      font-size: .85rem;
+      font-weight: 400;
+      color: var(--muted);
+    }
+
+    .site-footer {
+      margin-top: 28px;
+      padding: 30px 0;
+      background: #0b1730;
+      color: #d9e4f6;
+    }
+
+    .footer-inner {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 25px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 18px;
+    }
+
+    .footer-links a { color: #d9e4f6; }
+
+    .disclaimer {
+      margin-top: 22px;
+      font-size: .85rem;
+      color: #bdc9dc;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    @media (max-width: 760px) {
+      .layout { grid-template-columns: 1fr; }
+      .header-inner { padding: 12px 16px; }
+      .header-link { display: none; }
+      .hero { padding-top: 27px; }
+      .card { padding: 19px; }
+      .footer-inner { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 430px) {
+      .container { width: min(100% - 22px, 1060px); }
+      .field-grid, .results, .related-grid {
+        grid-template-columns: 1fr;
+      }
+      .full { grid-column: auto; }
+      .brand { font-size: 1rem; }
+      .brand-icon { width: 36px; height: 36px; }
+      .theme-toggle { padding: 8px; font-size: .85rem; }
+      .card { padding: 16px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+      }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "EZTradingHub Prop Firm Drawdown Calculator",
+    "url": "https://eztradinghub.com/prop-firm-drawdown-calculator.html",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Any",
+    "isAccessibleForFree": true,
+    "description": "A free calculator for estimating prop firm daily drawdown, maximum overall drawdown, remaining loss allowance and account equity thresholds.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "EZTradingHub",
+      "url": "https://eztradinghub.com/"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://eztradinghub.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Calculators",
+        "item": "https://eztradinghub.com/calculators.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Prop Firm Drawdown Calculator",
+        "item": "https://eztradinghub.com/prop-firm-drawdown-calculator.html"
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="EZTradingHub home">
+        <span class="brand-icon" aria-hidden="true">EZ</span>
+        <span>EZTradingHub</span>
+      </a>
+
+      <div class="header-actions">
+        <a class="header-link" href="/calculators.html">All Calculators</a>
+        <button class="theme-toggle" id="themeToggle"
+          type="button" aria-pressed="false">
+          <span id="themeIcon" aria-hidden="true">☾</span>
+          <span id="themeText">Dark mode</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="index.html">Home</a> &rsaquo;
+      <a href="calculators.html">Trading Calculators</a> &rsaquo;
+      <span aria-current="page">Prop Firm Drawdown Calculator</span>
+    </nav>
+
+    <section class="hero">
+      <span class="eyebrow">Free trading risk management tool</span>
+      <h1>Prop Firm Drawdown Calculator</h1>
+
+      <p>
+        Calculate daily drawdown limits, maximum overall loss, remaining
+        drawdown allowance and estimated account equity thresholds for
+        prop firm challenges and funded trading accounts. Use this free
+        tool to understand your risk limits before placing a trade.
+      </p>
+
+      <div class="hero-actions">
+        <a class="button" href="#calculator">Calculate Drawdown</a>
+        <a class="button button-secondary" href="#guide">Read the Drawdown Guide</a>
+      </div>
+    </section>
+
+    <div class="layout">
+      <div>
+        <section class="card" id="calculator" aria-labelledby="calcTitle">
+          <h2 id="calcTitle" class="section-heading">
+            Funded Account Drawdown Calculator
+          </h2>
+          <p class="muted">
+            Enter your account balance, loss limits and current account
+            figures. All amounts use your selected account currency.
+          </p>
+
+          <form id="drawdownForm">
+            <div class="field-grid">
+              <div class="field">
+                <label for="currency">Account currency</label>
+                <select id="currency" name="currency">
+                  <option value="USD">USD ($)</option>
+                  <option value="EUR">EUR (€)</option>
+                  <option value="GBP">GBP (£)</option>
+                  <option value="NGN">NGN (₦)</option>
+                  <option value="CAD">CAD (C$)</option>
+                  <option value="AUD">AUD (A$)</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="accountSize">Initial account size</label>
+                <input id="accountSize" name="accountSize"
+                  type="number" min="0.01" step="any"
+                  value="10000" required>
+              </div>
+
+              <div class="field">
+                <label for="dailyPercent">Daily drawdown limit (%)</label>
+                <input id="dailyPercent" name="dailyPercent"
+                  type="number" min="0" max="100" step="any"
+                  value="5" required>
+              </div>
+
+              <div class="field">
+                <label for="overallPercent">Overall drawdown limit (%)</label>
+                <input id="overallPercent" name="overallPercent"
+                  type="number" min="0" max="100" step="any"
+                  value="10" required>
+              </div>
+
+              <div class="field">
+                <label for="dailyReference">Daily limit reference</label>
+                <select id="dailyReference" name="dailyReference">
+                  <option value="balance">Start-of-day balance</option>
+                  <option value="equity">Start-of-day equity</option>
+                  <option value="manual">Custom daily reference</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="dailyBase">Daily reference amount</label>
+                <input id="dailyBase" name="dailyBase"
+                  type="number" min="0.01" step="any"
+                  value="10000" required>
+              </div>
+
+              <div class="field">
+                <label for="overallMode">Overall drawdown method</label>
+                <select id="overallMode" name="overallMode">
+                  <option value="static">Static from initial balance</option>
+                  <option value="trailing">Trailing high-water mark</option>
+                  <option value="manual">Custom overall reference</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="overallBase">Overall reference amount</label>
+                <input id="overallBase" name="overallBase"
+                  type="number" min="0.01" step="any"
+                  value="10000" required>
+              </div>
+
+              <div class="field">
+                <label for="currentBalance">Current account balance</label>
+                <input id="currentBalance" name="currentBalance"
+                  type="number" min="0" step="any"
+                  value="10000" required>
+              </div>
+
+              <div class="field">
+                <label for="currentEquity">Current account equity</label>
+                <input id="currentEquity" name="currentEquity"
+                  type="number" min="0" step="any"
+                  value="10000" required>
+              </div>
+
+              <div class="field full">
+                <label for="openLoss">Open/unrealized loss not already reflected in equity</label>
+                <input id="openLoss" name="openLoss"
+                  type="number" min="0" step="any"
+                  value="0" required>
+                <span class="small">
+                  Usually leave this at zero if current equity already
+                  includes floating profit and loss. Do not count the
+                  same open loss twice.
+                </span>
+              </div>
+            </div>
+
+            <div class="form-actions">
+              <button class="button" type="submit">Calculate Drawdown</button>
+              <button class="button button-secondary"
+                id="resetButton" type="button">Reset Example</button>
+            </div>
+          </form>
+
+          <div id="results" aria-live="polite" aria-atomic="true">
+            <h3 style="margin-top:25px">Your Drawdown Results</h3>
+
+            <div class="results">
+              <div class="result-box">
+                <span class="result-label">Daily loss allowance</span>
+                <output class="result-value" id="dailyAllowance">—</output>
+                <div class="result-note">Maximum permitted daily loss</div>
+              </div>
+
+              <div class="result-box">
+                <span class="result-label">Daily equity threshold</span>
+                <output class="result-value" id="dailyThreshold">—</output>
+                <div class="result-note">Estimated daily breach level</div>
+              </div>
+
+              <div class="result-box">
+                <span class="result-label">Overall loss allowance</span>
+                <output class="result-value" id="overallAllowance">—</output>
+                <div class="result-note">Maximum permitted overall loss</div>
+              </div>
+
+              <div class="result-box">
+                <span class="result-label">Overall equity threshold</span>
+                <output class="result-value" id="overallThreshold">—</output>
+                <div class="result-note">Estimated overall breach level</div>
+              </div>
+
+              <div class="result-box">
+                <span class="result-label">Remaining daily allowance</span>
+                <output class="result-value" id="dailyRemaining">—</output>
+                <div class="result-note">Before the daily limit is reached</div>
+              </div>
+
+              <div class="result-box">
+                <span class="result-label">Remaining overall allowance</span>
+                <output class="result-value" id="overallRemaining">—</output>
+                <div class="result-note">Before the overall limit is reached</div>
+              </div>
+
+              <div class="result-box">
+                <span class="result-label">Current equity drawdown</span>
+                <output class="result-value" id="currentDrawdown">—</output>
+                <div class="result-note">From the selected overall reference</div>
+              </div>
+
+              <div class="result-box">
+                <span class="result-label">Estimated equity after additional loss</span>
+                <output class="result-value" id="projectedEquity">—</output>
+                <div class="result-note">Illustrative stress calculation</div>
+              </div>
+            </div>
+
+            <div class="result-box" style="margin-top:14px">
+              <span class="result-label">Daily allowance used</span>
+              <strong id="dailyUsedText">—</strong>
+              <div class="progress-track" role="progressbar"
+                id="dailyProgress" aria-label="Daily drawdown allowance used"
+                aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                <div class="progress-fill" id="dailyBar"></div>
+              </div>
+
+              <span class="result-label" style="margin-top:16px">
+                Overall allowance used
+              </span>
+              <strong id="overallUsedText">—</strong>
+              <div class="progress-track" role="progressbar"
+                id="overallProgress" aria-label="Overall drawdown allowance used"
+                aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                <div class="progress-fill" id="overallBar"></div>
+              </div>
+            </div>
+
+            <div class="status neutral" id="riskStatus">
+              Enter your account details to review your drawdown limits.
+            </div>
+          </div>
+
+          <p class="small">
+            This is an estimate, not a live connection to a prop firm.
+            Check your firm's official rules for its reference time,
+            equity/balance calculation, fees, commissions, swaps,
+            floating losses and breach policy.
+          </p>
+        </section>
+
+        <section class="card content-section" id="guide">
+          <h2>What Is a Prop Firm Drawdown Calculator?</h2>
+          <p>
+            A prop firm drawdown calculator helps traders estimate how
+            much their trading account can lose before reaching a
+            specified daily or overall loss threshold. Proprietary
+            trading firms often use drawdown rules to control risk during
+            evaluation challenges and funded-account trading.
+          </p>
+          <p>
+            Instead of estimating the permitted loss mentally, you can
+            enter your account size and drawdown percentages to calculate
+            the corresponding monetary limits. You can then compare
+            those limits with your current balance and equity.
+          </p>
+          <p>
+            The calculator is designed for educational planning across
+            forex, gold (XAUUSD), indices, commodities and other markets.
+            It does not connect to a broker, determine whether an account
+            is officially compliant, or guarantee that a trade will stay
+            within a firm's rules.
+          </p>
+        </section>
+
+        <section class="card content-section">
+          <h2>How to Calculate Daily Drawdown</h2>
+          <p>
+            Daily drawdown is the maximum loss permitted during a firm's
+            defined trading day. Depending on the firm's rules, the
+            reference can be the starting balance, starting equity, or
+            another specified amount.
+          </p>
+
+          <div class="notice">
+            <strong>Basic calculation:</strong><br>
+            Daily loss limit = Daily reference amount × Daily drawdown
+            percentage ÷ 100
+          </div>
+
+          <p>
+            For example, if the daily reference is $10,000 and the
+            daily drawdown percentage is 5%, the daily loss allowance
+            is $500. If the firm's rule uses a $10,000 starting balance,
+            the illustrative equity threshold is $9,500.
+          </p>
+          <p>
+            This example assumes the firm calculates the daily threshold
+            from that reference and measures losses against equity.
+            Actual rules may include floating losses, commissions, swaps
+            or a specific server-time reset.
+          </p>
+        </section>
+
+        <section class="card content-section">
+          <h2>How to Calculate Maximum Overall Drawdown</h2>
+          <p>
+            Maximum overall drawdown is the maximum loss allowed across
+            the account's relevant evaluation or funded period. The
+            calculation depends on whether the firm uses a static
+            threshold, a trailing threshold or another method.
+          </p>
+
+          <div class="notice">
+            <strong>Basic static calculation:</strong><br>
+            Overall loss limit = Initial account balance × Overall
+            drawdown percentage ÷ 100
+          </div>
+
+          <p>
+            With a $10,000 initial balance and a 10% static overall
+            drawdown limit, the loss allowance is $1,000 and the
+            illustrative equity threshold is $9,000.
+          </p>
+          <p>
+            Some firms use trailing drawdown that changes as an account
+            reaches new highs. Others may use end-of-day equity,
+            intraday equity or a specified balance-based calculation.
+            Select the matching method and reference amount in the
+            calculator, then verify the exact rule with the provider.
+          </p>
+        </section>
+
+        <section class="card content-section">
+          <h2>Prop Firm Drawdown Example</h2>
+          <p>
+            The table below illustrates common percentage calculations
+            for a hypothetical $10,000 account. These are examples,
+            not the verified rules of any particular prop firm.
+          </p>
+
+          <div style="overflow-x:auto">
+            <table class="example-table">
+              <thead>
+                <tr>
+                  <th>Rule</th>
+                  <th>Percentage</th>
+                  <th>Loss allowance</th>
+                  <th>Example threshold</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Daily drawdown</td>
+                  <td>3%</td>
+                  <td>$300</td>
+                  <td>$9,700</td>
+                </tr>
+                <tr>
+                  <td>Daily drawdown</td>
+                  <td>5%</td>
+                  <td>$500</td>
+                  <td>$9,500</td>
+                </tr>
+                <tr>
+                  <td>Overall drawdown</td>
+                  <td>6%</td>
+                  <td>$600</td>
+                  <td>$9,400</td>
+                </tr>
+                <tr>
+                  <td>Overall drawdown</td>
+                  <td>10%</td>
+                  <td>$1,000</td>
+                  <td>$9,000</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p class="small">
+            Thresholds in this example are calculated from a $10,000
+            reference. A daily threshold may instead be based on a
+            different start-of-day amount. Overall thresholds may trail
+            a high-water mark. The rules in your agreement take priority.
+          </p>
+        </section>
+
+        <section class="card content-section">
+          <h2>Static vs Trailing Drawdown</h2>
+
+          <h3>Static drawdown</h3>
+          <p>
+            A static drawdown threshold is calculated from a fixed
+            reference amount, such as the initial account balance.
+            Under a simple 10% static rule on a $10,000 account, the
+            threshold remains $9,000 unless the provider's rules specify
+            another adjustment.
+          </p>
+
+          <h3>Trailing drawdown</h3>
+          <p>
+            A trailing threshold changes according to a defined measure
+            of account performance, often a high-water mark. For
+            example, a 10% trailing rule based on a $10,000 high-water
+            mark implies a $9,000 threshold. If the reference later
+            rises to $11,000, the corresponding threshold could become
+            $9,900, depending on the firm's exact method and any cap.
+          </p>
+
+          <p>
+            Trailing rules differ between firms. The reference may use
+            balance, equity, intraday highs or end-of-day highs.
+            Some rules stop trailing after a specified level is reached.
+            The trailing option here uses the overall reference amount
+            you enter; it does not automatically retrieve or track
+            historical high-water marks.
+          </p>
+        </section>
+
+        <section class="card content-section">
+          <h2>How to Use This Calculator</h2>
+          <ol>
+            <li>
+              <strong>Enter your account size.</strong>
+              Use the initial balance stated in your challenge or
+              funded-account agreement.
+            </li>
+            <li>
+              <strong>Enter your daily loss percentage.</strong>
+              Check whether your firm measures this from balance,
+              equity or another reference.
+            </li>
+            <li>
+              <strong>Set the daily reference.</strong>
+              Enter the amount applicable to the firm's current daily
+              loss calculation.
+            </li>
+            <li>
+              <strong>Choose an overall drawdown method.</strong>
+              Select static or trailing, or enter a custom reference
+              if your firm's rule differs.
+            </li>
+            <li>
+              <strong>Enter your current balance and equity.</strong>
+              Use current platform figures, including floating P/L
+              in equity where applicable.
+            </li>
+            <li>
+              <strong>Review your remaining allowance.</strong>
+              Compare the displayed thresholds with the official rules
+              and allow for fees and other relevant costs.
+            </li>
+          </ol>
+        </section>
+
+        <section class="card content-section">
+          <h2>Drawdown Management for Forex and Gold Traders</h2>
+          <p>
+            Forex and gold traders can experience rapid changes in
+            floating profit and loss, particularly around volatile
+            market sessions and economic announcements. A drawdown
+            threshold is not a recommended loss target; it is a limit
+            that traders need to understand before taking additional
+            risk.
+          </p>
+          <ul>
+            <li>Check your account's current equity before trading.</li>
+            <li>Allow room for spreads, commissions and swap charges.</li>
+            <li>Understand the provider's daily reset time.</li>
+            <li>Account for floating losses if equity-based rules apply.</li>
+            <li>
+              Consider your combined exposure across correlated
+              positions, including gold and USD-related instruments.
+            </li>
+            <li>
+              Do not assume that a position is compliant simply because
+              the account balance remains above a threshold.
+            </li>
+          </ul>
+          <p>
+            A drawdown calculator complements a written trading plan
+            and position-sizing process. It cannot remove market risk
+            or prevent slippage and execution losses.
+          </p>
+        </section>
+
+        <section class="card content-section" id="faq">
+          <h2>Frequently Asked Questions</h2>
+
+          <div class="faq-item">
+            <h3>1. What does a prop firm drawdown calculator do?</h3>
+            <p>
+              It estimates daily and overall loss limits, equity
+              thresholds and remaining loss allowance using the
+              account values and percentages you provide.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>2. How do I calculate a 5% daily drawdown?</h3>
+            <p>
+              Multiply the applicable daily reference amount by 0.05.
+              For a $10,000 reference, the result is $500. Subtract
+              that amount from the reference to calculate a simple
+              illustrative threshold of $9,500.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>3. What is a 10% maximum drawdown on a $10,000 account?</h3>
+            <p>
+              Ten percent of $10,000 is $1,000. For a simple static
+              rule based on the initial balance, the illustrative
+              threshold is $9,000.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>4. Is daily drawdown the same as maximum drawdown?</h3>
+            <p>
+              No. Daily drawdown applies to a defined trading day,
+              while maximum overall drawdown applies to the account
+              over a wider period. A firm may enforce both limits
+              independently.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>5. Does this calculator support trailing drawdown?</h3>
+            <p>
+              It supports a manually entered trailing reference amount.
+              It does not automatically follow an account's high-water
+              mark or reproduce every provider's trailing rules.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>6. Can I use this for a FundedNext account?</h3>
+            <p>
+              You can enter percentages and reference values from the
+              applicable FundedNext account rules to produce estimates.
+              Confirm the specific challenge, account type, current
+              rules and breach calculation directly with FundedNext.
+              This tool is independent and is not affiliated with or
+              endorsed by FundedNext.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>7. Does the calculator automatically check my funded account?</h3>
+            <p>
+              No. It does not connect to a broker, trading platform or
+              prop firm's server. You must enter the relevant figures
+              manually.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>8. Should I use balance or equity?</h3>
+            <p>
+              Follow your provider's exact rules. Balance usually
+              excludes open trade profit and loss, whereas equity
+              generally includes floating profit and loss. Some firms
+              also include commissions and other charges in their
+              breach calculations.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>9. Does this calculator guarantee that I will pass a challenge?</h3>
+            <p>
+              No. It only performs calculations using your inputs.
+              It cannot predict results, guarantee compliance or
+              prevent losses caused by market movements and execution.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>10. Is this prop firm drawdown calculator free?</h3>
+            <p>
+              Yes. The calculator runs in your browser and is available
+              without a payment or account registration.
+            </p>
+          </div>
+        </section>
+
+        <section class="card content-section">
+          <h2>Explore More Free Trading Calculators</h2>
+          <p>
+            Use related EZTradingHub tools to calculate position sizes,
+            plan trade risk and estimate other trading costs.
+          </p>
+
+          <div class="related-grid">
+            <a class="related-link" href="prop-firm-risk-calculator.html">
+              Prop Firm Risk Calculator
+              <span>Estimate risk exposure for a trade.</span>
+            </a>
+
+            <a class="related-link" href="prop-firm-position-size-calculator.html">
+              Prop Firm Position Size Calculator
+              <span>Estimate a position size from risk inputs.</span>
+            </a>
+
+            <a class="related-link" href="funded-account-risk-calculator.html">
+              Funded Account Risk Calculator
+              <span>Plan risk limits for funded trading.</span>
+            </a>
+
+            <a class="related-link" href="risk-calculator.html">
+              Forex Risk Calculator
+              <span>Calculate the monetary risk of a trade.</span>
+            </a>
+
+            <a class="related-link" href="lot-size-calculator.html">
+              Lot Size Calculator
+              <span>Estimate trade volume for your risk plan.</span>
+            </a>
+
+            <a class="related-link" href="drawdown-calculator.html">
+              General Drawdown Calculator
+              <span>Understand account declines and recovery.</span>
+            </a>
+
+            <a class="related-link" href="risk-reward-calculator.html">
+              Risk-Reward Calculator
+              <span>Compare planned risk with potential reward.</span>
+            </a>
+
+            <a class="related-link" href="calculators.html">
+              All Trading Calculators
+              <span>Explore more EZTradingHub tools.</span>
+            </a>
+          </div>
+        </section>
+
+        <section class="card content-section">
+          <h2>Important Risk Disclaimer</h2>
+          <p>
+            EZTradingHub provides this calculator and its educational
+            content for informational purposes only. It is not financial
+            advice, investment advice or a recommendation to purchase a
+            prop firm challenge.
+          </p>
+          <p>
+            Results depend on the accuracy of your inputs and may not
+            reflect a provider's official calculations. Prop firm rules
+            can change and can vary by program, account type, trading
+            platform and jurisdiction. Review the applicable agreement
+            and official documentation before trading.
+          </p>
+          <p>
+            Forex, CFDs, gold and other leveraged products involve
+            substantial risk. You may lose money, and simulated or
+            funded-account arrangements may have additional contractual
+            conditions. Past performance does not guarantee future
+            results.
+          </p>
+        </section>
+      </div>
+
+      <aside>
+        <section class="card">
+          <h2>On This Page</h2>
+          <ul class="side-nav">
+            <li><a href="#calculator">Drawdown Calculator</a></li>
+            <li><a href="#guide">What Is Drawdown?</a></li>
+            <li><a href="#faq">Frequently Asked Questions</a></li>
+          </ul>
+        </section>
+
+        <section class="card">
+          <h2>Key Drawdown Terms</h2>
+          <h3>Daily loss limit</h3>
+          <p class="small">
+            The maximum loss permitted during a defined trading day
+            under the applicable rules.
+          </p>
+
+          <h3>Maximum overall loss</h3>
+          <p class="small">
+            The maximum account loss permitted over the specified
+            evaluation or funded-account period.
+          </p>
+
+          <h3>Equity threshold</h3>
+          <p class="small">
+            The account equity level at which a loss rule may be
+            breached, subject to the provider's exact calculation.
+          </p>
+
+          <h3>Trailing drawdown</h3>
+          <p class="small">
+            A drawdown threshold that changes according to a defined
+            reference, such as an account high-water mark.
+          </p>
+        </section>
+
+        <section class="card">
+          <h2>Use It With Your Trading Plan</h2>
+          <p class="small">
+            Calculate your drawdown allowance before estimating trade
+            size. Leave an appropriate buffer for open losses, fees,
+            spreads and fast market movements.
+          </p>
+          <a class="button" style="width:100%"
+            href="prop-firm-risk-calculator.html">
+            Calculate Trade Risk
+          </a>
+        </section>
+
+        <!--
+          AdSense placement note:
+          If your site is approved, place the official AdSense code
+          in a suitable location here or use Auto ads. Do not display
+          placeholder ads or encourage users to click advertisements.
+        -->
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <a class="brand" href="index.html">
+          <span class="brand-icon" aria-hidden="true">EZ</span>
+          <span>EZTradingHub</span>
+        </a>
+        <p>
+          Free trading calculators and educational resources for
+          forex traders, funded-account challenges and risk management.
+        </p>
+      </div>
+
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="index.html.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms</a>
+        <a href="disclaimer.html">Disclaimer</a>
+        <a href="cookie-policy.html">Cookie Policy</a>
+        <a href="calculators.html">Calculators</a>
+      </nav>
+    </div>
+
+    <div class="container disclaimer">
+      <p>
+        © <span id="year"></span> EZTradingHub. All rights reserved.
+        Educational use only. Trading involves risk.
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      "use strict";
+
+      const $ = (id) => document.getElementById(id);
+
+      const form = $("drawdownForm");
+      const themeToggle = $("themeToggle");
+
+      function setTheme(theme) {
+        document.documentElement.dataset.theme = theme;
+
+        const dark = theme === "dark";
+        $("themeIcon").textContent = dark ? "☀" : "☾";
+        $("themeText").textContent = dark ? "Light mode" : "Dark mode";
+        themeToggle.setAttribute("aria-pressed", String(dark));
+
+        try {
+          localStorage.setItem("ezth-theme", theme);
+        } catch (e) {
+          // The theme still works if storage is unavailable.
+        }
+      }
+
+      setTheme(
+        document.documentElement.dataset.theme === "dark"
+          ? "dark" : "light"
+      );
+
+      themeToggle.addEventListener("click", function () {
+        const current = document.documentElement.dataset.theme;
+        setTheme(current === "dark" ? "light" : "dark");
+      });
+
+      const currencySymbols = {
+        USD: "$",
+        EUR: "€",
+        GBP: "£",
+        NGN: "₦",
+        CAD: "C$",
+        AUD: "A$"
+      };
+
+      function getNumber(id) {
+        const element = $(id);
+        const value = element.value.trim();
+
+        if (value === "") {
+          throw new Error("Please complete all calculator fields.");
+        }
+
+        const number = Number(value);
+
+        if (!Number.isFinite(number)) {
+          throw new Error("Enter valid numbers in all fields.");
+        }
+
+        return number;
+      }
+
+      function formatMoney(value) {
+        const currency = $("currency").value;
+        const symbol = currencySymbols[currency] || currency + " ";
+
+        if (!Number.isFinite(value)) return "Unavailable";
+
+        return symbol + Math.abs(value).toLocaleString("en", {
+          minimumFractionDigits: 2,
+          maximumFractionDigits: 2
+        });
+      }
+
+      function signedMoney(value) {
+        if (value < 0) return "-" + formatMoney(value);
+        return formatMoney(value);
+      }
+
+      function formatPercent(value) {
+        if (!Number.isFinite(value)) return "Unavailable";
+
+        return value.toLocaleString("en", {
+          minimumFractionDigits: 2,
+          maximumFractionDigits: 2
+        }) + "%";
+      }
+
+      function setOutput(id, value) {
+        $(id).textContent = value;
+      }
+
+      function setProgress(prefix, used, allowance) {
+        const bar = $(prefix + "Bar");
+        const track = $(prefix + "Progress");
+        const text = $(prefix + "UsedText");
+
+        let percentage = allowance > 0
+          ? (used / allowance) * 100
+          : (used > 0 ? 100 : 0);
+
+        percentage = Math.max(0, Math.min(100, percentage));
+
+        bar.style.width = percentage + "%";
+        bar.classList.toggle("warning", used >= allowance && allowance > 0);
+
+        track.setAttribute("aria-valuenow", String(
+          Math.round(percentage)
+        ));
+
+        text.textContent = formatPercent(percentage) + " of allowance used";
+      }
+
+      function setStatus(message, type) {
+        const status = $("riskStatus");
+        status.textContent = message;
+        status.className = "status " + (type || "neutral");
+      }
+
+      function syncReferences() {
+        const dailyMode = $("dailyReference").value;
+        const overallMode = $("overallMode").value;
+
+        const dailyBase = $("dailyBase");
+        const overallBase = $("overallBase");
+
+        dailyBase.disabled = dailyMode !== "manual";
+        overallBase.disabled = overallMode === "static";
+
+        if (dailyMode === "balance") {
+          dailyBase.value = $("currentBalance").value ||
+            $("accountSize").value;
+        } else if (dailyMode === "equity") {
+          dailyBase.value = $("currentEquity").value ||
+            $("accountSize").value;
+        }
+
+        if (overallMode === "static") {
+          overallBase.value = $("accountSize").value;
+        }
+
+        if (overallMode === "trailing") {
+          overallBase.disabled = false;
+          overallBase.value = overallBase.value ||
+            $("accountSize").value;
+        }
+      }
+
+      function calculate() {
+        try {
+          const account = getNumber("accountSize");
+          const dailyPct = getNumber("dailyPercent");
+          const overallPct = getNumber("overallPercent");
+          const dailyBase = getNumber("dailyBase");
+          const overallBase = getNumber("overallBase");
+          const balance = getNumber("currentBalance");
+          const equity = getNumber("currentEquity");
+          const openLoss = getNumber("openLoss");
+
+          if (
+            account <= 0 ||
+            dailyBase <= 0 ||
+            overallBase <= 0 ||
+            balance < 0 ||
+            equity < 0 ||
+            openLoss < 0 ||
+            dailyPct < 0 || dailyPct > 100 ||
+            overallPct < 0 || overallPct > 100
+          ) {
+            throw new Error(
+              "Account references must be positive; balances, equity " +
+              "and open loss cannot be negative. Percentages must be " +
+              "between 0 and 100."
+            );
+          }
+
+          const dailyAllowance = dailyBase * dailyPct / 100;
+          const overallAllowance = overallBase * overallPct / 100;
+
+          const dailyThreshold = dailyBase - dailyAllowance;
+          const overallThreshold = overallBase - overallAllowance;
+
+          // This tool treats current equity as the live equity figure.
+          // Add openLoss only if it is NOT already reflected in equity.
+          const adjustedEquity = equity - openLoss;
+
+          const dailyLossUsed = dailyBase - adjustedEquity;
+          const overallLossUsed = overallBase - adjustedEquity;
+
+          const dailyRemaining = dailyAllowance - dailyLossUsed;
+          const overallRemaining = overallAllowance - overallLossUsed;
+
+          const dailyUsed = Math.max(0, dailyLossUsed);
+          const overallUsed = Math.max(0, overallLossUsed);
+
+          const currentDrawdownPct = overallBase > 0
+            ? Math.max(0, overallLossUsed) / overallBase * 100
+            : 0;
+
+          // Stress projection: assume another loss equal to the smaller
+          // positive remaining allowance, without assuming recovery.
+          const remainingLimits = [
+            dailyRemaining,
+            overallRemaining
+          ].filter((v) => v > 0);
+
+          const additionalLoss = remainingLimits.length
+            ? Math.min.apply(null, remainingLimits)
+            : 0;
+
+          const projectedEquity = adjustedEquity - additionalLoss;
+
+          setOutput("dailyAllowance", formatMoney(dailyAllowance));
+          setOutput("dailyThreshold", formatMoney(dailyThreshold));
+          setOutput("overallAllowance", formatMoney(overallAllowance));
+          setOutput("overallThreshold", formatMoney(overallThreshold));
+          setOutput("dailyRemaining", signedMoney(dailyRemaining));
+          setOutput("overallRemaining", signedMoney(overallRemaining));
+          setOutput("currentDrawdown", formatPercent(currentDrawdownPct));
+          setOutput("projectedEquity", formatMoney(projectedEquity));
+
+          setProgress("daily", dailyUsed, dailyAllowance);
+          setProgress("overall", overallUsed, overallAllowance);
+
+          const dailyBreached = dailyLossUsed >= dailyAllowance &&
+            dailyAllowance >= 0;
+          const overallBreached = overallLossUsed >= overallAllowance &&
+            overallAllowance >= 0;
+
+          const dailyExceeded = dailyLossUsed > dailyAllowance;
+          const overallExceeded = overallLossUsed > overallAllowance;
+
+          if (dailyExceeded || overallExceeded) {
+            setStatus(
+              "Warning: the entered figures are at or beyond at least " +
+              "one calculated threshold. Verify the reference amounts " +
+              "and official breach rules immediately.",
+              "warning"
+            );
+          } else if (dailyBreached || overallBreached) {
+            setStatus(
+              "The account is at a calculated loss threshold. " +
+              "Provider-specific breach rules may apply at this level.",
+              "warning"
+            );
+          } else if (
+            (dailyAllowance > 0 &&
+              dailyRemaining <= dailyAllowance * 0.2) ||
+            (overallAllowance > 0 &&
+              overallRemaining <= overallAllowance * 0.2)
+          ) {
+            setStatus(
+              "Caution: 20% or less of at least one loss allowance " +
+              "remains. Consider your risk exposure and verify your " +
+              "firm's official limits.",
+              "warning"
+            );
+          } else {
+            setStatus(
+              "The entered equity is above both calculated thresholds. " +
+              "This is an estimate, not confirmation of account compliance.",
+              "neutral"
+            );
+          }
+
+        } catch (error) {
+          setStatus(error.message || "Unable to calculate these values.", "warning");
+        }
+      }
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        syncReferences();
+        calculate();
+      });
+
+      $("dailyReference").addEventListener("change", function () {
+        syncReferences();
+        calculate();
+      });
+
+      $("overallMode").addEventListener("change", function () {
+        syncReferences();
+        calculate();
+      });
+
+      ["accountSize", "currentBalance", "currentEquity"].forEach(function (id) {
+        $(id).addEventListener("change", function () {
+          syncReferences();
+          calculate();
+        });
+      });
+
+      [
+        "accountSize", "dailyPercent", "overallPercent",
+        "dailyBase", "overallBase", "currentBalance",
+        "currentEquity", "openLoss", "currency"
+      ].forEach(function (id) {
+        $(id).addEventListener("input", calculate);
+        $(id).addEventListener("change", calculate);
+      });
+
+      $("resetButton").addEventListener("click", function () {
+        $("currency").value = "USD";
+        $("accountSize").value = "10000";
+        $("dailyPercent").value = "5";
+        $("overallPercent").value = "10";
+        $("dailyReference").value = "balance";
+        $("dailyBase").value = "10000";
+        $("overallMode").value = "static";
+        $("overallBase").value = "10000";
+        $("currentBalance").value = "10000";
+        $("currentEquity").value = "10000";
+        $("openLoss").value = "0";
+
+        syncReferences();
+        calculate();
+      });
+
+      $("year").textContent = new Date().getFullYear();
+
+      syncReferences();
+      calculate();
+    })();
+  </script>
+</body>
+</html>
