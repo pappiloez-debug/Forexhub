@@ -1,0 +1,1490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B5T8QM08CE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-B5T8QM08CE');
+</script>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Gold Leverage Calculator for Prop Firms & Funded Accounts | XAUUSD</title>
+
+  <meta name="description" content="Use the Gold Leverage Calculator to calculate XAUUSD position value, required margin, effective leverage and account exposure for prop firms, funded accounts and personal trading accounts.">
+  <meta name="keywords" content="gold leverage calculator, XAUUSD leverage calculator, gold leverage calculator for prop firms, gold leverage calculator for funded accounts, funded account gold leverage calculator, prop firm XAUUSD leverage calculator, FundedNext gold leverage calculator, FundedNext XAUUSD leverage calculator, XAUUSD leverage for funded accounts, gold forex leverage calculator, XAUUSD margin and leverage calculator, gold trading leverage calculator, gold position leverage calculator, gold lot leverage calculator, XAUUSD lot leverage calculator, gold leverage requirement calculator, funded trader gold leverage, prop firm gold leverage, gold leverage calculator for $10000 account, gold leverage calculator for $25000 account, gold leverage calculator for $50000 account, gold leverage calculator for $100000 account">
+
+  <meta name="author" content="EZTradingHub">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="googlebot" content="index, follow, max-image-preview:large">
+
+  <meta name="theme-color" content="#07111f">
+
+  <link rel="canonical" href="https://eztradinghub.com/gold-leverage-calculator.html">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+  <link rel="apple-touch-icon" href="assets/images/favicon-32x32.png">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Gold Leverage Calculator for Prop Firms & Funded Accounts">
+  <meta property="og:description" content="Calculate XAUUSD leverage, position value, margin requirement and effective exposure for gold trading.">
+  <meta property="og:url" content="https://eztradinghub.com/gold-leverage-calculator.html">
+  <meta property="og:site_name" content="EZTradingHub">
+  <meta property="og:image" content="https://eztradinghub.com/assets/images/og-image.jpg">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Gold Leverage Calculator | XAUUSD">
+  <meta name="twitter:description" content="Calculate gold trading leverage, position value and margin requirements for XAUUSD.">
+  <meta name="twitter:image" content="https://eztradinghub.com/assets/images/og-image.jpg">
+
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebApplication",
+    "name":"Gold Leverage Calculator",
+    "url":"https://eztradinghub.com/gold-leverage-calculator.html",
+    "applicationCategory":"FinanceApplication",
+    "operatingSystem":"Any",
+    "description":"A free XAUUSD gold leverage calculator for estimating position value, margin and effective leverage.",
+    "provider":{
+      "@type":"Organization",
+      "name":"EZTradingHub",
+      "url":"https://eztradinghub.com/"
+    },
+    "offers":{
+      "@type":"Offer",
+      "price":"0",
+      "priceCurrency":"USD"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BreadcrumbList",
+    "itemListElement":[
+      {
+        "@type":"ListItem",
+        "position":1,
+        "name":"Home",
+        "item":"https://eztradinghub.com/"
+      },
+      {
+        "@type":"ListItem",
+        "position":2,
+        "name":"Gold Calculators",
+        "item":"https://eztradinghub.com/gold-calculators.html"
+      },
+      {
+        "@type":"ListItem",
+        "position":3,
+        "name":"Gold Leverage Calculator",
+        "item":"https://eztradinghub.com/gold-leverage-calculator.html"
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {
+        "@type":"Question",
+        "name":"What is a gold leverage calculator?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"A gold leverage calculator helps traders estimate the position value and margin associated with an XAUUSD position at a selected leverage level."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"How do I calculate XAUUSD leverage?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Leverage can be calculated as position value divided by the margin required to control that position."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"What is gold leverage for a funded account?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"The permitted XAUUSD leverage for a funded account depends on the specific proprietary trading firm, account type, instrument rules and current trading conditions."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Does higher leverage mean higher trading risk?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Higher leverage allows a trader to control a larger position with less margin, but the trading risk ultimately depends on position size, stop-loss distance, market volatility and account risk."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Can I use this calculator for FundedNext?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"The calculator can be used to model XAUUSD leverage scenarios relevant to funded-account trading, including scenarios a trader may want to compare with FundedNext rules. It is not an official FundedNext calculator."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root{
+      --bg:#f5f7fb;
+      --surface:#ffffff;
+      --surface2:#eef2f7;
+      --text:#172033;
+      --muted:#647084;
+      --border:#dce3ec;
+      --navy:#07111f;
+      --navy2:#0d1c30;
+      --gold:#f2b84b;
+      --gold-dark:#c98b19;
+      --success:#16845b;
+      --danger:#c73b3b;
+      --shadow:0 15px 45px rgba(7,17,31,.09);
+    }
+
+    [data-theme="dark"]{
+      --bg:#07111f;
+      --surface:#0d1c30;
+      --surface2:#12243b;
+      --text:#edf3fb;
+      --muted:#a9b7c9;
+      --border:#263951;
+      --navy:#020914;
+      --navy2:#0b192c;
+      --shadow:0 18px 55px rgba(0,0,0,.28);
+    }
+
+    *{
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      margin:0;
+      font-family:Inter,Arial,sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.7;
+    }
+
+    a{
+      color:inherit;
+    }
+
+    .skip-link{
+      position:absolute;
+      left:-9999px;
+      top:10px;
+      z-index:9999;
+      padding:10px 14px;
+      background:var(--gold);
+      color:#111;
+      border-radius:8px;
+      font-weight:700;
+    }
+
+    .skip-link:focus{
+      left:10px;
+    }
+
+    :focus-visible{
+      outline:3px solid var(--gold);
+      outline-offset:3px;
+    }
+
+    .site-header{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      background:rgba(7,17,31,.96);
+      border-bottom:1px solid rgba(255,255,255,.08);
+      backdrop-filter:blur(14px);
+    }
+
+    .nav{
+      max-width:1180px;
+      margin:auto;
+      padding:14px 20px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      color:#fff;
+      text-decoration:none;
+      font-weight:800;
+      white-space:nowrap;
+    }
+
+    .brand-logo{
+      width:38px;
+      height:38px;
+      border-radius:10px;
+      display:grid;
+      place-items:center;
+      background:linear-gradient(135deg,#f2b84b,#ffe29a);
+      color:#07111f;
+      font-weight:900;
+      box-shadow:0 5px 20px rgba(242,184,75,.25);
+    }
+
+    .nav-links{
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:flex-end;
+      gap:8px;
+    }
+
+    .nav-links a{
+      color:#dce7f5;
+      text-decoration:none;
+      padding:8px 10px;
+      border-radius:8px;
+      font-size:.9rem;
+    }
+
+    .nav-links a:hover{
+      background:rgba(255,255,255,.08);
+    }
+
+    .theme-toggle{
+      border:1px solid rgba(255,255,255,.15);
+      background:rgba(255,255,255,.07);
+      color:#fff;
+      border-radius:9px;
+      padding:9px 11px;
+      cursor:pointer;
+      font-size:1rem;
+    }
+
+    .container{
+      width:min(1120px,calc(100% - 32px));
+      margin:auto;
+    }
+
+    .breadcrumb{
+      padding:20px 0 5px;
+      font-size:.88rem;
+      color:var(--muted);
+    }
+
+    .breadcrumb a{
+      color:var(--gold-dark);
+      text-decoration:none;
+    }
+
+    .hero{
+      padding:35px 0 25px;
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.5fr .8fr;
+      gap:25px;
+      align-items:stretch;
+    }
+
+    .hero-card{
+      background:linear-gradient(135deg,var(--navy),var(--navy2));
+      color:#fff;
+      border-radius:22px;
+      padding:38px;
+      box-shadow:var(--shadow);
+    }
+
+    .eyebrow{
+      color:var(--gold);
+      font-size:.82rem;
+      font-weight:800;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+    }
+
+    h1{
+      margin:12px 0 15px;
+      font-size:clamp(2rem,5vw,3.3rem);
+      line-height:1.1;
+    }
+
+    .hero-card p{
+      color:#c8d5e5;
+      max-width:760px;
+    }
+
+    .hero-side{
+      background:var(--surface);
+      border:1px solid var(--border);
+      border-radius:22px;
+      padding:28px;
+      box-shadow:var(--shadow);
+    }
+
+    .hero-side h2{
+      margin-top:0;
+      font-size:1.1rem;
+    }
+
+    .hero-side ul{
+      margin:0;
+      padding-left:20px;
+      color:var(--muted);
+    }
+
+    .ad-slot{
+      min-height:105px;
+      border:1px dashed var(--border);
+      background:var(--surface);
+      border-radius:14px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:var(--muted);
+      font-size:.8rem;
+      margin:24px 0;
+    }
+
+    .section{
+      margin:35px 0;
+    }
+
+    .section h2{
+      font-size:1.7rem;
+      line-height:1.25;
+      margin-bottom:10px;
+    }
+
+    .section-intro{
+      color:var(--muted);
+      max-width:850px;
+    }
+
+    .calculator{
+      background:var(--surface);
+      border:1px solid var(--border);
+      border-radius:22px;
+      padding:28px;
+      box-shadow:var(--shadow);
+    }
+
+    .calculator-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:20px;
+    }
+
+    .field label{
+      display:block;
+      margin-bottom:7px;
+      font-weight:700;
+      font-size:.9rem;
+    }
+
+    .field small{
+      display:block;
+      margin-top:5px;
+      color:var(--muted);
+      font-size:.78rem;
+    }
+
+    input,select{
+      width:100%;
+      border:1px solid var(--border);
+      border-radius:10px;
+      padding:13px 14px;
+      background:var(--surface2);
+      color:var(--text);
+      font:inherit;
+    }
+
+    .buttons{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:22px;
+    }
+
+    button{
+      font:inherit;
+    }
+
+    .primary-btn{
+      border:0;
+      border-radius:10px;
+      padding:12px 18px;
+      background:var(--gold);
+      color:#111;
+      font-weight:800;
+      cursor:pointer;
+    }
+
+    .secondary-btn{
+      border:1px solid var(--border);
+      border-radius:10px;
+      padding:12px 18px;
+      background:var(--surface2);
+      color:var(--text);
+      font-weight:700;
+      cursor:pointer;
+    }
+
+    .results{
+      margin-top:25px;
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
+    }
+
+    .result{
+      background:var(--surface2);
+      border:1px solid var(--border);
+      border-radius:14px;
+      padding:18px;
+    }
+
+    .result span{
+      display:block;
+      color:var(--muted);
+      font-size:.8rem;
+      margin-bottom:5px;
+    }
+
+    .result strong{
+      font-size:1.25rem;
+    }
+
+    .formula{
+      background:var(--navy);
+      color:#dce7f5;
+      padding:20px;
+      border-radius:14px;
+      overflow:auto;
+      font-family:monospace;
+      margin:18px 0;
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+
+    .info-card{
+      background:var(--surface);
+      border:1px solid var(--border);
+      border-radius:16px;
+      padding:22px;
+    }
+
+    .info-card h3{
+      margin-top:0;
+      line-height:1.3;
+    }
+
+    .info-card p{
+      color:var(--muted);
+      margin-bottom:0;
+    }
+
+    .table-wrap{
+      overflow-x:auto;
+      border:1px solid var(--border);
+      border-radius:15px;
+      background:var(--surface);
+    }
+
+    table{
+      width:100%;
+      border-collapse:collapse;
+      min-width:650px;
+    }
+
+    th,td{
+      padding:13px 15px;
+      text-align:left;
+      border-bottom:1px solid var(--border);
+    }
+
+    th{
+      background:var(--surface2);
+    }
+
+    .faq{
+      border-top:1px solid var(--border);
+    }
+
+    details{
+      border-bottom:1px solid var(--border);
+      padding:17px 0;
+    }
+
+    summary{
+      cursor:pointer;
+      font-weight:700;
+    }
+
+    .disclaimer{
+      background:var(--surface2);
+      border-left:4px solid var(--gold);
+      padding:20px;
+      border-radius:10px;
+      color:var(--muted);
+    }
+
+    .related{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+
+    .related a{
+      padding:9px 12px;
+      border:1px solid var(--border);
+      border-radius:9px;
+      text-decoration:none;
+      background:var(--surface);
+      font-size:.88rem;
+    }
+
+    .related a:hover{
+      border-color:var(--gold);
+    }
+
+    footer{
+      margin-top:55px;
+      background:var(--navy);
+      color:#b9c6d6;
+      padding:35px 0;
+    }
+
+    footer a{
+      color:#fff;
+      text-decoration:none;
+    }
+
+    .footer-grid{
+      display:grid;
+      grid-template-columns:2fr 1fr 1fr;
+      gap:25px;
+    }
+
+    @media(max-width:850px){
+      .hero-grid,
+      .calculator-grid,
+      .footer-grid{
+        grid-template-columns:1fr;
+      }
+
+      .cards{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .results{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .nav{
+        align-items:flex-start;
+      }
+
+      .nav-links{
+        display:none;
+      }
+    }
+
+    @media(max-width:560px){
+      .container{
+        width:min(100% - 22px,1120px);
+      }
+
+      .hero-card,
+      .hero-side,
+      .calculator{
+        padding:21px;
+      }
+
+      .cards,
+      .results{
+        grid-template-columns:1fr;
+      }
+
+      h1{
+        font-size:2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <nav class="nav" aria-label="Main navigation">
+
+    <a class="brand" href="index.html">
+      <span class="brand-logo">EZ</span>
+      <span>EZTradingHub</span>
+    </a>
+
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="calculators.html">Calculators</a>
+      <a href="gold-calculators.html">Gold</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+
+    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle light and dark mode">
+      🌙
+    </button>
+
+  </nav>
+</header>
+
+<main id="main">
+
+  <div class="container">
+
+    <div class="breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Home</a> /
+      <a href="calculators.html">Calculators</a> /
+      Gold Leverage Calculator
+    </div>
+
+    <section class="hero">
+
+      <div class="hero-grid">
+
+        <div class="hero-card">
+          <div class="eyebrow">XAUUSD Trading Tool</div>
+
+          <h1>Gold Leverage Calculator for Prop Firms & Funded Accounts</h1>
+
+          <p>
+            Calculate XAUUSD position value, required margin, effective leverage
+            and gold market exposure for personal accounts, prop trading accounts
+            and funded trading accounts.
+          </p>
+
+          <p>
+            Compare different leverage levels for gold trading and understand how
+            lot size, XAUUSD price and account equity affect your trading exposure.
+          </p>
+        </div>
+
+        <aside class="hero-side">
+          <h2>What this calculator estimates</h2>
+
+          <ul>
+            <li>Gold position value</li>
+            <li>Required margin</li>
+            <li>Effective leverage</li>
+            <li>Account exposure</li>
+            <li>Margin percentage</li>
+            <li>Maximum theoretical position value</li>
+          </ul>
+        </aside>
+
+      </div>
+
+    </section>
+
+    <div class="ad-slot" aria-label="Advertisement">
+      Advertisement
+    </div>
+
+    <section class="section" id="calculator">
+
+      <h2>Free XAUUSD Gold Leverage Calculator</h2>
+
+      <p class="section-intro">
+        Enter your XAUUSD price, lot size, contract size, leverage and account
+        equity to estimate the margin and exposure associated with your gold
+        position. The calculator is designed for educational scenario analysis.
+      </p>
+
+      <div class="calculator">
+
+        <div class="calculator-grid">
+
+          <div class="field">
+            <label for="goldPrice">XAUUSD Gold Price</label>
+            <input id="goldPrice" type="number" value="2650" min="0" step="0.01">
+            <small>Example: 2650 means gold is trading at $2,650 per ounce.</small>
+          </div>
+
+          <div class="field">
+            <label for="lotSize">Lot Size</label>
+            <input id="lotSize" type="number" value="1" min="0.01" step="0.01">
+            <small>Standard XAUUSD convention is often 1 lot = 100 troy ounces.</small>
+          </div>
+
+          <div class="field">
+            <label for="contractSize">Contract Size (oz per lot)</label>
+            <input id="contractSize" type="number" value="100" min="0.01" step="1">
+            <small>Verify your broker or prop firm's XAUUSD contract specification.</small>
+          </div>
+
+          <div class="field">
+            <label for="leverage">Leverage</label>
+            <input id="leverage" type="number" value="100" min="1" step="1">
+            <small>Enter the leverage available under your applicable trading rules.</small>
+          </div>
+
+          <div class="field">
+            <label for="equity">Account Equity</label>
+            <input id="equity" type="number" value="10000" min="0" step="100">
+            <small>Useful for comparing gold exposure against account size.</small>
+          </div>
+
+          <div class="field">
+            <label for="currency">Display Currency</label>
+            <select id="currency">
+              <option value="$">USD ($)</option>
+              <option value="€">EUR (€)</option>
+              <option value="£">GBP (£)</option>
+              <option value="₦">NGN (₦)</option>
+            </select>
+            <small>This changes the display symbol only; no FX conversion is performed.</small>
+          </div>
+
+        </div>
+
+        <div class="buttons">
+          <button class="primary-btn" id="calculateBtn" type="button">
+            Calculate Leverage
+          </button>
+
+          <button class="secondary-btn" id="resetBtn" type="button">
+            Reset
+          </button>
+        </div>
+
+        <div class="results" aria-live="polite">
+
+          <div class="result">
+            <span>Position Value</span>
+            <strong id="positionValue">$0.00</strong>
+          </div>
+
+          <div class="result">
+            <span>Required Margin</span>
+            <strong id="requiredMargin">$0.00</strong>
+          </div>
+
+          <div class="result">
+            <span>Margin % of Equity</span>
+            <strong id="marginPercent">0.00%</strong>
+          </div>
+
+          <div class="result">
+            <span>Effective Leverage</span>
+            <strong id="effectiveLeverage">0.00x</strong>
+          </div>
+
+          <div class="result">
+            <span>Position / Equity</span>
+            <strong id="exposurePercent">0.00%</strong>
+          </div>
+
+          <div class="result">
+            <span>Notional Ounces</span>
+            <strong id="ounces">0.00 oz</strong>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <div class="ad-slot" aria-label="Advertisement">
+      Advertisement
+    </div>
+
+    <section class="section">
+
+      <h2>How the Gold Leverage Calculator Works</h2>
+
+      <p>
+        Gold leverage allows a trader to control a larger XAUUSD position than
+        the amount of capital deposited as margin. The amount of margin required
+        depends on the notional value of the position and the applicable leverage.
+      </p>
+
+      <div class="formula">
+        Position Value = Gold Price × Contract Size × Lot Size
+
+        Required Margin = Position Value ÷ Leverage
+
+        Effective Leverage = Position Value ÷ Account Equity
+
+        Margin % of Equity = Required Margin ÷ Account Equity × 100
+      </div>
+
+      <p>
+        For example, if XAUUSD is $2,650, the position is 1 standard lot and the
+        contract size is 100 ounces, the notional position value is approximately
+        $265,000. At 100:1 leverage, the theoretical margin requirement would be
+        approximately $2,650 before considering broker-specific rules, spreads,
+        commissions, hedging rules or other requirements.
+      </p>
+
+    </section>
+
+    <section class="section">
+
+      <h2>Gold Leverage Calculator for Prop Firms</h2>
+
+      <p>
+        Traders using proprietary trading firms should distinguish between
+        <strong>available leverage</strong> and <strong>acceptable trading risk</strong>.
+        A higher leverage ratio does not automatically mean that a larger position
+        is appropriate for a trading account.
+      </p>
+
+      <p>
+        Prop firm accounts can have additional restrictions involving maximum
+        drawdown, daily loss limits, position sizing, news trading, overnight
+        positions, maximum exposure and instrument-specific leverage. Always
+        check the current rules of the specific firm before opening a position.
+      </p>
+
+    </section>
+
+    <section class="section">
+
+      <h2>Gold Leverage for Funded Accounts</h2>
+
+      <p>
+        A funded account trader can use this calculator to model different
+        XAUUSD leverage scenarios before placing a trade. This can help illustrate
+        how changing lot size or leverage changes the margin requirement and
+        notional exposure.
+      </p>
+
+      <p>
+        A $10,000, $25,000, $50,000 or $100,000 funded account does not necessarily
+        have the same gold leverage rules. Account size, challenge type,
+        instrument conditions and firm-specific trading rules can affect the
+        permitted exposure.
+      </p>
+
+    </section>
+
+    <section class="section">
+
+      <h2>FundedNext Gold Leverage Calculator</h2>
+
+      <p>
+        Traders searching for a <strong>FundedNext gold leverage calculator</strong>
+        or <strong>FundedNext XAUUSD leverage calculator</strong> can use this page
+        to model hypothetical leverage and margin scenarios.
+      </p>
+
+      <p>
+        This website is not affiliated with, sponsored by, or endorsed by
+        FundedNext. Funded account rules can change, so traders should verify
+        the current official instrument and leverage specifications directly
+        with their provider.
+      </p>
+
+    </section>
+
+    <section class="section">
+
+      <h2>Gold Leverage Examples for Different Account Sizes</h2>
+
+      <div class="table-wrap">
+
+        <table>
+
+          <thead>
+            <tr>
+              <th>Account Size</th>
+              <th>Position Value</th>
+              <th>Effective Exposure</th>
+              <th>Example Margin at 100:1</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>$10,000</td>
+              <td>$100,000</td>
+              <td>10×</td>
+              <td>$1,000</td>
+            </tr>
+
+            <tr>
+              <td>$25,000</td>
+              <td>$250,000</td>
+              <td>10×</td>
+              <td>$2,500</td>
+            </tr>
+
+            <tr>
+              <td>$50,000</td>
+              <td>$500,000</td>
+              <td>10×</td>
+              <td>$5,000</td>
+            </tr>
+
+            <tr>
+              <td>$100,000</td>
+              <td>$1,000,000</td>
+              <td>10×</td>
+              <td>$10,000</td>
+            </tr>
+          </tbody>
+
+        </table>
+
+      </div>
+
+      <p>
+        These examples illustrate mathematical relationships only. They are not
+        recommendations for position size and do not represent the trading rules
+        of any particular prop firm or funded-account provider.
+      </p>
+
+    </section>
+
+    <section class="section">
+
+      <h2>Gold Leverage vs Gold Trading Risk</h2>
+
+      <div class="cards">
+
+        <article class="info-card">
+          <h3>Leverage</h3>
+          <p>
+            Leverage determines how much notional exposure can theoretically be
+            controlled relative to the margin required.
+          </p>
+        </article>
+
+        <article class="info-card">
+          <h3>Position Size</h3>
+          <p>
+            Lot size determines how many ounces of gold your position represents.
+            Increasing lot size increases notional exposure.
+          </p>
+        </article>
+
+        <article class="info-card">
+          <h3>Risk</h3>
+          <p>
+            Trading risk depends heavily on stop-loss distance, position size,
+            volatility and the amount of account equity exposed to potential loss.
+          </p>
+        </article>
+
+      </div>
+
+    </section>
+
+    <section class="section">
+
+      <h2>Gold Leverage for XAUUSD Scalping</h2>
+
+      <p>
+        XAUUSD is often traded during short-term sessions because gold can
+        experience substantial intraday price movement. A high leverage setting
+        can make it possible to open a relatively large position with a smaller
+        margin requirement.
+      </p>
+
+      <p>
+        However, margin availability should not be confused with a safe trading
+        size. A relatively small XAUUSD price movement can produce a meaningful
+        profit or loss when the underlying position is large.
+      </p>
+
+      <p>
+        Traders can combine this calculator with a
+        <a href="gold-risk-calculator.html">Gold Risk Calculator</a>
+        and
+        <a href="gold-lot-size-calculator.html">Gold Lot Size Calculator</a>
+        to analyze position size and risk separately from leverage.
+      </p>
+
+    </section>
+
+    <section class="section">
+
+      <h2>Gold Leverage During High-Impact News</h2>
+
+      <p>
+        Gold can react rapidly to major economic events such as U.S. inflation
+        data, employment reports, central-bank decisions and changes in interest
+        rate expectations.
+      </p>
+
+      <p>
+        During volatile markets, spreads, execution conditions and broker margin
+        requirements may differ from normal conditions. Prop firms and funded
+        account providers may also impose specific restrictions around news.
+        Review the applicable rules before trading high-impact events.
+      </p>
+
+    </section>
+
+    <section class="section">
+
+      <h2>Why Higher Gold Leverage Does Not Automatically Mean Higher Profit</h2>
+
+      <p>
+        Leverage changes the amount of capital required to control a position.
+        It does not change the underlying XAUUSD price movement.
+      </p>
+
+      <p>
+        For example, a 1-lot XAUUSD position still represents the same underlying
+        number of ounces whether the account uses 50:1, 100:1 or 200:1 leverage.
+        The leverage mainly changes the margin required to maintain that position.
+      </p>
+
+      <p>
+        This is why traders should consider leverage, position size, stop-loss
+        distance and account drawdown limits together.
+      </p>
+
+    </section>
+
+    <section class="section">
+
+      <h2>Related Gold, Forex and Risk Calculators</h2>
+
+      <div class="related">
+
+        <a href="calculators.html">Calculators</a>
+
+        <a href="gold-lot-size-calculator.html">
+          Gold Lot Size Calculator
+        </a>
+
+        <a href="gold-risk-calculator.html">
+          Gold Risk Calculator
+        </a>
+
+        <a href="gold-margin-calculator.html">
+          Gold Margin Calculator
+        </a>
+
+        <a href="gold-profit-calculator.html">
+          Gold Profit Calculator
+        </a>
+
+        <a href="leverage-calculator.html">
+          Forex Leverage Calculator
+        </a>
+
+        <a href="margin-calculator.html">
+          Margin Calculator
+        </a>
+
+        <a href="position-size-calculator.html">
+          Position Size Calculator
+        </a>
+
+        <a href="risk-calculator.html">
+          Risk Calculator
+        </a>
+
+        <a href="risk-reward-calculator.html">
+          Risk-Reward Calculator
+        </a>
+
+        <a href="drawdown-calculator.html">
+          Drawdown Calculator
+        </a>
+
+        <a href="calculators.html">
+          All Trading Calculators
+        </a>
+
+      </div>
+
+    </section>
+
+    <div class="ad-slot" aria-label="Advertisement">
+      Advertisement
+    </div>
+
+    <section class="section">
+
+      <h2>Frequently Asked Questions About Gold Leverage</h2>
+
+      <div class="faq">
+
+        <details>
+          <summary>What is a gold leverage calculator?</summary>
+          <p>
+            A gold leverage calculator estimates the notional value and margin
+            associated with an XAUUSD position at a selected leverage level.
+          </p>
+        </details>
+
+        <details>
+          <summary>How is XAUUSD leverage calculated?</summary>
+          <p>
+            The relationship can be expressed as position value divided by
+            required margin. If a $200,000 position requires $2,000 of margin,
+            the theoretical leverage relationship is 100:1.
+          </p>
+        </details>
+
+        <details>
+          <summary>What is the best leverage for gold trading?</summary>
+          <p>
+            There is no single leverage level that is appropriate for every
+            trader or account. The applicable leverage depends on the broker,
+            prop firm, account type and trading rules.
+          </p>
+        </details>
+
+        <details>
+          <summary>What leverage is available for funded gold trading?</summary>
+          <p>
+            Funded-account providers can specify different leverage conditions
+            for XAUUSD. Check the current rules for your particular provider and
+            account type before trading.
+          </p>
+        </details>
+
+        <details>
+          <summary>Can I use this for a $10,000 prop firm account?</summary>
+          <p>
+            Yes. Enter the account equity as $10,000 and use the calculator to
+            compare different XAUUSD position sizes and leverage scenarios.
+          </p>
+        </details>
+
+        <details>
+          <summary>Can I use this for a $50,000 or $100,000 funded account?</summary>
+          <p>
+            Yes. The account-equity field can be changed to model different
+            account sizes. The calculation itself does not determine whether a
+            particular firm permits the resulting position.
+          </p>
+        </details>
+
+        <details>
+          <summary>Is this an official FundedNext calculator?</summary>
+          <p>
+            No. EZTradingHub is an independent website. This calculator is
+            intended for educational and scenario-analysis purposes and is not
+            an official FundedNext product.
+          </p>
+        </details>
+
+        <details>
+          <summary>Does leverage determine my maximum trading loss?</summary>
+          <p>
+            Not directly. Maximum loss is influenced by the position size,
+            entry price, exit price, stop-loss and other trading conditions.
+          </p>
+        </details>
+
+      </div>
+
+    </section>
+
+    <section class="section">
+
+      <h2>Important Disclaimer</h2>
+
+      <div class="disclaimer">
+        <strong>Educational use only:</strong>
+        This Gold Leverage Calculator provides mathematical estimates and does
+        not constitute financial, investment or trading advice.
+
+        <br><br>
+
+        Actual margin requirements can vary by broker, liquidity provider,
+        account type, instrument specification, leverage restrictions, market
+        conditions and applicable trading rules.
+
+        <br><br>
+
+        Prop firm and funded-account requirements can change. Always verify the
+        current rules directly with your broker or trading provider before
+        placing a trade.
+
+        <br><br>
+
+        EZTradingHub is not affiliated with or endorsed by FundedNext or any
+        other proprietary trading firm mentioned on this page.
+      </div>
+
+    </section>
+
+  </div>
+
+</main>
+
+<footer>
+
+  <div class="container">
+
+    <div class="footer-grid">
+
+      <div>
+        <h2>EZTradingHub</h2>
+
+        <p>
+          Free trading calculators and educational tools for forex, gold,
+          stocks, crypto, commodities, bonds and ETFs.
+        </p>
+
+        <p>
+          © <span id="year"></span> EZTradingHub. All rights reserved.
+        </p>
+      </div>
+
+      <div>
+        <h3>Explore</h3>
+
+        <p><a href="calculators.html">Calculators</a></p>
+        <p><a href="calculators.html">Gold Tools</a></p>
+        <p><a href="market-scanner.html">Market Scanner</a></p>
+      </div>
+
+      <div>
+        <h3>Information</h3>
+
+        <p><a href="about.html">About</a></p>
+        <p><a href="faq.html">FAQ</a></p>
+        <p><a href="privacy.html">Privacy</a></p>
+        <p><a href="terms.html">Terms</a></p>
+        <p><a href="cookie-policy.html">Cookie Policy</a></p>
+        <p><a href="disclaimer.html">Disclaimer</a></p>
+        <p><a href="contact.html">Contact</a></p>
+      </div>
+
+    </div>
+
+  </div>
+
+</footer>
+
+<script>
+  const root = document.documentElement;
+  const themeToggle = document.getElementById("themeToggle");
+
+  function setTheme(theme){
+    root.setAttribute("data-theme", theme);
+    localStorage.setItem("ezth-theme", theme);
+
+    themeToggle.textContent = theme === "dark" ? "☀️" : "🌙";
+
+    themeToggle.setAttribute(
+      "aria-label",
+      theme === "dark"
+        ? "Switch to light mode"
+        : "Switch to dark mode"
+    );
+  }
+
+  const savedTheme = localStorage.getItem("ezth-theme");
+
+  if(savedTheme){
+    setTheme(savedTheme);
+  }else{
+    const prefersDark =
+      window.matchMedia &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+    setTheme(prefersDark ? "dark" : "light");
+  }
+
+  themeToggle.addEventListener("click", function(){
+    const current =
+      root.getAttribute("data-theme") === "dark"
+        ? "dark"
+        : "light";
+
+    setTheme(current === "dark" ? "light" : "dark");
+  });
+
+
+  const goldPrice = document.getElementById("goldPrice");
+  const lotSize = document.getElementById("lotSize");
+  const contractSize = document.getElementById("contractSize");
+  const leverage = document.getElementById("leverage");
+  const equity = document.getElementById("equity");
+  const currency = document.getElementById("currency");
+
+  const positionValueOutput =
+    document.getElementById("positionValue");
+
+  const requiredMarginOutput =
+    document.getElementById("requiredMargin");
+
+  const marginPercentOutput =
+    document.getElementById("marginPercent");
+
+  const effectiveLeverageOutput =
+    document.getElementById("effectiveLeverage");
+
+  const exposurePercentOutput =
+    document.getElementById("exposurePercent");
+
+  const ouncesOutput =
+    document.getElementById("ounces");
+
+
+  function number(value){
+    return Number(value) || 0;
+  }
+
+
+  function formatMoney(value){
+    return currency.value +
+      Number(value).toLocaleString(undefined,{
+        minimumFractionDigits:2,
+        maximumFractionDigits:2
+      });
+  }
+
+
+  function calculate(){
+
+    const price = number(goldPrice.value);
+    const lots = number(lotSize.value);
+    const contract = number(contractSize.value);
+    const lev = number(leverage.value);
+    const accountEquity = number(equity.value);
+
+    if(price <= 0 || lots <= 0 || contract <= 0 || lev <= 0){
+
+      positionValueOutput.textContent = "—";
+      requiredMarginOutput.textContent = "—";
+      marginPercentOutput.textContent = "—";
+      effectiveLeverageOutput.textContent = "—";
+      exposurePercentOutput.textContent = "—";
+      ouncesOutput.textContent = "—";
+
+      return;
+    }
+
+    const ounces = lots * contract;
+
+    const positionValue =
+      price * ounces;
+
+    const requiredMargin =
+      positionValue / lev;
+
+    const marginPercent =
+      accountEquity > 0
+        ? (requiredMargin / accountEquity) * 100
+        : 0;
+
+    const effectiveLeverage =
+      accountEquity > 0
+        ? positionValue / accountEquity
+        : 0;
+
+    const exposurePercent =
+      accountEquity > 0
+        ? (positionValue / accountEquity) * 100
+        : 0;
+
+    positionValueOutput.textContent =
+      formatMoney(positionValue);
+
+    requiredMarginOutput.textContent =
+      formatMoney(requiredMargin);
+
+    marginPercentOutput.textContent =
+      marginPercent.toFixed(2) + "%";
+
+    effectiveLeverageOutput.textContent =
+      effectiveLeverage.toFixed(2) + "x";
+
+    exposurePercentOutput.textContent =
+      exposurePercent.toFixed(2) + "%";
+
+    ouncesOutput.textContent =
+      ounces.toLocaleString(undefined,{
+        maximumFractionDigits:2
+      }) + " oz";
+  }
+
+
+  document.getElementById("calculateBtn")
+    .addEventListener("click", calculate);
+
+
+  document.getElementById("resetBtn")
+    .addEventListener("click", function(){
+
+      goldPrice.value = 2650;
+      lotSize.value = 1;
+      contractSize.value = 100;
+      leverage.value = 100;
+      equity.value = 10000;
+      currency.value = "$";
+
+      calculate();
+    });
+
+
+  [
+    goldPrice,
+    lotSize,
+    contractSize,
+    leverage,
+    equity,
+    currency
+  ].forEach(function(element){
+
+    element.addEventListener("input", calculate);
+    element.addEventListener("change", calculate);
+
+  });
+
+
+  document.getElementById("year").textContent =
+    new Date().getFullYear();
+
+
+  calculate();
+</script>
+
+</body>
+</html>
