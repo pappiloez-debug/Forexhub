@@ -1,0 +1,1526 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Prop Firm Risk Reward Calculator | EZTradingHub</title>
+  <meta name="description" content="Use this free prop firm risk reward calculator to calculate risk-to-reward ratio, potential profit, stop-loss risk, break-even win rate and funded account trading risk.">
+  <meta name="keywords" content="prop firm risk reward calculator, funded account risk reward calculator, prop firm RR calculator, risk reward ratio calculator, funded trader calculator, prop firm challenge risk management, FundedNext risk reward calculator, forex risk reward calculator, stop loss take profit calculator, trading reward to risk ratio">
+  <meta name="author" content="EZTradingHub">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#0b1730">
+
+  <link rel="canonical" href="https://eztradinghub.com/prop-firm-risk-reward-calculator.html">
+  <link rel="icon" href="/favicon.ico">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="EZTradingHub">
+  <meta property="og:title" content="Prop Firm Risk Reward Calculator">
+  <meta property="og:description" content="Calculate potential profit, planned loss, reward-to-risk ratio and break-even win rate for prop firm challenges and funded trading accounts.">
+  <meta property="og:url" content="https://eztradinghub.com/prop-firm-risk-reward-calculator.html">
+  <meta property="og:image" content="https://eztradinghub.com/assets/images/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Prop Firm Risk Reward Calculator">
+  <meta name="twitter:description" content="Free risk-to-reward calculator for prop firm and funded account traders.">
+  <meta name="twitter:image" content="https://eztradinghub.com/assets/images/og-image.jpg">
+
+  <script>
+    (function () {
+      try {
+        const saved = localStorage.getItem("ezth-theme");
+        const preferred = window.matchMedia &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches;
+        document.documentElement.dataset.theme =
+          saved || (preferred ? "dark" : "light");
+      } catch (e) {
+        document.documentElement.dataset.theme = "light";
+      }
+    })();
+  </script>
+
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f3f6fb;
+      --surface: #ffffff;
+      --surface2: #eaf0f9;
+      --text: #17243b;
+      --muted: #627089;
+      --border: #dce4ef;
+      --primary: #0758ca;
+      --accent: #ffb400;
+      --green: #087b51;
+      --greenbg: #e5f7ee;
+      --red: #c33142;
+      --redbg: #fff0f1;
+      --shadow: 0 10px 32px rgba(15,35,70,.07);
+    }
+
+    html[data-theme="dark"] {
+      color-scheme: dark;
+      --bg: #09111f;
+      --surface: #111e31;
+      --surface2: #1a2a43;
+      --text: #eef4ff;
+      --muted: #adbad0;
+      --border: #2b3d57;
+      --primary: #85b7ff;
+      --accent: #ffca45;
+      --green: #72e2b1;
+      --greenbg: #14382f;
+      --red: #ff9ba5;
+      --redbg: #411f2a;
+      --shadow: 0 10px 32px rgba(0,0,0,.2);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
+      line-height: 1.7;
+      font-size: 16px;
+    }
+
+    a { color: var(--primary); }
+
+    button, input, select {
+      font: inherit;
+    }
+
+    button:focus-visible,
+    input:focus-visible,
+    select:focus-visible,
+    a:focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 3px;
+    }
+
+    .site-header {
+      background: #0b1730;
+      color: #fff;
+      border-bottom: 3px solid var(--accent);
+    }
+
+    .header-inner {
+      max-width: 1140px;
+      margin: auto;
+      padding: 14px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.18rem;
+      font-weight: 850;
+    }
+
+    .brand-icon {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      background: var(--accent);
+      color: #111827;
+      font-weight: 950;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .header-link {
+      color: #e3edff;
+      text-decoration: none;
+      font-size: .9rem;
+    }
+
+    .theme-toggle {
+      background: #192945;
+      color: #fff;
+      border: 1px solid #40516d;
+      border-radius: 10px;
+      padding: 9px 12px;
+      cursor: pointer;
+    }
+
+    .container {
+      width: min(100% - 32px, 1060px);
+      margin-inline: auto;
+    }
+
+    .breadcrumbs {
+      padding-top: 17px;
+      font-size: .87rem;
+      color: var(--muted);
+    }
+
+    .breadcrumbs a { text-decoration: none; }
+
+    .hero { padding: 35px 0 27px; }
+
+    .eyebrow {
+      display: inline-block;
+      background: var(--surface2);
+      color: var(--primary);
+      padding: 5px 11px;
+      border-radius: 30px;
+      font-size: .78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .6px;
+    }
+
+    h1, h2, h3 { line-height: 1.27; }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 3.15rem);
+      letter-spacing: -1px;
+      margin: 15px 0;
+    }
+
+    h2 {
+      font-size: clamp(1.4rem, 3vw, 1.95rem);
+      letter-spacing: -.4px;
+      margin-top: 0;
+    }
+
+    h3 { font-size: 1.12rem; }
+
+    .hero p {
+      color: var(--muted);
+      max-width: 790px;
+      font-size: 1.06rem;
+    }
+
+    .hero-actions, .form-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 0;
+      border-radius: 10px;
+      background: var(--primary);
+      color: #fff;
+      padding: 12px 17px;
+      text-decoration: none;
+      font-weight: 750;
+      cursor: pointer;
+    }
+
+    html[data-theme="dark"] .button {
+      color: #09111f;
+    }
+
+    .button-secondary {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text) !important;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.6fr) minmax(240px, .75fr);
+      align-items: start;
+      gap: 22px;
+      padding-bottom: 28px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+      min-width: 0;
+    }
+
+    .card + .card { margin-top: 20px; }
+
+    .muted, .small { color: var(--muted); }
+
+    .small { font-size: .86rem; }
+
+    .field-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .field { min-width: 0; }
+
+    .field label {
+      display: block;
+      font-weight: 750;
+      font-size: .9rem;
+      margin-bottom: 6px;
+    }
+
+    .field input, .field select {
+      width: 100%;
+      min-height: 46px;
+      padding: 10px 12px;
+      background: var(--bg);
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+    }
+
+    .full { grid-column: 1 / -1; }
+
+    .results {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .result-box {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 13px;
+      padding: 15px;
+      overflow-wrap: anywhere;
+    }
+
+    .result-label {
+      display: block;
+      font-size: .82rem;
+      color: var(--muted);
+      margin-bottom: 5px;
+    }
+
+    .result-value {
+      display: block;
+      font-size: clamp(1.12rem, 3vw, 1.55rem);
+      font-weight: 850;
+      line-height: 1.4;
+    }
+
+    .result-note {
+      color: var(--muted);
+      font-size: .79rem;
+      margin-top: 5px;
+    }
+
+    .status {
+      padding: 13px 15px;
+      margin-top: 15px;
+      border-radius: 11px;
+      background: var(--greenbg);
+      color: var(--green);
+      font-weight: 700;
+    }
+
+    .status.warning {
+      background: var(--redbg);
+      color: var(--red);
+    }
+
+    .status.neutral {
+      background: var(--surface2);
+      color: var(--text);
+    }
+
+    .notice {
+      background: var(--surface2);
+      border-left: 4px solid var(--accent);
+      padding: 14px 16px;
+      border-radius: 8px;
+    }
+
+    .side-nav {
+      padding-left: 20px;
+      margin-bottom: 0;
+    }
+
+    .side-nav li { margin: 10px 0; }
+
+    .side-nav a {
+      text-decoration: none;
+      font-weight: 650;
+    }
+
+    .content-section p, .content-section li {
+      color: var(--muted);
+    }
+
+    .content-section strong { color: var(--text); }
+
+    .example-table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 18px 0;
+      font-size: .92rem;
+    }
+
+    .example-table th, .example-table td {
+      text-align: left;
+      padding: 11px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .example-table th {
+      background: var(--surface2);
+      color: var(--text);
+    }
+
+    .faq-item {
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .faq-item:last-child { border-bottom: 0; }
+    .faq-item h3 { margin: 0 0 8px; }
+    .faq-item p { margin: 0; color: var(--muted); }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .related-link {
+      display: block;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px;
+      background: var(--surface);
+      text-decoration: none;
+      font-weight: 750;
+    }
+
+    .related-link span {
+      display: block;
+      margin-top: 5px;
+      color: var(--muted);
+      font-size: .84rem;
+      font-weight: 400;
+    }
+
+    .site-footer {
+      background: #0b1730;
+      color: #d9e4f6;
+      margin-top: 25px;
+      padding: 30px 0;
+    }
+
+    .footer-inner {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 25px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 16px;
+    }
+
+    .footer-links a { color: #d9e4f6; }
+
+    .disclaimer {
+      margin-top: 20px;
+      color: #bdc9dc;
+      font-size: .84rem;
+    }
+
+    @media(max-width: 760px) {
+      .layout { grid-template-columns: 1fr; }
+      .footer-inner { grid-template-columns: 1fr; }
+      .header-link { display: none; }
+      .card { padding: 19px; }
+    }
+
+    @media(max-width: 430px) {
+      .container { width: min(100% - 22px, 1060px); }
+      .field-grid, .results, .related-grid {
+        grid-template-columns: 1fr;
+      }
+      .full { grid-column: auto; }
+      .card { padding: 16px; }
+      .brand { font-size: 1rem; }
+      .brand-icon { width: 36px; height: 36px; }
+      .theme-toggle { padding: 8px; font-size: .83rem; }
+    }
+
+    @media(prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+      }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "EZTradingHub Prop Firm Risk Reward Calculator",
+    "url": "https://eztradinghub.com/prop-firm-risk-reward-calculator.html",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Any",
+    "isAccessibleForFree": true,
+    "description": "Free calculator for estimating planned trade risk, potential reward, reward-to-risk ratio and break-even win rate.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "EZTradingHub",
+      "url": "https://eztradinghub.com/"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://eztradinghub.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Calculators",
+        "item": "https://eztradinghub.com/calculators.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Prop Firm Risk Reward Calculator",
+        "item": "https://eztradinghub.com/prop-firm-risk-reward-calculator.html"
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="index.html" aria-label="EZTradingHub home">
+      <span class="brand-icon" aria-hidden="true">EZ</span>
+      <span>EZTradingHub</span>
+    </a>
+
+    <div class="header-actions">
+      <a class="header-link" href="/calculators.html">All Calculators</a>
+      <button class="theme-toggle" id="themeToggle" type="button"
+        aria-pressed="false">
+        <span id="themeIcon" aria-hidden="true">☾</span>
+        <span id="themeText">Dark mode</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <a href="index.html">Home</a> &rsaquo;
+    <a href="calculators.html">Trading Calculators</a> &rsaquo;
+    <span aria-current="page">Prop Firm Risk Reward Calculator</span>
+  </nav>
+
+  <section class="hero">
+    <span class="eyebrow">Free trading risk management tool</span>
+    <h1>Prop Firm Risk Reward Calculator</h1>
+    <p>
+      Calculate your planned monetary risk, potential reward,
+      reward-to-risk ratio and break-even win rate before entering
+      a trade. This free funded-account risk reward calculator helps
+      you evaluate trade scenarios while keeping your prop firm's
+      loss limits in mind.
+    </p>
+    <div class="hero-actions">
+      <a class="button" href="#calculator">Calculate Risk to Reward</a>
+      <a class="button button-secondary" href="#guide">Read the Guide</a>
+    </div>
+  </section>
+
+  <div class="layout">
+    <div>
+      <section class="card" id="calculator">
+        <h2>Risk-to-Reward Calculator</h2>
+        <p class="muted">
+          Enter your account size, entry, stop loss, take profit and
+          position size. Alternatively, calculate from a fixed monetary
+          risk and a planned reward-to-risk ratio.
+        </p>
+
+        <form id="calcForm">
+          <div class="field-grid">
+            <div class="field">
+              <label for="currency">Account currency</label>
+              <select id="currency">
+                <option value="USD">USD ($)</option>
+                <option value="EUR">EUR (€)</option>
+                <option value="GBP">GBP (£)</option>
+                <option value="NGN">NGN (₦)</option>
+                <option value="CAD">CAD (C$)</option>
+                <option value="AUD">AUD (A$)</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="account">Account balance</label>
+              <input id="account" type="number" min="0.01"
+                step="any" value="10000" required>
+            </div>
+
+            <div class="field">
+              <label for="method">Calculation method</label>
+              <select id="method">
+                <option value="prices">Entry, stop loss and take profit</option>
+                <option value="ratio">Fixed risk and reward ratio</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="direction">Trade direction</label>
+              <select id="direction">
+                <option value="buy">Buy / Long</option>
+                <option value="sell">Sell / Short</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="riskMode">Risk input method</label>
+              <select id="riskMode">
+                <option value="percent">Risk as % of account</option>
+                <option value="money">Fixed monetary risk</option>
+              </select>
+            </div>
+
+            <div class="field" id="riskPercentField">
+              <label for="riskPercent">Risk per trade (%)</label>
+              <input id="riskPercent" type="number" min="0.001"
+                max="100" step="any" value="0.5" required>
+            </div>
+
+            <div class="field" id="riskMoneyField" hidden>
+              <label for="riskMoney">Fixed risk amount</label>
+              <input id="riskMoney" type="number" min="0.01"
+                step="any" value="50">
+            </div>
+
+            <div class="field" id="entryField">
+              <label for="entry">Entry price</label>
+              <input id="entry" type="number" min="0.00000001"
+                step="any" value="2350" required>
+            </div>
+
+            <div class="field" id="stopField">
+              <label for="stop">Stop-loss price</label>
+              <input id="stop" type="number" min="0.00000001"
+                step="any" value="2340" required>
+            </div>
+
+            <div class="field" id="targetField">
+              <label for="target">Take-profit price</label>
+              <input id="target" type="number" min="0.00000001"
+                step="any" value="2370" required>
+            </div>
+
+            <div class="field" id="valueField">
+              <label for="valuePerPrice">
+                Monetary value per 1.0 price movement
+              </label>
+              <input id="valuePerPrice" type="number" min="0.00000001"
+                step="any" value="1" required>
+              <span class="small">
+                Enter the monetary value of a one-unit price move for
+                your chosen position size, in your account currency.
+              </span>
+            </div>
+
+            <div class="field" id="ratioField" hidden>
+              <label for="rrRatio">Reward-to-risk ratio (R)</label>
+              <input id="rrRatio" type="number" min="0.01"
+                step="any" value="2">
+            </div>
+
+            <div class="field">
+              <label for="costs">Estimated total trading costs</label>
+              <input id="costs" type="number" min="0" step="any"
+                value="0" required>
+              <span class="small">
+                Optional estimate for commissions, spread and other
+                costs, expressed as a monetary amount for the full trade.
+              </span>
+            </div>
+
+            <div class="field">
+              <label for="dailyLimit">Daily loss limit (% of account)</label>
+              <input id="dailyLimit" type="number" min="0"
+                max="100" step="any" value="5" required>
+            </div>
+
+            <div class="field">
+              <label for="dailyUsed">Daily loss already used</label>
+              <input id="dailyUsed" type="number" min="0"
+                step="any" value="0" required>
+            </div>
+
+            <div class="field full">
+              <label for="plannedLosses">
+                Planned consecutive full-risk losses
+              </label>
+              <input id="plannedLosses" type="number" min="1"
+                max="100" step="1" value="3" required>
+              <span class="small">
+                A simple stress scenario using the same monetary risk
+                for each loss. It does not forecast actual outcomes.
+              </span>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button class="button" type="submit">Calculate Results</button>
+            <button class="button button-secondary" id="reset"
+              type="button">Reset Example</button>
+          </div>
+        </form>
+
+        <div id="results" aria-live="polite" aria-atomic="true">
+          <h3 style="margin-top:25px">Your Results</h3>
+
+          <div class="results">
+            <div class="result-box">
+              <span class="result-label">Monetary risk</span>
+              <output id="riskResult" class="result-value">—</output>
+            </div>
+
+            <div class="result-box">
+              <span class="result-label">Potential gross reward</span>
+              <output id="grossResult" class="result-value">—</output>
+            </div>
+
+            <div class="result-box">
+              <span class="result-label">Potential net reward</span>
+              <output id="netResult" class="result-value">—</output>
+              <div class="result-note">After entered costs</div>
+            </div>
+
+            <div class="result-box">
+              <span class="result-label">Reward-to-risk ratio</span>
+              <output id="ratioResult" class="result-value">—</output>
+            </div>
+
+            <div class="result-box">
+              <span class="result-label">Risk as % of account</span>
+              <output id="riskPctResult" class="result-value">—</output>
+            </div>
+
+            <div class="result-box">
+              <span class="result-label">Break-even win rate</span>
+              <output id="breakEvenResult" class="result-value">—</output>
+              <div class="result-note">Estimated using net reward and net loss</div>
+            </div>
+
+            <div class="result-box">
+              <span class="result-label">Daily allowance remaining</span>
+              <output id="dailyRemainResult" class="result-value">—</output>
+            </div>
+
+            <div class="result-box">
+              <span class="result-label">Losses to daily threshold</span>
+              <output id="lossesResult" class="result-value">—</output>
+              <div class="result-note">Approximate; assumes equal loss per trade</div>
+            </div>
+
+            <div class="result-box full">
+              <span class="result-label">
+                Balance after planned consecutive losses
+              </span>
+              <output id="stressResult" class="result-value">—</output>
+            </div>
+          </div>
+
+          <div id="riskStatus" class="status neutral">
+            Enter your trade details to calculate risk and reward.
+          </div>
+        </div>
+
+        <p class="small">
+          Results are estimates. The price-based method requires a
+          correct monetary value per 1.0 price movement for your
+          instrument and position size. This calculator does not
+          automatically convert lots, pips, contracts or currencies.
+        </p>
+      </section>
+
+      <section class="card content-section" id="guide">
+        <h2>What Is a Prop Firm Risk Reward Calculator?</h2>
+        <p>
+          A prop firm risk reward calculator compares the amount a trader
+          plans to risk on a position with the potential reward at the
+          chosen take-profit level. It can help traders prepare a
+          consistent trade plan for an evaluation challenge or funded
+          account.
+        </p>
+        <p>
+          The risk-to-reward ratio is commonly expressed as 1:2, 1:3
+          or another relationship between potential loss and potential
+          profit. A 1:2 risk-to-reward setup means the planned gross
+          reward is twice the planned gross risk before trading costs.
+        </p>
+        <p>
+          The ratio alone does not establish whether a trade is
+          profitable over time. Results also depend on the strategy's
+          win rate, the size of actual wins and losses, fees, slippage,
+          execution and changing market conditions.
+        </p>
+      </section>
+
+      <section class="card content-section">
+        <h2>How to Calculate Risk-to-Reward Ratio</h2>
+        <div class="notice">
+          <strong>Reward-to-risk formula:</strong><br>
+          Reward-to-risk ratio = Potential gross reward ÷ Planned gross risk
+        </div>
+        <p>
+          Suppose a trade has a planned loss of $50 and a potential gross
+          profit of $100. The reward-to-risk ratio is 2.0, commonly
+          described as a 1:2 risk-to-reward setup.
+        </p>
+        <p>
+          If the estimated total costs are $4, the potential net profit
+          becomes $96 and the net loss, assuming the same costs on a
+          losing trade, becomes $54. The ratio of net profit to net loss
+          would therefore be approximately 1.78. The actual cost on a
+          losing or winning trade may differ.
+        </p>
+      </section>
+
+      <section class="card content-section">
+        <h2>Risk Reward Calculator Example</h2>
+        <p>
+          Consider a hypothetical $10,000 trading account with a planned
+          risk of 0.5% per trade.
+        </p>
+
+        <div style="overflow-x:auto">
+          <table class="example-table">
+            <thead>
+              <tr>
+                <th>Metric</th>
+                <th>Example</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Account balance</td><td>$10,000</td></tr>
+              <tr><td>Risk per trade</td><td>0.5%</td></tr>
+              <tr><td>Planned gross risk</td><td>$50</td></tr>
+              <tr><td>Reward-to-risk ratio</td><td>1:2</td></tr>
+              <tr><td>Potential gross reward</td><td>$100</td></tr>
+              <tr><td>Break-even win rate before costs</td><td>33.33%</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>
+          This is a mathematical illustration, not a recommendation
+          to risk a particular amount or a prediction of future results.
+        </p>
+      </section>
+
+      <section class="card content-section">
+        <h2>How to Use This Funded Account Calculator</h2>
+        <ol>
+          <li>
+            Enter your account balance and choose your account currency.
+          </li>
+          <li>
+            Select percentage-based risk or a fixed monetary risk amount.
+          </li>
+          <li>
+            Choose the price-based method or a fixed reward-to-risk ratio.
+          </li>
+          <li>
+            For the price-based method, enter your entry, stop-loss and
+            take-profit prices.
+          </li>
+          <li>
+            Enter the monetary value of a 1.0 price movement for your
+            selected position size and instrument.
+          </li>
+          <li>
+            Add estimated trading costs and your daily drawdown figures.
+          </li>
+          <li>
+            Calculate the results and compare them with the rules
+            that apply to your specific account.
+          </li>
+        </ol>
+      </section>
+
+      <section class="card content-section">
+        <h2>Risk-to-Reward and Prop Firm Drawdown Rules</h2>
+        <p>
+          Prop firms can impose separate daily and maximum overall loss
+          limits. A planned trade may have a defined risk-to-reward ratio
+          and still be unsuitable for the remaining loss allowance in an
+          account.
+        </p>
+        <p>
+          For example, a trader with $150 of daily loss allowance remaining
+          should not assume that three trades with $50 of planned risk
+          are guaranteed to fit within that limit. Spreads, commissions,
+          slippage, gaps and simultaneous open positions may cause actual
+          losses to differ from planned amounts.
+        </p>
+        <p>
+          The daily allowance estimate on this page uses the account
+          balance, daily limit percentage and daily loss already used
+          that you enter. It is a simplified model and does not
+          replicate any provider's official breach calculation.
+        </p>
+      </section>
+
+      <section class="card content-section">
+        <h2>Understanding the Break-Even Win Rate</h2>
+        <p>
+          The break-even win rate estimates the percentage of winning
+          trades required to offset losing trades when the win and loss
+          amounts are assumed to be consistent.
+        </p>
+        <div class="notice">
+          <strong>Basic formula:</strong><br>
+          Break-even win rate = Average loss ÷
+          (Average win + Average loss) × 100
+        </div>
+        <p>
+          For example, if the average winning trade earns $100 and the
+          average losing trade loses $50, the break-even win rate before
+          costs is 33.33%. Trading costs generally increase the
+          break-even rate.
+        </p>
+        <p>
+          This estimate does not guarantee profitability. Real trades
+          may have different outcomes, and the actual distribution of
+          wins, losses and costs matters.
+        </p>
+      </section>
+
+      <section class="card content-section">
+        <h2>Forex, Gold and Funded Trading Risk Management</h2>
+        <p>
+          Traders in forex, gold (XAUUSD), indices and other markets
+          should confirm how their broker calculates tick value, contract
+          size and position exposure. The monetary effect of a price
+          movement depends on the instrument, contract specification,
+          trade volume and account currency.
+        </p>
+        <ul>
+          <li>Check stop-loss distance before opening a trade.</li>
+          <li>Confirm contract specifications and tick or point value.</li>
+          <li>Account for commissions, spreads, swaps and slippage.</li>
+          <li>Review daily and maximum overall loss limits.</li>
+          <li>Consider exposure across correlated positions.</li>
+          <li>Do not treat a target ratio as evidence of a trading edge.</li>
+        </ul>
+      </section>
+
+      <section class="card content-section" id="faq">
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+          <h3>1. What is a risk-to-reward ratio?</h3>
+          <p>
+            It compares the planned loss on a trade with its potential
+            reward. A trade risking $50 for a potential gross reward
+            of $100 has a reward-to-risk ratio of 2.0, or a 1:2
+            risk-to-reward setup.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>2. How do I calculate risk on a funded account?</h3>
+          <p>
+            Multiply the applicable account balance by your chosen
+            risk percentage. For example, 0.5% of $10,000 is $50.
+            This is a calculation example, not a recommended risk level.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>3. Does a 1:3 ratio mean I will make three times my money?</h3>
+          <p>
+            No. It means the planned gross reward is three times the
+            planned gross risk if the target is reached. It does not
+            predict whether the target will be reached.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>4. What is the break-even win rate for a 1:2 trade?</h3>
+          <p>
+            Before costs, the mathematical break-even win rate is
+            approximately 33.33%, assuming consistent wins twice the
+            size of losses. Costs and differences in actual outcomes
+            can change the result.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>5. Can I use this for FundedNext challenges?</h3>
+          <p>
+            You can enter your own trade assumptions and compare the
+            resulting estimates with the applicable FundedNext rules.
+            This independent calculator does not verify compliance with
+            any particular FundedNext program and is not endorsed by
+            or affiliated with FundedNext.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>6. Does this tool calculate forex lots automatically?</h3>
+          <p>
+            No. The price-based method requires the monetary value of a
+            1.0 price movement for the chosen position size. Use a
+            suitable lot-size calculator and verify your broker's
+            contract specifications separately.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>7. Are trading costs included?</h3>
+          <p>
+            The calculator subtracts your entered estimated total costs
+            from potential gross reward and includes those costs in its
+            simplified net break-even calculation. Actual costs may vary
+            by side, instrument and execution.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>8. Does this calculator guarantee a prop firm pass?</h3>
+          <p>
+            No. It provides arithmetic estimates only. It cannot
+            guarantee profitability, challenge completion or compliance
+            with changing provider rules.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>9. Is the calculator free?</h3>
+          <p>
+            Yes. The calculator runs in your browser and does not require
+            a paid subscription or account registration.
+          </p>
+        </div>
+      </section>
+
+      <section class="card content-section">
+        <h2>Explore More EZTradingHub Calculators</h2>
+        <p>
+          Continue planning with these related trading tools.
+        </p>
+
+        <div class="related-grid">
+          <a class="related-link" href="prop-firm-risk-calculator.html">
+            Prop Firm Risk Calculator
+            <span>Estimate planned monetary risk.</span>
+          </a>
+
+          <a class="related-link" href="prop-firm-drawdown-calculator.html">
+            Prop Firm Drawdown Calculator
+            <span>Estimate daily and overall loss thresholds.</span>
+          </a>
+
+          <a class="related-link" href="prop-firm-position-size-calculator.html">
+            Prop Firm Position Size Calculator
+            <span>Estimate position sizing from risk inputs.</span>
+          </a>
+
+          <a class="related-link" href="funded-account-risk-calculator.html">
+            Funded Account Risk Calculator
+            <span>Review account risk assumptions.</span>
+          </a>
+
+          <a class="related-link" href="lot-size-calculator.html">
+            Lot Size Calculator
+            <span>Estimate trade volume and exposure.</span>
+          </a>
+
+          <a class="related-link" href="risk-reward-calculator.html">
+            Risk Reward Calculator
+            <span>Calculate a general trade's reward-to-risk ratio.</span>
+          </a>
+
+          <a class="related-link" href="risk-calculator.html">
+            Forex Risk Calculator
+            <span>Review monetary risk per trade.</span>
+          </a>
+
+          <a class="related-link" href="calculators.html">
+            All Trading Calculators
+            <span>Explore more trading tools.</span>
+          </a>
+        </div>
+      </section>
+
+      <section class="card content-section">
+        <h2>Financial Risk Disclaimer</h2>
+        <p>
+          EZTradingHub provides educational tools and information only.
+          This calculator is not financial advice, investment advice,
+          a signal service or a recommendation to purchase a prop firm
+          challenge.
+        </p>
+        <p>
+          Results depend on the inputs provided and may not reflect
+          actual broker execution, contract specifications, fees,
+          slippage or prop firm breach rules. Verify all calculations
+          before making trading decisions.
+        </p>
+        <p>
+          Forex, CFDs, gold and other leveraged instruments carry
+          substantial financial risk. Losses can occur rapidly.
+          Past performance does not guarantee future results.
+        </p>
+      </section>
+    </div>
+
+    <aside>
+      <section class="card">
+        <h2>On This Page</h2>
+        <ul class="side-nav">
+          <li><a href="#calculator">Risk Reward Calculator</a></li>
+          <li><a href="#guide">Understanding the Ratio</a></li>
+          <li><a href="#faq">Frequently Asked Questions</a></li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>Key Trading Terms</h2>
+        <h3>Planned risk</h3>
+        <p class="small">
+          The estimated loss if the stop loss is executed at the
+          assumed price, before any costs not included in the estimate.
+        </p>
+        <h3>Potential reward</h3>
+        <p class="small">
+          The estimated gross profit if the take-profit level is reached.
+        </p>
+        <h3>Reward-to-risk ratio</h3>
+        <p class="small">
+          Potential gross reward divided by planned gross risk.
+        </p>
+        <h3>Break-even win rate</h3>
+        <p class="small">
+          The estimated percentage of winning trades needed to offset
+          losses under the calculator's simplified assumptions.
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>Plan Your Position Size</h2>
+        <p class="small">
+          Use a position-size calculator to check exposure after
+          determining your stop-loss distance and monetary risk.
+        </p>
+        <a class="button" style="width:100%"
+          href="prop-firm-position-size-calculator.html">
+          Calculate Position Size
+        </a>
+      </section>
+
+      <!-- Add official AdSense code here only after approval.
+           Alternatively, use your approved Auto ads configuration.
+           Never encourage users to click advertisements. -->
+    </aside>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div>
+      <a class="brand" href="index.html">
+        <span class="brand-icon" aria-hidden="true">EZ</span>
+        <span>EZTradingHub</span>
+      </a>
+      <p>
+        Free trading calculators and educational resources for
+        forex traders, funded account challenges and risk management.
+      </p>
+    </div>
+
+    <nav class="footer-links" aria-label="Footer navigation">
+      <a href="index.html.html">Home</a>
+      <a href="about.html">Contact</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">Contact</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms</a>
+      <a href="disclaimer.html">Disclaimer</a>
+      <a href="cookie-policy.html">Cookie Policy</a>
+      <a href="calculators.html">Calculators</a>
+    </nav>
+  </div>
+
+  <div class="container disclaimer">
+    © <span id="year"></span> EZTradingHub. All rights reserved.
+    Educational use only. Trading involves risk.
+  </div>
+</footer>
+
+<script>
+(function () {
+  "use strict";
+
+  const $ = (id) => document.getElementById(id);
+
+  const currencySymbols = {
+    USD: "$",
+    EUR: "€",
+    GBP: "£",
+    NGN: "₦",
+    CAD: "C$",
+    AUD: "A$"
+  };
+
+  function setTheme(theme) {
+    document.documentElement.dataset.theme = theme;
+    const dark = theme === "dark";
+
+    $("themeIcon").textContent = dark ? "☀" : "☾";
+    $("themeText").textContent = dark ? "Light mode" : "Dark mode";
+    $("themeToggle").setAttribute("aria-pressed", String(dark));
+
+    try {
+      localStorage.setItem("ezth-theme", theme);
+    } catch (e) {
+      // Continue without saved preference if storage is unavailable.
+    }
+  }
+
+  setTheme(
+    document.documentElement.dataset.theme === "dark" ? "dark" : "light"
+  );
+
+  $("themeToggle").addEventListener("click", function () {
+    setTheme(
+      document.documentElement.dataset.theme === "dark" ? "light" : "dark"
+    );
+  });
+
+  function num(id) {
+    const raw = $(id).value.trim();
+
+    if (raw === "") {
+      throw new Error("Please complete all required fields.");
+    }
+
+    const value = Number(raw);
+
+    if (!Number.isFinite(value)) {
+      throw new Error("Please enter valid numeric values.");
+    }
+
+    return value;
+  }
+
+  function money(value) {
+    const symbol = currencySymbols[$("currency").value] || "";
+    const abs = Math.abs(value).toLocaleString("en", {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    });
+
+    return (value < 0 ? "-" : "") + symbol + abs;
+  }
+
+  function pct(value) {
+    if (!Number.isFinite(value)) return "Not available";
+
+    return value.toLocaleString("en", {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    }) + "%";
+  }
+
+  function set(id, value) {
+    $(id).textContent = value;
+  }
+
+  function setStatus(message, type) {
+    $("riskStatus").textContent = message;
+    $("riskStatus").className = "status " + (type || "neutral");
+  }
+
+  function syncFields() {
+    const method = $("method").value;
+    const riskMode = $("riskMode").value;
+    const priceMode = method === "prices";
+
+    $("riskPercentField").hidden = riskMode !== "percent";
+    $("riskMoneyField").hidden = riskMode !== "money";
+
+    ["entryField", "stopField", "targetField", "valueField"]
+      .forEach((id) => {
+        $(id).hidden = !priceMode;
+      });
+
+    $("ratioField").hidden = priceMode;
+
+    $("entry").required = priceMode;
+    $("stop").required = priceMode;
+    $("target").required = priceMode;
+    $("valuePerPrice").required = priceMode;
+
+    $("riskPercent").required = riskMode === "percent";
+    $("riskMoney").required = riskMode === "money";
+
+    // Hidden fields must not prevent form submission.
+    $("entry").disabled = !priceMode;
+    $("stop").disabled = !priceMode;
+    $("target").disabled = !priceMode;
+    $("valuePerPrice").disabled = !priceMode;
+    $("rrRatio").disabled = priceMode;
+    $("riskPercent").disabled = riskMode !== "percent";
+    $("riskMoney").disabled = riskMode !== "money";
+  }
+
+  function calculate() {
+    try {
+      const account = num("account");
+      const costs = num("costs");
+      const dailyLimitPct = num("dailyLimit");
+      const dailyUsed = num("dailyUsed");
+      const plannedLosses = num("plannedLosses");
+
+      if (
+        account <= 0 || costs < 0 || dailyUsed < 0 ||
+        dailyLimitPct < 0 || dailyLimitPct > 100 ||
+        !Number.isInteger(plannedLosses) ||
+        plannedLosses < 1 || plannedLosses > 100
+      ) {
+        throw new Error(
+          "Account must be positive. Costs and daily loss used cannot " +
+          "be negative. Check percentages and consecutive loss count."
+        );
+      }
+
+      let risk;
+
+      if ($("riskMode").value === "percent") {
+        const riskPct = num("riskPercent");
+
+        if (riskPct <= 0 || riskPct > 100) {
+          throw new Error("Risk percentage must be greater than 0 and no more than 100.");
+        }
+
+        risk = account * riskPct / 100;
+      } else {
+        risk = num("riskMoney");
+
+        if (risk <= 0) {
+          throw new Error("Fixed monetary risk must be greater than zero.");
+        }
+      }
+
+      let grossReward;
+      let ratio;
+
+      if ($("method").value === "prices") {
+        const entry = num("entry");
+        const stop = num("stop");
+        const target = num("target");
+        const valuePerPrice = num("valuePerPrice");
+        const direction = $("direction").value;
+
+        if (
+          entry <= 0 || stop <= 0 || target <= 0 ||
+          valuePerPrice <= 0
+        ) {
+          throw new Error("Prices and monetary value must be greater than zero.");
+        }
+
+        const riskDistance = direction === "buy"
+          ? entry - stop
+          : stop - entry;
+
+        const rewardDistance = direction === "buy"
+          ? target - entry
+          : entry - target;
+
+        if (riskDistance <= 0 || rewardDistance <= 0) {
+          throw new Error(
+            "For a buy, stop loss must be below entry and take profit " +
+            "above entry. For a sell, stop loss must be above entry and " +
+            "take profit below entry."
+          );
+        }
+
+        const calculatedRisk = riskDistance * valuePerPrice;
+        grossReward = rewardDistance * valuePerPrice;
+
+        // In price mode, price distance and position value determine risk.
+        // The account-based percentage is displayed from the actual risk.
+        risk = calculatedRisk;
+        ratio = grossReward / risk;
+      } else {
+        ratio = num("rrRatio");
+
+        if (!Number.isFinite(ratio) || ratio <= 0) {
+          throw new Error("Reward-to-risk ratio must be greater than zero.");
+        }
+
+        grossReward = risk * ratio;
+      }
+
+      const riskPctOfAccount = risk / account * 100;
+      const netReward = grossReward - costs;
+      const netLoss = risk + costs;
+
+      const breakEven = netReward > 0
+        ? netLoss / (netLoss + netReward) * 100
+        : null;
+
+      const dailyAllowance = account * dailyLimitPct / 100;
+      const dailyRemaining = dailyAllowance - dailyUsed;
+
+      const remainingAfterOneLoss = dailyRemaining - risk - costs;
+
+      // Stress test includes the same estimated risk and cost for every loss.
+      const stressBalance = account - plannedLosses * (risk + costs);
+
+      // The first trade that would reach or exceed the daily allowance.
+      const lossesToThreshold = risk + costs > 0
+        ? Math.max(0, Math.ceil(dailyRemaining / (risk + costs)))
+        : null;
+
+      set("riskResult", money(risk));
+      set("grossResult", money(grossReward));
+      set("netResult", money(netReward));
+      set("ratioResult", "1 : " + ratio.toLocaleString("en", {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+      }));
+      set("riskPctResult", pct(riskPctOfAccount));
+      set("breakEvenResult",
+        breakEven === null ? "Not defined" : pct(breakEven));
+      set("dailyRemainResult", money(dailyRemaining));
+      set("lossesResult",
+        lossesToThreshold === null ? "Not defined" :
+        (lossesToThreshold === 0 ? "Limit already reached" :
+          String(lossesToThreshold) + " full-risk loss(es)"));
+
+      set("stressResult", money(stressBalance));
+
+      if (riskPctOfAccount > 5) {
+        setStatus(
+          "High exposure warning: this trade's calculated risk exceeds " +
+          "5% of the account. Review the amount and your applicable limits.",
+          "warning"
+        );
+      } else if (dailyRemaining <= 0) {
+        setStatus(
+          "The entered daily loss allowance is already used or exceeded. " +
+          "Verify your provider's actual equity and breach rules.",
+          "warning"
+        );
+      } else if (remainingAfterOneLoss <= 0) {
+        setStatus(
+          "Warning: the planned loss plus entered costs would consume or " +
+          "exceed the remaining daily allowance in this simplified model.",
+          "warning"
+        );
+      } else if (netReward <= 0) {
+        setStatus(
+          "Estimated trading costs equal or exceed the potential gross " +
+          "reward. Review the inputs and assumptions.",
+          "warning"
+        );
+      } else {
+        setStatus(
+          "Calculation complete. Review the estimated risk, reward and " +
+          "daily allowance against your actual trading rules.",
+          "neutral"
+        );
+      }
+    } catch (error) {
+      setStatus(error.message || "Unable to calculate these values.", "warning");
+    }
+  }
+
+  $("calcForm").addEventListener("submit", function (event) {
+    event.preventDefault();
+    syncFields();
+    calculate();
+  });
+
+  ["method", "riskMode"].forEach(function (id) {
+    $(id).addEventListener("change", function () {
+      syncFields();
+      calculate();
+    });
+  });
+
+  [
+    "currency", "account", "direction", "riskPercent", "riskMoney",
+    "entry", "stop", "target", "valuePerPrice", "rrRatio",
+    "costs", "dailyLimit", "dailyUsed", "plannedLosses"
+  ].forEach(function (id) {
+    $(id).addEventListener("input", calculate);
+    $(id).addEventListener("change", calculate);
+  });
+
+  $("reset").addEventListener("click", function () {
+    $("currency").value = "USD";
+    $("account").value = "10000";
+    $("method").value = "prices";
+    $("direction").value = "buy";
+    $("riskMode").value = "percent";
+    $("riskPercent").value = "0.5";
+    $("riskMoney").value = "50";
+    $("entry").value = "2350";
+    $("stop").value = "2340";
+    $("target").value = "2370";
+    $("valuePerPrice").value = "1";
+    $("rrRatio").value = "2";
+    $("costs").value = "0";
+    $("dailyLimit").value = "5";
+    $("dailyUsed").value = "0";
+    $("plannedLosses").value = "3";
+
+    syncFields();
+    calculate();
+  });
+
+  $("year").textContent = new Date().getFullYear();
+
+  syncFields();
+  calculate();
+})();
+</script>
+</body>
+</html>
