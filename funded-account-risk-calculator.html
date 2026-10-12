@@ -1,0 +1,1361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B5T8QM08CE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-B5T8QM08CE');
+</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Funded Account Risk Calculator | EZTradingHub</title>
+  <meta name="description" content="Use this free funded account risk calculator to estimate risk per trade, daily loss limits, remaining drawdown, loss streak exposure and profit targets for prop firm funded accounts.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="author" content="EZTradingHub">
+  <meta name="theme-color" content="#0b1426">
+
+  <link rel="canonical" href="https://eztradinghub.com/funded-account-risk-calculator.html">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="EZTradingHub">
+  <meta property="og:title" content="Funded Account Risk Calculator">
+  <meta property="og:description" content="Calculate funded account risk, daily loss allowance, drawdown and potential trade exposure with this free tool.">
+  <meta property="og:url" content="https://eztradinghub.com/funded-account-risk-calculator.html">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Funded Account Risk Calculator">
+  <meta name="twitter:description" content="Free funded trading account risk and drawdown planning tool.">
+
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f3f6fb;
+      --surface: #ffffff;
+      --surface2: #eaf0f8;
+      --text: #19263b;
+      --muted: #63738a;
+      --border: #d8e1ed;
+      --primary: #1769e0;
+      --green: #11845b;
+      --red: #d9364b;
+      --amber: #a86600;
+      --shadow: 0 8px 28px rgba(20,45,80,.07);
+    }
+
+    html[data-theme="dark"] {
+      color-scheme: dark;
+      --bg: #0b1426;
+      --surface: #121f35;
+      --surface2: #1a2a43;
+      --text: #edf4ff;
+      --muted: #a7b7ce;
+      --border: #2c3e59;
+      --primary: #76aaff;
+      --green: #53d8a4;
+      --red: #ff8290;
+      --amber: #ffd080;
+      --shadow: 0 8px 28px rgba(0,0,0,.2);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    a { color: var(--primary); }
+
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible,
+    select:focus-visible {
+      outline: 3px solid var(--primary);
+      outline-offset: 3px;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin-inline: auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 12px 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--text);
+      font-weight: 850;
+      font-size: 1.1rem;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .brand-icon {
+      display: grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: var(--primary);
+      color: #fff;
+      font-weight: 900;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .nav-links a {
+      color: var(--text);
+      text-decoration: none;
+      font-size: .9rem;
+    }
+
+    button, .button {
+      border: 0;
+      border-radius: 10px;
+      padding: 11px 16px;
+      font: inherit;
+      font-weight: 750;
+      cursor: pointer;
+    }
+
+    .theme-toggle, .secondary-button {
+      background: var(--surface2);
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+
+    .hero {
+      padding: 46px 0 34px;
+      background: radial-gradient(
+        ellipse at top right,
+        rgba(23,105,224,.15), transparent 58%
+      );
+    }
+
+    .breadcrumbs {
+      margin-bottom: 15px;
+      color: var(--muted);
+      font-size: .86rem;
+    }
+
+    .breadcrumbs a { text-decoration: none; }
+
+    .eyebrow {
+      color: var(--primary);
+      font-size: .82rem;
+      font-weight: 850;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 12px 0;
+      font-size: clamp(2rem,5vw,3.2rem);
+      line-height: 1.18;
+    }
+
+    h2 {
+      font-size: clamp(1.4rem,3vw,2rem);
+      line-height: 1.3;
+    }
+
+    h3 { line-height: 1.35; }
+
+    .hero p {
+      max-width: 790px;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .button {
+      display: inline-block;
+      background: var(--primary);
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .panel {
+      min-width: 0;
+      margin-bottom: 24px;
+      padding: clamp(18px,3vw,30px);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+    }
+
+    main { padding-bottom: 45px; }
+
+    .section-heading { margin-top: 0; }
+    .muted { color: var(--muted); }
+
+    .layout {
+      display: grid;
+      grid-template-columns: minmax(0,1.05fr) minmax(0,.95fr);
+      gap: 24px;
+      align-items: start;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2,minmax(0,1fr));
+      gap: 16px;
+    }
+
+    .field { min-width: 0; }
+
+    .field label {
+      display: block;
+      margin-bottom: 6px;
+      font-size: .91rem;
+      font-weight: 750;
+    }
+
+    .field input, .field select {
+      width: 100%;
+      min-width: 0;
+      padding: 12px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: var(--bg);
+      color: var(--text);
+      font: inherit;
+    }
+
+    .field small {
+      display: block;
+      margin-top: 5px;
+      color: var(--muted);
+      font-size: .8rem;
+      line-height: 1.5;
+    }
+
+    .full { grid-column: 1 / -1; }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(2,minmax(0,1fr));
+      gap: 12px;
+    }
+
+    .result-card {
+      min-width: 0;
+      padding: 15px;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 13px;
+    }
+
+    .result-label {
+      display: block;
+      color: var(--muted);
+      font-size: .83rem;
+      line-height: 1.45;
+    }
+
+    .result-value {
+      display: block;
+      margin-top: 5px;
+      font-size: clamp(1.15rem,3vw,1.55rem);
+      font-weight: 850;
+      overflow-wrap: anywhere;
+    }
+
+    .positive { color: var(--green); }
+    .negative { color: var(--red); }
+
+    .status {
+      margin-top: 15px;
+      padding: 13px 15px;
+      background: var(--surface2);
+      border-left: 4px solid var(--primary);
+      border-radius: 9px;
+      font-weight: 650;
+    }
+
+    .status.safe { border-left-color: var(--green); }
+    .status.caution { border-left-color: var(--amber); }
+    .status.danger { border-left-color: var(--red); }
+
+    .notice {
+      margin-top: 18px;
+      padding: 14px 16px;
+      background: var(--surface2);
+      border-left: 4px solid var(--primary);
+      border-radius: 8px;
+    }
+
+    .meter {
+      height: 12px;
+      margin: 12px 0;
+      overflow: hidden;
+      background: var(--border);
+      border-radius: 99px;
+    }
+
+    .meter-fill {
+      width: 0;
+      height: 100%;
+      background: var(--green);
+      transition: width .2s;
+    }
+
+    .content-section { margin-top: 28px; }
+
+    .content-section p,
+    .content-section li { color: var(--muted); }
+
+    .table-wrap { overflow-x: auto; }
+
+    table {
+      width: 100%;
+      min-width: 430px;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 12px;
+      border-bottom: 1px solid var(--border);
+      text-align: left;
+    }
+
+    th { background: var(--surface2); }
+
+    .faq-item {
+      padding: 15px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .faq-item:last-child { border-bottom: 0; }
+    .faq-item h3 { margin: 0 0 8px; }
+    .faq-item p { margin: 0; color: var(--muted); }
+
+    .related-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .related-links a {
+      padding: 9px 13px;
+      background: var(--surface2);
+      border-radius: 9px;
+      text-decoration: none;
+    }
+
+    .site-footer {
+      padding: 30px 0;
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .footer-links a { color: var(--muted); }
+
+    @media (max-width: 800px) {
+      .layout { grid-template-columns: 1fr; }
+      .nav { flex-wrap: wrap; }
+      .nav-links { gap: 10px; }
+      .nav-links a { display: none; }
+    }
+
+    @media (max-width: 460px) {
+      .form-grid, .results-grid { grid-template-columns: 1fr; }
+      .full { grid-column: auto; }
+      .panel { padding: 17px; }
+      .hero { padding-top: 30px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+      }
+    }
+  </style>
+
+  <script>
+    (function () {
+      try {
+        const saved = localStorage.getItem("ezth-theme");
+        const prefersDark = window.matchMedia &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+        document.documentElement.dataset.theme =
+          saved || (prefersDark ? "dark" : "light");
+      } catch (e) {
+        document.documentElement.dataset.theme = "light";
+      }
+    })();
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "EZTradingHub Funded Account Risk Calculator",
+    "url": "https://eztradinghub.com/funded-account-risk-calculator.html",
+    "description": "Free funded trading account calculator for estimating trade risk, daily loss allowance, remaining drawdown and profit targets.",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Any",
+    "browserRequirements": "Requires JavaScript",
+    "isAccessibleForFree": true,
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://eztradinghub.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Calculators",
+        "item": "https://eztradinghub.com/calculators.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Funded Account Risk Calculator",
+        "item": "https://eztradinghub.com/funded-account-risk-calculator.html"
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a funded account risk calculator?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A funded account risk calculator estimates planned cash risk, daily loss allowance, remaining drawdown and potential profit using the account values and trading assumptions entered."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much should I risk on a funded account?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "There is no universally suitable risk percentage. Consider your strategy, loss history, trading costs, account rules and personal financial circumstances when planning trade exposure."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between daily loss and maximum drawdown?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Daily loss limits apply to losses measured over a defined trading day. Maximum drawdown limits apply to losses measured against a specified account reference. The calculation depends on the provider's rules."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does this calculator guarantee that I will keep my funded account?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. The calculator provides estimates for risk planning. It cannot guarantee trading results or compliance with every firm's account rules."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html" aria-label="EZTradingHub homepage">
+        <span class="brand-icon" aria-hidden="true">EZ</span>
+        <span>EZTradingHub</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="calculators.html">Calculators</a>
+        <a href="about.html">About</a>
+      </nav>
+
+      <button type="button" class="theme-toggle"
+        id="themeToggle" aria-pressed="false">🌙 Dark mode</button>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <div class="breadcrumbs">
+        <a href="index.html">Home</a> ›
+        <a href="calculators.html">Calculators</a> ›
+        Funded Account Risk Calculator
+      </div>
+
+      <span class="eyebrow">Free funded trading tool</span>
+      <h1>Funded Account Risk Calculator</h1>
+
+      <p>
+        Manage your funded trading account with a free risk calculator.
+        Estimate risk per trade, daily loss allowance, maximum drawdown,
+        potential loss streak exposure and profit targets before trading.
+      </p>
+
+      <p>
+        Designed for traders who need to monitor prop firm account
+        limits, plan position risk and understand their remaining
+        drawdown room.
+      </p>
+
+      <a href="#calculator" class="button">Calculate Account Risk</a>
+    </div>
+  </section>
+
+  <main class="container">
+    <!-- Optional AdSense placement.
+         Add approved ad code only after account approval.
+         Never click your own ads or generate artificial impressions. -->
+
+    <section class="panel" id="calculator">
+      <h2 class="section-heading">Funded Account Risk Planner</h2>
+
+      <p class="muted">
+        Enter your account details and applicable loss limits.
+        Results update automatically.
+      </p>
+
+      <div class="layout">
+        <form id="riskForm">
+          <div class="form-grid">
+            <div class="field">
+              <label for="balance">Starting account balance ($)</label>
+              <input id="balance" type="number" min="0.01"
+                step="any" value="10000" required>
+            </div>
+
+            <div class="field">
+              <label for="equity">Current account equity ($)</label>
+              <input id="equity" type="number" min="0"
+                step="any" value="10000" required>
+            </div>
+
+            <div class="field">
+              <label for="riskBase">Risk calculated from</label>
+              <select id="riskBase">
+                <option value="balance">Starting balance</option>
+                <option value="equity">Current equity</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="riskPercent">Risk per trade (%)</label>
+              <input id="riskPercent" type="number" min="0"
+                max="100" step="any" value="0.5" required>
+            </div>
+
+            <div class="field">
+              <label for="stopLoss">Stop-loss distance (pips / points)</label>
+              <input id="stopLoss" type="number" min="0"
+                step="any" value="20" required>
+              <small>
+                Used for the illustrative position-size estimate.
+              </small>
+            </div>
+
+            <div class="field">
+              <label for="unitValue">Value per unit per 1.00 lot ($)</label>
+              <input id="unitValue" type="number" min="0"
+                step="any" value="10" required>
+              <small>
+                Verify this value for your symbol and account currency.
+              </small>
+            </div>
+
+            <div class="field">
+              <label for="dailyLimit">Daily loss limit (%)</label>
+              <input id="dailyLimit" type="number" min="0"
+                max="100" step="any" value="5" required>
+            </div>
+
+            <div class="field">
+              <label for="dailyReference">Daily limit reference ($)</label>
+              <input id="dailyReference" type="number" min="0"
+                step="any" value="10000" required>
+              <small>
+                Enter the reference specified by your firm.
+              </small>
+            </div>
+
+            <div class="field">
+              <label for="dailyLoss">Loss counted today ($)</label>
+              <input id="dailyLoss" type="number" min="0"
+                step="any" value="0" required>
+            </div>
+
+            <div class="field">
+              <label for="buffer">Daily safety buffer (%)</label>
+              <input id="buffer" type="number" min="0"
+                max="90" step="any" value="20" required>
+            </div>
+
+            <div class="field">
+              <label for="maxDrawdown">Maximum drawdown (%)</label>
+              <input id="maxDrawdown" type="number" min="0"
+                max="100" step="any" value="10" required>
+            </div>
+
+            <div class="field">
+              <label for="maxReference">Overall drawdown reference ($)</label>
+              <input id="maxReference" type="number" min="0"
+                step="any" value="10000" required>
+            </div>
+
+            <div class="field">
+              <label for="drawdownUsed">Overall drawdown used ($)</label>
+              <input id="drawdownUsed" type="number" min="0"
+                step="any" value="0" required>
+              <small>
+                Enter losses against your firm's actual drawdown
+                threshold, not simply every historical losing trade.
+              </small>
+            </div>
+
+            <div class="field">
+              <label for="profitTarget">Profit target (%)</label>
+              <input id="profitTarget" type="number" min="0"
+                max="1000" step="any" value="8" required>
+            </div>
+
+            <div class="field">
+              <label for="currentProfit">Progress toward target ($)</label>
+              <input id="currentProfit" type="number"
+                step="any" value="0" required>
+            </div>
+
+            <div class="field">
+              <label for="riskReward">Risk-to-reward ratio</label>
+              <select id="riskReward">
+                <option value="1">1:1</option>
+                <option value="1.5">1:1.5</option>
+                <option value="2" selected>1:2</option>
+                <option value="3">1:3</option>
+                <option value="4">1:4</option>
+                <option value="5">1:5</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="lotStep">Lot-size increment</label>
+              <input id="lotStep" type="number" min="0.000001"
+                step="any" value="0.01" required>
+            </div>
+
+            <div class="field">
+              <label for="lossStreak">Consecutive losses to model</label>
+              <input id="lossStreak" type="number" min="0"
+                max="100" step="1" value="3" required>
+            </div>
+
+            <div class="field">
+              <label for="costPerTrade">Estimated costs per trade ($)</label>
+              <input id="costPerTrade" type="number" min="0"
+                step="any" value="0" required>
+              <small>
+                Optional estimate of additional costs per trade.
+              </small>
+            </div>
+          </div>
+
+          <div class="actions">
+            <button type="submit" class="button">Calculate Risk</button>
+            <button type="reset" class="secondary-button">Reset Values</button>
+          </div>
+        </form>
+
+        <div aria-live="polite" aria-atomic="false">
+          <h3>Account Risk Results</h3>
+
+          <div class="results-grid">
+            <div class="result-card">
+              <span class="result-label">Cash risk per trade</span>
+              <strong class="result-value" id="riskCash">$50.00</strong>
+            </div>
+
+            <div class="result-card">
+              <span class="result-label">Estimated position size</span>
+              <strong class="result-value" id="lotSize">0.12 lots</strong>
+            </div>
+
+            <div class="result-card">
+              <span class="result-label">Daily loss limit</span>
+              <strong class="result-value" id="dailyCap">$500.00</strong>
+            </div>
+
+            <div class="result-card">
+              <span class="result-label">Daily limit remaining</span>
+              <strong class="result-value" id="dailyRemaining">$500.00</strong>
+            </div>
+
+            <div class="result-card">
+              <span class="result-label">Daily usable room after buffer</span>
+              <strong class="result-value" id="dailyUsable">$400.00</strong>
+            </div>
+
+            <div class="result-card">
+              <span class="result-label">Overall drawdown allowance</span>
+              <strong class="result-value" id="maxCap">$1,000.00</strong>
+            </div>
+
+            <div class="result-card">
+              <span class="result-label">Remaining drawdown room</span>
+              <strong class="result-value" id="maxRemaining">$1,000.00</strong>
+            </div>
+
+            <div class="result-card">
+              <span class="result-label">Potential target profit</span>
+              <strong class="result-value positive" id="targetProfit">$100.00</strong>
+            </div>
+
+            <div class="result-card">
+              <span class="result-label">Profit target remaining</span>
+              <strong class="result-value" id="profitRemaining">$800.00</strong>
+            </div>
+
+            <div class="result-card">
+              <span class="result-label">Modelled loss streak</span>
+              <strong class="result-value negative" id="streakLoss">$150.00</strong>
+            </div>
+          </div>
+
+          <h3>Daily Loss Limit Usage</h3>
+          <div class="meter" id="dailyMeter" role="progressbar"
+            aria-label="Daily loss limit usage"
+            aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+            <div class="meter-fill" id="dailyMeterFill"></div>
+          </div>
+          <p class="muted" id="dailyUsageText">0% of daily limit used.</p>
+
+          <div class="status safe" id="status" role="status">
+            Enter your account details to review the risk estimates.
+          </div>
+
+          <div class="notice">
+            <strong>Important:</strong> Daily and overall loss calculations
+            are only estimates based on your entered reference values.
+            Some firms use trailing equity thresholds, floating losses,
+            different reset times and additional breach rules.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel content-section">
+      <h2>Example: Managing a $10,000 Funded Account</h2>
+
+      <p>
+        Consider a funded account with a $10,000 starting balance,
+        a 5% daily loss limit, a 10% overall drawdown limit and a
+        planned risk of 0.5% per trade.
+      </p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Metric</th>
+              <th scope="col">Example value</th>
+              <th scope="col">Explanation</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Risk per trade</td>
+              <td>$50</td>
+              <td>0.5% of $10,000</td>
+            </tr>
+            <tr>
+              <td>Daily loss limit</td>
+              <td>$500</td>
+              <td>5% of a $10,000 reference</td>
+            </tr>
+            <tr>
+              <td>Daily room after 20% buffer</td>
+              <td>$400</td>
+              <td>Assuming no daily losses yet</td>
+            </tr>
+            <tr>
+              <td>Maximum drawdown allowance</td>
+              <td>$1,000</td>
+              <td>10% of a fixed $10,000 reference</td>
+            </tr>
+            <tr>
+              <td>Target profit at 8%</td>
+              <td>$800</td>
+              <td>Based on starting balance</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="muted">
+        This is an educational example, not a universal prop firm
+        specification or a recommendation to risk these amounts.
+      </p>
+    </section>
+
+    <section class="panel content-section">
+      <h2>How to Use This Funded Account Risk Calculator</h2>
+
+      <ol>
+        <li>
+          <strong>Enter your starting balance and current equity.</strong>
+          Use the appropriate reference for your risk calculation.
+        </li>
+        <li>
+          <strong>Choose your risk percentage.</strong>
+          Model your planned cash exposure before placing a trade.
+        </li>
+        <li>
+          <strong>Enter your daily loss rules.</strong>
+          Specify the daily threshold, its reference amount, the losses
+          already counted and your chosen safety buffer.
+        </li>
+        <li>
+          <strong>Enter the overall drawdown rules.</strong>
+          Confirm the reference balance and the amount of drawdown
+          already used according to your firm's calculation.
+        </li>
+        <li>
+          <strong>Review position size and potential profit.</strong>
+          The lot-size estimate depends on your stop distance and
+          the monetary value per movement unit per lot.
+        </li>
+        <li>
+          <strong>Review the loss-streak illustration.</strong>
+          Compare a series of hypothetical losses with the available
+          allowance. This does not predict how many trades you will lose.
+        </li>
+      </ol>
+    </section>
+
+    <section class="panel content-section">
+      <h2>Understanding Funded Account Risk Management</h2>
+
+      <h3>Daily loss limit</h3>
+      <p>
+        A daily loss limit restricts losses over a specified trading
+        day. Providers may use the balance or equity at the daily
+        reset, and may count floating P/L, fees and commissions.
+        Confirm the provider's exact definition and reset time.
+      </p>
+
+      <h3>Maximum drawdown</h3>
+      <p>
+        An overall drawdown threshold defines how far an account may
+        fall before breaching a rule. A fixed threshold may use the
+        starting balance, while a trailing threshold may change as
+        the account balance or equity changes.
+      </p>
+
+      <h3>Risk per trade</h3>
+      <p>
+        Risk per trade is the planned amount that may be lost if the
+        stop-loss is executed at the expected price. Actual losses
+        can be larger because of gaps, slippage, spreads, commissions
+        and execution conditions.
+      </p>
+
+      <h3>Loss-streak planning</h3>
+      <p>
+        Modelling consecutive losses can help you understand how a
+        fixed cash risk could affect an account. The illustration
+        assumes the same planned cash risk on each trade. Real
+        trading outcomes and position sizes can differ.
+      </p>
+
+      <h3>Why leave a safety buffer?</h3>
+      <p>
+        A buffer leaves room for trading costs and unexpected
+        execution differences. The calculator's buffer is a
+        user-defined planning allowance, not an official prop firm
+        rule or guarantee against a breach.
+      </p>
+    </section>
+
+    <section class="panel content-section">
+      <h2>Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <h3>1. What is a funded account risk calculator?</h3>
+        <p>
+          It helps traders estimate cash risk per trade, daily loss
+          allowance, remaining drawdown and potential profit based
+          on their account details and chosen trading assumptions.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>2. How much should I risk per trade on a funded account?</h3>
+        <p>
+          There is no universally appropriate percentage. Consider
+          your strategy, historical losses, trading costs, account
+          restrictions and personal financial circumstances.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>3. Does daily drawdown use balance or equity?</h3>
+        <p>
+          It depends on the provider. Some firms include floating
+          losses and fees in their calculations. Read the official
+          account rules rather than assuming every firm uses the
+          same method.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>4. Can I use this calculator for gold or forex?</h3>
+        <p>
+          Yes, for illustrative cash-risk estimates when the monetary
+          value per movement unit is correct for the instrument,
+          trade size and account currency. Contract specifications
+          vary between brokers.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>5. Does the calculator guarantee that I will keep my account?</h3>
+        <p>
+          No. It provides planning estimates and cannot guarantee
+          profits, prevent all losses or establish compliance with
+          every firm's trading rules.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>6. What does remaining drawdown mean?</h3>
+        <p>
+          It is the difference between the entered overall loss
+          allowance and the drawdown amount you enter as already used.
+          Your firm's actual calculation may differ, especially if
+          it uses a trailing or equity-based threshold.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>7. Why is my broker's position size different?</h3>
+        <p>
+          Pip value, contract size, account currency, permitted lot
+          increments, commissions and execution can affect the
+          effective trade risk. Verify your broker's instrument
+          specifications before trading.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>8. Is this calculator free?</h3>
+        <p>
+          Yes. EZTradingHub provides this calculator free for
+          educational planning and risk estimation.
+        </p>
+      </div>
+    </section>
+
+    <section class="panel content-section">
+      <h2>Explore More EZTradingHub Calculators</h2>
+
+      <p>
+        Use these related tools to calculate trade size, exposure
+        and other trading metrics.
+      </p>
+
+      <div class="related-links">
+        <a href="prop-firm-risk-calculator.html">Prop Firm Risk Calculator</a>
+        <a href="prop-firm-position-size-calculator.html">Prop Firm Position Size Calculator</a>
+        <a href="risk-calculator.html">Risk Calculator</a>
+        <a href="lot-size-calculator.html">Lot Size Calculator</a>
+        <a href="pip-calculator.html">Pip Calculator</a>
+        <a href="gold-pip-calculator.html">Gold Pip Calculator</a>
+        <a href="profit-calculator.html">Profit Calculator</a>
+        <a href="margin-calculator.html">Margin Calculator</a>
+        <a href="drawdown-calculator.html">Drawdown Calculator</a>
+        <a href="risk-reward-calculator.html">Risk-Reward Calculator</a>
+        <a href="calculators.html">All Calculators</a>
+      </div>
+
+      <p class="muted">
+        Make sure each link matches a page that actually exists
+        on your website.
+      </p>
+    </section>
+
+    <section class="panel content-section">
+      <h2>Risk Disclaimer</h2>
+
+      <p>
+        EZTradingHub provides educational tools and general information,
+        not personalized financial advice or investment recommendations.
+        Forex, CFDs, gold, cryptocurrencies and other leveraged
+        instruments involve substantial risk and can result in losses.
+        All calculations are estimates based on user inputs and do not
+        guarantee execution prices, profits, challenge success or
+        compliance with any provider's rules. Verify account terms,
+        contract specifications and trading costs independently.
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p><strong>EZTradingHub</strong> — Smart Trading Tools</p>
+      <p class="muted">
+        Free calculators and educational resources for traders.
+      </p>
+
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="faq.html">FAQ</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="cookie-policy.html">Cookie Policy</a>
+        <a href="terms.html">Terms</a>
+        <a href="disclaimer.html">Disclaimer</a>
+      </nav>
+
+      <p class="muted">
+        © <span id="year"></span> EZTradingHub. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      "use strict";
+
+      const $ = id => document.getElementById(id);
+      const form = $("riskForm");
+
+      const ids = [
+        "balance", "equity", "riskPercent", "stopLoss",
+        "unitValue", "dailyLimit", "dailyReference",
+        "dailyLoss", "buffer", "maxDrawdown", "maxReference",
+        "drawdownUsed", "profitTarget", "currentProfit",
+        "lotStep", "lossStreak", "costPerTrade"
+      ];
+
+      function number(id) {
+        return Number($(id).value);
+      }
+
+      function money(value) {
+        return value.toLocaleString("en-US", {
+          style: "currency",
+          currency: "USD",
+          minimumFractionDigits: 2,
+          maximumFractionDigits: 2
+        });
+      }
+
+      function fmt(value, decimals = 2) {
+        return value.toLocaleString("en-US", {
+          minimumFractionDigits: 0,
+          maximumFractionDigits: decimals
+        });
+      }
+
+      function setText(id, value) {
+        $(id).textContent = value;
+      }
+
+      function setSign(id, value) {
+        const element = $(id);
+        element.classList.remove("positive", "negative");
+
+        if (value < 0) {
+          element.classList.add("negative");
+        } else if (value > 0) {
+          element.classList.add("positive");
+        }
+      }
+
+      function calculate(event) {
+        if (event) event.preventDefault();
+        if (!form.reportValidity()) return;
+
+        const v = {};
+        ids.forEach(id => v[id] = number(id));
+
+        const status = $("status");
+
+        const positiveFields = [
+          "balance", "riskPercent", "dailyReference",
+          "maxReference", "lotStep"
+        ];
+
+        for (const id of positiveFields) {
+          if (!Number.isFinite(v[id]) || v[id] <= 0) {
+            status.className = "status danger";
+            setText(status.id,
+              "Please enter valid positive values for required fields.");
+            return;
+          }
+        }
+
+        const nonNegativeFields = [
+          "equity", "stopLoss", "unitValue", "dailyLimit",
+          "dailyLoss", "maxDrawdown", "drawdownUsed",
+          "profitTarget", "currentProfit", "costPerTrade"
+        ];
+
+        for (const id of nonNegativeFields) {
+          if (!Number.isFinite(v[id]) || v[id] < 0) {
+            status.className = "status danger";
+            setText(status.id,
+              "Please check your entries. Negative values are not allowed in these fields.");
+            return;
+          }
+        }
+
+        if (
+          v.riskPercent > 100 ||
+          v.dailyLimit > 100 ||
+          v.maxDrawdown > 100 ||
+          v.buffer < 0 ||
+          v.buffer > 90 ||
+          v.profitTarget > 1000 ||
+          v.lossStreak < 0 ||
+          v.lossStreak > 100 ||
+          !Number.isInteger(v.lossStreak)
+        ) {
+          status.className = "status danger";
+          setText(status.id,
+            "Check the risk percentages, safety buffer, profit target and loss streak.");
+          return;
+        }
+
+        const capital = $("riskBase").value === "equity"
+          ? v.equity
+          : v.balance;
+
+        const cashRisk = capital * v.riskPercent / 100;
+
+        // Optional illustrative lot-size calculation.
+        // This assumes unitValue correctly reflects the chosen
+        // movement unit per 1.00 lot in the account currency.
+        const hasPositionInputs = v.stopLoss > 0 && v.unitValue > 0;
+        const riskPerLot = v.stopLoss * v.unitValue;
+        const rawLots = hasPositionInputs && riskPerLot > 0
+          ? Math.max(0, cashRisk - v.costPerTrade) / riskPerLot
+          : 0;
+
+        const lots = Math.floor(
+          (rawLots + v.lotStep * 1e-10) / v.lotStep
+        ) * v.lotStep;
+
+        const roundedLots = Number(lots.toFixed(8));
+        const positionSize = hasPositionInputs
+          ? roundedLots.toFixed(4).replace(/\.?0+$/, "") + " lots"
+          : "Enter stop and value";
+
+        const estimatedPriceRisk = hasPositionInputs
+          ? roundedLots * riskPerLot
+          : cashRisk;
+
+        const estimatedTotalRisk = hasPositionInputs
+          ? estimatedPriceRisk + roundedLots * v.costPerTrade
+          : cashRisk;
+
+        const rr = Number($("riskReward").value);
+        const targetProfit = hasPositionInputs
+          ? estimatedPriceRisk * rr
+          : cashRisk * rr;
+
+        const dailyCap = v.dailyReference * v.dailyLimit / 100;
+        const dailyRemaining = dailyCap - v.dailyLoss;
+        const dailyUsable =
+          dailyCap * (1 - v.buffer / 100) - v.dailyLoss;
+
+        const maxCap = v.maxReference * v.maxDrawdown / 100;
+        const maxRemaining = maxCap - v.drawdownUsed;
+
+        const targetAmount = v.balance * v.profitTarget / 100;
+        const profitRemaining = Math.max(
+          0, targetAmount - v.currentProfit
+        );
+
+        // Constant-cash-risk illustration, not a forecast.
+        const streakLoss = v.lossStreak * cashRisk;
+
+        const dailyUsage = dailyCap > 0
+          ? Math.max(0, Math.min(100, v.dailyLoss / dailyCap * 100))
+          : 0;
+
+        setText("riskCash", money(cashRisk));
+        setText("lotSize", positionSize);
+        setText("dailyCap", money(dailyCap));
+        setText("dailyRemaining", money(dailyRemaining));
+        setText("dailyUsable", money(dailyUsable));
+        setText("maxCap", money(maxCap));
+        setText("maxRemaining", money(maxRemaining));
+        setText("targetProfit", money(targetProfit));
+        setText("profitRemaining", money(profitRemaining));
+        setText("streakLoss", money(streakLoss));
+
+        [
+          ["dailyRemaining", dailyRemaining],
+          ["dailyUsable", dailyUsable],
+          ["maxRemaining", maxRemaining],
+          ["profitRemaining", profitRemaining]
+        ].forEach(([id, value]) => setSign(id, value));
+
+        $("dailyMeterFill").style.width = dailyUsage + "%";
+        $("dailyMeter").setAttribute(
+          "aria-valuenow", String(Math.round(dailyUsage))
+        );
+
+        setText("dailyUsageText",
+          fmt(dailyUsage, 1) +
+          "% of the entered daily loss limit used."
+        );
+
+        status.className = "status safe";
+
+        if (capital <= 0) {
+          status.className = "status danger";
+          setText("status",
+            "The selected capital must be greater than zero to calculate a cash risk amount.");
+          return;
+        }
+
+        if (dailyRemaining <= 0 ||
+            dailyUsable <= 0 ||
+            maxRemaining <= 0) {
+          status.className = "status danger";
+          setText("status",
+            "Warning: Your entered figures show that a daily usable allowance or overall drawdown room has been exhausted. Verify your firm's rules before taking further action.");
+          return;
+        }
+
+        if (dailyUsage >= 80 ||
+            estimatedTotalRisk > dailyUsable ||
+            estimatedTotalRisk > maxRemaining) {
+          status.className = "status caution";
+          setText("status",
+            "Caution: The planned cash risk is large relative to one or more remaining allowances, or daily loss usage is high. Consider a larger buffer and verify all trading costs.");
+          return;
+        }
+
+        if (v.lossStreak > 0 && streakLoss >= dailyUsable) {
+          status.className = "status caution";
+          setText("status",
+            "Caution: The modelled loss streak equals or exceeds the daily usable room. The streak is hypothetical; review your risk settings and firm's loss rules.");
+          return;
+        }
+
+        setText("status",
+          "Calculations updated. Confirm your account reference values, instrument specifications and official drawdown rules before trading.");
+      }
+
+      form.addEventListener("input", calculate);
+      form.addEventListener("change", calculate);
+      form.addEventListener("submit", calculate);
+      form.addEventListener("reset", function () {
+        window.setTimeout(calculate, 0);
+      });
+
+      const themeToggle = $("themeToggle");
+
+      function updateThemeButton() {
+        const dark =
+          document.documentElement.dataset.theme === "dark";
+
+        themeToggle.textContent = dark
+          ? "☀️ Light mode"
+          : "🌙 Dark mode";
+
+        themeToggle.setAttribute("aria-pressed", String(dark));
+      }
+
+      themeToggle.addEventListener("click", function () {
+        const current = document.documentElement.dataset.theme;
+        const next = current === "dark" ? "light" : "dark";
+
+        document.documentElement.dataset.theme = next;
+
+        try {
+          localStorage.setItem("ezth-theme", next);
+        } catch (e) {
+          // Theme switching still works for this page session.
+        }
+
+        updateThemeButton();
+      });
+
+      $("year").textContent = new Date().getFullYear();
+
+      updateThemeButton();
+      calculate();
+    })();
+  </script>
+</body>
+</html>
