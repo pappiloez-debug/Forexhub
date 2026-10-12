@@ -1,0 +1,1510 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B5T8QM08CE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-B5T8QM08CE');
+</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Prop Firm Profit Calculator | Funded Account Profit Target</title>
+  <meta name="description" content="Use the free EZTradingHub prop firm profit calculator to estimate trading profit, net profit after costs, account growth, challenge target progress and funded account profit targets.">
+  <meta name="keywords" content="prop firm profit calculator, funded account profit calculator, prop firm challenge profit target calculator, FundedNext profit calculator, forex profit calculator, funded trader profit target, prop trading calculator, trading profit and loss calculator, prop firm evaluation calculator, funded account growth calculator">
+  <meta name="author" content="EZTradingHub">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#0b1730">
+
+  <link rel="canonical" href="https://eztradinghub.com/prop-firm-profit-calculator.html">
+  <link rel="icon" href="/favicon.ico">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="EZTradingHub">
+  <meta property="og:title" content="Prop Firm Profit Calculator | EZTradingHub">
+  <meta property="og:description" content="Estimate trading profit, net returns and prop firm challenge target progress with this free funded account profit calculator.">
+  <meta property="og:url" content="https://eztradinghub.com/prop-firm-profit-calculator.html">
+  <meta property="og:image" content="https://eztradinghub.com/assets/images/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Prop Firm Profit Calculator">
+  <meta name="twitter:description" content="Calculate potential trading profit and track your funded account profit target.">
+  <meta name="twitter:image" content="https://eztradinghub.com/assets/images/og-image.jpg">
+
+  <script>
+    (function () {
+      try {
+        var theme = localStorage.getItem("ezth-theme");
+        if (theme !== "light" && theme !== "dark") {
+          theme = window.matchMedia &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark" : "light";
+        }
+        document.documentElement.dataset.theme = theme;
+      } catch (e) {
+        document.documentElement.dataset.theme = "light";
+      }
+    })();
+  </script>
+
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f3f6fb;
+      --surface: #ffffff;
+      --surface2: #eaf0f9;
+      --text: #17243b;
+      --muted: #627089;
+      --border: #dce4ef;
+      --primary: #0758ca;
+      --accent: #ffb400;
+      --green: #087b51;
+      --greenbg: #e5f7ee;
+      --red: #c33142;
+      --redbg: #fff0f1;
+      --shadow: 0 10px 32px rgba(15,35,70,.07);
+    }
+
+    html[data-theme="dark"] {
+      color-scheme: dark;
+      --bg: #09111f;
+      --surface: #111e31;
+      --surface2: #1a2a43;
+      --text: #eef4ff;
+      --muted: #adbad0;
+      --border: #2b3d57;
+      --primary: #85b7ff;
+      --accent: #ffca45;
+      --green: #72e2b1;
+      --greenbg: #14382f;
+      --red: #ff9ba5;
+      --redbg: #411f2a;
+      --shadow: 0 10px 32px rgba(0,0,0,.2);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
+      line-height: 1.7;
+      font-size: 16px;
+    }
+
+    a { color: var(--primary); }
+
+    button, input, select { font: inherit; }
+
+    button:focus-visible,
+    input:focus-visible,
+    select:focus-visible,
+    a:focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 3px;
+    }
+
+    .site-header {
+      background: #0b1730;
+      color: #fff;
+      border-bottom: 3px solid var(--accent);
+    }
+
+    .header-inner {
+      max-width: 1140px;
+      margin: auto;
+      padding: 14px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.18rem;
+      font-weight: 850;
+    }
+
+    .brand-icon {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      background: var(--accent);
+      color: #111827;
+      font-weight: 950;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .header-link {
+      color: #e3edff;
+      text-decoration: none;
+      font-size: .9rem;
+    }
+
+    .theme-toggle {
+      background: #192945;
+      color: #fff;
+      border: 1px solid #40516d;
+      border-radius: 10px;
+      padding: 9px 12px;
+      cursor: pointer;
+    }
+
+    .container {
+      width: min(100% - 32px, 1060px);
+      margin-inline: auto;
+    }
+
+    .breadcrumbs {
+      padding-top: 17px;
+      font-size: .87rem;
+      color: var(--muted);
+    }
+
+    .breadcrumbs a { text-decoration: none; }
+
+    .hero { padding: 35px 0 27px; }
+
+    .eyebrow {
+      display: inline-block;
+      background: var(--surface2);
+      color: var(--primary);
+      padding: 5px 11px;
+      border-radius: 30px;
+      font-size: .78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .6px;
+    }
+
+    h1, h2, h3 { line-height: 1.27; }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 3.15rem);
+      letter-spacing: -1px;
+      margin: 15px 0;
+    }
+
+    h2 {
+      font-size: clamp(1.4rem, 3vw, 1.95rem);
+      letter-spacing: -.4px;
+      margin-top: 0;
+    }
+
+    h3 { font-size: 1.12rem; }
+
+    .hero p {
+      color: var(--muted);
+      max-width: 790px;
+      font-size: 1.06rem;
+    }
+
+    .hero-actions, .form-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 0;
+      border-radius: 10px;
+      background: var(--primary);
+      color: #fff;
+      padding: 12px 17px;
+      text-decoration: none;
+      font-weight: 750;
+      cursor: pointer;
+    }
+
+    html[data-theme="dark"] .button {
+      color: #09111f;
+    }
+
+    .button-secondary {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text) !important;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.6fr) minmax(240px, .75fr);
+      align-items: start;
+      gap: 22px;
+      padding-bottom: 28px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+      min-width: 0;
+    }
+
+    .card + .card { margin-top: 20px; }
+
+    .muted, .small { color: var(--muted); }
+    .small { font-size: .86rem; }
+
+    .field-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .field { min-width: 0; }
+
+    .field label {
+      display: block;
+      font-weight: 750;
+      font-size: .9rem;
+      margin-bottom: 6px;
+    }
+
+    .field input, .field select {
+      width: 100%;
+      min-height: 46px;
+      padding: 10px 12px;
+      background: var(--bg);
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+    }
+
+    .field input:disabled,
+    .field select:disabled {
+      opacity: .6;
+    }
+
+    .full { grid-column: 1 / -1; }
+
+    .results {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .result-box {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 13px;
+      padding: 15px;
+      overflow-wrap: anywhere;
+    }
+
+    .result-label {
+      display: block;
+      font-size: .82rem;
+      color: var(--muted);
+      margin-bottom: 5px;
+    }
+
+    .result-value {
+      display: block;
+      font-size: clamp(1.12rem, 3vw, 1.55rem);
+      font-weight: 850;
+      line-height: 1.4;
+    }
+
+    .result-note {
+      color: var(--muted);
+      font-size: .79rem;
+      margin-top: 5px;
+    }
+
+    .status {
+      padding: 13px 15px;
+      margin-top: 15px;
+      border-radius: 11px;
+      background: var(--greenbg);
+      color: var(--green);
+      font-weight: 700;
+    }
+
+    .status.warning {
+      background: var(--redbg);
+      color: var(--red);
+    }
+
+    .status.neutral {
+      background: var(--surface2);
+      color: var(--text);
+    }
+
+    .notice {
+      background: var(--surface2);
+      border-left: 4px solid var(--accent);
+      padding: 14px 16px;
+      border-radius: 8px;
+    }
+
+    .side-nav {
+      padding-left: 20px;
+      margin-bottom: 0;
+    }
+
+    .side-nav li { margin: 10px 0; }
+
+    .side-nav a {
+      text-decoration: none;
+      font-weight: 650;
+    }
+
+    .content-section p,
+    .content-section li { color: var(--muted); }
+
+    .content-section strong { color: var(--text); }
+
+    .example-table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 18px 0;
+      font-size: .92rem;
+    }
+
+    .example-table th,
+    .example-table td {
+      text-align: left;
+      padding: 11px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .example-table th {
+      background: var(--surface2);
+      color: var(--text);
+    }
+
+    .faq-item {
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .faq-item:last-child { border-bottom: 0; }
+    .faq-item h3 { margin: 0 0 8px; }
+    .faq-item p { margin: 0; color: var(--muted); }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .related-link {
+      display: block;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px;
+      background: var(--surface);
+      text-decoration: none;
+      font-weight: 750;
+    }
+
+    .related-link span {
+      display: block;
+      margin-top: 5px;
+      color: var(--muted);
+      font-size: .84rem;
+      font-weight: 400;
+    }
+
+    .site-footer {
+      background: #0b1730;
+      color: #d9e4f6;
+      margin-top: 25px;
+      padding: 30px 0;
+    }
+
+    .footer-inner {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 25px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 16px;
+    }
+
+    .footer-links a { color: #d9e4f6; }
+
+    .disclaimer {
+      margin-top: 20px;
+      color: #bdc9dc;
+      font-size: .84rem;
+    }
+
+    [hidden] { display: none !important; }
+
+    @media(max-width: 760px) {
+      .layout { grid-template-columns: 1fr; }
+      .footer-inner { grid-template-columns: 1fr; }
+      .header-link { display: none; }
+      .card { padding: 19px; }
+    }
+
+    @media(max-width: 430px) {
+      .container { width: min(100% - 22px, 1060px); }
+      .field-grid, .results, .related-grid {
+        grid-template-columns: 1fr;
+      }
+      .full { grid-column: auto; }
+      .card { padding: 16px; }
+      .brand { font-size: 1rem; }
+      .brand-icon { width: 36px; height: 36px; }
+      .theme-toggle { padding: 8px; font-size: .83rem; }
+    }
+
+    @media(prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+      }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "EZTradingHub Prop Firm Profit Calculator",
+    "url": "https://eztradinghub.com/prop-firm-profit-calculator.html",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Any",
+    "isAccessibleForFree": true,
+    "description": "A free browser-based calculator for estimating trading profit, net profit after costs and prop firm challenge profit target progress.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "EZTradingHub",
+      "url": "https://eztradinghub.com/"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://eztradinghub.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Calculators",
+        "item": "https://eztradinghub.com/calculators.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Prop Firm Profit Calculator",
+        "item": "https://eztradinghub.com/prop-firm-profit-calculator.html"
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="index.html" aria-label="EZTradingHub home">
+      <span class="brand-icon" aria-hidden="true">EZ</span>
+      <span>EZTradingHub</span>
+    </a>
+
+    <div class="header-actions">
+      <a class="header-link" href="calculators.html">All Calculators</a>
+      <button class="theme-toggle" id="themeToggle"
+        type="button" aria-pressed="false">
+        <span id="themeIcon" aria-hidden="true">☾</span>
+        <span id="themeText">Dark mode</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <a href="index.html">Home</a> &rsaquo;
+    <a href="calculators.html">Trading Calculators</a> &rsaquo;
+    <span aria-current="page">Prop Firm Profit Calculator</span>
+  </nav>
+
+  <section class="hero">
+    <span class="eyebrow">Free trading calculator</span>
+    <h1>Prop Firm Profit Calculator</h1>
+    <p>
+      Estimate potential trade profit, net profit after trading costs,
+      account return and progress toward a prop firm challenge target.
+      Use this funded account profit calculator to explore different
+      scenarios before comparing them with your provider's actual rules.
+    </p>
+    <div class="hero-actions">
+      <a class="button" href="#calculator">Calculate Profit</a>
+      <a class="button button-secondary" href="#guide">Read the Guide</a>
+    </div>
+  </section>
+
+  <div class="layout">
+    <div>
+      <section class="card" id="calculator">
+        <h2>Trading Profit Calculator</h2>
+        <p class="muted">
+          Choose a calculation method and enter your own assumptions.
+          All calculations run in your browser.
+        </p>
+
+        <form id="profitForm">
+          <div class="field-grid">
+            <div class="field">
+              <label for="currency">Account currency</label>
+              <select id="currency">
+                <option value="USD">USD ($)</option>
+                <option value="EUR">EUR (€)</option>
+                <option value="GBP">GBP (£)</option>
+                <option value="NGN">NGN (₦)</option>
+                <option value="CAD">CAD (C$)</option>
+                <option value="AUD">AUD (A$)</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="account">Starting account balance</label>
+              <input id="account" type="number" min="0.01"
+                step="any" value="10000" required>
+            </div>
+
+            <div class="field full">
+              <label for="method">Calculation method</label>
+              <select id="method">
+                <option value="trade">Trade price movement</option>
+                <option value="percent">Profit or loss as account percentage</option>
+                <option value="target">Prop firm challenge target planner</option>
+              </select>
+            </div>
+
+            <div class="field" id="directionField">
+              <label for="direction">Trade direction</label>
+              <select id="direction">
+                <option value="buy">Buy / Long</option>
+                <option value="sell">Sell / Short</option>
+              </select>
+            </div>
+
+            <div class="field" id="entryField">
+              <label for="entry">Entry price</label>
+              <input id="entry" type="number" min="0.00000001"
+                step="any" value="2350">
+            </div>
+
+            <div class="field" id="exitField">
+              <label for="exit">Exit price</label>
+              <input id="exit" type="number" min="0.00000001"
+                step="any" value="2360">
+            </div>
+
+            <div class="field" id="valueField">
+              <label for="valuePerPrice">
+                Monetary value per 1.0 price movement
+              </label>
+              <input id="valuePerPrice" type="number" min="0.00000001"
+                step="any" value="1">
+              <span class="small">
+                Monetary value for your full position and a 1.0 price
+                movement, in the selected account currency.
+              </span>
+            </div>
+
+            <div class="field" id="percentField" hidden>
+              <label for="profitPercent">Profit or loss (%)</label>
+              <input id="profitPercent" type="number" step="any"
+                value="2">
+              <span class="small">
+                Enter a negative percentage for a loss.
+              </span>
+            </div>
+
+            <div class="field" id="targetPercentField" hidden>
+              <label for="targetPercent">Challenge profit target (%)</label>
+              <input id="targetPercent" type="number" min="0.01"
+                step="any" value="8">
+            </div>
+
+            <div class="field" id="currentProfitField" hidden>
+              <label for="currentProfit">Profit already accumulated</label>
+              <input id="currentProfit" type="number" step="any"
+                value="300">
+              <span class="small">
+                Enter cumulative profit or loss in account currency.
+              </span>
+            </div>
+
+            <div class="field" id="targetBalanceField" hidden>
+              <label for="targetBalance">Alternative target balance</label>
+              <input id="targetBalance" type="number" min="0"
+                step="any" placeholder="Optional">
+              <span class="small">
+                Optional. If supplied, this balance overrides the
+                percentage-based target balance.
+              </span>
+            </div>
+
+            <div class="field">
+              <label for="costs">Estimated total costs</label>
+              <input id="costs" type="number" min="0" step="any"
+                value="2" required>
+              <span class="small">
+                Estimated commission, spread and other costs for the
+                trade or scenario. Enter zero if excluded.
+              </span>
+            </div>
+
+            <div class="field">
+              <label for="extraProfit">Other profit adjustment</label>
+              <input id="extraProfit" type="number" step="any"
+                value="0">
+              <span class="small">
+                Optional monetary adjustment, such as another known
+                charge or credit. Use a negative number for a deduction.
+              </span>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button class="button" type="submit">Calculate Results</button>
+            <button class="button button-secondary" type="button"
+              id="reset">Reset Example</button>
+          </div>
+        </form>
+
+        <div id="results" aria-live="polite" aria-atomic="true">
+          <h3 style="margin-top:25px">Your Results</h3>
+
+          <div class="results">
+            <div class="result-box">
+              <span class="result-label">Gross profit / loss</span>
+              <output id="grossResult" class="result-value">—</output>
+            </div>
+
+            <div class="result-box">
+              <span class="result-label">Estimated net profit / loss</span>
+              <output id="netResult" class="result-value">—</output>
+            </div>
+
+            <div class="result-box">
+              <span class="result-label">Return on starting balance</span>
+              <output id="returnResult" class="result-value">—</output>
+            </div>
+
+            <div class="result-box">
+              <span class="result-label">Estimated ending balance</span>
+              <output id="balanceResult" class="result-value">—</output>
+            </div>
+
+            <div class="result-box">
+              <span class="result-label">Challenge target amount</span>
+              <output id="targetResult" class="result-value">—</output>
+            </div>
+
+            <div class="result-box">
+              <span class="result-label">Target progress</span>
+              <output id="progressResult" class="result-value">—</output>
+              <div class="result-note">Based on the target planner inputs</div>
+            </div>
+
+            <div class="result-box">
+              <span class="result-label">Profit still required</span>
+              <output id="remainingResult" class="result-value">—</output>
+            </div>
+
+            <div class="result-box">
+              <span class="result-label">Balance at target</span>
+              <output id="targetBalanceResult" class="result-value">—</output>
+            </div>
+          </div>
+
+          <div id="profitStatus" class="status neutral">
+            Enter your assumptions to calculate the results.
+          </div>
+        </div>
+
+        <p class="small">
+          Important: the trade-price method calculates gross P/L from
+          price movement multiplied by the monetary value you supply.
+          It does not automatically calculate forex lots, pip values,
+          contract sizes or currency conversions.
+        </p>
+      </section>
+
+      <section class="card content-section" id="guide">
+        <h2>What Is a Prop Firm Profit Calculator?</h2>
+        <p>
+          A prop firm profit calculator helps traders estimate the
+          monetary outcome of a hypothetical trade or trading scenario.
+          It can also help a trader measure progress toward a specified
+          evaluation profit target.
+        </p>
+        <p>
+          The calculation is based on your inputs, such as starting
+          balance, entry and exit prices, position value, trading costs
+          and challenge target. The results are estimates rather than
+          forecasts of future performance.
+        </p>
+        <p>
+          A profit target is only one part of an evaluation. A provider
+          may also apply daily loss limits, maximum overall drawdown,
+          minimum trading days, consistency requirements or other rules.
+          Reaching a target in this calculator does not establish that
+          an account has passed an evaluation.
+        </p>
+      </section>
+
+      <section class="card content-section">
+        <h2>How to Calculate Trading Profit</h2>
+        <div class="notice">
+          <strong>For a buy position:</strong><br>
+          Gross profit or loss = (Exit price − Entry price)
+          × Monetary value per price unit
+        </div>
+        <p>
+          For a sell position, the price difference is reversed:
+          (Entry price − Exit price) multiplied by the monetary value
+          per price unit.
+        </p>
+        <p>
+          Estimated net profit or loss is calculated by adding your
+          optional adjustment and subtracting estimated costs from
+          gross profit or loss.
+        </p>
+        <div class="notice">
+          <strong>Net result:</strong><br>
+          Net P/L = Gross P/L − Trading costs + Other adjustment
+        </div>
+        <p>
+          These formulas assume the entered monetary value accurately
+          represents the entire position. Realised results can differ
+          because of execution prices, contract specifications,
+          commissions, swaps and slippage.
+        </p>
+      </section>
+
+      <section class="card content-section">
+        <h2>Example: A $10,000 Prop Firm Account</h2>
+        <p>
+          Consider a hypothetical account starting at $10,000 with an
+          8% profit target. The example below illustrates the arithmetic
+          only and does not represent the rules of a specific provider.
+        </p>
+
+        <div style="overflow-x:auto">
+          <table class="example-table">
+            <thead>
+              <tr>
+                <th>Metric</th>
+                <th>Example result</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Starting balance</td><td>$10,000</td></tr>
+              <tr><td>Profit target</td><td>8%</td></tr>
+              <tr><td>Target profit</td><td>$800</td></tr>
+              <tr><td>Balance at target</td><td>$10,800</td></tr>
+              <tr><td>Profit already accumulated</td><td>$300</td></tr>
+              <tr><td>Profit still required</td><td>$500</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>
+          To explore this example, choose the challenge target planner,
+          enter a $10,000 starting balance, set the target to 8%, and
+          enter $300 as the profit already accumulated.
+        </p>
+      </section>
+
+      <section class="card content-section">
+        <h2>How to Use the Funded Account Profit Calculator</h2>
+        <ol>
+          <li>Select your account currency and starting balance.</li>
+          <li>Choose trade-price, percentage-based or target-planner mode.</li>
+          <li>Enter the relevant prices or profit percentage.</li>
+          <li>For price-based calculations, enter the correct monetary
+            value for a 1.0 price movement on your full position.</li>
+          <li>Enter estimated costs and any additional adjustment.</li>
+          <li>For target planning, enter the profit target and accumulated
+            profit or loss.</li>
+          <li>Calculate the result and compare your assumptions with
+            the applicable account rules.</li>
+        </ol>
+      </section>
+
+      <section class="card content-section">
+        <h2>How to Calculate a Prop Firm Profit Target</h2>
+        <p>
+          A percentage-based target is calculated by multiplying the
+          starting balance by the target percentage. The target balance
+          is the starting balance plus the target profit.
+        </p>
+        <div class="notice">
+          <strong>Target profit formula:</strong><br>
+          Target profit = Starting balance × Target percentage ÷ 100
+          <br><br>
+          <strong>Target balance formula:</strong><br>
+          Target balance = Starting balance + Target profit
+        </div>
+        <p>
+          For a $25,000 account and an illustrative 8% target, the
+          target profit is $2,000 and the target balance is $27,000,
+          assuming the target is measured from the initial balance.
+        </p>
+        <p>
+          Providers may define targets and balances differently,
+          including rules relating to equity, closed trades, fees or
+          other account conditions. Check the rules for your actual
+          evaluation before relying on this estimate.
+        </p>
+      </section>
+
+      <section class="card content-section">
+        <h2>Using the Calculator for FundedNext and Other Prop Firms</h2>
+        <p>
+          You can use this independent calculator to explore profit
+          scenarios for a FundedNext evaluation or another proprietary
+          trading program. Enter the account size and target percentage
+          stated in the rules that apply to your account.
+        </p>
+        <p>
+          This tool does not connect to a prop firm, access your trading
+          account, or verify whether your account meets its requirements.
+          Program terms can vary and change. Confirm the relevant
+          conditions directly with your provider.
+        </p>
+      </section>
+
+      <section class="card content-section">
+        <h2>Trading Profit, Costs and Account Growth</h2>
+        <p>
+          Gross profit does not necessarily equal the amount added to
+          your account. Trading commissions, spreads, swaps and
+          slippage can affect realised results. Account-level charges
+          and profit-sharing arrangements may also affect the amount
+          ultimately received by a funded trader.
+        </p>
+        <p>
+          This calculator subtracts the estimated costs you enter, but
+          it does not automatically apply a prop firm's profit split,
+          withdrawal conditions or other charges. Add only the costs
+          appropriate to the scenario you are evaluating.
+        </p>
+        <ul>
+          <li>Check contract size and tick value for your instrument.</li>
+          <li>Use realistic execution assumptions.</li>
+          <li>Account for trading costs where possible.</li>
+          <li>Keep profit targets separate from loss limits.</li>
+          <li>Review actual provider rules before making decisions.</li>
+        </ul>
+      </section>
+
+      <section class="card content-section">
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+          <h3>1. What is a prop firm profit calculator?</h3>
+          <p>
+            It estimates potential trading profit or loss and can
+            calculate the amount needed to reach a specified challenge
+            profit target.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>2. How do I calculate an 8% profit target?</h3>
+          <p>
+            Multiply the starting balance by 0.08. For example,
+            8% of $10,000 is $800. If the target is measured from the
+            initial balance, the corresponding target balance is
+            $10,800 before other adjustments.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>3. Can I use this calculator for FundedNext?</h3>
+          <p>
+            Yes, you can enter the assumptions and target percentage
+            relevant to your FundedNext program. This independent
+            calculator does not verify compliance, guarantee a pass
+            or represent an official FundedNext tool.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>4. Does this calculator calculate forex lot sizes?</h3>
+          <p>
+            No. The trade-price method requires the monetary value
+            of a 1.0 price movement for the full position. Use a
+            suitable lot-size or pip calculator to determine position
+            exposure, and verify your broker's contract specifications.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>5. Does the calculator include trading fees?</h3>
+          <p>
+            Yes, you can enter estimated total costs. These are
+            subtracted from the gross result, while any other
+            adjustment you enter is added to the calculation.
+            Actual costs can differ from estimates.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>6. Does reaching the target mean I have passed?</h3>
+          <p>
+            Not necessarily. An evaluation may include drawdown,
+            minimum-day, consistency or other conditions. The
+            calculator measures a numerical target and does not
+            check all provider rules.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>7. Can I calculate a losing trade?</h3>
+          <p>
+            Yes. In trade-price mode, choose the direction and enter
+            the exit price that reflects the loss. In percentage mode,
+            enter a negative percentage for a loss.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>8. Is this calculator free?</h3>
+          <p>
+            Yes. The calculations run in your browser without a
+            subscription or account registration.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>9. Does the calculator guarantee trading profits?</h3>
+          <p>
+            No. It performs calculations using the values you provide.
+            It does not predict markets or guarantee profitability,
+            funded status or withdrawals.
+          </p>
+        </div>
+      </section>
+
+      <section class="card content-section">
+        <h2>Explore More EZTradingHub Calculators</h2>
+        <p>
+          Explore these related tools to review trade risk, position
+          sizing and prop firm drawdown assumptions.
+        </p>
+
+        <div class="related-grid">
+          <a class="related-link" href="prop-firm-risk-calculator.html">
+            Prop Firm Risk Calculator
+            <span>Estimate planned monetary risk.</span>
+          </a>
+
+          <a class="related-link" href="prop-firm-drawdown-calculator.html">
+            Prop Firm Drawdown Calculator
+            <span>Explore daily and overall loss thresholds.</span>
+          </a>
+
+          <a class="related-link" href="prop-firm-risk-reward-calculator.html">
+            Prop Firm Risk Reward Calculator
+            <span>Compare potential reward with planned risk.</span>
+          </a>
+
+          <a class="related-link" href="prop-firm-position-size-calculator.html">
+            Prop Firm Position Size Calculator
+            <span>Explore position sizing inputs.</span>
+          </a>
+
+          <a class="related-link" href="funded-account-risk-calculator.html">
+            Funded Account Risk Calculator
+            <span>Review funded account risk scenarios.</span>
+          </a>
+
+          <a class="related-link" href="lot-size-calculator.html">
+            Lot Size Calculator
+            <span>Calculate trading volume with suitable inputs.</span>
+          </a>
+
+          <a class="related-link" href="profit-calculator.html">
+            Forex Profit Calculator
+            <span>Estimate profit and loss for a trade.</span>
+          </a>
+
+          <a class="related-link" href="calculators.html">
+            All Trading Calculators
+            <span>Explore the EZTradingHub tool collection.</span>
+          </a>
+        </div>
+      </section>
+
+      <section class="card content-section">
+        <h2>Financial Disclaimer</h2>
+        <p>
+          EZTradingHub provides educational tools and information only.
+          Nothing on this page constitutes financial, investment or
+          trading advice, a recommendation to buy a challenge, or a
+          promise of future returns.
+        </p>
+        <p>
+          All results are estimates based on user-entered values.
+          Actual results can differ because of execution, trading costs,
+          instrument specifications, currency conversion and account
+          rules. Verify calculations before relying on them.
+        </p>
+        <p>
+          Forex, CFDs, gold and other leveraged instruments involve
+          substantial risk. You can lose money. Past performance does
+          not guarantee future results.
+        </p>
+      </section>
+    </div>
+
+    <aside>
+      <section class="card">
+        <h2>On This Page</h2>
+        <ul class="side-nav">
+          <li><a href="#calculator">Profit Calculator</a></li>
+          <li><a href="#guide">Profit Calculation Guide</a></li>
+          <li><a href="#faq">Frequently Asked Questions</a></li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>Key Trading Terms</h2>
+        <h3>Gross profit</h3>
+        <p class="small">
+          The result before the trading costs entered into this calculator.
+        </p>
+        <h3>Net profit</h3>
+        <p class="small">
+          The estimated result after entered costs and adjustments.
+        </p>
+        <h3>Profit target</h3>
+        <p class="small">
+          The specified monetary or percentage gain used in an evaluation.
+        </p>
+        <h3>Drawdown</h3>
+        <p class="small">
+          A decline in account equity or balance measured under a
+          defined methodology.
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>Plan Your Trading Risk</h2>
+        <p class="small">
+          Review risk and drawdown assumptions separately from
+          profit targets.
+        </p>
+        <a class="button" style="width:100%"
+          href="prop-firm-risk-calculator.html">
+          Open Risk Calculator
+        </a>
+      </section>
+
+      <!-- Insert your official AdSense code here after approval,
+           or use your approved Auto ads configuration.
+           Never encourage users to click advertisements. -->
+    </aside>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div>
+      <a class="brand" href="index.html">
+        <span class="brand-icon" aria-hidden="true">EZ</span>
+        <span>EZTradingHub</span>
+      </a>
+      <p>
+        Trading calculators and educational resources for forex traders,
+        funded account challenges and trading risk management.
+      </p>
+    </div>
+
+    <nav class="footer-links" aria-label="Footer navigation">
+      <a href="about.html">About</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">Contact</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms</a>
+      <a href="disclaimer.html">Disclaimer</a>
+      <a href="cookie-policy.html">Cookie Policy</a>
+      <a href="calculators.html">Calculators</a>
+    </nav>
+  </div>
+
+  <div class="container disclaimer">
+    © <span id="year"></span> EZTradingHub. All rights reserved.
+    Educational use only. Trading involves risk.
+  </div>
+</footer>
+
+<script>
+(function () {
+  "use strict";
+
+  const $ = id => document.getElementById(id);
+
+  const symbols = {
+    USD: "$",
+    EUR: "€",
+    GBP: "£",
+    NGN: "₦",
+    CAD: "C$",
+    AUD: "A$"
+  };
+
+  function setTheme(theme) {
+    document.documentElement.dataset.theme = theme;
+
+    const dark = theme === "dark";
+    $("themeIcon").textContent = dark ? "☀" : "☾";
+    $("themeText").textContent = dark ? "Light mode" : "Dark mode";
+    $("themeToggle").setAttribute("aria-pressed", String(dark));
+
+    try {
+      localStorage.setItem("ezth-theme", theme);
+    } catch (e) {
+      // The calculator still works if browser storage is unavailable.
+    }
+  }
+
+  setTheme(
+    document.documentElement.dataset.theme === "dark" ? "dark" : "light"
+  );
+
+  $("themeToggle").addEventListener("click", function () {
+    setTheme(
+      document.documentElement.dataset.theme === "dark" ? "light" : "dark"
+    );
+  });
+
+  function num(id) {
+    const raw = $(id).value.trim();
+
+    if (raw === "") {
+      throw new Error("Please complete the required fields.");
+    }
+
+    const value = Number(raw);
+
+    if (!Number.isFinite(value)) {
+      throw new Error("Please enter valid numeric values.");
+    }
+
+    return value;
+  }
+
+  function optionalNum(id) {
+    const raw = $(id).value.trim();
+
+    if (raw === "") return null;
+
+    const value = Number(raw);
+
+    if (!Number.isFinite(value)) {
+      throw new Error("Please enter a valid number.");
+    }
+
+    return value;
+  }
+
+  function money(value) {
+    const symbol = symbols[$("currency").value] || "";
+
+    return (value < 0 ? "-" : "") + symbol +
+      Math.abs(value).toLocaleString("en", {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+      });
+  }
+
+  function percent(value) {
+    return value.toLocaleString("en", {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    }) + "%";
+  }
+
+  function output(id, value) {
+    $(id).textContent = value;
+  }
+
+  function status(message, type) {
+    $("profitStatus").textContent = message;
+    $("profitStatus").className = "status " + (type || "neutral");
+  }
+
+  function syncFields() {
+    const method = $("method").value;
+    const tradeMode = method === "trade";
+    const percentMode = method === "percent";
+    const targetMode = method === "target";
+
+    $("directionField").hidden = !tradeMode;
+    $("entryField").hidden = !tradeMode;
+    $("exitField").hidden = !tradeMode;
+    $("valueField").hidden = !tradeMode;
+
+    $("percentField").hidden = !percentMode;
+
+    $("targetPercentField").hidden = !targetMode;
+    $("currentProfitField").hidden = !targetMode;
+    $("targetBalanceField").hidden = !targetMode;
+
+    ["entry", "exit", "valuePerPrice"].forEach(id => {
+      $(id).disabled = !tradeMode;
+      $(id).required = tradeMode;
+    });
+
+    $("profitPercent").disabled = !percentMode;
+    $("profitPercent").required = percentMode;
+
+    $("targetPercent").disabled = !targetMode;
+    $("targetPercent").required = targetMode;
+
+    $("currentProfit").disabled = !targetMode;
+    $("currentProfit").required = targetMode;
+
+    // An empty optional target balance uses the percentage target.
+    $("targetBalance").disabled = !targetMode;
+    $("targetBalance").required = false;
+  }
+
+  function calculate() {
+    try {
+      const account = num("account");
+      const costs = num("costs");
+      const adjustment = num("extraProfit");
+
+      if (account <= 0) {
+        throw new Error("Starting account balance must be greater than zero.");
+      }
+
+      if (costs < 0) {
+        throw new Error("Estimated total costs cannot be negative.");
+      }
+
+      let gross;
+      let targetProfit = null;
+      let progress = null;
+      let remaining = null;
+      let targetBalance = null;
+      let planningMessage = "";
+
+      const method = $("method").value;
+
+      if (method === "trade") {
+        const entry = num("entry");
+        const exit = num("exit");
+        const valuePerPrice = num("valuePerPrice");
+
+        if (entry <= 0 || exit <= 0 || valuePerPrice <= 0) {
+          throw new Error(
+            "Entry price, exit price and monetary price value must be greater than zero."
+          );
+        }
+
+        const movement = $("direction").value === "buy"
+          ? exit - entry
+          : entry - exit;
+
+        gross = movement * valuePerPrice;
+        planningMessage = "Trade-price calculation completed.";
+      } else if (method === "percent") {
+        const profitPercent = num("profitPercent");
+
+        if (profitPercent < -100) {
+          throw new Error(
+            "The entered percentage cannot be below -100% of the starting balance."
+          );
+        }
+
+        gross = account * profitPercent / 100;
+        planningMessage = "Percentage-based calculation completed.";
+      } else {
+        const targetPercent = num("targetPercent");
+        const currentProfit = num("currentProfit");
+        const manualTargetBalance = optionalNum("targetBalance");
+
+        if (targetPercent <= 0) {
+          throw new Error("Challenge profit target must be greater than zero.");
+        }
+
+        if (manualTargetBalance !== null && manualTargetBalance <= 0) {
+          throw new Error(
+            "Alternative target balance must be greater than zero, or leave it empty."
+          );
+        }
+
+        targetProfit = manualTargetBalance !== null
+          ? manualTargetBalance - account
+          : account * targetPercent / 100;
+
+        targetBalance = manualTargetBalance !== null
+          ? manualTargetBalance
+          : account + targetProfit;
+
+        if (targetProfit <= 0) {
+          throw new Error(
+            "Target balance must be greater than the starting balance."
+          );
+        }
+
+        // The target planner displays progress using accumulated profit.
+        // Costs are not deducted again from the accumulated profit input.
+        progress = currentProfit / targetProfit * 100;
+        remaining = Math.max(0, targetProfit - currentProfit);
+
+        // In target mode, the profit calculation is the entered accumulated P/L.
+        gross = currentProfit;
+        planningMessage =
+          "Target progress is an estimate based on the accumulated profit you entered.";
+      }
+
+      const net = gross - costs + adjustment;
+      const returnPct = net / account * 100;
+      const endingBalance = account + net;
+
+      output("grossResult", money(gross));
+      output("netResult", money(net));
+      output("returnResult", percent(returnPct));
+      output("balanceResult", money(endingBalance));
+
+      if (method === "target") {
+        output("targetResult", money(targetProfit));
+        output("progressResult", percent(progress));
+        output("remainingResult", money(remaining));
+        output("targetBalanceResult", money(targetBalance));
+
+        if (progress >= 100) {
+          status(
+            "The accumulated profit you entered meets or exceeds the " +
+            "calculated target. This does not verify an official challenge pass.",
+            "neutral"
+          );
+        } else if (progress < 0) {
+          status(
+            planningMessage + " The entered accumulated result is negative; " +
+            "review drawdown rules separately.",
+            "warning"
+          );
+        } else {
+          status(
+            planningMessage + " The remaining target is an arithmetic estimate, " +
+            "not a forecast of how quickly it can be reached.",
+            "neutral"
+          );
+        }
+      } else {
+        output("targetResult", "—");
+        output("progressResult", "—");
+        output("remainingResult", "—");
+        output("targetBalanceResult", "—");
+
+        if (net < 0) {
+          status(
+            planningMessage + " This scenario produces an estimated net loss.",
+            "warning"
+          );
+        } else {
+          status(
+            planningMessage + " Actual results may differ because of execution, " +
+            "costs and contract specifications.",
+            "neutral"
+          );
+        }
+      }
+    } catch (error) {
+      status(error.message || "Unable to calculate these values.", "warning");
+    }
+  }
+
+  $("profitForm").addEventListener("submit", function (event) {
+    event.preventDefault();
+    syncFields();
+    calculate();
+  });
+
+  $("method").addEventListener("change", function () {
+    syncFields();
+    calculate();
+  });
+
+  [
+    "currency", "account", "direction", "entry", "exit",
+    "valuePerPrice", "profitPercent", "targetPercent",
+    "currentProfit", "targetBalance", "costs", "extraProfit"
+  ].forEach(id => {
+    $(id).addEventListener("input", calculate);
+    $(id).addEventListener("change", calculate);
+  });
+
+  $("reset").addEventListener("click", function () {
+    $("currency").value = "USD";
+    $("account").value = "10000";
+    $("method").value = "trade";
+    $("direction").value = "buy";
+    $("entry").value = "2350";
+    $("exit").value = "2360";
+    $("valuePerPrice").value = "1";
+    $("profitPercent").value = "2";
+    $("targetPercent").value = "8";
+    $("currentProfit").value = "300";
+    $("targetBalance").value = "";
+    $("costs").value = "2";
+    $("extraProfit").value = "0";
+
+    syncFields();
+    calculate();
+  });
+
+  $("year").textContent = new Date().getFullYear();
+
+  syncFields();
+  calculate();
+})();
+</script>
+</body>
+</html>
