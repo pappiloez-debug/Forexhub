@@ -1,0 +1,1184 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B5T8QM08CE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-B5T8QM08CE');
+</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Prop Firm Challenge Calculator | Funded Account Planner</title>
+  <meta name="description" content="Use this free prop firm challenge calculator to estimate profit targets, daily loss limits, maximum drawdown, challenge progress and remaining profit for funded trading accounts.">
+  <meta name="keywords" content="prop firm challenge calculator, funded account challenge calculator, FundedNext challenge calculator, forex prop firm calculator, prop firm profit target calculator, daily drawdown calculator, maximum loss calculator, funded trader challenge planner, 10000 prop firm challenge, 50000 funded account calculator, 100000 prop firm challenge">
+  <meta name="author" content="EZTradingHub">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#0b1730">
+
+  <link rel="canonical" href="https://eztradinghub.com/prop-firm-challenge-calculator.html">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Prop Firm Challenge Calculator | EZTradingHub">
+  <meta property="og:description" content="Plan your funded trading challenge with profit target, daily loss, maximum drawdown and challenge progress calculations.">
+  <meta property="og:url" content="https://eztradinghub.com/prop-firm-challenge-calculator.html">
+  <meta property="og:site_name" content="EZTradingHub">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Prop Firm Challenge Calculator">
+  <meta name="twitter:description" content="Free challenge planning calculator for prop firm and funded trading accounts.">
+
+  <script>
+    try {
+      const saved = localStorage.getItem("ezth-theme");
+      if (saved === "light" || saved === "dark") {
+        document.documentElement.dataset.theme = saved;
+      }
+    } catch (e) {}
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "EZTradingHub Prop Firm Challenge Calculator",
+    "url": "https://eztradinghub.com/prop-firm-challenge-calculator.html",
+    "description": "Free calculator for estimating prop firm challenge profit targets, daily loss limits, maximum drawdown and progress.",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Any",
+    "isAccessibleForFree": true,
+    "browserRequirements": "Requires JavaScript",
+    "publisher": {
+      "@type": "Organization",
+      "name": "EZTradingHub",
+      "url": "https://eztradinghub.com/"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://eztradinghub.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Calculators",
+        "item": "https://eztradinghub.com/calculators.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Prop Firm Challenge Calculator",
+        "item": "https://eztradinghub.com/prop-firm-challenge-calculator.html"
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f3f6fb;
+      --surface: #fff;
+      --surface2: #eaf0f8;
+      --text: #17243a;
+      --muted: #64748b;
+      --border: #dbe3ef;
+      --primary: #174ea6;
+      --accent: #f5b323;
+      --success: #12805c;
+      --danger: #c83d4d;
+      --shadow: 0 12px 35px rgba(20,43,80,.08);
+    }
+
+    :root[data-theme="dark"] {
+      color-scheme: dark;
+      --bg: #0b1220;
+      --surface: #121d30;
+      --surface2: #1b2a42;
+      --text: #edf3ff;
+      --muted: #a6b4ca;
+      --border: #2c3b54;
+      --primary: #72a7ff;
+      --accent: #f5b323;
+      --success: #5bdaa9;
+      --danger: #ff8994;
+      --shadow: 0 12px 35px rgba(0,0,0,.2);
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.7;
+    }
+
+    a { color: var(--primary); }
+
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible,
+    select:focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 3px;
+    }
+
+    .site-header {
+      background: #0b1730;
+      color: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      box-shadow: 0 4px 18px rgba(0,0,0,.15);
+    }
+
+    .header-inner {
+      max-width: 1160px;
+      margin: auto;
+      padding: 13px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand {
+      color: #fff;
+      font-weight: 800;
+      font-size: 1.2rem;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .brand span { color: var(--accent); }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .nav-links a {
+      color: #e3eaff;
+      text-decoration: none;
+      font-size: .9rem;
+    }
+
+    .nav-links a:hover { color: var(--accent); }
+
+    .theme-button {
+      border: 1px solid #62708b;
+      background: #182746;
+      color: #fff;
+      border-radius: 9px;
+      padding: 9px 12px;
+      cursor: pointer;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .container {
+      width: min(1100px, calc(100% - 32px));
+      margin: auto;
+    }
+
+    .breadcrumbs {
+      padding: 18px 0 8px;
+      color: var(--muted);
+      font-size: .88rem;
+    }
+
+    .breadcrumbs a { text-decoration: none; }
+
+    .hero {
+      margin: 16px 0 26px;
+      padding: clamp(25px,5vw,52px);
+      border-radius: 22px;
+      background: linear-gradient(130deg,#0b1730,#174ea6);
+      color: #fff;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      background: rgba(245,179,35,.15);
+      border: 1px solid rgba(245,179,35,.55);
+      color: #ffd574;
+      border-radius: 50px;
+      padding: 5px 12px;
+      font-size: .82rem;
+      font-weight: 700;
+    }
+
+    h1 {
+      max-width: 850px;
+      font-size: clamp(2rem,5vw,3.2rem);
+      line-height: 1.15;
+      margin: 17px 0;
+    }
+
+    .hero p {
+      max-width: 780px;
+      color: #e1e9f8;
+      font-size: 1.04rem;
+    }
+
+    .hero-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 23px;
+    }
+
+    .hero-links a {
+      color: #fff;
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,.35);
+      border-radius: 9px;
+      padding: 9px 13px;
+      font-size: .9rem;
+    }
+
+    .hero-links a:first-child {
+      background: var(--accent);
+      color: #18243a;
+      border-color: var(--accent);
+      font-weight: 800;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 17px;
+      padding: clamp(18px,3vw,28px);
+      box-shadow: var(--shadow);
+      margin-bottom: 22px;
+      min-width: 0;
+    }
+
+    h2 {
+      font-size: clamp(1.4rem,3vw,1.9rem);
+      line-height: 1.3;
+      margin: 0 0 14px;
+    }
+
+    h3 {
+      line-height: 1.35;
+      margin: 24px 0 8px;
+    }
+
+    p { margin: 10px 0 15px; }
+    .muted { color: var(--muted); }
+    .small { font-size: .9rem; }
+
+    .notice {
+      background: var(--surface2);
+      border-left: 4px solid var(--accent);
+      border-radius: 8px;
+      padding: 13px 15px;
+      margin: 16px 0;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2,minmax(0,1fr));
+      gap: 17px;
+    }
+
+    .field { min-width: 0; }
+
+    label {
+      display: block;
+      font-weight: 700;
+      font-size: .92rem;
+      margin-bottom: 6px;
+    }
+
+    input, select {
+      width: 100%;
+      min-height: 46px;
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      padding: 11px 12px;
+      background: var(--bg);
+      color: var(--text);
+      font: inherit;
+    }
+
+    .help {
+      color: var(--muted);
+      font-size: .8rem;
+      margin-top: 5px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .button {
+      border: 0;
+      background: var(--primary);
+      color: #fff;
+      padding: 12px 19px;
+      border-radius: 9px;
+      font: inherit;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .button:hover { filter: brightness(.93); }
+
+    .button.secondary {
+      color: var(--text);
+      background: var(--surface2);
+      border: 1px solid var(--border);
+    }
+
+    .results {
+      margin-top: 22px;
+      display: grid;
+      grid-template-columns: repeat(3,minmax(0,1fr));
+      gap: 12px;
+    }
+
+    .result-box {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px;
+      min-width: 0;
+    }
+
+    .result-label {
+      color: var(--muted);
+      font-size: .82rem;
+      display: block;
+    }
+
+    .result-value {
+      font-size: clamp(1.1rem,3vw,1.5rem);
+      font-weight: 800;
+      overflow-wrap: anywhere;
+    }
+
+    .positive { color: var(--success); }
+    .negative { color: var(--danger); }
+
+    .progress-track {
+      width: 100%;
+      height: 14px;
+      border-radius: 20px;
+      overflow: hidden;
+      background: var(--border);
+      margin: 12px 0;
+    }
+
+    .progress-fill {
+      height: 100%;
+      width: 0;
+      background: var(--success);
+      transition: width .25s ease;
+    }
+
+    .table-wrap { overflow-x: auto; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 14px 0;
+      font-size: .93rem;
+    }
+
+    th, td {
+      border: 1px solid var(--border);
+      padding: 11px;
+      text-align: left;
+    }
+
+    th { background: var(--surface2); }
+
+    .faq-item {
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .faq-item:last-child { border-bottom: 0; }
+    .faq-item h3 { margin: 0 0 7px; font-size: 1.05rem; }
+    .faq-item p { margin-bottom: 0; }
+
+    .related-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .related-links a {
+      display: inline-block;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      padding: 10px 13px;
+      text-decoration: none;
+      font-size: .9rem;
+    }
+
+    footer {
+      margin-top: 36px;
+      background: #0b1730;
+      color: #dbe6fa;
+      padding: 28px 16px;
+    }
+
+    .footer-inner {
+      width: min(1100px,100%);
+      margin: auto;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 12px;
+    }
+
+    .footer-links a { color: #dbe6fa; }
+
+    @media (max-width:760px) {
+      .header-inner { flex-wrap: wrap; }
+      .nav-links { order: 3; width: 100%; gap: 12px; }
+      .nav-links a { font-size: .83rem; }
+      .form-grid { grid-template-columns: 1fr; }
+      .results { grid-template-columns: repeat(2,minmax(0,1fr)); }
+    }
+
+    @media (max-width:420px) {
+      .container { width: calc(100% - 22px); }
+      .result-box { padding: 12px; }
+      .result-value { font-size: 1.12rem; }
+    }
+
+    @media (prefers-reduced-motion:reduce) {
+      html { scroll-behavior: auto; }
+      * { transition: none !important; }
+    }
+  </style>
+</head>
+
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="index.html" aria-label="EZTradingHub home">
+      EZ<span>TradingHub</span>
+    </a>
+
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="calculators.html">Calculators</a>
+      <a href="about.html">About</a>
+      <a href="https:contact.html">Contact</a>
+    </nav>
+
+    <button class="theme-button" id="themeToggle" type="button">
+      🌙 Dark
+    </button>
+  </div>
+</header>
+
+<main class="container">
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <a href="index.html">Home</a> /
+    <a href="calculators.html">Calculators</a> /
+    <span aria-current="page">Prop Firm Challenge Calculator</span>
+  </nav>
+
+  <section class="hero">
+    <span class="eyebrow">FREE CHALLENGE PLANNER</span>
+    <h1>Prop Firm Challenge Calculator for Funded Accounts</h1>
+    <p>
+      Estimate your challenge profit target, daily loss limit, maximum
+      drawdown, remaining profit and progress toward your target. Use this
+      prop firm challenge calculator to organize the numbers for a funded
+      trading challenge, including programs you are researching at
+      FundedNext and other providers.
+    </p>
+    <div class="hero-links">
+      <a href="#calculator">Calculate Challenge Rules</a>
+      <a href="#guide">Challenge Planning Guide</a>
+      <a href="#faq">FAQs</a>
+    </div>
+  </section>
+
+  <section class="card" id="calculator">
+    <h2>Prop Firm Challenge Calculator</h2>
+    <p class="muted">
+      Enter the challenge balance and the rule percentages from your actual
+      provider. The default percentages are examples, not the rules of any
+      specific company.
+    </p>
+
+    <div class="notice">
+      <strong>Before calculating:</strong> Check whether your provider
+      measures loss against starting balance, current balance, equity,
+      highest equity or a trailing threshold. This tool uses the starting
+      balance for its percentage-based thresholds and does not automatically
+      reproduce every firm's rule system.
+    </div>
+
+    <form id="challengeForm">
+      <div class="form-grid">
+        <div class="field">
+          <label for="provider">Program type</label>
+          <select id="provider">
+            <option value="generic">Generic prop firm challenge</option>
+            <option value="fundednext">FundedNext research / planning</option>
+            <option value="other">Other funded account program</option>
+          </select>
+          <div class="help">No official provider rules are loaded automatically.</div>
+        </div>
+
+        <div class="field">
+          <label for="currency">Account currency</label>
+          <select id="currency">
+            <option value="USD">USD ($)</option>
+            <option value="EUR">EUR (€)</option>
+            <option value="GBP">GBP (£)</option>
+            <option value="NGN">NGN (₦)</option>
+            <option value="OTHER">Other / unspecified</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="startingBalance">Starting account balance</label>
+          <input id="startingBalance" type="number" min="0.01"
+            step="any" value="10000" required>
+        </div>
+
+        <div class="field">
+          <label for="currentBalance">Current account balance</label>
+          <input id="currentBalance" type="number" min="0"
+            step="any" value="10000" required>
+          <div class="help">Enter your current balance before unrealized P/L unless your provider specifies otherwise.</div>
+        </div>
+
+        <div class="field">
+          <label for="profitTarget">Profit target (%)</label>
+          <input id="profitTarget" type="number" min="0"
+            step="any" value="8" required>
+        </div>
+
+        <div class="field">
+          <label for="dailyLossLimit">Daily loss limit (%)</label>
+          <input id="dailyLossLimit" type="number" min="0"
+            step="any" value="5" required>
+        </div>
+
+        <div class="field">
+          <label for="maxDrawdown">Maximum total drawdown (%)</label>
+          <input id="maxDrawdown" type="number" min="0"
+            step="any" value="10" required>
+        </div>
+
+        <div class="field">
+          <label for="currentEquity">Current equity (optional)</label>
+          <input id="currentEquity" type="number" min="0"
+            step="any" placeholder="e.g. 10125">
+          <div class="help">Use if you want to compare current equity against the static starting-balance thresholds.</div>
+        </div>
+
+        <div class="field">
+          <label for="dailyReference">Daily loss reference balance</label>
+          <input id="dailyReference" type="number" min="0.01"
+            step="any" value="10000" required>
+          <div class="help">Enter the reference balance used by your provider for the relevant daily reset.</div>
+        </div>
+
+        <div class="field">
+          <label for="dailyLossUsed">Loss already used today</label>
+          <input id="dailyLossUsed" type="number" min="0"
+            step="any" value="0" required>
+          <div class="help">Enter a positive loss amount, including applicable costs if your rules count them.</div>
+        </div>
+
+        <div class="field">
+          <label for="profitEarned">Profit accumulated toward target</label>
+          <input id="profitEarned" type="number" step="any"
+            value="0" required>
+          <div class="help">Use the amount recognized under your challenge's target calculation.</div>
+        </div>
+
+        <div class="field">
+          <label for="tradesRemaining">Optional remaining trading days</label>
+          <input id="tradesRemaining" type="number" min="0"
+            step="1" placeholder="e.g. 10">
+          <div class="help">Used only to estimate average profit required per remaining day.</div>
+        </div>
+      </div>
+
+      <div class="buttons">
+        <button class="button" type="submit">Calculate Challenge</button>
+        <button class="button secondary" type="reset">Reset</button>
+      </div>
+    </form>
+
+    <div id="results" hidden aria-live="polite" aria-atomic="true">
+      <h3>Your Challenge Results</h3>
+
+      <div class="results">
+        <div class="result-box">
+          <span class="result-label">Profit target amount</span>
+          <div class="result-value" id="targetAmount">—</div>
+        </div>
+
+        <div class="result-box">
+          <span class="result-label">Target account balance</span>
+          <div class="result-value" id="targetBalance">—</div>
+        </div>
+
+        <div class="result-box">
+          <span class="result-label">Remaining profit needed</span>
+          <div class="result-value" id="remainingProfit">—</div>
+        </div>
+
+        <div class="result-box">
+          <span class="result-label">Challenge progress</span>
+          <div class="result-value" id="progressText">—</div>
+          <div class="progress-track" role="progressbar"
+            id="progressBar" aria-label="Profit target progress"
+            aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+            <div class="progress-fill" id="progressFill"></div>
+          </div>
+        </div>
+
+        <div class="result-box">
+          <span class="result-label">Daily loss threshold</span>
+          <div class="result-value" id="dailyLimitAmount">—</div>
+        </div>
+
+        <div class="result-box">
+          <span class="result-label">Daily loss allowance remaining</span>
+          <div class="result-value" id="dailyRemaining">—</div>
+        </div>
+
+        <div class="result-box">
+          <span class="result-label">Maximum drawdown amount</span>
+          <div class="result-value" id="maxDrawdownAmount">—</div>
+        </div>
+
+        <div class="result-box">
+          <span class="result-label">Static drawdown floor</span>
+          <div class="result-value" id="drawdownFloor">—</div>
+        </div>
+
+        <div class="result-box">
+          <span class="result-label">Equity vs. static floor</span>
+          <div class="result-value" id="equityBuffer">—</div>
+        </div>
+
+        <div class="result-box">
+          <span class="result-label">Average profit needed per day</span>
+          <div class="result-value" id="dailyTargetNeeded">—</div>
+        </div>
+      </div>
+
+      <p id="resultMessage" class="notice"></p>
+      <p class="small muted">
+        Thresholds are estimates based on your inputs. This tool does not
+        confirm challenge eligibility, provider compliance or a guaranteed
+        pass result.
+      </p>
+    </div>
+  </section>
+
+  <section class="card" id="guide">
+    <h2>How to Use a Prop Firm Challenge Calculator</h2>
+    <ol>
+      <li>Enter your challenge's starting balance.</li>
+      <li>Enter the current balance and any available current-equity figure.</li>
+      <li>Use the profit target percentage specified by your provider.</li>
+      <li>Enter the daily loss limit and its correct reference balance.</li>
+      <li>Enter the maximum drawdown percentage and the profit recognized toward your target.</li>
+      <li>Optionally enter the number of remaining trading days.</li>
+      <li>Calculate and review each result against the provider's current rules.</li>
+    </ol>
+
+    <div class="notice">
+      This calculator assumes a static maximum drawdown measured from
+      starting balance. It does not model trailing drawdown, intraday
+      equity-based thresholds, different daily reset times, consistency
+      rules, news restrictions or other provider-specific conditions.
+    </div>
+
+    <h3>Example: A $10,000 challenge with an 8% profit target</h3>
+    <p>
+      If the starting balance is $10,000 and the target is 8%, the target
+      amount is $800. The corresponding target balance is $10,800, assuming
+      the provider calculates the target from starting balance and measures
+      the recognized result in the same way.
+    </p>
+
+    <h3>Understanding daily loss limits</h3>
+    <p>
+      A daily loss limit is a threshold for losses over a provider-defined
+      trading day. The reference point and reset time matter. Some programs
+      may consider equity, floating losses, commissions or swaps. Enter the
+      actual reference balance and loss already used today to estimate the
+      remaining allowance.
+    </p>
+
+    <h3>Understanding maximum drawdown</h3>
+    <p>
+      Maximum drawdown limits restrict how far an account may fall under
+      the provider's calculation method. A static limit based on initial
+      balance differs from a trailing limit that can move as the account
+      reaches new highs. Confirm which approach applies to your challenge.
+    </p>
+  </section>
+
+  <section class="card">
+    <h2>Prop Firm Challenge Formulas</h2>
+
+    <h3>Profit target</h3>
+    <div class="notice">
+      <strong>Target amount = Starting balance × Target percentage ÷ 100</strong>
+    </div>
+
+    <h3>Target balance</h3>
+    <div class="notice">
+      <strong>Target balance = Starting balance + Target amount</strong>
+    </div>
+
+    <h3>Remaining profit</h3>
+    <div class="notice">
+      <strong>Remaining profit = Target amount − Recognized profit accumulated</strong>
+    </div>
+
+    <h3>Daily loss threshold</h3>
+    <div class="notice">
+      <strong>Daily loss threshold = Daily reference balance × Daily loss percentage ÷ 100</strong>
+    </div>
+
+    <h3>Static maximum drawdown floor</h3>
+    <div class="notice">
+      <strong>Static floor = Starting balance − Maximum drawdown amount</strong>
+    </div>
+
+    <p>
+      These formulas are simplified planning calculations. A provider may
+      use a different reference balance, include unrealized losses, adjust
+      the threshold daily, or apply additional restrictions.
+    </p>
+  </section>
+
+  <section class="card">
+    <h2>Planning for FundedNext and Other Funded Trading Programs</h2>
+    <p>
+      Traders researching FundedNext and other proprietary trading firms
+      can use this calculator to understand the arithmetic behind targets
+      and loss thresholds. It is not an official FundedNext calculator
+      and is not affiliated with or endorsed by FundedNext.
+    </p>
+
+    <h3>Do not rely on percentage values from another challenge</h3>
+    <p>
+      Different challenge types and account sizes can have different profit
+      targets, daily limits, total drawdown rules, trading-day conditions
+      and other requirements. Use the terms for the exact program you have
+      selected rather than assuming that a percentage from another account
+      applies to yours.
+    </p>
+
+    <h3>Plan for fees and floating losses</h3>
+    <p>
+      Trading commissions, spreads, swaps and unrealized losses may affect
+      your account measurements. If your provider includes these in its
+      loss calculations, make sure your planning accounts for them.
+    </p>
+
+    <h3>Use a separate trade risk calculation</h3>
+    <p>
+      Challenge-level thresholds do not determine the appropriate lot size
+      for an individual trade. Consider stop-loss distance, pip value,
+      trading costs and exposure from other open positions when calculating
+      position size.
+    </p>
+  </section>
+
+  <section class="card">
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+      <h3>1. What is a prop firm challenge calculator?</h3>
+      <p>
+        It is a planning tool for estimating a challenge's profit target,
+        daily loss threshold, maximum drawdown, remaining target amount
+        and progress from user-entered figures.
+      </p>
+    </div>
+
+    <div class="faq-item">
+      <h3>2. Can I use this for FundedNext challenges?</h3>
+      <p>
+        You can use it for general calculations while researching a
+        FundedNext challenge. The tool does not automatically load or
+        verify FundedNext's current rules. Check the terms for your
+        specific program.
+      </p>
+    </div>
+
+    <div class="faq-item">
+      <h3>3. How much profit is an 8% target on a $10,000 account?</h3>
+      <p>
+        An 8% target on $10,000 is $800. If the provider calculates the
+        target from the initial balance, the target balance would be $10,800.
+      </p>
+    </div>
+
+    <div class="faq-item">
+      <h3>4. What is a daily loss limit?</h3>
+      <p>
+        It is a provider-defined threshold for losses during a trading day.
+        Its calculation may depend on the reference balance, equity,
+        floating P/L, costs and the provider's daily reset time.
+      </p>
+    </div>
+
+    <div class="faq-item">
+      <h3>5. What is maximum drawdown?</h3>
+      <p>
+        Maximum drawdown is a limit on how far an account can fall under
+        a program's rules. Some programs use a static threshold while
+        others use a trailing or equity-based method.
+      </p>
+    </div>
+
+    <div class="faq-item">
+      <h3>6. Does this calculator support trailing drawdown?</h3>
+      <p>
+        No. The drawdown floor displayed here is static and calculated
+        from starting balance. A trailing threshold requires additional
+        information about the provider's specific rules and account history.
+      </p>
+    </div>
+
+    <div class="faq-item">
+      <h3>7. Does this tool guarantee that I will pass a challenge?</h3>
+      <p>
+        No. It only performs calculations from the inputs you provide.
+        Trading outcomes and compliance depend on your actions, market
+        conditions, execution and the rules of the program.
+      </p>
+    </div>
+
+    <div class="faq-item">
+      <h3>8. Why should I enter current equity?</h3>
+      <p>
+        Current equity can differ from balance when trades are open.
+        Comparing equity with the static floor can provide an additional
+        reference, but it does not replace the provider's actual
+        drawdown calculation.
+      </p>
+    </div>
+
+    <div class="faq-item">
+      <h3>9. Is this calculator free?</h3>
+      <p>
+        Yes. It runs in your browser and does not require a paid
+        subscription or broker connection.
+      </p>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Explore More EZTradingHub Calculators</h2>
+    <p>
+      Use these related tools to review trade-level risk, position size
+      and profit calculations.
+    </p>
+    <div class="related-links">
+      <a href="https://eztradinghub.com/prop-firm-risk-calculator.html">Prop Firm Risk Calculator</a>
+      <a href="https://eztradinghub.com/prop-firm-drawdown-calculator.html">Prop Firm Drawdown Calculator</a>
+      <a href="https://eztradinghub.com/prop-firm-lot-size-calculator.html">Prop Firm Lot Size Calculator</a>
+      <a href="https://eztradinghub.com/prop-firm-position-size-calculator.html">Prop Firm Position Size Calculator</a>
+      <a href="https://eztradinghub.com/prop-firm-profit-calculator.html">Prop Firm Profit Calculator</a>
+      <a href="https://eztradinghub.com/prop-firm-pip-calculator.html">Prop Firm Pip Calculator</a>
+      <a href="https://eztradinghub.com/funded-account-risk-calculator.html">Funded Account Risk Calculator</a>
+      <a href="https://eztradinghub.com/calculators.html">All Trading Calculators</a>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Financial Risk Disclaimer</h2>
+    <p class="small">
+      EZTradingHub provides educational information and calculation
+      estimates, not financial, investment, legal or tax advice. Results
+      depend on the accuracy of entered information and may not reflect
+      the rules of a particular provider. Leveraged trading involves
+      substantial risk, including possible loss of capital. Read your
+      broker's and trading provider's terms before making trading decisions.
+    </p>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <strong>EZTradingHub</strong>
+    <p class="small">Trading calculators and educational resources for informed trading.</p>
+    <nav class="footer-links" aria-label="Footer navigation">
+      <a href="https://eztradinghub.com">Home</a>
+      <a href="https://eztradinghub.com/about.html">About</a>
+      <a href="https://eztradinghub.com/contact.html">Contact</a>
+      <a href="https://eztradinghub.com/privacy.html">Privacy Policy</a>
+      <a href="https://eztradinghub.com/terms.html">Terms</a>
+      <a href="https://eztradinghub.com/disclaimer.html">Disclaimer</a>
+      <a href="https://eztradinghub.com/cookie-policy.html">Cookie Policy</a>
+    </nav>
+    <p class="small">© <span id="year"></span> EZTradingHub. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  "use strict";
+
+  const $ = id => document.getElementById(id);
+  const themeToggle = $("themeToggle");
+
+  function applyTheme(theme) {
+    document.documentElement.dataset.theme = theme;
+    themeToggle.textContent = theme === "dark" ? "☀️ Light" : "🌙 Dark";
+    themeToggle.setAttribute(
+      "aria-label",
+      theme === "dark" ? "Switch to light theme" : "Switch to dark theme"
+    );
+    try {
+      localStorage.setItem("ezth-theme", theme);
+    } catch (e) {}
+  }
+
+  let theme = document.documentElement.dataset.theme;
+  if (!theme) {
+    theme = window.matchMedia &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "dark" : "light";
+  }
+  applyTheme(theme);
+
+  themeToggle.addEventListener("click", () => {
+    applyTheme(
+      document.documentElement.dataset.theme === "dark" ? "light" : "dark"
+    );
+  });
+
+  $("year").textContent = new Date().getFullYear();
+
+  function number(id) {
+    const raw = $(id).value.trim();
+    if (raw === "") return null;
+    const value = Number(raw);
+    return Number.isFinite(value) ? value : NaN;
+  }
+
+  function symbol() {
+    return {
+      USD: "$",
+      EUR: "€",
+      GBP: "£",
+      NGN: "₦",
+      OTHER: ""
+    }[$("currency").value] || "";
+  }
+
+  function money(value) {
+    return symbol() + Math.abs(value).toLocaleString(undefined, {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    }) + ($("currency").value === "OTHER" ? " units" : "");
+  }
+
+  function signedMoney(value) {
+    return (value < 0 ? "−" : value > 0 ? "+" : "") + money(value);
+  }
+
+  function setResult(id, text, value) {
+    const el = $(id);
+    el.textContent = text;
+    el.classList.remove("positive", "negative");
+
+    if (typeof value === "number" && Number.isFinite(value)) {
+      if (value > 0) el.classList.add("positive");
+      if (value < 0) el.classList.add("negative");
+    }
+  }
+
+  function calculate(event) {
+    event.preventDefault();
+
+    const starting = number("startingBalance");
+    const current = number("currentBalance");
+    const targetPct = number("profitTarget");
+    const dailyPct = number("dailyLossLimit");
+    const drawdownPct = number("maxDrawdown");
+    const equity = number("currentEquity");
+    const dailyReference = number("dailyReference");
+    const dailyUsed = number("dailyLossUsed");
+    const earned = number("profitEarned");
+    const days = number("tradesRemaining");
+
+    const required = [
+      ["Starting balance", starting],
+      ["Current balance", current],
+      ["Profit target percentage", targetPct],
+      ["Daily loss limit percentage", dailyPct],
+      ["Maximum drawdown percentage", drawdownPct],
+      ["Daily reference balance", dailyReference],
+      ["Daily loss already used", dailyUsed],
+      ["Profit accumulated", earned]
+    ];
+
+    if (equity !== null) required.push(["Current equity", equity]);
+    if (days !== null) required.push(["Remaining trading days", days]);
+
+    for (const [name, value] of required) {
+      if (value === null || !Number.isFinite(value) || value < 0) {
+        alert("Please enter a valid non-negative value for " + name + ".");
+        return;
+      }
+    }
+
+    if (starting <= 0 || dailyReference <= 0) {
+      alert("Starting balance and daily reference balance must be greater than zero.");
+      return;
+    }
+
+    if (targetPct <= 0 || targetPct > 100 ||
+        dailyPct > 100 || drawdownPct > 100) {
+      alert("Enter a profit target above 0% and no more than 100%. Daily loss and drawdown percentages must not exceed 100%.");
+      return;
+    }
+
+    if (days !== null && (!Number.isInteger(days) || days < 0)) {
+      alert("Remaining trading days must be a non-negative whole number.");
+      return;
+    }
+
+    const targetAmount = starting * targetPct / 100;
+    const targetBalance = starting + targetAmount;
+    const remainingProfit = Math.max(0, targetAmount - earned);
+    const progress = targetAmount > 0
+      ? Math.max(0, earned / targetAmount * 100)
+      : 0;
+
+    const dailyLimit = dailyReference * dailyPct / 100;
+    const dailyRemaining = dailyLimit - dailyUsed;
+
+    const maxDrawdownAmount = starting * drawdownPct / 100;
+    const staticFloor = starting - maxDrawdownAmount;
+
+    const equityToUse = equity === null ? current : equity;
+    const equityBuffer = equityToUse - staticFloor;
+
+    const dailyTargetNeeded =
+      days !== null && days > 0 ? remainingProfit / days : null;
+
+    $("results").hidden = false;
+
+    $("targetAmount").textContent = money(targetAmount);
+    $("targetBalance").textContent = money(targetBalance);
+    $("remainingProfit").textContent = money(remainingProfit);
+
+    $("progressText").textContent =
+      progress.toLocaleString(undefined, {
+        maximumFractionDigits: 2
+      }) + "%";
+
+    const visualProgress = Math.max(0, Math.min(100, progress));
+    $("progressFill").style.width = visualProgress + "%";
+    $("progressBar").setAttribute("aria-valuenow", String(visualProgress));
+
+    $("dailyLimitAmount").textContent = money(dailyLimit);
+    setResult(
+      "dailyRemaining",
+      signedMoney(dailyRemaining),
+      dailyRemaining
+    );
+
+    $("maxDrawdownAmount").textContent = money(maxDrawdownAmount);
+    $("drawdownFloor").textContent = money(staticFloor);
+    setResult("equityBuffer", signedMoney(equityBuffer), equityBuffer);
+
+    $("dailyTargetNeeded").textContent =
+      dailyTargetNeeded === null
+        ? "Enter days > 0"
+        : money(dailyTargetNeeded) + " / day";
+
+    let message =
+      "These figures use a static starting-balance model. Confirm how your provider calculates balance, equity, daily loss, drawdown and target progress.";
+
+    if (earned >= targetAmount) {
+      message += " Your entered accumulated profit meets or exceeds the target amount mathematically. Confirm that your provider recognizes the profit and that all other requirements are met.";
+    } else {
+      message += " The remaining target is an estimate based on the profit amount you entered.";
+    }
+
+    if (dailyRemaining < 0) {
+      message += " The loss entered for today exceeds the calculated daily threshold. Verify the provider's live account figures and rules immediately.";
+    } else if (dailyRemaining === 0) {
+      message += " The entered daily loss amount has reached the calculated daily threshold.";
+    }
+
+    if (equityBuffer < 0) {
+      message += " The equity or balance entered is below the simplified static drawdown floor. Check your account status and provider rules.";
+    }
+
+    if (current < staticFloor) {
+      message += " Current balance is below the simplified static drawdown floor.";
+    }
+
+    if (progress > 100) {
+      message += " The displayed progress exceeds 100% because the entered accumulated profit exceeds the target.";
+    }
+
+    if (provider.value === "fundednext") {
+      message += " The FundedNext selection is for research labeling only; no official rules have been loaded.";
+    }
+
+    $("resultMessage").textContent = message;
+  }
+
+  const provider = $("provider");
+
+  $("challengeForm").addEventListener("submit", calculate);
+
+  $("challengeForm").addEventListener("reset", function () {
+    window.setTimeout(function () {
+      $("results").hidden = true;
+      $("progressFill").style.width = "0%";
+      $("progressBar").setAttribute("aria-valuenow", "0");
+    }, 0);
+  });
+})();
+</script>
+</body>
+</html>
