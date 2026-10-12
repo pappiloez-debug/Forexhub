@@ -1,0 +1,2026 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B5T8QM08CE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-B5T8QM08CE');
+</script>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Prop Firm Margin Calculator | Funded Account & FundedNext Margin Calculator</title>
+
+  <meta name="description"
+        content="Use the EZTradingHub Prop Firm Margin Calculator to estimate required margin, position value, free margin and margin level for funded trading accounts, prop firm challenges and FundedNext-style trading scenarios.">
+
+  <meta name="keywords"
+        content="prop firm margin calculator, funded account margin calculator, FundedNext margin calculator, prop firm forex margin calculator, funded trader margin calculator, prop trading margin calculator, forex margin calculator for prop firms, prop firm leverage calculator, funded account leverage calculator, trading margin calculator, position margin calculator, forex margin requirement calculator">
+
+  <meta name="author" content="EZTradingHub">
+
+  <meta name="robots" content="index, follow, max-image-preview:large">
+
+  <meta name="theme-color" content="#0b1220">
+
+  <link rel="canonical"
+        href="https://eztradinghub.com/prop-firm-margin-calculator.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title"
+        content="Prop Firm Margin Calculator | EZTradingHub">
+  <meta property="og:description"
+        content="Calculate estimated margin, position value, free margin and margin level for prop firm and funded trading accounts.">
+  <meta property="og:url"
+        content="https://eztradinghub.com/prop-firm-margin-calculator.html">
+  <meta property="og:site_name" content="EZTradingHub">
+  <meta property="og:image"
+        content="https://eztradinghub.com/assets/images/og-image.jpg">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title"
+        content="Prop Firm Margin Calculator | EZTradingHub">
+  <meta name="twitter:description"
+        content="Estimate margin requirements and position exposure for prop firm and funded accounts.">
+  <meta name="twitter:image"
+        content="https://eztradinghub.com/assets/images/og-image.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon"
+        href="https://eztradinghub.com/assets/images/favicon.ico">
+
+  <!-- Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+  <!-- WebApplication Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "EZTradingHub Prop Firm Margin Calculator",
+    "url": "https://eztradinghub.com/prop-firm-margin-calculator.html",
+    "description": "A prop firm and funded account margin calculator for estimating required margin, notional position value, free margin and margin level.",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Web Browser",
+    "browserRequirements": "Requires JavaScript",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "EZTradingHub",
+      "url": "https://eztradinghub.com"
+    }
+  }
+  </script>
+
+  <!-- Breadcrumb Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "EZTradingHub",
+        "item": "https://eztradinghub.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Calculators",
+        "item": "https://eztradinghub.com/calculators.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Prop Firm Margin Calculator",
+        "item": "https://eztradinghub.com/prop-firm-margin-calculator.html"
+      }
+    ]
+  }
+  </script>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is margin in prop firm trading?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Margin is the amount of account capital required to open and maintain a leveraged trading position. The exact requirement depends on the instrument, position size, leverage and broker or prop firm rules."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How is forex trading margin calculated?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A simplified margin estimate can be calculated by dividing the notional position value by leverage. The exact calculation can vary depending on the instrument, account currency, contract size and broker."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does a prop firm margin calculator guarantee that a trade is allowed?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. A calculator provides an estimate. Traders should confirm the current leverage, margin, exposure and risk rules of their specific prop firm or broker before opening a position."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I use this calculator for FundedNext-style trading scenarios?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. The calculator can be used to estimate margin for funded-account scenarios, including FundedNext-style examples. However, actual trading conditions and leverage limits should always be checked against the provider's current official rules."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg: #f5f7fb;
+      --card: #ffffff;
+      --text: #111827;
+      --muted: #667085;
+      --border: #e4e7ec;
+      --primary: #0b63ce;
+      --primary-dark: #084b9d;
+      --accent: #f5a623;
+      --success: #16834b;
+      --danger: #d92d20;
+      --header: #071426;
+      --input: #ffffff;
+      --shadow: 0 12px 35px rgba(15, 23, 42, 0.08);
+    }
+
+    body.dark {
+      --bg: #080d16;
+      --card: #101826;
+      --text: #f2f4f7;
+      --muted: #98a2b3;
+      --border: #253044;
+      --primary: #4da3ff;
+      --primary-dark: #82bcff;
+      --accent: #ffc44d;
+      --success: #46c98a;
+      --danger: #ff6b6b;
+      --header: #050b13;
+      --input: #0c1421;
+      --shadow: 0 15px 40px rgba(0, 0, 0, 0.28);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Inter", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      transition: background 0.25s ease, color 0.25s ease;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .site-header {
+      background: var(--header);
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 18px rgba(0,0,0,.15);
+    }
+
+    .header-inner {
+      max-width: 1180px;
+      margin: auto;
+      padding: 14px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: white;
+      font-weight: 800;
+      font-size: 20px;
+      text-decoration: none;
+    }
+
+    .brand:hover {
+      text-decoration: none;
+    }
+
+    .brand-logo {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #0b63ce, #19a7ff);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      color: white;
+      box-shadow: 0 6px 18px rgba(11,99,206,.3);
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .header-btn {
+      border: 1px solid rgba(255,255,255,.15);
+      background: rgba(255,255,255,.08);
+      color: white;
+      border-radius: 9px;
+      padding: 9px 12px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .header-btn:hover {
+      background: rgba(255,255,255,.15);
+    }
+
+    .container {
+      max-width: 1180px;
+      margin: auto;
+      padding: 0 18px;
+    }
+
+    .breadcrumb {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 18px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .hero {
+      padding: 48px 18px 35px;
+      text-align: center;
+      max-width: 950px;
+      margin: auto;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: rgba(11,99,206,.10);
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 13px;
+      margin-bottom: 15px;
+    }
+
+    h1 {
+      font-size: clamp(30px, 5vw, 52px);
+      line-height: 1.12;
+      margin: 0 0 18px;
+      letter-spacing: -1.5px;
+    }
+
+    .hero p {
+      max-width: 780px;
+      margin: auto;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .calculator-layout {
+      max-width: 1080px;
+      margin: 10px auto 50px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .card h2 {
+      margin-top: 0;
+      font-size: 22px;
+    }
+
+    .card h3 {
+      margin-top: 24px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+
+    .field {
+      margin-bottom: 4px;
+    }
+
+    .field.full {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 7px;
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    input,
+    select {
+      width: 100%;
+      padding: 13px 14px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: var(--input);
+      color: var(--text);
+      font: inherit;
+      outline: none;
+    }
+
+    input:focus,
+    select:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(11,99,206,.12);
+    }
+
+    .hint {
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 5px;
+    }
+
+    .calculate-btn {
+      width: 100%;
+      border: none;
+      padding: 15px;
+      border-radius: 11px;
+      background: linear-gradient(135deg, var(--primary), #168be8);
+      color: white;
+      font-size: 16px;
+      font-weight: 800;
+      cursor: pointer;
+      margin-top: 10px;
+      box-shadow: 0 8px 20px rgba(11,99,206,.22);
+    }
+
+    .calculate-btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .reset-btn {
+      width: 100%;
+      border: 1px solid var(--border);
+      padding: 12px;
+      border-radius: 10px;
+      background: transparent;
+      color: var(--text);
+      font-weight: 700;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .results {
+      display: grid;
+      gap: 12px;
+    }
+
+    .result-box {
+      padding: 16px;
+      border-radius: 13px;
+      background: rgba(11,99,206,.07);
+      border: 1px solid rgba(11,99,206,.14);
+    }
+
+    .result-label {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 3px;
+    }
+
+    .result-value {
+      font-size: 24px;
+      font-weight: 800;
+      word-break: break-word;
+    }
+
+    .result-value.success {
+      color: var(--success);
+    }
+
+    .result-value.danger {
+      color: var(--danger);
+    }
+
+    .formula {
+      margin-top: 18px;
+      padding: 15px;
+      background: var(--bg);
+      border-radius: 12px;
+      border-left: 4px solid var(--accent);
+      font-size: 14px;
+    }
+
+    .info-section {
+      max-width: 1000px;
+      margin: 0 auto 45px;
+    }
+
+    .info-section .card {
+      margin-bottom: 20px;
+    }
+
+    .info-section h2 {
+      font-size: 28px;
+      margin-top: 0;
+    }
+
+    .info-section h3 {
+      font-size: 20px;
+    }
+
+    .info-section ul {
+      padding-left: 22px;
+    }
+
+    .tip {
+      padding: 17px;
+      border-radius: 12px;
+      background: rgba(22,131,75,.09);
+      border: 1px solid rgba(22,131,75,.2);
+      margin: 18px 0;
+    }
+
+    .warning {
+      padding: 17px;
+      border-radius: 12px;
+      background: rgba(245,166,35,.10);
+      border: 1px solid rgba(245,166,35,.25);
+      margin: 18px 0;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+      padding: 18px 0;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-question {
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 20px;
+    }
+
+    .related-link {
+      display: block;
+      padding: 16px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--bg);
+      font-weight: 700;
+    }
+
+    .related-link:hover {
+      text-decoration: none;
+      border-color: var(--primary);
+    }
+
+    footer {
+      background: var(--header);
+      color: #cbd5e1;
+      padding: 35px 18px;
+      margin-top: 50px;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: auto;
+      text-align: center;
+    }
+
+    footer a {
+      color: #9dccff;
+      margin: 0 7px;
+    }
+
+    .small {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    @media (max-width: 800px) {
+      .calculator-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .related-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .header-inner {
+        padding: 11px 13px;
+      }
+
+      .brand {
+        font-size: 17px;
+      }
+
+      .brand-logo {
+        width: 35px;
+        height: 35px;
+      }
+
+      .hero {
+        padding-top: 35px;
+      }
+
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .field.full {
+        grid-column: auto;
+      }
+
+      .related-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .card {
+        padding: 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+
+    <a href="index.html" class="brand">
+      <span class="brand-logo">EZ</span>
+      <span>EZTradingHub</span>
+    </a>
+
+    <div class="header-actions">
+      <a href="calculators.html"
+         class="header-btn"
+         aria-label="Trading calculators">
+        Calculators
+      </a>
+
+      <button class="header-btn"
+              id="themeToggle"
+              type="button"
+              aria-label="Toggle light and dark mode">
+        🌙
+      </button>
+    </div>
+
+  </div>
+</header>
+
+<div class="breadcrumb">
+  <a href="index.html">Home</a>
+  &nbsp;›&nbsp;
+  <a href="calculators.html">Calculators</a>
+  &nbsp;›&nbsp;
+  Prop Firm Margin Calculator
+</div>
+
+<main>
+
+<section class="hero">
+
+  <div class="badge">
+    PROP FIRM • FUNDED ACCOUNT • MARGIN TOOL
+  </div>
+
+  <h1>
+    Prop Firm Margin Calculator
+  </h1>
+
+  <p>
+    Calculate estimated margin requirements, notional position value,
+    free margin and margin level for forex, gold, crypto and other
+    leveraged trading scenarios. Built for prop firm challenges,
+    funded trading accounts and FundedNext-style examples.
+  </p>
+
+</section>
+
+
+<section class="calculator-layout">
+
+  <!-- INPUT CARD -->
+
+  <div class="card">
+
+    <h2>Margin Calculator</h2>
+
+    <p class="small">
+      Enter your account and trade information to estimate the margin
+      required for the position.
+    </p>
+
+    <div class="form-grid">
+
+      <div class="field">
+        <label for="accountBalance">
+          Account Balance
+        </label>
+
+        <input
+          id="accountBalance"
+          type="number"
+          min="0"
+          step="0.01"
+          value="10000"
+          inputmode="decimal">
+
+        <div class="hint">
+          Example: $10,000 funded account
+        </div>
+      </div>
+
+
+      <div class="field">
+        <label for="equity">
+          Current Equity
+        </label>
+
+        <input
+          id="equity"
+          type="number"
+          min="0"
+          step="0.01"
+          value="10000"
+          inputmode="decimal">
+
+        <div class="hint">
+          Include open-position P/L if applicable.
+        </div>
+      </div>
+
+
+      <div class="field">
+        <label for="symbol">
+          Trading Instrument
+        </label>
+
+        <select id="symbol">
+          <option value="forex">Forex</option>
+          <option value="gold">Gold / XAUUSD</option>
+          <option value="crypto">Crypto</option>
+          <option value="indices">Indices</option>
+          <option value="stocks">Stocks</option>
+          <option value="custom">Custom Instrument</option>
+        </select>
+      </div>
+
+
+      <div class="field">
+        <label for="lots">
+          Position Size / Lots
+        </label>
+
+        <input
+          id="lots"
+          type="number"
+          min="0"
+          step="0.01"
+          value="1"
+          inputmode="decimal">
+
+        <div class="hint">
+          For forex, 1 standard lot is commonly 100,000 units.
+        </div>
+      </div>
+
+
+      <div class="field">
+        <label for="contractSize">
+          Contract Size
+        </label>
+
+        <input
+          id="contractSize"
+          type="number"
+          min="0"
+          step="1"
+          value="100000"
+          inputmode="decimal">
+
+        <div class="hint">
+          Adjust for your broker's contract specification.
+        </div>
+      </div>
+
+
+      <div class="field">
+        <label for="price">
+          Current Price
+        </label>
+
+        <input
+          id="price"
+          type="number"
+          min="0"
+          step="0.00001"
+          value="1.10000"
+          inputmode="decimal">
+
+        <div class="hint">
+          Enter the approximate market price.
+        </div>
+      </div>
+
+
+      <div class="field">
+        <label for="leverage">
+          Leverage
+        </label>
+
+        <select id="leverage">
+
+          <option value="10">1:10</option>
+          <option value="20">1:20</option>
+          <option value="30">1:30</option>
+          <option value="50">1:50</option>
+          <option value="100" selected>1:100</option>
+          <option value="200">1:200</option>
+          <option value="500">1:500</option>
+
+        </select>
+      </div>
+
+
+      <div class="field">
+        <label for="conversionRate">
+          Conversion Rate
+        </label>
+
+        <input
+          id="conversionRate"
+          type="number"
+          min="0"
+          step="0.00001"
+          value="1"
+          inputmode="decimal">
+
+        <div class="hint">
+          Use 1 if the notional value is already in your account currency.
+        </div>
+      </div>
+
+
+      <div class="field full">
+
+        <label for="direction">
+          Position Direction
+        </label>
+
+        <select id="direction">
+          <option value="buy">Buy / Long</option>
+          <option value="sell">Sell / Short</option>
+        </select>
+
+      </div>
+
+    </div>
+
+    <button
+      class="calculate-btn"
+      id="calculateBtn"
+      type="button">
+      Calculate Margin
+    </button>
+
+    <button
+      class="reset-btn"
+      id="resetBtn"
+      type="button">
+      Reset Calculator
+    </button>
+
+  </div>
+
+
+  <!-- RESULTS CARD -->
+
+  <div class="card">
+
+    <h2>Margin Results</h2>
+
+    <div class="results">
+
+      <div class="result-box">
+
+        <div class="result-label">
+          Estimated Notional Position Value
+        </div>
+
+        <div
+          class="result-value"
+          id="notionalValue">
+          $110,000.00
+        </div>
+
+      </div>
+
+
+      <div class="result-box">
+
+        <div class="result-label">
+          Estimated Required Margin
+        </div>
+
+        <div
+          class="result-value"
+          id="marginRequired">
+          $1,100.00
+        </div>
+
+      </div>
+
+
+      <div class="result-box">
+
+        <div class="result-label">
+          Estimated Free Margin
+        </div>
+
+        <div
+          class="result-value success"
+          id="freeMargin">
+          $8,900.00
+        </div>
+
+      </div>
+
+
+      <div class="result-box">
+
+        <div class="result-label">
+          Estimated Margin Level
+        </div>
+
+        <div
+          class="result-value"
+          id="marginLevel">
+          909.09%
+        </div>
+
+      </div>
+
+
+      <div class="result-box">
+
+        <div class="result-label">
+          Margin Used as % of Equity
+        </div>
+
+        <div
+          class="result-value"
+          id="marginPercent">
+          11.00%
+        </div>
+
+      </div>
+
+
+      <div class="result-box">
+
+        <div class="result-label">
+          Leverage Used
+        </div>
+
+        <div
+          class="result-value"
+          id="leverageUsed">
+          1:100
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="formula">
+
+      <strong>Basic margin estimate:</strong>
+
+      <br><br>
+
+      Notional Value =
+      Lots × Contract Size × Price × Conversion Rate
+
+      <br><br>
+
+      Required Margin =
+      Notional Value ÷ Leverage
+
+      <br><br>
+
+      Free Margin =
+      Equity − Required Margin
+
+      <br><br>
+
+      Margin Level =
+      Equity ÷ Required Margin × 100
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- EDUCATIONAL CONTENT -->
+
+<section class="info-section">
+
+  <div class="card">
+
+    <h2>
+      What Is a Prop Firm Margin Calculator?
+    </h2>
+
+    <p>
+      A prop firm margin calculator helps traders estimate how much
+      account capital may be required to open a leveraged position.
+      Margin is different from the amount you are risking on a trade.
+      A position can require a certain amount of margin while the
+      actual trading risk depends on factors such as position size,
+      stop-loss distance, instrument volatility and the amount lost
+      if the stop is triggered.
+    </p>
+
+    <p>
+      This calculator is designed for traders evaluating
+      <strong>prop firm margin requirements</strong>,
+      <strong>funded account position sizes</strong>,
+      forex trading positions, gold positions and other leveraged
+      instruments.
+    </p>
+
+    <p>
+      It can also be used for educational examples involving
+      <strong>FundedNext-style funded trading accounts</strong>.
+      However, the actual rules of a specific proprietary trading
+      company can change, so traders should verify the current
+      provider documentation before trading.
+    </p>
+
+  </div>
+
+
+  <div class="card">
+
+    <h2>
+      How Does Margin Work in Prop Firm Trading?
+    </h2>
+
+    <p>
+      Leverage allows a trader to control a position whose notional
+      value is larger than the amount of capital committed as margin.
+      For example, with simplified assumptions, a $100,000 position
+      using 1:100 leverage would require approximately $1,000 of
+      margin.
+    </p>
+
+    <p>
+      Margin should not be confused with a prop firm's maximum daily
+      loss or maximum overall drawdown. These are separate concepts.
+      A trader can have sufficient margin to open a position while
+      still taking too much risk relative to the account's drawdown
+      rules.
+    </p>
+
+    <div class="tip">
+
+      <strong>Important trading concept:</strong>
+
+      Margin determines the capital required to support a leveraged
+      position. Risk management determines how much you are prepared
+      to lose if the trade moves against you.
+
+    </div>
+
+  </div>
+
+
+  <div class="card">
+
+    <h2>
+      Prop Firm Margin Formula
+    </h2>
+
+    <p>
+      A simplified margin calculation can be represented as:
+    </p>
+
+    <div class="formula">
+
+      <strong>
+        Required Margin = Notional Position Value ÷ Leverage
+      </strong>
+
+    </div>
+
+    <p>
+      For a simplified forex example:
+    </p>
+
+    <div class="formula">
+
+      Notional Value =
+      Lot Size × Contract Size × Price
+
+      <br><br>
+
+      Margin =
+      Notional Value ÷ Leverage
+
+    </div>
+
+    <p>
+      Actual broker calculations can differ because instruments may
+      have different contract sizes, margin rates, currency
+      conversions, leverage schedules and trading conditions.
+    </p>
+
+  </div>
+
+
+  <div class="card">
+
+    <h2>
+      Example: $10,000 Funded Trading Account
+    </h2>
+
+    <p>
+      Consider a hypothetical $10,000 account with a 1-lot forex
+      position, a contract size of 100,000 units, a price of 1.10000
+      and 1:100 leverage.
+    </p>
+
+    <ul>
+
+      <li>
+        Notional value: approximately $110,000
+      </li>
+
+      <li>
+        Leverage: 1:100
+      </li>
+
+      <li>
+        Estimated margin: approximately $1,100
+      </li>
+
+      <li>
+        Remaining theoretical free margin before other positions or
+        costs: approximately $8,900
+      </li>
+
+    </ul>
+
+    <p>
+      This is only a mathematical example. It does not mean that a
+      particular prop firm permits that position size or leverage.
+    </p>
+
+  </div>
+
+
+  <div class="card">
+
+    <h2>
+      Margin vs Risk in a Prop Firm Challenge
+    </h2>
+
+    <p>
+      Understanding the difference between margin and risk is
+      especially important when trading a prop firm challenge.
+    </p>
+
+    <h3>Margin</h3>
+
+    <p>
+      Margin is the capital required to support a leveraged position.
+    </p>
+
+    <h3>Trading Risk</h3>
+
+    <p>
+      Trading risk is the amount that could potentially be lost if
+      the trade reaches the stop-loss or another exit condition.
+    </p>
+
+    <h3>Drawdown</h3>
+
+    <p>
+      Drawdown measures the decline in account equity or balance from
+      a previous high or reference level, depending on the rules being
+      used.
+    </p>
+
+    <h3>Daily Loss Limit</h3>
+
+    <p>
+      A daily loss limit restricts the amount an account can lose
+      during a defined trading day under a provider's rules.
+    </p>
+
+    <p>
+      These four concepts should be evaluated separately when
+      planning a funded-account trade.
+    </p>
+
+  </div>
+
+
+  <div class="card">
+
+    <h2>
+      How to Use the Prop Firm Margin Calculator
+    </h2>
+
+    <ol>
+
+      <li>
+        Enter your funded or prop firm account balance.
+      </li>
+
+      <li>
+        Enter current equity if it differs from your account balance.
+      </li>
+
+      <li>
+        Select the instrument you want to analyze.
+      </li>
+
+      <li>
+        Enter the position size or number of lots.
+      </li>
+
+      <li>
+        Enter the appropriate contract size.
+      </li>
+
+      <li>
+        Enter the current market price.
+      </li>
+
+      <li>
+        Select the leverage used for your scenario.
+      </li>
+
+      <li>
+        Enter a conversion rate when the position value needs to be
+        converted into the account currency.
+      </li>
+
+      <li>
+        Select Buy or Sell for reference.
+      </li>
+
+      <li>
+        Click <strong>Calculate Margin</strong>.
+      </li>
+
+    </ol>
+
+  </div>
+
+
+  <div class="card">
+
+    <h2>
+      Prop Firm Margin and Leverage
+    </h2>
+
+    <p>
+      Leverage has a direct effect on the simplified margin requirement.
+      Holding the position size and notional value constant, higher
+      leverage generally reduces the mathematical margin requirement,
+      while lower leverage increases it.
+    </p>
+
+    <p>
+      For example, if the notional value is $100,000:
+    </p>
+
+    <ul>
+
+      <li>
+        1:20 leverage → approximately $5,000 margin
+      </li>
+
+      <li>
+        1:50 leverage → approximately $2,000 margin
+      </li>
+
+      <li>
+        1:100 leverage → approximately $1,000 margin
+      </li>
+
+      <li>
+        1:200 leverage → approximately $500 margin
+      </li>
+
+    </ul>
+
+    <p>
+      These examples demonstrate the mathematical relationship and
+      are not statements about the leverage offered by any specific
+      prop firm.
+    </p>
+
+  </div>
+
+
+  <div class="card">
+
+    <h2>
+      FundedNext and Other Prop Firm Margin Calculations
+    </h2>
+
+    <p>
+      Traders searching for a <strong>FundedNext margin calculator</strong>,
+      <strong>FundedNext leverage calculator</strong> or
+      <strong>funded account margin calculator</strong> can use this
+      tool to model hypothetical position scenarios.
+    </p>
+
+    <p>
+      Provider rules may differ by account type, instrument, market
+      session, leverage, position size and other trading conditions.
+      Therefore, this calculator should be treated as an estimation
+      and planning tool rather than an official provider calculator.
+    </p>
+
+    <div class="warning">
+
+      <strong>Always verify current rules.</strong>
+
+      Before opening a funded-account position, check the official
+      prop firm's current documentation for leverage, maximum exposure,
+      margin requirements, drawdown rules, news restrictions and other
+      applicable conditions.
+
+    </div>
+
+  </div>
+
+
+  <div class="card">
+
+    <h2>
+      Gold and XAUUSD Prop Firm Margin
+    </h2>
+
+    <p>
+      Gold trading can have different contract specifications from
+      standard forex currency pairs. XAUUSD position calculations may
+      therefore require a different contract size and price assumption.
+    </p>
+
+    <p>
+      If you are calculating margin for gold, replace the default
+      contract size and price with the specifications applicable to
+      your broker or trading platform.
+    </p>
+
+    <p>
+      This is particularly useful when analyzing gold positions in
+      funded-account or prop firm trading environments.
+    </p>
+
+  </div>
+
+
+  <div class="card">
+
+    <h2>
+      Why Margin Level Matters
+    </h2>
+
+    <p>
+      Margin level provides a ratio between account equity and used
+      margin. A simplified formula is:
+    </p>
+
+    <div class="formula">
+
+      <strong>
+        Margin Level = Equity ÷ Used Margin × 100
+      </strong>
+
+    </div>
+
+    <p>
+      A higher margin level generally means that the required margin
+      represents a smaller portion of available equity. A lower margin
+      level indicates that more of the account's equity is committed
+      relative to the calculated margin.
+    </p>
+
+    <p>
+      Actual liquidation or stop-out thresholds depend on the broker
+      or trading environment and should not be assumed from this
+      calculator.
+    </p>
+
+  </div>
+
+
+  <!-- FAQ -->
+
+  <div class="card">
+
+    <h2>
+      Frequently Asked Questions
+    </h2>
+
+
+    <div class="faq-item">
+
+      <div class="faq-question">
+        What is margin in prop firm trading?
+      </div>
+
+      <div>
+        Margin is the amount of account capital required to open and
+        maintain a leveraged position. The requirement depends on the
+        instrument, position size, leverage and trading conditions.
+      </div>
+
+    </div>
+
+
+    <div class="faq-item">
+
+      <div class="faq-question">
+        How do I calculate forex margin?
+      </div>
+
+      <div>
+        A simplified calculation is notional position value divided
+        by leverage. The exact calculation can vary depending on the
+        broker, instrument, account currency and contract specification.
+      </div>
+
+    </div>
+
+
+    <div class="faq-item">
+
+      <div class="faq-question">
+        Is margin the same as trading risk?
+      </div>
+
+      <div>
+        No. Margin is the capital required to support the position.
+        Trading risk depends on factors such as position size,
+        stop-loss distance, market movement and the amount that could
+        be lost.
+      </div>
+
+    </div>
+
+
+    <div class="faq-item">
+
+      <div class="faq-question">
+        Can I use this for a FundedNext-style calculation?
+      </div>
+
+      <div>
+        Yes. You can use the calculator for educational and
+        hypothetical funded-account scenarios. Always confirm the
+        current rules and specifications of the provider you use.
+      </div>
+
+    </div>
+
+
+    <div class="faq-item">
+
+      <div class="faq-question">
+        Can I calculate XAUUSD margin?
+      </div>
+
+      <div>
+        Yes. Select Gold / XAUUSD and enter the appropriate contract
+        size, position size, price and leverage for your trading
+        environment.
+      </div>
+
+    </div>
+
+
+    <div class="faq-item">
+
+      <div class="faq-question">
+        Does higher leverage always mean lower trading risk?
+      </div>
+
+      <div>
+        No. Higher leverage can reduce the mathematical margin
+        requirement for a given position, but it does not automatically
+        reduce the market risk of the position.
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- RELATED CALCULATORS -->
+
+  <div class="card">
+
+    <h2>
+      Related Prop Firm & Trading Calculators
+    </h2>
+
+    <p>
+      Continue planning your funded-account trades with these
+      EZTradingHub tools:
+    </p>
+
+    <div class="related-grid">
+
+      <a class="related-link"
+         href="prop-firm-risk-calculator.html">
+        Prop Firm Risk Calculator
+      </a>
+
+      <a class="related-link"
+         href="prop-firm-position-size-calculator.html">
+        Prop Firm Position Size Calculator
+      </a>
+
+      <a class="related-link"
+         href="prop-firm-drawdown-calculator.html">
+        Prop Firm Drawdown Calculator
+      </a>
+
+      <a class="related-link"
+         href="prop-firm-risk-reward-calculator.html">
+        Prop Firm Risk-Reward Calculator
+      </a>
+
+      <a class="related-link"
+         href="prop-firm-challenge-calculator.html">
+        Prop Firm Challenge Calculator
+      </a>
+
+      <a class="related-link"
+         href="funded-account-risk-calculator.html">
+        Funded Account Risk Calculator
+      </a>
+
+      <a class="related-link"
+         href="lot-size-calculator.html">
+        Forex Lot Size Calculator
+      </a>
+
+      <a class="related-link"
+         href="margin-calculator.html">
+        General Margin Calculator
+      </a>
+
+      <a class="related-link"
+         href="calculators.html">
+        All Trading Calculators
+      </a>
+
+    </div>
+
+  </div>
+
+
+  <!-- DISCLAIMER -->
+
+  <div class="card">
+
+    <h2>
+      Disclaimer
+    </h2>
+
+    <p>
+      EZTradingHub provides this calculator for educational and
+      informational purposes only. The results are estimates and may
+      differ from calculations performed by a broker, trading
+      platform or proprietary trading company.
+    </p>
+
+    <p>
+      This page is not affiliated with, endorsed by, sponsored by or
+      officially connected with FundedNext or any other proprietary
+      trading company unless explicitly stated.
+    </p>
+
+    <p>
+      Always verify current trading conditions, leverage,
+      contract specifications, margin requirements, drawdown limits
+      and other rules with your broker or prop firm before opening
+      a position.
+    </p>
+
+  </div>
+
+</section>
+
+</main>
+
+
+<footer>
+
+  <div class="footer-inner">
+
+    <strong>EZTradingHub</strong>
+
+    <p>
+      Smart trading calculators, tools and educational resources
+      for traders.
+    </p>
+
+    <p>
+
+      <a href="index.html">Home</a>
+
+      <a href="calculators.html">Calculators</a>
+
+      <a href="about.html">About</a>
+
+      <a href="faq.html">FAQ</a>
+
+      <a href="contact.html">Contact</a>
+
+      <a href="privacy.html">Privacy</a>
+
+      <a href="terms.html">Terms</a>
+
+      <a href="disclaimer.html">Disclaimer</a>
+
+      <a href="cookie-policy.html">Cookie Policy</a>
+
+    </p>
+
+    <p class="small">
+      © <span id="year"></span> EZTradingHub. All rights reserved.
+    </p>
+
+  </div>
+
+</footer>
+
+
+<script>
+
+  const $ = (id) => document.getElementById(id);
+
+
+  /* ============================
+     THEME
+  ============================ */
+
+  const savedTheme = localStorage.getItem("ezth-theme");
+
+  if (savedTheme === "dark") {
+    document.body.classList.add("dark");
+    $("themeToggle").textContent = "☀️";
+  }
+
+
+  $("themeToggle").addEventListener("click", function () {
+
+    document.body.classList.toggle("dark");
+
+    const dark =
+      document.body.classList.contains("dark");
+
+    localStorage.setItem(
+      "ezth-theme",
+      dark ? "dark" : "light"
+    );
+
+    this.textContent =
+      dark ? "☀️" : "🌙";
+
+  });
+
+
+  /* ============================
+     FORM ELEMENTS
+  ============================ */
+
+  const accountBalance = $("accountBalance");
+  const equity = $("equity");
+  const symbol = $("symbol");
+  const lots = $("lots");
+  const contractSize = $("contractSize");
+  const price = $("price");
+  const leverage = $("leverage");
+  const conversionRate = $("conversionRate");
+
+
+  /* ============================
+     FORMAT NUMBER
+  ============================ */
+
+  function formatMoney(value) {
+
+    if (!Number.isFinite(value)) {
+      return "$0.00";
+    }
+
+    return value.toLocaleString(
+      "en-US",
+      {
+        style: "currency",
+        currency: "USD",
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+      }
+    );
+
+  }
+
+
+  function formatNumber(value, decimals = 2) {
+
+    if (!Number.isFinite(value)) {
+      return "0";
+    }
+
+    return value.toLocaleString(
+      "en-US",
+      {
+        minimumFractionDigits: decimals,
+        maximumFractionDigits: decimals
+      }
+    );
+
+  }
+
+
+  /* ============================
+     AUTO CONTRACT SIZE
+  ============================ */
+
+  symbol.addEventListener("change", function () {
+
+    if (this.value === "forex") {
+
+      contractSize.value = 100000;
+
+      if (price.value === "" ||
+          Number(price.value) === 1.85 ||
+          Number(price.value) === 2000) {
+
+        price.value = 1.10000;
+      }
+
+    }
+
+    else if (this.value === "gold") {
+
+      contractSize.value = 100;
+
+      price.value = 2000;
+
+    }
+
+    else if (this.value === "crypto") {
+
+      contractSize.value = 1;
+
+      price.value = 60000;
+
+    }
+
+    else if (this.value === "indices") {
+
+      contractSize.value = 1;
+
+      price.value = 5000;
+
+    }
+
+    else if (this.value === "stocks") {
+
+      contractSize.value = 1;
+
+      price.value = 200;
+
+    }
+
+    else {
+
+      contractSize.value = 1;
+
+    }
+
+  });
+
+
+  /* ============================
+     CALCULATE
+  ============================ */
+
+  function calculateMargin() {
+
+    const balance =
+      Number(accountBalance.value);
+
+    const currentEquity =
+      Number(equity.value);
+
+    const lotSize =
+      Number(lots.value);
+
+    const contract =
+      Number(contractSize.value);
+
+    const marketPrice =
+      Number(price.value);
+
+    const lev =
+      Number(leverage.value);
+
+    const conversion =
+      Number(conversionRate.value);
+
+
+    if (
+      !Number.isFinite(balance) ||
+      !Number.isFinite(currentEquity) ||
+      !Number.isFinite(lotSize) ||
+      !Number.isFinite(contract) ||
+      !Number.isFinite(marketPrice) ||
+      !Number.isFinite(lev) ||
+      !Number.isFinite(conversion) ||
+
+      balance < 0 ||
+      currentEquity < 0 ||
+      lotSize <= 0 ||
+      contract <= 0 ||
+      marketPrice <= 0 ||
+      lev <= 0 ||
+      conversion <= 0
+    ) {
+
+      alert(
+        "Please enter valid positive values for the position, contract size, price, leverage and conversion rate."
+      );
+
+      return;
+
+    }
+
+
+    /*
+      Simplified notional value.
+
+      For standard FX examples:
+      lots × contract size × price
+
+      Conversion rate can be used when
+      converting the result to the account currency.
+    */
+
+    const notional =
+      lotSize *
+      contract *
+      marketPrice *
+      conversion;
+
+
+    const margin =
+      notional / lev;
+
+
+    const free =
+      currentEquity - margin;
+
+
+    const marginLevel =
+      margin > 0
+        ? (currentEquity / margin) * 100
+        : 0;
+
+
+    const marginPercent =
+      currentEquity > 0
+        ? (margin / currentEquity) * 100
+        : 0;
+
+
+    $("notionalValue").textContent =
+      formatMoney(notional);
+
+    $("marginRequired").textContent =
+      formatMoney(margin);
+
+    $("freeMargin").textContent =
+      formatMoney(free);
+
+    $("marginLevel").textContent =
+      formatNumber(marginLevel, 2) + "%";
+
+    $("marginPercent").textContent =
+      formatNumber(marginPercent, 2) + "%";
+
+    $("leverageUsed").textContent =
+      "1:" + lev;
+
+
+    /* Free margin status */
+
+    $("freeMargin").classList.remove(
+      "success",
+      "danger"
+    );
+
+    if (free >= 0) {
+
+      $("freeMargin")
+        .classList.add("success");
+
+    } else {
+
+      $("freeMargin")
+        .classList.add("danger");
+
+    }
+
+
+    /* Margin level status */
+
+    $("marginLevel").classList.remove(
+      "success",
+      "danger"
+    );
+
+    if (marginLevel >= 200) {
+
+      $("marginLevel")
+        .classList.add("success");
+
+    }
+
+    else if (marginLevel < 100) {
+
+      $("marginLevel")
+        .classList.add("danger");
+
+    }
+
+  }
+
+
+  /* ============================
+     RESET
+  ============================ */
+
+  $("resetBtn").addEventListener(
+    "click",
+    function () {
+
+      accountBalance.value = 10000;
+
+      equity.value = 10000;
+
+      symbol.value = "forex";
+
+      lots.value = 1;
+
+      contractSize.value = 100000;
+
+      price.value = 1.10000;
+
+      leverage.value = 100;
+
+      conversionRate.value = 1;
+
+      calculateMargin();
+
+    }
+  );
+
+
+  $("calculateBtn").addEventListener(
+    "click",
+    calculateMargin
+  );
+
+
+  /* ============================
+     ENTER KEY SUPPORT
+  ============================ */
+
+  document.querySelectorAll(
+    "input, select"
+  ).forEach(function (element) {
+
+    element.addEventListener(
+      "keydown",
+      function (event) {
+
+        if (event.key === "Enter") {
+
+          event.preventDefault();
+
+          calculateMargin();
+
+        }
+
+      }
+    );
+
+  });
+
+
+  /* ============================
+     YEAR
+  ============================ */
+
+  $("year").textContent =
+    new Date().getFullYear();
+
+
+  /* ============================
+     INITIAL CALCULATION
+  ============================ */
+
+  calculateMargin();
+
+</script>
+
+</body>
+</html>
