@@ -1,0 +1,1234 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B5T8QM08CE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-B5T8QM08CE');
+</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Prop Firm Lot Size Calculator | Funded Account Risk Tool</title>
+  <meta name="description" content="Calculate forex lot size for prop firm challenges and funded accounts. Estimate position size from account balance, risk percentage, stop-loss distance and pip value.">
+  <meta name="keywords" content="prop firm lot size calculator, funded account lot size calculator, FundedNext lot size calculator, forex position size calculator, prop firm risk management, lot size for funded account, forex lot calculator, XAUUSD lot size calculator, gold lot size calculator, stop loss lot size calculator">
+  <meta name="author" content="EZTradingHub">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#0b1730">
+
+  <link rel="canonical" href="https://eztradinghub.com/prop-firm-lot-size-calculator.html">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Prop Firm Lot Size Calculator | EZTradingHub">
+  <meta property="og:description" content="Calculate estimated position size for forex, gold and funded trading accounts using your risk budget and stop-loss distance.">
+  <meta property="og:url" content="https://eztradinghub.com/prop-firm-lot-size-calculator.html">
+  <meta property="og:site_name" content="EZTradingHub">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Prop Firm Lot Size Calculator">
+  <meta name="twitter:description" content="Free lot size calculator for prop firm challenges and funded accounts.">
+
+  <script>
+    try {
+      const savedTheme = localStorage.getItem("ezth-theme");
+      if (savedTheme === "light" || savedTheme === "dark") {
+        document.documentElement.dataset.theme = savedTheme;
+      }
+    } catch (e) {}
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "EZTradingHub Prop Firm Lot Size Calculator",
+    "url": "https://eztradinghub.com/prop-firm-lot-size-calculator.html",
+    "description": "Free online lot size and position sizing calculator for forex traders, prop firm challenges and funded trading accounts.",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Any",
+    "isAccessibleForFree": true,
+    "browserRequirements": "Requires JavaScript",
+    "publisher": {
+      "@type": "Organization",
+      "name": "EZTradingHub",
+      "url": "https://eztradinghub.com/"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://eztradinghub.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Calculators",
+        "item": "https://eztradinghub.com/calculators.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Prop Firm Lot Size Calculator",
+        "item": "https://eztradinghub.com/prop-firm-lot-size-calculator.html"
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f3f6fb;
+      --surface: #ffffff;
+      --surface2: #eaf0f8;
+      --text: #17243a;
+      --muted: #64748b;
+      --border: #dbe3ef;
+      --primary: #174ea6;
+      --accent: #f5b323;
+      --success: #12805c;
+      --danger: #c83d4d;
+      --shadow: 0 12px 35px rgba(20, 43, 80, .08);
+    }
+
+    :root[data-theme="dark"] {
+      color-scheme: dark;
+      --bg: #0b1220;
+      --surface: #121d30;
+      --surface2: #1b2a42;
+      --text: #edf3ff;
+      --muted: #a6b4ca;
+      --border: #2c3b54;
+      --primary: #72a7ff;
+      --accent: #f5b323;
+      --success: #5bdaa9;
+      --danger: #ff8994;
+      --shadow: 0 12px 35px rgba(0, 0, 0, .2);
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.7;
+      transition: background .2s, color .2s;
+    }
+
+    a { color: var(--primary); }
+
+    a:focus-visible, button:focus-visible,
+    input:focus-visible, select:focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 3px;
+    }
+
+    .site-header {
+      background: #0b1730;
+      color: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, .15);
+    }
+
+    .header-inner {
+      max-width: 1160px;
+      margin: auto;
+      padding: 13px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand {
+      color: #fff;
+      font-weight: 800;
+      font-size: 1.2rem;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .brand span { color: var(--accent); }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .nav-links a {
+      color: #e3eaff;
+      text-decoration: none;
+      font-size: .9rem;
+    }
+
+    .nav-links a:hover { color: var(--accent); }
+
+    .theme-button {
+      border: 1px solid #62708b;
+      background: #182746;
+      color: #fff;
+      border-radius: 9px;
+      padding: 9px 12px;
+      cursor: pointer;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .container {
+      width: min(1100px, calc(100% - 32px));
+      margin: auto;
+    }
+
+    .breadcrumbs {
+      padding: 18px 0 8px;
+      color: var(--muted);
+      font-size: .88rem;
+    }
+
+    .breadcrumbs a { text-decoration: none; }
+
+    .hero {
+      margin: 16px 0 26px;
+      padding: clamp(25px, 5vw, 52px);
+      border-radius: 22px;
+      background: linear-gradient(130deg, #0b1730, #174ea6);
+      color: #fff;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      background: rgba(245, 179, 35, .15);
+      border: 1px solid rgba(245, 179, 35, .55);
+      color: #ffd574;
+      border-radius: 50px;
+      padding: 5px 12px;
+      font-size: .82rem;
+      font-weight: 700;
+    }
+
+    h1 {
+      max-width: 820px;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      line-height: 1.15;
+      margin: 17px 0;
+    }
+
+    .hero p {
+      max-width: 760px;
+      color: #e1e9f8;
+      font-size: 1.04rem;
+    }
+
+    .hero-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 23px;
+    }
+
+    .hero-links a {
+      color: #fff;
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,.35);
+      border-radius: 9px;
+      padding: 9px 13px;
+      font-size: .9rem;
+    }
+
+    .hero-links a:first-child {
+      background: var(--accent);
+      color: #18243a;
+      border-color: var(--accent);
+      font-weight: 800;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 17px;
+      padding: clamp(18px, 3vw, 28px);
+      box-shadow: var(--shadow);
+      margin-bottom: 22px;
+      min-width: 0;
+    }
+
+    h2 {
+      font-size: clamp(1.4rem, 3vw, 1.9rem);
+      line-height: 1.3;
+      margin: 0 0 14px;
+    }
+
+    h3 {
+      line-height: 1.35;
+      margin: 24px 0 8px;
+    }
+
+    p { margin: 10px 0 15px; }
+
+    .muted { color: var(--muted); }
+    .small { font-size: .9rem; }
+
+    .notice {
+      background: var(--surface2);
+      border-left: 4px solid var(--accent);
+      border-radius: 8px;
+      padding: 13px 15px;
+      margin: 16px 0;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 17px;
+    }
+
+    .field { min-width: 0; }
+
+    label {
+      display: block;
+      font-weight: 700;
+      font-size: .92rem;
+      margin-bottom: 6px;
+    }
+
+    input, select {
+      width: 100%;
+      min-height: 46px;
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      padding: 11px 12px;
+      background: var(--bg);
+      color: var(--text);
+      font: inherit;
+    }
+
+    .help {
+      color: var(--muted);
+      font-size: .8rem;
+      margin-top: 5px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .button {
+      border: 0;
+      background: var(--primary);
+      color: #fff;
+      padding: 12px 19px;
+      border-radius: 9px;
+      font: inherit;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .button.secondary {
+      color: var(--text);
+      background: var(--surface2);
+      border: 1px solid var(--border);
+    }
+
+    .results {
+      margin-top: 22px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .result-box {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px;
+      min-width: 0;
+    }
+
+    .result-label {
+      color: var(--muted);
+      font-size: .82rem;
+      display: block;
+    }
+
+    .result-value {
+      font-size: clamp(1.1rem, 3vw, 1.55rem);
+      font-weight: 800;
+      overflow-wrap: anywhere;
+    }
+
+    .positive { color: var(--success); }
+    .negative { color: var(--danger); }
+
+    .table-wrap { overflow-x: auto; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 14px 0;
+      font-size: .93rem;
+    }
+
+    th, td {
+      border: 1px solid var(--border);
+      padding: 11px;
+      text-align: left;
+    }
+
+    th { background: var(--surface2); }
+
+    .faq-item {
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .faq-item:last-child { border-bottom: 0; }
+    .faq-item h3 { margin: 0 0 7px; font-size: 1.05rem; }
+    .faq-item p { margin-bottom: 0; }
+
+    .related-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .related-links a {
+      display: inline-block;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      padding: 10px 13px;
+      text-decoration: none;
+      font-size: .9rem;
+    }
+
+    footer {
+      margin-top: 36px;
+      background: #0b1730;
+      color: #dbe6fa;
+      padding: 28px 16px;
+    }
+
+    .footer-inner {
+      width: min(1100px, 100%);
+      margin: auto;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 12px;
+    }
+
+    .footer-links a { color: #dbe6fa; }
+
+    @media (max-width: 760px) {
+      .header-inner { flex-wrap: wrap; }
+      .nav-links { order: 3; width: 100%; gap: 12px; }
+      .nav-links a { font-size: .83rem; }
+      .form-grid { grid-template-columns: 1fr; }
+      .results { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 420px) {
+      .container { width: calc(100% - 22px); }
+      .result-box { padding: 12px; }
+      .result-value { font-size: 1.12rem; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      * { transition: none !important; }
+    }
+  </style>
+</head>
+
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="index.html" aria-label="EZTradingHub home">
+      EZ<span>TradingHub</span>
+    </a>
+
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="calculators.html">Calculators</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <button class="theme-button" id="themeToggle" type="button">
+      🌙 Dark
+    </button>
+  </div>
+</header>
+
+<main class="container">
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <a href="index.htm">Home</a> /
+    <a href="calculators.html">Calculators</a> /
+    <span aria-current="page">Prop Firm Lot Size Calculator</span>
+  </nav>
+
+  <section class="hero">
+    <span class="eyebrow">FREE POSITION SIZING TOOL</span>
+    <h1>Prop Firm Lot Size Calculator for Funded Trading Accounts</h1>
+    <p>
+      Calculate estimated forex position size using account balance,
+      risk percentage, stop-loss distance and pip value. Use this
+      prop firm lot size calculator when planning trades for funded
+      account challenges, including programs you are researching at
+      FundedNext and other trading providers.
+    </p>
+    <div class="hero-links">
+      <a href="#calculator">Calculate Lot Size</a>
+      <a href="#guide">Read the Guide</a>
+      <a href="#faq">FAQs</a>
+    </div>
+  </section>
+
+  <section class="card" id="calculator">
+    <h2>Calculate Your Position Size</h2>
+    <p class="muted">
+      Enter your risk budget, stop-loss distance and pip value to estimate
+      a position size. You can also set a maximum lot size and lot increment.
+    </p>
+
+    <div class="notice">
+      <strong>Important:</strong> This calculator estimates position size
+      from your inputs. Pip values and contract specifications differ across
+      forex pairs, gold, indices and other instruments. Verify the correct
+      values with your broker before trading.
+    </div>
+
+    <form id="lotForm">
+      <div class="form-grid">
+        <div class="field">
+          <label for="accountType">Account type</label>
+          <select id="accountType">
+            <option value="challenge">Prop firm challenge</option>
+            <option value="funded">Funded trading account</option>
+            <option value="personal">Personal trading account</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="instrument">Trading instrument</label>
+          <select id="instrument">
+            <option value="forex">Forex pair</option>
+            <option value="gold">Gold (XAU/USD)</option>
+            <option value="silver">Silver (XAG/USD)</option>
+            <option value="crypto">Crypto CFD</option>
+            <option value="index">Index CFD</option>
+            <option value="custom">Other / custom instrument</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="accountBalance">Account balance</label>
+          <input id="accountBalance" type="number" min="0.01"
+            step="any" value="10000" required>
+        </div>
+
+        <div class="field">
+          <label for="currency">Account currency</label>
+          <select id="currency">
+            <option value="USD">USD ($)</option>
+            <option value="EUR">EUR (€)</option>
+            <option value="GBP">GBP (£)</option>
+            <option value="NGN">NGN (₦)</option>
+            <option value="OTHER">Other / unspecified</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="riskMode">Risk calculation method</label>
+          <select id="riskMode">
+            <option value="percent">Percentage of account balance</option>
+            <option value="fixed">Fixed cash risk amount</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="riskPercent">Risk per trade (%)</label>
+          <input id="riskPercent" type="number" min="0.01"
+            max="100" step="any" value="0.5" required>
+          <div class="help">Used when percentage risk is selected.</div>
+        </div>
+
+        <div class="field">
+          <label for="fixedRisk">Fixed risk amount</label>
+          <input id="fixedRisk" type="number" min="0.01"
+            step="any" placeholder="e.g. 50">
+          <div class="help">Used when fixed cash risk is selected.</div>
+        </div>
+
+        <div class="field">
+          <label for="stopLoss">Stop-loss distance (pips)</label>
+          <input id="stopLoss" type="number" min="0.01"
+            step="any" value="20" required>
+        </div>
+
+        <div class="field">
+          <label for="pipValue">Pip value per 1.00 standard lot</label>
+          <input id="pipValue" type="number" min="0.000001"
+            step="any" value="10" required>
+          <div class="help">Enter the value in your account currency.</div>
+        </div>
+
+        <div class="field">
+          <label for="costs">Estimated costs per 1.00 lot</label>
+          <input id="costs" type="number" min="0"
+            step="any" value="0" required>
+          <div class="help">Optional estimate for spread, commission and other round-trip costs.</div>
+        </div>
+
+        <div class="field">
+          <label for="maxLot">Maximum permitted lot size</label>
+          <input id="maxLot" type="number" min="0.0001"
+            step="any" value="100" required>
+          <div class="help">Set this to the maximum you want the calculator to allow.</div>
+        </div>
+
+        <div class="field">
+          <label for="lotStep">Lot increment</label>
+          <select id="lotStep">
+            <option value="0.01">0.01 lot</option>
+            <option value="0.001">0.001 lot</option>
+            <option value="0.1">0.10 lot</option>
+            <option value="1">1.00 lot</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="maxRiskPercent">Maximum risk limit (%)</label>
+          <input id="maxRiskPercent" type="number" min="0.01"
+            max="100" step="any" value="1" required>
+          <div class="help">Used as a reference for the selected account balance.</div>
+        </div>
+
+        <div class="field">
+          <label for="direction">Trade direction</label>
+          <select id="direction">
+            <option value="buy">Buy / Long</option>
+            <option value="sell">Sell / Short</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="buttons">
+        <button class="button" type="submit">Calculate Lot Size</button>
+        <button class="button secondary" type="reset">Reset</button>
+      </div>
+    </form>
+
+    <div id="results" aria-live="polite" aria-atomic="true" hidden>
+      <h3>Your Position Sizing Results</h3>
+
+      <div class="results">
+        <div class="result-box">
+          <span class="result-label">Suggested lot size</span>
+          <div class="result-value" id="lotResult">—</div>
+        </div>
+
+        <div class="result-box">
+          <span class="result-label">Cash risk budget</span>
+          <div class="result-value" id="riskBudgetResult">—</div>
+        </div>
+
+        <div class="result-box">
+          <span class="result-label">Estimated stop-loss loss</span>
+          <div class="result-value" id="riskAmountResult">—</div>
+        </div>
+
+        <div class="result-box">
+          <span class="result-label">Estimated costs</span>
+          <div class="result-value" id="costResult">—</div>
+        </div>
+
+        <div class="result-box">
+          <span class="result-label">Total estimated risk</span>
+          <div class="result-value" id="totalRiskResult">—</div>
+        </div>
+
+        <div class="result-box">
+          <span class="result-label">Account risk percentage</span>
+          <div class="result-value" id="actualRiskResult">—</div>
+        </div>
+
+        <div class="result-box">
+          <span class="result-label">Maximum risk reference</span>
+          <div class="result-value" id="maxRiskResult">—</div>
+        </div>
+
+        <div class="result-box">
+          <span class="result-label">Lot size capped?</span>
+          <div class="result-value" id="cappedResult">—</div>
+        </div>
+
+        <div class="result-box">
+          <span class="result-label">Estimated loss at stop</span>
+          <div class="result-value" id="lossResult">—</div>
+        </div>
+      </div>
+
+      <p id="resultMessage" class="notice"></p>
+      <p class="small muted">
+        The result is a mathematical estimate, not a trade instruction.
+        Actual losses may exceed the estimate due to slippage, gaps,
+        changing spreads or execution conditions.
+      </p>
+    </div>
+  </section>
+
+  <section class="card" id="guide">
+    <h2>How to Calculate Lot Size for a Prop Firm Challenge</h2>
+    <p>
+      Lot size determines the volume of a trading position. When the market
+      moves against a position, the loss depends on position size, stop-loss
+      distance, pip value and trading costs. Calculating position size before
+      entering a trade helps you compare planned exposure with your chosen
+      risk budget.
+    </p>
+
+    <h3>Step 1: Enter your account balance</h3>
+    <p>
+      Use the balance you want to base your calculation on. If you are
+      trading a challenge or funded account, remember that the provider
+      may calculate daily or total loss limits using equity, balance,
+      trailing drawdown or other account-specific rules.
+    </p>
+
+    <h3>Step 2: Choose a risk amount</h3>
+    <p>
+      Percentage risk calculates a cash amount from your account balance.
+      For example, 0.5% of a $10,000 balance is $50. Fixed cash risk lets
+      you enter a specific amount directly. The selected amount is the
+      intended budget for the trade, not a guarantee of the maximum loss.
+    </p>
+
+    <h3>Step 3: Enter the stop-loss distance</h3>
+    <p>
+      A wider stop-loss generally requires a smaller position if you want
+      to keep the same cash risk. A tighter stop-loss generally allows a
+      larger calculated position, although market noise and execution
+      conditions still matter.
+    </p>
+
+    <h3>Step 4: Confirm pip value and costs</h3>
+    <p>
+      Pip value is instrument- and account-dependent. Enter the pip value
+      for one standard lot in your account currency. Add estimated round-trip
+      costs per standard lot so the calculator can include them in its
+      position-size estimate.
+    </p>
+
+    <h3>Step 5: Review the rounded lot size</h3>
+    <p>
+      The result is rounded down to the selected lot increment so the
+      suggested volume does not exceed the mathematical position size
+      calculated from your inputs. The maximum lot setting may reduce it
+      further.
+    </p>
+
+    <div class="notice">
+      <strong>Example:</strong> For a $10,000 balance, 0.5% risk gives
+      a $50 budget. If the stop-loss is 20 pips and the pip value is
+      $10 per pip for one standard lot, ignoring costs, the theoretical
+      lot size is 0.25 lots. Real calculations should account for
+      instrument specifications and costs.
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Lot Size Calculation Formula</h2>
+
+    <p>For percentage-based risk:</p>
+    <div class="notice">
+      <strong>Cash risk budget = Account balance × Risk percentage ÷ 100</strong>
+    </div>
+
+    <p>For a position with an entered pip value and stop-loss distance:</p>
+    <div class="notice">
+      <strong>
+        Estimated risk per 1.00 lot =
+        (Stop-loss pips × Pip value per lot) + Costs per lot
+      </strong>
+    </div>
+
+    <div class="notice">
+      <strong>
+        Theoretical lot size = Cash risk budget ÷ Estimated risk per 1.00 lot
+      </strong>
+    </div>
+
+    <p>
+      The calculator rounds the theoretical size down to your selected
+      lot increment and applies the maximum lot limit. If the rounded
+      position's estimated risk is greater than the budget because of
+      rounding or unusual inputs, review the result before using it.
+    </p>
+  </section>
+
+  <section class="card">
+    <h2>Lot Size Planning for Forex, Gold and Funded Accounts</h2>
+
+    <h3>Forex pairs</h3>
+    <p>
+      Forex pip values depend on the currency pair, trade volume and
+      account currency. The often-used example of $10 per pip for one
+      standard lot applies to certain major currency pairs under specific
+      conversion conditions; it should not be assumed for every pair.
+    </p>
+
+    <h3>Gold (XAU/USD)</h3>
+    <p>
+      Gold contract sizes, tick sizes and quoting conventions vary between
+      brokers. Do not automatically apply a forex pip value to gold.
+      Confirm your broker's contract size and the cash value of the
+      price increment you use as a pip.
+    </p>
+
+    <h3>FundedNext and other prop firm accounts</h3>
+    <p>
+      Traders researching FundedNext or other proprietary trading programs
+      can use this tool for general position-size estimates. This page
+      is not affiliated with or endorsed by FundedNext or any other firm.
+      Verify each provider's current rules for maximum daily loss,
+      overall loss, permitted instruments, lot restrictions and trading
+      conditions.
+    </p>
+
+    <h3>Daily loss and maximum drawdown</h3>
+    <p>
+      A position size that fits an individual trade's risk budget does
+      not necessarily fit your remaining daily or overall loss allowance.
+      Existing open positions, commissions, floating losses and other
+      trades can affect your available risk capacity.
+    </p>
+  </section>
+
+  <section class="card">
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+      <h3>1. What is a prop firm lot size calculator?</h3>
+      <p>
+        It estimates position size using your account balance, risk
+        amount, stop-loss distance, pip value and estimated trading
+        costs. It can help you understand the relationship between
+        volume and potential loss.
+      </p>
+    </div>
+
+    <div class="faq-item">
+      <h3>2. How do I calculate lot size for a FundedNext challenge?</h3>
+      <p>
+        Enter your chosen account balance, risk percentage or fixed
+        amount, stop-loss distance, pip value and trading costs.
+        Check your specific challenge rules separately because account
+        limits and position restrictions can differ by program.
+      </p>
+    </div>
+
+    <div class="faq-item">
+      <h3>3. What lot size should I use on a $10,000 funded account?</h3>
+      <p>
+        There is no single correct lot size for every trade. The result
+        depends on the amount you plan to risk, stop-loss distance,
+        instrument pip value, costs and any applicable trading limits.
+        Use the calculator to explore these inputs.
+      </p>
+    </div>
+
+    <div class="faq-item">
+      <h3>4. Does a wider stop-loss change my lot size?</h3>
+      <p>
+        Yes. For a fixed risk budget and pip value, a wider stop-loss
+        usually reduces the calculated position size because each lot
+        would incur a larger loss if the stop is reached.
+      </p>
+    </div>
+
+    <div class="faq-item">
+      <h3>5. Can I use this tool for XAU/USD gold trading?</h3>
+      <p>
+        Yes, provided you enter the correct gold pip value, stop-loss
+        convention and trading costs from your broker. Gold contracts
+        are not standardized identically across all platforms.
+      </p>
+    </div>
+
+    <div class="faq-item">
+      <h3>6. Does the calculator automatically know my broker's pip value?</h3>
+      <p>
+        No. Pip value is entered manually. The calculator does not
+        connect to your broker or retrieve live market data.
+      </p>
+    </div>
+
+    <div class="faq-item">
+      <h3>7. Why is the calculated lot size rounded down?</h3>
+      <p>
+        Rounding down to the selected lot increment helps keep the
+        suggested size at or below the theoretical position size.
+        Your broker may use a different minimum volume or volume step,
+        which you should confirm before placing a trade.
+      </p>
+    </div>
+
+    <div class="faq-item">
+      <h3>8. Does this calculator guarantee that I will pass a challenge?</h3>
+      <p>
+        No. It calculates a theoretical position size only. Trading
+        outcomes and challenge results depend on market conditions,
+        execution, trading decisions and the provider's current rules.
+      </p>
+    </div>
+
+    <div class="faq-item">
+      <h3>9. Are trading commissions included?</h3>
+      <p>
+        The calculator includes the estimated cost per standard lot
+        that you enter. Actual charges may differ, and the estimate
+        does not automatically include unentered swaps, slippage or
+        changing spreads.
+      </p>
+    </div>
+
+    <div class="faq-item">
+      <h3>10. Is this calculator free to use?</h3>
+      <p>
+        Yes. It runs in your browser and is free to use without
+        creating a trading account.
+      </p>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Explore More EZTradingHub Tools</h2>
+    <p>
+      Continue planning and reviewing your trades with related
+      calculators available on EZTradingHub.
+    </p>
+
+    <div class="related-links">
+      <a href="https://eztradinghub.com/lot-size-calculator.html">Forex Lot Size Calculator</a>
+      <a href="https://eztradinghub.com/prop-firm-risk-calculator.html">Prop Firm Risk Calculator</a>
+      <a href="https://eztradinghub.com/prop-firm-pip-calculator.html">Prop Firm Pip Calculator</a>
+      <a href="https://eztradinghub.com/prop-firm-drawdown-calculator.html">Prop Firm Drawdown Calculator</a>
+      <a href="https://eztradinghub.com/prop-firm-position-size-calculator.html">Prop Firm Position Size Calculator</a>
+      <a href="https://eztradinghub.com/prop-firm-profit-calculator.html">Prop Firm Profit Calculator</a>
+      <a href="https://eztradinghub.com/funded-account-risk-calculator.html">Funded Account Risk Calculator</a>
+      <a href="https://eztradinghub.com/risk-reward-calculator.html">Risk-Reward Calculator</a>
+      <a href="https://eztradinghub.com/calculators.html">All Trading Calculators</a>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Financial Risk Disclaimer</h2>
+    <p class="small">
+      EZTradingHub provides educational calculators and informational
+      estimates, not financial, investment, legal or tax advice. The
+      results depend on the accuracy of the inputs and the specifications
+      of your broker or trading provider. Actual losses can differ because
+      of slippage, gaps, spreads, commissions, swaps, liquidity and
+      execution conditions. Leveraged trading involves substantial risk,
+      including the possible loss of capital. Review all applicable
+      trading terms before making decisions.
+    </p>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <strong>EZTradingHub</strong>
+    <p class="small">
+      Free trading calculators and educational tools for informed trading.
+    </p>
+    <nav class="footer-links" aria-label="Footer navigation">
+      <a href="https://eztradinghub.com">Home</a>
+      <a href="https://eztradinghub.com/about.html">About</a>
+      <a href="https://eztradinghub.com/faq.html">FAQ</a>
+      <a href="https://eztradinghub.com/contact.html">Contact</a>
+      <a href="https://eztradinghub.com/privacy.html">Privacy Policy</a>
+      <a href="https://eztradinghub.com/terms.html">Terms</a>
+      <a href="https://eztradinghub.com/disclaimer.html">Disclaimer</a>
+      <a href="https://eztradinghub.com/cookie-policy.html">Cookie Policy</a>
+    </nav>
+    <p class="small">© <span id="year"></span> EZTradingHub. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  "use strict";
+
+  const $ = (id) => document.getElementById(id);
+  const themeToggle = $("themeToggle");
+
+  function applyTheme(theme) {
+    document.documentElement.dataset.theme = theme;
+    themeToggle.textContent = theme === "dark" ? "☀️ Light" : "🌙 Dark";
+    themeToggle.setAttribute(
+      "aria-label",
+      theme === "dark" ? "Switch to light theme" : "Switch to dark theme"
+    );
+    try {
+      localStorage.setItem("ezth-theme", theme);
+    } catch (e) {}
+  }
+
+  let initialTheme = document.documentElement.dataset.theme;
+  if (!initialTheme) {
+    initialTheme = window.matchMedia &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "dark" : "light";
+  }
+  applyTheme(initialTheme);
+
+  themeToggle.addEventListener("click", function () {
+    applyTheme(
+      document.documentElement.dataset.theme === "dark" ? "light" : "dark"
+    );
+  });
+
+  $("year").textContent = new Date().getFullYear();
+
+  const riskMode = $("riskMode");
+  const riskPercent = $("riskPercent");
+  const fixedRisk = $("fixedRisk");
+
+  function updateRiskInputs() {
+    const fixed = riskMode.value === "fixed";
+    riskPercent.disabled = fixed;
+    fixedRisk.disabled = !fixed;
+  }
+
+  riskMode.addEventListener("change", updateRiskInputs);
+  updateRiskInputs();
+
+  function readNumber(id) {
+    const raw = $(id).value.trim();
+    if (raw === "") return null;
+    const number = Number(raw);
+    return Number.isFinite(number) ? number : NaN;
+  }
+
+  function currencySymbol() {
+    return {
+      USD: "$",
+      EUR: "€",
+      GBP: "£",
+      NGN: "₦",
+      OTHER: ""
+    }[$("currency").value] || "";
+  }
+
+  function money(value) {
+    return currencySymbol() +
+      Math.abs(value).toLocaleString(undefined, {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+      }) +
+      ($("currency").value === "OTHER" ? " " + "account currency" : "");
+  }
+
+  function signedMoney(value) {
+    return (value < 0 ? "−" : value > 0 ? "+" : "") + money(value);
+  }
+
+  function setResult(id, text, number) {
+    const el = $(id);
+    el.textContent = text;
+    el.classList.remove("positive", "negative");
+
+    if (typeof number === "number" && Number.isFinite(number)) {
+      if (number > 0) el.classList.add("positive");
+      if (number < 0) el.classList.add("negative");
+    }
+  }
+
+  function calculate(event) {
+    event.preventDefault();
+
+    const balance = readNumber("accountBalance");
+    const percentage = readNumber("riskPercent");
+    const fixed = readNumber("fixedRisk");
+    const stop = readNumber("stopLoss");
+    const pipValue = readNumber("pipValue");
+    const costsPerLot = readNumber("costs");
+    const maxLot = readNumber("maxLot");
+    const step = readNumber("lotStep");
+    const maxRiskPercent = readNumber("maxRiskPercent");
+
+    const required = [
+      ["Account balance", balance],
+      ["Stop-loss distance", stop],
+      ["Pip value", pipValue],
+      ["Estimated costs", costsPerLot],
+      ["Maximum lot size", maxLot],
+      ["Maximum risk limit", maxRiskPercent]
+    ];
+
+    if (riskMode.value === "percent") {
+      required.push(["Risk percentage", percentage]);
+    } else {
+      required.push(["Fixed risk amount", fixed]);
+    }
+
+    for (const [name, value] of required) {
+      if (value === null || !Number.isFinite(value) || value < 0) {
+        alert("Please enter a valid non-negative value for " + name + ".");
+        return;
+      }
+    }
+
+    if (
+      balance <= 0 || stop <= 0 || pipValue <= 0 ||
+      maxLot <= 0 || !step || step <= 0 ||
+      costsPerLot < 0 || maxRiskPercent <= 0 ||
+      maxRiskPercent > 100
+    ) {
+      alert("Check your inputs. Balance, stop distance, pip value, maximum lot, lot step and maximum risk limit must be greater than zero. Costs may be zero.");
+      return;
+    }
+
+    if (riskMode.value === "percent" &&
+        (percentage <= 0 || percentage > 100)) {
+      alert("Risk percentage must be greater than zero and no more than 100%.");
+      return;
+    }
+
+    if (riskMode.value === "fixed" &&
+        (fixed === null || !Number.isFinite(fixed) || fixed <= 0)) {
+      alert("Enter a fixed risk amount greater than zero.");
+      return;
+    }
+
+    const budget = riskMode.value === "percent"
+      ? balance * percentage / 100
+      : fixed;
+
+    const riskPerLot = stop * pipValue + costsPerLot;
+
+    if (!Number.isFinite(riskPerLot) || riskPerLot <= 0 || budget <= 0) {
+      alert("Your risk budget and estimated risk per lot must be greater than zero.");
+      return;
+    }
+
+    const theoreticalLot = budget / riskPerLot;
+    const cappedLot = Math.min(theoreticalLot, maxLot);
+    const lot = Math.floor((cappedLot + 1e-10) / step) * step;
+    const roundedLot = Number(lot.toFixed(8));
+
+    if (roundedLot <= 0) {
+      $("results").hidden = false;
+      $("lotResult").textContent = "Below minimum step";
+      $("riskBudgetResult").textContent = money(budget);
+      $("riskAmountResult").textContent = money(0);
+      $("costResult").textContent = money(0);
+      $("totalRiskResult").textContent = money(0);
+      $("actualRiskResult").textContent = "0%";
+      $("maxRiskResult").textContent = money(balance * maxRiskPercent / 100);
+      $("cappedResult").textContent = "No";
+      $("lossResult").textContent = money(0);
+      $("resultMessage").textContent =
+        "Your risk budget is too small for the selected lot increment. Consider checking your inputs or the minimum trade volume allowed by your broker.";
+      return;
+    }
+
+    const priceRisk = stop * pipValue * roundedLot;
+    const estimatedCosts = costsPerLot * roundedLot;
+    const totalRisk = priceRisk + estimatedCosts;
+    const actualRiskPct = totalRisk / balance * 100;
+    const maxRiskCash = balance * maxRiskPercent / 100;
+    const wasCapped = theoreticalLot > maxLot;
+    const exceedsBudget = totalRisk > budget + 1e-8;
+    const exceedsMaxRisk = totalRisk > maxRiskCash + 1e-8;
+
+    $("results").hidden = false;
+
+    $("lotResult").textContent = roundedLot.toLocaleString(undefined, {
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 8
+    }) + " lots";
+
+    $("riskBudgetResult").textContent = money(budget);
+    $("riskAmountResult").textContent = money(priceRisk);
+    $("costResult").textContent = money(estimatedCosts);
+
+    setResult("totalRiskResult", money(totalRisk), -totalRisk);
+
+    $("actualRiskResult").textContent =
+      actualRiskPct.toLocaleString(undefined, {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 3
+      }) + "%";
+
+    $("maxRiskResult").textContent = money(maxRiskCash);
+    $("cappedResult").textContent = wasCapped ? "Yes" : "No";
+    $("lossResult").textContent = money(totalRisk);
+
+    let message = "This is an estimated position size based on your inputs.";
+
+    if (wasCapped) {
+      message += " The theoretical size exceeded your maximum lot setting, so the result was capped.";
+    }
+
+    if (exceedsBudget) {
+      message += " The rounded result exceeds the entered risk budget when estimated costs are included. Reduce the size or review your inputs before trading.";
+    } else {
+      message += " The estimated total risk is within the entered cash risk budget.";
+    }
+
+    if (exceedsMaxRisk) {
+      message += " The estimated risk also exceeds your maximum risk reference. Review the size and risk settings.";
+    }
+
+    if (roundedLot < step) {
+      message += " Check the minimum trade volume and lot increment supported by your broker.";
+    }
+
+    message += " Slippage, gaps, spread changes and execution can make the actual loss larger.";
+
+    $("resultMessage").textContent = message;
+  }
+
+  $("lotForm").addEventListener("submit", calculate);
+
+  $("lotForm").addEventListener("reset", function () {
+    window.setTimeout(function () {
+      $("results").hidden = true;
+      updateRiskInputs();
+    }, 0);
+  });
+})();
+</script>
+</body>
+</html>
