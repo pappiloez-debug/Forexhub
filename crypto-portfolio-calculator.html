@@ -1,0 +1,1680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B5T8QM08CE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-B5T8QM08CE');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Crypto Portfolio Calculator | Track Crypto Investments & Profit - EZTradingHub</title>
+
+  <meta name="description" content="Use the free EZTradingHub crypto portfolio calculator to track cryptocurrency holdings, investment costs, portfolio value, profit and loss, returns, and asset allocation.">
+  <meta name="keywords" content="crypto portfolio calculator, cryptocurrency portfolio tracker, crypto profit calculator, crypto investment calculator, Bitcoin portfolio calculator, Ethereum portfolio tracker, cryptocurrency asset allocation, crypto portfolio management">
+  <meta name="author" content="EZTradingHub">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#0b5ed7">
+
+  <link rel="canonical" href="https://eztradinghub.com/crypto-portfolio-calculator.html">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Crypto Portfolio Calculator - EZTradingHub">
+  <meta property="og:description" content="Track crypto holdings, investment value, profit and loss, returns, and portfolio allocation with our free cryptocurrency portfolio calculator.">
+  <meta property="og:url" content="https://eztradinghub.com/crypto-portfolio-calculator.html">
+  <meta property="og:site_name" content="EZTradingHub">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Crypto Portfolio Calculator - EZTradingHub">
+  <meta name="twitter:description" content="Calculate cryptocurrency portfolio value, investment costs, profit and loss, and asset allocation.">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "EZTradingHub Crypto Portfolio Calculator",
+    "url": "https://eztradinghub.com/crypto-portfolio-calculator.html",
+    "description": "A free cryptocurrency portfolio calculator for tracking holdings, investment costs, current values, profit and loss, returns, and asset allocation.",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Any",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "EZTradingHub",
+      "url": "https://eztradinghub.com/"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://eztradinghub.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Calculators",
+        "item": "https://eztradinghub.com/calculators.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Crypto Portfolio Calculator",
+        "item": "https://eztradinghub.com/crypto-portfolio-calculator.html"
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a crypto portfolio calculator?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A crypto portfolio calculator estimates the current value, investment cost, profit or loss, return percentage, and allocation of your cryptocurrency holdings using the quantities and prices you enter."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I calculate cryptocurrency profit or loss?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Subtract the total purchase cost from the current market value of your holdings. Divide the difference by the purchase cost and multiply by 100 to calculate the percentage return."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does this crypto portfolio calculator provide live prices?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "This version uses manually entered prices and does not fetch live cryptocurrency prices. Update the current price field using a reliable market data source to refresh your calculations."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I use this calculator for Bitcoin and Ethereum?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. You can add Bitcoin, Ethereum, and other cryptocurrencies by entering their names, symbols, quantities, purchase prices, and current prices."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does the calculator guarantee cryptocurrency profits?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. The calculator reports estimates based on the prices and quantities entered. Cryptocurrency prices can change rapidly, and calculations do not predict or guarantee future investment performance."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f3f6fb;
+      --surface: #ffffff;
+      --surface-2: #edf3fb;
+      --text: #172033;
+      --muted: #637086;
+      --border: #dce4ef;
+      --primary: #0b5ed7;
+      --primary-hover: #084bb0;
+      --green: #12805c;
+      --red: #c73737;
+      --shadow: 0 8px 28px rgba(24, 45, 80, .07);
+    }
+
+    html[data-theme="dark"] {
+      color-scheme: dark;
+      --bg: #101722;
+      --surface: #182333;
+      --surface-2: #202e40;
+      --text: #edf3fc;
+      --muted: #b0bdd0;
+      --border: #35445a;
+      --primary: #69a5ff;
+      --primary-hover: #8ab8ff;
+      --green: #5bd5a1;
+      --red: #ff8989;
+      --shadow: 0 8px 28px rgba(0, 0, 0, .2);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+      line-height: 1.65;
+      overflow-wrap: anywhere;
+    }
+
+    a {
+      color: var(--primary);
+    }
+
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible,
+    select:focus-visible {
+      outline: 3px solid #f4b942;
+      outline-offset: 3px;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+
+    .nav {
+      max-width: 1180px;
+      margin: auto;
+      padding: 13px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--text);
+      text-decoration: none;
+      font-size: 1.15rem;
+      font-weight: 800;
+    }
+
+    .brand-mark {
+      display: grid;
+      place-items: center;
+      width: 38px;
+      height: 38px;
+      background: var(--primary);
+      color: white;
+      border-radius: 10px;
+      font-weight: 900;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-size: .93rem;
+      font-weight: 700;
+    }
+
+    .theme-toggle,
+    button {
+      font: inherit;
+      cursor: pointer;
+    }
+
+    .theme-toggle {
+      padding: 9px 12px;
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      color: var(--text);
+      background: var(--surface-2);
+    }
+
+    main {
+      max-width: 1180px;
+      margin: auto;
+      padding: 24px 18px 48px;
+    }
+
+    .breadcrumb {
+      color: var(--muted);
+      font-size: .9rem;
+      margin-bottom: 18px;
+    }
+
+    .breadcrumb a {
+      text-decoration: none;
+    }
+
+    .hero {
+      padding: 30px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, #083b82, #0b5ed7 65%, #347ee7);
+      color: #fff;
+      box-shadow: var(--shadow);
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      margin: 0 0 12px;
+      line-height: 1.2;
+      font-size: clamp(1.8rem, 4vw, 2.65rem);
+    }
+
+    .hero p {
+      max-width: 800px;
+      margin: 0 0 12px;
+    }
+
+    .hero .hero-note {
+      font-size: .9rem;
+      opacity: .93;
+      margin-top: 16px;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(270px, .72fr);
+      gap: 22px;
+      align-items: start;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+      margin-bottom: 22px;
+      min-width: 0;
+    }
+
+    h2 {
+      font-size: 1.45rem;
+      line-height: 1.3;
+      margin: 0 0 12px;
+    }
+
+    h3 {
+      font-size: 1.12rem;
+      margin: 22px 0 8px;
+    }
+
+    p {
+      margin-top: 8px;
+    }
+
+    .muted,
+    .help {
+      color: var(--muted);
+    }
+
+    .help {
+      font-size: .88rem;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 15px;
+    }
+
+    .field {
+      min-width: 0;
+    }
+
+    .field label {
+      display: block;
+      font-size: .92rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    input,
+    select {
+      display: block;
+      width: 100%;
+      min-height: 44px;
+      padding: 10px 12px;
+      color: var(--text);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      font: inherit;
+    }
+
+    input::placeholder {
+      color: var(--muted);
+      opacity: .8;
+    }
+
+    .button-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 18px;
+    }
+
+    .btn {
+      border: 0;
+      border-radius: 9px;
+      padding: 11px 16px;
+      background: var(--primary);
+      color: #fff;
+      font-weight: 700;
+      text-decoration: none;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 42px;
+    }
+
+    .btn:hover {
+      background: var(--primary-hover);
+      color: #fff;
+    }
+
+    .btn-secondary {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
+
+    .btn-secondary:hover {
+      background: var(--border);
+      color: var(--text);
+    }
+
+    .btn-danger {
+      background: #b42332;
+      color: white;
+    }
+
+    .btn-small {
+      min-height: 34px;
+      padding: 6px 9px;
+      font-size: .85rem;
+    }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .stat {
+      border: 1px solid var(--border);
+      background: var(--surface-2);
+      border-radius: 12px;
+      padding: 15px;
+      min-width: 0;
+    }
+
+    .stat-label {
+      font-size: .85rem;
+      color: var(--muted);
+      margin-bottom: 5px;
+    }
+
+    .stat-value {
+      font-size: clamp(1.05rem, 2.8vw, 1.5rem);
+      font-weight: 800;
+      line-height: 1.3;
+      overflow-wrap: anywhere;
+    }
+
+    .positive {
+      color: var(--green);
+    }
+
+    .negative {
+      color: var(--red);
+    }
+
+    .table-wrap {
+      width: 100%;
+      overflow-x: auto;
+      margin-top: 15px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 720px;
+      background: var(--surface);
+    }
+
+    th,
+    td {
+      text-align: left;
+      padding: 11px 12px;
+      border-bottom: 1px solid var(--border);
+      font-size: .9rem;
+      vertical-align: middle;
+    }
+
+    th {
+      background: var(--surface-2);
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .allocation-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    .allocation-row {
+      display: grid;
+      gap: 5px;
+    }
+
+    .allocation-heading {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      font-size: .9rem;
+    }
+
+    .bar-track {
+      height: 10px;
+      border-radius: 999px;
+      overflow: hidden;
+      background: var(--surface-2);
+    }
+
+    .bar-fill {
+      height: 100%;
+      background: var(--primary);
+      border-radius: 999px;
+    }
+
+    .notice {
+      padding: 14px 16px;
+      background: var(--surface-2);
+      border-left: 4px solid var(--primary);
+      border-radius: 8px;
+      margin: 16px 0;
+    }
+
+    .notice p:last-child {
+      margin-bottom: 0;
+    }
+
+    .content-section {
+      margin-top: 22px;
+    }
+
+    .content-section ul,
+    .content-section ol {
+      padding-left: 24px;
+    }
+
+    .related-links {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    .related-links a {
+      padding: 12px;
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      text-decoration: none;
+      background: var(--surface-2);
+      font-weight: 700;
+    }
+
+    .related-links a:hover {
+      text-decoration: underline;
+    }
+
+    details {
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    details:last-child {
+      border-bottom: 0;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 800;
+    }
+
+    footer {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      padding: 25px 18px;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    footer p {
+      max-width: 850px;
+      margin: 8px auto;
+    }
+
+    footer a {
+      margin: 0 7px;
+    }
+
+    .status-message {
+      min-height: 24px;
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    @media (max-width: 800px) {
+      .layout {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding: 23px;
+      }
+    }
+
+    @media (max-width: 520px) {
+      main {
+        padding: 18px 12px 35px;
+      }
+
+      .nav {
+        padding: 10px 12px;
+      }
+
+      .nav-links {
+        gap: 10px;
+      }
+
+      .nav-links a {
+        font-size: .85rem;
+      }
+
+      .card {
+        padding: 16px;
+      }
+
+      .form-grid,
+      .summary-grid,
+      .related-links {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+
+      .button-row .btn {
+        flex: 1 1 100%;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" href="index.html" aria-label="EZTradingHub homepage">
+        <span class="brand-mark" aria-hidden="true">EZ</span>
+        <span>EZTradingHub</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="calculators.html">Calculators</a>
+        <button class="theme-toggle" id="themeToggle" type="button" aria-pressed="false">
+          🌙 Dark mode
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Home</a> &rsaquo;
+      <a href="calculators.html">Calculators</a> &rsaquo;
+      <span aria-current="page">Crypto Portfolio Calculator</span>
+    </nav>
+
+    <section class="hero">
+      <h1>Crypto Portfolio Calculator</h1>
+      <p>
+        Track your cryptocurrency investments in one place. Calculate portfolio
+        value, total investment cost, estimated profit or loss, percentage return,
+        and the allocation of Bitcoin, Ethereum, and other digital assets.
+      </p>
+      <p>
+        Use this free cryptocurrency portfolio calculator to organize your
+        holdings and understand how your entered prices affect your portfolio.
+      </p>
+      <p class="hero-note">
+        Manual-price version: enter or update current prices yourself.
+        This calculator does not fetch live market prices.
+      </p>
+    </section>
+
+    <div class="layout">
+      <div>
+        <section class="card" aria-labelledby="addTitle">
+          <h2 id="addTitle">Add a Cryptocurrency</h2>
+          <p class="muted">
+            Enter the quantity you own, your average purchase price, and the
+            current price. Values are calculated in the selected display currency.
+          </p>
+
+          <form id="assetForm">
+            <input type="hidden" id="editId" value="">
+
+            <div class="form-grid">
+              <div class="field">
+                <label for="assetName">Cryptocurrency name</label>
+                <input id="assetName" maxlength="60" placeholder="Bitcoin" required>
+              </div>
+
+              <div class="field">
+                <label for="assetSymbol">Ticker symbol</label>
+                <input id="assetSymbol" maxlength="15" placeholder="BTC" required>
+              </div>
+
+              <div class="field">
+                <label for="quantity">Quantity owned</label>
+                <input id="quantity" type="number" min="0.00000001"
+                       step="any" inputmode="decimal" placeholder="0.25" required>
+              </div>
+
+              <div class="field">
+                <label for="buyPrice">Average purchase price</label>
+                <input id="buyPrice" type="number" min="0"
+                       step="any" inputmode="decimal" placeholder="60000" required>
+              </div>
+
+              <div class="field">
+                <label for="currentPrice">Current price</label>
+                <input id="currentPrice" type="number" min="0"
+                       step="any" inputmode="decimal" placeholder="65000" required>
+              </div>
+
+              <div class="field">
+                <label for="currency">Display currency</label>
+                <select id="currency">
+                  <option value="USD">USD — US Dollar</option>
+                  <option value="NGN">NGN — Nigerian Naira</option>
+                  <option value="EUR">EUR — Euro</option>
+                  <option value="GBP">GBP — British Pound</option>
+                  <option value="CAD">CAD — Canadian Dollar</option>
+                  <option value="AUD">AUD — Australian Dollar</option>
+                </select>
+              </div>
+            </div>
+
+            <p class="help">
+              Important: all holdings must use the same currency. Changing the
+              display currency changes formatting only; it does not convert prices.
+              If you change currencies, update your entered prices accordingly.
+            </p>
+
+            <div class="button-row">
+              <button class="btn" id="saveAssetButton" type="submit">
+                Add to Portfolio
+              </button>
+              <button class="btn btn-secondary" id="cancelEditButton"
+                      type="button" hidden>
+                Cancel Edit
+              </button>
+              <button class="btn btn-secondary" id="sampleButton" type="button">
+                Load Sample Portfolio
+              </button>
+              <button class="btn btn-secondary" id="clearButton" type="button">
+                Clear Portfolio
+              </button>
+            </div>
+
+            <div class="status-message" id="formStatus" role="status"
+                 aria-live="polite"></div>
+          </form>
+        </section>
+
+        <section class="card" aria-labelledby="holdingsTitle">
+          <h2 id="holdingsTitle">Your Crypto Holdings</h2>
+
+          <div class="field">
+            <label for="searchAssets">Search holdings</label>
+            <input id="searchAssets" type="search"
+                   placeholder="Search Bitcoin, BTC, Ethereum...">
+          </div>
+
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">Asset</th>
+                  <th scope="col">Quantity</th>
+                  <th scope="col">Buy Price</th>
+                  <th scope="col">Current Price</th>
+                  <th scope="col">Market Value</th>
+                  <th scope="col">Profit / Loss</th>
+                  <th scope="col">Return</th>
+                  <th scope="col">Actions</th>
+                </tr>
+              </thead>
+              <tbody id="holdingsBody">
+                <tr>
+                  <td colspan="8">No holdings yet. Add an asset or load the sample portfolio.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="button-row">
+            <button class="btn btn-secondary" id="exportButton" type="button">
+              Export CSV
+            </button>
+          </div>
+
+          <p class="help">
+            Export creates a CSV file of your current holdings and calculated values.
+            Check the file before sharing it because it may contain personal financial information.
+          </p>
+        </section>
+      </div>
+
+      <aside>
+        <section class="card" aria-labelledby="summaryTitle">
+          <h2 id="summaryTitle">Portfolio Summary</h2>
+
+          <div class="summary-grid">
+            <div class="stat">
+              <div class="stat-label">Total Investment Cost</div>
+              <div class="stat-value" id="totalCost">$0.00</div>
+            </div>
+
+            <div class="stat">
+              <div class="stat-label">Current Portfolio Value</div>
+              <div class="stat-value" id="totalValue">$0.00</div>
+            </div>
+
+            <div class="stat">
+              <div class="stat-label">Estimated Profit / Loss</div>
+              <div class="stat-value" id="totalProfit">$0.00</div>
+            </div>
+
+            <div class="stat">
+              <div class="stat-label">Total Return</div>
+              <div class="stat-value" id="totalReturn">0.00%</div>
+            </div>
+
+            <div class="stat">
+              <div class="stat-label">Number of Assets</div>
+              <div class="stat-value" id="assetCount">0</div>
+            </div>
+
+            <div class="stat">
+              <div class="stat-label">Largest Holding</div>
+              <div class="stat-value" id="largestHolding">—</div>
+            </div>
+          </div>
+
+          <div class="notice">
+            <strong>Calculation note</strong>
+            <p>
+              Profit and loss is estimated as current market value minus purchase
+              cost. Fees, taxes, staking income, deposits, withdrawals, and other
+              transactions are not included.
+            </p>
+          </div>
+        </section>
+
+        <section class="card" aria-labelledby="allocationTitle">
+          <h2 id="allocationTitle">Portfolio Allocation</h2>
+          <p class="muted">
+            See how much each cryptocurrency contributes to your total portfolio value.
+          </p>
+
+          <div id="allocationList" class="allocation-list">
+            <p class="muted">Add holdings to view portfolio allocation.</p>
+          </div>
+        </section>
+
+        <section class="card" aria-labelledby="relatedTitle">
+          <h2 id="relatedTitle">Related EZTradingHub Tools</h2>
+          <div class="related-links">
+            <a href="crypto-profit-calculator.html">Crypto Profit Calculator</a>
+            <a href="crypto-position-size-calculator.html">Crypto Position Size</a>
+            <a href="crypto-roi-calculator.html">Crypto ROI Calculator</a>
+            <a href="crypto-dca-calculator.html">Crypto DCA Calculator</a>
+            <a href="crypto-staking-calculator.html">Crypto Staking Calculator</a>
+            <a href="calculators.html">All Calculators</a>
+          </div>
+          <p class="help">
+            If any related page has not been published on your website yet,
+            replace its link with an existing page to avoid broken links.
+          </p>
+        </section>
+      </aside>
+    </div>
+
+    <section class="card content-section">
+      <h2>What Is a Crypto Portfolio Calculator?</h2>
+
+      <p>
+        A crypto portfolio calculator is a tool for estimating the value and
+        performance of cryptocurrency investments. It helps investors organize
+        digital asset holdings, compare purchase prices with current market
+        prices, and calculate the estimated profit or loss of each asset and
+        the overall portfolio.
+      </p>
+
+      <p>
+        Cryptocurrency investors may hold several digital assets, including
+        Bitcoin, Ethereum, and other cryptocurrencies. Tracking each holding
+        manually can become difficult when prices change frequently. A
+        portfolio calculator brings the key figures together in one place.
+      </p>
+
+      <h3>How to Use This Cryptocurrency Portfolio Tracker</h3>
+
+      <ol>
+        <li>Enter the name and ticker symbol of your cryptocurrency.</li>
+        <li>Enter the quantity of the asset you currently own.</li>
+        <li>Enter your average purchase price per coin or token.</li>
+        <li>Enter the current price per coin or token.</li>
+        <li>Choose the currency used for all your entered prices.</li>
+        <li>Select <strong>Add to Portfolio</strong> to calculate your results.</li>
+        <li>Repeat for your other holdings and review the summary and allocation.</li>
+        <li>Update current prices when you want to estimate your portfolio again.</li>
+      </ol>
+
+      <h3>Crypto Portfolio Calculator Formulas</h3>
+
+      <p><strong>Investment cost:</strong></p>
+      <p>Quantity owned × Average purchase price</p>
+
+      <p><strong>Current market value:</strong></p>
+      <p>Quantity owned × Current price</p>
+
+      <p><strong>Estimated profit or loss:</strong></p>
+      <p>Current market value − Investment cost</p>
+
+      <p><strong>Percentage return:</strong></p>
+      <p>
+        (Profit or loss ÷ Investment cost) × 100
+      </p>
+
+      <p><strong>Portfolio allocation:</strong></p>
+      <p>
+        (Market value of an individual asset ÷ Total market value of all assets) × 100
+      </p>
+
+      <p>
+        These formulas assume the purchase cost can be approximated using the
+        quantity and average purchase price entered. They do not provide a
+        complete tax-lot calculation or account for transactions that have not
+        been entered.
+      </p>
+
+      <h3>Example: Calculating Bitcoin Portfolio Profit</h3>
+
+      <p>
+        Suppose you own 0.1 BTC and your average purchase price was $60,000
+        per BTC. Your estimated investment cost is $6,000. If the current
+        price is $65,000, the holding's estimated market value is $6,500.
+      </p>
+
+      <p>
+        The estimated profit is $500, equivalent to an 8.33% return on the
+        original purchase cost, before fees and taxes. This is an illustrative
+        example, not a prediction of future Bitcoin performance.
+      </p>
+
+      <h3>Why Portfolio Allocation Matters</h3>
+
+      <p>
+        Portfolio allocation shows how much of your total portfolio value is
+        represented by each holding. For example, if Bitcoin represents 70%
+        of your portfolio's current value, its price movements may have a
+        substantial effect on your overall portfolio.
+      </p>
+
+      <p>
+        Allocation calculations can help you understand concentration risk.
+        However, holding several cryptocurrencies does not necessarily provide
+        effective diversification because digital assets may move in similar
+        directions during volatile market conditions.
+      </p>
+
+      <h3>Important Limitations of Crypto Portfolio Tracking</h3>
+
+      <ul>
+        <li>
+          <strong>Price accuracy:</strong> results depend on the accuracy and
+          timing of the prices you enter.
+        </li>
+        <li>
+          <strong>Trading fees:</strong> exchange, network, and transaction
+          fees can reduce actual returns.
+        </li>
+        <li>
+          <strong>Taxes:</strong> taxable gains and reporting requirements
+          vary by jurisdiction.
+        </li>
+        <li>
+          <strong>Deposits and withdrawals:</strong> these need separate
+          tracking to maintain an accurate transaction history.
+        </li>
+        <li>
+          <strong>Staking and rewards:</strong> rewards and other income are
+          not automatically included.
+        </li>
+        <li>
+          <strong>Volatility:</strong> cryptocurrency prices can change rapidly,
+          so displayed values may become outdated.
+        </li>
+      </ul>
+    </section>
+
+    <section class="card content-section" aria-labelledby="faqTitle">
+      <h2 id="faqTitle">Frequently Asked Questions</h2>
+
+      <details>
+        <summary>What is the best way to track my crypto portfolio?</summary>
+        <p>
+          Keep a consistent record of each cryptocurrency's quantity, average
+          purchase price, and current price. Update prices regularly and record
+          deposits, withdrawals, fees, and trades separately when you need
+          more complete performance reporting.
+        </p>
+      </details>
+
+      <details>
+        <summary>Can I use this calculator for Bitcoin and Ethereum?</summary>
+        <p>
+          Yes. Enter BTC for Bitcoin or ETH for Ethereum, together with the
+          quantity held, average purchase price, and current price. You can
+          also add other cryptocurrencies.
+        </p>
+      </details>
+
+      <details>
+        <summary>Does this calculator display live crypto prices?</summary>
+        <p>
+          No. This version uses manually entered prices. It does not connect
+          to an exchange or cryptocurrency price API. Update each current-price
+          field using a reliable market data source before relying on the results.
+        </p>
+      </details>
+
+      <details>
+        <summary>How do I calculate my total cryptocurrency profit?</summary>
+        <p>
+          Calculate the current market value of each holding and subtract its
+          estimated purchase cost. Add the individual results together to
+          estimate total portfolio profit or loss. Include fees and other
+          transactions separately for a more complete result.
+        </p>
+      </details>
+
+      <details>
+        <summary>Can this calculator tell me which cryptocurrency to buy?</summary>
+        <p>
+          No. It is a tracking and calculation tool, not an investment
+          recommendation service. It does not assess whether an asset is
+          suitable for your circumstances or predict future prices.
+        </p>
+      </details>
+
+      <details>
+        <summary>Does this calculator save my portfolio automatically?</summary>
+        <p>
+          This version keeps the portfolio in the current page session and
+          does not send it to a server. Your holdings are not automatically
+          saved between visits. Export your data to CSV if you want a copy.
+        </p>
+      </details>
+
+      <details>
+        <summary>Is the crypto portfolio calculator free?</summary>
+        <p>
+          Yes. The calculator is designed to be free to use. It provides
+          estimates based on the information you enter, without guaranteeing
+          profits or future performance.
+        </p>
+      </details>
+    </section>
+
+    <section class="card content-section">
+      <h2>Explore More Trading and Investment Tools</h2>
+
+      <p>
+        EZTradingHub provides online calculators designed to help users
+        understand financial calculations and organize trading information.
+        Explore the available tools to find calculators suited to your needs.
+      </p>
+
+      <div class="related-links">
+        <a href="calculators.html">Explore All Calculators</a>
+        <a href="crypto-profit-calculator.html">Calculate Crypto Profit</a>
+        <a href="crypto-position-size-calculator.html">Crypto Position Sizing</a>
+        <a href="crypto-roi-calculator.html">Calculate Investment ROI</a>
+        <a href="risk-calculator.html">Forex Risk Calculator</a>
+        <a href="lot-size-calculator.html">Forex Lot Size Calculator</a>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Financial Disclaimer</h2>
+      <p>
+        This crypto portfolio calculator is provided for educational and
+        informational purposes only. It is not financial, investment, tax,
+        or legal advice. Calculations are estimates based on the information
+        entered by the user and may not reflect actual account balances or
+        realized investment performance.
+      </p>
+      <p>
+        Cryptocurrency investments involve substantial risk, including the
+        possibility of losing some or all of your capital. Always verify
+        prices and transaction records independently and consider your
+        financial circumstances before making investment decisions.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p><strong>EZTradingHub — Smart Trading Tools</strong></p>
+    <p>
+      Educational calculators and tools to help users understand trading,
+      investment calculations, and financial risk.
+    </p>
+    <p>
+      <a href="index.html">Home</a>
+      <a href="calculators.html">Calculators</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="faq.html">FAQ</a>
+      <a href="cookie-policy.html">Cookie Policy</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms</a>
+      <a href="disclaimer.html">Disclaimer</a>
+    </p>
+    <p>
+      © <span id="currentYear"></span> EZTradingHub. All rights reserved.
+    </p>
+  </footer>
+
+  <script>
+    "use strict";
+
+    const STORAGE_KEY = "ezthCryptoPortfolio";
+    const THEME_KEY = "ezth-theme";
+
+    const $ = (id) => document.getElementById(id);
+
+    let holdings = [];
+    let nextId = 1;
+    let currencyCode = "USD";
+    let editingId = null;
+
+    const form = $("assetForm");
+
+    function loadTheme() {
+      let savedTheme = "light";
+
+      try {
+        savedTheme = localStorage.getItem(THEME_KEY) || "light";
+      } catch (error) {
+        savedTheme = "light";
+      }
+
+      applyTheme(savedTheme === "dark" ? "dark" : "light");
+    }
+
+    function applyTheme(theme) {
+      document.documentElement.dataset.theme = theme;
+
+      const button = $("themeToggle");
+      const isDark = theme === "dark";
+
+      button.textContent = isDark ? "☀️ Light mode" : "🌙 Dark mode";
+      button.setAttribute("aria-pressed", String(isDark));
+
+      try {
+        localStorage.setItem(THEME_KEY, theme);
+      } catch (error) {
+        // The theme still works for the current page session.
+      }
+    }
+
+    $("themeToggle").addEventListener("click", function () {
+      const current = document.documentElement.dataset.theme;
+      applyTheme(current === "dark" ? "light" : "dark");
+    });
+
+    function money(value) {
+      const number = Number.isFinite(value) ? value : 0;
+
+      try {
+        return new Intl.NumberFormat(undefined, {
+          style: "currency",
+          currency: currencyCode,
+          maximumFractionDigits: 2,
+          minimumFractionDigits: 2
+        }).format(number);
+      } catch (error) {
+        return currencyCode + " " + number.toFixed(2);
+      }
+    }
+
+    function numberFormat(value, maximumFractionDigits = 8) {
+      return new Intl.NumberFormat(undefined, {
+        maximumFractionDigits
+      }).format(value);
+    }
+
+    function percent(value) {
+      if (!Number.isFinite(value)) return "0.00%";
+      return value.toFixed(2) + "%";
+    }
+
+    function safeText(value) {
+      return String(value)
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+    }
+
+    function createId() {
+      const used = new Set(holdings.map(item => item.id));
+      while (used.has(nextId)) nextId++;
+      return nextId++;
+    }
+
+    function getCalculations(item) {
+      const cost = item.quantity * item.buyPrice;
+      const value = item.quantity * item.currentPrice;
+      const profit = value - cost;
+      const roi = cost > 0 ? (profit / cost) * 100 : 0;
+
+      return { cost, value, profit, roi };
+    }
+
+    function setStatus(message) {
+      $("formStatus").textContent = message;
+    }
+
+    function resetForm() {
+      form.reset();
+      $("editId").value = "";
+      $("saveAssetButton").textContent = "Add to Portfolio";
+      $("cancelEditButton").hidden = true;
+      editingId = null;
+      $("currency").value = currencyCode;
+    }
+
+    function savePortfolio() {
+      /*
+       * The portfolio stays in memory by default. This prevents financial
+       * holdings from being saved persistently on a shared device.
+       * Use Export CSV to keep a local copy.
+       */
+    }
+
+    function renderPortfolio() {
+      const search = $("searchAssets").value.trim().toLowerCase();
+
+      const visibleHoldings = holdings.filter(item =>
+        item.name.toLowerCase().includes(search) ||
+        item.symbol.toLowerCase().includes(search)
+      );
+
+      const body = $("holdingsBody");
+
+      if (visibleHoldings.length === 0) {
+        body.innerHTML = `
+          <tr>
+            <td colspan="8">
+              ${holdings.length === 0
+                ? "No holdings yet. Add an asset or load the sample portfolio."
+                : "No holdings match your search."}
+            </td>
+          </tr>`;
+      } else {
+        body.innerHTML = visibleHoldings.map(item => {
+          const calc = getCalculations(item);
+          const profitClass = calc.profit > 0
+            ? "positive"
+            : calc.profit < 0 ? "negative" : "";
+
+          return `
+            <tr>
+              <td>
+                <strong>${safeText(item.name)}</strong><br>
+                <span class="muted">${safeText(item.symbol)}</span>
+              </td>
+              <td>${numberFormat(item.quantity)}</td>
+              <td>${money(item.buyPrice)}</td>
+              <td>${money(item.currentPrice)}</td>
+              <td>${money(calc.value)}</td>
+              <td class="${profitClass}">${money(calc.profit)}</td>
+              <td class="${profitClass}">${percent(calc.roi)}</td>
+              <td>
+                <div class="button-row" style="margin:0">
+                  <button type="button" class="btn btn-secondary btn-small"
+                    data-action="edit" data-id="${item.id}">
+                    Edit
+                  </button>
+                  <button type="button" class="btn btn-danger btn-small"
+                    data-action="delete" data-id="${item.id}">
+                    Delete
+                  </button>
+                </div>
+              </td>
+            </tr>`;
+        }).join("");
+      }
+
+      renderSummary();
+      renderAllocation();
+      savePortfolio();
+    }
+
+    function renderSummary() {
+      let totalCost = 0;
+      let totalValue = 0;
+      let largest = null;
+      let largestValue = -1;
+
+      holdings.forEach(item => {
+        const calc = getCalculations(item);
+        totalCost += calc.cost;
+        totalValue += calc.value;
+
+        if (calc.value > largestValue) {
+          largestValue = calc.value;
+          largest = item;
+        }
+      });
+
+      const totalProfit = totalValue - totalCost;
+      const totalROI = totalCost > 0
+        ? (totalProfit / totalCost) * 100
+        : 0;
+
+      $("totalCost").textContent = money(totalCost);
+      $("totalValue").textContent = money(totalValue);
+      $("totalProfit").textContent = money(totalProfit);
+      $("totalReturn").textContent = percent(totalROI);
+      $("assetCount").textContent = String(holdings.length);
+      $("largestHolding").textContent = largest
+        ? largest.symbol + " (" +
+          percent(totalValue > 0 ? largestValue / totalValue * 100 : 0) + ")"
+        : "—";
+
+      $("totalProfit").className =
+        "stat-value " + (totalProfit > 0 ? "positive" :
+          totalProfit < 0 ? "negative" : "");
+
+      $("totalReturn").className =
+        "stat-value " + (totalROI > 0 ? "positive" :
+          totalROI < 0 ? "negative" : "");
+    }
+
+    function renderAllocation() {
+      const container = $("allocationList");
+
+      const totalValue = holdings.reduce(
+        (sum, item) => sum + getCalculations(item).value,
+        0
+      );
+
+      if (holdings.length === 0) {
+        container.innerHTML =
+          '<p class="muted">Add holdings to view portfolio allocation.</p>';
+        return;
+      }
+
+      if (totalValue <= 0) {
+        container.innerHTML =
+          '<p class="muted">Portfolio allocation is unavailable because total market value is zero.</p>';
+        return;
+      }
+
+      const sorted = [...holdings].sort(
+        (a, b) => getCalculations(b).value - getCalculations(a).value
+      );
+
+      container.innerHTML = sorted.map(item => {
+        const value = getCalculations(item).value;
+        const share = value / totalValue * 100;
+        const width = Math.max(0, Math.min(100, share));
+
+        return `
+          <div class="allocation-row">
+            <div class="allocation-heading">
+              <strong>${safeText(item.symbol)}</strong>
+              <span>${percent(share)} · ${money(value)}</span>
+            </div>
+            <div class="bar-track"
+              role="progressbar"
+              aria-label="${safeText(item.symbol)} portfolio allocation"
+              aria-valuemin="0"
+              aria-valuemax="100"
+              aria-valuenow="${share.toFixed(2)}">
+              <div class="bar-fill" style="width:${width}%"></div>
+            </div>
+          </div>`;
+      }).join("");
+    }
+
+    function validFormData() {
+      const name = $("assetName").value.trim();
+      const symbol = $("assetSymbol").value.trim().toUpperCase();
+      const quantity = Number($("quantity").value);
+      const buyPrice = Number($("buyPrice").value);
+      const currentPrice = Number($("currentPrice").value);
+
+      if (!name || !symbol) {
+        setStatus("Enter both the cryptocurrency name and ticker symbol.");
+        return null;
+      }
+
+      if (
+        !Number.isFinite(quantity) || quantity <= 0 ||
+        !Number.isFinite(buyPrice) || buyPrice < 0 ||
+        !Number.isFinite(currentPrice) || currentPrice < 0
+      ) {
+        setStatus("Enter a quantity greater than zero and valid non-negative prices.");
+        return null;
+      }
+
+      if (
+        !Number.isFinite(quantity * buyPrice) ||
+        !Number.isFinite(quantity * currentPrice)
+      ) {
+        setStatus("These values are too large to calculate. Please check your entries.");
+        return null;
+      }
+
+      return { name, symbol, quantity, buyPrice, currentPrice };
+    }
+
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const data = validFormData();
+      if (!data) return;
+
+      const selectedCurrency = $("currency").value;
+
+      if (holdings.length > 0 && selectedCurrency !== currencyCode) {
+        const confirmed = window.confirm(
+          "Changing the currency does not convert your existing prices. " +
+          "Do you want to change the display currency anyway?"
+        );
+
+        if (!confirmed) {
+          $("currency").value = currencyCode;
+          return;
+        }
+      }
+
+      currencyCode = selectedCurrency;
+
+      if (editingId !== null) {
+        const index = holdings.findIndex(item => item.id === editingId);
+
+        if (index !== -1) {
+          holdings[index] = { ...holdings[index], ...data };
+          setStatus("Holding updated successfully.");
+        }
+      } else {
+        holdings.push({
+          id: createId(),
+          ...data
+        });
+        setStatus(data.symbol + " added to your portfolio.");
+      }
+
+      resetForm();
+      renderPortfolio();
+    });
+
+    $("cancelEditButton").addEventListener("click", function () {
+      resetForm();
+      setStatus("Editing cancelled.");
+    });
+
+    $("holdingsBody").addEventListener("click", function (event) {
+      const button = event.target.closest("button[data-action]");
+      if (!button) return;
+
+      const id = Number(button.dataset.id);
+      const action = button.dataset.action;
+      const item = holdings.find(entry => entry.id === id);
+
+      if (!item) return;
+
+      if (action === "edit") {
+        editingId = id;
+        $("editId").value = String(id);
+        $("assetName").value = item.name;
+        $("assetSymbol").value = item.symbol;
+        $("quantity").value = String(item.quantity);
+        $("buyPrice").value = String(item.buyPrice);
+        $("currentPrice").value = String(item.currentPrice);
+        $("currency").value = currencyCode;
+        $("saveAssetButton").textContent = "Save Changes";
+        $("cancelEditButton").hidden = false;
+        $("addTitle").scrollIntoView({ behavior: "smooth", block: "start" });
+        setStatus("Editing " + item.symbol + ".");
+      }
+
+      if (action === "delete") {
+        const confirmed = window.confirm(
+          "Remove " + item.symbol + " from your portfolio?"
+        );
+
+        if (confirmed) {
+          holdings = holdings.filter(entry => entry.id !== id);
+
+          if (editingId === id) resetForm();
+
+          renderPortfolio();
+          setStatus(item.symbol + " removed from your portfolio.");
+        }
+      }
+    });
+
+    $("searchAssets").addEventListener("input", renderPortfolio);
+
+    $("currency").addEventListener("change", function () {
+      if (holdings.length === 0) {
+        currencyCode = $("currency").value;
+        renderPortfolio();
+      }
+    });
+
+    $("sampleButton").addEventListener("click", function () {
+      const confirmed = holdings.length === 0 ||
+        window.confirm("Replace your current holdings with sample data?");
+
+      if (!confirmed) return;
+
+      currencyCode = "USD";
+      $("currency").value = "USD";
+
+      holdings = [
+        {
+          id: 1,
+          name: "Bitcoin",
+          symbol: "BTC",
+          quantity: 0.1,
+          buyPrice: 60000,
+          currentPrice: 65000
+        },
+        {
+          id: 2,
+          name: "Ethereum",
+          symbol: "ETH",
+          quantity: 1.5,
+          buyPrice: 3000,
+          currentPrice: 2800
+        },
+        {
+          id: 3,
+          name: "Solana",
+          symbol: "SOL",
+          quantity: 10,
+          buyPrice: 120,
+          currentPrice: 150
+        }
+      ];
+
+      nextId = 4;
+      resetForm();
+      renderPortfolio();
+      setStatus("Sample holdings loaded. These are illustrative prices, not live quotes.");
+    });
+
+    $("clearButton").addEventListener("click", function () {
+      if (holdings.length === 0) {
+        setStatus("Your portfolio is already empty.");
+        return;
+      }
+
+      if (!window.confirm("Delete all holdings from this portfolio?")) return;
+
+      holdings = [];
+      resetForm();
+      renderPortfolio();
+      setStatus("All holdings have been removed.");
+    });
+
+    $("exportButton").addEventListener("click", function () {
+      if (holdings.length === 0) {
+        setStatus("Add at least one holding before exporting.");
+        return;
+      }
+
+      const headers = [
+        "Name",
+        "Symbol",
+        "Quantity",
+        "Average Purchase Price",
+        "Current Price",
+        "Investment Cost",
+        "Market Value",
+        "Profit or Loss",
+        "Return Percentage",
+        "Currency"
+      ];
+
+      const rows = holdings.map(item => {
+        const calc = getCalculations(item);
+
+        return [
+          item.name,
+          item.symbol,
+          item.quantity,
+          item.buyPrice,
+          item.currentPrice,
+          calc.cost,
+          calc.value,
+          calc.profit,
+          calc.roi,
+          currencyCode
+        ];
+      });
+
+      function csvCell(value) {
+        let textValue = String(value);
+
+        if (/^[=+\-@\t\r]/.test(textValue)) {
+          textValue = "'" + textValue;
+        }
+
+        return '"' + textValue.replaceAll('"', '""') + '"';
+      }
+
+      const csv = [headers, ...rows]
+        .map(row => row.map(csvCell).join(","))
+        .join("\r\n");
+
+      const blob = new Blob(["\uFEFF" + csv], {
+        type: "text/csv;charset=utf-8;"
+      });
+
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+
+      link.href = url;
+      link.download = "eztradinghub-crypto-portfolio.csv";
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+
+      setTimeout(() => URL.revokeObjectURL(url), 1000);
+      setStatus("Portfolio CSV exported.");
+    });
+
+    $("currentYear").textContent = String(new Date().getFullYear());
+
+    loadTheme();
+    renderPortfolio();
+  </script>
+</body>
+</html>
